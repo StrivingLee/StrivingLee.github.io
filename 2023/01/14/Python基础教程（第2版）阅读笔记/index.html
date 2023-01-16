@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"strivinglee.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="摘录了书中有用的内容，精简了表述 毕竟这本书比较老了，还是 Python2 的版本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础教程（第2版）阅读笔记">
+<meta property="og:url" content="https://strivinglee.github.io/2023/01/14/Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="StrivingLee&#39;s Blog">
+<meta property="og:description" content="摘录了书中有用的内容，精简了表述 毕竟这本书比较老了，还是 Python2 的版本">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-14T15:00:02.741Z">
+<meta property="article:modified_time" content="2023-01-15T15:45:51.581Z">
+<meta property="article:author" content="StrivingLee">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://strivinglee.github.io/2023/01/14/Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Python基础教程（第2版）阅读笔记 | StrivingLee's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">StrivingLee's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">揉合生命千样好</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://strivinglee.github.io/2023/01/14/Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="StrivingLee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StrivingLee's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python基础教程（第2版）阅读笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-01-14 23:00:02" itemprop="dateCreated datePublished" datetime="2023-01-14T23:00:02+08:00">2023-01-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-01-15 23:45:51" itemprop="dateModified" datetime="2023-01-15T23:45:51+08:00">2023-01-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>5.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>13 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>摘录了书中有用的内容，精简了表述</p>
+<p>毕竟这本书比较老了，还是 Python2 的版本</p>
+</blockquote>
+<span id="more"></span>
+
+<p>[TOC]</p>
+<h1 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h1><h2 id="Python-的碎碎念"><a href="#Python-的碎碎念" class="headerlink" title="Python 的碎碎念"></a>Python 的碎碎念</h2><p>Python 起源于一个幽默团体，而非蟒蛇（</p>
+<p>Python 的其他版本</p>
+<p>ActivePython 内核与标准版相同，最大的区别是包含了许多额外可用的模块</p>
+<p>Stackless Python 最大优点是允许深层次递归和更高效地执行多线程</p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>双斜线 <code>//</code> 是 C 语言中除法</p>
+<p><code>**</code> 是幂次，注意幂次的优先级比取反要高，所以 $(-3)^2$ 应写为 <code>(-3) ** 2</code></p>
+<h2 id="长整型数"><a href="#长整型数" class="headerlink" title="长整型数"></a>长整型数</h2><p>长整型数和普通整数可以混合使用，除非需要进行类型检查（极少）</p>
+<h2 id="十六进制和八进制数"><a href="#十六进制和八进制数" class="headerlink" title="十六进制和八进制数"></a>十六进制和八进制数</h2><p>0xAF、010</p>
+<h2 id="获取用户输入"><a href="#获取用户输入" class="headerlink" title="获取用户输入"></a>获取用户输入</h2><p>input 会假设用户输入的是合法的 Python 表达式（和 repr 相反）</p>
+<p>raw_input 会把所有的输入当作原始数据放入字符串中</p>
+<p>建议尽可能使用 raw_input</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>内建函数</p>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>需要使用 <code>import</code> 语句导入模块</p>
+<blockquote>
+<p>注：int() float() long() 并非完全等同于函数，事实上他们是类型对象</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">math.floor(<span class="number">32.9</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line">sqrt(<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这样就不用写模块的名字来调用函数了</p>
+<blockquote>
+<p>在 python 中可以使用变量来引用函数（或者 Python 中大多数的对象），比如，通过 <code>foo = math.sqrt</code> 进行赋值，则 <code>foo(4)</code> 的结果为2.0</p>
+</blockquote>
+<h2 id="cmath-和复数"><a href="#cmath-和复数" class="headerlink" title="cmath 和复数"></a>cmath 和复数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> cmath</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cmath.sqrt(-<span class="number">1</span>)</span><br><span class="line"><span class="number">1j</span></span><br></pre></td></tr></table></figure>
+
+<p>注意这里没有使用 <code>from...import</code> ，否则会引起逆天的命名冲突，就无法再使用普通的 <code>sqrt()</code> 函数了</p>
+<p>Python 本身提供对复数的支持</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="number">1</span> + <span class="number">3j</span>) * (<span class="number">9</span> + <span class="number">4j</span>)</span><br><span class="line">(-<span class="number">3</span> + <span class="number">31j</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Python 中没有单独的虚数类型，他们被看作实数部分为 0 的复数</p>
+<h2 id="通过命令提示符运行-Python-脚本"><a href="#通过命令提示符运行-Python-脚本" class="headerlink" title="通过命令提示符运行 Python 脚本"></a>通过命令提示符运行 Python 脚本</h2><p><code>C:\&gt;python hello.py</code></p>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>单引号和双引号</p>
+<p>转义符号</p>
+<p>使用长字符串和原始字符串（可以联合使用）减少绝大多数反斜线的使用</p>
+<p>拼接字符串：+</p>
+<p>值转换为字符串的两种机制：str 和 repr</p>
+<p>str 函数会把值转换为合理形式的字符串，repr 会创建一个字符串，以合法的 Python 表达式的形式来表示值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> <span class="built_in">repr</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line"><span class="string">&#x27;Hello, world&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> <span class="built_in">repr</span>(<span class="number">10000L</span>)</span><br><span class="line"><span class="number">10000L</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> <span class="built_in">str</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line">Hello, world</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> <span class="built_in">str</span>(<span class="number">10000L</span>)</span><br><span class="line"><span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+<p>长字符串</p>
+<p>用三个单引号或者双引号引用跨行字符串（不需要反斜线进行转义）</p>
+<p>原始字符串</p>
+<p><strong>在书写正则表达式的时候特别有用</strong></p>
+<p>以 r 开头，不能以反斜线结尾</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> <span class="string">r&#x27;C:\nowhere&#x27;</span></span><br><span class="line">C:\nowhere</span><br></pre></td></tr></table></figure>
+
+<p>Unicode 字符串</p>
+<p>在 Python 3.0中所有字符串都是 Unicode 字符串</p>
+<h1 id="二、列表和元组"><a href="#二、列表和元组" class="headerlink" title="二、列表和元组"></a>二、列表和元组</h1><p>Python 通过负下标表示倒数第几个</p>
+<h2 id="序列概览"><a href="#序列概览" class="headerlink" title="序列概览"></a>序列概览</h2><p>Python 6 种内建序列：列表、元组（最常用两种）、字符串、Unicode 字符串、buffer 对象、xrange 对象</p>
+<p>列表可以修改，元组不能</p>
+<p>一般都可以使用列表，例外：字典的键不能修改，使用元组</p>
+<p>容器：包含其他对象的任意对象</p>
+<p>序列和映射（例如字典）是两类主要的容器，其他的类型还有集合（set）等</p>
+<h2 id="通用序列操作"><a href="#通用序列操作" class="headerlink" title="通用序列操作"></a>通用序列操作</h2><p>索引（indexing）、分片（sliceing）、加（adding）、乘（multiplying）、成员资格、计算序列长度、找出最大或最小元素</p>
+<p>负数下标表示倒数第几个</p>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">months = [</span><br><span class="line">    <span class="string">&#x27;January&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;February&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;March&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;April&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;May&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;June&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;July&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;August&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;September&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;October&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;November&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;December&#x27;</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">endings = [<span class="string">&#x27;st&#x27;</span>, <span class="string">&#x27;nd&#x27;</span>, <span class="string">&#x27;rd&#x27;</span>] + <span class="number">17</span> * [<span class="string">&#x27;th&#x27;</span>] \</span><br><span class="line">        + [<span class="string">&#x27;st&#x27;</span>, <span class="string">&#x27;nd&#x27;</span>, <span class="string">&#x27;rd&#x27;</span>] + <span class="number">7</span> * [<span class="string">&#x27;th&#x27;</span>] \</span><br><span class="line">        + [<span class="string">&#x27;st&#x27;</span>]</span><br><span class="line"></span><br><span class="line">year  = <span class="built_in">input</span>(<span class="string">&#x27;Year: &#x27;</span>)</span><br><span class="line">month = <span class="built_in">input</span>(<span class="string">&#x27;Month: &#x27;</span>)</span><br><span class="line">day   = <span class="built_in">input</span>(<span class="string">&#x27;Day: &#x27;</span>)</span><br><span class="line"></span><br><span class="line">month_number = <span class="built_in">int</span>(month)</span><br><span class="line">day_number = <span class="built_in">int</span>(day)</span><br><span class="line"></span><br><span class="line">month_name = months[month_number - <span class="number">1</span>]</span><br><span class="line">ordinal = day + endings[day_number - <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(month_name + <span class="string">&#x27; &#x27;</span> + ordinal + <span class="string">&#x27;. &#x27;</span> + year)</span><br><span class="line"></span><br><span class="line">-----下面是输入和输出-----</span><br><span class="line">Year: <span class="number">2023</span></span><br><span class="line">Month: <span class="number">1</span></span><br><span class="line">Day: <span class="number">15</span></span><br><span class="line">January 15th. <span class="number">2023</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>似乎这本书的版本太老了，很难办，在 PyCharm 里不过编，把 raw_input 改成 input，print 加了括号才过编</p>
+</blockquote>
+<h3 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line">numbers[<span class="number">0</span>:<span class="number">1</span>] <span class="comment"># 结果为[1]</span></span><br><span class="line"><span class="comment"># 第一个索引是需要提取的部分的第1个元素的编号，最后的索引是剩余部分的第1个元素的编号</span></span><br></pre></td></tr></table></figure>
+
+<p>如果分片所得部分包括序列结尾的元素，只需要将最后的索引置空即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers[-<span class="number">3</span>:] <span class="comment"># 结果为[8, 9, 10]</span></span><br></pre></td></tr></table></figure>
+
+<p>同样，置空的方法也适用于开始的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers[:<span class="number">3</span>] <span class="comment"># 结果为[1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<p>复制整个序列只需将两个索引都置空</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers[:] <span class="comment"># 结果为[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="步长"><a href="#步长" class="headerlink" title="步长"></a>步长</h3><p>步长不能为0，但是可以为负数，表示从右向左提取</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers[<span class="number">8</span>:<span class="number">3</span>:-<span class="number">1</span>] <span class="comment"># 结果为[9, 8, 7, 6, 5]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="序列相加"><a href="#序列相加" class="headerlink" title="序列相加"></a>序列相加</h3><p>类似于字符串，序列可以通过 + 号进行拼接</p>
+<p><strong>注：只有相同类型的序列才能进行拼接</strong></p>
+<h3 id="乘法"><a href="#乘法" class="headerlink" title="乘法"></a>乘法</h3><p>只占用空间，没有实际含义的元素——None</p>
+<p>可以用于列表的初始化</p>
+<h3 id="成员资格"><a href="#成员资格" class="headerlink" title="成员资格"></a>成员资格</h3><p><code>in</code> 运算符，返回布尔值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>permissions = <span class="string">&#x27;rw&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;w&#x27;</span> <span class="keyword">in</span> permissions</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="列表——Python的“苦力”"><a href="#列表——Python的“苦力”" class="headerlink" title="列表——Python的“苦力”"></a>列表——Python的“苦力”</h2><h3 id="用-list-由字符串创建列表"><a href="#用-list-由字符串创建列表" class="headerlink" title="用 list 由字符串创建列表"></a>用 <code>list</code> 由字符串创建列表</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(<span class="string">&#x27;Hello&#x27;</span>)</span><br><span class="line">[<span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;o&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="元素赋值"><a href="#元素赋值" class="headerlink" title="元素赋值"></a>元素赋值</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">x[<span class="number">1</span>] = <span class="number">2</span></span><br><span class="line"><span class="built_in">print</span>(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果为[1, 2, 1]</span></span><br></pre></td></tr></table></figure>
+
+<p>不能为位置不存在的元素赋值，和C是一样的</p>
+<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><p><code>del</code></p>
+<h3 id="分片赋值"><a href="#分片赋值" class="headerlink" title="分片赋值"></a>分片赋值</h3><p>在这里分片愈发显示出它的强大特性，甚至可以使用与原序列不等长的序列替换分片</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="built_in">list</span>(<span class="string">&#x27;Perl&#x27;</span>)</span><br><span class="line">name[<span class="number">1</span>:] = <span class="built_in">list</span>(<span class="string">&#x27;ython&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果为[&#x27;P&#x27;, &#x27;y&#x27;, &#x27;t&#x27;, &#x27;h&#x27;, &#x27;o&#x27;, &#x27;n&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="列表方法"><a href="#列表方法" class="headerlink" title="列表方法"></a>列表方法</h3><p><code>append</code> ：追加对象</p>
+<p><code>count</code> ：统计某个元素出现的次数</p>
+<p><code>extend</code> ：用新序列扩展原有的列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">a.extend(b)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The result is [1, 2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
+
+<p><code>index</code></p>
+<p><code>insert</code> ：<code>insert(subscript, content)</code></p>
+<p><code>pop</code> ：移除一个元素并且返回该元素的值，参数缺省则为最后一个</p>
+<blockquote>
+<p>这里可以实现栈，至于队列的更好实现方式是，使用 collection 模块中的 deque 对象</p>
+</blockquote>
+<p><code>remove</code> ：移除第一个匹配项，改变列表但是不返回值</p>
+<p><code>reverse</code> ：反转列表，改变列表但是不返回值</p>
+<p><code>sort</code></p>
+<p>高级排序：**<code>sort</code> 方法默认升序排序**，如果想按自定义方法排序，那么可以自定义 compare(x, y) 函数，此函数在 x &lt; y 时返回负数，x &gt; y 时返回正数，相等时返回 0</p>
+<p>还有另两个可选的参数——key 和 reverse（通过名字来指定的关键字参数）</p>
+<h2 id="元组——不可变序列"><a href="#元组——不可变序列" class="headerlink" title="元组——不可变序列"></a>元组——不可变序列</h2><p>用逗号分割一些值便自动创建了元组</p>
+<p>大部分时候是通过括号括起来的，空元组可以用没有内容的两个圆括号表示</p>
+<p>一个值的元组：必须加括号，如 <code>(42, )</code> ，很奇怪的语法，不是吗</p>
+<p>tuple 函数：以一个序列作为参数病把它转化为元组</p>
+<h3 id="基本元组操作"><a href="#基本元组操作" class="headerlink" title="基本元组操作"></a>基本元组操作</h3><p>仿照其他序列即可</p>
+<h3 id="元组的用武之地"><a href="#元组的用武之地" class="headerlink" title="元组的用武之地"></a>元组的用武之地</h3><p>在映射（和集合的成员）中当作键使用</p>
+<h1 id="三、字符串"><a href="#三、字符串" class="headerlink" title="三、字符串"></a>三、字符串</h1><p><strong>字符串不可变！！！</strong></p>
+<p>所以分片赋值是不合法的</p>
+<h2 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;Price of eggs: $%d&#x27;</span> % <span class="number">42</span></span><br><span class="line"><span class="string">&#x27;Price of eggs: $42&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="字段宽度和精度"><a href="#字段宽度和精度" class="headerlink" title="字段宽度和精度"></a>字段宽度和精度</h3><p><code>10.2f</code> 字段宽10，精度2</p>
+<p>用 <code>*</code> 作为字段宽度或者精度（或二者都用），此时从元组参数中读出数值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;%.*s&#x27;</span> % (<span class="number">5</span>, <span class="string">&#x27;Guido van Rossum&#x27;</span>)</span><br><span class="line"><span class="comment"># The result is &#x27;Guido&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>加上 <code>+</code> 表示无论正负都标识出符号</p>
+<h2 id="find-方法"><a href="#find-方法" class="headerlink" title="find 方法"></a>find 方法</h2><p>返回最左端索引，否则返回 -1</p>
+<p>类似于人工实现的查找方法，注意与 strstr 的区别和联系</p>
+<p>可以只提供起始点也可以提供起终点</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>subject = <span class="string">&#x27;$$$ Get rich now!!! $$$&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>subject.find(<span class="string">&#x27;$$$&#x27;</span>, <span class="number">1</span>) <span class="comment"># 提供起始点</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>subject.find(<span class="string">&#x27;$$$&#x27;</span>, <span class="number">0</span>, <span class="number">16</span>) <span class="comment"># 提供起终点</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="join、split-方法"><a href="#join、split-方法" class="headerlink" title="join、split 方法"></a>join、split 方法</h2><p>互为逆方法，<code>join</code> 用于在队列中添加元素，<code>split</code> 通过指定分隔符分割字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plus = <span class="string">&#x27;+&#x27;</span></span><br><span class="line">seq = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(plus.join(seq))</span><br><span class="line"></span><br><span class="line"><span class="comment"># The result is one+two+three</span></span><br></pre></td></tr></table></figure>
+
+<p><code>join</code> 需要的队列元素都是字符串</p>
+<p><code>split</code> 缺省分隔符是空格</p>
+<h2 id="大小写方法"><a href="#大小写方法" class="headerlink" title="大小写方法"></a>大小写方法</h2><p>lower、islower、upper、isupper、title、istitle、capwords、capitalize、swapcase</p>
+<h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><h2 id="translate"><a href="#translate" class="headerlink" title="translate"></a>translate</h2><p>可以替换字符串中的某些部分，可以用于类似语言转换的功能，因此得名</p>
+<h1 id="四、字典：当索引不好用时"><a href="#四、字典：当索引不好用时" class="headerlink" title="四、字典：当索引不好用时"></a>四、字典：当索引不好用时</h1><p>字典是 Python 中唯一内建的映射类型</p>
+<p>值没有特殊的顺序</p>
+<p>键可以是数字、字符串甚至是元组</p>
+<h2 id="建立字典"><a href="#建立字典" class="headerlink" title="建立字典"></a>建立字典</h2><p>可以利用 dict 函数，通过其他映射或者键值对建立字典</p>
+<p>和 <code>list、tuple、str</code> 一样，<code>dict</code> 也是类型而非真正的函数</p>
+<h2 id="字典和列表的重要区别"><a href="#字典和列表的重要区别" class="headerlink" title="字典和列表的重要区别"></a>字典和列表的重要区别</h2><ul>
+<li><p>键类型</p>
+</li>
+<li><p>自动添加</p>
+<ul>
+<li>列表不能将值关联到不存在的索引上</li>
+<li>即使这个键原来不存在，字典也可以自动添加键值对</li>
+</ul>
+</li>
+<li><p>成员资格</p>
+<ul>
+<li>表达式 <code>k in d（字典）</code> 查找的是<strong>键</strong></li>
+<li>表达式 <code>v in l（列表）</code> 查找的是<strong>值</strong></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>字典中的检查方式更高效，而且事实上两种方式是等效的</p>
+<p>如果字典含有指定的键，那么相应的值也是唾手可得</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>phonebook</span><br><span class="line">&#123;<span class="string">&#x27;Beth&#x27;</span>: <span class="string">&#x27;9102&#x27;</span>, <span class="string">&#x27;Alice&#x27;</span>: <span class="string">&#x27;2341&#x27;</span>, <span class="string">&#x27;Cecil&#x27;</span>: <span class="string">&#x27;3258&#x27;</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;Cecil &#x27;s number is %(Cecil)s.&quot;</span> % phonebook</span><br></pre></td></tr></table></figure>
+
+<h2 id="字典方法"><a href="#字典方法" class="headerlink" title="字典方法"></a>字典方法</h2><p>clear：清除字典中所有的项</p>
+<p>原地方法，无返回值（返回 None）</p>
+<p>copy：shallow copy</p>
+<p>deepcopy：</p>
+<p><code>from copy import deepcopy</code></p>
+<p>fromkeys：根据给定键和默认值建立字典，默认值缺省为 None</p>
+<p>get：在访问不存在的项时返回 None</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/01/13/OO%20Pre%20Review/" rel="prev" title="OO Pre Review">
+      <i class="fa fa-chevron-left"></i> OO Pre Review
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">一、基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E7%9A%84%E7%A2%8E%E7%A2%8E%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">Python 的碎碎念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.2.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%95%BF%E6%95%B4%E5%9E%8B%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">长整型数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E5%92%8C%E5%85%AB%E8%BF%9B%E5%88%B6%E6%95%B0"><span class="nav-number">1.4.</span> <span class="nav-text">十六进制和八进制数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5"><span class="nav-number">1.5.</span> <span class="nav-text">获取用户输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.6.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97"><span class="nav-number">1.7.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmath-%E5%92%8C%E5%A4%8D%E6%95%B0"><span class="nav-number">1.8.</span> <span class="nav-text">cmath 和复数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6%E8%BF%90%E8%A1%8C-Python-%E8%84%9A%E6%9C%AC"><span class="nav-number">1.9.</span> <span class="nav-text">通过命令提示符运行 Python 脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.10.</span> <span class="nav-text">字符串</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%88%97%E8%A1%A8%E5%92%8C%E5%85%83%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text">二、列表和元组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E6%A6%82%E8%A7%88"><span class="nav-number">2.1.</span> <span class="nav-text">序列概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E5%BA%8F%E5%88%97%E6%93%8D%E4%BD%9C"><span class="nav-number">2.2.</span> <span class="nav-text">通用序列操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="nav-number">2.2.1.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%89%87"><span class="nav-number">2.2.2.</span> <span class="nav-text">分片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%95%BF"><span class="nav-number">2.2.3.</span> <span class="nav-text">步长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E7%9B%B8%E5%8A%A0"><span class="nav-number">2.2.4.</span> <span class="nav-text">序列相加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%98%E6%B3%95"><span class="nav-number">2.2.5.</span> <span class="nav-text">乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E8%B5%84%E6%A0%BC"><span class="nav-number">2.2.6.</span> <span class="nav-text">成员资格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E2%80%94%E2%80%94Python%E7%9A%84%E2%80%9C%E8%8B%A6%E5%8A%9B%E2%80%9D"><span class="nav-number">2.3.</span> <span class="nav-text">列表——Python的“苦力”</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8-list-%E7%94%B1%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%9B%E5%BB%BA%E5%88%97%E8%A1%A8"><span class="nav-number">2.3.1.</span> <span class="nav-text">用 list 由字符串创建列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E8%B5%8B%E5%80%BC"><span class="nav-number">2.3.2.</span> <span class="nav-text">元素赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.3.</span> <span class="nav-text">删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E7%89%87%E8%B5%8B%E5%80%BC"><span class="nav-number">2.3.4.</span> <span class="nav-text">分片赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E6%96%B9%E6%B3%95"><span class="nav-number">2.3.5.</span> <span class="nav-text">列表方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E7%BB%84%E2%80%94%E2%80%94%E4%B8%8D%E5%8F%AF%E5%8F%98%E5%BA%8F%E5%88%97"><span class="nav-number">2.4.</span> <span class="nav-text">元组——不可变序列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%83%E7%BB%84%E6%93%8D%E4%BD%9C"><span class="nav-number">2.4.1.</span> <span class="nav-text">基本元组操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%BB%84%E7%9A%84%E7%94%A8%E6%AD%A6%E4%B9%8B%E5%9C%B0"><span class="nav-number">2.4.2.</span> <span class="nav-text">元组的用武之地</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">3.</span> <span class="nav-text">三、字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">3.1.</span> <span class="nav-text">字符串格式化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E5%AE%BD%E5%BA%A6%E5%92%8C%E7%B2%BE%E5%BA%A6"><span class="nav-number">3.1.1.</span> <span class="nav-text">字段宽度和精度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find-%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">find 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#join%E3%80%81split-%E6%96%B9%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">join、split 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.</span> <span class="nav-text">大小写方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#replace"><span class="nav-number">3.5.</span> <span class="nav-text">replace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#translate"><span class="nav-number">3.6.</span> <span class="nav-text">translate</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%AD%97%E5%85%B8%EF%BC%9A%E5%BD%93%E7%B4%A2%E5%BC%95%E4%B8%8D%E5%A5%BD%E7%94%A8%E6%97%B6"><span class="nav-number">4.</span> <span class="nav-text">四、字典：当索引不好用时</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%AD%97%E5%85%B8"><span class="nav-number">4.1.</span> <span class="nav-text">建立字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E5%92%8C%E5%88%97%E8%A1%A8%E7%9A%84%E9%87%8D%E8%A6%81%E5%8C%BA%E5%88%AB"><span class="nav-number">4.2.</span> <span class="nav-text">字典和列表的重要区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E6%96%B9%E6%B3%95"><span class="nav-number">4.3.</span> <span class="nav-text">字典方法</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="StrivingLee"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">StrivingLee</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/StrivingLee" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;StrivingLee" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:735260209@qq.com" title="E-Mail → mailto:735260209@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">StrivingLee</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">80k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">3:21</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>

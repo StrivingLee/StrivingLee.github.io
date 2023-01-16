@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"strivinglee.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前言 Not finished 浙大翁恺老师的 OO 入门课">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浙大翁恺OO">
+<meta property="og:url" content="https://strivinglee.github.io/2023/01/13/%E6%B5%99%E5%A4%A7%E7%BF%81%E6%81%BAOO/index.html">
+<meta property="og:site_name" content="StrivingLee&#39;s Blog">
+<meta property="og:description" content="前言 Not finished 浙大翁恺老师的 OO 入门课">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://strivinglee.github.io/AppData/Roaming/Typora/typora-user-images/image-20220913223756886.png">
+<meta property="og:image" content="https://strivinglee.github.io/2023/01/AppData/Roaming/Typora/typora-user-images/image-20220913223824851.png">
+<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164023484.png">
+<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164335992.png">
+<meta property="og:image" content="https://strivinglee.github.io/AppData/Roaming/Typora/typora-user-images/image-20220914222324033.png">
+<meta property="og:image" content="https://strivinglee.github.io/2023/01/AppData/Roaming/Typora/typora-user-images/image-20220912171422963.png">
+<meta property="og:image" content="https://strivinglee.github.io/2023/01/AppData/Roaming/Typora/typora-user-images/image-20220912172044907.png">
+<meta property="og:image" content="https://strivinglee.github.io/2023/01/AppData/Roaming/Typora/typora-user-images/image-20220912173013633.png">
+<meta property="og:image" content="https://strivinglee.github.io/2023/01/AppData/Roaming/Typora/typora-user-images/image-20220912173133898.png">
+<meta property="og:image" content="https://strivinglee.github.io/2023/01/AppData/Roaming/Typora/typora-user-images/image-20220912174838925.png">
+<meta property="og:image" content="https://strivinglee.github.io/2023/01/AppData/Roaming/Typora/typora-user-images/image-20220912175117169.png">
+<meta property="og:image" content="https://strivinglee.github.io/AppData/Roaming/Typora/typora-user-images/image-20220912194352676.png">
+<meta property="og:image" content="https://strivinglee.github.io/2023/01/AppData/Roaming/Typora/typora-user-images/image-20220912194831143.png">
+<meta property="og:image" content="https://strivinglee.github.io/2023/01/AppData/Roaming/Typora/typora-user-images/image-20220912195010980.png">
+<meta property="og:image" content="https://strivinglee.github.io/2023/01/AppData/Roaming/Typora/typora-user-images/image-20220912195043598.png">
+<meta property="og:image" content="https://strivinglee.github.io/AppData/Roaming/Typora/typora-user-images/image-20220912220141030.png">
+<meta property="og:image" content="d:\Working\MarkDownFiles\exception-execution.png">
+<meta property="og:image" content="https://strivinglee.github.io/AppData/Roaming/Typora/typora-user-images/image-20220913194007073.png">
+<meta property="article:published_time" content="2023-01-12T18:04:22.260Z">
+<meta property="article:modified_time" content="2023-01-13T15:57:58.248Z">
+<meta property="article:author" content="StrivingLee">
+<meta property="article:tag" content="OO">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://strivinglee.github.io/AppData/Roaming/Typora/typora-user-images/image-20220913223756886.png">
+
+<link rel="canonical" href="https://strivinglee.github.io/2023/01/13/%E6%B5%99%E5%A4%A7%E7%BF%81%E6%81%BAOO/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>浙大翁恺OO | StrivingLee's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">StrivingLee's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">揉合生命千样好</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://strivinglee.github.io/2023/01/13/%E6%B5%99%E5%A4%A7%E7%BF%81%E6%81%BAOO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="StrivingLee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StrivingLee's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浙大翁恺OO
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-01-13 02:04:22 / Modified: 23:57:58" itemprop="dateCreated datePublished" datetime="2023-01-13T02:04:22+08:00">2023-01-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OO/" itemprop="url" rel="index"><span itemprop="name">OO</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>6.9k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>17 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p><em>Not finished</em></p>
+<p>浙大翁恺老师的 OO 入门课</p>
+</blockquote>
+<span id="more"></span>
+
+<p>[TOC]</p>
+<blockquote>
+<p><em>Refs</em>：翁恺 &amp; 黑马程序员</p>
+</blockquote>
+<h2 id="第一周-类与对象"><a href="#第一周-类与对象" class="headerlink" title="第一周 类与对象"></a>第一周 类与对象</h2><h3 id="用类制造对象"><a href="#用类制造对象" class="headerlink" title="用类制造对象"></a>用类制造对象</h3><p>前置知识：对象变量是对象的管理者而非所有者，所以涉及到赋值、函数参数传递和比较（如果两个对象变量相等说明管理的是同一内容，判断管理内容是否相同应用<code>equal</code>判断）都与普通变量有所不同。 </p>
+<p>现在，我们要来尝试自己定义类，然后用自己定义的类来创建对象</p>
+<h3 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h3><p>观察这类事物的特点，用一些成员和函数表示这个类</p>
+<ul>
+<li>private是对类而非对象，所以同一类的不同对象之间可以访问彼此的成员</li>
+<li>如果不声明默认friendly，可以在同一个包的文件下共用</li>
+<li>protected见继承中的project</li>
+</ul>
+<h3 id="成员变量和成员函数"><a href="#成员变量和成员函数" class="headerlink" title="成员变量和成员函数"></a>成员变量和成员函数</h3><p><code>this</code> 这个特殊的本地变量起着至关重要的作用</p>
+<ul>
+<li>注意：如果成员函数的参数与成员变量同名，那么会取作用域更小的，也即取参数作为这个变量名对应的变量</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">New</span> &#123;</span><br><span class="line">    <span class="type">int</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setPrice</span><span class="params">(<span class="type">int</span> price)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>成员函数内部调用其他成员函数也可不加<code>this.</code></p>
+<p>区别于定义在函数内部的本地变量，成员变量的生存期是对象的生存期，作用域是类内部的成员函数（也即类内的成员函数可以使用成员变量，成员变量初始化…）</p>
+<h3 id="对象初始化"><a href="#对象初始化" class="headerlink" title="对象初始化"></a>对象初始化</h3><p>成员变量在对象初始化时，如果未赋值，会安排一个初始值，当然也可以手动初始化（手动直接赋值、调用函数赋值）</p>
+<table>
+<thead>
+<tr>
+<th>变量类型</th>
+<th>初始值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>object（某个对象）</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<p>构造函数（课上讲过不少了，我摸了（bushi））</p>
+<h2 id="第二周-对象交互"><a href="#第二周-对象交互" class="headerlink" title="第二周 对象交互"></a>第二周 对象交互</h2><h3 id="对象的识别"><a href="#对象的识别" class="headerlink" title="对象的识别"></a>对象的识别</h3><p>感觉和定义类是一回事，两件事情可以在定义类的时候同时完成。</p>
+<h3 id="对象的交互"><a href="#对象的交互" class="headerlink" title="对象的交互"></a>对象的交互</h3><p>课上讲过一嘴，说到可以用static修饰的“类全局变量”</p>
+<p>也可以通过将一个类的成员变量设置为其他类的对象来达到目的</p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220913223756886.png" alt="image-20220913223756886"></p>
+<p><strong>图1 以钟表为例来看对象的交互</strong></p>
+<h3 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h3><img src="../../AppData/Roaming/Typora/typora-user-images/image-20220913223824851.png" alt="image-20220913223824851" style="zoom: 33%;" />
+
+<p>图2 用鸡蛋图表示封装思想</p>
+<p><strong>封装思想</strong>：把数据和对数据的操作放在一起</p>
+<p>public：同一个编译单元（一个java文件）里只能有一个class为public，且public class的名字必须与编译单元同名</p>
+<p>如果不加public，则不能在这个package外面访问</p>
+<p>一个编译单元最多有一个public class，但也可以一个都没有</p>
+<p>文件结构：clock(project)-&gt;src-&gt;clock(package)-&gt;clock.java</p>
+<p><strong>import</strong>：用到的类不在同一个package里，就需要import</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> display.Display</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br></pre></td></tr></table></figure>
+
+<p>包的名字.包的类</p>
+<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164023484.png" alt="image-20220911164023484"></p>
+<p>如果不用import，也可以像这样给出全名</p>
+<p>也可以万能import（引用display所有内容，但是可能冲突，推荐import具体的类）</p>
+<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164335992.png" alt="image-20220911164335992"></p>
+<p>包的名字里面的点实际上表达文件夹层次</p>
+<p>Java通过这样的手段管理文件系统（</p>
+<p><strong>static：类变量</strong>，不属于任何一个对象，属于这个类，任何一个对象都拥有这个变量，但是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>() &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Wrong usage</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">value</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        value++; <span class="comment">// cannot compile</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>static函数只能调用static函数，只能访问static成员变量（这回理解了）</p>
+<p>static函数和变量可以通过类访问，也可以通过对象访问，只是不能获得对象的具体信息</p>
+<p>static变量的初始化只执行一次，和对象的创建过程无关</p>
+<p>这就不得不提static的四种用法了（课上讲过，我摸了，略记一下）</p>
+<h2 id="第三周-对象容器"><a href="#第三周-对象容器" class="headerlink" title="第三周 对象容器"></a>第三周 对象容器</h2><h3 id="记事本的例子"><a href="#记事本的例子" class="headerlink" title="记事本的例子"></a>记事本的例子</h3><ul>
+<li>确定功能</li>
+<li>接口设计</li>
+</ul>
+<p>每一个类都写main，方便做调试</p>
+<h3 id="泛型容器"><a href="#泛型容器" class="headerlink" title="泛型容器"></a>泛型容器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> ArrayList&lt;String&gt; notes = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(); <span class="comment">// ArrayList of String，用来存放String的ArrayList</span></span><br></pre></td></tr></table></figure>
+
+<p>ArrayList是一个类，notes本身是对象管理者</p>
+<p>容器类型、元素类型</p>
+<ul>
+<li>对象数组中的每个元素都是对象的管理者而非对象本身</li>
+</ul>
+<p>set：set相当于数学中的集合，元素不重复，且没有排序的概念</p>
+<p>toString函数直接输出这个对象，会输出toString()函数返回的字符串结果</p>
+<p>可以先写一个“空”的返回值，比如返回int类型的，先写个return 0，后面再改；</p>
+<p>返回String的先写个return “”;</p>
+<p>HashMap：想写出“聪明”的代码，和具体数据无关</p>
+<p>容器里的类型必须是对象，不能是基本元素，所以需要Integer这样的包裹类型</p>
+<p>包裹类型的变量可以直接接受所对应的基础类型变量</p>
+<p>所以HashMap的返回值也是对象，就是一个管理者</p>
+<p>如果存在会返回有效值，不存在返回null</p>
+<p>key唯一，后面的会覆盖前面的</p>
+<p>遍历没有特别简单的方法，<strong>可以考虑采取for-each遍历entrySet或者valueSet的方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(Integet k : name.keySet()) &#123;</span><br><span class="line">	<span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> name.get(k);</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要写构造器constructor</p>
+<h2 id="第四周-继承与多态"><a href="#第四周-继承与多态" class="headerlink" title="第四周 继承与多态"></a>第四周 继承与多态</h2><blockquote>
+<p>一周后看：当时看觉得难是正常的，因为现在也觉得难（）</p>
+</blockquote>
+<p><strong>继承得到了父类的所有东西</strong>，item里面的所有都得到了，都是<strong>可能</strong>可以用的（至于为什么是可能，会涉及<strong>访问权限</strong>的问题，我们后面说）</p>
+<p>如果不在子类里定义title，那么就会报“The field Item.title is not visible”（此时没有super()）</p>
+<p><strong>父类的private成员真的只有父类自己才能用</strong></p>
+<p>虽然继承给了子类，但是子类不能直接用</p>
+<p>本来我们应该做的事情是让Item给Item的title赋值，所以应该由Item来做初始化</p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220914222324033.png" alt="image-20220914222324033"></p>
+<p>可以看到，虽然CD没有private的title，但是确实产生了title</p>
+<ul>
+<li>第一个解决方案：把标识符改成protected（自己可以访问，同一个包内的其他类可以访问，子类可以访问）<strong>这是一种没办法的办法</strong></li>
+</ul>
+<p>对item做一个constructor</p>
+<ul>
+<li>cd的构造器得拿到title，用<code>super(title);</code>把参数传给父类，父类构造器通过参数构造；</li>
+<li>如果用<code>super()</code>，找不到这个没有参数的构造器</li>
+<li>如果不通过<code>super()</code>传递参数，父类会用不带参数的构造器进行构造</li>
+</ul>
+<blockquote>
+<p>因为</p>
+</blockquote>
+<ul>
+<li>先做了父类的初始化（定义初始化和构造器），然后才来做子类自己定义的初始化（我理解这样方便覆盖），再进构造函数做其他事情</li>
+<li>需要保证父类的成员变量得到恰当的初始化——定义初始化、构造器（原来在二者兼备时优先定义初始化，然后构造器），总体的顺序是父类-&gt;子类，也即父类定义初始化、构造器-&gt;子类初始化、构造器，与是否采用super()传递参数无关</li>
+<li>同时存在两个成员，也是可以的，父类的被隐藏<ul>
+<li>计算机的基本原则：优先选择范围小的，也即title应该是DVD自己的title</li>
+<li>回到父类对父类成员变量操作时，操作的是父类自己的成员变量</li>
+</ul>
+</li>
+<li>总结一下<ul>
+<li>父类的所有内容都继承给子类<ul>
+<li>但是如果是private的，子类不能访问</li>
+<li>在谁的函数里面，所指的成员变量就是谁的<ul>
+<li>子类父类出现同名成员变量，在子类里面的就是子类自己的，在父类里面的就是父类自己的，之间没有任何联系</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>要用父类的print()，需要加一个super</strong>，比如下面这段代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span> &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;DVD:&quot;</span>);</span><br><span class="line">    <span class="built_in">super</span>.print();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>类定义了类型</p>
+<p>子类定义了子类型</p>
+<p>子类的对象可以被当作父类的对象来使用</p>
+<ul>
+<li>赋值给父类的对象</li>
+<li>传递给需要父类对象的函数</li>
+<li>放进存放父类对象的容器里</li>
+</ul>
+<p>成员函数的绑定都是动态绑定</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912171422963.png" alt="image-20220912171422963" style="zoom:50%;" />
+
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912172044907.png" alt="image-20220912172044907" style="zoom:50%;" />
+
+<p>记得这里有一个强制类型转换</p>
+<p>以及函数声明必须完全相同（函数名、参数表）</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912173013633.png" alt="image-20220912173013633" style="zoom:50%;" />
+
+<p>可扩展性：不需要修改就能添加新的内容</p>
+<p>可维护性：需要修改才能添加新的内容</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912173133898.png" alt="image-20220912173133898" style="zoom:50%;" />
+
+
+
+<h2 id="第五周-设计原则"><a href="#第五周-设计原则" class="headerlink" title="第五周 设计原则"></a>第五周 设计原则</h2><p>城堡游戏</p>
+<p>open declaration：进入对应的声明</p>
+<p>String类的操作系统开销大，可以用StringBuffer类</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912174838925.png" alt="image-20220912174838925" style="zoom:50%;" />
+
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912175117169.png" alt="image-20220912175117169" style="zoom:33%;" />
+
+<p>可扩展性：用HashMap避免“硬编码”（即不需要写出每一对对应的具体键值和值，只需要每次扩展时添加新的即可）</p>
+<h2 id="第六周-抽象与接口"><a href="#第六周-抽象与接口" class="headerlink" title="第六周 抽象与接口"></a>第六周 抽象与接口</h2><h3 id="6-1-抽象"><a href="#6-1-抽象" class="headerlink" title="6.1 抽象"></a>6.1 抽象</h3><p><strong>抽象就是为了防止被制造实体</strong></p>
+<p>抽象类的作用仅仅是表达接口，而不是具体的实现细节。抽象类中可以存在抽象方法。抽象方法也是使用abstract关键字来修饰。抽象的方法是不完全的，它只是一个<strong>方法签名</strong>而完全没有方法体</p>
+<p>但是为了表达类之间的关系，还需要这样一个类来表达。如第一章的例子，如果去掉 <code>Shape</code> 类，那么 <code>Circle</code> 和 <code>Rectangle</code> 类就没有关系了</p>
+<p>抽象函数<strong>（不能有括号）</strong>：表达概念而无法实现具体代码的函数，目的是为了告诉子类需要写 <code>draw()</code> 方法</p>
+<p>只要有一个函数是抽象的，类就是抽象的。（这很容易理解，否则便无法调用这个抽象方法）</p>
+<ul>
+<li>有抽象类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">draw</span><span class="params">(Graphics g)</span>;</span><br><span class="line"><span class="comment">// 注意不能有大括号，即不能定义函数体</span></span><br></pre></td></tr></table></figure>
+
+<p>抽象类<strong>（不能产生对象，但是可以定义变量）</strong>：表达概念而无法构造出实体的类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Shape</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Rectangle</span>(a, b);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>任何继承了抽象类的非抽象子类的对象可以赋值给这个变量（也即任何Shape类子类的对象都可以由s来管理）</li>
+</ul>
+<p>实现抽象函数</p>
+<ul>
+<li>继承自抽象类的子类必须覆盖父类中的抽象函数，这种覆盖叫做<strong>实现</strong></li>
+<li>否则这个类自己就会成为抽象类</li>
+</ul>
+<p>计算机中的两种抽象</p>
+<ul>
+<li>与具体相对<ul>
+<li>表达一种概念而非实体</li>
+</ul>
+</li>
+<li>与细节相对<ul>
+<li>表示在一定程度上忽略细节而着眼大局</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-2-数据与表现分离"><a href="#6-2-数据与表现分离" class="headerlink" title="6.2 数据与表现分离"></a>6.2 数据与表现分离</h3><p>两种看程序的方法：</p>
+<ul>
+<li>看main函数，挨个展开需要看的子类代码（”自顶向下“方法）</li>
+<li>看最小的类，追到父类，从看懂小部件开始看懂整个代码（”自底向上“方法，联想HuffmanCode）</li>
+</ul>
+<p>JFrame、View（窗口）</p>
+<p><del>重绘这个图工作量太大了，先摸为敬</del></p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220912194352676.png" alt="image-20220912194352676"></p>
+<p>数据与表现分离</p>
+<ul>
+<li>程序的业务逻辑与表现无关<ul>
+<li>表现可以是图形的也可以是文本的</li>
+<li>表现可以是当地的也可以是远程的</li>
+</ul>
+</li>
+</ul>
+<p>（强调了一种“各司其职”的思想，写业务逻辑的程序员不需要关心表现是怎样的，不需要关心是通过网页输入字符串还是控制台输入还是blabla）</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912194831143.png" alt="image-20220912194831143" style="zoom:33%;" />
+
+<p>责任驱动设计</p>
+<ul>
+<li>将程序要实现的功能分配到合适的类&#x2F;对象中去</li>
+</ul>
+<p>网格化</p>
+<ul>
+<li>图形界面本身有更高的清晰度</li>
+<li>但是将画面网格化后数据更易处理</li>
+</ul>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912195010980.png" alt="image-20220912195010980" style="zoom: 25%;" />
+
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912195043598.png" alt="image-20220912195043598" style="zoom:25%;" />
+
+<p>除了C++都不支持多继承<del>（那为啥不用C++）</del></p>
+<blockquote>
+<p>9.20更新：Java可以通过接口实现多继承</p>
+</blockquote>
+<p><strong>接口</strong></p>
+<ul>
+<li><strong>接口是纯抽象类</strong><ul>
+<li><strong>所有的成员函数都是抽象函数</strong></li>
+<li><strong>所有的成员变量都是public static final（常量）</strong>，static方便调用，接口名.函数名即可调用</li>
+<li>无构造方法</li>
+<li>成员变量：<ul>
+<li>JDK7：接口中只能有抽象方法</li>
+<li>JDK8：接口中可以定义有方法体的方法</li>
+<li>JDK9：接口中可以定义私有方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>接口规定了长什么样，但是不管里面有什么</li>
+</ul>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220912220141030.png" alt="image-20220912220141030"></p>
+<p><code>cell o</code>的意思是任何实现了cell接口的都可以交给这个变量</p>
+<p>interface是一种特殊的class，<strong>和class的地位是一样的</strong>，原来用class的地方都可以用interface</p>
+<p>实现接口</p>
+<ul>
+<li>类用<code>extends</code>，接口用<code>complements</code></li>
+<li>类可以实现很多接口</li>
+<li>接口可以继承接口，但不能继承类</li>
+<li>接口不能实现接口</li>
+</ul>
+<p>讲的就是两个东西之间的链接</p>
+<p>需要其他服务的时候，不是定义一个类，而是定义一个接口</p>
+<p>cell是view和field定义的</p>
+<p><strong>面向接口的编程方式</strong></p>
+<ul>
+<li>设计程序时先定义接口，再实现类</li>
+<li>任何需要在函数间传入传出的一定是接口而不是具体的类</li>
+<li>是Java成功的关键之一，因为极适合多人同时写一个大程序</li>
+<li>也是Java被批评的要点之一，因为代码量膨胀起来很快</li>
+</ul>
+<blockquote>
+<p><em>补充自黑马程序员</em></p>
+</blockquote>
+<p>抽象类：更多地用作父类，是对事物的抽象</p>
+<p>抽取共性方法作为抽象方法，抽象方法所在的类便成为抽象类</p>
+<p>接口：更多地侧重于规则，是对行为的抽象（如游泳接口，可由动物和人实现）</p>
+<p>接口的子类也称作实现类</p>
+<ul>
+<li>要么重写接口中所有的抽象方法</li>
+<li>要么也是抽象类</li>
+</ul>
+<p>可以多实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Subclass</span> <span class="keyword">implements</span> <span class="title class_">Class1</span>, Class2 &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>所以我感觉多接口继承也是用接口的重要原因之一</p>
+</blockquote>
+<p>接口和类之间的关系</p>
+<ul>
+<li>类和类的关系<ul>
+<li>继承关系，只能单继承，不能多继承，但是可以多重继承</li>
+</ul>
+</li>
+<li>类和接口的关系<ul>
+<li>实现关系，可以单实现，也可以多实现，还可以在继承一个类的同时实现多个接口<ul>
+<li>实现多个接口需要重写<strong>全部的</strong>抽象方法</li>
+<li>同名的话就是实现了不同接口的同名函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>接口和接口的关系<ul>
+<li>继承关系，可以单继承，也可以多继承<ul>
+<li>实现最下面的子接口的话，需要重写所有的抽象方法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="第七周-控制反转与MVC模式"><a href="#第七周-控制反转与MVC模式" class="headerlink" title="第七周 控制反转与MVC模式"></a>第七周 控制反转与MVC模式</h2><h3 id="7-1-布局管理器"><a href="#7-1-布局管理器" class="headerlink" title="7.1 布局管理器"></a>7.1 布局管理器</h3><p>Swing：所有的东西都叫做部件、另外一种东西叫做容器</p>
+<p>容器可以加到容器里，部件也需要加到容器里</p>
+<p>容器管部件在哪里，显示多大</p>
+<p>布局管理器</p>
+<p>layout manager</p>
+<p>frame默认的layout manager是border</p>
+<p>这章似乎和图形可视化等等关系比较大，所以我摸了（）</p>
+<h2 id="第八周-异常处理与输入输出"><a href="#第八周-异常处理与输入输出" class="headerlink" title="第八周 异常处理与输入输出"></a>第八周 异常处理与输入输出</h2><h3 id="8-1-1-捕捉异常"><a href="#8-1-1-捕捉异常" class="headerlink" title="8.1.1 捕捉异常"></a>8.1.1 捕捉异常</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span></span><br><span class="line">    <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">    <span class="type">int</span> idx;</span><br><span class="line">    <span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">    idx = in.nextInt();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        a[idx] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Caught&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输入5，输出Hello</span></span><br><span class="line"><span class="comment">// 输入10，输出Caught</span></span><br><span class="line"><span class="comment">// 说明第6行没做，从第6行跳到了第9行</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-1-2-异常处理机制"><a href="#8-1-2-异常处理机制" class="headerlink" title="8.1.2 异常处理机制"></a>8.1.2 异常处理机制</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayIndex</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">        a[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            k();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;caught&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;main&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>a[10] = 10</code> 出了异常，之后的hello不会执行，离开f回到调用的地方<img src="D:\Working\MarkDownFiles\exception-execution.png"></p>
+<h3 id="8-1-3-捕捉到的异常"><a href="#8-1-3-捕捉到的异常" class="headerlink" title="8.1.3 捕捉到的异常"></a>8.1.3 捕捉到的异常</h3><p>捉到了做什么</p>
+<p><code>String getMessage()</code></p>
+<p><code>String toString()</code></p>
+<p><code>void printStackTrace</code></p>
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">caught</span><br><span class="line">10</span><br><span class="line">java.lang.ArrayIndexOutOfBoundsException: 10</span><br></pre></td></tr></table></figure>
+
+
+
+<p>再度抛出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">catch (Exception e) &#123;</span><br><span class="line">     System.err.println(&quot;An exception with thrown&quot;);</span><br><span class="line">     throw e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果在这个层面上需要处理，但是不能做最终的决定</p>
+<h3 id="8-2-1-异常"><a href="#8-2-1-异常" class="headerlink" title="8.2.1 异常"></a>8.2.1 异常</h3><p>读文件的例子</p>
+<p>bussiness logic业务逻辑</p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220913194007073.png" alt="image-20220913194007073"></p>
+<p>如果某一步出了问题，就用catch解决问题</p>
+<p>异常：不寻常的事情发生之时，需要终止预期的任务，让另一段代码处理</p>
+<p>异常机制最大的好处就是清晰地分开了业务逻辑代码和遇到情况时的处理代码</p>
+<p>异常声明</p>
+<ul>
+<li>如果你的函数可能抛出异常，就必须在函数头部加以声明<code>void f() throws TooBig, TooSmall, DivZero &#123; //... &#125;</code></li>
+<li>可以声明并不会真正抛出的异常</li>
+</ul>
+<p>什么能扔？</p>
+<ul>
+<li>任何继承了Throwable类的对象</li>
+<li>Exception类继承了Throwable</li>
+<li>throw new Exception;</li>
+<li>throw new Exception(“Help”);</li>
+</ul>
+<p>catch怎么匹配的异常</p>
+<h3 id="8-3-1-流"><a href="#8-3-1-流" class="headerlink" title="8.3.1 流"></a>8.3.1 流</h3><p>流是输入输出的方式</p>
+<ul>
+<li>流是一维单向的<ul>
+<li>一维：用一个数字就可以表达位置</li>
+<li>单向：读 or 写</li>
+</ul>
+</li>
+</ul>
+<p>所有的IO操作都是有风险的</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="printf-格式化输出"><a href="#printf-格式化输出" class="headerlink" title="printf()格式化输出"></a>printf()格式化输出</h3><p>Java也支持<code>printf</code>格式化输出，格式与C语言相同</p>
+<p>两个类里的<code>main函数</code>可以同时运行，当然还要看评测要求</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/OO/" rel="tag"># OO</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/01/13/%E6%97%B6%E9%92%9F%E5%8F%82%E4%B8%8E%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%9A%84%E5%BF%83%E5%BE%97/" rel="prev" title="时钟参与组合逻辑的心得">
+      <i class="fa fa-chevron-left"></i> 时钟参与组合逻辑的心得
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/01/13/OO%20Pre%20Review/" rel="next" title="OO Pre Review">
+      OO Pre Review <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%91%A8-%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">第一周 类与对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E7%B1%BB%E5%88%B6%E9%80%A0%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.</span> <span class="nav-text">用类制造对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">定义类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.</span> <span class="nav-text">成员变量和成员函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">2.4.</span> <span class="nav-text">对象初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%91%A8-%E5%AF%B9%E8%B1%A1%E4%BA%A4%E4%BA%92"><span class="nav-number">3.</span> <span class="nav-text">第二周 对象交互</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E8%AF%86%E5%88%AB"><span class="nav-number">3.1.</span> <span class="nav-text">对象的识别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%BA%A4%E4%BA%92"><span class="nav-number">3.2.</span> <span class="nav-text">对象的交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E5%B1%9E%E6%80%A7"><span class="nav-number">3.3.</span> <span class="nav-text">访问属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E5%91%A8-%E5%AF%B9%E8%B1%A1%E5%AE%B9%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">第三周 对象容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B0%E4%BA%8B%E6%9C%AC%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">4.1.</span> <span class="nav-text">记事本的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B%E5%AE%B9%E5%99%A8"><span class="nav-number">4.2.</span> <span class="nav-text">泛型容器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E5%91%A8-%E7%BB%A7%E6%89%BF%E4%B8%8E%E5%A4%9A%E6%80%81"><span class="nav-number">5.</span> <span class="nav-text">第四周 继承与多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E5%91%A8-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">6.</span> <span class="nav-text">第五周 设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E5%91%A8-%E6%8A%BD%E8%B1%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3"><span class="nav-number">7.</span> <span class="nav-text">第六周 抽象与接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E6%8A%BD%E8%B1%A1"><span class="nav-number">7.1.</span> <span class="nav-text">6.1 抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E6%95%B0%E6%8D%AE%E4%B8%8E%E8%A1%A8%E7%8E%B0%E5%88%86%E7%A6%BB"><span class="nav-number">7.2.</span> <span class="nav-text">6.2 数据与表现分离</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E5%91%A8-%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC%E4%B8%8EMVC%E6%A8%A1%E5%BC%8F"><span class="nav-number">8.</span> <span class="nav-text">第七周 控制反转与MVC模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number">8.1.</span> <span class="nav-text">7.1 布局管理器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AB%E5%91%A8-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E4%B8%8E%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-number">9.</span> <span class="nav-text">第八周 异常处理与输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-1-%E6%8D%95%E6%8D%89%E5%BC%82%E5%B8%B8"><span class="nav-number">9.1.</span> <span class="nav-text">8.1.1 捕捉异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-2-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="nav-number">9.2.</span> <span class="nav-text">8.1.2 异常处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-3-%E6%8D%95%E6%8D%89%E5%88%B0%E7%9A%84%E5%BC%82%E5%B8%B8"><span class="nav-number">9.3.</span> <span class="nav-text">8.1.3 捕捉到的异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-1-%E5%BC%82%E5%B8%B8"><span class="nav-number">9.4.</span> <span class="nav-text">8.2.1 异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-1-%E6%B5%81"><span class="nav-number">9.5.</span> <span class="nav-text">8.3.1 流</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">10.</span> <span class="nav-text">Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#printf-%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="nav-number">10.1.</span> <span class="nav-text">printf()格式化输出</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="StrivingLee"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">StrivingLee</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/StrivingLee" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;StrivingLee" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:735260209@qq.com" title="E-Mail → mailto:735260209@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">StrivingLee</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">80k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">3:21</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
