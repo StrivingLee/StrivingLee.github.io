@@ -362,7 +362,8 @@
 <p>deepcopy：</p>
 <p><code>from copy import deepcopy</code></p>
 <p>fromkeys：根据给定键和默认值建立字典，默认值缺省为 None</p>
-<p>get：在访问不存在的项时返回 None</p>
+<p>get：访问存在的项时返回键对应的值，访问不存在的项时返回 None</p>
+<p>items 和 iteritems</p>
 ]]></content>
       <categories>
         <category>Python</category>
