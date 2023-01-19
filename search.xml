@@ -208,6 +208,466 @@
 ]]></content>
   </entry>
   <entry>
+    <title>时钟参与组合逻辑的心得</title>
+    <url>/2023/01/13/%E6%97%B6%E9%92%9F%E5%8F%82%E4%B8%8E%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%9A%84%E5%BF%83%E5%BE%97/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
+<p>计组组合逻辑的一点小小的思考与整理</p>
+</blockquote>
+<span id="more"></span>
+
+<p>关于clock参与逻辑运算的问题，黑书英文版第二版（《Degital design and computer architecture》(2nd Edition) ）中 P116 已有对此问题的阐释，摘录如下：</p>
+<blockquote>
+<p>Generally, performing logic on the clock is a <strong>BAD IDEA</strong>. Clock gating delays the clock and can cause timing errors, as we will see in Section 3.5.3, so do it only if you are sure you know what you are doing.</p>
+</blockquote>
+<p>这种时钟偏移 <code>timing error</code> 简言之是<strong>时钟不同时到达各个寄存器</strong>。时钟偏移也显著地增加了建立时间 $$t_{setup}$$ 和保持时间 $$t_{hold}$$ 及时序总开销，减少了组合逻辑的有效工作时间，增加了通过组合逻辑所需要的最小延迟。（证明可参见黑书中文版 P87 或黑书英文版 P148）从而，部分器件在一定条件下会不满足时钟约束。太多的时钟偏移还会导致严重的保持时间错误，有时还需要将触发器设置为特别慢来防止相关问题。这会使得时序分析的最坏情况变糟，<strong>影响电路的适用性</strong>。</p>
+<p>那么怎么叫<code>you are sure you know what you are doing?</code> </p>
+<p>我个人认为比如在普通的D触发器的实现中，需要用反相时钟组，<strong>确实没有其他好的办法时</strong>才会使时钟参与逻辑运算。实现带使能的D触发器时确实有两种方法，但是<strong>有时钟不参与逻辑运算的方法，就没必要采用另一种</strong>。甚至高老板的PPT里没有提到这一种内部电路。</p>
+<p><img src="C:\Users\Lee\Desktop\internal-copy.png" alt="internal"></p>
+<p><del>更优质的解答：我也没法保证</del></p>
+<p>所以能有严谨的方法，就不必冒险而产生可能的冒险（）</p>
+<hr>
+<p><strong>省流</strong>：clock参与运算会使电路变差，<strong>尽量避免时钟参与逻辑运算</strong>。</p>
+<hr>
+<p>最后，希望大家能从讨论区中相互借鉴，相互帮助，共同学习~</p>
+]]></content>
+      <categories>
+        <category>CO</category>
+      </categories>
+      <tags>
+        <tag>CO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科目三实战技巧</title>
+    <url>/2022/08/06/%E7%A7%91%E7%9B%AE%E4%B8%89%E5%AE%9E%E6%88%98%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>笔者与科三的爱恨情仇</p>
+</blockquote>
+<span id="more"></span>
+
+<p>笔者去年没有练完的科三拖到了今年来练…在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
+<h3 id="上车准备"><a href="#上车准备" class="headerlink" title="上车准备"></a>上车准备</h3><blockquote>
+<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
+</blockquote>
+<h3 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h3><blockquote>
+<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
+</blockquote>
+<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><blockquote>
+<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
+</blockquote>
+<h3 id="行驶中"><a href="#行驶中" class="headerlink" title="行驶中"></a>行驶中</h3><blockquote>
+<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
+<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
+<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
+<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
+<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
+<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
+<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
+<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
+<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
+<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
+<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>生活记录</category>
+      </categories>
+      <tags>
+        <tag>科目三</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浙大翁恺OO</title>
+    <url>/2023/01/13/%E6%B5%99%E5%A4%A7%E7%BF%81%E6%81%BAOO/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p><em>Not finished</em></p>
+<p>浙大翁恺老师的 OO 入门课</p>
+</blockquote>
+<span id="more"></span>
+
+<p>[TOC]</p>
+<blockquote>
+<p><em>Refs</em>：翁恺 &amp; 黑马程序员</p>
+</blockquote>
+<h2 id="第一周-类与对象"><a href="#第一周-类与对象" class="headerlink" title="第一周 类与对象"></a>第一周 类与对象</h2><h3 id="用类制造对象"><a href="#用类制造对象" class="headerlink" title="用类制造对象"></a>用类制造对象</h3><p>前置知识：对象变量是对象的管理者而非所有者，所以涉及到赋值、函数参数传递和比较（如果两个对象变量相等说明管理的是同一内容，判断管理内容是否相同应用<code>equal</code>判断）都与普通变量有所不同。 </p>
+<p>现在，我们要来尝试自己定义类，然后用自己定义的类来创建对象</p>
+<h3 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h3><p>观察这类事物的特点，用一些成员和函数表示这个类</p>
+<ul>
+<li>private是对类而非对象，所以同一类的不同对象之间可以访问彼此的成员</li>
+<li>如果不声明默认friendly，可以在同一个包的文件下共用</li>
+<li>protected见继承中的project</li>
+</ul>
+<h3 id="成员变量和成员函数"><a href="#成员变量和成员函数" class="headerlink" title="成员变量和成员函数"></a>成员变量和成员函数</h3><p><code>this</code> 这个特殊的本地变量起着至关重要的作用</p>
+<ul>
+<li>注意：如果成员函数的参数与成员变量同名，那么会取作用域更小的，也即取参数作为这个变量名对应的变量</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">New</span> &#123;</span><br><span class="line">    <span class="type">int</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setPrice</span><span class="params">(<span class="type">int</span> price)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>成员函数内部调用其他成员函数也可不加<code>this.</code></p>
+<p>区别于定义在函数内部的本地变量，成员变量的生存期是对象的生存期，作用域是类内部的成员函数（也即类内的成员函数可以使用成员变量，成员变量初始化…）</p>
+<h3 id="对象初始化"><a href="#对象初始化" class="headerlink" title="对象初始化"></a>对象初始化</h3><p>成员变量在对象初始化时，如果未赋值，会安排一个初始值，当然也可以手动初始化（手动直接赋值、调用函数赋值）</p>
+<table>
+<thead>
+<tr>
+<th>变量类型</th>
+<th>初始值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>object（某个对象）</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<p>构造函数（课上讲过不少了，我摸了（bushi））</p>
+<h2 id="第二周-对象交互"><a href="#第二周-对象交互" class="headerlink" title="第二周 对象交互"></a>第二周 对象交互</h2><h3 id="对象的识别"><a href="#对象的识别" class="headerlink" title="对象的识别"></a>对象的识别</h3><p>感觉和定义类是一回事，两件事情可以在定义类的时候同时完成。</p>
+<h3 id="对象的交互"><a href="#对象的交互" class="headerlink" title="对象的交互"></a>对象的交互</h3><p>课上讲过一嘴，说到可以用static修饰的“类全局变量”</p>
+<p>也可以通过将一个类的成员变量设置为其他类的对象来达到目的</p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220913223756886.png" alt="image-20220913223756886"></p>
+<p><strong>图1 以钟表为例来看对象的交互</strong></p>
+<h3 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h3><img src="../../AppData/Roaming/Typora/typora-user-images/image-20220913223824851.png" alt="image-20220913223824851" style="zoom: 33%;" />
+
+<p>图2 用鸡蛋图表示封装思想</p>
+<p><strong>封装思想</strong>：把数据和对数据的操作放在一起</p>
+<p>public：同一个编译单元（一个java文件）里只能有一个class为public，且public class的名字必须与编译单元同名</p>
+<p>如果不加public，则不能在这个package外面访问</p>
+<p>一个编译单元最多有一个public class，但也可以一个都没有</p>
+<p>文件结构：clock(project)-&gt;src-&gt;clock(package)-&gt;clock.java</p>
+<p><strong>import</strong>：用到的类不在同一个package里，就需要import</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> display.Display</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br></pre></td></tr></table></figure>
+
+<p>包的名字.包的类</p>
+<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164023484.png" alt="image-20220911164023484"></p>
+<p>如果不用import，也可以像这样给出全名</p>
+<p>也可以万能import（引用display所有内容，但是可能冲突，推荐import具体的类）</p>
+<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164335992.png" alt="image-20220911164335992"></p>
+<p>包的名字里面的点实际上表达文件夹层次</p>
+<p>Java通过这样的手段管理文件系统（</p>
+<p><strong>static：类变量</strong>，不属于任何一个对象，属于这个类，任何一个对象都拥有这个变量，但是</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>() &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Wrong usage</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">value</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        value++; <span class="comment">// cannot compile</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>static函数只能调用static函数，只能访问static成员变量（这回理解了）</p>
+<p>static函数和变量可以通过类访问，也可以通过对象访问，只是不能获得对象的具体信息</p>
+<p>static变量的初始化只执行一次，和对象的创建过程无关</p>
+<p>这就不得不提static的四种用法了（课上讲过，我摸了，略记一下）</p>
+<h2 id="第三周-对象容器"><a href="#第三周-对象容器" class="headerlink" title="第三周 对象容器"></a>第三周 对象容器</h2><h3 id="记事本的例子"><a href="#记事本的例子" class="headerlink" title="记事本的例子"></a>记事本的例子</h3><ul>
+<li>确定功能</li>
+<li>接口设计</li>
+</ul>
+<p>每一个类都写main，方便做调试</p>
+<h3 id="泛型容器"><a href="#泛型容器" class="headerlink" title="泛型容器"></a>泛型容器</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> ArrayList&lt;String&gt; notes = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(); <span class="comment">// ArrayList of String，用来存放String的ArrayList</span></span><br></pre></td></tr></table></figure>
+
+<p>ArrayList是一个类，notes本身是对象管理者</p>
+<p>容器类型、元素类型</p>
+<ul>
+<li>对象数组中的每个元素都是对象的管理者而非对象本身</li>
+</ul>
+<p>set：set相当于数学中的集合，元素不重复，且没有排序的概念</p>
+<p>toString函数直接输出这个对象，会输出toString()函数返回的字符串结果</p>
+<p>可以先写一个“空”的返回值，比如返回int类型的，先写个return 0，后面再改；</p>
+<p>返回String的先写个return “”;</p>
+<p>HashMap：想写出“聪明”的代码，和具体数据无关</p>
+<p>容器里的类型必须是对象，不能是基本元素，所以需要Integer这样的包裹类型</p>
+<p>包裹类型的变量可以直接接受所对应的基础类型变量</p>
+<p>所以HashMap的返回值也是对象，就是一个管理者</p>
+<p>如果存在会返回有效值，不存在返回null</p>
+<p>key唯一，后面的会覆盖前面的</p>
+<p>遍历没有特别简单的方法，<strong>可以考虑采取for-each遍历entrySet或者valueSet的方法</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(Integet k : name.keySet()) &#123;</span><br><span class="line">	<span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> name.get(k);</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要写构造器constructor</p>
+<h2 id="第四周-继承与多态"><a href="#第四周-继承与多态" class="headerlink" title="第四周 继承与多态"></a>第四周 继承与多态</h2><blockquote>
+<p>一周后看：当时看觉得难是正常的，因为现在也觉得难（）</p>
+</blockquote>
+<p><strong>继承得到了父类的所有东西</strong>，item里面的所有都得到了，都是<strong>可能</strong>可以用的（至于为什么是可能，会涉及<strong>访问权限</strong>的问题，我们后面说）</p>
+<p>如果不在子类里定义title，那么就会报“The field Item.title is not visible”（此时没有super()）</p>
+<p><strong>父类的private成员真的只有父类自己才能用</strong></p>
+<p>虽然继承给了子类，但是子类不能直接用</p>
+<p>本来我们应该做的事情是让Item给Item的title赋值，所以应该由Item来做初始化</p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220914222324033.png" alt="image-20220914222324033"></p>
+<p>可以看到，虽然CD没有private的title，但是确实产生了title</p>
+<ul>
+<li>第一个解决方案：把标识符改成protected（自己可以访问，同一个包内的其他类可以访问，子类可以访问）<strong>这是一种没办法的办法</strong></li>
+</ul>
+<p>对item做一个constructor</p>
+<ul>
+<li>cd的构造器得拿到title，用<code>super(title);</code>把参数传给父类，父类构造器通过参数构造；</li>
+<li>如果用<code>super()</code>，找不到这个没有参数的构造器</li>
+<li>如果不通过<code>super()</code>传递参数，父类会用不带参数的构造器进行构造</li>
+</ul>
+<blockquote>
+<p>因为</p>
+</blockquote>
+<ul>
+<li>先做了父类的初始化（定义初始化和构造器），然后才来做子类自己定义的初始化（我理解这样方便覆盖），再进构造函数做其他事情</li>
+<li>需要保证父类的成员变量得到恰当的初始化——定义初始化、构造器（原来在二者兼备时优先定义初始化，然后构造器），总体的顺序是父类-&gt;子类，也即父类定义初始化、构造器-&gt;子类初始化、构造器，与是否采用super()传递参数无关</li>
+<li>同时存在两个成员，也是可以的，父类的被隐藏<ul>
+<li>计算机的基本原则：优先选择范围小的，也即title应该是DVD自己的title</li>
+<li>回到父类对父类成员变量操作时，操作的是父类自己的成员变量</li>
+</ul>
+</li>
+<li>总结一下<ul>
+<li>父类的所有内容都继承给子类<ul>
+<li>但是如果是private的，子类不能访问</li>
+<li>在谁的函数里面，所指的成员变量就是谁的<ul>
+<li>子类父类出现同名成员变量，在子类里面的就是子类自己的，在父类里面的就是父类自己的，之间没有任何联系</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>要用父类的print()，需要加一个super</strong>，比如下面这段代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span> &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;DVD:&quot;</span>);</span><br><span class="line">    <span class="built_in">super</span>.print();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>类定义了类型</p>
+<p>子类定义了子类型</p>
+<p>子类的对象可以被当作父类的对象来使用</p>
+<ul>
+<li>赋值给父类的对象</li>
+<li>传递给需要父类对象的函数</li>
+<li>放进存放父类对象的容器里</li>
+</ul>
+<p>成员函数的绑定都是动态绑定</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912171422963.png" alt="image-20220912171422963" style="zoom:50%;" />
+
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912172044907.png" alt="image-20220912172044907" style="zoom:50%;" />
+
+<p>记得这里有一个强制类型转换</p>
+<p>以及函数声明必须完全相同（函数名、参数表）</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912173013633.png" alt="image-20220912173013633" style="zoom:50%;" />
+
+<p>可扩展性：不需要修改就能添加新的内容</p>
+<p>可维护性：需要修改才能添加新的内容</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912173133898.png" alt="image-20220912173133898" style="zoom:50%;" />
+
+
+
+<h2 id="第五周-设计原则"><a href="#第五周-设计原则" class="headerlink" title="第五周 设计原则"></a>第五周 设计原则</h2><p>城堡游戏</p>
+<p>open declaration：进入对应的声明</p>
+<p>String类的操作系统开销大，可以用StringBuffer类</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912174838925.png" alt="image-20220912174838925" style="zoom:50%;" />
+
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912175117169.png" alt="image-20220912175117169" style="zoom:33%;" />
+
+<p>可扩展性：用HashMap避免“硬编码”（即不需要写出每一对对应的具体键值和值，只需要每次扩展时添加新的即可）</p>
+<h2 id="第六周-抽象与接口"><a href="#第六周-抽象与接口" class="headerlink" title="第六周 抽象与接口"></a>第六周 抽象与接口</h2><h3 id="6-1-抽象"><a href="#6-1-抽象" class="headerlink" title="6.1 抽象"></a>6.1 抽象</h3><p><strong>抽象就是为了防止被制造实体</strong></p>
+<p>抽象类的作用仅仅是表达接口，而不是具体的实现细节。抽象类中可以存在抽象方法。抽象方法也是使用abstract关键字来修饰。抽象的方法是不完全的，它只是一个<strong>方法签名</strong>而完全没有方法体</p>
+<p>但是为了表达类之间的关系，还需要这样一个类来表达。如第一章的例子，如果去掉 <code>Shape</code> 类，那么 <code>Circle</code> 和 <code>Rectangle</code> 类就没有关系了</p>
+<p>抽象函数<strong>（不能有括号）</strong>：表达概念而无法实现具体代码的函数，目的是为了告诉子类需要写 <code>draw()</code> 方法</p>
+<p>只要有一个函数是抽象的，类就是抽象的。（这很容易理解，否则便无法调用这个抽象方法）</p>
+<ul>
+<li>有抽象类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">draw</span><span class="params">(Graphics g)</span>;</span><br><span class="line"><span class="comment">// 注意不能有大括号，即不能定义函数体</span></span><br></pre></td></tr></table></figure>
+
+<p>抽象类<strong>（不能产生对象，但是可以定义变量）</strong>：表达概念而无法构造出实体的类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Shape</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Rectangle</span>(a, b);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>任何继承了抽象类的非抽象子类的对象可以赋值给这个变量（也即任何Shape类子类的对象都可以由s来管理）</li>
+</ul>
+<p>实现抽象函数</p>
+<ul>
+<li>继承自抽象类的子类必须覆盖父类中的抽象函数，这种覆盖叫做<strong>实现</strong></li>
+<li>否则这个类自己就会成为抽象类</li>
+</ul>
+<p>计算机中的两种抽象</p>
+<ul>
+<li>与具体相对<ul>
+<li>表达一种概念而非实体</li>
+</ul>
+</li>
+<li>与细节相对<ul>
+<li>表示在一定程度上忽略细节而着眼大局</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-2-数据与表现分离"><a href="#6-2-数据与表现分离" class="headerlink" title="6.2 数据与表现分离"></a>6.2 数据与表现分离</h3><p>两种看程序的方法：</p>
+<ul>
+<li>看main函数，挨个展开需要看的子类代码（”自顶向下“方法）</li>
+<li>看最小的类，追到父类，从看懂小部件开始看懂整个代码（”自底向上“方法，联想HuffmanCode）</li>
+</ul>
+<p>JFrame、View（窗口）</p>
+<p><del>重绘这个图工作量太大了，先摸为敬</del></p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220912194352676.png" alt="image-20220912194352676"></p>
+<p>数据与表现分离</p>
+<ul>
+<li>程序的业务逻辑与表现无关<ul>
+<li>表现可以是图形的也可以是文本的</li>
+<li>表现可以是当地的也可以是远程的</li>
+</ul>
+</li>
+</ul>
+<p>（强调了一种“各司其职”的思想，写业务逻辑的程序员不需要关心表现是怎样的，不需要关心是通过网页输入字符串还是控制台输入还是blabla）</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912194831143.png" alt="image-20220912194831143" style="zoom:33%;" />
+
+<p>责任驱动设计</p>
+<ul>
+<li>将程序要实现的功能分配到合适的类&#x2F;对象中去</li>
+</ul>
+<p>网格化</p>
+<ul>
+<li>图形界面本身有更高的清晰度</li>
+<li>但是将画面网格化后数据更易处理</li>
+</ul>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912195010980.png" alt="image-20220912195010980" style="zoom: 25%;" />
+
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912195043598.png" alt="image-20220912195043598" style="zoom:25%;" />
+
+<p>除了C++都不支持多继承<del>（那为啥不用C++）</del></p>
+<blockquote>
+<p>9.20更新：Java可以通过接口实现多继承</p>
+</blockquote>
+<p><strong>接口</strong></p>
+<ul>
+<li><strong>接口是纯抽象类</strong><ul>
+<li><strong>所有的成员函数都是抽象函数</strong></li>
+<li><strong>所有的成员变量都是public static final（常量）</strong>，static方便调用，接口名.函数名即可调用</li>
+<li>无构造方法</li>
+<li>成员变量：<ul>
+<li>JDK7：接口中只能有抽象方法</li>
+<li>JDK8：接口中可以定义有方法体的方法</li>
+<li>JDK9：接口中可以定义私有方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>接口规定了长什么样，但是不管里面有什么</li>
+</ul>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220912220141030.png" alt="image-20220912220141030"></p>
+<p><code>cell o</code>的意思是任何实现了cell接口的都可以交给这个变量</p>
+<p>interface是一种特殊的class，<strong>和class的地位是一样的</strong>，原来用class的地方都可以用interface</p>
+<p>实现接口</p>
+<ul>
+<li>类用<code>extends</code>，接口用<code>complements</code></li>
+<li>类可以实现很多接口</li>
+<li>接口可以继承接口，但不能继承类</li>
+<li>接口不能实现接口</li>
+</ul>
+<p>讲的就是两个东西之间的链接</p>
+<p>需要其他服务的时候，不是定义一个类，而是定义一个接口</p>
+<p>cell是view和field定义的</p>
+<p><strong>面向接口的编程方式</strong></p>
+<ul>
+<li>设计程序时先定义接口，再实现类</li>
+<li>任何需要在函数间传入传出的一定是接口而不是具体的类</li>
+<li>是Java成功的关键之一，因为极适合多人同时写一个大程序</li>
+<li>也是Java被批评的要点之一，因为代码量膨胀起来很快</li>
+</ul>
+<blockquote>
+<p><em>补充自黑马程序员</em></p>
+</blockquote>
+<p>抽象类：更多地用作父类，是对事物的抽象</p>
+<p>抽取共性方法作为抽象方法，抽象方法所在的类便成为抽象类</p>
+<p>接口：更多地侧重于规则，是对行为的抽象（如游泳接口，可由动物和人实现）</p>
+<p>接口的子类也称作实现类</p>
+<ul>
+<li>要么重写接口中所有的抽象方法</li>
+<li>要么也是抽象类</li>
+</ul>
+<p>可以多实现</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Subclass</span> <span class="keyword">implements</span> <span class="title class_">Class1</span>, Class2 &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>所以我感觉多接口继承也是用接口的重要原因之一</p>
+</blockquote>
+<p>接口和类之间的关系</p>
+<ul>
+<li>类和类的关系<ul>
+<li>继承关系，只能单继承，不能多继承，但是可以多重继承</li>
+</ul>
+</li>
+<li>类和接口的关系<ul>
+<li>实现关系，可以单实现，也可以多实现，还可以在继承一个类的同时实现多个接口<ul>
+<li>实现多个接口需要重写<strong>全部的</strong>抽象方法</li>
+<li>同名的话就是实现了不同接口的同名函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>接口和接口的关系<ul>
+<li>继承关系，可以单继承，也可以多继承<ul>
+<li>实现最下面的子接口的话，需要重写所有的抽象方法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="第七周-控制反转与MVC模式"><a href="#第七周-控制反转与MVC模式" class="headerlink" title="第七周 控制反转与MVC模式"></a>第七周 控制反转与MVC模式</h2><h3 id="7-1-布局管理器"><a href="#7-1-布局管理器" class="headerlink" title="7.1 布局管理器"></a>7.1 布局管理器</h3><p>Swing：所有的东西都叫做部件、另外一种东西叫做容器</p>
+<p>容器可以加到容器里，部件也需要加到容器里</p>
+<p>容器管部件在哪里，显示多大</p>
+<p>布局管理器</p>
+<p>layout manager</p>
+<p>frame默认的layout manager是border</p>
+<p>这章似乎和图形可视化等等关系比较大，所以我摸了（）</p>
+<h2 id="第八周-异常处理与输入输出"><a href="#第八周-异常处理与输入输出" class="headerlink" title="第八周 异常处理与输入输出"></a>第八周 异常处理与输入输出</h2><h3 id="8-1-1-捕捉异常"><a href="#8-1-1-捕捉异常" class="headerlink" title="8.1.1 捕捉异常"></a>8.1.1 捕捉异常</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span></span><br><span class="line">    <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">    <span class="type">int</span> idx;</span><br><span class="line">    <span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">    idx = in.nextInt();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        a[idx] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Caught&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输入5，输出Hello</span></span><br><span class="line"><span class="comment">// 输入10，输出Caught</span></span><br><span class="line"><span class="comment">// 说明第6行没做，从第6行跳到了第9行</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-1-2-异常处理机制"><a href="#8-1-2-异常处理机制" class="headerlink" title="8.1.2 异常处理机制"></a>8.1.2 异常处理机制</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayIndex</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">        a[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            k();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;caught&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;main&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>a[10] = 10</code> 出了异常，之后的hello不会执行，离开f回到调用的地方<img src="D:\Working\MarkDownFiles\exception-execution.png"></p>
+<h3 id="8-1-3-捕捉到的异常"><a href="#8-1-3-捕捉到的异常" class="headerlink" title="8.1.3 捕捉到的异常"></a>8.1.3 捕捉到的异常</h3><p>捉到了做什么</p>
+<p><code>String getMessage()</code></p>
+<p><code>String toString()</code></p>
+<p><code>void printStackTrace</code></p>
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">caught</span><br><span class="line">10</span><br><span class="line">java.lang.ArrayIndexOutOfBoundsException: 10</span><br></pre></td></tr></table></figure>
+
+
+
+<p>再度抛出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">catch (Exception e) &#123;</span><br><span class="line">     System.err.println(&quot;An exception with thrown&quot;);</span><br><span class="line">     throw e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果在这个层面上需要处理，但是不能做最终的决定</p>
+<h3 id="8-2-1-异常"><a href="#8-2-1-异常" class="headerlink" title="8.2.1 异常"></a>8.2.1 异常</h3><p>读文件的例子</p>
+<p>bussiness logic业务逻辑</p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220913194007073.png" alt="image-20220913194007073"></p>
+<p>如果某一步出了问题，就用catch解决问题</p>
+<p>异常：不寻常的事情发生之时，需要终止预期的任务，让另一段代码处理</p>
+<p>异常机制最大的好处就是清晰地分开了业务逻辑代码和遇到情况时的处理代码</p>
+<p>异常声明</p>
+<ul>
+<li>如果你的函数可能抛出异常，就必须在函数头部加以声明<code>void f() throws TooBig, TooSmall, DivZero &#123; //... &#125;</code></li>
+<li>可以声明并不会真正抛出的异常</li>
+</ul>
+<p>什么能扔？</p>
+<ul>
+<li>任何继承了Throwable类的对象</li>
+<li>Exception类继承了Throwable</li>
+<li>throw new Exception;</li>
+<li>throw new Exception(“Help”);</li>
+</ul>
+<p>catch怎么匹配的异常</p>
+<h3 id="8-3-1-流"><a href="#8-3-1-流" class="headerlink" title="8.3.1 流"></a>8.3.1 流</h3><p>流是输入输出的方式</p>
+<ul>
+<li>流是一维单向的<ul>
+<li>一维：用一个数字就可以表达位置</li>
+<li>单向：读 or 写</li>
+</ul>
+</li>
+</ul>
+<p>所有的IO操作都是有风险的</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="printf-格式化输出"><a href="#printf-格式化输出" class="headerlink" title="printf()格式化输出"></a>printf()格式化输出</h3><p>Java也支持<code>printf</code>格式化输出，格式与C语言相同</p>
+<p>两个类里的<code>main函数</code>可以同时运行，当然还要看评测要求</p>
+]]></content>
+      <categories>
+        <category>OO</category>
+      </categories>
+      <tags>
+        <tag>OO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python基础教程（第2版）阅读笔记</title>
     <url>/2023/01/14/Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
@@ -717,6 +1177,9 @@
 <h2 id="exec-和-eval"><a href="#exec-和-eval" class="headerlink" title="exec 和 eval"></a>exec 和 eval</h2><p>动态地创造 Python 代码，作为语句执行或作为表达式计算</p>
 <p>并不常用，有的时候比较顺手<del>，太麻烦了，我回头就看</del></p>
 <h1 id="五、充电时刻"><a href="#五、充电时刻" class="headerlink" title="五、充电时刻"></a>五、充电时刻</h1><p>库和模块的相关知识</p>
+<blockquote>
+<p>充电时刻（batteries included）这个短语最早由 Frank Stajano 创造，用于描述 Python 丰富的标准库</p>
+</blockquote>
 <h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>模块(Module)，是一个 Python 文件，以 .py 结尾，包含了 Python 对象定义和Python语句，帮助程序员有逻辑地组织 Python 代码段。</p>
 <p>模块能定义函数，类和变量，模块里也能包含可执行的代码。</p>
 <p><strong>例子</strong></p>
@@ -768,38 +1231,34 @@
 <p>在 UNIX 系统，典型的 PYTHONPATH 如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set PYTHONPATH=/usr/local/lib/python</span><br></pre></td></tr></table></figure>
 
-<h2 id="命名空间和作用域"><a href="#命名空间和作用域" class="headerlink" title="命名空间和作用域"></a>命名空间和作用域</h2><p>变量是拥有匹配对象的名字（标识符）。命名空间是一个包含了变量名称们（键）和它们各自相应的对象们（值）的<strong>字典</strong>。</p>
+<h2 id="命名空间和作用域"><a href="#命名空间和作用域" class="headerlink" title="命名空间和作用域"></a>命名空间和作用域</h2><p>变量是拥有匹配对象的名字（标识符）。命名空间是一个包含了变量名称（键）和它们各自相应的对象（值）的<strong>字典</strong>。</p>
 <p>一个 Python 表达式可以访问局部命名空间和全局命名空间里的变量。如果一个局部变量和一个全局变量重名，则<strong>局部变量会覆盖全局变量</strong>。</p>
 <p>每个函数都有自己的命名空间。类的方法的作用域规则和通常函数的一样。</p>
-<p>Python 会智能地猜测一个变量是局部的还是全局的，它假设任何在函数内赋值的变量都是局部的。</p>
-<p>因此，如果要给函数内的全局变量赋值，必须使用 global 语句。</p>
-<p>global VarName 的表达式会告诉 Python， VarName 是一个全局变量，这样 Python 就不会在局部命名空间里寻找这个变量了。</p>
-<p>例如，我们在全局命名空间里定义一个变量 Money。我们再在函数内给变量 Money 赋值，然后 Python 会假定 Money 是一个局部变量。然而，我们并没有在访问前声明一个局部变量 Money，结果就是会出现一个 UnboundLocalError 的错误。取消 global 语句前的注释符就能解决这个问题。</p>
+<p>Python 会智能地猜测一个变量是局部的还是全局的，它假设任何在函数内赋值的变量都是局部的。因此，如果要给函数内的全局变量赋值，必须使用 global 语句。<code>global VarName</code> 表示 <code>VarName</code> 是一个全局变量。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Money = 2000</span><br><span class="line">def AddMoney():</span><br><span class="line">   # 想改正代码就取消以下注释:</span><br><span class="line">   # global Money</span><br><span class="line">   Money = Money + 1</span><br><span class="line"> </span><br><span class="line">print Money</span><br><span class="line">AddMoney()</span><br><span class="line">print Money</span><br></pre></td></tr></table></figure>
 
-<h2 id="dir"><a href="#dir" class="headerlink" title="dir()"></a>dir()</h2><p>dir() 函数一个排好序的字符串列表，内容是一个模块里定义过的名字。</p>
-<p>返回的列表容纳了在一个模块里定义的所有模块，变量和函数。如下一个简单的实例：</p>
+<p>在全局命名空间里定义变量 Money。再在函数内给变量 Money 赋值，Python 会假定 Money 是局部变量。然而，我们并没有在访问前声明一个局部变量 Money，结果会出现 UnboundLocalError。将 Money 声明为 <code>global</code>  就能解决这个问题。</p>
+<h2 id="dir"><a href="#dir" class="headerlink" title="dir()"></a>dir()</h2><p>dir() 函数返回一个由模块中定义的名字（模块里定义的所有模块，变量和函数）组成的有序字符串列表：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import math</span><br><span class="line">content = dir(math)</span><br><span class="line">print content;</span><br></pre></td></tr></table></figure>
 
 <p>以上实例输出结果：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#x27;__doc__&#x27;, &#x27;__file__&#x27;, &#x27;__name__&#x27;, &#x27;acos&#x27;, &#x27;asin&#x27;, &#x27;atan&#x27;, </span><br><span class="line">&#x27;atan2&#x27;, &#x27;ceil&#x27;, &#x27;cos&#x27;, &#x27;cosh&#x27;, &#x27;degrees&#x27;, &#x27;e&#x27;, &#x27;exp&#x27;, </span><br><span class="line">&#x27;fabs&#x27;, &#x27;floor&#x27;, &#x27;fmod&#x27;, &#x27;frexp&#x27;, &#x27;hypot&#x27;, &#x27;ldexp&#x27;, &#x27;log&#x27;,</span><br><span class="line">&#x27;log10&#x27;, &#x27;modf&#x27;, &#x27;pi&#x27;, &#x27;pow&#x27;, &#x27;radians&#x27;, &#x27;sin&#x27;, &#x27;sinh&#x27;, </span><br><span class="line">&#x27;sqrt&#x27;, &#x27;tan&#x27;, &#x27;tanh&#x27;]</span><br></pre></td></tr></table></figure>
 
-<p>在这里，特殊字符串变量__name__指向模块的名字，__file__指向该模块的导入文件名。</p>
+<p>在这里，特殊字符串变量 <code>__name__</code> 指向模块的名字，<code>__file__</code> 指向该模块的导入文件名。</p>
 <h2 id="globals-和-locals"><a href="#globals-和-locals" class="headerlink" title="globals() 和 locals()"></a>globals() 和 locals()</h2><p>根据调用地方的不同，globals() 和 locals() 函数可被用来返回全局和局部命名空间里的名字。</p>
 <p>如果在函数内部调用 locals()，返回的是所有能在该函数里访问的命名。</p>
 <p>如果在函数内部调用 globals()，返回的是所有在该函数里能访问的全局名字。</p>
 <p>两个函数的返回类型都是字典，可用 keys() 函数摘取名字。</p>
-<h2 id="reload-函数"><a href="#reload-函数" class="headerlink" title="reload() 函数"></a>reload() 函数</h2><p>需要多次执行模块里顶层部分的代码</p>
-<p>reload() 函数会重新导入之前导入过的模块。语法如下：</p>
+<h2 id="reload-函数"><a href="#reload-函数" class="headerlink" title="reload() 函数"></a>reload() 函数</h2><p>需要多次执行模块里顶层部分的代码时可以调用 reload() 函数，它会重新导入之前导入过的模块：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">reload(module_name)</span><br></pre></td></tr></table></figure>
 
 <p>在这里，module_name要直接放<strong>模块的名字</strong>，而不是一个字符串形式。比如想重载 hello 模块，如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">reload(hello)</span><br></pre></td></tr></table></figure>
-
-<p>这里书上和菜鸟冲突了，书上说 Python3 取消了 reload</p>
+<blockquote>
+<p>这里书上和菜鸟冲突了，书上说 Python3 取消了 reload()</p>
+</blockquote>
 <h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>包是一个分层次的文件目录结构，它定义了一个由模块及子包，和子包下的子包等组成的 Python 的应用环境。</p>
-<p>简单来说，包就是文件夹，但该文件夹下必须存在 <strong><code>__init__.py</code></strong> 文件, 该文件的内容可以为空。**<code>__init__.py</code>** 用于标识当前文件夹是一个包。</p>
-<p>考虑一个在 <strong>package_runoob</strong> 目录下的 <strong><code>runoob1.py、runoob2.py、__init__.py</code></strong> 文件，test.py 为测试调用包的代码，目录结构如下：</p>
+<p>简单来说，包就是文件夹，但该文件夹下必须存在 <strong><code>__init__.py</code></strong> 文件（内容可以为空）。**<code>__init__.py</code>** 用于标识当前文件夹是一个包。</p>
+<p>考虑一个在 <strong>package_runoob</strong> 目录下的 <strong>runoob1.py、runoob2.py、_<em>init</em>_.py</strong> 文件，test.py 为测试调用包的代码，目录结构如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">test.py</span><br><span class="line">package_runoob</span><br><span class="line">|-- __init__.py</span><br><span class="line">|-- runoob1.py</span><br><span class="line">|-- runoob2.py</span><br></pre></td></tr></table></figure>
 
 <p>源代码如下：</p>
@@ -815,7 +1274,295 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package_runoob 初始化</span><br><span class="line">I&#x27;m in runoob1</span><br><span class="line">I&#x27;m in runoob2</span><br></pre></td></tr></table></figure>
 
 <p>如上，为了举例，我们只在每个文件里放置了一个函数，但其实你可以放置许多函数。你也可以在这些文件里定义Python的类，然后为这些类建一个包。</p>
-<h1 id="六、面向对象"><a href="#六、面向对象" class="headerlink" title="六、面向对象"></a>六、面向对象</h1><p>这部分 OO Pre 里提及不少，欢迎来我的博客转转——([OO Pre Review | StrivingLee’s Blog](<a href="https://strivinglee.github.io/2023/01/13/OO">https://strivinglee.github.io/2023/01/13/OO</a> Pre Review&#x2F;))</p>
+<h1 id="六、面向对象"><a href="#六、面向对象" class="headerlink" title="六、面向对象"></a>六、面向对象</h1><p>这部分 OO Pre 里提及不少，欢迎来这篇博客转转——([OO Pre Review | StrivingLee’s Blog](<a href="https://strivinglee.github.io/2023/01/13/OO">https://strivinglee.github.io/2023/01/13/OO</a> Pre Review&#x2F;))</p>
+<h1 id="七、文件I-x2F-O-amp-File方法"><a href="#七、文件I-x2F-O-amp-File方法" class="headerlink" title="七、文件I&#x2F;O &amp; File方法"></a>七、文件I&#x2F;O &amp; File方法</h1><h3 id="打印到屏幕"><a href="#打印到屏幕" class="headerlink" title="打印到屏幕"></a>打印到屏幕</h3><p>print() 函数把你传递的表达式<strong>转换成一个字符串表达式</strong>，并将结果写到标准输出</p>
+<h3 id="读取键盘输入"><a href="#读取键盘输入" class="headerlink" title="读取键盘输入"></a>读取键盘输入</h3><p>Python提供了两个内置函数从标准输入读入一行文本，默认的标准输入是键盘。如下：</p>
+<ul>
+<li>raw_input</li>
+<li>input</li>
+</ul>
+<h4 id="raw-input函数"><a href="#raw-input函数" class="headerlink" title="raw_input函数"></a>raw_input函数</h4><p>raw_input([prompt]) 函数从标准输入读取一行，并返回一个字符串（<strong>去掉结尾的换行符</strong>）：</p>
+<h4 id="input函数"><a href="#input函数" class="headerlink" title="input函数"></a>input函数</h4><p>input([prompt]) 函数和 raw_input([prompt]) 函数基本类似，但是 input 可以接收一个Python表达式作为输入，并将运算结果返回。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">str</span> = <span class="built_in">input</span>(<span class="string">&quot;请输入：&quot;</span>)</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;你输入的内容是: &quot;</span>, <span class="built_in">str</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">请输入：[x*<span class="number">5</span> <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">10</span>,<span class="number">2</span>)]</span><br><span class="line">你输入的内容是:  [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><p>可以用 file 对象做大部分的文件操作。</p>
+<h3 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h3><p>内置函数，打开一个文件，创建一个file对象供相关方法调用它进行读写。</p>
+<p><strong>必须先创建 file 对象才能进行后续操作</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">file object = open(file_name[, access_mode][, buffering])</span><br></pre></td></tr></table></figure>
+
+<p>各个参数的细节如下：</p>
+<ul>
+<li>file_name：文件名称的字符串值。</li>
+<li>access_mode：打开文件的模式（只读，写入，追加等），默认为只读(r)。</li>
+<li>buffering：<ul>
+<li>0：无寄存</li>
+<li>1：寄存行</li>
+<li>大于1的整数：寄存区的缓冲大小</li>
+<li>负值：系统默认寄存区缓冲大小</li>
+</ul>
+</li>
+</ul>
+<p>不同模式打开文件的完全列表：</p>
+<table>
+<thead>
+<tr>
+<th align="left">模式</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">t</td>
+<td align="left">文本模式 (默认)。</td>
+</tr>
+<tr>
+<td align="left">x</td>
+<td align="left">写模式，新建一个文件，如果该文件已存在则会报错。</td>
+</tr>
+<tr>
+<td align="left">b</td>
+<td align="left">二进制模式。</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left">打开一个文件进行更新(可读可写)。</td>
+</tr>
+<tr>
+<td align="left">U</td>
+<td align="left">通用换行模式（不推荐）。</td>
+</tr>
+<tr>
+<td align="left">r</td>
+<td align="left">以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td align="left">rb</td>
+<td align="left">以二进制格式打开一个文件用于只读。文件指针将会放在文件的开头。这是默认模式。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td align="left">r+</td>
+<td align="left">打开一个文件用于读写。文件指针将会放在文件的开头。</td>
+</tr>
+<tr>
+<td align="left">rb+</td>
+<td align="left">以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td align="left">w</td>
+<td align="left">打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td align="left">wb</td>
+<td align="left">以二进制格式打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td align="left">w+</td>
+<td align="left">打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</td>
+</tr>
+<tr>
+<td align="left">wb+</td>
+<td align="left">以二进制格式打开一个文件用于读写。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。一般用于非文本文件如图片等。</td>
+</tr>
+<tr>
+<td align="left">a</td>
+<td align="left">打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td align="left">ab</td>
+<td align="left">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</td>
+</tr>
+<tr>
+<td align="left">a+</td>
+<td align="left">打开一个文件用于读写。如果该文件已存在，文件指针将会放在文件的结尾。文件打开时会是追加模式。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+<tr>
+<td align="left">ab+</td>
+<td align="left">以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</td>
+</tr>
+</tbody></table>
+<p><img src="https://www.runoob.com/wp-content/uploads/2013/11/2112205-861c05b2bdbc9c28.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th align="center">模式</th>
+<th align="center">r</th>
+<th align="center">r+</th>
+<th align="center">w</th>
+<th align="center">w+</th>
+<th align="center">a</th>
+<th align="center">a+</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">读</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center"></td>
+<td align="center">+</td>
+<td align="center"></td>
+<td align="center">+</td>
+</tr>
+<tr>
+<td align="center">写</td>
+<td align="center"></td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+</tr>
+<tr>
+<td align="center">创建</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+</tr>
+<tr>
+<td align="center">覆盖</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">指针在开始</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">指针在结尾</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">+</td>
+<td align="center">+</td>
+</tr>
+</tbody></table>
+<h3 id="File对象的属性"><a href="#File对象的属性" class="headerlink" title="File对象的属性"></a>File对象的属性</h3><p>一个文件被打开后，你有一个 file 对象，你可以得到有关该文件的各种信息。</p>
+<p>以下是和file对象相关的所有属性的列表：</p>
+<table>
+<thead>
+<tr>
+<th align="left">属性</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">file.closed</td>
+<td align="left">返回true如果文件已被关闭，否则返回false。</td>
+</tr>
+<tr>
+<td align="left">file.mode</td>
+<td align="left">返回被打开文件的访问模式。</td>
+</tr>
+<tr>
+<td align="left">file.name</td>
+<td align="left">返回文件的名称。</td>
+</tr>
+<tr>
+<td align="left">file.softspace</td>
+<td align="left">如果用print输出后，必须跟一个空格符，则返回false。否则返回true。</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开一个文件</span></span><br><span class="line">fo = <span class="built_in">open</span>(<span class="string">&quot;foo.txt&quot;</span>, <span class="string">&quot;w&quot;</span>)</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;文件名：&quot;</span>, fo.name</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;是否已关闭：&quot;</span>, fo.closed</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;访问模式：&quot;</span>, fo.mode</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;末尾是否强制加空格：&quot;</span>, fo.softspace</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">文件名：foo.txt</span><br><span class="line">是否已关闭：False</span><br><span class="line">访问模式：w</span><br><span class="line">末尾是否强制加空格：0</span><br></pre></td></tr></table></figure>
+
+<h3 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h3><p>File 对象的 close() 方法刷新缓冲区里任何还没写入的信息，并关闭该文件不能再进行写入。</p>
+<p>当一个文件对象的引用被重新指定给另一个文件时，Python 会关闭之前的文件。</p>
+<p><strong>用 close() 方法关闭文件是一个很好的习惯</strong></p>
+<p>语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fileObject.close()</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开一个文件</span></span><br><span class="line">fo = <span class="built_in">open</span>(<span class="string">&quot;foo.txt&quot;</span>, <span class="string">&quot;w&quot;</span>)</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;文件名：&quot;</span>, fo.name</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭打开的文件</span></span><br><span class="line">fo.close()</span><br></pre></td></tr></table></figure>
+
+<p>以上实例输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">文件名：foo.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="write"><a href="#write" class="headerlink" title="write()"></a>write()</h3><p>可将任何字符串写入一个<strong>已打开</strong>的文件，不会在字符串的结尾添加换行符(‘\n’)</p>
+<blockquote>
+<p>注：Python字符串也可以是二进制数据</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fileObject.write(string)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fo = <span class="built_in">open</span>(<span class="string">&quot;foo.txt&quot;</span>, <span class="string">&quot;w&quot;</span>)</span><br><span class="line">fo.write(<span class="string">&quot;strivinglee.github.io!\nVery good site!\n&quot;</span>)</span><br><span class="line"></span><br><span class="line">fo.close()</span><br></pre></td></tr></table></figure>
+
+<p>创建foo.txt文件，并将给定内容写入文件，最终关闭文件</p>
+<p>如果你打开这个文件，将看到以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cat foo.txt </span><br><span class="line">strivinglee.github.io!</span><br><span class="line">Very good site!</span><br></pre></td></tr></table></figure>
+
+<h3 id="read"><a href="#read" class="headerlink" title="read()"></a>read()</h3><p>从已打开的文件开头开始读取一个字符串</p>
+<blockquote>
+<p>Python 字符串注意点同上</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fileObject.read([count])</span><br></pre></td></tr></table></figure>
+
+<p>缺省则尽可能多地读取更多的内容，很可能是直到文件的末尾</p>
+<p>这里我们用到以上创建的 foo.txt 文件。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fo = <span class="built_in">open</span>(<span class="string">&quot;foo.txt&quot;</span>, <span class="string">&quot;r+&quot;</span>)</span><br><span class="line"><span class="built_in">str</span> = fo.read(<span class="number">11</span>)</span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;读取的字符串是：&quot;</span>, <span class="built_in">str</span></span><br><span class="line"></span><br><span class="line">fo.close()</span><br></pre></td></tr></table></figure>
+
+<p>以上实例输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">读取的字符串是：strivinglee</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件定位"><a href="#文件定位" class="headerlink" title="文件定位"></a>文件定位</h2><p>tell()方法告诉你文件内的当前位置（下一次的读写位置）</p>
+<p>seek(offset[, from]) 方法改变当前文件的位置。Offset变量表示要移动的字节数，From变量指定开始移动字节的参考位置。</p>
+<p>from：</p>
+<ul>
+<li>0：文件开头</li>
+<li>1：当前位置</li>
+<li>2：文件末尾</li>
+</ul>
+<p>例子：</p>
+<p>就用我们上面创建的文件foo.txt。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 打开一个文件</span><br><span class="line">fo = open(&quot;foo.txt&quot;, &quot;r+&quot;)</span><br><span class="line">str = fo.read(10)</span><br><span class="line">print &quot;读取的字符串是 : &quot;, str</span><br><span class="line"> </span><br><span class="line"># 查找当前位置</span><br><span class="line">position = fo.tell()</span><br><span class="line">print &quot;当前文件位置 : &quot;, position</span><br><span class="line"> </span><br><span class="line"># 把指针再次重新定位到文件开头</span><br><span class="line">position = fo.seek(0, 0)</span><br><span class="line">str = fo.read(10)</span><br><span class="line">print &quot;重新读取字符串 : &quot;, str</span><br><span class="line"># 关闭打开的文件</span><br><span class="line">fo.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">读取的字符串是 :  www.runoob</span><br><span class="line">当前文件位置 :  10</span><br><span class="line">重新读取字符串 :  www.runoob</span><br></pre></td></tr></table></figure>
+
+<h3 id="rename-方法"><a href="#rename-方法" class="headerlink" title="rename() 方法"></a>rename() 方法</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">os.rename(current_file_name, new_file_name)</span><br></pre></td></tr></table></figure>
+
+<h3 id="remove-方法"><a href="#remove-方法" class="headerlink" title="remove()方法"></a>remove()方法</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">os.remove(file_name)</span><br></pre></td></tr></table></figure>
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>所有文件都包含在各个不同的目录下，不过Python也能轻松处理。os模块有许多方法能帮你创建，删除和更改目录。</p>
+<h3 id="mkdir-方法"><a href="#mkdir-方法" class="headerlink" title="mkdir()方法"></a>mkdir()方法</h3><p>可以使用os模块的mkdir()方法在当前目录下创建新的目录。你需要提供一个包含了要创建的目录名称的参数。</p>
+<p>语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.mkdir(<span class="string">&quot;newdir&quot;</span>) <span class="comment"># 要创建的目录名称</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在当前目录下创建新目录test</span></span><br><span class="line">os.mkdir(<span class="string">&quot;test&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="chdir-方法"><a href="#chdir-方法" class="headerlink" title="chdir()方法"></a>chdir()方法</h3><p>可以用chdir()方法来改变当前的目录。chdir()方法需要的一个参数是你想设成当前目录的目录名称。</p>
+<p>语法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">os.chdir(<span class="string">&quot;newdir&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 将当前目录改为&quot;/home/newdir&quot;（进入&quot;/home/newdir&quot;目录）</span></span><br><span class="line">os.chdir(<span class="string">&quot;/home/newdir&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="getcwd-方法"><a href="#getcwd-方法" class="headerlink" title="getcwd()方法"></a>getcwd()方法</h3><p>显示当前的工作目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">os.getcwd()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import os</span><br><span class="line"> </span><br><span class="line"># 给出当前的目录</span><br><span class="line">print os.getcwd()</span><br></pre></td></tr></table></figure>
+
+<h3 id="rmdir-方法"><a href="#rmdir-方法" class="headerlink" title="rmdir()方法"></a>rmdir()方法</h3><p>删除目录，在删除目录之前，应该先清除它的所有内容。</p>
+<p>必须给出目录完全合规的名称，否则会在当前目录下搜索该目录。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">os.rmdir(&#x27;dirname&#x27;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import os</span><br><span class="line"> </span><br><span class="line"># 删除”/tmp/test”目录</span><br><span class="line">os.rmdir( &quot;/tmp/test&quot;  )</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件、目录相关的方法"><a href="#文件、目录相关的方法" class="headerlink" title="文件、目录相关的方法"></a>文件、目录相关的方法</h2><p>File 对象和 OS 对象提供了很多文件与目录的操作方法，可以通过点击下面链接查看详情：</p>
+<ul>
+<li><a href="https://www.runoob.com/python/file-methods.html">File 对象方法</a>: file 对象提供了操作文件的一系列方法。</li>
+<li><a href="https://www.runoob.com/python/os-file-methods.html">OS 对象方法</a>: 提供了处理文件及目录的一系列方法。</li>
+</ul>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -823,466 +1570,6 @@
       <tags>
         <tag>Python</tag>
         <tag>读书笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>时钟参与组合逻辑的心得</title>
-    <url>/2023/01/13/%E6%97%B6%E9%92%9F%E5%8F%82%E4%B8%8E%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%9A%84%E5%BF%83%E5%BE%97/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
-<p>计组组合逻辑的一点小小的思考与整理</p>
-</blockquote>
-<span id="more"></span>
-
-<p>关于clock参与逻辑运算的问题，黑书英文版第二版（《Degital design and computer architecture》(2nd Edition) ）中 P116 已有对此问题的阐释，摘录如下：</p>
-<blockquote>
-<p>Generally, performing logic on the clock is a <strong>BAD IDEA</strong>. Clock gating delays the clock and can cause timing errors, as we will see in Section 3.5.3, so do it only if you are sure you know what you are doing.</p>
-</blockquote>
-<p>这种时钟偏移 <code>timing error</code> 简言之是<strong>时钟不同时到达各个寄存器</strong>。时钟偏移也显著地增加了建立时间 $$t_{setup}$$ 和保持时间 $$t_{hold}$$ 及时序总开销，减少了组合逻辑的有效工作时间，增加了通过组合逻辑所需要的最小延迟。（证明可参见黑书中文版 P87 或黑书英文版 P148）从而，部分器件在一定条件下会不满足时钟约束。太多的时钟偏移还会导致严重的保持时间错误，有时还需要将触发器设置为特别慢来防止相关问题。这会使得时序分析的最坏情况变糟，<strong>影响电路的适用性</strong>。</p>
-<p>那么怎么叫<code>you are sure you know what you are doing?</code> </p>
-<p>我个人认为比如在普通的D触发器的实现中，需要用反相时钟组，<strong>确实没有其他好的办法时</strong>才会使时钟参与逻辑运算。实现带使能的D触发器时确实有两种方法，但是<strong>有时钟不参与逻辑运算的方法，就没必要采用另一种</strong>。甚至高老板的PPT里没有提到这一种内部电路。</p>
-<p><img src="C:\Users\Lee\Desktop\internal-copy.png" alt="internal"></p>
-<p><del>更优质的解答：我也没法保证</del></p>
-<p>所以能有严谨的方法，就不必冒险而产生可能的冒险（）</p>
-<hr>
-<p><strong>省流</strong>：clock参与运算会使电路变差，<strong>尽量避免时钟参与逻辑运算</strong>。</p>
-<hr>
-<p>最后，希望大家能从讨论区中相互借鉴，相互帮助，共同学习~</p>
-]]></content>
-      <categories>
-        <category>CO</category>
-      </categories>
-      <tags>
-        <tag>CO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>科目三实战技巧</title>
-    <url>/2022/08/06/%E7%A7%91%E7%9B%AE%E4%B8%89%E5%AE%9E%E6%88%98%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>笔者与科三的爱恨情仇</p>
-</blockquote>
-<span id="more"></span>
-
-<p>笔者去年没有练完的科三拖到了今年来练…在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
-<h3 id="上车准备"><a href="#上车准备" class="headerlink" title="上车准备"></a>上车准备</h3><blockquote>
-<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
-</blockquote>
-<h3 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h3><blockquote>
-<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
-</blockquote>
-<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><blockquote>
-<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
-</blockquote>
-<h3 id="行驶中"><a href="#行驶中" class="headerlink" title="行驶中"></a>行驶中</h3><blockquote>
-<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
-<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
-<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
-<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
-<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
-<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
-<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
-<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
-<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
-<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
-<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>生活记录</category>
-      </categories>
-      <tags>
-        <tag>科目三</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浙大翁恺OO</title>
-    <url>/2023/01/13/%E6%B5%99%E5%A4%A7%E7%BF%81%E6%81%BAOO/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p><em>Not finished</em></p>
-<p>浙大翁恺老师的 OO 入门课</p>
-</blockquote>
-<span id="more"></span>
-
-<p>[TOC]</p>
-<blockquote>
-<p><em>Refs</em>：翁恺 &amp; 黑马程序员</p>
-</blockquote>
-<h2 id="第一周-类与对象"><a href="#第一周-类与对象" class="headerlink" title="第一周 类与对象"></a>第一周 类与对象</h2><h3 id="用类制造对象"><a href="#用类制造对象" class="headerlink" title="用类制造对象"></a>用类制造对象</h3><p>前置知识：对象变量是对象的管理者而非所有者，所以涉及到赋值、函数参数传递和比较（如果两个对象变量相等说明管理的是同一内容，判断管理内容是否相同应用<code>equal</code>判断）都与普通变量有所不同。 </p>
-<p>现在，我们要来尝试自己定义类，然后用自己定义的类来创建对象</p>
-<h3 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h3><p>观察这类事物的特点，用一些成员和函数表示这个类</p>
-<ul>
-<li>private是对类而非对象，所以同一类的不同对象之间可以访问彼此的成员</li>
-<li>如果不声明默认friendly，可以在同一个包的文件下共用</li>
-<li>protected见继承中的project</li>
-</ul>
-<h3 id="成员变量和成员函数"><a href="#成员变量和成员函数" class="headerlink" title="成员变量和成员函数"></a>成员变量和成员函数</h3><p><code>this</code> 这个特殊的本地变量起着至关重要的作用</p>
-<ul>
-<li>注意：如果成员函数的参数与成员变量同名，那么会取作用域更小的，也即取参数作为这个变量名对应的变量</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">New</span> &#123;</span><br><span class="line">    <span class="type">int</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setPrice</span><span class="params">(<span class="type">int</span> price)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>成员函数内部调用其他成员函数也可不加<code>this.</code></p>
-<p>区别于定义在函数内部的本地变量，成员变量的生存期是对象的生存期，作用域是类内部的成员函数（也即类内的成员函数可以使用成员变量，成员变量初始化…）</p>
-<h3 id="对象初始化"><a href="#对象初始化" class="headerlink" title="对象初始化"></a>对象初始化</h3><p>成员变量在对象初始化时，如果未赋值，会安排一个初始值，当然也可以手动初始化（手动直接赋值、调用函数赋值）</p>
-<table>
-<thead>
-<tr>
-<th>变量类型</th>
-<th>初始值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>boolean</td>
-<td>false</td>
-</tr>
-<tr>
-<td>int</td>
-<td>0</td>
-</tr>
-<tr>
-<td>object（某个对象）</td>
-<td>null</td>
-</tr>
-</tbody></table>
-<p>构造函数（课上讲过不少了，我摸了（bushi））</p>
-<h2 id="第二周-对象交互"><a href="#第二周-对象交互" class="headerlink" title="第二周 对象交互"></a>第二周 对象交互</h2><h3 id="对象的识别"><a href="#对象的识别" class="headerlink" title="对象的识别"></a>对象的识别</h3><p>感觉和定义类是一回事，两件事情可以在定义类的时候同时完成。</p>
-<h3 id="对象的交互"><a href="#对象的交互" class="headerlink" title="对象的交互"></a>对象的交互</h3><p>课上讲过一嘴，说到可以用static修饰的“类全局变量”</p>
-<p>也可以通过将一个类的成员变量设置为其他类的对象来达到目的</p>
-<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220913223756886.png" alt="image-20220913223756886"></p>
-<p><strong>图1 以钟表为例来看对象的交互</strong></p>
-<h3 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h3><img src="../../AppData/Roaming/Typora/typora-user-images/image-20220913223824851.png" alt="image-20220913223824851" style="zoom: 33%;" />
-
-<p>图2 用鸡蛋图表示封装思想</p>
-<p><strong>封装思想</strong>：把数据和对数据的操作放在一起</p>
-<p>public：同一个编译单元（一个java文件）里只能有一个class为public，且public class的名字必须与编译单元同名</p>
-<p>如果不加public，则不能在这个package外面访问</p>
-<p>一个编译单元最多有一个public class，但也可以一个都没有</p>
-<p>文件结构：clock(project)-&gt;src-&gt;clock(package)-&gt;clock.java</p>
-<p><strong>import</strong>：用到的类不在同一个package里，就需要import</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> display.Display</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br></pre></td></tr></table></figure>
-
-<p>包的名字.包的类</p>
-<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164023484.png" alt="image-20220911164023484"></p>
-<p>如果不用import，也可以像这样给出全名</p>
-<p>也可以万能import（引用display所有内容，但是可能冲突，推荐import具体的类）</p>
-<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164335992.png" alt="image-20220911164335992"></p>
-<p>包的名字里面的点实际上表达文件夹层次</p>
-<p>Java通过这样的手段管理文件系统（</p>
-<p><strong>static：类变量</strong>，不属于任何一个对象，属于这个类，任何一个对象都拥有这个变量，但是</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>() &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Wrong usage</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">value</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        value++; <span class="comment">// cannot compile</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>static函数只能调用static函数，只能访问static成员变量（这回理解了）</p>
-<p>static函数和变量可以通过类访问，也可以通过对象访问，只是不能获得对象的具体信息</p>
-<p>static变量的初始化只执行一次，和对象的创建过程无关</p>
-<p>这就不得不提static的四种用法了（课上讲过，我摸了，略记一下）</p>
-<h2 id="第三周-对象容器"><a href="#第三周-对象容器" class="headerlink" title="第三周 对象容器"></a>第三周 对象容器</h2><h3 id="记事本的例子"><a href="#记事本的例子" class="headerlink" title="记事本的例子"></a>记事本的例子</h3><ul>
-<li>确定功能</li>
-<li>接口设计</li>
-</ul>
-<p>每一个类都写main，方便做调试</p>
-<h3 id="泛型容器"><a href="#泛型容器" class="headerlink" title="泛型容器"></a>泛型容器</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> ArrayList&lt;String&gt; notes = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(); <span class="comment">// ArrayList of String，用来存放String的ArrayList</span></span><br></pre></td></tr></table></figure>
-
-<p>ArrayList是一个类，notes本身是对象管理者</p>
-<p>容器类型、元素类型</p>
-<ul>
-<li>对象数组中的每个元素都是对象的管理者而非对象本身</li>
-</ul>
-<p>set：set相当于数学中的集合，元素不重复，且没有排序的概念</p>
-<p>toString函数直接输出这个对象，会输出toString()函数返回的字符串结果</p>
-<p>可以先写一个“空”的返回值，比如返回int类型的，先写个return 0，后面再改；</p>
-<p>返回String的先写个return “”;</p>
-<p>HashMap：想写出“聪明”的代码，和具体数据无关</p>
-<p>容器里的类型必须是对象，不能是基本元素，所以需要Integer这样的包裹类型</p>
-<p>包裹类型的变量可以直接接受所对应的基础类型变量</p>
-<p>所以HashMap的返回值也是对象，就是一个管理者</p>
-<p>如果存在会返回有效值，不存在返回null</p>
-<p>key唯一，后面的会覆盖前面的</p>
-<p>遍历没有特别简单的方法，<strong>可以考虑采取for-each遍历entrySet或者valueSet的方法</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(Integet k : name.keySet()) &#123;</span><br><span class="line">	<span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> name.get(k);</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>要写构造器constructor</p>
-<h2 id="第四周-继承与多态"><a href="#第四周-继承与多态" class="headerlink" title="第四周 继承与多态"></a>第四周 继承与多态</h2><blockquote>
-<p>一周后看：当时看觉得难是正常的，因为现在也觉得难（）</p>
-</blockquote>
-<p><strong>继承得到了父类的所有东西</strong>，item里面的所有都得到了，都是<strong>可能</strong>可以用的（至于为什么是可能，会涉及<strong>访问权限</strong>的问题，我们后面说）</p>
-<p>如果不在子类里定义title，那么就会报“The field Item.title is not visible”（此时没有super()）</p>
-<p><strong>父类的private成员真的只有父类自己才能用</strong></p>
-<p>虽然继承给了子类，但是子类不能直接用</p>
-<p>本来我们应该做的事情是让Item给Item的title赋值，所以应该由Item来做初始化</p>
-<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220914222324033.png" alt="image-20220914222324033"></p>
-<p>可以看到，虽然CD没有private的title，但是确实产生了title</p>
-<ul>
-<li>第一个解决方案：把标识符改成protected（自己可以访问，同一个包内的其他类可以访问，子类可以访问）<strong>这是一种没办法的办法</strong></li>
-</ul>
-<p>对item做一个constructor</p>
-<ul>
-<li>cd的构造器得拿到title，用<code>super(title);</code>把参数传给父类，父类构造器通过参数构造；</li>
-<li>如果用<code>super()</code>，找不到这个没有参数的构造器</li>
-<li>如果不通过<code>super()</code>传递参数，父类会用不带参数的构造器进行构造</li>
-</ul>
-<blockquote>
-<p>因为</p>
-</blockquote>
-<ul>
-<li>先做了父类的初始化（定义初始化和构造器），然后才来做子类自己定义的初始化（我理解这样方便覆盖），再进构造函数做其他事情</li>
-<li>需要保证父类的成员变量得到恰当的初始化——定义初始化、构造器（原来在二者兼备时优先定义初始化，然后构造器），总体的顺序是父类-&gt;子类，也即父类定义初始化、构造器-&gt;子类初始化、构造器，与是否采用super()传递参数无关</li>
-<li>同时存在两个成员，也是可以的，父类的被隐藏<ul>
-<li>计算机的基本原则：优先选择范围小的，也即title应该是DVD自己的title</li>
-<li>回到父类对父类成员变量操作时，操作的是父类自己的成员变量</li>
-</ul>
-</li>
-<li>总结一下<ul>
-<li>父类的所有内容都继承给子类<ul>
-<li>但是如果是private的，子类不能访问</li>
-<li>在谁的函数里面，所指的成员变量就是谁的<ul>
-<li>子类父类出现同名成员变量，在子类里面的就是子类自己的，在父类里面的就是父类自己的，之间没有任何联系</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>要用父类的print()，需要加一个super</strong>，比如下面这段代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span> &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;DVD:&quot;</span>);</span><br><span class="line">    <span class="built_in">super</span>.print();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>类定义了类型</p>
-<p>子类定义了子类型</p>
-<p>子类的对象可以被当作父类的对象来使用</p>
-<ul>
-<li>赋值给父类的对象</li>
-<li>传递给需要父类对象的函数</li>
-<li>放进存放父类对象的容器里</li>
-</ul>
-<p>成员函数的绑定都是动态绑定</p>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912171422963.png" alt="image-20220912171422963" style="zoom:50%;" />
-
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912172044907.png" alt="image-20220912172044907" style="zoom:50%;" />
-
-<p>记得这里有一个强制类型转换</p>
-<p>以及函数声明必须完全相同（函数名、参数表）</p>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912173013633.png" alt="image-20220912173013633" style="zoom:50%;" />
-
-<p>可扩展性：不需要修改就能添加新的内容</p>
-<p>可维护性：需要修改才能添加新的内容</p>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912173133898.png" alt="image-20220912173133898" style="zoom:50%;" />
-
-
-
-<h2 id="第五周-设计原则"><a href="#第五周-设计原则" class="headerlink" title="第五周 设计原则"></a>第五周 设计原则</h2><p>城堡游戏</p>
-<p>open declaration：进入对应的声明</p>
-<p>String类的操作系统开销大，可以用StringBuffer类</p>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912174838925.png" alt="image-20220912174838925" style="zoom:50%;" />
-
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912175117169.png" alt="image-20220912175117169" style="zoom:33%;" />
-
-<p>可扩展性：用HashMap避免“硬编码”（即不需要写出每一对对应的具体键值和值，只需要每次扩展时添加新的即可）</p>
-<h2 id="第六周-抽象与接口"><a href="#第六周-抽象与接口" class="headerlink" title="第六周 抽象与接口"></a>第六周 抽象与接口</h2><h3 id="6-1-抽象"><a href="#6-1-抽象" class="headerlink" title="6.1 抽象"></a>6.1 抽象</h3><p><strong>抽象就是为了防止被制造实体</strong></p>
-<p>抽象类的作用仅仅是表达接口，而不是具体的实现细节。抽象类中可以存在抽象方法。抽象方法也是使用abstract关键字来修饰。抽象的方法是不完全的，它只是一个<strong>方法签名</strong>而完全没有方法体</p>
-<p>但是为了表达类之间的关系，还需要这样一个类来表达。如第一章的例子，如果去掉 <code>Shape</code> 类，那么 <code>Circle</code> 和 <code>Rectangle</code> 类就没有关系了</p>
-<p>抽象函数<strong>（不能有括号）</strong>：表达概念而无法实现具体代码的函数，目的是为了告诉子类需要写 <code>draw()</code> 方法</p>
-<p>只要有一个函数是抽象的，类就是抽象的。（这很容易理解，否则便无法调用这个抽象方法）</p>
-<ul>
-<li>有抽象类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">draw</span><span class="params">(Graphics g)</span>;</span><br><span class="line"><span class="comment">// 注意不能有大括号，即不能定义函数体</span></span><br></pre></td></tr></table></figure>
-
-<p>抽象类<strong>（不能产生对象，但是可以定义变量）</strong>：表达概念而无法构造出实体的类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Shape</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Rectangle</span>(a, b);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>任何继承了抽象类的非抽象子类的对象可以赋值给这个变量（也即任何Shape类子类的对象都可以由s来管理）</li>
-</ul>
-<p>实现抽象函数</p>
-<ul>
-<li>继承自抽象类的子类必须覆盖父类中的抽象函数，这种覆盖叫做<strong>实现</strong></li>
-<li>否则这个类自己就会成为抽象类</li>
-</ul>
-<p>计算机中的两种抽象</p>
-<ul>
-<li>与具体相对<ul>
-<li>表达一种概念而非实体</li>
-</ul>
-</li>
-<li>与细节相对<ul>
-<li>表示在一定程度上忽略细节而着眼大局</li>
-</ul>
-</li>
-</ul>
-<h3 id="6-2-数据与表现分离"><a href="#6-2-数据与表现分离" class="headerlink" title="6.2 数据与表现分离"></a>6.2 数据与表现分离</h3><p>两种看程序的方法：</p>
-<ul>
-<li>看main函数，挨个展开需要看的子类代码（”自顶向下“方法）</li>
-<li>看最小的类，追到父类，从看懂小部件开始看懂整个代码（”自底向上“方法，联想HuffmanCode）</li>
-</ul>
-<p>JFrame、View（窗口）</p>
-<p><del>重绘这个图工作量太大了，先摸为敬</del></p>
-<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220912194352676.png" alt="image-20220912194352676"></p>
-<p>数据与表现分离</p>
-<ul>
-<li>程序的业务逻辑与表现无关<ul>
-<li>表现可以是图形的也可以是文本的</li>
-<li>表现可以是当地的也可以是远程的</li>
-</ul>
-</li>
-</ul>
-<p>（强调了一种“各司其职”的思想，写业务逻辑的程序员不需要关心表现是怎样的，不需要关心是通过网页输入字符串还是控制台输入还是blabla）</p>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912194831143.png" alt="image-20220912194831143" style="zoom:33%;" />
-
-<p>责任驱动设计</p>
-<ul>
-<li>将程序要实现的功能分配到合适的类&#x2F;对象中去</li>
-</ul>
-<p>网格化</p>
-<ul>
-<li>图形界面本身有更高的清晰度</li>
-<li>但是将画面网格化后数据更易处理</li>
-</ul>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912195010980.png" alt="image-20220912195010980" style="zoom: 25%;" />
-
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912195043598.png" alt="image-20220912195043598" style="zoom:25%;" />
-
-<p>除了C++都不支持多继承<del>（那为啥不用C++）</del></p>
-<blockquote>
-<p>9.20更新：Java可以通过接口实现多继承</p>
-</blockquote>
-<p><strong>接口</strong></p>
-<ul>
-<li><strong>接口是纯抽象类</strong><ul>
-<li><strong>所有的成员函数都是抽象函数</strong></li>
-<li><strong>所有的成员变量都是public static final（常量）</strong>，static方便调用，接口名.函数名即可调用</li>
-<li>无构造方法</li>
-<li>成员变量：<ul>
-<li>JDK7：接口中只能有抽象方法</li>
-<li>JDK8：接口中可以定义有方法体的方法</li>
-<li>JDK9：接口中可以定义私有方法</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>接口规定了长什么样，但是不管里面有什么</li>
-</ul>
-<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220912220141030.png" alt="image-20220912220141030"></p>
-<p><code>cell o</code>的意思是任何实现了cell接口的都可以交给这个变量</p>
-<p>interface是一种特殊的class，<strong>和class的地位是一样的</strong>，原来用class的地方都可以用interface</p>
-<p>实现接口</p>
-<ul>
-<li>类用<code>extends</code>，接口用<code>complements</code></li>
-<li>类可以实现很多接口</li>
-<li>接口可以继承接口，但不能继承类</li>
-<li>接口不能实现接口</li>
-</ul>
-<p>讲的就是两个东西之间的链接</p>
-<p>需要其他服务的时候，不是定义一个类，而是定义一个接口</p>
-<p>cell是view和field定义的</p>
-<p><strong>面向接口的编程方式</strong></p>
-<ul>
-<li>设计程序时先定义接口，再实现类</li>
-<li>任何需要在函数间传入传出的一定是接口而不是具体的类</li>
-<li>是Java成功的关键之一，因为极适合多人同时写一个大程序</li>
-<li>也是Java被批评的要点之一，因为代码量膨胀起来很快</li>
-</ul>
-<blockquote>
-<p><em>补充自黑马程序员</em></p>
-</blockquote>
-<p>抽象类：更多地用作父类，是对事物的抽象</p>
-<p>抽取共性方法作为抽象方法，抽象方法所在的类便成为抽象类</p>
-<p>接口：更多地侧重于规则，是对行为的抽象（如游泳接口，可由动物和人实现）</p>
-<p>接口的子类也称作实现类</p>
-<ul>
-<li>要么重写接口中所有的抽象方法</li>
-<li>要么也是抽象类</li>
-</ul>
-<p>可以多实现</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Subclass</span> <span class="keyword">implements</span> <span class="title class_">Class1</span>, Class2 &#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>所以我感觉多接口继承也是用接口的重要原因之一</p>
-</blockquote>
-<p>接口和类之间的关系</p>
-<ul>
-<li>类和类的关系<ul>
-<li>继承关系，只能单继承，不能多继承，但是可以多重继承</li>
-</ul>
-</li>
-<li>类和接口的关系<ul>
-<li>实现关系，可以单实现，也可以多实现，还可以在继承一个类的同时实现多个接口<ul>
-<li>实现多个接口需要重写<strong>全部的</strong>抽象方法</li>
-<li>同名的话就是实现了不同接口的同名函数</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>接口和接口的关系<ul>
-<li>继承关系，可以单继承，也可以多继承<ul>
-<li>实现最下面的子接口的话，需要重写所有的抽象方法</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="第七周-控制反转与MVC模式"><a href="#第七周-控制反转与MVC模式" class="headerlink" title="第七周 控制反转与MVC模式"></a>第七周 控制反转与MVC模式</h2><h3 id="7-1-布局管理器"><a href="#7-1-布局管理器" class="headerlink" title="7.1 布局管理器"></a>7.1 布局管理器</h3><p>Swing：所有的东西都叫做部件、另外一种东西叫做容器</p>
-<p>容器可以加到容器里，部件也需要加到容器里</p>
-<p>容器管部件在哪里，显示多大</p>
-<p>布局管理器</p>
-<p>layout manager</p>
-<p>frame默认的layout manager是border</p>
-<p>这章似乎和图形可视化等等关系比较大，所以我摸了（）</p>
-<h2 id="第八周-异常处理与输入输出"><a href="#第八周-异常处理与输入输出" class="headerlink" title="第八周 异常处理与输入输出"></a>第八周 异常处理与输入输出</h2><h3 id="8-1-1-捕捉异常"><a href="#8-1-1-捕捉异常" class="headerlink" title="8.1.1 捕捉异常"></a>8.1.1 捕捉异常</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span></span><br><span class="line">    <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">    <span class="type">int</span> idx;</span><br><span class="line">    <span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">    idx = in.nextInt();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        a[idx] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Caught&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输入5，输出Hello</span></span><br><span class="line"><span class="comment">// 输入10，输出Caught</span></span><br><span class="line"><span class="comment">// 说明第6行没做，从第6行跳到了第9行</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="8-1-2-异常处理机制"><a href="#8-1-2-异常处理机制" class="headerlink" title="8.1.2 异常处理机制"></a>8.1.2 异常处理机制</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayIndex</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">        a[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            k();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;caught&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;main&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>a[10] = 10</code> 出了异常，之后的hello不会执行，离开f回到调用的地方<img src="D:\Working\MarkDownFiles\exception-execution.png"></p>
-<h3 id="8-1-3-捕捉到的异常"><a href="#8-1-3-捕捉到的异常" class="headerlink" title="8.1.3 捕捉到的异常"></a>8.1.3 捕捉到的异常</h3><p>捉到了做什么</p>
-<p><code>String getMessage()</code></p>
-<p><code>String toString()</code></p>
-<p><code>void printStackTrace</code></p>
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">caught</span><br><span class="line">10</span><br><span class="line">java.lang.ArrayIndexOutOfBoundsException: 10</span><br></pre></td></tr></table></figure>
-
-
-
-<p>再度抛出</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">catch (Exception e) &#123;</span><br><span class="line">     System.err.println(&quot;An exception with thrown&quot;);</span><br><span class="line">     throw e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果在这个层面上需要处理，但是不能做最终的决定</p>
-<h3 id="8-2-1-异常"><a href="#8-2-1-异常" class="headerlink" title="8.2.1 异常"></a>8.2.1 异常</h3><p>读文件的例子</p>
-<p>bussiness logic业务逻辑</p>
-<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220913194007073.png" alt="image-20220913194007073"></p>
-<p>如果某一步出了问题，就用catch解决问题</p>
-<p>异常：不寻常的事情发生之时，需要终止预期的任务，让另一段代码处理</p>
-<p>异常机制最大的好处就是清晰地分开了业务逻辑代码和遇到情况时的处理代码</p>
-<p>异常声明</p>
-<ul>
-<li>如果你的函数可能抛出异常，就必须在函数头部加以声明<code>void f() throws TooBig, TooSmall, DivZero &#123; //... &#125;</code></li>
-<li>可以声明并不会真正抛出的异常</li>
-</ul>
-<p>什么能扔？</p>
-<ul>
-<li>任何继承了Throwable类的对象</li>
-<li>Exception类继承了Throwable</li>
-<li>throw new Exception;</li>
-<li>throw new Exception(“Help”);</li>
-</ul>
-<p>catch怎么匹配的异常</p>
-<h3 id="8-3-1-流"><a href="#8-3-1-流" class="headerlink" title="8.3.1 流"></a>8.3.1 流</h3><p>流是输入输出的方式</p>
-<ul>
-<li>流是一维单向的<ul>
-<li>一维：用一个数字就可以表达位置</li>
-<li>单向：读 or 写</li>
-</ul>
-</li>
-</ul>
-<p>所有的IO操作都是有风险的</p>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="printf-格式化输出"><a href="#printf-格式化输出" class="headerlink" title="printf()格式化输出"></a>printf()格式化输出</h3><p>Java也支持<code>printf</code>格式化输出，格式与C语言相同</p>
-<p>两个类里的<code>main函数</code>可以同时运行，当然还要看评测要求</p>
-]]></content>
-      <categories>
-        <category>OO</category>
-      </categories>
-      <tags>
-        <tag>OO</tag>
       </tags>
   </entry>
   <entry>
