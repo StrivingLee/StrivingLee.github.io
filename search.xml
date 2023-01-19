@@ -185,6 +185,59 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2023/01/13/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>我的入门启蒙</p>
+</blockquote>
+<span id="more"></span>
+
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>时钟参与组合逻辑的心得</title>
+    <url>/2023/01/13/%E6%97%B6%E9%92%9F%E5%8F%82%E4%B8%8E%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%9A%84%E5%BF%83%E5%BE%97/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
+<p>计组组合逻辑的一点小小的思考与整理</p>
+</blockquote>
+<span id="more"></span>
+
+<p>关于clock参与逻辑运算的问题，黑书英文版第二版（《Degital design and computer architecture》(2nd Edition) ）中 P116 已有对此问题的阐释，摘录如下：</p>
+<blockquote>
+<p>Generally, performing logic on the clock is a <strong>BAD IDEA</strong>. Clock gating delays the clock and can cause timing errors, as we will see in Section 3.5.3, so do it only if you are sure you know what you are doing.</p>
+</blockquote>
+<p>这种时钟偏移 <code>timing error</code> 简言之是<strong>时钟不同时到达各个寄存器</strong>。时钟偏移也显著地增加了建立时间 $$t_{setup}$$ 和保持时间 $$t_{hold}$$ 及时序总开销，减少了组合逻辑的有效工作时间，增加了通过组合逻辑所需要的最小延迟。（证明可参见黑书中文版 P87 或黑书英文版 P148）从而，部分器件在一定条件下会不满足时钟约束。太多的时钟偏移还会导致严重的保持时间错误，有时还需要将触发器设置为特别慢来防止相关问题。这会使得时序分析的最坏情况变糟，<strong>影响电路的适用性</strong>。</p>
+<p>那么怎么叫<code>you are sure you know what you are doing?</code> </p>
+<p>我个人认为比如在普通的D触发器的实现中，需要用反相时钟组，<strong>确实没有其他好的办法时</strong>才会使时钟参与逻辑运算。实现带使能的D触发器时确实有两种方法，但是<strong>有时钟不参与逻辑运算的方法，就没必要采用另一种</strong>。甚至高老板的PPT里没有提到这一种内部电路。</p>
+<p><img src="C:\Users\Lee\Desktop\internal-copy.png" alt="internal"></p>
+<p><del>更优质的解答：我也没法保证</del></p>
+<p>所以能有严谨的方法，就不必冒险而产生可能的冒险（）</p>
+<hr>
+<p><strong>省流</strong>：clock参与运算会使电路变差，<strong>尽量避免时钟参与逻辑运算</strong>。</p>
+<hr>
+<p>最后，希望大家能从讨论区中相互借鉴，相互帮助，共同学习~</p>
+]]></content>
+      <categories>
+        <category>CO</category>
+      </categories>
+      <tags>
+        <tag>CO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python基础教程（第2版）阅读笔记</title>
     <url>/2023/01/14/Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
@@ -226,18 +279,6 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="string">&#x27;Hello, &#x27;</span>,</span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;World!&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The result is &#x27;Hello, World&#x27; without linebreak</span></span><br></pre></td></tr></table></figure>
 
 <p>可以使用格式化字符串</p>
-<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>需要使用 <code>import</code> 语句导入模块</p>
-<blockquote>
-<p>注：int() float() long() 并非完全等同于函数，事实上他们是类型对象</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">math.floor(<span class="number">32.9</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line">sqrt(<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
-
-<p>这样就不用写模块的名字来调用函数了</p>
-<blockquote>
-<p>在 python 中可以使用变量来引用函数（或者 Python 中大多数的对象），比如，通过 <code>foo = math.sqrt</code> 进行赋值，则 <code>foo(4)</code> 的结果为2.0</p>
-</blockquote>
 <h2 id="Python-的其他版本"><a href="#Python-的其他版本" class="headerlink" title="Python 的其他版本"></a>Python 的其他版本</h2><p>ActivePython 内核与标准版相同，最大的区别是包含了许多额外可用的模块</p>
 <p>Stackless Python 最大优点是允许深层次递归和更高效地执行多线程</p>
 <h1 id="二、变量类型"><a href="#二、变量类型" class="headerlink" title="二、变量类型"></a>二、变量类型</h1><p>Python 定义了五个标准的数据类型：</p>
@@ -576,14 +617,14 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tup1 = (12, 34.56)</span><br><span class="line">tup2 = (&#x27;abc&#x27;, &#x27;xyz&#x27;)</span><br><span class="line">tup3 = tup1 + tup2</span><br></pre></td></tr></table></figure>
 
 <h3 id="元组的用武之地"><a href="#元组的用武之地" class="headerlink" title="元组的用武之地"></a>元组的用武之地</h3><p>在映射（和集合的成员）中当作键使用</p>
-<h1 id="五、字典-Dictionary-：当索引不好用时"><a href="#五、字典-Dictionary-：当索引不好用时" class="headerlink" title="五、字典(Dictionary)：当索引不好用时"></a>五、字典(Dictionary)：当索引不好用时</h1><p>字典是 Python 中唯一内建的映射类型</p>
+<h2 id="字典-Dictionary-：当索引不好用时"><a href="#字典-Dictionary-：当索引不好用时" class="headerlink" title="字典(Dictionary)：当索引不好用时"></a>字典(Dictionary)：当索引不好用时</h2><p>字典是 Python 中唯一内建的映射类型</p>
 <p>值没有特殊的顺序，可以存储任意类型对象；键可以是数字、字符串甚至是元组，但是必须是不可变的</p>
-<h2 id="建立字典"><a href="#建立字典" class="headerlink" title="建立字典"></a>建立字典</h2><p>可以利用 dict 函数，通过其他映射或者键值对建立字典</p>
+<h3 id="建立字典"><a href="#建立字典" class="headerlink" title="建立字典"></a>建立字典</h3><p>可以利用 dict 函数，通过其他映射或者键值对建立字典</p>
 <blockquote>
 <p>因为 <code>dict</code> 是 Python 关键字和内置函数，不要用 <code>dict</code> 命名字典</p>
 </blockquote>
 <p>和 <code>list、tuple、str</code> 一样，<code>dict</code> 也是类型而非真正的函数</p>
-<h2 id="字典和列表的重要区别"><a href="#字典和列表的重要区别" class="headerlink" title="字典和列表的重要区别"></a>字典和列表的重要区别</h2><ul>
+<h3 id="字典和列表的重要区别"><a href="#字典和列表的重要区别" class="headerlink" title="字典和列表的重要区别"></a>字典和列表的重要区别</h3><ul>
 <li><p>键</p>
 <ul>
 <li>不能重复</li>
@@ -609,29 +650,29 @@
 </blockquote>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>phonebook</span><br><span class="line">&#123;<span class="string">&#x27;Beth&#x27;</span>: <span class="string">&#x27;9102&#x27;</span>, <span class="string">&#x27;Alice&#x27;</span>: <span class="string">&#x27;2341&#x27;</span>, <span class="string">&#x27;Cecil&#x27;</span>: <span class="string">&#x27;3258&#x27;</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;Cecil &#x27;s number is %(Cecil)s.&quot;</span> % phonebook</span><br></pre></td></tr></table></figure>
 
-<h2 id="字典方法"><a href="#字典方法" class="headerlink" title="字典方法"></a>字典方法</h2><h3 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h3><p>清除字典中所有的项</p>
+<h3 id="字典方法"><a href="#字典方法" class="headerlink" title="字典方法"></a>字典方法</h3><h4 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h4><p>清除字典中所有的项</p>
 <p>原地方法，无返回值（返回 None）</p>
 <h3 id="copy"><a href="#copy" class="headerlink" title="copy"></a>copy</h3><p>shallow copy</p>
-<h3 id="deepcopy"><a href="#deepcopy" class="headerlink" title="deepcopy"></a>deepcopy</h3><p><code>from copy import deepcopy</code></p>
-<h3 id="fromkeys"><a href="#fromkeys" class="headerlink" title="fromkeys"></a>fromkeys</h3><p>根据给定键和默认值建立字典，默认值缺省为 None</p>
-<h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><p>访问存在的项时返回键对应的值，访问不存在的项时返回 None</p>
-<h3 id="items"><a href="#items" class="headerlink" title="items"></a>items</h3><p>items 方法将所有的字典项返回迭代器</p>
+<h4 id="deepcopy"><a href="#deepcopy" class="headerlink" title="deepcopy"></a>deepcopy</h4><p><code>from copy import deepcopy</code></p>
+<h4 id="fromkeys"><a href="#fromkeys" class="headerlink" title="fromkeys"></a>fromkeys</h4><p>根据给定键和默认值建立字典，默认值缺省为 None</p>
+<h4 id="get"><a href="#get" class="headerlink" title="get"></a>get</h4><p>访问存在的项时返回键对应的值，访问不存在的项时返回 None</p>
+<h4 id="items"><a href="#items" class="headerlink" title="items"></a>items</h4><p>items 方法将所有的字典项返回迭代器</p>
 <p>列表项为（键，值），返回时<strong>无顺序</strong></p>
-<h3 id="keys"><a href="#keys" class="headerlink" title="keys"></a>keys</h3><p>类似同上，只不过这次是将所有的键返回</p>
-<h3 id="values"><a href="#values" class="headerlink" title="values"></a>values</h3><p>类似同上，只不过这次是将所有的值返回</p>
-<h3 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h3><p>获得对应指定键的<strong>值</strong>（主语是值），然后将键值对从字典中移除</p>
-<h3 id="popitem"><a href="#popitem" class="headerlink" title="popitem"></a>popitem</h3><p>类似于 <code>list.pop</code> ，不同的是后者会弹出列表的最后一个元素，而 popitem 会随机弹出元素（很容易理解，字典是无序的）</p>
+<h4 id="keys"><a href="#keys" class="headerlink" title="keys"></a>keys</h4><p>类似同上，只不过这次是将所有的键返回</p>
+<h4 id="values"><a href="#values" class="headerlink" title="values"></a>values</h4><p>类似同上，只不过这次是将所有的值返回</p>
+<h4 id="pop"><a href="#pop" class="headerlink" title="pop"></a>pop</h4><p>获得对应指定键的<strong>值</strong>（主语是值），然后将键值对从字典中移除</p>
+<h4 id="popitem"><a href="#popitem" class="headerlink" title="popitem"></a>popitem</h4><p>类似于 <code>list.pop</code> ，不同的是后者会弹出列表的最后一个元素，而 popitem 会随机弹出元素（很容易理解，字典是无序的）</p>
 <p><code>list.pop</code> </p>
 <p><strong>不用首先获取键列表，用于逐项处理并移除</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d</span><br><span class="line">&#123;<span class="string">&#x27;url&#x27;</span>: <span class="string">&#x27;http://www.python.org&#x27;</span>, <span class="string">&#x27;spam&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;title&#x27;</span>: <span class="string">&#x27;Python Web Site&#x27;</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d.popitem</span><br><span class="line">(<span class="string">&#x27;url&#x27;</span>: <span class="string">&#x27;http://www.python.org&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d</span><br><span class="line">&#123;<span class="string">&#x27;spam&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;title&#x27;</span>: <span class="string">&#x27;Python Web Site&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
 
 <p>但是字典中没有类似 <code>list.append</code> 的方法</p>
-<h3 id="setdefault"><a href="#setdefault" class="headerlink" title="setdefault"></a>setdefault</h3><p>类似于 <code>list.get</code> ，获得与给定键相关联的值，能够在不含给定键的情况下设定相应的键值</p>
+<h4 id="setdefault"><a href="#setdefault" class="headerlink" title="setdefault"></a>setdefault</h4><p>类似于 <code>list.get</code> ，获得与给定键相关联的值，能够在不含给定键的情况下设定相应的键值</p>
 <p><del>懒了，贴个截图</del></p>
-<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><p>利用一个字典项更新另一个字典，这个字典项会被添加到字典中，如果键相同就会覆盖</p>
+<h4 id="update"><a href="#update" class="headerlink" title="update"></a>update</h4><p>利用一个字典项更新另一个字典，这个字典项会被添加到字典中，如果键相同就会覆盖</p>
 <p>可以用调用 <code>dict</code> 的方法调用（和映射、拥有（键值）对的队列（或者其他可迭代的对象）以及<strong>关键字参数</strong>一起调用）</p>
-<h3 id="values-和-itervalues"><a href="#values-和-itervalues" class="headerlink" title="values 和 itervalues"></a>values 和 itervalues</h3><p>类似同上，很自然地，返回值的列表中可以包含相同的元素</p>
-<h1 id="六、条件、循环和其他语句"><a href="#六、条件、循环和其他语句" class="headerlink" title="六、条件、循环和其他语句"></a>六、条件、循环和其他语句</h1><h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><p>两个模块都有 open 函数：</p>
+<h4 id="values-和-itervalues"><a href="#values-和-itervalues" class="headerlink" title="values 和 itervalues"></a>values 和 itervalues</h4><p>类似同上，很自然地，返回值的列表中可以包含相同的元素</p>
+<h1 id="四、条件、循环和其他语句"><a href="#四、条件、循环和其他语句" class="headerlink" title="四、条件、循环和其他语句"></a>四、条件、循环和其他语句</h1><h2 id="import"><a href="#import" class="headerlink" title="import"></a>import</h2><p>两个模块都有 open 函数：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> module1</span><br><span class="line"><span class="keyword">import</span> module2</span><br><span class="line">module1.<span class="built_in">open</span>(...)</span><br><span class="line">module2.<span class="built_in">open</span>(...)</span><br><span class="line"></span><br><span class="line"><span class="comment"># or try like this</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> module1 <span class="keyword">import</span> <span class="built_in">open</span> <span class="keyword">as</span> open1</span><br><span class="line"><span class="keyword">from</span> module2 <span class="keyword">import</span> <span class="built_in">open</span> <span class="keyword">as</span> open2</span><br></pre></td></tr></table></figure>
 
 <p>分层结构后面会提到</p>
@@ -699,8 +740,112 @@
 <p>不原地修改对象，而是返回翻转或排序后的版本</p>
 <p>其返回值不用过多关注，可以放心地在 for 循环和 join 方法中使用，但是不能直接使用索引、分片、list 方法（正确的方法：使用 list 类型转换返回的对象）</p>
 <h2 id="列表推导式——轻量级循环"><a href="#列表推导式——轻量级循环" class="headerlink" title="列表推导式——轻量级循环"></a>列表推导式——轻量级循环</h2><p>利用其它列表创建新列表（类似集合推导式）</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>[x*x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>) <span class="keyword">if</span> x % <span class="number">3</span> == <span class="number">0</span>]</span><br><span class="line">[<span class="number">0</span>, <span class="number">9</span>, <span class="number">36</span>, <span class="number">81</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[(x, y) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>) <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br><span class="line">[(<span class="number">0</span>, <span class="number">0</span>)]</span><br></pre></td></tr></table></figure>
+<p>其工作方式类似于 for 循环</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>[x*x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>) <span class="keyword">if</span> x % <span class="number">3</span> == <span class="number">0</span>]</span><br><span class="line">[<span class="number">0</span>, <span class="number">9</span>, <span class="number">36</span>, <span class="number">81</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[(x, y) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>) <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br><span class="line">[(<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>), (<span class="number">0</span>, <span class="number">2</span>), (<span class="number">1</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">0</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">2</span>)]</span><br></pre></td></tr></table></figure>
 
+<h2 id="del"><a href="#del" class="headerlink" title="del"></a>del</h2><p>只能删除引用，不能删除值，Python 解释器负责垃圾回收</p>
+<h2 id="exec-和-eval"><a href="#exec-和-eval" class="headerlink" title="exec 和 eval"></a>exec 和 eval</h2><p>动态地创造 Python 代码，作为语句执行或作为表达式计算</p>
+<p>并不常用，有的时候比较顺手<del>，太麻烦了，我回头就看</del></p>
+<h1 id="五、充电时刻"><a href="#五、充电时刻" class="headerlink" title="五、充电时刻"></a>五、充电时刻</h1><p>库和模块的相关知识</p>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>模块(Module)，是一个 Python 文件，以 .py 结尾，包含了 Python 对象定义和Python语句，帮助程序员有逻辑地组织 Python 代码段。</p>
+<p>模块能定义函数，类和变量，模块里也能包含可执行的代码。</p>
+<p><strong>例子</strong></p>
+<p>下例是个简单的模块 support.py：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_func</span>(<span class="params">par</span>): </span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;Hello : &quot;</span>, par</span><br><span class="line">    <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="import-1"><a href="#import-1" class="headerlink" title="import"></a>import</h2><p>需要使用 <code>import</code> 语句导入模块</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">math.floor(<span class="number">32.9</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line">sqrt(<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这样就不用写模块的名字来调用函数了</p>
+<blockquote>
+<p>在 python 中可以使用变量来引用函数（或者 Python 中大多数的对象），比如，通过 <code>foo = math.sqrt</code> 进行赋值，则 <code>foo(4)</code> 的结果为 2.0</p>
+</blockquote>
+<p>当解释器遇到 import 语句，如果模块在当前的搜索路径就会被导入。</p>
+<p>如想要导入模块 support.py，需要把命令放在脚本的顶端：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导入模块</span></span><br><span class="line"><span class="keyword">import</span> support</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用模块里包含的函数</span></span><br><span class="line">support.print_func(<span class="string">&quot;StrivingLee&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello : StrivingLee</span><br></pre></td></tr></table></figure>
+
+<p>一个模块不管执行多少次import，只会被导入一次</p>
+<blockquote>
+<p>一个例子：用于统计用量和用于计费的两个模块需要彼此通信才能知道对方的情况以精准计费（想想水费电费之类），这样无限相互调用就会陷入无限递归的死循环</p>
+</blockquote>
+<h2 id="from…import"><a href="#from…import" class="headerlink" title="from…import"></a>from…import</h2><p>from 语句从模块中导入一个指定的部分到当前命名空间中。语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from modname import name1[, name2[, ... nameN]]</span><br></pre></td></tr></table></figure>
+
+<p>例如，要导入模块 fib 的 fibonacci 函数，使用如下语句：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from fib import fibonacci</span><br></pre></td></tr></table></figure>
+
+<p>这个声明不会把整个 fib 模块导入到当前的命名空间中，它只会将 fib 里的 fibonacci 单个引入到执行这个声明的模块的全局符号表。</p>
+<h2 id="from…import-1"><a href="#from…import-1" class="headerlink" title="from…import*"></a>from…import*</h2><p>把一个模块的所有内容<strong>全都导入</strong>到当前的命名空间也是可行的，只需使用如下声明：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from modname import *</span><br></pre></td></tr></table></figure>
+
+<p>这种声明虽然方便，但<strong>不该被滥用</strong>。（否则可能引发命名冲突之类的问题）</p>
+<h2 id="搜索路径"><a href="#搜索路径" class="headerlink" title="搜索路径"></a>搜索路径</h2><p>当你导入一个模块，Python 解析器对模块位置的搜索顺序是：</p>
+<ul>
+<li>1、当前目录</li>
+<li>2、在 shell 变量 PYTHONPATH 下的每个目录。</li>
+<li>3、默认路径。UNIX下，默认路径一般为&#x2F;usr&#x2F;local&#x2F;lib&#x2F;python&#x2F;。</li>
+</ul>
+<p>模块搜索路径存储在 system 模块的 sys.path 变量中。变量里包含当前目录，PYTHONPATH 和由安装过程决定的默认目录。</p>
+<h2 id="PYTHONPATH-变量"><a href="#PYTHONPATH-变量" class="headerlink" title="PYTHONPATH 变量"></a>PYTHONPATH 变量</h2><p>作为环境变量，PYTHONPATH 由装在一个列表里的许多目录组成。PYTHONPATH 的语法和 shell 变量 PATH 的一样。</p>
+<p>在 Windows 系统，典型的 PYTHONPATH 如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set PYTHONPATH=c:\python310\lib;</span><br></pre></td></tr></table></figure>
+
+<p>在 UNIX 系统，典型的 PYTHONPATH 如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set PYTHONPATH=/usr/local/lib/python</span><br></pre></td></tr></table></figure>
+
+<h2 id="命名空间和作用域"><a href="#命名空间和作用域" class="headerlink" title="命名空间和作用域"></a>命名空间和作用域</h2><p>变量是拥有匹配对象的名字（标识符）。命名空间是一个包含了变量名称们（键）和它们各自相应的对象们（值）的<strong>字典</strong>。</p>
+<p>一个 Python 表达式可以访问局部命名空间和全局命名空间里的变量。如果一个局部变量和一个全局变量重名，则<strong>局部变量会覆盖全局变量</strong>。</p>
+<p>每个函数都有自己的命名空间。类的方法的作用域规则和通常函数的一样。</p>
+<p>Python 会智能地猜测一个变量是局部的还是全局的，它假设任何在函数内赋值的变量都是局部的。</p>
+<p>因此，如果要给函数内的全局变量赋值，必须使用 global 语句。</p>
+<p>global VarName 的表达式会告诉 Python， VarName 是一个全局变量，这样 Python 就不会在局部命名空间里寻找这个变量了。</p>
+<p>例如，我们在全局命名空间里定义一个变量 Money。我们再在函数内给变量 Money 赋值，然后 Python 会假定 Money 是一个局部变量。然而，我们并没有在访问前声明一个局部变量 Money，结果就是会出现一个 UnboundLocalError 的错误。取消 global 语句前的注释符就能解决这个问题。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Money = 2000</span><br><span class="line">def AddMoney():</span><br><span class="line">   # 想改正代码就取消以下注释:</span><br><span class="line">   # global Money</span><br><span class="line">   Money = Money + 1</span><br><span class="line"> </span><br><span class="line">print Money</span><br><span class="line">AddMoney()</span><br><span class="line">print Money</span><br></pre></td></tr></table></figure>
+
+<h2 id="dir"><a href="#dir" class="headerlink" title="dir()"></a>dir()</h2><p>dir() 函数一个排好序的字符串列表，内容是一个模块里定义过的名字。</p>
+<p>返回的列表容纳了在一个模块里定义的所有模块，变量和函数。如下一个简单的实例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import math</span><br><span class="line">content = dir(math)</span><br><span class="line">print content;</span><br></pre></td></tr></table></figure>
+
+<p>以上实例输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[&#x27;__doc__&#x27;, &#x27;__file__&#x27;, &#x27;__name__&#x27;, &#x27;acos&#x27;, &#x27;asin&#x27;, &#x27;atan&#x27;, </span><br><span class="line">&#x27;atan2&#x27;, &#x27;ceil&#x27;, &#x27;cos&#x27;, &#x27;cosh&#x27;, &#x27;degrees&#x27;, &#x27;e&#x27;, &#x27;exp&#x27;, </span><br><span class="line">&#x27;fabs&#x27;, &#x27;floor&#x27;, &#x27;fmod&#x27;, &#x27;frexp&#x27;, &#x27;hypot&#x27;, &#x27;ldexp&#x27;, &#x27;log&#x27;,</span><br><span class="line">&#x27;log10&#x27;, &#x27;modf&#x27;, &#x27;pi&#x27;, &#x27;pow&#x27;, &#x27;radians&#x27;, &#x27;sin&#x27;, &#x27;sinh&#x27;, </span><br><span class="line">&#x27;sqrt&#x27;, &#x27;tan&#x27;, &#x27;tanh&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p>在这里，特殊字符串变量__name__指向模块的名字，__file__指向该模块的导入文件名。</p>
+<h2 id="globals-和-locals"><a href="#globals-和-locals" class="headerlink" title="globals() 和 locals()"></a>globals() 和 locals()</h2><p>根据调用地方的不同，globals() 和 locals() 函数可被用来返回全局和局部命名空间里的名字。</p>
+<p>如果在函数内部调用 locals()，返回的是所有能在该函数里访问的命名。</p>
+<p>如果在函数内部调用 globals()，返回的是所有在该函数里能访问的全局名字。</p>
+<p>两个函数的返回类型都是字典，可用 keys() 函数摘取名字。</p>
+<h2 id="reload-函数"><a href="#reload-函数" class="headerlink" title="reload() 函数"></a>reload() 函数</h2><p>需要多次执行模块里顶层部分的代码</p>
+<p>reload() 函数会重新导入之前导入过的模块。语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">reload(module_name)</span><br></pre></td></tr></table></figure>
+
+<p>在这里，module_name要直接放<strong>模块的名字</strong>，而不是一个字符串形式。比如想重载 hello 模块，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">reload(hello)</span><br></pre></td></tr></table></figure>
+
+<p>这里书上和菜鸟冲突了，书上说 Python3 取消了 reload</p>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>包是一个分层次的文件目录结构，它定义了一个由模块及子包，和子包下的子包等组成的 Python 的应用环境。</p>
+<p>简单来说，包就是文件夹，但该文件夹下必须存在 <strong><code>__init__.py</code></strong> 文件, 该文件的内容可以为空。**<code>__init__.py</code>** 用于标识当前文件夹是一个包。</p>
+<p>考虑一个在 <strong>package_runoob</strong> 目录下的 <strong><code>runoob1.py、runoob2.py、__init__.py</code></strong> 文件，test.py 为测试调用包的代码，目录结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">test.py</span><br><span class="line">package_runoob</span><br><span class="line">|-- __init__.py</span><br><span class="line">|-- runoob1.py</span><br><span class="line">|-- runoob2.py</span><br></pre></td></tr></table></figure>
+
+<p>源代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># package_runoob/runoob1.py</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">runoob1</span>():</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;I&#x27;m in runoob1&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># package_runoob/runoob2.py</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">runoob2</span>():</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;I&#x27;m in runoob2&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>现在，在 <strong>package_runoob</strong> 目录下创建 **<code>__init__.py</code>**：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># package_runoob/__init__.py</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&#x27;作为主程序运行&#x27;</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span> <span class="string">&#x27;package_runoob 初始化&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后我们在 <strong>package_runoob</strong> <strong>同级目录</strong>下创建 test.py 来调用 <strong>package_runoob</strong> 包</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># test.py</span></span><br><span class="line"><span class="comment"># 导入 Phone 包</span></span><br><span class="line"><span class="keyword">from</span> package_runoob.runoob1 <span class="keyword">import</span> runoob1</span><br><span class="line"><span class="keyword">from</span> package_runoob.runoob2 <span class="keyword">import</span> runoob2</span><br><span class="line">runoob1()</span><br><span class="line">runoob2()</span><br></pre></td></tr></table></figure>
+
+<p>以上实例输出结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">package_runoob 初始化</span><br><span class="line">I&#x27;m in runoob1</span><br><span class="line">I&#x27;m in runoob2</span><br></pre></td></tr></table></figure>
+
+<p>如上，为了举例，我们只在每个文件里放置了一个函数，但其实你可以放置许多函数。你也可以在这些文件里定义Python的类，然后为这些类建一个包。</p>
+<h1 id="六、面向对象"><a href="#六、面向对象" class="headerlink" title="六、面向对象"></a>六、面向对象</h1><p>这部分 OO Pre 里提及不少，欢迎来我的博客转转——([OO Pre Review | StrivingLee’s Blog](<a href="https://strivinglee.github.io/2023/01/13/OO">https://strivinglee.github.io/2023/01/13/OO</a> Pre Review&#x2F;))</p>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -708,59 +853,6 @@
       <tags>
         <tag>Python</tag>
         <tag>读书笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2023/01/13/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>我的入门启蒙</p>
-</blockquote>
-<span id="more"></span>
-
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>时钟参与组合逻辑的心得</title>
-    <url>/2023/01/13/%E6%97%B6%E9%92%9F%E5%8F%82%E4%B8%8E%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%9A%84%E5%BF%83%E5%BE%97/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
-<p>计组组合逻辑的一点小小的思考与整理</p>
-</blockquote>
-<span id="more"></span>
-
-<p>关于clock参与逻辑运算的问题，黑书英文版第二版（《Degital design and computer architecture》(2nd Edition) ）中 P116 已有对此问题的阐释，摘录如下：</p>
-<blockquote>
-<p>Generally, performing logic on the clock is a <strong>BAD IDEA</strong>. Clock gating delays the clock and can cause timing errors, as we will see in Section 3.5.3, so do it only if you are sure you know what you are doing.</p>
-</blockquote>
-<p>这种时钟偏移 <code>timing error</code> 简言之是<strong>时钟不同时到达各个寄存器</strong>。时钟偏移也显著地增加了建立时间 $$t_{setup}$$ 和保持时间 $$t_{hold}$$ 及时序总开销，减少了组合逻辑的有效工作时间，增加了通过组合逻辑所需要的最小延迟。（证明可参见黑书中文版 P87 或黑书英文版 P148）从而，部分器件在一定条件下会不满足时钟约束。太多的时钟偏移还会导致严重的保持时间错误，有时还需要将触发器设置为特别慢来防止相关问题。这会使得时序分析的最坏情况变糟，<strong>影响电路的适用性</strong>。</p>
-<p>那么怎么叫<code>you are sure you know what you are doing?</code> </p>
-<p>我个人认为比如在普通的D触发器的实现中，需要用反相时钟组，<strong>确实没有其他好的办法时</strong>才会使时钟参与逻辑运算。实现带使能的D触发器时确实有两种方法，但是<strong>有时钟不参与逻辑运算的方法，就没必要采用另一种</strong>。甚至高老板的PPT里没有提到这一种内部电路。</p>
-<p><img src="C:\Users\Lee\Desktop\internal-copy.png" alt="internal"></p>
-<p><del>更优质的解答：我也没法保证</del></p>
-<p>所以能有严谨的方法，就不必冒险而产生可能的冒险（）</p>
-<hr>
-<p><strong>省流</strong>：clock参与运算会使电路变差，<strong>尽量避免时钟参与逻辑运算</strong>。</p>
-<hr>
-<p>最后，希望大家能从讨论区中相互借鉴，相互帮助，共同学习~</p>
-]]></content>
-      <categories>
-        <category>CO</category>
-      </categories>
-      <tags>
-        <tag>CO</tag>
       </tags>
   </entry>
   <entry>
