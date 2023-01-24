@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://strivinglee.github.io/..%5Cimages%5Cpython-string-slice.png">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/11/2112205-861c05b2bdbc9c28.png">
 <meta property="article:published_time" content="2023-01-14T15:00:02.741Z">
-<meta property="article:modified_time" content="2023-01-22T19:13:53.650Z">
+<meta property="article:modified_time" content="2023-01-24T00:30:52.599Z">
 <meta property="article:author" content="StrivingLee">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="读书笔记">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-01-23 03:13:53" itemprop="dateModified" datetime="2023-01-23T03:13:53+08:00">2023-01-23</time>
+                <time title="Modified: 2023-01-24 08:30:52" itemprop="dateModified" datetime="2023-01-24T08:30:52+08:00">2023-01-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -572,7 +572,7 @@
 </tbody></table>
 <p>使用长字符串和原始字符串（可以联合使用）减少绝大多数转义的使用</p>
 <h3 id="字符串格式化"><a href="#字符串格式化" class="headerlink" title="字符串格式化"></a>字符串格式化</h3><p>使用与 C 中 sprintf 函数一样的语法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="string">&quot;My name is %s and weight is %d kg!&quot;</span> % (<span class="string">&#x27;Zara&#x27;</span>, <span class="number">21</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment"># My name is Zara and weight is 21 kg!</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>( <span class="string">&quot;My name is %s and weight is %d kg!&quot;</span> % (<span class="string">&#x27;Zara&#x27;</span>, <span class="number">21</span>) )</span><br><span class="line"></span><br><span class="line"><span class="comment"># My name is Zara and weight is 21 kg!</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="字段宽度和精度"><a href="#字段宽度和精度" class="headerlink" title="字段宽度和精度"></a>字段宽度和精度</h4><p><code>10.2f</code> 字段宽10，精度2</p>
 <p>用 <code>*</code> 作为字段宽度或者精度（或二者都用），此时从元组参数中读出数值</p>
@@ -590,12 +590,12 @@
 
 <p>拼接字符串：+</p>
 <h3 id="值转换为字符串的两种机制：str-和-repr"><a href="#值转换为字符串的两种机制：str-和-repr" class="headerlink" title="值转换为字符串的两种机制：str 和 repr"></a>值转换为字符串的两种机制：str 和 repr</h3><p>str 函数会把值转换为合理形式的字符串，repr 会创建一个字符串，以合法的 Python 表达式的形式来表示值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> <span class="built_in">repr</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line"><span class="string">&#x27;Hello, world&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> <span class="built_in">repr</span>(<span class="number">10000L</span>)</span><br><span class="line"><span class="number">10000L</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> <span class="built_in">str</span>(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line">Hello, world</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> <span class="built_in">str</span>(<span class="number">10000L</span>)</span><br><span class="line"><span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">repr</span>(<span class="string">&quot;Hello, world!&quot;</span>))</span><br><span class="line"><span class="string">&#x27;Hello, world&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">repr</span>(<span class="number">10000L</span>))</span><br><span class="line"><span class="number">10000L</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">str</span>(<span class="string">&quot;Hello, world!&quot;</span>))</span><br><span class="line">Hello, world</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">str</span>(<span class="number">10000L</span>))</span><br><span class="line"><span class="number">10000</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="原始字符串"><a href="#原始字符串" class="headerlink" title="原始字符串"></a>原始字符串</h3><p><strong>在书写正则表达式的时候特别有用</strong></p>
 <p>所有的字符串都是直接按照字面的意思来使用，没有转义特殊或不能打印的字符。 原始字符串除在字符串的第一个引号前加上字母”r”（可以大小写）以外，与普通字符串有着几乎完全相同的语法。</p>
 <p>以 r 开头，不能以反斜线结尾</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span> <span class="string">r&#x27;C:\nowhere&#x27;</span></span><br><span class="line">C:\nowhere</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">r&#x27;C:\nowhere&#x27;</span>)</span><br><span class="line">C:\nowhere</span><br></pre></td></tr></table></figure>
 
 <h3 id="Unicode-字符串"><a href="#Unicode-字符串" class="headerlink" title="Unicode 字符串"></a>Unicode 字符串</h3><p>在 Python 3.0中所有字符串都是 Unicode 字符串</p>
 <h3 id="find-方法"><a href="#find-方法" class="headerlink" title="find 方法"></a>find 方法</h3><p>返回最左端索引，否则返回 -1</p>
@@ -634,7 +634,7 @@
 <p><code>remove</code> ：移除第一个匹配项，改变列表但是不返回值</p>
 <p><code>reverse</code> ：反转列表，改变列表但是不返回值</p>
 <p><code>sort</code></p>
-<p>高级排序：**<code>sort</code> 方法默认升序排序**，如果想按自定义方法排序，那么可以自定义 compare(x, y) 函数，此函数在 x &lt; y 时返回负数，x &gt; y 时返回正数，相等时返回 0</p>
+<p>高级排序：**<code>sort</code> 方法默认升序排序**，如果想按自定义方法排序，那么可以自定义 <code>compare(x, y)</code> 函数，此函数在 x &lt; y 时返回负数，x &gt; y 时返回正数，相等时返回 0</p>
 <p>还有另两个可选的参数——key 和 reverse（通过名字来指定的关键字参数）</p>
 <h2 id="元组-Tuple-——不可变序列"><a href="#元组-Tuple-——不可变序列" class="headerlink" title="元组(Tuple)——不可变序列"></a>元组(Tuple)——不可变序列</h2><h3 id="无关闭分隔符"><a href="#无关闭分隔符" class="headerlink" title="无关闭分隔符"></a>无关闭分隔符</h3><p>任意无符号的对象，以逗号隔开，默认为元组</p>
 <p>通过括号括起来的，空元组可以用没有内容的两个圆括号表示</p>
