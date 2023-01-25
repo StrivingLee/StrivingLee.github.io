@@ -186,6 +186,147 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://strivinglee.github.io/2023/01/24/WangDao-OS-Chapter2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="StrivingLee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StrivingLee's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/01/24/WangDao-OS-Chapter2/" class="post-title-link" itemprop="url">WangDao OS Chapter2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-01-24 17:53:36" itemprop="dateCreated datePublished" datetime="2023-01-24T17:53:36+08:00">2023-01-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-01-26 05:52:04" itemprop="dateModified" datetime="2023-01-26T05:52:04+08:00">2023-01-26</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="进程的概念、组成、特征"><a href="#进程的概念、组成、特征" class="headerlink" title="进程的概念、组成、特征"></a>进程的概念、组成、特征</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124175307299.png" alt="2.1-总"></p>
+<h3 id="进程的概念"><a href="#进程的概念" class="headerlink" title="进程的概念"></a>进程的概念</h3><p>程序是静态的，进程是动态的，是程序的一次执行过程</p>
+<p>QQ.exe 和启动 QQ</p>
+<h3 id="进程的组成"><a href="#进程的组成" class="headerlink" title="进程的组成"></a>进程的组成</h3><blockquote>
+<p>准确来说是进程实体的组成</p>
+</blockquote>
+<h4 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a>PCB</h4><p>PCB(Process Control Block)：进程控制块，保存操作系统管理各个并发进程时所需要的信息</p>
+<p><strong>PCB 是进程存在的唯一标志</strong>，进程创建时操作系统会创建 PCB，进程结束时操作系统会回收 PCB</p>
+<p><strong>供给操作系统使用</strong></p>
+<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124174652024.png" alt="2.1.2.1-PCB组成"></p>
+<h4 id="程序段、数据段"><a href="#程序段、数据段" class="headerlink" title="程序段、数据段"></a>程序段、数据段</h4><p>程序段：程序代码（指令序列）</p>
+<p>数据段：运行过程中产生的各种数据（如定义的变量）</p>
+<p><strong>供给进程自身使用</strong>，与进程自身运行逻辑有关</p>
+<h4 id="进程实体"><a href="#进程实体" class="headerlink" title="进程实体"></a>进程实体</h4><p>进程实体（进程映像）由PCB、程序段、数据段组成，反应了进程在某一时刻的状态</p>
+<p>所以可以这样定义进程：<strong>进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位</strong></p>
+<blockquote>
+<p>调度指上 CPU 运行</p>
+</blockquote>
+<p>进程是动态的，进程实体（进程映像）是静态的。</p>
+<h3 id="进程的特征"><a href="#进程的特征" class="headerlink" title="进程的特征"></a>进程的特征</h3><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124175212607.png" alt="2.1.3"></p>
+<p>其中，动态性是进程<strong>最基本</strong>的特征</p>
+<h2 id="进程的状态与转换"><a href="#进程的状态与转换" class="headerlink" title="进程的状态与转换"></a>进程的状态与转换</h2><p><img src="/../AppData/Roaming/Typora/typora-user-images/image-20230124201936453.png" alt="2.2总"></p>
+<h3 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h3><p>创建态：进程正在被创建，操作系统为进程分配资源，初始化 PCB</p>
+<p>就绪态：进程已经创建完成具备运行条件，但是没有空闲 CPU，暂时不能运行</p>
+<p>运行态：进程正在 CPU 上运行，CPU 执行进程对应的程序</p>
+<p>阻塞态：进程运行过程中，在等待某个事件的发生而无法继续运行，操作系统会让进程下 CPU 进入阻塞态</p>
+<p>终止态：操作系统让进程下 CPU，并回收内存空间与该进程的 PCB</p>
+<h3 id="进程的状态转换"><a href="#进程的状态转换" class="headerlink" title="进程的状态转换"></a>进程的状态转换</h3><p><img src="/../AppData/Roaming/Typora/typora-user-images/image-20230124201325614.png" alt="2.2.2丁字裤模型"></p>
+<p>PCB 中也有一个变量 state 对应进程的当前状态</p>
+<h3 id="进程的组织"><a href="#进程的组织" class="headerlink" title="进程的组织"></a>进程的组织</h3><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p>按照进程状态将 PCB 分为多个队列，指针指向当前处于某状态的进程</p>
+<p>如就绪队列指针指向当前处于就绪态的进程</p>
+<p>单核 CPU 同一时刻只能有一个进程处于运行态，多核 CPU 可有多个进程同时处于运行态</p>
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p>按照进程状态的不同建立索引表</p>
+<h2 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h2><p>简而言之就是实现进程状态的转换</p>
+<h3 id="相关原语"><a href="#相关原语" class="headerlink" title="相关原语"></a>相关原语</h3><p>原语通过“关中断指令”和“开中断指令”两个<strong>特权指令</strong>实现原子性</p>
+<p>CPU 在正常情况下每执行完一条指令都会例行检查是否有中断信号，而关中断之后便不再进行该检查</p>
+<p><img src="/../AppData/Roaming/Typora/typora-user-images/image-20230124202446434.png" alt="2.3.1创建"></p>
+<p><img src="/../AppData/Roaming/Typora/typora-user-images/image-20230124202503059.png" alt="2.3.1终止"></p>
+<p>将任意状态的进程转变为终止态最终消失</p>
+<p>正常结束：进程调用 exit 系统调用请求终止</p>
+<p>异常结束：除 0，非法使用特权指令等被操作系统杀掉</p>
+<p>外界干预：任务管理器用户杀掉</p>
+<p><img src="/../AppData/Roaming/Typora/typora-user-images/image-20230124202905434.png" alt="2.3.1阻塞和唤醒"></p>
+<p>阻塞和唤醒的原因应为同一件事</p>
+<p><img src="/../AppData/Roaming/Typora/typora-user-images/image-20230124202955702.png" alt="2.3.1切换"></p>
+<p>正确完成切换的前提是先在寄存器中保存进程的运行环境（必要的寄存器信息）</p>
+<p>进程控制原语的三点共同点：</p>
+<ol>
+<li><p>更新 PCB 中的信息</p>
+</li>
+<li><p>将 PCB 装入合适的队列</p>
+</li>
+<li><p>分配和回收资源</p>
+</li>
+</ol>
+<h2 id="进程通信（IPC）"><a href="#进程通信（IPC）" class="headerlink" title="进程通信（IPC）"></a>进程通信（IPC）</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230126055115286.png" alt="2.4总"></p>
+<p>两个进程之间产生数据交互</p>
+<p>因为进程是分配系统资源的单位，所以各进程拥有的内存地址空间相互独立</p>
+<h3 id="共享存储"><a href="#共享存储" class="headerlink" title="共享存储"></a>共享存储</h3><p>基于数据结构、基于共享空间</p>
+<h3 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h3><p>以格式化的信息（Message）为单位，通过发送消息、接收消息两个原语进行数据交换</p>
+<h3 id="管道通信"><a href="#管道通信" class="headerlink" title="管道通信"></a>管道通信</h3><p>“管道”是一个特殊的共享文件，又名pipe文件。其实就是在内存中开辟一个大小固定的内存缓冲区</p>
+<p>采用半双工通信，单向传输，各进程互斥地访问管道</p>
+<p>管道写满，写进程阻塞；管道读空，读进程阻塞</p>
+<h2 id="线程概念-多线程模型"><a href="#线程概念-多线程模型" class="headerlink" title="线程概念 多线程模型"></a>线程概念 多线程模型</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://strivinglee.github.io/2023/01/14/Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -917,7 +1058,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -979,13 +1120,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">109k</span>
+    <span title="Symbols count total">110k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">4:33</span>
+    <span title="Reading time total">4:36</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
