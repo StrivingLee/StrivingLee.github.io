@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>OO Pre Review</title>
-    <url>/2023/01/13/OO%20Pre%20Review/</url>
+    <url>/OO-Pre-Review/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
 <p>OO Pre 的学期总结，痛并快乐着</p>
 </blockquote>
@@ -185,31 +185,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2023/01/13/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>我的入门启蒙</p>
-</blockquote>
-<span id="more"></span>
-
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Python基础教程（第2版）阅读笔记</title>
-    <url>/2023/01/14/Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%EF%BC%88%E7%AC%AC2%E7%89%88%EF%BC%89%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</url>
+    <url>/notes-of-python-book/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>摘录了书中有用的内容，精简了表述</p>
 <p>参考菜鸟教程增删</p>
@@ -1340,8 +1317,31 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>//</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>我的入门启蒙</p>
+</blockquote>
+<span id="more"></span>
+
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>WangDao OS Chapter2</title>
-    <url>/2023/01/24/WangDao-OS-Chapter2/</url>
+    <url>/WD-OS-Chap2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>枯燥无味的王道考研 OS 第二章 进程与线程 知识点罗列</p>
 </blockquote>
@@ -1742,7 +1742,7 @@
   </entry>
   <entry>
     <title>《满江红》观影感受</title>
-    <url>/2023/01/25/%E3%80%8A%E6%BB%A1%E6%B1%9F%E7%BA%A2%E3%80%8B%E8%A7%82%E5%BD%B1%E6%84%9F%E5%8F%97/</url>
+    <url>/impressions-of-Azolla/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>说说我个人对《满江红》的一点看法</p>
 </blockquote>
@@ -1763,7 +1763,7 @@
   </entry>
   <entry>
     <title>时钟参与组合逻辑的心得</title>
-    <url>/2023/01/13/%E6%97%B6%E9%92%9F%E5%8F%82%E4%B8%8E%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%9A%84%E5%BF%83%E5%BE%97/</url>
+    <url>/combinational-logic-concerning-clock/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
 <p>计组组合逻辑的一点小小的思考与整理</p>
 </blockquote>
@@ -1793,7 +1793,7 @@
   </entry>
   <entry>
     <title>浙大翁恺OO</title>
-    <url>/2023/01/13/%E6%B5%99%E5%A4%A7%E7%BF%81%E6%81%BAOO/</url>
+    <url>/WK-OO/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <p><em>Not finished</em></p>
 <p>浙大翁恺老师的 OO 入门课</p>
@@ -2182,49 +2182,8 @@
       </tags>
   </entry>
   <entry>
-    <title>科目三实战技巧</title>
-    <url>/2022/08/06/%E7%A7%91%E7%9B%AE%E4%B8%89%E5%AE%9E%E6%88%98%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>笔者与科三的爱恨情仇</p>
-</blockquote>
-<span id="more"></span>
-
-<p>笔者去年没有练完的科三拖到了今年来练…在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
-<h3 id="上车准备"><a href="#上车准备" class="headerlink" title="上车准备"></a>上车准备</h3><blockquote>
-<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
-</blockquote>
-<h3 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h3><blockquote>
-<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
-</blockquote>
-<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><blockquote>
-<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
-</blockquote>
-<h3 id="行驶中"><a href="#行驶中" class="headerlink" title="行驶中"></a>行驶中</h3><blockquote>
-<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
-<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
-<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
-<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
-<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
-<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
-<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
-<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
-<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
-<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
-<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>生活记录</category>
-      </categories>
-      <tags>
-        <tag>科目三</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Pro Git 读书笔记</title>
-    <url>/2022/09/09/Pro%20Git%20%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <url>/Pro-Git-notes/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p><em>Written on 08-09-2022</em></p>
 <p>很重要的先导内容，但是 missing 了</p>
@@ -3257,6 +3216,47 @@
         <tag>OO</tag>
         <tag>读书笔记</tag>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科目三实战技巧</title>
+    <url>/subject3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>笔者与科三的爱恨情仇</p>
+</blockquote>
+<span id="more"></span>
+
+<p>笔者去年没有练完的科三拖到了今年来练…在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
+<h3 id="上车准备"><a href="#上车准备" class="headerlink" title="上车准备"></a>上车准备</h3><blockquote>
+<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
+</blockquote>
+<h3 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h3><blockquote>
+<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
+</blockquote>
+<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><blockquote>
+<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
+</blockquote>
+<h3 id="行驶中"><a href="#行驶中" class="headerlink" title="行驶中"></a>行驶中</h3><blockquote>
+<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
+<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
+<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
+<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
+<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
+<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
+<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
+<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
+<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
+<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
+<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>生活记录</category>
+      </categories>
+      <tags>
+        <tag>科目三</tag>
       </tags>
   </entry>
 </search>
