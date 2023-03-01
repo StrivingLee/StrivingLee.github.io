@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-avatar-medium.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-avatar-small.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"strivinglee.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="缓考笨比的临时抱佛脚，是时候开始预习了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率统计复习">
+<meta property="og:url" content="https://strivinglee.github.io/Probability-and-Statistics-Review/index.html">
+<meta property="og:site_name" content="StrivingLee&#39;s Blog">
+<meta property="og:description" content="缓考笨比的临时抱佛脚，是时候开始预习了">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://strivinglee.github.io/Examples%5CChapter1%5C1.1.3-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter2%5C2.1.1-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter2%5C2.7.3-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter2%5C2.7.5-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter3%5C3.1.1-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter3%5C3.1.1-2.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230201132709759.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230201132953614.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230201133151631.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230201133941348.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter4%5C4.3.2-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter4%5C4.3.3-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230201135028202.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230201134714012.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230201134726376.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230201135954111.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230201140009843.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.1-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.1-2.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.1-3.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.2-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.2-2.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.2-3.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.2-4.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.2-5.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.2-6.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.2-7.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.3-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.3-2.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter6%5C6.3-3.png">
+<meta property="og:image" content="c:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220346361.png">
+<meta property="og:image" content="c:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220355682.png">
+<meta property="og:image" content="c:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220400188.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter7%5C7-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter7%5C7.1-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter7%5C7.1-2.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter7%5C7.2-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter7%5C7.2-2.png">
+<meta property="og:image" content="https://strivinglee.github.io/Notes%5CChapter8%5C8.1-1.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230211095739087.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230211100031053.png">
+<meta property="og:image" content="https://strivinglee.github.io/1.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230211091530921.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230211091800582.png">
+<meta property="og:image" content="https://strivinglee.github.io/image-20230211093731986.png">
+<meta property="article:published_time" content="2023-03-01T11:58:42.703Z">
+<meta property="article:modified_time" content="2023-03-01T12:00:54.289Z">
+<meta property="article:author" content="StrivingLee">
+<meta property="article:tag" content="概率统计">
+<meta property="article:tag" content="S3">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://strivinglee.github.io/Examples%5CChapter1%5C1.1.3-1.png">
+
+<link rel="canonical" href="https://strivinglee.github.io/Probability-and-Statistics-Review/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>概率统计复习 | StrivingLee's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">StrivingLee's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">揉合生命千样好</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://strivinglee.github.io/Probability-and-Statistics-Review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="StrivingLee">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="StrivingLee's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/Probability-and-Statistics-Review" class="post-title-link post-title-link-external" itemprop="url">概率统计复习<i class="fa fa-external-link-alt"></i></a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-03-01 19:58:42 / Modified: 20:00:54" itemprop="dateCreated datePublished" datetime="2023-03-01T19:58:42+08:00">2023-03-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" itemprop="url" rel="index"><span itemprop="name">概率统计</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>8.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>21 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>缓考笨比的临时抱佛脚<del>，是时候开始预习了</del></p>
+</blockquote>
+<span id="more"></span>
+
+<p>时间紧任务重，格式问题先摆烂了，各位看官对不住。毕竟考试要紧，考试要紧</p>
+<p><strong>8.5、9.3、9.4、11.5、12.3不考</strong></p>
+<p> [TOC]</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>笔记不重要，写不完鸽了就行，重要的是学会东西<del>（啊对对对，我也没见你学会啊）</del></p>
+<p><strong>本书结构</strong>：1-6章概率论</p>
+<p>7-9章数理统计</p>
+<p>10-12章随机过程</p>
+<h1 id="第一章-随机事件的概率"><a href="#第一章-随机事件的概率" class="headerlink" title="第一章 随机事件的概率"></a>第一章 随机事件的概率</h1><h2 id="1-1-随机事件与样本空间"><a href="#1-1-随机事件与样本空间" class="headerlink" title="1.1 随机事件与样本空间"></a>1.1 随机事件与样本空间</h2><h3 id="1-试验和事件"><a href="#1-试验和事件" class="headerlink" title="1.试验和事件"></a>1.试验和事件</h3><p>随机：其结果事先不可预言</p>
+<p><strong>不特殊说明，本书中试验都指随机试验</strong></p>
+<p>随机试验特征：</p>
+<ul>
+<li>相同条件下可以重复进行</li>
+<li>能够事先明确所有可能的实验结果范围</li>
+<li>实验前不能准确预言试验结果</li>
+</ul>
+<p>事件：试验的结果</p>
+<p>随机事件：试验中可能发生，也可能不发生，用大写字母 $A, B\dots$ 表示</p>
+<p>基本事件：随机试验的每一个可能结果，也是最简单的随机事件，用小写字母 $e, w$ 表示</p>
+<p>必然事件、不可能事件：</p>
+<p>必然事件用 $S$ 或 $Ω$ 表示，不可能事件用 $\empty$ 表示</p>
+<p>不是随机事件，讨论时为方便当作随机事件</p>
+<h3 id="2-样本空间"><a href="#2-样本空间" class="headerlink" title="2.样本空间"></a>2.样本空间</h3><p>试验 $E$ 的<strong>全部基本事件</strong>组成的集合</p>
+<p><strong>随机事件是样本空间的子集</strong></p>
+<p>不可能事件 $\empty$ 表示空集，必然事件 $S$ 表示样本空间</p>
+<p>&#x3D;&#x3D;为后文用集合论讨论事件间关系和运算做准备&#x3D;&#x3D;</p>
+<h3 id="3-随机事件的关系和运算"><a href="#3-随机事件的关系和运算" class="headerlink" title="3.随机事件的关系和运算"></a>3.随机事件的关系和运算</h3><p>包含、和、积、互不相容（互斥）、互逆（对立）、差</p>
+<p>推广到有限多个、用图形表示、运算律</p>
+<p> <img src="/Examples%5CChapter1%5C1.1.3-1.png"></p>
+<p>第一章比较简单，先鸽了，后面有空再补，因为🐓组、大⑤、离散赶得有点紧了（手动百丽破防哥）</p>
+<h1 id="第二章-随机变量及其分布"><a href="#第二章-随机变量及其分布" class="headerlink" title="第二章 随机变量及其分布"></a>第二章 随机变量及其分布</h1><h2 id="2-1-随机变量"><a href="#2-1-随机变量" class="headerlink" title="2.1 随机变量"></a>2.1 随机变量</h2><p><img src="/Notes%5CChapter2%5C2.1.1-1.png"></p>
+<p>数学本质是一个可测函数</p>
+<p>&#x3D;&#x3D;将随机事件的概率问题转化为随机变量取值的概率问题&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;因此，随机变量及其取值范围的概率问题是我们今后学习和研究的主要问题&#x3D;&#x3D;</p>
+<h2 id="2-2-随机变量的分布函数"><a href="#2-2-随机变量的分布函数" class="headerlink" title="2.2 随机变量的分布函数"></a>2.2 随机变量的分布函数</h2><p>&#x3D;&#x3D;分布函数非常重要&#x3D;&#x3D;</p>
+<p><strong>定义</strong>：设 $X$ 为随机变量，则 ${X \ge x} &#x3D; {e \in S|-\infty &lt; X(e) \le x}$ 为随机事件，令</p>
+<p>$F(x) &#x3D; P{X \le x},-\infty &lt; x &lt; +\infty$</p>
+<p>为随机变量 $X$ 的**$\textcolor{red}{概率分布函数}$<strong>，简称</strong>$\textcolor{red}{分布函数}$**，记作 $X \sim F(x)$</p>
+<p>$F(x)$ 等于 $X$ 在区间 $(- \infty ,x]$ 取值的概率</p>
+<h2 id="2-3-离散型随机变量及其概率分布"><a href="#2-3-离散型随机变量及其概率分布" class="headerlink" title="2.3 离散型随机变量及其概率分布"></a>2.3 离散型随机变量及其概率分布</h2><p>$X$ 取各个可能值的概率</p>
+<p>$p_k &#x3D; P{X &#x3D; x_k}, k &#x3D; 1,2,\dots$</p>
+<p>称为概率分布（分布律、分布列）</p>
+<h2 id="2-4-常用离散型随机变量的分布律"><a href="#2-4-常用离散型随机变量的分布律" class="headerlink" title="2.4 常用离散型随机变量的分布律"></a>2.4 常用离散型随机变量的分布律</h2><h3 id="1-两点分布（（0-1）分布）"><a href="#1-两点分布（（0-1）分布）" class="headerlink" title="1.两点分布（（0-1）分布）"></a>1.两点分布（（0-1）分布）</h3><p>服从（0-1）分布的试验叫做<strong>伯努利试验</strong></p>
+<h3 id="2-泊松分布"><a href="#2-泊松分布" class="headerlink" title="2.泊松分布"></a>2.泊松分布</h3><p>$P{X &#x3D; k}&#x3D;e^{-\lambda} \frac{\lambda ^ k}{k!},k&#x3D;0,1,2,\dots$</p>
+<p>其中 $\lambda &gt; 0$，称 $X$ 服从参数为 $\lambda$ 的泊松分布，记作 $X \sim \Pi(\lambda)$，这里用到幂级数展开式 $e^x &#x3D; \sum_{k&#x3D;0}^{+\infty}{\frac{x^k}{k!}}$</p>
+<blockquote>
+<p>我头一次明白这个式子，这是前面乘一个 $e^{-\lambda}$ 系数，然后后面做幂级数求和，得到结果 $e^{\lambda}$ ，乘积恰好为1</p>
+</blockquote>
+<h3 id="3-超几何分布"><a href="#3-超几何分布" class="headerlink" title="3.超几何分布"></a>3.超几何分布</h3><p>高中学的，多练例题即可</p>
+<h3 id="4-二项分布"><a href="#4-二项分布" class="headerlink" title="4.二项分布"></a>4.二项分布</h3><p>$P{X&#x3D;k}&#x3D;\sum_{k&#x3D;0}^{n} C_{n}^{k}p^kq^{n-k},k&#x3D;0,1,2,\dots$</p>
+<blockquote>
+<p>这公式真难敲啊，顺带提一嘴，我感觉这些没啥特别的，就是一个上标一个下标，把这个写好了就行。以及MarkDown没有自己的组合数</p>
+</blockquote>
+<p>$\bcancel{你没有自己的组合数吗}$</p>
+<p>是 $(p+q)^n$ 展开式中的一般项，记作 $X \sim B(n,p)$</p>
+<p>每次概率不改变的就是二项分布，<strong>常用的：放回式取用</strong></p>
+<h3 id="5-二项分布的近似计算和查泊松分布表"><a href="#5-二项分布的近似计算和查泊松分布表" class="headerlink" title="5.二项分布的近似计算和查泊松分布表"></a>5.二项分布的近似计算和查泊松分布表</h3><p>n很大，p很小的时候，二项分布接近泊松分布（一般 $n \ge 10, p_n \le 0.1$ 时)</p>
+<p>转换公式：$\lambda &#x3D; np$</p>
+<h2 id="2-5-连续型随机变量及其概率密度函数"><a href="#2-5-连续型随机变量及其概率密度函数" class="headerlink" title="2.5 连续型随机变量及其概率密度函数"></a>2.5 连续型随机变量及其概率密度函数</h2><p>$f(x)$ 为**$\textcolor{red}{概率密度函数}$<strong>（分布密度函数），简称</strong>$\textcolor{red}{概率密度}$**</p>
+<p>&#x3D;&#x3D;概率密度和分布函数都很重要，同时也要区分清楚&#x3D;&#x3D;</p>
+<h2 id="2-6-常用的连续型随机变量分布"><a href="#2-6-常用的连续型随机变量分布" class="headerlink" title="2.6 常用的连续型随机变量分布"></a>2.6 常用的连续型随机变量分布</h2><h3 id="1-均匀分布"><a href="#1-均匀分布" class="headerlink" title="1.均匀分布"></a>1.均匀分布</h3><p>$\zeta \sim U[a,b]$</p>
+<h3 id="2-指数分布"><a href="#2-指数分布" class="headerlink" title="2.指数分布"></a>2.指数分布</h3><p>$$<br>f(x)&#x3D;<br>\begin{cases}<br>\lambda e^{- \lambda x},x \ge 0,\<br>0,x &lt; 0<br>\end{cases}<br>$$</p>
+<p>分布函数<br>$$<br>F(x)&#x3D;<br>\begin{cases}<br>0,x&lt;0,\<br>\int_{-\infty}^x f(t)dt &#x3D; 1-e^{-\lambda x},x \ge 0<br>\end{cases}<br>$$</p>
+<h3 id="3-Welbull-分布"><a href="#3-Welbull-分布" class="headerlink" title="3.Welbull 分布"></a>3.Welbull 分布</h3><p>指数分布的一般情况，没怎么考过</p>
+<h3 id="4-Gamma-函数"><a href="#4-Gamma-函数" class="headerlink" title="4.$\Gamma$ 函数"></a>4.$\Gamma$ 函数</h3><p>类似于辅助的作用，单独考有点逆天，算了不写了</p>
+<h2 id="2-7-正态分布"><a href="#2-7-正态分布" class="headerlink" title="2.7 正态分布"></a>2.7 正态分布</h2><h3 id="1-欧拉-泊松积分"><a href="#1-欧拉-泊松积分" class="headerlink" title="1.欧拉-泊松积分"></a>1.欧拉-泊松积分</h3><p>很巧妙的算法，用二重积分证明<br>$$<br>\int _{-\infty} ^{+\infty} e^{-x^2} dx &#x3D; \sqrt{\pi}<br>$$</p>
+<h3 id="2-正态分布"><a href="#2-正态分布" class="headerlink" title="2.正态分布"></a>2.正态分布</h3><p>$\Huge f(x)&#x3D;\frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2 \sigma^2}},-\infty &lt; x &lt; +\infty$</p>
+<p>记作 $\zeta \sim N(\mu,\sigma^2)$</p>
+<p>$\Huge \textcolor{red}{非常非常非常重要}$</p>
+<p>性质：</p>
+<ul>
+<li>$x &#x3D; \mu$ 时，取最大值 $f(\mu) &#x3D; \Huge\frac{1}{\sigma \sqrt{2\pi}}$</li>
+</ul>
+<h3 id="3-标准正态分布"><a href="#3-标准正态分布" class="headerlink" title="3.标准正态分布"></a>3.标准正态分布</h3><p><img src="/Notes%5CChapter2%5C2.7.3-1.png"></p>
+<p>鸽了，哥们真不想打公式了妈的</p>
+<h3 id="4-正态分布与标准正态分布的关系"><a href="#4-正态分布与标准正态分布的关系" class="headerlink" title="4.正态分布与标准正态分布的关系"></a>4.正态分布与标准正态分布的关系</h3><p>$\Huge F(x) &#x3D; \Phi(\frac{x-\mu}{\sigma}),-\infty &lt; x &lt; +\infty$</p>
+<blockquote>
+<p>意义：将不好算的数据转化成可以查表的标准正态分布，相互转换得到结果</p>
+</blockquote>
+<h3 id="5-标准正态分布的-alpha-分位点"><a href="#5-标准正态分布的-alpha-分位点" class="headerlink" title="5.标准正态分布的 $\alpha$ 分位点"></a>5.标准正态分布的 $\alpha$ 分位点</h3><blockquote>
+<p>重要理解：分位点是一个横坐标，这个图是偶函数，要注意其对称轴是 x &#x3D; 0 而非 $\frac{1}{2}$</p>
+</blockquote>
+<p><img src="/Notes%5CChapter2%5C2.7.5-1.png"></p>
+<p><del>算了，和自己达成和解，公式太多了</del></p>
+<p>考的不多但是要求一定的记忆量</p>
+<h1 id="第三章-二维随机变量"><a href="#第三章-二维随机变量" class="headerlink" title="第三章 二维随机变量"></a>第三章 二维随机变量</h1><h2 id="3-1-随机向量与联合分布"><a href="#3-1-随机向量与联合分布" class="headerlink" title="3.1 随机向量与联合分布"></a>3.1 随机向量与联合分布</h2><h3 id="1-二维随机变量的定义和分布函数的基本性质"><a href="#1-二维随机变量的定义和分布函数的基本性质" class="headerlink" title="1.二维随机变量的定义和分布函数的基本性质"></a>1.二维随机变量的定义和分布函数的基本性质</h3><p>$$<br>F(x,y) &#x3D; P{X \le x, Y \le y} }&#x3D; P{e \in S|X(e) \le x, Y(e) \le y}<br>$$</p>
+<p>称为二维随机变量 $(X,Y)$ 的分布函数或随机变量 $X$ 和 $Y$ 的联合分布函数</p>
+<p><img src="/Notes%5CChapter3%5C3.1.1-1.png"></p>
+<p><img src="/Notes%5CChapter3%5C3.1.1-2.png"></p>
+<p><strong>千万注意这个交叉计算的方式</strong></p>
+<h3 id="2-二维离散型随机变量"><a href="#2-二维离散型随机变量" class="headerlink" title="2.二维离散型随机变量"></a>2.二维离散型随机变量</h3><p>没啥想写的，鸽了吧</p>
+<p>记得有的题目要用条件概率（P73）</p>
+<h3 id="3-二维连续型随机变量"><a href="#3-二维连续型随机变量" class="headerlink" title="3.二维连续型随机变量"></a>3.二维连续型随机变量</h3><p>$\huge \frac{\partial^2 F}{\partial x \partial y}(x_0,y_0) &#x3D; f(x_0,y_0)$</p>
+<p>$\huge P{(X,Y) \in D} &#x3D; \iint_{D}f(x,y)dxdy$</p>
+<p>这里涉及到一些二重积分的内容，但是我全忘了</p>
+<p>好消息，有淑芬书，坏消息，好像把淑芬书扔家里了</p>
+<p>这两个🦁都极其重要，务必<del>基佬</del>记牢</p>
+<h3 id="4-常用的二维连续型随机变量"><a href="#4-常用的二维连续型随机变量" class="headerlink" title="4.常用的二维连续型随机变量"></a>4.常用的二维连续型随机变量</h3><p><img src="/image-20230201132709759.png" alt="image-20230201132709759"></p>
+<p>这五个变量的意义请见第五章</p>
+<h2 id="3-2-边缘分布函数"><a href="#3-2-边缘分布函数" class="headerlink" title="3.2 边缘分布函数"></a>3.2 边缘分布函数</h2><blockquote>
+<p>考虑两个变量分布函数之间的关系</p>
+</blockquote>
+<p>$$<br>F_X(x) &#x3D; \lim_{y\rightarrow+\infty} F(x,y) &#x3D; F(x, +\infty)\</p>
+<p>F_Y(y) &#x3D; \lim_{x\rightarrow+\infty} F(x,y) &#x3D; F(+\infty, y)<br>$$<br>由联合分布函数可计算边缘分布函数，但反之不可确定</p>
+<h2 id="3-3-边缘分布律与条件分布律"><a href="#3-3-边缘分布律与条件分布律" class="headerlink" title="3.3 边缘分布律与条件分布律"></a>3.3 边缘分布律与条件分布律</h2><p>$(X, Y)$ 关于 $X$ 的变量分布律正好是联合分布律表中各行概率相加</p>
+<p>$(X, Y)$ 关于 $Y$ 的变量分布律正好是联合分布律表中各行概率相加</p>
+<p><img src="/image-20230201132953614.png" alt="image-20230201132953614"></p>
+<h2 id="3-4-边缘概率密度与条件概率密度"><a href="#3-4-边缘概率密度与条件概率密度" class="headerlink" title="3.4 边缘概率密度与条件概率密度"></a>3.4 边缘概率密度与条件概率密度</h2><h3 id="1-边缘概率密度"><a href="#1-边缘概率密度" class="headerlink" title="1.边缘概率密度"></a>1.边缘概率密度</h3><p>$$<br>f_X(x)&#x3D;\int_{-\infty}^{+\infty} f(x,y)dy\<br>f_Y(y)&#x3D;\int_{-\infty}^{+\infty} f(x,y)dx<br>$$</p>
+<h3 id="2-条件概率密度"><a href="#2-条件概率密度" class="headerlink" title="2.条件概率密度"></a>2.条件概率密度</h3><p><img src="/image-20230201133151631.png" alt="image-20230201133151631"><br>$$<br>F_{X|Y}(x|y) &#x3D; \frac{\frac{\partial}{\partial x}F(x,y)}{\frac{d}{dx}F_Y(y)}\<br>F_{Y|X}(y|x) &#x3D; \frac{\frac{\partial}{\partial y}F(x,y)}{\frac{d}{dy}F_X(x)}\<br>F_{X|Y}(x|y) &#x3D; \int_{-\infty}^x \frac{f(u,y)}{f_Y(y)} du\<br>F_{Y|X}(y|x) &#x3D; \int_{-\infty}^y \frac{f(x,v)}{f_X(x)} dv\<br>f_{X|Y}(x|y) &#x3D; \frac{f(x,y)}{f_Y(y)}\<br>f_{Y|X}(y|x) &#x3D; \frac{f(x,y)}{f_X(x)}<br>$$</p>
+<h2 id="3-5-相互独立的随机变量"><a href="#3-5-相互独立的随机变量" class="headerlink" title="3.5 相互独立的随机变量"></a>3.5 相互独立的随机变量</h2><h3 id="1-相互独立"><a href="#1-相互独立" class="headerlink" title="1.相互独立"></a>1.相互独立</h3><p>$$<br>P{X \le x, Y \le y} &#x3D; P{X \le x}·P{Y \le y} \<br>F(x, y) &#x3D; F_X(x)·F_Y(y), -\infty &lt; x, y &lt; \infty<br>$$</p>
+<h3 id="2-离散型随机变量相互独立判别定理"><a href="#2-离散型随机变量相互独立判别定理" class="headerlink" title="2.离散型随机变量相互独立判别定理"></a>2.离散型随机变量相互独立判别定理</h3><p>$$<br>P{X \le x_i, Y \le y_j} &#x3D; P{X \le x_i}·P{Y \le y_j},i,j&#x3D;1,2,\dots<br>$$</p>
+<h3 id="3-连续型随机变量相互独立判别定理"><a href="#3-连续型随机变量相互独立判别定理" class="headerlink" title="3.连续型随机变量相互独立判别定理"></a>3.连续型随机变量相互独立判别定理</h3><p>$$<br>f(x,y) &#x3D; f_X(x)·f_Y(y)<br>$$</p>
+<p>（几乎处处）</p>
+<h3 id="4-有限多个或可列个变量相互独立"><a href="#4-有限多个或可列个变量相互独立" class="headerlink" title="4.有限多个或可列个变量相互独立"></a>4.有限多个或可列个变量相互独立</h3><h1 id="第四章-随机变量的函数的分布"><a href="#第四章-随机变量的函数的分布" class="headerlink" title="第四章 随机变量的函数的分布"></a>第四章 随机变量的函数的分布</h1><blockquote>
+<p>用已有的概率分布求出函数式的概率分布</p>
+</blockquote>
+<h2 id="4-1-离散型随机变量的函数的分布"><a href="#4-1-离散型随机变量的函数的分布" class="headerlink" title="4.1 离散型随机变量的函数的分布"></a>4.1 离散型随机变量的函数的分布</h2><h3 id="1-一维离散型随机变量的函数的分布律"><a href="#1-一维离散型随机变量的函数的分布律" class="headerlink" title="1.一维离散型随机变量的函数的分布律"></a>1.一维离散型随机变量的函数的分布律</h3><p>y相同相加，不同分列</p>
+<h3 id="2-二维离散型随机变量的函数的分布律"><a href="#2-二维离散型随机变量的函数的分布律" class="headerlink" title="2.二维离散型随机变量的函数的分布律"></a>2.二维离散型随机变量的函数的分布律</h3><p>求出具体值</p>
+<h2 id="4-2-一维连续型随机变量的函数的分布"><a href="#4-2-一维连续型随机变量的函数的分布" class="headerlink" title="4.2 一维连续型随机变量的函数的分布"></a>4.2 一维连续型随机变量的函数的分布</h2><p>把y的范围转化成x的范围</p>
+<p>一般方法：先求 $Y &#x3D; g(X)$ 的分布函数 $F_Y(y)$，求导得到 $f_Y(y)$</p>
+<p>也有公式，可以无脑套用<img src="/image-20230201133941348.png" alt="image-20230201133941348"></p>
+<h2 id="4-3-二维连续型随机变量的函数的分布"><a href="#4-3-二维连续型随机变量的函数的分布" class="headerlink" title="4.3 二维连续型随机变量的函数的分布"></a>4.3 二维连续型随机变量的函数的分布</h2><p>转化成二重积分</p>
+<p>几种特殊的方法：</p>
+<h3 id="1-Z-x3D-X-Y-的分布"><a href="#1-Z-x3D-X-Y-的分布" class="headerlink" title="1.$Z &#x3D; X + Y$ 的分布"></a>1.$Z &#x3D; X + Y$ 的分布</h3><p>$$<br>f_Z(z)&#x3D;\int_{-\infty}^{+\infty} f(x,z-x)dx &#x3D; \int_{\over{AB}} f(x,y)dx<br>$$</p>
+<p>第二型曲线积分</p>
+<p>有点复杂啊，回头得好好看看</p>
+<h3 id="2-Z-x3D-max-X-Y-的分布"><a href="#2-Z-x3D-max-X-Y-的分布" class="headerlink" title="2.$Z &#x3D; max{X + Y}$ 的分布"></a>2.$Z &#x3D; max{X + Y}$ 的分布</h3><p>$$<br>{Z \le z} &#x3D; {X \le z, Y \le z}<br>$$</p>
+<p><img src="/Notes%5CChapter4%5C4.3.2-1.png"></p>
+<h3 id="3-Z-x3D-min-X-Y-的分布"><a href="#3-Z-x3D-min-X-Y-的分布" class="headerlink" title="3.$Z &#x3D; min{X + Y}$ 的分布"></a>3.$Z &#x3D; min{X + Y}$ 的分布</h3><p><img src="/Notes%5CChapter4%5C4.3.3-1.png"></p>
+<h1 id="第五章-随机变量的数字特征"><a href="#第五章-随机变量的数字特征" class="headerlink" title="第五章 随机变量的数字特征"></a>第五章 随机变量的数字特征</h1><p>数字特征，指联系于分布函数的某些数：如平均值，方差等。反映了随机变量在某些方面的特征</p>
+<p>确定分布函数需要一些参数，而参数又往往由某些数字特征或其他数值所决定，故找到这些特征便能确定分布函数。</p>
+<p>实际中确定这些特征比较困难，而且没有必要，有时只需要知晓随机变量的某些特征即可。</p>
+<h2 id="5-1-数学期望"><a href="#5-1-数学期望" class="headerlink" title="5.1 数学期望"></a>5.1 数学期望</h2><p>P129，例4，收敛需要特殊记一下</p>
+<p>相加相乘的性质</p>
+<p><img src="/image-20230201135028202.png" alt="image-20230201135028202"></p>
+<p><strong>几个定理</strong></p>
+<p><img src="/image-20230201134714012.png" alt="image-20230201134714012"></p>
+<p><img src="/image-20230201134726376.png" alt="image-20230201134726376"></p>
+<h2 id="5-2-方差"><a href="#5-2-方差" class="headerlink" title="5.2 方差"></a>5.2 方差</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>几种符号</p>
+<p>带括号不带括号，Var</p>
+<p>标准差、均方差</p>
+<p><strong>重要的计算公式 $ DX  &#x3D; EX^2 - (EX)^2 $</strong></p>
+<h3 id="2-性质"><a href="#2-性质" class="headerlink" title="2.性质"></a>2.性质</h3><p><img src="/image-20230201135954111.png" alt="image-20230201135954111"></p>
+<p><img src="/image-20230201140009843.png" alt="image-20230201140009843"></p>
+<h2 id="5-3-常用随机变量的数学期望和方差"><a href="#5-3-常用随机变量的数学期望和方差" class="headerlink" title="5.3 常用随机变量的数学期望和方差"></a>5.3 常用随机变量的数学期望和方差</h2><h3 id="0-1分布"><a href="#0-1分布" class="headerlink" title="0-1分布"></a>0-1分布</h3><p>$EX &#x3D; p, DX &#x3D; p(1-p)$</p>
+<h3 id="二项分布"><a href="#二项分布" class="headerlink" title="二项分布"></a>二项分布</h3><p>$EX &#x3D; np, DX &#x3D; npq$</p>
+<h3 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h3><p>$EX &#x3D; \lambda, DX &#x3D; \lambda$</p>
+<h3 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h3><p>$EX &#x3D; \frac{a + b}{2}, DX &#x3D; \frac{(b-a)^2}{12}$</p>
+<h3 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h3><p>$EX &#x3D; \frac{1}{\lambda}, DX &#x3D; \frac{1}{\lambda^2}$</p>
+<h2 id="5-4-协方差和相关系数"><a href="#5-4-协方差和相关系数" class="headerlink" title="5.4 协方差和相关系数"></a>5.4 协方差和相关系数</h2><p>表征二维向量 X 与 Y 之间的关系</p>
+<h3 id="1-协方差"><a href="#1-协方差" class="headerlink" title="1.协方差"></a>1.协方差</h3><p>$$ Cov(X,Y) &#x3D; E[(X - EX) · (Y - EY)] $$</p>
+<p>$$ Cov(X,Y) &#x3D; E(XY) - EX·EY $$</p>
+<p>性质为：</p>
+<h3 id="2-相关系数"><a href="#2-相关系数" class="headerlink" title="2.相关系数"></a>2.相关系数</h3><p>也称标准协方差，记作 $\rho$</p>
+<h3 id="3-计算举例"><a href="#3-计算举例" class="headerlink" title="3.计算举例"></a>3.计算举例</h3><blockquote>
+<p>时刻铭记：协方差本身就是一种方差，计算的时候不需要再乘上 $\sqrt{DX} \sqrt{DY}$ 了 </p>
+</blockquote>
+<h2 id="5-5-矩-协方差矩阵"><a href="#5-5-矩-协方差矩阵" class="headerlink" title="5.5 矩 协方差矩阵"></a>5.5 矩 协方差矩阵</h2><p>记一下概念就行，式子比较麻烦后面补</p>
+<p>以及这里应该不考，所以暂时先放了</p>
+<h1 id="第六章-大数定律和中心极限定理"><a href="#第六章-大数定律和中心极限定理" class="headerlink" title="第六章 大数定律和中心极限定理"></a>第六章 大数定律和中心极限定理</h1><p>极限可以刻画相同条件下大量重复的试验</p>
+<p><strong>这章的思路：</strong></p>
+<p><strong>大数定律：</strong></p>
+<blockquote>
+<p>随机事件的大量重复出现中，存在几乎必然的规律</p>
+</blockquote>
+<ul>
+<li><strong>事件的频率作为事件的概率的估计</strong></li>
+<li><strong>样本均值作为总体均值的估计</strong></li>
+</ul>
+<p><strong>中心极限定理：</strong></p>
+<ul>
+<li><strong>正态分布在概率论中占有极其重要的地位</strong></li>
+</ul>
+<h2 id="6-1-马尔可夫不等式和切比雪夫不等式"><a href="#6-1-马尔可夫不等式和切比雪夫不等式" class="headerlink" title="6.1 马尔可夫不等式和切比雪夫不等式"></a>6.1 马尔可夫不等式和切比雪夫不等式</h2><p>两个重要的不等式，研究大数定律的基本工具</p>
+<p><img src="/Notes%5CChapter6%5C6.1-1.png"><img src="/Notes%5CChapter6%5C6.1-2.png"></p>
+<p>马尔可夫不等式是前文提到的 k 阶绝对矩</p>
+<p>切比雪夫不等式主要用于概率估计和理论推导</p>
+<ul>
+<li>理论上证实了 方差度量随机变量取值偏离均值的程度</li>
+<li>引出了方差估计的“尾概率”</li>
+</ul>
+<p><img src="/Notes%5CChapter6%5C6.1-3.png"></p>
+<blockquote>
+<p>没有偏离，则是所有变量相同取值，很好理解</p>
+</blockquote>
+<h2 id="6-2-大数定律"><a href="#6-2-大数定律" class="headerlink" title="6.2 大数定律"></a>6.2 大数定律</h2><p>频率收敛到概率的理论根据</p>
+<p>我们只介绍一些弱的情况</p>
+<p><img src="/Notes%5CChapter6%5C6.2-1.png"><img src="/Notes%5CChapter6%5C6.2-2.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-3.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-4.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-5.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-6.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-7.png"></p>
+<h2 id="6-3-中心极限定理"><a href="#6-3-中心极限定理" class="headerlink" title="6.3 中心极限定理"></a>6.3 中心极限定理</h2><p>人们在对大量随机现象的研究中发现，如果一个量是由大量相互独立的随机因素所造成，而每一个因素在总量中所起的作用又较小，那么这种量通常服从或近似服从正态分布. 这种现象就是中心极限定理的客观背景.</p>
+<p><img src="/Notes%5CChapter6%5C6.3-1.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.3-2.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.3-3.png"></p>
+<p><strong>独立同分布的随机变量序列，它们本身不服从正态分布，但是多个随机变量和的极限分布是正态分布，这就是量变引起质变的道理．</strong></p>
+<p>设 $X_1,X_2,\dots,X_n,\dots$ 是相互独立的随机变量序列，且其服从参数为 $\lambda$ 的指数分布，则</p>
+<p><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220346361.png" alt="image-20221120220341455" style="zoom:67%;" /><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220355682.png" alt="image-20221120220355682" style="zoom:67%;" /><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220400188.png" alt="image-20221120220400188" style="zoom:67%;" /></p>
+<p>（公式太复杂，复制了个图片，摸了）</p>
+<h1 id="第七章-统计总体与样本"><a href="#第七章-统计总体与样本" class="headerlink" title="第七章 统计总体与样本"></a>第七章 统计总体与样本</h1><p><img src="/Notes%5CChapter7%5C7-1.png"></p>
+<p><strong>省流：只有参数估计和假设检验</strong></p>
+<h2 id="7-1-总体与样本"><a href="#7-1-总体与样本" class="headerlink" title="7.1 总体与样本"></a>7.1 总体与样本</h2><h3 id="1-总体与个体"><a href="#1-总体与个体" class="headerlink" title="1.总体与个体"></a>1.总体与个体</h3><p>总体：具有一定共同属性的研究对象的全体</p>
+<p>个体：组成总体的每一个元素</p>
+<p>总体通常用 $\Omega &#x3D; { \omega }$ 或 $S &#x3D; {e}$ 表示</p>
+<p>在实际中，我们主要关心的是研究对象的某一（或某几项）<strong>数量指标 $X&#x3D;X(\omega)$</strong> ，它是一个随机变量</p>
+<blockquote>
+<p>将总体的分布用随机变量刻画</p>
+</blockquote>
+<p>随机变量 $X$ 的分布就是总体的分布</p>
+<p>总体就是指随机变量 $X$ 或 $X$ 的取值集合 </p>
+<h3 id="2-样本与样本值"><a href="#2-样本与样本值" class="headerlink" title="2.样本与样本值"></a>2.样本与样本值</h3><p>用部分统计的方法</p>
+<p>从总体 $X$ 中有放回地随机抽取 $n$ 个数值，$x_i$ 是一次抽样观察（记录）的结果，$x_1,x_2,\dots,x_n$ 为总体 $X$ 的一组样本观察值，简称<strong>样本值</strong></p>
+<p><img src="/Notes%5CChapter7%5C7.1-1.png"></p>
+<p>这一段的一个重要的概念：<strong>观察值（样本值）独立与总体同分布</strong></p>
+<p>简单随机样本、简单随机抽样（不再赘述）</p>
+<p><strong>默认所提到的样本都是简单随机样本</strong></p>
+<p><img src="/Notes%5CChapter7%5C7.1-2.png"></p>
+<h2 id="7-2-样本矩和统计量"><a href="#7-2-样本矩和统计量" class="headerlink" title="7.2 样本矩和统计量"></a>7.2 样本矩和统计量</h2><blockquote>
+<p>一些加工样本的方法</p>
+</blockquote>
+<h3 id="1-样本矩"><a href="#1-样本矩" class="headerlink" title="1.样本矩"></a>1.样本矩</h3><p>样本 $k$ 阶矩（$k$ 阶原点矩）：<br>$$<br>A_k &#x3D; \frac{1}{n}\sum_{i &#x3D; 1}^n X_i ^ k<br>$$</p>
+<p>样本 $k$ 阶中心矩：<br>$$<br>B_k &#x3D; \frac{1}{n} \sum_{i &#x3D; 1} ^n (X_i - \overline{X}) ^ k<br>$$</p>
+<p>样本均值、样本方差、样本 $k$ 阶矩和样本 $k$ 阶中心矩都是<strong>随机变量</strong></p>
+<p><img src="/Notes%5CChapter7%5C7.2-1.png"></p>
+<p><img src="/Notes%5CChapter7%5C7.2-2.png"></p>
+<blockquote>
+<p>样本 $k$ 阶矩收敛于总体 $k$ 阶矩</p>
+</blockquote>
+<h3 id="2-统计量"><a href="#2-统计量" class="headerlink" title="2.统计量"></a>2.统计量</h3><blockquote>
+<p>对样本进行加工，需要针对不同的统计问题构造一个<strong>不含未知参数</strong>的样本的连续函数，称为统计量</p>
+</blockquote>
+<blockquote>
+<p>若含有总体的未知参数，即使得到了样本的观测数据，仍然不能由这些样本数据通过统计量计算出要估计的量的值</p>
+</blockquote>
+<h3 id="3-顺序统计量与经验分布函数"><a href="#3-顺序统计量与经验分布函数" class="headerlink" title="3.顺序统计量与经验分布函数"></a>3.顺序统计量与经验分布函数</h3><h2 id="7-3-常用统计量的分布"><a href="#7-3-常用统计量的分布" class="headerlink" title="7.3 常用统计量的分布"></a>7.3 常用统计量的分布</h2><blockquote>
+<p>统计量是对总体的分布或数字特征进行推断的基础。因此求统计量的分布是数理统计的基本问题之一</p>
+</blockquote>
+<blockquote>
+<p>只研究正态总体的统计量分布</p>
+</blockquote>
+<p><strong>见另一个手写文件</strong></p>
+<h1 id="第八章-参数估计"><a href="#第八章-参数估计" class="headerlink" title="第八章 参数估计"></a>第八章 参数估计</h1><h2 id="8-1-参数的点估计"><a href="#8-1-参数的点估计" class="headerlink" title="8.1 参数的点估计"></a>8.1 参数的点估计</h2><p><img src="/Notes%5CChapter8%5C8.1-1.png"></p>
+<p>用样本值估计总体的参数叫做参数估计</p>
+<p>参数估计分为点估计和区间估计</p>
+<p><strong>参数点估计的两种方法：矩估计法和极大似然估计法</strong></p>
+<p>对于同一个参数，得出的估计量也是有时相同有时不同</p>
+<h3 id="1-矩估计法"><a href="#1-矩估计法" class="headerlink" title="1.矩估计法"></a>1.矩估计法</h3><p>令样本矩 &#x3D; 总体矩解出矩估计量，矩估计量的观察值称为矩估计值</p>
+<p>当样本一阶原点矩的式子中不含 $\theta$ 时，需要求出二阶原点矩或者一阶绝对矩</p>
+<h3 id="2-极大似然估计法"><a href="#2-极大似然估计法" class="headerlink" title="2.极大似然估计法"></a>2.极大似然估计法</h3><p><strong>分连续型总体和离散型总体两种情况</strong></p>
+<p>连续型总体：$L(\theta) &#x3D; \Pi_{i &#x3D; 1} ^{n} f(x_i;\theta)$，求导求最大值对应的 $\theta$ 即为所求</p>
+<p>离散型总体：$L(\theta) &#x3D; \Pi_{i &#x3D; 1} ^{n} p(x_i;\theta)$，求导求最大值对应的 $\theta$ 即为所求</p>
+<p>喜欢考的题：P203，指数的取最小值，倒数的取最大值</p>
+<h2 id="8-2-点估计量的优良性"><a href="#8-2-点估计量的优良性" class="headerlink" title="8.2 点估计量的优良性"></a>8.2 点估计量的优良性</h2><blockquote>
+<p>评价估计量好坏的标准</p>
+</blockquote>
+<h3 id="1-无偏估计"><a href="#1-无偏估计" class="headerlink" title="1.无偏估计"></a>1.无偏估计</h3><p>$E(\hat{\theta}) &#x3D; \theta$</p>
+<p>对于几个无偏估计量应该也有区分他们好坏的标准</p>
+<h3 id="2-最小方差无偏估计"><a href="#2-最小方差无偏估计" class="headerlink" title="2.最小方差无偏估计"></a>2.最小方差无偏估计</h3><p>对任一无偏估计 $\hat{\theta_2}$ ，均有 $D(\hat{\theta_1}) \leq D(\hat{\theta_2})$</p>
+<p>对于正态总体找起来较为简单</p>
+<h3 id="3-一致估计"><a href="#3-一致估计" class="headerlink" title="3.一致估计"></a>3.一致估计</h3><h2 id="8-3-区间估计与置信区间"><a href="#8-3-区间估计与置信区间" class="headerlink" title="8.3 区间估计与置信区间"></a>8.3 区间估计与置信区间</h2><blockquote>
+<p>$\theta$ 所在区间和区间包含 $\theta$ 的可靠程度</p>
+</blockquote>
+<h3 id="1-置信区间"><a href="#1-置信区间" class="headerlink" title="1.置信区间"></a>1.置信区间</h3><h3 id="2-单侧置信限"><a href="#2-单侧置信限" class="headerlink" title="2.单侧置信限"></a>2.单侧置信限</h3><p>只关心置信区间的上限或下限</p>
+<p>目前仅能实现对正态总体的参数 $\mu$ 和 $\sigma$ 的区间估计</p>
+<h2 id="8-4-正态总体均值和方差的区间估计"><a href="#8-4-正态总体均值和方差的区间估计" class="headerlink" title="8.4 正态总体均值和方差的区间估计"></a>8.4 正态总体均值和方差的区间估计</h2><h3 id="1-均值-EX-的区间估计"><a href="#1-均值-EX-的区间估计" class="headerlink" title="1.均值 EX 的区间估计"></a>1.均值 EX 的区间估计</h3><h4 id="（1）方差DX已知，对EX进行区间估计"><a href="#（1）方差DX已知，对EX进行区间估计" class="headerlink" title="（1）方差DX已知，对EX进行区间估计"></a>（1）方差DX已知，对EX进行区间估计</h4><p>用统计量 $U$ 估计</p>
+<p>查这个比较多，因为算数简单</p>
+<h4 id="（2）方差DX未知，对EX进行区间估计"><a href="#（2）方差DX未知，对EX进行区间估计" class="headerlink" title="（2）方差DX未知，对EX进行区间估计"></a>（2）方差DX未知，对EX进行区间估计</h4><p>用统计量 $T$ 估计</p>
+<h3 id="2-方差-DX-的区间估计"><a href="#2-方差-DX-的区间估计" class="headerlink" title="2.方差 DX 的区间估计"></a>2.方差 DX 的区间估计</h3><h2 id="8-5-不考，略过"><a href="#8-5-不考，略过" class="headerlink" title="8.5 不考，略过"></a>8.5 不考，略过</h2><h1 id="第九章-假设检验"><a href="#第九章-假设检验" class="headerlink" title="第九章 假设检验"></a>第九章 假设检验</h1><p>先对<strong>总体</strong>做出某种假设，然后通过样本数据对假设做出接受或者拒绝</p>
+<h2 id="9-1-假设检验的提出及其基本思想"><a href="#9-1-假设检验的提出及其基本思想" class="headerlink" title="9.1 假设检验的提出及其基本思想"></a>9.1 假设检验的提出及其基本思想</h2><h2 id="9-2-正态总体均值和方差的假设检验"><a href="#9-2-正态总体均值和方差的假设检验" class="headerlink" title="9.2 正态总体均值和方差的假设检验"></a>9.2 正态总体均值和方差的假设检验</h2><h3 id="1-方差-sigma-2-已知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意"><a href="#1-方差-sigma-2-已知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意" class="headerlink" title="1.方差 $\sigma^2$ 已知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意"></a>1.方差 $\sigma^2$ 已知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</h3><p>采用统计量 $U_0 &#x3D; \frac{\overline{x} - \mu_0}{\sigma&#x2F;\sqrt{n}}$ 作为检验函数，$U_0 &#x3D; \frac{\overline{x} - \mu_0}{\sigma&#x2F;\sqrt{n}} \sim N(0,1)$</p>
+<h3 id="2-方差-sigma-2-未知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意"><a href="#2-方差-sigma-2-未知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意" class="headerlink" title="2.方差 $\sigma^2$ 未知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意"></a>2.方差 $\sigma^2$ 未知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</h3><p>采用统计量 $T &#x3D; \frac{\overline{x} - \mu_0}{s&#x2F;\sqrt{n}}$ 作为检验函数，$T &#x3D; \frac{\overline{x} - \mu_0}{s&#x2F;\sqrt{n}} \sim t(n-1)$</p>
+<h3 id="3-（单个）正态总体方差的假设检验"><a href="#3-（单个）正态总体方差的假设检验" class="headerlink" title="3.（单个）正态总体方差的假设检验"></a>3.（单个）正态总体方差的假设检验</h3><p>采用统计量 $W &#x3D; \frac{(n-1)s^{2}}{\sigma_0^2}$，$W &#x3D; \frac{(n-1)s^{2}}{\sigma_0^2} \sim \chi^2(n-1)$</p>
+<h2 id="9-3、9-4-不考，略过"><a href="#9-3、9-4-不考，略过" class="headerlink" title="9.3、9.4 不考，略过"></a>9.3、9.4 不考，略过</h2><h1 id="第十章-随机过程的基本概念"><a href="#第十章-随机过程的基本概念" class="headerlink" title="第十章 随机过程的基本概念"></a>第十章 随机过程的基本概念</h1><h2 id="10-1-随机过程的定义及分类"><a href="#10-1-随机过程的定义及分类" class="headerlink" title="10.1 随机过程的定义及分类"></a>10.1 随机过程的定义及分类</h2><h3 id="1-随机过程的概念"><a href="#1-随机过程的概念" class="headerlink" title="1.随机过程的概念"></a>1.随机过程的概念</h3><h3 id="2-随机过程的分类"><a href="#2-随机过程的分类" class="headerlink" title="2.随机过程的分类"></a>2.随机过程的分类</h3><p>二阶矩过程，包括正态过程和平稳过程等</p>
+<p>马尔可夫过程…</p>
+<h2 id="10-2-随机过程的概率分布"><a href="#10-2-随机过程的概率分布" class="headerlink" title="10.2 随机过程的概率分布"></a>10.2 随机过程的概率分布</h2><h3 id="1-随机过程的-n-维分布函数"><a href="#1-随机过程的-n-维分布函数" class="headerlink" title="1.随机过程的 $n$ 维分布函数"></a>1.随机过程的 $n$ 维分布函数</h3><h3 id="2-独立过程"><a href="#2-独立过程" class="headerlink" title="2.独立过程"></a>2.独立过程</h3><p>任意 $n$ 个过程都是独立的，由过程的一维分布函数就能确定该过程的统计特征</p>
+<p><img src="/image-20230211095739087.png" alt="image-20230211095739087"></p>
+<h3 id="3-两个随机过程的有限维联合分布及独立性"><a href="#3-两个随机过程的有限维联合分布及独立性" class="headerlink" title="3.两个随机过程的有限维联合分布及独立性"></a>3.两个随机过程的有限维联合分布及独立性</h3><h2 id="10-3-随机过程的数字特征（比前面更易考）"><a href="#10-3-随机过程的数字特征（比前面更易考）" class="headerlink" title="10.3 随机过程的数字特征（比前面更易考）"></a>10.3 随机过程的数字特征（比前面更易考）</h2><blockquote>
+<p>随机过程是随机变量构成的集合，所以可以通过考察随机变量的数字特征来研究</p>
+</blockquote>
+<p><img src="/image-20230211100031053.png" alt="image-20230211100031053"></p>
+<h1 id="第十一章-平稳过程"><a href="#第十一章-平稳过程" class="headerlink" title="第十一章 平稳过程"></a>第十一章 平稳过程</h1><h2 id="考试题型"><a href="#考试题型" class="headerlink" title="考试题型"></a>考试题型</h2><p>先写 $\Theta$ 和 $X$ 基础的分布、再求数字特征，最后判断是不是平稳过程</p>
+<h2 id="11-1-严平稳过程"><a href="#11-1-严平稳过程" class="headerlink" title="11.1 严平稳过程"></a>11.1 严平稳过程</h2><h2 id="11-2-广义平稳过程（平稳过程）"><a href="#11-2-广义平稳过程（平稳过程）" class="headerlink" title="11.2 广义平稳过程（平稳过程）"></a>11.2 广义平稳过程（平稳过程）</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><p><img src="/1.png" alt="1"></p>
+<h3 id="2-数字特征的性质"><a href="#2-数字特征的性质" class="headerlink" title="2.数字特征的性质"></a>2.数字特征的性质</h3><h1 id="第十二章-马尔可夫链引论"><a href="#第十二章-马尔可夫链引论" class="headerlink" title="第十二章 马尔可夫链引论"></a>第十二章 马尔可夫链引论</h1><h2 id="考试题型-1"><a href="#考试题型-1" class="headerlink" title="考试题型"></a>考试题型</h2><p>判断、状态空间、一步转移矩阵、平稳分布、两步的总条件概率</p>
+<p>判断：<img src="/image-20230211091530921.png" alt="image-20230211091530921"></p>
+<p>用上面的判据好像稍微多一些</p>
+<p><img src="/image-20230211091800582.png" alt="image-20230211091800582"></p>
+<p><img src="/image-20230211093731986.png" alt="image-20230211093731986"></p>
+<p>两步的条件概率要注意马尔可夫的独立性，或者说是标明了一种确定的状态转移过程</p>
+<p>平稳过程和马尔可夫一般都作为最后一道题出现，但是他们的难度并不大，基本都是套路题，能拿的分要稳稳握住</p>
+<p>祝诸君考试都有好运气</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1/" rel="tag"># 概率统计</a>
+              <a href="/tags/S3/" rel="tag"># S3</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/impressions-of-Azolla/" rel="prev" title="《满江红》观影感受">
+      <i class="fa fa-chevron-left"></i> 《满江红》观影感受
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%A6%82%E7%8E%87"><span class="nav-number">2.</span> <span class="nav-text">第一章 随机事件的概率</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E4%B8%8E%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 随机事件与样本空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%AF%95%E9%AA%8C%E5%92%8C%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.试验和事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.样本空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%85%B3%E7%B3%BB%E5%92%8C%E8%BF%90%E7%AE%97"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.随机事件的关系和运算</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83"><span class="nav-number">3.</span> <span class="nav-text">第二章 随机变量及其分布</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 随机变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 随机变量的分布函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 离散型随机变量及其概率分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E5%B8%B8%E7%94%A8%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%86%E5%B8%83%E5%BE%8B"><span class="nav-number">3.4.</span> <span class="nav-text">2.4 常用离散型随机变量的分布律</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%A4%E7%82%B9%E5%88%86%E5%B8%83%EF%BC%88%EF%BC%880-1%EF%BC%89%E5%88%86%E5%B8%83%EF%BC%89"><span class="nav-number">3.4.1.</span> <span class="nav-text">1.两点分布（（0-1）分布）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83"><span class="nav-number">3.4.2.</span> <span class="nav-text">2.泊松分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%B6%85%E5%87%A0%E4%BD%95%E5%88%86%E5%B8%83"><span class="nav-number">3.4.3.</span> <span class="nav-text">3.超几何分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83"><span class="nav-number">3.4.4.</span> <span class="nav-text">4.二项分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%E7%9A%84%E8%BF%91%E4%BC%BC%E8%AE%A1%E7%AE%97%E5%92%8C%E6%9F%A5%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83%E8%A1%A8"><span class="nav-number">3.4.5.</span> <span class="nav-text">5.二项分布的近似计算和查泊松分布表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="nav-number">3.5.</span> <span class="nav-text">2.5 连续型随机变量及其概率密度函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%88%86%E5%B8%83"><span class="nav-number">3.6.</span> <span class="nav-text">2.6 常用的连续型随机变量分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9D%87%E5%8C%80%E5%88%86%E5%B8%83"><span class="nav-number">3.6.1.</span> <span class="nav-text">1.均匀分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83"><span class="nav-number">3.6.2.</span> <span class="nav-text">2.指数分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Welbull-%E5%88%86%E5%B8%83"><span class="nav-number">3.6.3.</span> <span class="nav-text">3.Welbull 分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Gamma-%E5%87%BD%E6%95%B0"><span class="nav-number">3.6.4.</span> <span class="nav-text">4.$\Gamma$ 函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="nav-number">3.7.</span> <span class="nav-text">2.7 正态分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%AC%A7%E6%8B%89-%E6%B3%8A%E6%9D%BE%E7%A7%AF%E5%88%86"><span class="nav-number">3.7.1.</span> <span class="nav-text">1.欧拉-泊松积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="nav-number">3.7.2.</span> <span class="nav-text">2.正态分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%A0%87%E5%87%86%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="nav-number">3.7.3.</span> <span class="nav-text">3.标准正态分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E4%B8%8E%E6%A0%87%E5%87%86%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">3.7.4.</span> <span class="nav-text">4.正态分布与标准正态分布的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%A0%87%E5%87%86%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E7%9A%84-alpha-%E5%88%86%E4%BD%8D%E7%82%B9"><span class="nav-number">3.7.5.</span> <span class="nav-text">5.标准正态分布的 $\alpha$ 分位点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%BA%8C%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-number">4.</span> <span class="nav-text">第三章 二维随机变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E9%9A%8F%E6%9C%BA%E5%90%91%E9%87%8F%E4%B8%8E%E8%81%94%E5%90%88%E5%88%86%E5%B8%83"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 随机向量与联合分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BA%8C%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-number">4.1.1.</span> <span class="nav-text">1.二维随机变量的定义和分布函数的基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BA%8C%E7%BB%B4%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-number">4.1.2.</span> <span class="nav-text">2.二维离散型随机变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BA%8C%E7%BB%B4%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-number">4.1.3.</span> <span class="nav-text">3.二维连续型随机变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%B8%B8%E7%94%A8%E7%9A%84%E4%BA%8C%E7%BB%B4%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-number">4.1.4.</span> <span class="nav-text">4.常用的二维连续型随机变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E8%BE%B9%E7%BC%98%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 边缘分布函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E8%BE%B9%E7%BC%98%E5%88%86%E5%B8%83%E5%BE%8B%E4%B8%8E%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%E5%BE%8B"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 边缘分布律与条件分布律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E8%BE%B9%E7%BC%98%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E4%B8%8E%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6"><span class="nav-number">4.4.</span> <span class="nav-text">3.4 边缘概率密度与条件概率密度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E8%BE%B9%E7%BC%98%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6"><span class="nav-number">4.4.1.</span> <span class="nav-text">1.边缘概率密度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6"><span class="nav-number">4.4.2.</span> <span class="nav-text">2.条件概率密度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E7%9B%B8%E4%BA%92%E7%8B%AC%E7%AB%8B%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-number">4.5.</span> <span class="nav-text">3.5 相互独立的随机变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%9B%B8%E4%BA%92%E7%8B%AC%E7%AB%8B"><span class="nav-number">4.5.1.</span> <span class="nav-text">1.相互独立</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9B%B8%E4%BA%92%E7%8B%AC%E7%AB%8B%E5%88%A4%E5%88%AB%E5%AE%9A%E7%90%86"><span class="nav-number">4.5.2.</span> <span class="nav-text">2.离散型随机变量相互独立判别定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9B%B8%E4%BA%92%E7%8B%AC%E7%AB%8B%E5%88%A4%E5%88%AB%E5%AE%9A%E7%90%86"><span class="nav-number">4.5.3.</span> <span class="nav-text">3.连续型随机变量相互独立判别定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%9C%89%E9%99%90%E5%A4%9A%E4%B8%AA%E6%88%96%E5%8F%AF%E5%88%97%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9B%B8%E4%BA%92%E7%8B%AC%E7%AB%8B"><span class="nav-number">4.5.4.</span> <span class="nav-text">4.有限多个或可列个变量相互独立</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">5.</span> <span class="nav-text">第四章 随机变量的函数的分布</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 离散型随机变量的函数的分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%80%E7%BB%B4%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83%E5%BE%8B"><span class="nav-number">5.1.1.</span> <span class="nav-text">1.一维离散型随机变量的函数的分布律</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BA%8C%E7%BB%B4%E7%A6%BB%E6%95%A3%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83%E5%BE%8B"><span class="nav-number">5.1.2.</span> <span class="nav-text">2.二维离散型随机变量的函数的分布律</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E4%B8%80%E7%BB%B4%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">5.2.</span> <span class="nav-text">4.2 一维连续型随机变量的函数的分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E4%BA%8C%E7%BB%B4%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">5.3.</span> <span class="nav-text">4.3 二维连续型随机变量的函数的分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Z-x3D-X-Y-%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">5.3.1.</span> <span class="nav-text">1.$Z &#x3D; X + Y$ 的分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Z-x3D-max-X-Y-%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">5.3.2.</span> <span class="nav-text">2.$Z &#x3D; max{X + Y}$ 的分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Z-x3D-min-X-Y-%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">5.3.3.</span> <span class="nav-text">3.$Z &#x3D; min{X + Y}$ 的分布</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81"><span class="nav-number">6.</span> <span class="nav-text">第五章 随机变量的数字特征</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 数学期望</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E6%96%B9%E5%B7%AE"><span class="nav-number">6.2.</span> <span class="nav-text">5.2 方差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%A6%82%E5%BF%B5"><span class="nav-number">6.2.1.</span> <span class="nav-text">1.概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%80%A7%E8%B4%A8"><span class="nav-number">6.2.2.</span> <span class="nav-text">2.性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E5%B8%B8%E7%94%A8%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B%E5%92%8C%E6%96%B9%E5%B7%AE"><span class="nav-number">6.3.</span> <span class="nav-text">5.3 常用随机变量的数学期望和方差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-1%E5%88%86%E5%B8%83"><span class="nav-number">6.3.1.</span> <span class="nav-text">0-1分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83"><span class="nav-number">6.3.2.</span> <span class="nav-text">二项分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83"><span class="nav-number">6.3.3.</span> <span class="nav-text">泊松分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%87%E5%8C%80%E5%88%86%E5%B8%83"><span class="nav-number">6.3.4.</span> <span class="nav-text">均匀分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83"><span class="nav-number">6.3.5.</span> <span class="nav-text">指数分布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-%E5%8D%8F%E6%96%B9%E5%B7%AE%E5%92%8C%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0"><span class="nav-number">6.4.</span> <span class="nav-text">5.4 协方差和相关系数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8D%8F%E6%96%B9%E5%B7%AE"><span class="nav-number">6.4.1.</span> <span class="nav-text">1.协方差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0"><span class="nav-number">6.4.2.</span> <span class="nav-text">2.相关系数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%AE%A1%E7%AE%97%E4%B8%BE%E4%BE%8B"><span class="nav-number">6.4.3.</span> <span class="nav-text">3.计算举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-%E7%9F%A9-%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5"><span class="nav-number">6.5.</span> <span class="nav-text">5.5 矩 协方差矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B%E5%92%8C%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">7.</span> <span class="nav-text">第六章 大数定律和中心极限定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%92%8C%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">7.1.</span> <span class="nav-text">6.1 马尔可夫不等式和切比雪夫不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="nav-number">7.2.</span> <span class="nav-text">6.2 大数定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">7.3.</span> <span class="nav-text">6.3 中心极限定理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E7%BB%9F%E8%AE%A1%E6%80%BB%E4%BD%93%E4%B8%8E%E6%A0%B7%E6%9C%AC"><span class="nav-number">8.</span> <span class="nav-text">第七章 统计总体与样本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-%E6%80%BB%E4%BD%93%E4%B8%8E%E6%A0%B7%E6%9C%AC"><span class="nav-number">8.1.</span> <span class="nav-text">7.1 总体与样本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%80%BB%E4%BD%93%E4%B8%8E%E4%B8%AA%E4%BD%93"><span class="nav-number">8.1.1.</span> <span class="nav-text">1.总体与个体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%A0%B7%E6%9C%AC%E4%B8%8E%E6%A0%B7%E6%9C%AC%E5%80%BC"><span class="nav-number">8.1.2.</span> <span class="nav-text">2.样本与样本值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-%E6%A0%B7%E6%9C%AC%E7%9F%A9%E5%92%8C%E7%BB%9F%E8%AE%A1%E9%87%8F"><span class="nav-number">8.2.</span> <span class="nav-text">7.2 样本矩和统计量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%A0%B7%E6%9C%AC%E7%9F%A9"><span class="nav-number">8.2.1.</span> <span class="nav-text">1.样本矩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%BB%9F%E8%AE%A1%E9%87%8F"><span class="nav-number">8.2.2.</span> <span class="nav-text">2.统计量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E9%A1%BA%E5%BA%8F%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E7%BB%8F%E9%AA%8C%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0"><span class="nav-number">8.2.3.</span> <span class="nav-text">3.顺序统计量与经验分布函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-%E5%B8%B8%E7%94%A8%E7%BB%9F%E8%AE%A1%E9%87%8F%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">8.3.</span> <span class="nav-text">7.3 常用统计量的分布</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1"><span class="nav-number">9.</span> <span class="nav-text">第八章 参数估计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-%E5%8F%82%E6%95%B0%E7%9A%84%E7%82%B9%E4%BC%B0%E8%AE%A1"><span class="nav-number">9.1.</span> <span class="nav-text">8.1 参数的点估计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%9F%A9%E4%BC%B0%E8%AE%A1%E6%B3%95"><span class="nav-number">9.1.1.</span> <span class="nav-text">1.矩估计法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%E6%B3%95"><span class="nav-number">9.1.2.</span> <span class="nav-text">2.极大似然估计法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-%E7%82%B9%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E4%BC%98%E8%89%AF%E6%80%A7"><span class="nav-number">9.2.</span> <span class="nav-text">8.2 点估计量的优良性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%97%A0%E5%81%8F%E4%BC%B0%E8%AE%A1"><span class="nav-number">9.2.1.</span> <span class="nav-text">1.无偏估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9C%80%E5%B0%8F%E6%96%B9%E5%B7%AE%E6%97%A0%E5%81%8F%E4%BC%B0%E8%AE%A1"><span class="nav-number">9.2.2.</span> <span class="nav-text">2.最小方差无偏估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B8%80%E8%87%B4%E4%BC%B0%E8%AE%A1"><span class="nav-number">9.2.3.</span> <span class="nav-text">3.一致估计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1%E4%B8%8E%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="nav-number">9.3.</span> <span class="nav-text">8.3 区间估计与置信区间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="nav-number">9.3.1.</span> <span class="nav-text">1.置信区间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%8D%95%E4%BE%A7%E7%BD%AE%E4%BF%A1%E9%99%90"><span class="nav-number">9.3.2.</span> <span class="nav-text">2.单侧置信限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-4-%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E5%9D%87%E5%80%BC%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="nav-number">9.4.</span> <span class="nav-text">8.4 正态总体均值和方差的区间估计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9D%87%E5%80%BC-EX-%E7%9A%84%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="nav-number">9.4.1.</span> <span class="nav-text">1.均值 EX 的区间估计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E6%96%B9%E5%B7%AEDX%E5%B7%B2%E7%9F%A5%EF%BC%8C%E5%AF%B9EX%E8%BF%9B%E8%A1%8C%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="nav-number">9.4.1.1.</span> <span class="nav-text">（1）方差DX已知，对EX进行区间估计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E6%96%B9%E5%B7%AEDX%E6%9C%AA%E7%9F%A5%EF%BC%8C%E5%AF%B9EX%E8%BF%9B%E8%A1%8C%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="nav-number">9.4.1.2.</span> <span class="nav-text">（2）方差DX未知，对EX进行区间估计</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%96%B9%E5%B7%AE-DX-%E7%9A%84%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="nav-number">9.4.2.</span> <span class="nav-text">2.方差 DX 的区间估计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-5-%E4%B8%8D%E8%80%83%EF%BC%8C%E7%95%A5%E8%BF%87"><span class="nav-number">9.5.</span> <span class="nav-text">8.5 不考，略过</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="nav-number">10.</span> <span class="nav-text">第九章 假设检验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E7%9A%84%E6%8F%90%E5%87%BA%E5%8F%8A%E5%85%B6%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="nav-number">10.1.</span> <span class="nav-text">9.1 假设检验的提出及其基本思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2-%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E5%9D%87%E5%80%BC%E5%92%8C%E6%96%B9%E5%B7%AE%E7%9A%84%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="nav-number">10.2.</span> <span class="nav-text">9.2 正态总体均值和方差的假设检验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%96%B9%E5%B7%AE-sigma-2-%E5%B7%B2%E7%9F%A5%EF%BC%8C%E6%A3%80%E9%AA%8C%E5%81%87%E8%AE%BE-H-0-mu-x3D-mu-0-%EF%BC%8C-H-1-%E4%BB%BB%E6%84%8F"><span class="nav-number">10.2.1.</span> <span class="nav-text">1.方差 $\sigma^2$ 已知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%96%B9%E5%B7%AE-sigma-2-%E6%9C%AA%E7%9F%A5%EF%BC%8C%E6%A3%80%E9%AA%8C%E5%81%87%E8%AE%BE-H-0-mu-x3D-mu-0-%EF%BC%8C-H-1-%E4%BB%BB%E6%84%8F"><span class="nav-number">10.2.2.</span> <span class="nav-text">2.方差 $\sigma^2$ 未知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%EF%BC%88%E5%8D%95%E4%B8%AA%EF%BC%89%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E6%96%B9%E5%B7%AE%E7%9A%84%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="nav-number">10.2.3.</span> <span class="nav-text">3.（单个）正态总体方差的假设检验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-3%E3%80%819-4-%E4%B8%8D%E8%80%83%EF%BC%8C%E7%95%A5%E8%BF%87"><span class="nav-number">10.3.</span> <span class="nav-text">9.3、9.4 不考，略过</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">11.</span> <span class="nav-text">第十章 随机过程的基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#10-1-%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%AE%9A%E4%B9%89%E5%8F%8A%E5%88%86%E7%B1%BB"><span class="nav-number">11.1.</span> <span class="nav-text">10.1 随机过程的定义及分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">11.1.1.</span> <span class="nav-text">1.随机过程的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">11.1.2.</span> <span class="nav-text">2.随机过程的分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-2-%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83"><span class="nav-number">11.2.</span> <span class="nav-text">10.2 随机过程的概率分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84-n-%E7%BB%B4%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0"><span class="nav-number">11.2.1.</span> <span class="nav-text">1.随机过程的 $n$ 维分布函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%8B%AC%E7%AB%8B%E8%BF%87%E7%A8%8B"><span class="nav-number">11.2.2.</span> <span class="nav-text">2.独立过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B8%A4%E4%B8%AA%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%9C%89%E9%99%90%E7%BB%B4%E8%81%94%E5%90%88%E5%88%86%E5%B8%83%E5%8F%8A%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="nav-number">11.2.3.</span> <span class="nav-text">3.两个随机过程的有限维联合分布及独立性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-3-%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%EF%BC%88%E6%AF%94%E5%89%8D%E9%9D%A2%E6%9B%B4%E6%98%93%E8%80%83%EF%BC%89"><span class="nav-number">11.3.</span> <span class="nav-text">10.3 随机过程的数字特征（比前面更易考）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E5%B9%B3%E7%A8%B3%E8%BF%87%E7%A8%8B"><span class="nav-number">12.</span> <span class="nav-text">第十一章 平稳过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E8%AF%95%E9%A2%98%E5%9E%8B"><span class="nav-number">12.1.</span> <span class="nav-text">考试题型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-1-%E4%B8%A5%E5%B9%B3%E7%A8%B3%E8%BF%87%E7%A8%8B"><span class="nav-number">12.2.</span> <span class="nav-text">11.1 严平稳过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-2-%E5%B9%BF%E4%B9%89%E5%B9%B3%E7%A8%B3%E8%BF%87%E7%A8%8B%EF%BC%88%E5%B9%B3%E7%A8%B3%E8%BF%87%E7%A8%8B%EF%BC%89"><span class="nav-number">12.3.</span> <span class="nav-text">11.2 广义平稳过程（平稳过程）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%9A%E4%B9%89"><span class="nav-number">12.3.1.</span> <span class="nav-text">1.定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">12.3.2.</span> <span class="nav-text">2.数字特征的性质</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E5%BC%95%E8%AE%BA"><span class="nav-number">13.</span> <span class="nav-text">第十二章 马尔可夫链引论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E8%AF%95%E9%A2%98%E5%9E%8B-1"><span class="nav-number">13.1.</span> <span class="nav-text">考试题型</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="StrivingLee"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">StrivingLee</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/StrivingLee" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;StrivingLee" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:735260209@qq.com" title="E-Mail → mailto:735260209@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">StrivingLee</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">130k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    <span title="Reading time total">5:26</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+</html>
