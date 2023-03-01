@@ -185,6 +185,518 @@
       </tags>
   </entry>
   <entry>
+    <title>Typora数学公式</title>
+    <url>/MarkDown-Grammar/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>MarkDown 比较全的数学公式语法集合</p>
+</blockquote>
+<span id="more"></span>
+
+<p>[TOC]</p>
+<blockquote>
+<p>其实本质是对 Tex 语法的支持</p>
+</blockquote>
+<h3 id="一、打开Typora选择数学模块"><a href="#一、打开Typora选择数学模块" class="headerlink" title="一、打开Typora选择数学模块"></a>一、打开Typora选择数学模块</h3><p>三种打开方式：</p>
+<ul>
+<li>点击“段落” –&gt; “公式块”</li>
+<li>快捷键ctrl + shift +m</li>
+<li>“$$” + 回车</li>
+</ul>
+<h3 id="二、添加数学公式"><a href="#二、添加数学公式" class="headerlink" title="二、添加数学公式"></a>二、添加数学公式</h3><p>输出美观的数学公式，需要知道他们的格式和代码！<br>ps:Typora有时出现公式块无法删除，可能是软件bug，Ctrl + &#x2F; 打开源代码模式，在这里面可以进行删除<br>$$<br>e^{i\pi + 1} &#x3D; 2<br>$$</p>
+<h3 id="三、常用的公式格式代码练习"><a href="#三、常用的公式格式代码练习" class="headerlink" title="三、常用的公式格式代码练习"></a>三、常用的公式格式代码练习</h3><ol>
+<li>公式块内换行</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\\ 公式块内换行</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>常用基本函数：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">1、x^2 //上下标</span><br><span class="line">2、1/2 //分式1</span><br><span class="line">3、\frac&#123;1&#125;&#123;2&#125; //分式2</span><br><span class="line">4、\cdots //省略号</span><br><span class="line">5、\sqrt&#123;4&#125; //开根号</span><br><span class="line">6、\vec&#123;a&#125; //矢量</span><br><span class="line">7、\int&#123;x&#125;dx //积分1</span><br><span class="line">8、\int_&#123;1&#125;^&#123;2&#125;dx //积分2</span><br><span class="line">9、\lim&#123;a + b&#125; //极限1</span><br><span class="line">10、\lim_&#123;n\rightarrow + \infty&#125; //极限2</span><br><span class="line">11、\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125; //累加</span><br><span class="line">12、\prod_&#123;n=1&#125;^&#123;199&#125;&#123;x_n&#125; //累乘</span><br><span class="line">13、\sin&#123;(x + y)&#125; //三角函数</span><br><span class="line">14、\ln2 //对数函数1</span><br><span class="line">15、\log_28 //对数函数2</span><br><span class="line">16、a&#x27; //导数</span><br><span class="line">17、\partial&#123;F&#125; //偏微分</span><br><span class="line">18、\iint&#123;xy&#125;dxdy //二重积分</span><br><span class="line">19、\oiint&#123;x + y&#125;dxdy //二重环路积分</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>1、x^2\<br>2、1&#x2F;2\<br>3、\frac{1}{2}\<br>4、\cdots\<br>5、\sqrt{4}\<br>6、\vec{a}\<br>7、\int{x}dx\<br>8、\int_{1}^{2}dx\<br>9、\lim{a + b}\<br>10、\lim_{n\rightarrow + \infty}\<br>11、\sum_{n&#x3D;1}^{100}{a_n}\<br>12、\prod_{n&#x3D;1}^{199}{x_n}\<br>13、\sin{(x + y)}\<br>14、\ln2\<br>15、\log_28\<br>16、a’\<br>17、\partial{F}\<br>18、\iint{xy}dxdy\<br>19、\oiint{(x + y)}dxdy\<br>$$</p>
+<ol start="3">
+<li>公式块内左对齐：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125; //</span><br><span class="line">&amp;1、y = \sin(x) \\&amp;为对齐格式符</span><br><span class="line">&amp;2、</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>\begin{aligned}<br>&amp;1、y &#x3D; \sin(x) \<br>&amp;2、<br>\end{aligned}<br>$$</p>
+<ol start="4">
+<li>下标</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">v_1\\</span><br><span class="line">v_&#123;体积&#125; 下标为多个英文字母时，使用&#123;&#125;包起来：</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>v_1\<br>v_{体积}<br>$$</p>
+<ol start="5">
+<li>关系运算符：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\pm // ± plus&amp;minor</span><br><span class="line">\div // ÷ divide</span><br><span class="line">\equiv // == equal</span><br><span class="line">\le // &lt;= lower&amp;equal</span><br><span class="line">\ge // &gt;= greater&amp;equal</span><br></pre></td></tr></table></figure>
+<p>$$<br>\pm\<br>\div\<br>\equiv\<br>\leq\<br>\geq<br>$$</p>
+<ol start="6">
+<li>花括号公式组合：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">c(u) =</span><br><span class="line">\begin&#123;cases&#125; </span><br><span class="line">\sqrt\frac&#123;1&#125;&#123;N&#125;, u = 0 \\ </span><br><span class="line">\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125;, n \neq0  neq:not equal</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>c(u) &#x3D;<br>\begin{cases}<br>\sqrt\frac{1}{N}, u &#x3D; 0 \<br>\sum_{n&#x3D;1}^{100}{a_n}, n \neq0<br>\end{cases}<br>$$</p>
+<ol start="7">
+<li>空格：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">a \quad b</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>a \quad b<br>$$</p>
+<ol start="8">
+<li>矩阵：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">0&amp;1&amp;1\\</span><br><span class="line">1&amp;1&amp;0\\</span><br><span class="line">1&amp;0&amp;1\\</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>\begin{matrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{matrix}<br>$$</p>
+<blockquote>
+<p> 在起始、结束标记用下列词替换 matrix：</p>
+<p>pmatrix：小括号边框<br>bmatrix：中括号边框 &#96;<br>Bmatrix：大括号边框<br>vmatrix：单竖线边框<br>Vmatrix：双竖线边框</p>
+</blockquote>
+<p>$$<br>\begin{pmatrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{pmatrix}<br>$$</p>
+<p>$$<br>\begin{vmatrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{vmatrix}<br>$$</p>
+<ol start="9">
+<li>特殊字符及希腊字母表：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\infty //无穷</span><br><span class="line">\emptyset //空集</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>\infty \<br>\emptyset<br>$$</p>
+<ol start="10">
+<li>更多字符<br>更多特殊字符及希腊字母代码见wps中LaTex公式符号</li>
+</ol>
+<p>① 常用字母字符</p>
+<p><img src="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp" alt="img"></p>
+<p>② 特殊符号</p>
+<p><img src="https://i0.hdslb.com/bfs/article/5f471724c265c39e6c832a9a3212f67aa094791e.png@942w_387h_progressive.webp" alt="img"></p>
+<p><img src="https://i0.hdslb.com/bfs/article/a750d31bd5a69f8dd8b58c6b2d690988025d323c.png@942w_1500h_progressive.webp" alt="img"></p>
+]]></content>
+      <categories>
+        <category>MarkDown</category>
+      </categories>
+      <tags>
+        <tag>MarkDown</tag>
+        <tag>Grammar</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>//</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>我的入门启蒙</p>
+</blockquote>
+<span id="more"></span>
+
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>WangDao OS Chapter2</title>
+    <url>/WD-OS-Chap2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>枯燥无味的王道考研 OS 第二章 进程与线程 知识点罗列</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="进程的概念、组成、特征"><a href="#进程的概念、组成、特征" class="headerlink" title="进程的概念、组成、特征"></a>进程的概念、组成、特征</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124175307299.png" alt="2.1-总"></p>
+<h3 id="进程的概念"><a href="#进程的概念" class="headerlink" title="进程的概念"></a>进程的概念</h3><p>程序是静态的，进程是动态的，是程序的一次执行过程</p>
+<p>QQ.exe 和启动 QQ</p>
+<h3 id="进程的组成"><a href="#进程的组成" class="headerlink" title="进程的组成"></a>进程的组成</h3><blockquote>
+<p>准确来说是进程实体的组成</p>
+</blockquote>
+<h4 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a>PCB</h4><p>PCB(Process Control Block)：进程控制块，保存操作系统管理各个并发进程时所需要的信息</p>
+<p><strong>PCB 是进程存在的唯一标志</strong>，进程创建时操作系统会创建 PCB，进程结束时操作系统会回收 PCB</p>
+<p><strong>供给操作系统使用</strong></p>
+<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124174652024.png" alt="2.1.2.1-PCB组成"></p>
+<h4 id="程序段、数据段"><a href="#程序段、数据段" class="headerlink" title="程序段、数据段"></a>程序段、数据段</h4><p>程序段：程序代码（指令序列）</p>
+<p>数据段：运行过程中产生的各种数据（如定义的变量）</p>
+<p><strong>供给进程自身使用</strong>，与进程自身运行逻辑有关</p>
+<h4 id="进程实体"><a href="#进程实体" class="headerlink" title="进程实体"></a>进程实体</h4><p>进程实体（进程映像）由PCB、程序段、数据段组成，反应了进程在某一时刻的状态</p>
+<p>所以可以这样定义进程：<strong>进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位</strong></p>
+<blockquote>
+<p>调度指上 CPU 运行</p>
+</blockquote>
+<p>进程是动态的，进程实体（进程映像）是静态的。</p>
+<h3 id="进程的特征"><a href="#进程的特征" class="headerlink" title="进程的特征"></a>进程的特征</h3><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124175212607.png" alt="2.1.3"></p>
+<p>其中，动态性是进程<strong>最基本</strong>的特征</p>
+<h2 id="进程的状态与转换"><a href="#进程的状态与转换" class="headerlink" title="进程的状态与转换"></a>进程的状态与转换</h2><p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124201936453.png" alt="2.2总"></p>
+<h3 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h3><p>创建态：进程正在被创建，操作系统为进程分配资源，初始化 PCB</p>
+<p>就绪态：进程已经创建完成具备运行条件，但是没有空闲 CPU，暂时不能运行</p>
+<p>运行态：进程正在 CPU 上运行，CPU 执行进程对应的程序</p>
+<p>阻塞态：进程运行过程中，在等待某个事件的发生而无法继续运行，操作系统会让进程下 CPU 进入阻塞态</p>
+<p>终止态：操作系统让进程下 CPU，并回收内存空间与该进程的 PCB</p>
+<h3 id="进程的状态转换"><a href="#进程的状态转换" class="headerlink" title="进程的状态转换"></a>进程的状态转换</h3><p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124201325614.png" alt="2.2.2丁字裤模型"></p>
+<p>PCB 中也有一个变量 state 对应进程的当前状态</p>
+<h3 id="进程的组织"><a href="#进程的组织" class="headerlink" title="进程的组织"></a>进程的组织</h3><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p>按照进程状态将 PCB 分为多个队列，指针指向当前处于某状态的进程</p>
+<p>如就绪队列指针指向当前处于就绪态的进程</p>
+<p>单核 CPU 同一时刻只能有一个进程处于运行态，多核 CPU 可有多个进程同时处于运行态</p>
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p>按照进程状态的不同建立索引表</p>
+<h2 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h2><p>简而言之就是实现进程状态的转换</p>
+<h3 id="相关原语"><a href="#相关原语" class="headerlink" title="相关原语"></a>相关原语</h3><p>原语通过“关中断指令”和“开中断指令”两个<strong>特权指令</strong>实现原子性</p>
+<p>CPU 在正常情况下每执行完一条指令都会例行检查是否有中断信号，而关中断之后便不再进行该检查</p>
+<p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202446434.png" alt="2.3.1创建"></p>
+<p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202503059.png" alt="2.3.1终止"></p>
+<p>将任意状态的进程转变为终止态最终消失</p>
+<p>正常结束：进程调用 exit 系统调用请求终止</p>
+<p>异常结束：除 0，非法使用特权指令等被操作系统杀掉</p>
+<p>外界干预：任务管理器用户杀掉</p>
+<p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202905434.png" alt="2.3.1阻塞和唤醒"></p>
+<p>阻塞和唤醒的原因应为同一件事</p>
+<p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202955702.png" alt="2.3.1切换"></p>
+<p>正确完成切换的前提是先在寄存器中保存进程的运行环境（必要的寄存器信息）</p>
+<p>进程控制原语的三点共同点：</p>
+<ol>
+<li><p>更新 PCB 中的信息</p>
+</li>
+<li><p>将 PCB 装入合适的队列</p>
+</li>
+<li><p>分配和回收资源</p>
+</li>
+</ol>
+<h2 id="进程通信（IPC）"><a href="#进程通信（IPC）" class="headerlink" title="进程通信（IPC）"></a>进程通信（IPC）</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230126055115286.png" alt="2.4总"></p>
+<p>两个进程之间产生数据交互</p>
+<p>因为进程是分配系统资源的单位，所以各进程拥有的内存地址空间相互独立</p>
+<h3 id="共享存储"><a href="#共享存储" class="headerlink" title="共享存储"></a>共享存储</h3><p>基于数据结构、基于共享空间</p>
+<h3 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h3><p>以格式化的信息（Message）为单位，通过发送消息、接收消息两个原语进行数据交换</p>
+<h3 id="管道通信"><a href="#管道通信" class="headerlink" title="管道通信"></a>管道通信</h3><p>“管道”是一个特殊的共享文件，又名pipe文件。其实就是在内存中开辟一个大小固定的内存缓冲区</p>
+<p>采用半双工通信，单向传输，各进程互斥地访问管道</p>
+<p>管道写满，写进程阻塞；管道读空，读进程阻塞</p>
+<h2 id="线程概念-多线程模型"><a href="#线程概念-多线程模型" class="headerlink" title="线程概念 多线程模型"></a>线程概念 多线程模型</h2><h3 id="线程的概念及属性、优点"><a href="#线程的概念及属性、优点" class="headerlink" title="线程的概念及属性、优点"></a>线程的概念及属性、优点</h3><p>有的进程可能需要“同时”做很多事，而传统的进程只能串行地执行一系列程序。为此引入“线程”增加并发度。</p>
+<p>可以把线程理解为“轻量级进程”。线程是一个基本的CPU执行单元，也是程序执行流的最小单位。</p>
+<p>引入线程之后，不仅是进程之间可以并发，进程内的各线程之间也可以并发，从而进一步提升了系统的并发度，使得一个进程内</p>
+<p>也可以并发处理各种任务（如QQ视频、文字聊天、传文件）</p>
+<p>引入线程后，进程只作为除CPU之外的系统资源的分配单元（如打印机、内存地址空间等都是分配给进程的）。线程则作为处理机的分配单元。</p>
+<h3 id="线程的属性"><a href="#线程的属性" class="headerlink" title="线程的属性"></a>线程的属性</h3><h3 id="线程的实现方式"><a href="#线程的实现方式" class="headerlink" title="线程的实现方式"></a>线程的实现方式</h3><p>用户级线程（User-Level Thread, ULT）和内核级线程（Kernel-Level Thread, KLT）</p>
+<p>从代码的角度看，线程其实就是一段代码逻辑。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ULT</th>
+<th>KLT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>线程的管理工作由谁来完成？</td>
+<td>应用程序</td>
+<td>OS kernel</td>
+</tr>
+<tr>
+<td>线程切换时 CPU 状态</td>
+<td>用户态</td>
+<td>核心态</td>
+</tr>
+<tr>
+<td>操作系统是否能意识到用户级线程的存在？</td>
+<td>否，只有用户看来是多线程</td>
+<td>是，OS 通过 TCB 对线程进行管理</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>不需变态，开销小，效率高</td>
+<td>并发能力强，可在多核处理机上并行运行</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>并发度低，不能在多核处理机上并行运行</td>
+<td>需变态，开销大，效率低</td>
+</tr>
+</tbody></table>
+<p>注：TCB 类比 PCB，线程控制块</p>
+<p>可以看到二者互为优缺点</p>
+<h3 id="多线程模型"><a href="#多线程模型" class="headerlink" title="多线程模型"></a>多线程模型</h3><p>在<strong>支持内核级线程 KLT 的系统中</strong>，根据用户级线程和内核级线程的映射关系，划分出几种多线程模型</p>
+<p>前面的数目是 ULT，后面的数目是 KLT</p>
+<p>一对一有 KLT 的缺点，多对一有 ULT 的缺点，多对多综合了</p>
+<p>多对多模型：n 个ULT 映射到 m 个 KLT（n &gt;&#x3D; m）。每个 ULT 对应 m 个 KLT</p>
+<p>克服了多对一模型并发度不高的缺点（一个阻塞全体阻塞），又克服了一对一模型中一个用线程库 户进程占用太多内核级线程，开销太大的缺点。</p>
+<p>可以这么理解：</p>
+<p>用户级线程是“代码逻辑”的载体</p>
+<p>内核级线程是“运行机会”的载体</p>
+<p>一段“代码逻辑”只有获得了“运行机会”才能被 CPU <del>CPU</del>执行</p>
+<p><img src="/image-20230126063144860.png" alt="image-20230126063144860"></p>
+<h2 id="线程的组织与控制"><a href="#线程的组织与控制" class="headerlink" title="线程的组织与控制"></a>线程的组织与控制</h2><p>![](TCB 与线程表.png)</p>
+<h2 id="调度的基本概念"><a href="#调度的基本概念" class="headerlink" title="调度的基本概念"></a>调度的基本概念</h2><p>调度研究用某种规则决定处理任务顺序的问题</p>
+<p>高级调度（作业调度）。按一定的原则从外存的作业后备队列中挑选一个作业调入内存，并创建进程。每个作业只调入一次，调出一次。作业调入时会建立PCB，调出时才撤销PCB。</p>
+<p>低级调度（进程调度&#x2F;处理机调度）—— 按照某种策略从就绪队列中选取一个进程，将处理机分配给它。</p>
+<p>进程调度是操作系统中最基本的一种调度，在一般的操作系统中都必须配置进程调度。进程调度的频率很高，一般几十毫秒一次。</p>
+<p>内存不够时，可将某些进程的数据调出外存。等内存空闲或者进程需要运行时再重新调入内存。</p>
+<p>暂时调到外存等待的进程状态为挂起状态。被挂起的进程PCB会被组织成挂起队列</p>
+<p>中级调度（内存调度）——按照某种策略决定将哪个处于挂起状态的进程重新调入内存。</p>
+<p>一个进程可能会被多次调出、调入内存，因此中级调度发生的频率要比高级调度更高。</p>
+<p>暂时调到外存等待的进程状态为挂起状态（挂起态，suspend）</p>
+<p>挂起态又可以进一步细分为就绪挂起、阻塞挂起两种状态</p>
+<p>注意“挂起”和“阻塞”的区别，两种状态都是暂时不能获得CPU的服务，但挂起态是将进程映像调到外存去了，而阻塞态下进程映像还在内存中。</p>
+<p>有的操作系统会把就绪挂起、阻塞挂起分为两个挂起队列，甚至会根据阻塞原因不同再把阻塞挂起进程进一步细分为多个队列。</p>
+<p><img src="/%E4%B8%89%E5%B1%82%E8%B0%83%E5%BA%A6%E7%9A%84%E5%AF%B9%E6%AF%94.png" alt="三层调度的对比"></p>
+<h2 id="进程调度的基本概念"><a href="#进程调度的基本概念" class="headerlink" title="进程调度的基本概念"></a>进程调度的基本概念</h2><p><img src="/image-20230126073913377.png" alt="image-20230126073913377"></p>
+<h2 id="调度器、闲逛进程"><a href="#调度器、闲逛进程" class="headerlink" title="调度器、闲逛进程"></a>调度器、闲逛进程</h2><h3 id="调度器"><a href="#调度器" class="headerlink" title="调度器"></a>调度器</h3><p>调度程序决定：</p>
+<p>让谁运行？——调度算法</p>
+<p>运行多长时间？——时间片大小</p>
+<p>调度时机——什么事件会触发“调度程序” ？ </p>
+<p>• 创建新进程</p>
+<p>• 进程退出</p>
+<p>• 运行进程阻塞</p>
+<p>• I&#x2F;O中断发生（可能唤醒某些阻塞进程）</p>
+<p>• 非抢占式调度策略，只有运行进程阻塞或</p>
+<p>退出才触发调度程序工作</p>
+<p>• 抢占式调度策略，每个时钟中断或k个时钟</p>
+<p>中断会触发调度程序工作</p>
+<p><img src="/image-20230126074912039.png" alt="image-20230126074912039"></p>
+<h3 id="闲逛进程"><a href="#闲逛进程" class="headerlink" title="闲逛进程"></a>闲逛进程</h3><p>没有其他就绪进程时，运行闲逛进程</p>
+<p>闲逛进程的特性：</p>
+<p>• 优先级最低</p>
+<p>• 可以是0地址指令，占一个完整的指令周期（指令周期末尾例行检查中断）</p>
+<p>• 能耗低</p>
+<h2 id="调度算法（一）"><a href="#调度算法（一）" class="headerlink" title="调度算法（一）"></a>调度算法（一）</h2><p>算法的学习思路</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>FCFS</th>
+<th>SJF</th>
+<th>HRRN</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>算法思想</td>
+<td>公平</td>
+<td>平均等待时间、平均周转时间、平均带权周转时间最少</td>
+<td>综合考虑作业&#x2F;进程的等待时间和要求服务的时间</td>
+</tr>
+<tr>
+<td>算法规则</td>
+<td>按照作业&#x2F;进程到达的先后顺序进行服务</td>
+<td>要求服务时间最短的作业&#x2F;进程优先得到服务</td>
+<td>选择响应比最高的作业&#x2F;进程为其服务</td>
+</tr>
+<tr>
+<td>作业调度 还是 进程调度</td>
+<td>均可。用于作业调度时，考虑的是哪个作业先到达后备队列；用于进程调度时，考虑的是哪个进程先到达就绪队列</td>
+<td>均可。用于进程调度时称为“短进程优先（SPF, Shortest Process First）算法”</td>
+<td>均可</td>
+</tr>
+<tr>
+<td>是否可抢占</td>
+<td>非抢占式</td>
+<td>非抢占式，抢占式为最短剩余时间优先算法（SRTN, Shortest Remaining Time Next）</td>
+<td>非抢占式</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>公平、算法实现简单</td>
+<td>“最短的”平均等待时间、平均周转时间</td>
+<td></td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>对长作业有利，对短作业不利</td>
+<td>对短作业有利，对长作业不利</td>
+<td></td>
+</tr>
+<tr>
+<td>是否会导致饥饿</td>
+<td>不会</td>
+<td>会（一直是短作业&#x2F;进程会使长作业&#x2F;进程饥饿）</td>
+<td>不会</td>
+</tr>
+</tbody></table>
+<p>饥饿（某进程&#x2F;作业长期得不到服务）</p>
+<p>先来先服务（FCFS, First Come First Serve）</p>
+<p>短作业优先（SJF, Shortest Job First）</p>
+<p>高响应比优先（HRRN, Highest Response Ratio Next）</p>
+<p>常用的计算量如下：<br>$$<br>周转时间 &#x3D; 完成时间 - 到达时间 \<br>带权周转时间 &#x3D; 周转时间&#x2F;运行时间 \<br>等待时间 &#x3D; 周转时间 – 运行时间 \<br>对于有计算和I&#x2F;O操作的进程，其等待时间 &#x3D; 周转时间 - 运行时间 - I&#x2F;O操作的时间 \<br>响应比 &#x3D; \frac{等待时间+要求服务时间}{要求服务时间}<br>$$<br>FCFS 算法是在每次调度的时候选择一个等待时间最长的作业（进程）为其服务。但是没有考虑到作业的运行时间，因此导致了对短作业不友好的问题</p>
+<p>SJF 算法是选择一个执行时间最短的作业为其服务。但是又完全不考虑各个作业的等待时间，因此导致了对长作业不友好的问题，甚至还会造成饥饿问题</p>
+<p>能不能设计一个算法，既考虑到各个作业的等待时间，也能兼顾运行时间呢？——高响应比优先算法</p>
+<p>对于 SRTN 算法，每当有进程加入就绪队列改变时就需要调度，如果新到达的进程剩余时间比当前运行的进程剩余时间更短，则由新进程抢占处理机，当前运行进程重新回到就绪队列。另外，当一个进程完成时也需要调度</p>
+<p>这几种算法主要关心对用户的公平性、平均周转时间、平均等待时间等评价系统整体性能的指标，但是不关心“响应时间”，也并不区分任务的紧急程度，因此对于用户来说，交互性很糟糕。因此这三种算法一般适合用于早期的批处理系统，当然，FCFS算法也常结合其他的算法使用，在现在也扮演着很重要的角色。而适合用于交互式系统的调度算法将在下个小节介绍</p>
+<h2 id="调度算法（二）"><a href="#调度算法（二）" class="headerlink" title="调度算法（二）"></a>调度算法（二）</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>时间片轮转</th>
+<th>优先级调度算法</th>
+<th>HRRN</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>算法思想</td>
+<td>公平</td>
+<td>区分紧急程度</td>
+<td>综合考虑作业&#x2F;进程的等待时间和要求服务的时间</td>
+</tr>
+<tr>
+<td>算法规则</td>
+<td>按照进程到达就绪队列的顺序，轮流让各个进程执行一个时间片</td>
+<td>要求优先级最高的作业&#x2F;进程优先得到服务</td>
+<td>选择响应比最高的作业&#x2F;进程为其服务</td>
+</tr>
+<tr>
+<td>作业调度 还是 进程调度</td>
+<td>进程调度</td>
+<td>作业调度、进程调度、I&#x2F;O调度均可</td>
+<td>均可</td>
+</tr>
+<tr>
+<td>是否可抢占</td>
+<td>抢占式，通过时钟中断通知</td>
+<td>均有，抢占式需要在就绪队列变化时检查是否发生抢占</td>
+<td>非抢占式</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>公平、响应快、适用分时操作系统</td>
+<td>适用于实时操作系统，可以灵活调整</td>
+<td></td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>进程切换产生系统开销、不区分任务的紧急程度</td>
+<td>持续的高优先级进程到来会导致饥饿</td>
+<td></td>
+</tr>
+<tr>
+<td>是否会导致饥饿</td>
+<td>不会</td>
+<td>会（一直是高优先级进程会使低优先级进程饥饿）</td>
+<td>不会</td>
+</tr>
+</tbody></table>
+<p>RR 算法常用于分时操作系统，更注重“响应时间”，因而此处不计算周转时间</p>
+<p>时间片没用完但是运行完了也会主动放弃处理机发生调度</p>
+<p>如果时间片太大，使得每个进程都可以在一个时间片内就完成，则 RR 算法退化为 FCFS 算法，并且会增大进程响应时间。因此时间片不能太大</p>
+<p>另一方面，进程调度、切换是有时间代价的（保存、恢复运行环境），因此如果时间片太小，进程切换过于频繁，系统会花大量的时间来处理进程切换，从而导致实际用于进程执行的时间比例减少。可见时间片也不能太小</p>
+<p>FCFS算法的优点是公平</p>
+<p>SJF 算法的优点是能尽快处理完短作业，平均等待&#x2F;周转时间等参数很优秀</p>
+<p>法</p>
+<p>时间片轮转调度算法可以让各个进程得到及时的响应</p>
+<p>优先级调度算法可以灵活地调整各种进程被服务的机会</p>
+<p>能否对其他算法做个折中权衡？得到一个综合表现优秀平衡的算法呢？——多级反馈队列调度算法</p>
+<p>交互式操作系统（包括分时操作系统、实时操作系统等）更注重系统的‘响应时间、公平性、平衡性等指标。而这几种算法恰好也能较好地满足交互式系统的需求。因此这三种算法适合用于交互式系统。</p>
+<h2 id="调度算法（三）"><a href="#调度算法（三）" class="headerlink" title="调度算法（三）"></a>调度算法（三）</h2><p>系统中按进程类型设置多个队列，进程创建成功后插入某个队列</p>
+<p>!(image-20230128213255504.png)</p>
+<p>队列之间可采取固定优先级，或时间片划分</p>
+<p>固定优先级：高优先级空时低优先级进程才能被调度</p>
+<p>时间片划分：如三个队列分配时间50%、40%、10%</p>
+<h2 id="进程同步-进程互斥"><a href="#进程同步-进程互斥" class="headerlink" title="进程同步 进程互斥"></a>进程同步 进程互斥</h2><p>进程具有异步性，操作系统要提供“进程同步机制”来解决异步问题</p>
+<p>进程的“并发”需要“共享”的支持</p>
+<p><strong>临界资源：一个时间段内只允许一个进程使用的资源</strong></p>
+<p>对临界资源的访问，必须互斥地进行。也叫做间接制约关系</p>
+<p>对临界资源的互斥访问，可以在逻辑上分为如下四个部分：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">	entry section;</span><br><span class="line">    critical section;</span><br><span class="line">    <span class="built_in">exit</span> section;</span><br><span class="line">    remainder section;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>进入区：检查能否进入并上锁</p>
+<p>临界区：访问临界资源的代码</p>
+<p>退出区：解锁</p>
+<p>剩余区：其他处理</p>
+<p><strong>四个重要原则：空闲让进、忙则等待、有限等待、让权等待</strong></p>
+<ol>
+<li><p>空闲让进。临界区空闲时，可以允许一个请求进入临界区的进程立即进入临界区；</p>
+</li>
+<li><p>忙则等待。当已有进程进入临界区时，其他试图进入临界区的进程必须等待；</p>
+</li>
+<li><p>有限等待。对请求访问的进程，应保证能在有限时间内进入临界区（保证不会饥饿）；</p>
+</li>
+<li><p>让权等待。当进程不能进入临界区时，应立即释放处理机，防止进程忙等待。</p>
+</li>
+</ol>
+<h2 id="进程互斥的软件实现方法"><a href="#进程互斥的软件实现方法" class="headerlink" title="进程互斥的软件实现方法"></a>进程互斥的软件实现方法</h2><p><img src="/image-20230128215145390.png" alt="image-20230128215145390"></p>
+<p>代码示例：</p>
+<p>单标志法</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> turn = <span class="number">0</span>; <span class="comment">// turn是当前允许进入临界区的进程号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line"><span class="keyword">while</span> (turn != <span class="number">0</span>);</span><br><span class="line">critical section;</span><br><span class="line">turn = <span class="number">1</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line"><span class="keyword">while</span> (turn != <span class="number">1</span>);</span><br><span class="line">critical section;</span><br><span class="line">turn = <span class="number">0</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+
+<p>双标志先检查法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>]); <span class="comment">//P1想要进入</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>]);</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+
+<p>先“检查”后“上锁”，进入区的“检查”和“上锁” 两个处理不是一气呵成的</p>
+<p>双标志后检查法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>]); <span class="comment">//P1想要进入</span></span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>]);</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+
+<p>Peterson算法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line"><span class="type">int</span> turn = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">turn = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>] &amp;&amp; turn == <span class="number">1</span>); <span class="comment">//P1想要进入</span></span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">turn = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>] &amp;&amp; turn == <span class="number">0</span>);</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+
+<p>Peterson 算法相较于之前三种软件解决方案来说，是最好的，但依然不够好。</p>
+<h2 id="进程互斥的硬件实现方法"><a href="#进程互斥的硬件实现方法" class="headerlink" title="进程互斥的硬件实现方法"></a>进程互斥的硬件实现方法</h2><p><img src="/image-20230129064919699.png" alt="image-20230129064919699"></p>
+<p>TSL</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">TestAndSet</span> <span class="params">(<span class="type">bool</span> *lock)</span> &#123;</span><br><span class="line">    <span class="type">bool</span> pre;</span><br><span class="line">    pre = lock*;</span><br><span class="line">    *lock = <span class="literal">true</span>; <span class="comment">// true表示加锁</span></span><br><span class="line">    <span class="keyword">return</span> pre; <span class="comment">// 你读读就会明白</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实现互斥</span></span><br><span class="line"><span class="keyword">while</span> (TestAndSet (&amp;lock));</span><br><span class="line">critical section;</span><br><span class="line">lock = <span class="literal">false</span>; <span class="comment">// unlock</span></span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+
+<p>Swap</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">swap (<span class="type">bool</span> *a, <span class="type">bool</span> *b) &#123;</span><br><span class="line">    <span class="type">bool</span> temp;</span><br><span class="line">    temp = *a;</span><br><span class="line">    *a = *b;</span><br><span class="line">    *b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实现互斥</span></span><br><span class="line"><span class="type">bool</span> pre = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (pre == <span class="literal">true</span>)</span><br><span class="line">    swap (&amp;lock, &amp;pre);</span><br><span class="line">critical section;</span><br><span class="line">lock = <span class="literal">false</span>; <span class="comment">// unlock</span></span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h2><p>解决临界区最简单的工具就是互斥锁（mutex lock）。进程在进入临界区时获得锁；退出时释放锁。函数 acquire() 获得锁，release() 释放锁。</p>
+<p>每个互斥锁有一个布尔变量 available 表示锁是否可用。如果锁是可用的，调用 acquire() 会成功，且锁不再可用。当一个进程试图获取不可用的锁时，会被阻塞，直到锁被释放。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">acquire() &#123;</span><br><span class="line">    <span class="keyword">while</span> (!available); <span class="comment">// 忙等待</span></span><br><span class="line">    available = <span class="literal">false</span>; <span class="comment">// 获得锁</span></span><br><span class="line">&#125; <span class="comment">// entry section</span></span><br><span class="line">release() &#123;</span><br><span class="line">    available = <span class="literal">true</span>; <span class="comment">// 释放锁</span></span><br><span class="line">&#125; <span class="comment">// exit section</span></span><br></pre></td></tr></table></figure>
+
+<p>acquire() release() 的执行是<strong>原子操作</strong>，因此互斥锁通常采用硬件机制来实现。<br><strong>互斥锁的主要缺点是忙等待</strong>，当有一个进程在临界区中，任何其他进程在进入临界区时必须连续循环调用 acquire()。当多个进程共享同一 CPU 时，就浪费了 CPU 周期。因此，互斥锁通常用于<strong>多处理器系统</strong>，一个线程可以在一个处理器上等待，不影响其他线程的执行。<br>需要连续循环忙等的互斥锁，都可称为自旋锁（spin lock），如TSL指令、swap指令、单标志法</p>
+<p>所以可以得出锁的特性：</p>
+<p>• 需忙等，进程时间片用完才下处理机，违反“让权等待”</p>
+<p>• 优点：等待期间不用切换进程上下文，多处理器系统中，若上锁的时间短，则等待代价很低</p>
+<p>• 常用于多处理器系统，一个核忙等，其他核照常工作，并快速释放临界区</p>
+<p>• 不太适用于单处理机系统，忙等的过程中不可能解锁</p>
+<h2 id="信号量机制"><a href="#信号量机制" class="headerlink" title="信号量机制"></a>信号量机制</h2><p><img src="/image-20230129073214410.png" alt="image-20230129073214410"></p>
+<p>Dijkstra！</p>
+<p>前面遗留的问题：不能同时进行</p>
+<p>如果把进入区、退出区的操作都用“原语”实现就能解决</p>
+<p><strong>用户进程</strong>可以通过使用操作系统提供的一对原语来对信号量进行操作</p>
+<p>信号量其实就是一个变量 ，可以用一个信号量来表示系统中某种资源的数量。与整数变量不同的是，对信号量的操作只有三种，初始化、P操作、V操作</p>
+<p>比如：系统中只有一台打印机，就可以设置一个初值为 1 的信号量。</p>
+<p>一对原语：wait(S) 原语和 signal(S) 原语，可以把原语理解为我们自己写的函数，函数名分别为 wait 和 signal，括号里的信号量 S 其实就是函数调用时传入的一个参数。简称为 P、V操作，分别写为 P(S)、V(S)</p>
+<p>整型信号量：</p>
+<p>Eg ：某计算机系统中有一台打印机…</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> S = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">wait</span> <span class="params">(<span class="type">int</span> S)</span> &#123; <span class="comment">// 相当于进入区</span></span><br><span class="line">    <span class="keyword">while</span> (S &lt;= <span class="number">0</span>); <span class="comment">// 资源数不够则循环等待</span></span><br><span class="line">    S--; <span class="comment">// 资源数足够则占用一个</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">signal</span> <span class="params">(<span class="type">int</span> S)</span> &#123; <span class="comment">// 相当于退出区</span></span><br><span class="line">    S++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// process P0</span></span><br><span class="line">wait(S);</span><br><span class="line"><span class="comment">// use the printer, critical section</span></span><br><span class="line">signal(S);</span><br><span class="line"></span><br><span class="line"><span class="comment">// process P1</span></span><br><span class="line">wait(S);</span><br><span class="line"><span class="comment">// use the printer, critical section</span></span><br><span class="line">signal(S);</span><br></pre></td></tr></table></figure>
+
+<p>整型信号量存在“忙等”问题，可以用记录型数据结构表示信号量</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> value; <span class="comment">// 剩余资源数</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">process</span> *<span class="title">L</span>;</span> <span class="comment">// 等待队列</span></span><br><span class="line">&#125; semaphore;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">wait</span> <span class="params">(semaphore S)</span> &#123;</span><br><span class="line">    S.value--;</span><br><span class="line">    <span class="keyword">if</span> (S.value &lt; <span class="number">0</span>)</span><br><span class="line">        block (S.L);</span><br><span class="line">    <span class="comment">// 如果剩余资源数不够，使用block原语使进程从运行态进入阻塞态，并把挂到信号量S的等待队列（即阻塞队列）中</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">signal</span> <span class="params">(semaphore S)</span> &#123;</span><br><span class="line">    S.value++;</span><br><span class="line">    <span class="keyword">if</span> (S.value &lt;= <span class="number">0</span>)</span><br><span class="line">        wakeup(S.L);</span><br><span class="line">    <span class="comment">// 释放资源后，若还有别的进程在等待这种资源，则使用wakeup 原语唤醒等待队列中的一个进程，该进程从阻塞态变为就绪态</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>默认为记录型信号量</p>
+<h2 id="用信号量机制实现进程互斥、同步、前驱关系"><a href="#用信号量机制实现进程互斥、同步、前驱关系" class="headerlink" title="用信号量机制实现进程互斥、同步、前驱关系"></a>用信号量机制实现进程互斥、同步、前驱关系</h2><p><img src="/image-20230129222621004.png" alt="image-20230129222621004"></p>
+<p>本节核心内容：信号量的值 &#x3D; 这种资源的剩余数量（信号量的值如果小于0，说明此时有进程在等待这种资源）</p>
+<h3 id="互斥关系"><a href="#互斥关系" class="headerlink" title="互斥关系"></a>互斥关系</h3><p>不同的临界资源需要设置不同的互斥信号量。 </p>
+<p>P、V操作必须成对出现。缺少P(mutex) 就不能保证临界资源的互斥访问。缺少 V(mutex) 会导致资源永不被释放，等待进程永不被唤醒。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">semaphore mutex = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">P1() &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    P(mutex);</span><br><span class="line">    critical section;</span><br><span class="line">    V(mutex);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">P2() &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    P(mutex);</span><br><span class="line">    critical section;</span><br><span class="line">    V(mutex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="同步关系"><a href="#同步关系" class="headerlink" title="同步关系"></a>同步关系</h3><p>进程同步问题：让本来异步并发的进程互相配合，有序推进。</p>
+<ol>
+<li><p>分析什么地方需要实现“同步关系”，即必须保证“一前一后”执行的两个操作（或两句代码）</p>
+</li>
+<li><p>设置同步信号量 S, 初始为 0</p>
+</li>
+<li><p>在“前操作”之后执行 V(S)</p>
+</li>
+<li><p>在“后操作”之前执行 P(S)</p>
+</li>
+</ol>
+<h3 id="前驱关系"><a href="#前驱关系" class="headerlink" title="前驱关系"></a>前驱关系</h3><p>本质上是多级同步关系</p>
+<h2 id="生产者消费者问题"><a href="#生产者消费者问题" class="headerlink" title="生产者消费者问题"></a>生产者消费者问题</h2><p>背景：系统中有一组生产者进程和一组消费者进程，生产者进程每次生产一个产品放入缓冲区，消费者进程每次从缓冲区中取出一个产品并使用。（注：这里的“产品”理解为某种数据）</p>
+<p>生产者、消费者共享一个初始为空、大小为n的缓冲区。</p>
+<p>只有缓冲区没满时，生产者才能把产品放入缓冲区，否则必须等待。</p>
+<p>只有缓冲区不空时，消费者才能从中取出产品，否则必须等待。</p>
+<p>缓冲区是临界资源，各进程必须<strong>互斥</strong>地访问。</p>
+<p>分析关系、确定PV操作、设置信号量初值</p>
+<p>实现互斥是在同一进程中进行一对PV操作 </p>
+<p>实现两进程的同步关系，是在其中一个进程中执行P，另一进程中执行V</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">semaphore mutex = <span class="number">1</span>;</span><br><span class="line">semaphore empty = n;</span><br><span class="line">semaphore full = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">producer () &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        produce a product;</span><br><span class="line">        P(empty); <span class="comment">// 消耗一个空闲缓冲区</span></span><br><span class="line">        P(mutex);</span><br><span class="line">        put the product into the buffer;</span><br><span class="line">        V(mutex);</span><br><span class="line">        V(full); <span class="comment">// 增加一个产品</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">consumer () &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        P(full); <span class="comment">// 消耗一个产品（非空缓冲区）</span></span><br><span class="line">        P(mutex);</span><br><span class="line">        get a product from the buffer;</span><br><span class="line">        V(mutex);</span><br><span class="line">        V(empty); <span class="comment">// 增加一个空闲缓冲区</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实现互斥的P操作一定要在实现同步的P操作之后。 </p>
+<p>V操作不会导致进程阻塞，因此两个V操作顺序可以交换。</p>
+<p><strong>本节易错点</strong>：实现互斥和实现同步的两个P操作的先后顺序（死锁问题）</p>
+<h2 id="多生产者-多消费者"><a href="#多生产者-多消费者" class="headerlink" title="多生产者-多消费者"></a>多生产者-多消费者</h2><p>后面有点难了，感觉王道不太够用了，先鸽了后面补</p>
+]]></content>
+      <categories>
+        <category>OS</category>
+      </categories>
+      <tags>
+        <tag>OS</tag>
+        <tag>知识点罗列</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python基础教程（第2版）阅读笔记</title>
     <url>/notes-of-python-book/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
@@ -1317,539 +1829,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Typora数学公式</title>
-    <url>/MarkDown-Grammar/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>MarkDown 比较全的数学公式语法集合</p>
-</blockquote>
-<span id="more"></span>
-
-<p>[TOC]</p>
-<blockquote>
-<p>其实本质是对 Tex 语法的支持</p>
-</blockquote>
-<h3 id="一、打开Typora选择数学模块"><a href="#一、打开Typora选择数学模块" class="headerlink" title="一、打开Typora选择数学模块"></a>一、打开Typora选择数学模块</h3><p>三种打开方式：</p>
-<ul>
-<li>点击“段落” –&gt; “公式块”</li>
-<li>快捷键ctrl + shift +m</li>
-<li>“$$” + 回车</li>
-</ul>
-<h3 id="二、添加数学公式"><a href="#二、添加数学公式" class="headerlink" title="二、添加数学公式"></a>二、添加数学公式</h3><p>输出美观的数学公式，需要知道他们的格式和代码！<br>ps:Typora有时出现公式块无法删除，可能是软件bug，Ctrl + &#x2F; 打开源代码模式，在这里面可以进行删除<br>$$<br>e^{i\pi + 1} &#x3D; 2<br>$$</p>
-<h3 id="三、常用的公式格式代码练习"><a href="#三、常用的公式格式代码练习" class="headerlink" title="三、常用的公式格式代码练习"></a>三、常用的公式格式代码练习</h3><ol>
-<li>公式块内换行</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\\ 公式块内换行</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>常用基本函数：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">1、x^2 //上下标</span><br><span class="line">2、1/2 //分式1</span><br><span class="line">3、\frac&#123;1&#125;&#123;2&#125; //分式2</span><br><span class="line">4、\cdots //省略号</span><br><span class="line">5、\sqrt&#123;4&#125; //开根号</span><br><span class="line">6、\vec&#123;a&#125; //矢量</span><br><span class="line">7、\int&#123;x&#125;dx //积分1</span><br><span class="line">8、\int_&#123;1&#125;^&#123;2&#125;dx //积分2</span><br><span class="line">9、\lim&#123;a + b&#125; //极限1</span><br><span class="line">10、\lim_&#123;n\rightarrow + \infty&#125; //极限2</span><br><span class="line">11、\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125; //累加</span><br><span class="line">12、\prod_&#123;n=1&#125;^&#123;199&#125;&#123;x_n&#125; //累乘</span><br><span class="line">13、\sin&#123;(x + y)&#125; //三角函数</span><br><span class="line">14、\ln2 //对数函数1</span><br><span class="line">15、\log_28 //对数函数2</span><br><span class="line">16、a&#x27; //导数</span><br><span class="line">17、\partial&#123;F&#125; //偏微分</span><br><span class="line">18、\iint&#123;xy&#125;dxdy //二重积分</span><br><span class="line">19、\oiint&#123;x + y&#125;dxdy //二重环路积分</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>1、x^2\<br>2、1&#x2F;2\<br>3、\frac{1}{2}\<br>4、\cdots\<br>5、\sqrt{4}\<br>6、\vec{a}\<br>7、\int{x}dx\<br>8、\int_{1}^{2}dx\<br>9、\lim{a + b}\<br>10、\lim_{n\rightarrow + \infty}\<br>11、\sum_{n&#x3D;1}^{100}{a_n}\<br>12、\prod_{n&#x3D;1}^{199}{x_n}\<br>13、\sin{(x + y)}\<br>14、\ln2\<br>15、\log_28\<br>16、a’\<br>17、\partial{F}\<br>18、\iint{xy}dxdy\<br>19、\oiint{(x + y)}dxdy\<br>$$</p>
-<ol start="3">
-<li>公式块内左对齐：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125; //</span><br><span class="line">&amp;1、y = \sin(x) \\&amp;为对齐格式符</span><br><span class="line">&amp;2、</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{aligned}<br>&amp;1、y &#x3D; \sin(x) \<br>&amp;2、<br>\end{aligned}<br>$$</p>
-<ol start="4">
-<li>下标</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">v_1\\</span><br><span class="line">v_&#123;体积&#125; 下标为多个英文字母时，使用&#123;&#125;包起来：</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>v_1\<br>v_{体积}<br>$$</p>
-<ol start="5">
-<li>关系运算符：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\pm // ± plus&amp;minor</span><br><span class="line">\div // ÷ divide</span><br><span class="line">\equiv // == equal</span><br><span class="line">\le // &lt;= lower&amp;equal</span><br><span class="line">\ge // &gt;= greater&amp;equal</span><br></pre></td></tr></table></figure>
-<p>$$<br>\pm\<br>\div\<br>\equiv\<br>\leq\<br>\geq<br>$$</p>
-<ol start="6">
-<li>花括号公式组合：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">c(u) =</span><br><span class="line">\begin&#123;cases&#125; </span><br><span class="line">\sqrt\frac&#123;1&#125;&#123;N&#125;, u = 0 \\ </span><br><span class="line">\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125;, n \neq0  neq:not equal</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>c(u) &#x3D;<br>\begin{cases}<br>\sqrt\frac{1}{N}, u &#x3D; 0 \<br>\sum_{n&#x3D;1}^{100}{a_n}, n \neq0<br>\end{cases}<br>$$</p>
-<ol start="7">
-<li>空格：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">a \quad b</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>a \quad b<br>$$</p>
-<ol start="8">
-<li>矩阵：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">0&amp;1&amp;1\\</span><br><span class="line">1&amp;1&amp;0\\</span><br><span class="line">1&amp;0&amp;1\\</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{matrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{matrix}<br>$$</p>
-<blockquote>
-<p> 在起始、结束标记用下列词替换 matrix：</p>
-<p>pmatrix：小括号边框<br>bmatrix：中括号边框 &#96;<br>Bmatrix：大括号边框<br>vmatrix：单竖线边框<br>Vmatrix：双竖线边框</p>
-</blockquote>
-<p>$$<br>\begin{pmatrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{pmatrix}<br>$$</p>
-<p>$$<br>\begin{vmatrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{vmatrix}<br>$$</p>
-<ol start="9">
-<li>特殊字符及希腊字母表：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\infty //无穷</span><br><span class="line">\emptyset //空集</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\infty \<br>\emptyset<br>$$</p>
-<ol start="10">
-<li>更多字符<br>更多特殊字符及希腊字母代码见wps中LaTex公式符号</li>
-</ol>
-<p>① 常用字母字符</p>
-<p><img src="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp" alt="img"></p>
-<p>② 特殊符号</p>
-<p><img src="https://i0.hdslb.com/bfs/article/5f471724c265c39e6c832a9a3212f67aa094791e.png@942w_387h_progressive.webp" alt="img"></p>
-<p><img src="https://i0.hdslb.com/bfs/article/a750d31bd5a69f8dd8b58c6b2d690988025d323c.png@942w_1500h_progressive.webp" alt="img"></p>
-]]></content>
-      <categories>
-        <category>MarkDown</category>
-      </categories>
-      <tags>
-        <tag>MarkDown</tag>
-        <tag>Grammar</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>//</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>我的入门启蒙</p>
-</blockquote>
-<span id="more"></span>
-
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>WangDao OS Chapter2</title>
-    <url>/WD-OS-Chap2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>枯燥无味的王道考研 OS 第二章 进程与线程 知识点罗列</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="进程的概念、组成、特征"><a href="#进程的概念、组成、特征" class="headerlink" title="进程的概念、组成、特征"></a>进程的概念、组成、特征</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124175307299.png" alt="2.1-总"></p>
-<h3 id="进程的概念"><a href="#进程的概念" class="headerlink" title="进程的概念"></a>进程的概念</h3><p>程序是静态的，进程是动态的，是程序的一次执行过程</p>
-<p>QQ.exe 和启动 QQ</p>
-<h3 id="进程的组成"><a href="#进程的组成" class="headerlink" title="进程的组成"></a>进程的组成</h3><blockquote>
-<p>准确来说是进程实体的组成</p>
-</blockquote>
-<h4 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a>PCB</h4><p>PCB(Process Control Block)：进程控制块，保存操作系统管理各个并发进程时所需要的信息</p>
-<p><strong>PCB 是进程存在的唯一标志</strong>，进程创建时操作系统会创建 PCB，进程结束时操作系统会回收 PCB</p>
-<p><strong>供给操作系统使用</strong></p>
-<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124174652024.png" alt="2.1.2.1-PCB组成"></p>
-<h4 id="程序段、数据段"><a href="#程序段、数据段" class="headerlink" title="程序段、数据段"></a>程序段、数据段</h4><p>程序段：程序代码（指令序列）</p>
-<p>数据段：运行过程中产生的各种数据（如定义的变量）</p>
-<p><strong>供给进程自身使用</strong>，与进程自身运行逻辑有关</p>
-<h4 id="进程实体"><a href="#进程实体" class="headerlink" title="进程实体"></a>进程实体</h4><p>进程实体（进程映像）由PCB、程序段、数据段组成，反应了进程在某一时刻的状态</p>
-<p>所以可以这样定义进程：<strong>进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位</strong></p>
-<blockquote>
-<p>调度指上 CPU 运行</p>
-</blockquote>
-<p>进程是动态的，进程实体（进程映像）是静态的。</p>
-<h3 id="进程的特征"><a href="#进程的特征" class="headerlink" title="进程的特征"></a>进程的特征</h3><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124175212607.png" alt="2.1.3"></p>
-<p>其中，动态性是进程<strong>最基本</strong>的特征</p>
-<h2 id="进程的状态与转换"><a href="#进程的状态与转换" class="headerlink" title="进程的状态与转换"></a>进程的状态与转换</h2><p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124201936453.png" alt="2.2总"></p>
-<h3 id="进程的状态"><a href="#进程的状态" class="headerlink" title="进程的状态"></a>进程的状态</h3><p>创建态：进程正在被创建，操作系统为进程分配资源，初始化 PCB</p>
-<p>就绪态：进程已经创建完成具备运行条件，但是没有空闲 CPU，暂时不能运行</p>
-<p>运行态：进程正在 CPU 上运行，CPU 执行进程对应的程序</p>
-<p>阻塞态：进程运行过程中，在等待某个事件的发生而无法继续运行，操作系统会让进程下 CPU 进入阻塞态</p>
-<p>终止态：操作系统让进程下 CPU，并回收内存空间与该进程的 PCB</p>
-<h3 id="进程的状态转换"><a href="#进程的状态转换" class="headerlink" title="进程的状态转换"></a>进程的状态转换</h3><p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124201325614.png" alt="2.2.2丁字裤模型"></p>
-<p>PCB 中也有一个变量 state 对应进程的当前状态</p>
-<h3 id="进程的组织"><a href="#进程的组织" class="headerlink" title="进程的组织"></a>进程的组织</h3><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p>按照进程状态将 PCB 分为多个队列，指针指向当前处于某状态的进程</p>
-<p>如就绪队列指针指向当前处于就绪态的进程</p>
-<p>单核 CPU 同一时刻只能有一个进程处于运行态，多核 CPU 可有多个进程同时处于运行态</p>
-<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p>按照进程状态的不同建立索引表</p>
-<h2 id="进程控制"><a href="#进程控制" class="headerlink" title="进程控制"></a>进程控制</h2><p>简而言之就是实现进程状态的转换</p>
-<h3 id="相关原语"><a href="#相关原语" class="headerlink" title="相关原语"></a>相关原语</h3><p>原语通过“关中断指令”和“开中断指令”两个<strong>特权指令</strong>实现原子性</p>
-<p>CPU 在正常情况下每执行完一条指令都会例行检查是否有中断信号，而关中断之后便不再进行该检查</p>
-<p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202446434.png" alt="2.3.1创建"></p>
-<p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202503059.png" alt="2.3.1终止"></p>
-<p>将任意状态的进程转变为终止态最终消失</p>
-<p>正常结束：进程调用 exit 系统调用请求终止</p>
-<p>异常结束：除 0，非法使用特权指令等被操作系统杀掉</p>
-<p>外界干预：任务管理器用户杀掉</p>
-<p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202905434.png" alt="2.3.1阻塞和唤醒"></p>
-<p>阻塞和唤醒的原因应为同一件事</p>
-<p><img src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202955702.png" alt="2.3.1切换"></p>
-<p>正确完成切换的前提是先在寄存器中保存进程的运行环境（必要的寄存器信息）</p>
-<p>进程控制原语的三点共同点：</p>
-<ol>
-<li><p>更新 PCB 中的信息</p>
-</li>
-<li><p>将 PCB 装入合适的队列</p>
-</li>
-<li><p>分配和回收资源</p>
-</li>
-</ol>
-<h2 id="进程通信（IPC）"><a href="#进程通信（IPC）" class="headerlink" title="进程通信（IPC）"></a>进程通信（IPC）</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230126055115286.png" alt="2.4总"></p>
-<p>两个进程之间产生数据交互</p>
-<p>因为进程是分配系统资源的单位，所以各进程拥有的内存地址空间相互独立</p>
-<h3 id="共享存储"><a href="#共享存储" class="headerlink" title="共享存储"></a>共享存储</h3><p>基于数据结构、基于共享空间</p>
-<h3 id="消息传递"><a href="#消息传递" class="headerlink" title="消息传递"></a>消息传递</h3><p>以格式化的信息（Message）为单位，通过发送消息、接收消息两个原语进行数据交换</p>
-<h3 id="管道通信"><a href="#管道通信" class="headerlink" title="管道通信"></a>管道通信</h3><p>“管道”是一个特殊的共享文件，又名pipe文件。其实就是在内存中开辟一个大小固定的内存缓冲区</p>
-<p>采用半双工通信，单向传输，各进程互斥地访问管道</p>
-<p>管道写满，写进程阻塞；管道读空，读进程阻塞</p>
-<h2 id="线程概念-多线程模型"><a href="#线程概念-多线程模型" class="headerlink" title="线程概念 多线程模型"></a>线程概念 多线程模型</h2><h3 id="线程的概念及属性、优点"><a href="#线程的概念及属性、优点" class="headerlink" title="线程的概念及属性、优点"></a>线程的概念及属性、优点</h3><p>有的进程可能需要“同时”做很多事，而传统的进程只能串行地执行一系列程序。为此引入“线程”增加并发度。</p>
-<p>可以把线程理解为“轻量级进程”。线程是一个基本的CPU执行单元，也是程序执行流的最小单位。</p>
-<p>引入线程之后，不仅是进程之间可以并发，进程内的各线程之间也可以并发，从而进一步提升了系统的并发度，使得一个进程内</p>
-<p>也可以并发处理各种任务（如QQ视频、文字聊天、传文件）</p>
-<p>引入线程后，进程只作为除CPU之外的系统资源的分配单元（如打印机、内存地址空间等都是分配给进程的）。线程则作为处理机的分配单元。</p>
-<h3 id="线程的属性"><a href="#线程的属性" class="headerlink" title="线程的属性"></a>线程的属性</h3><h3 id="线程的实现方式"><a href="#线程的实现方式" class="headerlink" title="线程的实现方式"></a>线程的实现方式</h3><p>用户级线程（User-Level Thread, ULT）和内核级线程（Kernel-Level Thread, KLT）</p>
-<p>从代码的角度看，线程其实就是一段代码逻辑。</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>ULT</th>
-<th>KLT</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>线程的管理工作由谁来完成？</td>
-<td>应用程序</td>
-<td>OS kernel</td>
-</tr>
-<tr>
-<td>线程切换时 CPU 状态</td>
-<td>用户态</td>
-<td>核心态</td>
-</tr>
-<tr>
-<td>操作系统是否能意识到用户级线程的存在？</td>
-<td>否，只有用户看来是多线程</td>
-<td>是，OS 通过 TCB 对线程进行管理</td>
-</tr>
-<tr>
-<td>优点</td>
-<td>不需变态，开销小，效率高</td>
-<td>并发能力强，可在多核处理机上并行运行</td>
-</tr>
-<tr>
-<td>缺点</td>
-<td>并发度低，不能在多核处理机上并行运行</td>
-<td>需变态，开销大，效率低</td>
-</tr>
-</tbody></table>
-<p>注：TCB 类比 PCB，线程控制块</p>
-<p>可以看到二者互为优缺点</p>
-<h3 id="多线程模型"><a href="#多线程模型" class="headerlink" title="多线程模型"></a>多线程模型</h3><p>在<strong>支持内核级线程 KLT 的系统中</strong>，根据用户级线程和内核级线程的映射关系，划分出几种多线程模型</p>
-<p>前面的数目是 ULT，后面的数目是 KLT</p>
-<p>一对一有 KLT 的缺点，多对一有 ULT 的缺点，多对多综合了</p>
-<p>多对多模型：n 个ULT 映射到 m 个 KLT（n &gt;&#x3D; m）。每个 ULT 对应 m 个 KLT</p>
-<p>克服了多对一模型并发度不高的缺点（一个阻塞全体阻塞），又克服了一对一模型中一个用线程库 户进程占用太多内核级线程，开销太大的缺点。</p>
-<p>可以这么理解：</p>
-<p>用户级线程是“代码逻辑”的载体</p>
-<p>内核级线程是“运行机会”的载体</p>
-<p>一段“代码逻辑”只有获得了“运行机会”才能被 CPU <del>CPU</del>执行</p>
-<p><img src="/image-20230126063144860.png" alt="image-20230126063144860"></p>
-<h2 id="线程的组织与控制"><a href="#线程的组织与控制" class="headerlink" title="线程的组织与控制"></a>线程的组织与控制</h2><p>![](TCB 与线程表.png)</p>
-<h2 id="调度的基本概念"><a href="#调度的基本概念" class="headerlink" title="调度的基本概念"></a>调度的基本概念</h2><p>调度研究用某种规则决定处理任务顺序的问题</p>
-<p>高级调度（作业调度）。按一定的原则从外存的作业后备队列中挑选一个作业调入内存，并创建进程。每个作业只调入一次，调出一次。作业调入时会建立PCB，调出时才撤销PCB。</p>
-<p>低级调度（进程调度&#x2F;处理机调度）—— 按照某种策略从就绪队列中选取一个进程，将处理机分配给它。</p>
-<p>进程调度是操作系统中最基本的一种调度，在一般的操作系统中都必须配置进程调度。进程调度的频率很高，一般几十毫秒一次。</p>
-<p>内存不够时，可将某些进程的数据调出外存。等内存空闲或者进程需要运行时再重新调入内存。</p>
-<p>暂时调到外存等待的进程状态为挂起状态。被挂起的进程PCB会被组织成挂起队列</p>
-<p>中级调度（内存调度）——按照某种策略决定将哪个处于挂起状态的进程重新调入内存。</p>
-<p>一个进程可能会被多次调出、调入内存，因此中级调度发生的频率要比高级调度更高。</p>
-<p>暂时调到外存等待的进程状态为挂起状态（挂起态，suspend）</p>
-<p>挂起态又可以进一步细分为就绪挂起、阻塞挂起两种状态</p>
-<p>注意“挂起”和“阻塞”的区别，两种状态都是暂时不能获得CPU的服务，但挂起态是将进程映像调到外存去了，而阻塞态下进程映像还在内存中。</p>
-<p>有的操作系统会把就绪挂起、阻塞挂起分为两个挂起队列，甚至会根据阻塞原因不同再把阻塞挂起进程进一步细分为多个队列。</p>
-<p><img src="/%E4%B8%89%E5%B1%82%E8%B0%83%E5%BA%A6%E7%9A%84%E5%AF%B9%E6%AF%94.png" alt="三层调度的对比"></p>
-<h2 id="进程调度的基本概念"><a href="#进程调度的基本概念" class="headerlink" title="进程调度的基本概念"></a>进程调度的基本概念</h2><p><img src="/image-20230126073913377.png" alt="image-20230126073913377"></p>
-<h2 id="调度器、闲逛进程"><a href="#调度器、闲逛进程" class="headerlink" title="调度器、闲逛进程"></a>调度器、闲逛进程</h2><h3 id="调度器"><a href="#调度器" class="headerlink" title="调度器"></a>调度器</h3><p>调度程序决定：</p>
-<p>让谁运行？——调度算法</p>
-<p>运行多长时间？——时间片大小</p>
-<p>调度时机——什么事件会触发“调度程序” ？ </p>
-<p>• 创建新进程</p>
-<p>• 进程退出</p>
-<p>• 运行进程阻塞</p>
-<p>• I&#x2F;O中断发生（可能唤醒某些阻塞进程）</p>
-<p>• 非抢占式调度策略，只有运行进程阻塞或</p>
-<p>退出才触发调度程序工作</p>
-<p>• 抢占式调度策略，每个时钟中断或k个时钟</p>
-<p>中断会触发调度程序工作</p>
-<p><img src="/image-20230126074912039.png" alt="image-20230126074912039"></p>
-<h3 id="闲逛进程"><a href="#闲逛进程" class="headerlink" title="闲逛进程"></a>闲逛进程</h3><p>没有其他就绪进程时，运行闲逛进程</p>
-<p>闲逛进程的特性：</p>
-<p>• 优先级最低</p>
-<p>• 可以是0地址指令，占一个完整的指令周期（指令周期末尾例行检查中断）</p>
-<p>• 能耗低</p>
-<h2 id="调度算法（一）"><a href="#调度算法（一）" class="headerlink" title="调度算法（一）"></a>调度算法（一）</h2><p>算法的学习思路</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>FCFS</th>
-<th>SJF</th>
-<th>HRRN</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>算法思想</td>
-<td>公平</td>
-<td>平均等待时间、平均周转时间、平均带权周转时间最少</td>
-<td>综合考虑作业&#x2F;进程的等待时间和要求服务的时间</td>
-</tr>
-<tr>
-<td>算法规则</td>
-<td>按照作业&#x2F;进程到达的先后顺序进行服务</td>
-<td>要求服务时间最短的作业&#x2F;进程优先得到服务</td>
-<td>选择响应比最高的作业&#x2F;进程为其服务</td>
-</tr>
-<tr>
-<td>作业调度 还是 进程调度</td>
-<td>均可。用于作业调度时，考虑的是哪个作业先到达后备队列；用于进程调度时，考虑的是哪个进程先到达就绪队列</td>
-<td>均可。用于进程调度时称为“短进程优先（SPF, Shortest Process First）算法”</td>
-<td>均可</td>
-</tr>
-<tr>
-<td>是否可抢占</td>
-<td>非抢占式</td>
-<td>非抢占式，抢占式为最短剩余时间优先算法（SRTN, Shortest Remaining Time Next）</td>
-<td>非抢占式</td>
-</tr>
-<tr>
-<td>优点</td>
-<td>公平、算法实现简单</td>
-<td>“最短的”平均等待时间、平均周转时间</td>
-<td></td>
-</tr>
-<tr>
-<td>缺点</td>
-<td>对长作业有利，对短作业不利</td>
-<td>对短作业有利，对长作业不利</td>
-<td></td>
-</tr>
-<tr>
-<td>是否会导致饥饿</td>
-<td>不会</td>
-<td>会（一直是短作业&#x2F;进程会使长作业&#x2F;进程饥饿）</td>
-<td>不会</td>
-</tr>
-</tbody></table>
-<p>饥饿（某进程&#x2F;作业长期得不到服务）</p>
-<p>先来先服务（FCFS, First Come First Serve）</p>
-<p>短作业优先（SJF, Shortest Job First）</p>
-<p>高响应比优先（HRRN, Highest Response Ratio Next）</p>
-<p>常用的计算量如下：<br>$$<br>周转时间 &#x3D; 完成时间 - 到达时间 \<br>带权周转时间 &#x3D; 周转时间&#x2F;运行时间 \<br>等待时间 &#x3D; 周转时间 – 运行时间 \<br>对于有计算和I&#x2F;O操作的进程，其等待时间 &#x3D; 周转时间 - 运行时间 - I&#x2F;O操作的时间 \<br>响应比 &#x3D; \frac{等待时间+要求服务时间}{要求服务时间}<br>$$<br>FCFS 算法是在每次调度的时候选择一个等待时间最长的作业（进程）为其服务。但是没有考虑到作业的运行时间，因此导致了对短作业不友好的问题</p>
-<p>SJF 算法是选择一个执行时间最短的作业为其服务。但是又完全不考虑各个作业的等待时间，因此导致了对长作业不友好的问题，甚至还会造成饥饿问题</p>
-<p>能不能设计一个算法，既考虑到各个作业的等待时间，也能兼顾运行时间呢？——高响应比优先算法</p>
-<p>对于 SRTN 算法，每当有进程加入就绪队列改变时就需要调度，如果新到达的进程剩余时间比当前运行的进程剩余时间更短，则由新进程抢占处理机，当前运行进程重新回到就绪队列。另外，当一个进程完成时也需要调度</p>
-<p>这几种算法主要关心对用户的公平性、平均周转时间、平均等待时间等评价系统整体性能的指标，但是不关心“响应时间”，也并不区分任务的紧急程度，因此对于用户来说，交互性很糟糕。因此这三种算法一般适合用于早期的批处理系统，当然，FCFS算法也常结合其他的算法使用，在现在也扮演着很重要的角色。而适合用于交互式系统的调度算法将在下个小节介绍</p>
-<h2 id="调度算法（二）"><a href="#调度算法（二）" class="headerlink" title="调度算法（二）"></a>调度算法（二）</h2><table>
-<thead>
-<tr>
-<th></th>
-<th>时间片轮转</th>
-<th>优先级调度算法</th>
-<th>HRRN</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>算法思想</td>
-<td>公平</td>
-<td>区分紧急程度</td>
-<td>综合考虑作业&#x2F;进程的等待时间和要求服务的时间</td>
-</tr>
-<tr>
-<td>算法规则</td>
-<td>按照进程到达就绪队列的顺序，轮流让各个进程执行一个时间片</td>
-<td>要求优先级最高的作业&#x2F;进程优先得到服务</td>
-<td>选择响应比最高的作业&#x2F;进程为其服务</td>
-</tr>
-<tr>
-<td>作业调度 还是 进程调度</td>
-<td>进程调度</td>
-<td>作业调度、进程调度、I&#x2F;O调度均可</td>
-<td>均可</td>
-</tr>
-<tr>
-<td>是否可抢占</td>
-<td>抢占式，通过时钟中断通知</td>
-<td>均有，抢占式需要在就绪队列变化时检查是否发生抢占</td>
-<td>非抢占式</td>
-</tr>
-<tr>
-<td>优点</td>
-<td>公平、响应快、适用分时操作系统</td>
-<td>适用于实时操作系统，可以灵活调整</td>
-<td></td>
-</tr>
-<tr>
-<td>缺点</td>
-<td>进程切换产生系统开销、不区分任务的紧急程度</td>
-<td>持续的高优先级进程到来会导致饥饿</td>
-<td></td>
-</tr>
-<tr>
-<td>是否会导致饥饿</td>
-<td>不会</td>
-<td>会（一直是高优先级进程会使低优先级进程饥饿）</td>
-<td>不会</td>
-</tr>
-</tbody></table>
-<p>RR 算法常用于分时操作系统，更注重“响应时间”，因而此处不计算周转时间</p>
-<p>时间片没用完但是运行完了也会主动放弃处理机发生调度</p>
-<p>如果时间片太大，使得每个进程都可以在一个时间片内就完成，则 RR 算法退化为 FCFS 算法，并且会增大进程响应时间。因此时间片不能太大</p>
-<p>另一方面，进程调度、切换是有时间代价的（保存、恢复运行环境），因此如果时间片太小，进程切换过于频繁，系统会花大量的时间来处理进程切换，从而导致实际用于进程执行的时间比例减少。可见时间片也不能太小</p>
-<p>FCFS算法的优点是公平</p>
-<p>SJF 算法的优点是能尽快处理完短作业，平均等待&#x2F;周转时间等参数很优秀</p>
-<p>法</p>
-<p>时间片轮转调度算法可以让各个进程得到及时的响应</p>
-<p>优先级调度算法可以灵活地调整各种进程被服务的机会</p>
-<p>能否对其他算法做个折中权衡？得到一个综合表现优秀平衡的算法呢？——多级反馈队列调度算法</p>
-<p>交互式操作系统（包括分时操作系统、实时操作系统等）更注重系统的‘响应时间、公平性、平衡性等指标。而这几种算法恰好也能较好地满足交互式系统的需求。因此这三种算法适合用于交互式系统。</p>
-<h2 id="调度算法（三）"><a href="#调度算法（三）" class="headerlink" title="调度算法（三）"></a>调度算法（三）</h2><p>系统中按进程类型设置多个队列，进程创建成功后插入某个队列</p>
-<p>!(image-20230128213255504.png)</p>
-<p>队列之间可采取固定优先级，或时间片划分</p>
-<p>固定优先级：高优先级空时低优先级进程才能被调度</p>
-<p>时间片划分：如三个队列分配时间50%、40%、10%</p>
-<h2 id="进程同步-进程互斥"><a href="#进程同步-进程互斥" class="headerlink" title="进程同步 进程互斥"></a>进程同步 进程互斥</h2><p>进程具有异步性，操作系统要提供“进程同步机制”来解决异步问题</p>
-<p>进程的“并发”需要“共享”的支持</p>
-<p><strong>临界资源：一个时间段内只允许一个进程使用的资源</strong></p>
-<p>对临界资源的访问，必须互斥地进行。也叫做间接制约关系</p>
-<p>对临界资源的互斥访问，可以在逻辑上分为如下四个部分：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">	entry section;</span><br><span class="line">    critical section;</span><br><span class="line">    <span class="built_in">exit</span> section;</span><br><span class="line">    remainder section;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>进入区：检查能否进入并上锁</p>
-<p>临界区：访问临界资源的代码</p>
-<p>退出区：解锁</p>
-<p>剩余区：其他处理</p>
-<p><strong>四个重要原则：空闲让进、忙则等待、有限等待、让权等待</strong></p>
-<ol>
-<li><p>空闲让进。临界区空闲时，可以允许一个请求进入临界区的进程立即进入临界区；</p>
-</li>
-<li><p>忙则等待。当已有进程进入临界区时，其他试图进入临界区的进程必须等待；</p>
-</li>
-<li><p>有限等待。对请求访问的进程，应保证能在有限时间内进入临界区（保证不会饥饿）；</p>
-</li>
-<li><p>让权等待。当进程不能进入临界区时，应立即释放处理机，防止进程忙等待。</p>
-</li>
-</ol>
-<h2 id="进程互斥的软件实现方法"><a href="#进程互斥的软件实现方法" class="headerlink" title="进程互斥的软件实现方法"></a>进程互斥的软件实现方法</h2><p><img src="/image-20230128215145390.png" alt="image-20230128215145390"></p>
-<p>代码示例：</p>
-<p>单标志法</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> turn = <span class="number">0</span>; <span class="comment">// turn是当前允许进入临界区的进程号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line"><span class="keyword">while</span> (turn != <span class="number">0</span>);</span><br><span class="line">critical section;</span><br><span class="line">turn = <span class="number">1</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line"><span class="keyword">while</span> (turn != <span class="number">1</span>);</span><br><span class="line">critical section;</span><br><span class="line">turn = <span class="number">0</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-
-<p>双标志先检查法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>]); <span class="comment">//P1想要进入</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>]);</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-
-<p>先“检查”后“上锁”，进入区的“检查”和“上锁” 两个处理不是一气呵成的</p>
-<p>双标志后检查法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>]); <span class="comment">//P1想要进入</span></span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>]);</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-
-<p>Peterson算法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line"><span class="type">int</span> turn = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">turn = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>] &amp;&amp; turn == <span class="number">1</span>); <span class="comment">//P1想要进入</span></span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">turn = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>] &amp;&amp; turn == <span class="number">0</span>);</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-
-<p>Peterson 算法相较于之前三种软件解决方案来说，是最好的，但依然不够好。</p>
-<h2 id="进程互斥的硬件实现方法"><a href="#进程互斥的硬件实现方法" class="headerlink" title="进程互斥的硬件实现方法"></a>进程互斥的硬件实现方法</h2><p><img src="/image-20230129064919699.png" alt="image-20230129064919699"></p>
-<p>TSL</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">TestAndSet</span> <span class="params">(<span class="type">bool</span> *lock)</span> &#123;</span><br><span class="line">    <span class="type">bool</span> pre;</span><br><span class="line">    pre = lock*;</span><br><span class="line">    *lock = <span class="literal">true</span>; <span class="comment">// true表示加锁</span></span><br><span class="line">    <span class="keyword">return</span> pre; <span class="comment">// 你读读就会明白</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实现互斥</span></span><br><span class="line"><span class="keyword">while</span> (TestAndSet (&amp;lock));</span><br><span class="line">critical section;</span><br><span class="line">lock = <span class="literal">false</span>; <span class="comment">// unlock</span></span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-
-<p>Swap</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">swap (<span class="type">bool</span> *a, <span class="type">bool</span> *b) &#123;</span><br><span class="line">    <span class="type">bool</span> temp;</span><br><span class="line">    temp = *a;</span><br><span class="line">    *a = *b;</span><br><span class="line">    *b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实现互斥</span></span><br><span class="line"><span class="type">bool</span> pre = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (pre == <span class="literal">true</span>)</span><br><span class="line">    swap (&amp;lock, &amp;pre);</span><br><span class="line">critical section;</span><br><span class="line">lock = <span class="literal">false</span>; <span class="comment">// unlock</span></span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h2><p>解决临界区最简单的工具就是互斥锁（mutex lock）。进程在进入临界区时获得锁；退出时释放锁。函数 acquire() 获得锁，release() 释放锁。</p>
-<p>每个互斥锁有一个布尔变量 available 表示锁是否可用。如果锁是可用的，调用 acquire() 会成功，且锁不再可用。当一个进程试图获取不可用的锁时，会被阻塞，直到锁被释放。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">acquire() &#123;</span><br><span class="line">    <span class="keyword">while</span> (!available); <span class="comment">// 忙等待</span></span><br><span class="line">    available = <span class="literal">false</span>; <span class="comment">// 获得锁</span></span><br><span class="line">&#125; <span class="comment">// entry section</span></span><br><span class="line">release() &#123;</span><br><span class="line">    available = <span class="literal">true</span>; <span class="comment">// 释放锁</span></span><br><span class="line">&#125; <span class="comment">// exit section</span></span><br></pre></td></tr></table></figure>
-
-<p>acquire() release() 的执行是<strong>原子操作</strong>，因此互斥锁通常采用硬件机制来实现。<br><strong>互斥锁的主要缺点是忙等待</strong>，当有一个进程在临界区中，任何其他进程在进入临界区时必须连续循环调用 acquire()。当多个进程共享同一 CPU 时，就浪费了 CPU 周期。因此，互斥锁通常用于<strong>多处理器系统</strong>，一个线程可以在一个处理器上等待，不影响其他线程的执行。<br>需要连续循环忙等的互斥锁，都可称为自旋锁（spin lock），如TSL指令、swap指令、单标志法</p>
-<p>所以可以得出锁的特性：</p>
-<p>• 需忙等，进程时间片用完才下处理机，违反“让权等待”</p>
-<p>• 优点：等待期间不用切换进程上下文，多处理器系统中，若上锁的时间短，则等待代价很低</p>
-<p>• 常用于多处理器系统，一个核忙等，其他核照常工作，并快速释放临界区</p>
-<p>• 不太适用于单处理机系统，忙等的过程中不可能解锁</p>
-<h2 id="信号量机制"><a href="#信号量机制" class="headerlink" title="信号量机制"></a>信号量机制</h2><p><img src="/image-20230129073214410.png" alt="image-20230129073214410"></p>
-<p>Dijkstra！</p>
-<p>前面遗留的问题：不能同时进行</p>
-<p>如果把进入区、退出区的操作都用“原语”实现就能解决</p>
-<p><strong>用户进程</strong>可以通过使用操作系统提供的一对原语来对信号量进行操作</p>
-<p>信号量其实就是一个变量 ，可以用一个信号量来表示系统中某种资源的数量。与整数变量不同的是，对信号量的操作只有三种，初始化、P操作、V操作</p>
-<p>比如：系统中只有一台打印机，就可以设置一个初值为 1 的信号量。</p>
-<p>一对原语：wait(S) 原语和 signal(S) 原语，可以把原语理解为我们自己写的函数，函数名分别为 wait 和 signal，括号里的信号量 S 其实就是函数调用时传入的一个参数。简称为 P、V操作，分别写为 P(S)、V(S)</p>
-<p>整型信号量：</p>
-<p>Eg ：某计算机系统中有一台打印机…</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> S = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">wait</span> <span class="params">(<span class="type">int</span> S)</span> &#123; <span class="comment">// 相当于进入区</span></span><br><span class="line">    <span class="keyword">while</span> (S &lt;= <span class="number">0</span>); <span class="comment">// 资源数不够则循环等待</span></span><br><span class="line">    S--; <span class="comment">// 资源数足够则占用一个</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">signal</span> <span class="params">(<span class="type">int</span> S)</span> &#123; <span class="comment">// 相当于退出区</span></span><br><span class="line">    S++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// process P0</span></span><br><span class="line">wait(S);</span><br><span class="line"><span class="comment">// use the printer, critical section</span></span><br><span class="line">signal(S);</span><br><span class="line"></span><br><span class="line"><span class="comment">// process P1</span></span><br><span class="line">wait(S);</span><br><span class="line"><span class="comment">// use the printer, critical section</span></span><br><span class="line">signal(S);</span><br></pre></td></tr></table></figure>
-
-<p>整型信号量存在“忙等”问题，可以用记录型数据结构表示信号量</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> value; <span class="comment">// 剩余资源数</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">process</span> *<span class="title">L</span>;</span> <span class="comment">// 等待队列</span></span><br><span class="line">&#125; semaphore;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">wait</span> <span class="params">(semaphore S)</span> &#123;</span><br><span class="line">    S.value--;</span><br><span class="line">    <span class="keyword">if</span> (S.value &lt; <span class="number">0</span>)</span><br><span class="line">        block (S.L);</span><br><span class="line">    <span class="comment">// 如果剩余资源数不够，使用block原语使进程从运行态进入阻塞态，并把挂到信号量S的等待队列（即阻塞队列）中</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">signal</span> <span class="params">(semaphore S)</span> &#123;</span><br><span class="line">    S.value++;</span><br><span class="line">    <span class="keyword">if</span> (S.value &lt;= <span class="number">0</span>)</span><br><span class="line">        wakeup(S.L);</span><br><span class="line">    <span class="comment">// 释放资源后，若还有别的进程在等待这种资源，则使用wakeup 原语唤醒等待队列中的一个进程，该进程从阻塞态变为就绪态</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>默认为记录型信号量</p>
-<h2 id="用信号量机制实现进程互斥、同步、前驱关系"><a href="#用信号量机制实现进程互斥、同步、前驱关系" class="headerlink" title="用信号量机制实现进程互斥、同步、前驱关系"></a>用信号量机制实现进程互斥、同步、前驱关系</h2><p><img src="/image-20230129222621004.png" alt="image-20230129222621004"></p>
-<p>本节核心内容：信号量的值 &#x3D; 这种资源的剩余数量（信号量的值如果小于0，说明此时有进程在等待这种资源）</p>
-<h3 id="互斥关系"><a href="#互斥关系" class="headerlink" title="互斥关系"></a>互斥关系</h3><p>不同的临界资源需要设置不同的互斥信号量。 </p>
-<p>P、V操作必须成对出现。缺少P(mutex) 就不能保证临界资源的互斥访问。缺少 V(mutex) 会导致资源永不被释放，等待进程永不被唤醒。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">semaphore mutex = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">P1() &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    P(mutex);</span><br><span class="line">    critical section;</span><br><span class="line">    V(mutex);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">P2() &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    P(mutex);</span><br><span class="line">    critical section;</span><br><span class="line">    V(mutex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="同步关系"><a href="#同步关系" class="headerlink" title="同步关系"></a>同步关系</h3><p>进程同步问题：让本来异步并发的进程互相配合，有序推进。</p>
-<ol>
-<li><p>分析什么地方需要实现“同步关系”，即必须保证“一前一后”执行的两个操作（或两句代码）</p>
-</li>
-<li><p>设置同步信号量 S, 初始为 0</p>
-</li>
-<li><p>在“前操作”之后执行 V(S)</p>
-</li>
-<li><p>在“后操作”之前执行 P(S)</p>
-</li>
-</ol>
-<h3 id="前驱关系"><a href="#前驱关系" class="headerlink" title="前驱关系"></a>前驱关系</h3><p>本质上是多级同步关系</p>
-<h2 id="生产者消费者问题"><a href="#生产者消费者问题" class="headerlink" title="生产者消费者问题"></a>生产者消费者问题</h2><p>背景：系统中有一组生产者进程和一组消费者进程，生产者进程每次生产一个产品放入缓冲区，消费者进程每次从缓冲区中取出一个产品并使用。（注：这里的“产品”理解为某种数据）</p>
-<p>生产者、消费者共享一个初始为空、大小为n的缓冲区。</p>
-<p>只有缓冲区没满时，生产者才能把产品放入缓冲区，否则必须等待。</p>
-<p>只有缓冲区不空时，消费者才能从中取出产品，否则必须等待。</p>
-<p>缓冲区是临界资源，各进程必须<strong>互斥</strong>地访问。</p>
-<p>分析关系、确定PV操作、设置信号量初值</p>
-<p>实现互斥是在同一进程中进行一对PV操作 </p>
-<p>实现两进程的同步关系，是在其中一个进程中执行P，另一进程中执行V</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">semaphore mutex = <span class="number">1</span>;</span><br><span class="line">semaphore empty = n;</span><br><span class="line">semaphore full = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">producer () &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        produce a product;</span><br><span class="line">        P(empty); <span class="comment">// 消耗一个空闲缓冲区</span></span><br><span class="line">        P(mutex);</span><br><span class="line">        put the product into the buffer;</span><br><span class="line">        V(mutex);</span><br><span class="line">        V(full); <span class="comment">// 增加一个产品</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">consumer () &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        P(full); <span class="comment">// 消耗一个产品（非空缓冲区）</span></span><br><span class="line">        P(mutex);</span><br><span class="line">        get a product from the buffer;</span><br><span class="line">        V(mutex);</span><br><span class="line">        V(empty); <span class="comment">// 增加一个空闲缓冲区</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>实现互斥的P操作一定要在实现同步的P操作之后。 </p>
-<p>V操作不会导致进程阻塞，因此两个V操作顺序可以交换。</p>
-<p><strong>本节易错点</strong>：实现互斥和实现同步的两个P操作的先后顺序（死锁问题）</p>
-<h2 id="多生产者-多消费者"><a href="#多生产者-多消费者" class="headerlink" title="多生产者-多消费者"></a>多生产者-多消费者</h2><p>后面有点难了，感觉王道不太够用了，先鸽了后面补</p>
-]]></content>
-      <categories>
-        <category>OS</category>
-      </categories>
-      <tags>
-        <tag>OS</tag>
-        <tag>知识点罗列</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《满江红》观影感受</title>
-    <url>/impressions-of-Azolla/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>说说我个人对《满江红》的一点看法</p>
-</blockquote>
-<span id="more"></span>
-
-<p>首先要肯定，这部贺岁大戏确实花了心思在里面。取景比较考究，一众演员演技在线，用配乐演进和人物穿巷串联情节。</p>
-<p>不过作为张艺谋执导的电影，似乎还有不少地方做的不尽人意。</p>
-<p>剧情发展不合理。先说何立之死，何立心狠手辣，城府颇深，称得上有勇有谋。他既能知道刘喜和桃姑娘的关系，能猜出瑶琴是半路加入，便也不至于在临门一脚时匆匆靠近瑶琴打坏了一手稳赢的牌。瑶琴和张大都有枷锁，一把长刀在侧，到手的鸭子怎么看怎么不会飞，这里的发展更像是匆忙草草收尾了事，好让观众挨住隐隐的如厕之意。再者，于情于理没有让张大死的必要。于情，瑶琴守护大义守护真爱半路加入行动，张大本不必死，本可代岳将军见秦桧剐见山河收见国耻平，孙均性情中人，坐视侄儿死在眼前死不瞑目，坐视瑶琴让张大活下去的奉献化为乌有，更太过冷血乖戾，孙均一向鲁莽，喜好速战速决，甚至为秦桧挡下一刀，转变之大让人匪夷所思；于理，只有蓝玉一人在秦桧之侧，短刃也插在张大身上，枷锁解开身上亦无伤，孙均反手便可手刃秦桧昭告天下，退一万步来看，至少挟秦桧背满江红的夙愿可轻松实现，似乎也不必等待蓝绿二人均在时冒险逼迫，彼时二人利刃在手风险数倍，战场出生入死的将军更懂这个道理。最后，孙均一身伤痕，哪有力气纵马远去？不怕一身老伤皮开肉绽吗？</p>
-<p>剧情设定本就荒诞。以我对南宋将军的粗浅了解，似乎岳将军并不太在乎遗言是否能流传万古，他应该更在乎百姓的平安和故土的平复，就像辛稼轩本意也不在写词不在种树，“却将万字平戎策，换得东家种树书”，谁他妈要种树，老子要平戎定虏。能有人手刃秦桧厉兵秣马率军出征，岳将军九泉之下也可安息；放秦桧狗贼一条狗命，让他遗臭万年，who cares？谁他妈在乎秦桧是谁，老子只想看故国收复。确实有比生死重要百倍千倍的东西，但是这东西应该不只是岳将军的一首遗言。不得不说这里对岳将军的理解有些以己度人了，这里有种《1874》里“与你畅游战地”一般扯淡的浪漫。以及替身这件事，至少我个人感觉有些荒谬。</p>
-<p>总之，作为贺岁片，导演来分一杯羹，观众看个乐呵看个感动，能想起这位千年前的故人想起这首无人不知无人不晓的不朽词篇，便也还算，说得过去吧。</p>
-]]></content>
-      <categories>
-        <category>生活记录</category>
-      </categories>
-      <tags>
-        <tag>观后感</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>时钟参与组合逻辑的心得</title>
     <url>/combinational-logic-concerning-clock/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
@@ -1880,741 +1859,24 @@
       </tags>
   </entry>
   <entry>
-    <title>概率统计复习</title>
-    <url>/Probability-and-Statistics-Review/</url>
+    <title>《满江红》观影感受</title>
+    <url>/impressions-of-Azolla/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>缓考笨比的临时抱佛脚<del>，是时候开始预习了</del></p>
+<p>说说我个人对《满江红》的一点看法</p>
 </blockquote>
 <span id="more"></span>
 
-<p>时间紧任务重，格式问题先摆烂了，各位看官对不住。毕竟考试要紧，考试要紧</p>
-<p><strong>8.5、9.3、9.4、11.5、12.3不考</strong></p>
-<p> [TOC]</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>笔记不重要，写不完鸽了就行，重要的是学会东西<del>（啊对对对，我也没见你学会啊）</del></p>
-<p><strong>本书结构</strong>：1-6章概率论</p>
-<p>7-9章数理统计</p>
-<p>10-12章随机过程</p>
-<h1 id="第一章-随机事件的概率"><a href="#第一章-随机事件的概率" class="headerlink" title="第一章 随机事件的概率"></a>第一章 随机事件的概率</h1><h2 id="1-1-随机事件与样本空间"><a href="#1-1-随机事件与样本空间" class="headerlink" title="1.1 随机事件与样本空间"></a>1.1 随机事件与样本空间</h2><h3 id="1-试验和事件"><a href="#1-试验和事件" class="headerlink" title="1.试验和事件"></a>1.试验和事件</h3><p>随机：其结果事先不可预言</p>
-<p><strong>不特殊说明，本书中试验都指随机试验</strong></p>
-<p>随机试验特征：</p>
-<ul>
-<li>相同条件下可以重复进行</li>
-<li>能够事先明确所有可能的实验结果范围</li>
-<li>实验前不能准确预言试验结果</li>
-</ul>
-<p>事件：试验的结果</p>
-<p>随机事件：试验中可能发生，也可能不发生，用大写字母 $A, B\dots$ 表示</p>
-<p>基本事件：随机试验的每一个可能结果，也是最简单的随机事件，用小写字母 $e, w$ 表示</p>
-<p>必然事件、不可能事件：</p>
-<p>必然事件用 $S$ 或 $Ω$ 表示，不可能事件用 $\empty$ 表示</p>
-<p>不是随机事件，讨论时为方便当作随机事件</p>
-<h3 id="2-样本空间"><a href="#2-样本空间" class="headerlink" title="2.样本空间"></a>2.样本空间</h3><p>试验 $E$ 的<strong>全部基本事件</strong>组成的集合</p>
-<p><strong>随机事件是样本空间的子集</strong></p>
-<p>不可能事件 $\empty$ 表示空集，必然事件 $S$ 表示样本空间</p>
-<p>&#x3D;&#x3D;为后文用集合论讨论事件间关系和运算做准备&#x3D;&#x3D;</p>
-<h3 id="3-随机事件的关系和运算"><a href="#3-随机事件的关系和运算" class="headerlink" title="3.随机事件的关系和运算"></a>3.随机事件的关系和运算</h3><p>包含、和、积、互不相容（互斥）、互逆（对立）、差</p>
-<p>推广到有限多个、用图形表示、运算律</p>
-<p> <img src="/Examples%5CChapter1%5C1.1.3-1.png"></p>
-<p>第一章比较简单，先鸽了，后面有空再补，因为🐓组、大⑤、离散赶得有点紧了（手动百丽破防哥）</p>
-<h1 id="第二章-随机变量及其分布"><a href="#第二章-随机变量及其分布" class="headerlink" title="第二章 随机变量及其分布"></a>第二章 随机变量及其分布</h1><h2 id="2-1-随机变量"><a href="#2-1-随机变量" class="headerlink" title="2.1 随机变量"></a>2.1 随机变量</h2><p><img src="/Notes%5CChapter2%5C2.1.1-1.png"></p>
-<p>数学本质是一个可测函数</p>
-<p>&#x3D;&#x3D;将随机事件的概率问题转化为随机变量取值的概率问题&#x3D;&#x3D;</p>
-<p>&#x3D;&#x3D;因此，随机变量及其取值范围的概率问题是我们今后学习和研究的主要问题&#x3D;&#x3D;</p>
-<h2 id="2-2-随机变量的分布函数"><a href="#2-2-随机变量的分布函数" class="headerlink" title="2.2 随机变量的分布函数"></a>2.2 随机变量的分布函数</h2><p>&#x3D;&#x3D;分布函数非常重要&#x3D;&#x3D;</p>
-<p><strong>定义</strong>：设 $X$ 为随机变量，则 ${X \ge x} &#x3D; {e \in S|-\infty &lt; X(e) \le x}$ 为随机事件，令</p>
-<p>$F(x) &#x3D; P{X \le x},-\infty &lt; x &lt; +\infty$</p>
-<p>为随机变量 $X$ 的**$\textcolor{red}{概率分布函数}$<strong>，简称</strong>$\textcolor{red}{分布函数}$**，记作 $X \sim F(x)$</p>
-<p>$F(x)$ 等于 $X$ 在区间 $(- \infty ,x]$ 取值的概率</p>
-<h2 id="2-3-离散型随机变量及其概率分布"><a href="#2-3-离散型随机变量及其概率分布" class="headerlink" title="2.3 离散型随机变量及其概率分布"></a>2.3 离散型随机变量及其概率分布</h2><p>$X$ 取各个可能值的概率</p>
-<p>$p_k &#x3D; P{X &#x3D; x_k}, k &#x3D; 1,2,\dots$</p>
-<p>称为概率分布（分布律、分布列）</p>
-<h2 id="2-4-常用离散型随机变量的分布律"><a href="#2-4-常用离散型随机变量的分布律" class="headerlink" title="2.4 常用离散型随机变量的分布律"></a>2.4 常用离散型随机变量的分布律</h2><h3 id="1-两点分布（（0-1）分布）"><a href="#1-两点分布（（0-1）分布）" class="headerlink" title="1.两点分布（（0-1）分布）"></a>1.两点分布（（0-1）分布）</h3><p>服从（0-1）分布的试验叫做<strong>伯努利试验</strong></p>
-<h3 id="2-泊松分布"><a href="#2-泊松分布" class="headerlink" title="2.泊松分布"></a>2.泊松分布</h3><p>$P{X &#x3D; k}&#x3D;e^{-\lambda} \frac{\lambda ^ k}{k!},k&#x3D;0,1,2,\dots$</p>
-<p>其中 $\lambda &gt; 0$，称 $X$ 服从参数为 $\lambda$ 的泊松分布，记作 $X \sim \Pi(\lambda)$，这里用到幂级数展开式 $e^x &#x3D; \sum_{k&#x3D;0}^{+\infty}{\frac{x^k}{k!}}$</p>
-<blockquote>
-<p>我头一次明白这个式子，这是前面乘一个 $e^{-\lambda}$ 系数，然后后面做幂级数求和，得到结果 $e^{\lambda}$ ，乘积恰好为1</p>
-</blockquote>
-<h3 id="3-超几何分布"><a href="#3-超几何分布" class="headerlink" title="3.超几何分布"></a>3.超几何分布</h3><p>高中学的，多练例题即可</p>
-<h3 id="4-二项分布"><a href="#4-二项分布" class="headerlink" title="4.二项分布"></a>4.二项分布</h3><p>$P{X&#x3D;k}&#x3D;\sum_{k&#x3D;0}^{n} C_{n}^{k}p^kq^{n-k},k&#x3D;0,1,2,\dots$</p>
-<blockquote>
-<p>这公式真难敲啊，顺带提一嘴，我感觉这些没啥特别的，就是一个上标一个下标，把这个写好了就行。以及MarkDown没有自己的组合数</p>
-</blockquote>
-<p>$\bcancel{你没有自己的组合数吗}$</p>
-<p>是 $(p+q)^n$ 展开式中的一般项，记作 $X \sim B(n,p)$</p>
-<p>每次概率不改变的就是二项分布，<strong>常用的：放回式取用</strong></p>
-<h3 id="5-二项分布的近似计算和查泊松分布表"><a href="#5-二项分布的近似计算和查泊松分布表" class="headerlink" title="5.二项分布的近似计算和查泊松分布表"></a>5.二项分布的近似计算和查泊松分布表</h3><p>n很大，p很小的时候，二项分布接近泊松分布（一般 $n \ge 10, p_n \le 0.1$ 时)</p>
-<p>转换公式：$\lambda &#x3D; np$</p>
-<h2 id="2-5-连续型随机变量及其概率密度函数"><a href="#2-5-连续型随机变量及其概率密度函数" class="headerlink" title="2.5 连续型随机变量及其概率密度函数"></a>2.5 连续型随机变量及其概率密度函数</h2><p>$f(x)$ 为**$\textcolor{red}{概率密度函数}$<strong>（分布密度函数），简称</strong>$\textcolor{red}{概率密度}$**</p>
-<p>&#x3D;&#x3D;概率密度和分布函数都很重要，同时也要区分清楚&#x3D;&#x3D;</p>
-<h2 id="2-6-常用的连续型随机变量分布"><a href="#2-6-常用的连续型随机变量分布" class="headerlink" title="2.6 常用的连续型随机变量分布"></a>2.6 常用的连续型随机变量分布</h2><h3 id="1-均匀分布"><a href="#1-均匀分布" class="headerlink" title="1.均匀分布"></a>1.均匀分布</h3><p>$\zeta \sim U[a,b]$</p>
-<h3 id="2-指数分布"><a href="#2-指数分布" class="headerlink" title="2.指数分布"></a>2.指数分布</h3><p>$$<br>f(x)&#x3D;<br>\begin{cases}<br>\lambda e^{- \lambda x},x \ge 0,\<br>0,x &lt; 0<br>\end{cases}<br>$$</p>
-<p>分布函数<br>$$<br>F(x)&#x3D;<br>\begin{cases}<br>0,x&lt;0,\<br>\int_{-\infty}^x f(t)dt &#x3D; 1-e^{-\lambda x},x \ge 0<br>\end{cases}<br>$$</p>
-<h3 id="3-Welbull-分布"><a href="#3-Welbull-分布" class="headerlink" title="3.Welbull 分布"></a>3.Welbull 分布</h3><p>指数分布的一般情况，没怎么考过</p>
-<h3 id="4-Gamma-函数"><a href="#4-Gamma-函数" class="headerlink" title="4.$\Gamma$ 函数"></a>4.$\Gamma$ 函数</h3><p>类似于辅助的作用，单独考有点逆天，算了不写了</p>
-<h2 id="2-7-正态分布"><a href="#2-7-正态分布" class="headerlink" title="2.7 正态分布"></a>2.7 正态分布</h2><h3 id="1-欧拉-泊松积分"><a href="#1-欧拉-泊松积分" class="headerlink" title="1.欧拉-泊松积分"></a>1.欧拉-泊松积分</h3><p>很巧妙的算法，用二重积分证明<br>$$<br>\int _{-\infty} ^{+\infty} e^{-x^2} dx &#x3D; \sqrt{\pi}<br>$$</p>
-<h3 id="2-正态分布"><a href="#2-正态分布" class="headerlink" title="2.正态分布"></a>2.正态分布</h3><p>$\Huge f(x)&#x3D;\frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2 \sigma^2}},-\infty &lt; x &lt; +\infty$</p>
-<p>记作 $\zeta \sim N(\mu,\sigma^2)$</p>
-<p>$\Huge \textcolor{red}{非常非常非常重要}$</p>
-<p>性质：</p>
-<ul>
-<li>$x &#x3D; \mu$ 时，取最大值 $f(\mu) &#x3D; \Huge\frac{1}{\sigma \sqrt{2\pi}}$</li>
-</ul>
-<h3 id="3-标准正态分布"><a href="#3-标准正态分布" class="headerlink" title="3.标准正态分布"></a>3.标准正态分布</h3><p><img src="/Notes%5CChapter2%5C2.7.3-1.png"></p>
-<p>鸽了，哥们真不想打公式了妈的</p>
-<h3 id="4-正态分布与标准正态分布的关系"><a href="#4-正态分布与标准正态分布的关系" class="headerlink" title="4.正态分布与标准正态分布的关系"></a>4.正态分布与标准正态分布的关系</h3><p>$\Huge F(x) &#x3D; \Phi(\frac{x-\mu}{\sigma}),-\infty &lt; x &lt; +\infty$</p>
-<blockquote>
-<p>意义：将不好算的数据转化成可以查表的标准正态分布，相互转换得到结果</p>
-</blockquote>
-<h3 id="5-标准正态分布的-alpha-分位点"><a href="#5-标准正态分布的-alpha-分位点" class="headerlink" title="5.标准正态分布的 $\alpha$ 分位点"></a>5.标准正态分布的 $\alpha$ 分位点</h3><blockquote>
-<p>重要理解：分位点是一个横坐标，这个图是偶函数，要注意其对称轴是 x &#x3D; 0 而非 $\frac{1}{2}$</p>
-</blockquote>
-<p><img src="/Notes%5CChapter2%5C2.7.5-1.png"></p>
-<p><del>算了，和自己达成和解，公式太多了</del></p>
-<p>考的不多但是要求一定的记忆量</p>
-<h1 id="第三章-二维随机变量"><a href="#第三章-二维随机变量" class="headerlink" title="第三章 二维随机变量"></a>第三章 二维随机变量</h1><h2 id="3-1-随机向量与联合分布"><a href="#3-1-随机向量与联合分布" class="headerlink" title="3.1 随机向量与联合分布"></a>3.1 随机向量与联合分布</h2><h3 id="1-二维随机变量的定义和分布函数的基本性质"><a href="#1-二维随机变量的定义和分布函数的基本性质" class="headerlink" title="1.二维随机变量的定义和分布函数的基本性质"></a>1.二维随机变量的定义和分布函数的基本性质</h3><p>$$<br>F(x,y) &#x3D; P{X \le x, Y \le y} }&#x3D; P{e \in S|X(e) \le x, Y(e) \le y}<br>$$</p>
-<p>称为二维随机变量 $(X,Y)$ 的分布函数或随机变量 $X$ 和 $Y$ 的联合分布函数</p>
-<p><img src="/Notes%5CChapter3%5C3.1.1-1.png"></p>
-<p><img src="/Notes%5CChapter3%5C3.1.1-2.png"></p>
-<p><strong>千万注意这个交叉计算的方式</strong></p>
-<h3 id="2-二维离散型随机变量"><a href="#2-二维离散型随机变量" class="headerlink" title="2.二维离散型随机变量"></a>2.二维离散型随机变量</h3><p>没啥想写的，鸽了吧</p>
-<p>记得有的题目要用条件概率（P73）</p>
-<h3 id="3-二维连续型随机变量"><a href="#3-二维连续型随机变量" class="headerlink" title="3.二维连续型随机变量"></a>3.二维连续型随机变量</h3><p>$\huge \frac{\partial^2 F}{\partial x \partial y}(x_0,y_0) &#x3D; f(x_0,y_0)$</p>
-<p>$\huge P{(X,Y) \in D} &#x3D; \iint_{D}f(x,y)dxdy$</p>
-<p>这里涉及到一些二重积分的内容，但是我全忘了</p>
-<p>好消息，有淑芬书，坏消息，好像把淑芬书扔家里了</p>
-<p>这两个🦁都极其重要，务必<del>基佬</del>记牢</p>
-<h3 id="4-常用的二维连续型随机变量"><a href="#4-常用的二维连续型随机变量" class="headerlink" title="4.常用的二维连续型随机变量"></a>4.常用的二维连续型随机变量</h3><p><img src="/image-20230201132709759.png" alt="image-20230201132709759"></p>
-<p>这五个变量的意义请见第五章</p>
-<h2 id="3-2-边缘分布函数"><a href="#3-2-边缘分布函数" class="headerlink" title="3.2 边缘分布函数"></a>3.2 边缘分布函数</h2><blockquote>
-<p>考虑两个变量分布函数之间的关系</p>
-</blockquote>
-<p>$$<br>F_X(x) &#x3D; \lim_{y\rightarrow+\infty} F(x,y) &#x3D; F(x, +\infty)\</p>
-<p>F_Y(y) &#x3D; \lim_{x\rightarrow+\infty} F(x,y) &#x3D; F(+\infty, y)<br>$$<br>由联合分布函数可计算边缘分布函数，但反之不可确定</p>
-<h2 id="3-3-边缘分布律与条件分布律"><a href="#3-3-边缘分布律与条件分布律" class="headerlink" title="3.3 边缘分布律与条件分布律"></a>3.3 边缘分布律与条件分布律</h2><p>$(X, Y)$ 关于 $X$ 的变量分布律正好是联合分布律表中各行概率相加</p>
-<p>$(X, Y)$ 关于 $Y$ 的变量分布律正好是联合分布律表中各行概率相加</p>
-<p><img src="/image-20230201132953614.png" alt="image-20230201132953614"></p>
-<h2 id="3-4-边缘概率密度与条件概率密度"><a href="#3-4-边缘概率密度与条件概率密度" class="headerlink" title="3.4 边缘概率密度与条件概率密度"></a>3.4 边缘概率密度与条件概率密度</h2><h3 id="1-边缘概率密度"><a href="#1-边缘概率密度" class="headerlink" title="1.边缘概率密度"></a>1.边缘概率密度</h3><p>$$<br>f_X(x)&#x3D;\int_{-\infty}^{+\infty} f(x,y)dy\<br>f_Y(y)&#x3D;\int_{-\infty}^{+\infty} f(x,y)dx<br>$$</p>
-<h3 id="2-条件概率密度"><a href="#2-条件概率密度" class="headerlink" title="2.条件概率密度"></a>2.条件概率密度</h3><p><img src="/image-20230201133151631.png" alt="image-20230201133151631"><br>$$<br>F_{X|Y}(x|y) &#x3D; \frac{\frac{\partial}{\partial x}F(x,y)}{\frac{d}{dx}F_Y(y)}\<br>F_{Y|X}(y|x) &#x3D; \frac{\frac{\partial}{\partial y}F(x,y)}{\frac{d}{dy}F_X(x)}\<br>F_{X|Y}(x|y) &#x3D; \int_{-\infty}^x \frac{f(u,y)}{f_Y(y)} du\<br>F_{Y|X}(y|x) &#x3D; \int_{-\infty}^y \frac{f(x,v)}{f_X(x)} dv\<br>f_{X|Y}(x|y) &#x3D; \frac{f(x,y)}{f_Y(y)}\<br>f_{Y|X}(y|x) &#x3D; \frac{f(x,y)}{f_X(x)}<br>$$</p>
-<h2 id="3-5-相互独立的随机变量"><a href="#3-5-相互独立的随机变量" class="headerlink" title="3.5 相互独立的随机变量"></a>3.5 相互独立的随机变量</h2><h3 id="1-相互独立"><a href="#1-相互独立" class="headerlink" title="1.相互独立"></a>1.相互独立</h3><p>$$<br>P{X \le x, Y \le y} &#x3D; P{X \le x}·P{Y \le y} \<br>F(x, y) &#x3D; F_X(x)·F_Y(y), -\infty &lt; x, y &lt; \infty<br>$$</p>
-<h3 id="2-离散型随机变量相互独立判别定理"><a href="#2-离散型随机变量相互独立判别定理" class="headerlink" title="2.离散型随机变量相互独立判别定理"></a>2.离散型随机变量相互独立判别定理</h3><p>$$<br>P{X \le x_i, Y \le y_j} &#x3D; P{X \le x_i}·P{Y \le y_j},i,j&#x3D;1,2,\dots<br>$$</p>
-<h3 id="3-连续型随机变量相互独立判别定理"><a href="#3-连续型随机变量相互独立判别定理" class="headerlink" title="3.连续型随机变量相互独立判别定理"></a>3.连续型随机变量相互独立判别定理</h3><p>$$<br>f(x,y) &#x3D; f_X(x)·f_Y(y)<br>$$</p>
-<p>（几乎处处）</p>
-<h3 id="4-有限多个或可列个变量相互独立"><a href="#4-有限多个或可列个变量相互独立" class="headerlink" title="4.有限多个或可列个变量相互独立"></a>4.有限多个或可列个变量相互独立</h3><h1 id="第四章-随机变量的函数的分布"><a href="#第四章-随机变量的函数的分布" class="headerlink" title="第四章 随机变量的函数的分布"></a>第四章 随机变量的函数的分布</h1><blockquote>
-<p>用已有的概率分布求出函数式的概率分布</p>
-</blockquote>
-<h2 id="4-1-离散型随机变量的函数的分布"><a href="#4-1-离散型随机变量的函数的分布" class="headerlink" title="4.1 离散型随机变量的函数的分布"></a>4.1 离散型随机变量的函数的分布</h2><h3 id="1-一维离散型随机变量的函数的分布律"><a href="#1-一维离散型随机变量的函数的分布律" class="headerlink" title="1.一维离散型随机变量的函数的分布律"></a>1.一维离散型随机变量的函数的分布律</h3><p>y相同相加，不同分列</p>
-<h3 id="2-二维离散型随机变量的函数的分布律"><a href="#2-二维离散型随机变量的函数的分布律" class="headerlink" title="2.二维离散型随机变量的函数的分布律"></a>2.二维离散型随机变量的函数的分布律</h3><p>求出具体值</p>
-<h2 id="4-2-一维连续型随机变量的函数的分布"><a href="#4-2-一维连续型随机变量的函数的分布" class="headerlink" title="4.2 一维连续型随机变量的函数的分布"></a>4.2 一维连续型随机变量的函数的分布</h2><p>把y的范围转化成x的范围</p>
-<p>一般方法：先求 $Y &#x3D; g(X)$ 的分布函数 $F_Y(y)$，求导得到 $f_Y(y)$</p>
-<p>也有公式，可以无脑套用<img src="/image-20230201133941348.png" alt="image-20230201133941348"></p>
-<h2 id="4-3-二维连续型随机变量的函数的分布"><a href="#4-3-二维连续型随机变量的函数的分布" class="headerlink" title="4.3 二维连续型随机变量的函数的分布"></a>4.3 二维连续型随机变量的函数的分布</h2><p>转化成二重积分</p>
-<p>几种特殊的方法：</p>
-<h3 id="1-Z-x3D-X-Y-的分布"><a href="#1-Z-x3D-X-Y-的分布" class="headerlink" title="1.$Z &#x3D; X + Y$ 的分布"></a>1.$Z &#x3D; X + Y$ 的分布</h3><p>$$<br>f_Z(z)&#x3D;\int_{-\infty}^{+\infty} f(x,z-x)dx &#x3D; \int_{\over{AB}} f(x,y)dx<br>$$</p>
-<p>第二型曲线积分</p>
-<p>有点复杂啊，回头得好好看看</p>
-<h3 id="2-Z-x3D-max-X-Y-的分布"><a href="#2-Z-x3D-max-X-Y-的分布" class="headerlink" title="2.$Z &#x3D; max{X + Y}$ 的分布"></a>2.$Z &#x3D; max{X + Y}$ 的分布</h3><p>$$<br>{Z \le z} &#x3D; {X \le z, Y \le z}<br>$$</p>
-<p><img src="/Notes%5CChapter4%5C4.3.2-1.png"></p>
-<h3 id="3-Z-x3D-min-X-Y-的分布"><a href="#3-Z-x3D-min-X-Y-的分布" class="headerlink" title="3.$Z &#x3D; min{X + Y}$ 的分布"></a>3.$Z &#x3D; min{X + Y}$ 的分布</h3><p><img src="/Notes%5CChapter4%5C4.3.3-1.png"></p>
-<h1 id="第五章-随机变量的数字特征"><a href="#第五章-随机变量的数字特征" class="headerlink" title="第五章 随机变量的数字特征"></a>第五章 随机变量的数字特征</h1><p>数字特征，指联系于分布函数的某些数：如平均值，方差等。反映了随机变量在某些方面的特征</p>
-<p>确定分布函数需要一些参数，而参数又往往由某些数字特征或其他数值所决定，故找到这些特征便能确定分布函数。</p>
-<p>实际中确定这些特征比较困难，而且没有必要，有时只需要知晓随机变量的某些特征即可。</p>
-<h2 id="5-1-数学期望"><a href="#5-1-数学期望" class="headerlink" title="5.1 数学期望"></a>5.1 数学期望</h2><p>P129，例4，收敛需要特殊记一下</p>
-<p>相加相乘的性质</p>
-<p><img src="/image-20230201135028202.png" alt="image-20230201135028202"></p>
-<p><strong>几个定理</strong></p>
-<p><img src="/image-20230201134714012.png" alt="image-20230201134714012"></p>
-<p><img src="/image-20230201134726376.png" alt="image-20230201134726376"></p>
-<h2 id="5-2-方差"><a href="#5-2-方差" class="headerlink" title="5.2 方差"></a>5.2 方差</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>几种符号</p>
-<p>带括号不带括号，Var</p>
-<p>标准差、均方差</p>
-<p><strong>重要的计算公式 $ DX  &#x3D; EX^2 - (EX)^2 $</strong></p>
-<h3 id="2-性质"><a href="#2-性质" class="headerlink" title="2.性质"></a>2.性质</h3><p><img src="/image-20230201135954111.png" alt="image-20230201135954111"></p>
-<p><img src="/image-20230201140009843.png" alt="image-20230201140009843"></p>
-<h2 id="5-3-常用随机变量的数学期望和方差"><a href="#5-3-常用随机变量的数学期望和方差" class="headerlink" title="5.3 常用随机变量的数学期望和方差"></a>5.3 常用随机变量的数学期望和方差</h2><h3 id="0-1分布"><a href="#0-1分布" class="headerlink" title="0-1分布"></a>0-1分布</h3><p>$EX &#x3D; p, DX &#x3D; p(1-p)$</p>
-<h3 id="二项分布"><a href="#二项分布" class="headerlink" title="二项分布"></a>二项分布</h3><p>$EX &#x3D; np, DX &#x3D; npq$</p>
-<h3 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h3><p>$EX &#x3D; \lambda, DX &#x3D; \lambda$</p>
-<h3 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h3><p>$EX &#x3D; \frac{a + b}{2}, DX &#x3D; \frac{(b-a)^2}{12}$</p>
-<h3 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h3><p>$EX &#x3D; \frac{1}{\lambda}, DX &#x3D; \frac{1}{\lambda^2}$</p>
-<h2 id="5-4-协方差和相关系数"><a href="#5-4-协方差和相关系数" class="headerlink" title="5.4 协方差和相关系数"></a>5.4 协方差和相关系数</h2><p>表征二维向量 X 与 Y 之间的关系</p>
-<h3 id="1-协方差"><a href="#1-协方差" class="headerlink" title="1.协方差"></a>1.协方差</h3><p>$$ Cov(X,Y) &#x3D; E[(X - EX) · (Y - EY)] $$</p>
-<p>$$ Cov(X,Y) &#x3D; E(XY) - EX·EY $$</p>
-<p>性质为：</p>
-<h3 id="2-相关系数"><a href="#2-相关系数" class="headerlink" title="2.相关系数"></a>2.相关系数</h3><p>也称标准协方差，记作 $\rho$</p>
-<h3 id="3-计算举例"><a href="#3-计算举例" class="headerlink" title="3.计算举例"></a>3.计算举例</h3><blockquote>
-<p>时刻铭记：协方差本身就是一种方差，计算的时候不需要再乘上 $\sqrt{DX} \sqrt{DY}$ 了 </p>
-</blockquote>
-<h2 id="5-5-矩-协方差矩阵"><a href="#5-5-矩-协方差矩阵" class="headerlink" title="5.5 矩 协方差矩阵"></a>5.5 矩 协方差矩阵</h2><p>记一下概念就行，式子比较麻烦后面补</p>
-<p>以及这里应该不考，所以暂时先放了</p>
-<h1 id="第六章-大数定律和中心极限定理"><a href="#第六章-大数定律和中心极限定理" class="headerlink" title="第六章 大数定律和中心极限定理"></a>第六章 大数定律和中心极限定理</h1><p>极限可以刻画相同条件下大量重复的试验</p>
-<p><strong>这章的思路：</strong></p>
-<p><strong>大数定律：</strong></p>
-<blockquote>
-<p>随机事件的大量重复出现中，存在几乎必然的规律</p>
-</blockquote>
-<ul>
-<li><strong>事件的频率作为事件的概率的估计</strong></li>
-<li><strong>样本均值作为总体均值的估计</strong></li>
-</ul>
-<p><strong>中心极限定理：</strong></p>
-<ul>
-<li><strong>正态分布在概率论中占有极其重要的地位</strong></li>
-</ul>
-<h2 id="6-1-马尔可夫不等式和切比雪夫不等式"><a href="#6-1-马尔可夫不等式和切比雪夫不等式" class="headerlink" title="6.1 马尔可夫不等式和切比雪夫不等式"></a>6.1 马尔可夫不等式和切比雪夫不等式</h2><p>两个重要的不等式，研究大数定律的基本工具</p>
-<p><img src="/Notes%5CChapter6%5C6.1-1.png"><img src="/Notes%5CChapter6%5C6.1-2.png"></p>
-<p>马尔可夫不等式是前文提到的 k 阶绝对矩</p>
-<p>切比雪夫不等式主要用于概率估计和理论推导</p>
-<ul>
-<li>理论上证实了 方差度量随机变量取值偏离均值的程度</li>
-<li>引出了方差估计的“尾概率”</li>
-</ul>
-<p><img src="/Notes%5CChapter6%5C6.1-3.png"></p>
-<blockquote>
-<p>没有偏离，则是所有变量相同取值，很好理解</p>
-</blockquote>
-<h2 id="6-2-大数定律"><a href="#6-2-大数定律" class="headerlink" title="6.2 大数定律"></a>6.2 大数定律</h2><p>频率收敛到概率的理论根据</p>
-<p>我们只介绍一些弱的情况</p>
-<p><img src="/Notes%5CChapter6%5C6.2-1.png"><img src="/Notes%5CChapter6%5C6.2-2.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.2-3.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.2-4.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.2-5.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.2-6.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.2-7.png"></p>
-<h2 id="6-3-中心极限定理"><a href="#6-3-中心极限定理" class="headerlink" title="6.3 中心极限定理"></a>6.3 中心极限定理</h2><p>人们在对大量随机现象的研究中发现，如果一个量是由大量相互独立的随机因素所造成，而每一个因素在总量中所起的作用又较小，那么这种量通常服从或近似服从正态分布. 这种现象就是中心极限定理的客观背景.</p>
-<p><img src="/Notes%5CChapter6%5C6.3-1.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.3-2.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.3-3.png"></p>
-<p><strong>独立同分布的随机变量序列，它们本身不服从正态分布，但是多个随机变量和的极限分布是正态分布，这就是量变引起质变的道理．</strong></p>
-<p>设 $X_1,X_2,\dots,X_n,\dots$ 是相互独立的随机变量序列，且其服从参数为 $\lambda$ 的指数分布，则</p>
-<p><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220346361.png" alt="image-20221120220341455" style="zoom:67%;" /><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220355682.png" alt="image-20221120220355682" style="zoom:67%;" /><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220400188.png" alt="image-20221120220400188" style="zoom:67%;" /></p>
-<p>（公式太复杂，复制了个图片，摸了）</p>
-<h1 id="第七章-统计总体与样本"><a href="#第七章-统计总体与样本" class="headerlink" title="第七章 统计总体与样本"></a>第七章 统计总体与样本</h1><p><img src="/Notes%5CChapter7%5C7-1.png"></p>
-<p><strong>省流：只有参数估计和假设检验</strong></p>
-<h2 id="7-1-总体与样本"><a href="#7-1-总体与样本" class="headerlink" title="7.1 总体与样本"></a>7.1 总体与样本</h2><h3 id="1-总体与个体"><a href="#1-总体与个体" class="headerlink" title="1.总体与个体"></a>1.总体与个体</h3><p>总体：具有一定共同属性的研究对象的全体</p>
-<p>个体：组成总体的每一个元素</p>
-<p>总体通常用 $\Omega &#x3D; { \omega }$ 或 $S &#x3D; {e}$ 表示</p>
-<p>在实际中，我们主要关心的是研究对象的某一（或某几项）<strong>数量指标 $X&#x3D;X(\omega)$</strong> ，它是一个随机变量</p>
-<blockquote>
-<p>将总体的分布用随机变量刻画</p>
-</blockquote>
-<p>随机变量 $X$ 的分布就是总体的分布</p>
-<p>总体就是指随机变量 $X$ 或 $X$ 的取值集合 </p>
-<h3 id="2-样本与样本值"><a href="#2-样本与样本值" class="headerlink" title="2.样本与样本值"></a>2.样本与样本值</h3><p>用部分统计的方法</p>
-<p>从总体 $X$ 中有放回地随机抽取 $n$ 个数值，$x_i$ 是一次抽样观察（记录）的结果，$x_1,x_2,\dots,x_n$ 为总体 $X$ 的一组样本观察值，简称<strong>样本值</strong></p>
-<p><img src="/Notes%5CChapter7%5C7.1-1.png"></p>
-<p>这一段的一个重要的概念：<strong>观察值（样本值）独立与总体同分布</strong></p>
-<p>简单随机样本、简单随机抽样（不再赘述）</p>
-<p><strong>默认所提到的样本都是简单随机样本</strong></p>
-<p><img src="/Notes%5CChapter7%5C7.1-2.png"></p>
-<h2 id="7-2-样本矩和统计量"><a href="#7-2-样本矩和统计量" class="headerlink" title="7.2 样本矩和统计量"></a>7.2 样本矩和统计量</h2><blockquote>
-<p>一些加工样本的方法</p>
-</blockquote>
-<h3 id="1-样本矩"><a href="#1-样本矩" class="headerlink" title="1.样本矩"></a>1.样本矩</h3><p>样本 $k$ 阶矩（$k$ 阶原点矩）：<br>$$<br>A_k &#x3D; \frac{1}{n}\sum_{i &#x3D; 1}^n X_i ^ k<br>$$</p>
-<p>样本 $k$ 阶中心矩：<br>$$<br>B_k &#x3D; \frac{1}{n} \sum_{i &#x3D; 1} ^n (X_i - \overline{X}) ^ k<br>$$</p>
-<p>样本均值、样本方差、样本 $k$ 阶矩和样本 $k$ 阶中心矩都是<strong>随机变量</strong></p>
-<p><img src="/Notes%5CChapter7%5C7.2-1.png"></p>
-<p><img src="/Notes%5CChapter7%5C7.2-2.png"></p>
-<blockquote>
-<p>样本 $k$ 阶矩收敛于总体 $k$ 阶矩</p>
-</blockquote>
-<h3 id="2-统计量"><a href="#2-统计量" class="headerlink" title="2.统计量"></a>2.统计量</h3><blockquote>
-<p>对样本进行加工，需要针对不同的统计问题构造一个<strong>不含未知参数</strong>的样本的连续函数，称为统计量</p>
-</blockquote>
-<blockquote>
-<p>若含有总体的未知参数，即使得到了样本的观测数据，仍然不能由这些样本数据通过统计量计算出要估计的量的值</p>
-</blockquote>
-<h3 id="3-顺序统计量与经验分布函数"><a href="#3-顺序统计量与经验分布函数" class="headerlink" title="3.顺序统计量与经验分布函数"></a>3.顺序统计量与经验分布函数</h3><h2 id="7-3-常用统计量的分布"><a href="#7-3-常用统计量的分布" class="headerlink" title="7.3 常用统计量的分布"></a>7.3 常用统计量的分布</h2><blockquote>
-<p>统计量是对总体的分布或数字特征进行推断的基础。因此求统计量的分布是数理统计的基本问题之一</p>
-</blockquote>
-<blockquote>
-<p>只研究正态总体的统计量分布</p>
-</blockquote>
-<p><strong>见另一个手写文件</strong></p>
-<h1 id="第八章-参数估计"><a href="#第八章-参数估计" class="headerlink" title="第八章 参数估计"></a>第八章 参数估计</h1><h2 id="8-1-参数的点估计"><a href="#8-1-参数的点估计" class="headerlink" title="8.1 参数的点估计"></a>8.1 参数的点估计</h2><p><img src="/Notes%5CChapter8%5C8.1-1.png"></p>
-<p>用样本值估计总体的参数叫做参数估计</p>
-<p>参数估计分为点估计和区间估计</p>
-<p><strong>参数点估计的两种方法：矩估计法和极大似然估计法</strong></p>
-<p>对于同一个参数，得出的估计量也是有时相同有时不同</p>
-<h3 id="1-矩估计法"><a href="#1-矩估计法" class="headerlink" title="1.矩估计法"></a>1.矩估计法</h3><p>令样本矩 &#x3D; 总体矩解出矩估计量，矩估计量的观察值称为矩估计值</p>
-<p>当样本一阶原点矩的式子中不含 $\theta$ 时，需要求出二阶原点矩或者一阶绝对矩</p>
-<h3 id="2-极大似然估计法"><a href="#2-极大似然估计法" class="headerlink" title="2.极大似然估计法"></a>2.极大似然估计法</h3><p><strong>分连续型总体和离散型总体两种情况</strong></p>
-<p>连续型总体：$L(\theta) &#x3D; \Pi_{i &#x3D; 1} ^{n} f(x_i;\theta)$，求导求最大值对应的 $\theta$ 即为所求</p>
-<p>离散型总体：$L(\theta) &#x3D; \Pi_{i &#x3D; 1} ^{n} p(x_i;\theta)$，求导求最大值对应的 $\theta$ 即为所求</p>
-<p>喜欢考的题：P203，指数的取最小值，倒数的取最大值</p>
-<h2 id="8-2-点估计量的优良性"><a href="#8-2-点估计量的优良性" class="headerlink" title="8.2 点估计量的优良性"></a>8.2 点估计量的优良性</h2><blockquote>
-<p>评价估计量好坏的标准</p>
-</blockquote>
-<h3 id="1-无偏估计"><a href="#1-无偏估计" class="headerlink" title="1.无偏估计"></a>1.无偏估计</h3><p>$E(\hat{\theta}) &#x3D; \theta$</p>
-<p>对于几个无偏估计量应该也有区分他们好坏的标准</p>
-<h3 id="2-最小方差无偏估计"><a href="#2-最小方差无偏估计" class="headerlink" title="2.最小方差无偏估计"></a>2.最小方差无偏估计</h3><p>对任一无偏估计 $\hat{\theta_2}$ ，均有 $D(\hat{\theta_1}) \leq D(\hat{\theta_2})$</p>
-<p>对于正态总体找起来较为简单</p>
-<h3 id="3-一致估计"><a href="#3-一致估计" class="headerlink" title="3.一致估计"></a>3.一致估计</h3><h2 id="8-3-区间估计与置信区间"><a href="#8-3-区间估计与置信区间" class="headerlink" title="8.3 区间估计与置信区间"></a>8.3 区间估计与置信区间</h2><blockquote>
-<p>$\theta$ 所在区间和区间包含 $\theta$ 的可靠程度</p>
-</blockquote>
-<h3 id="1-置信区间"><a href="#1-置信区间" class="headerlink" title="1.置信区间"></a>1.置信区间</h3><h3 id="2-单侧置信限"><a href="#2-单侧置信限" class="headerlink" title="2.单侧置信限"></a>2.单侧置信限</h3><p>只关心置信区间的上限或下限</p>
-<p>目前仅能实现对正态总体的参数 $\mu$ 和 $\sigma$ 的区间估计</p>
-<h2 id="8-4-正态总体均值和方差的区间估计"><a href="#8-4-正态总体均值和方差的区间估计" class="headerlink" title="8.4 正态总体均值和方差的区间估计"></a>8.4 正态总体均值和方差的区间估计</h2><h3 id="1-均值-EX-的区间估计"><a href="#1-均值-EX-的区间估计" class="headerlink" title="1.均值 EX 的区间估计"></a>1.均值 EX 的区间估计</h3><h4 id="（1）方差DX已知，对EX进行区间估计"><a href="#（1）方差DX已知，对EX进行区间估计" class="headerlink" title="（1）方差DX已知，对EX进行区间估计"></a>（1）方差DX已知，对EX进行区间估计</h4><p>用统计量 $U$ 估计</p>
-<p>查这个比较多，因为算数简单</p>
-<h4 id="（2）方差DX未知，对EX进行区间估计"><a href="#（2）方差DX未知，对EX进行区间估计" class="headerlink" title="（2）方差DX未知，对EX进行区间估计"></a>（2）方差DX未知，对EX进行区间估计</h4><p>用统计量 $T$ 估计</p>
-<h3 id="2-方差-DX-的区间估计"><a href="#2-方差-DX-的区间估计" class="headerlink" title="2.方差 DX 的区间估计"></a>2.方差 DX 的区间估计</h3><h2 id="8-5-不考，略过"><a href="#8-5-不考，略过" class="headerlink" title="8.5 不考，略过"></a>8.5 不考，略过</h2><h1 id="第九章-假设检验"><a href="#第九章-假设检验" class="headerlink" title="第九章 假设检验"></a>第九章 假设检验</h1><p>先对<strong>总体</strong>做出某种假设，然后通过样本数据对假设做出接受或者拒绝</p>
-<h2 id="9-1-假设检验的提出及其基本思想"><a href="#9-1-假设检验的提出及其基本思想" class="headerlink" title="9.1 假设检验的提出及其基本思想"></a>9.1 假设检验的提出及其基本思想</h2><h2 id="9-2-正态总体均值和方差的假设检验"><a href="#9-2-正态总体均值和方差的假设检验" class="headerlink" title="9.2 正态总体均值和方差的假设检验"></a>9.2 正态总体均值和方差的假设检验</h2><h3 id="1-方差-sigma-2-已知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意"><a href="#1-方差-sigma-2-已知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意" class="headerlink" title="1.方差 $\sigma^2$ 已知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意"></a>1.方差 $\sigma^2$ 已知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</h3><p>采用统计量 $U_0 &#x3D; \frac{\overline{x} - \mu_0}{\sigma&#x2F;\sqrt{n}}$ 作为检验函数，$U_0 &#x3D; \frac{\overline{x} - \mu_0}{\sigma&#x2F;\sqrt{n}} \sim N(0,1)$</p>
-<h3 id="2-方差-sigma-2-未知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意"><a href="#2-方差-sigma-2-未知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意" class="headerlink" title="2.方差 $\sigma^2$ 未知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意"></a>2.方差 $\sigma^2$ 未知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</h3><p>采用统计量 $T &#x3D; \frac{\overline{x} - \mu_0}{s&#x2F;\sqrt{n}}$ 作为检验函数，$T &#x3D; \frac{\overline{x} - \mu_0}{s&#x2F;\sqrt{n}} \sim t(n-1)$</p>
-<h3 id="3-（单个）正态总体方差的假设检验"><a href="#3-（单个）正态总体方差的假设检验" class="headerlink" title="3.（单个）正态总体方差的假设检验"></a>3.（单个）正态总体方差的假设检验</h3><p>采用统计量 $W &#x3D; \frac{(n-1)s^{2}}{\sigma_0^2}$，$W &#x3D; \frac{(n-1)s^{2}}{\sigma_0^2} \sim \chi^2(n-1)$</p>
-<h2 id="9-3、9-4-不考，略过"><a href="#9-3、9-4-不考，略过" class="headerlink" title="9.3、9.4 不考，略过"></a>9.3、9.4 不考，略过</h2><h1 id="第十章-随机过程的基本概念"><a href="#第十章-随机过程的基本概念" class="headerlink" title="第十章 随机过程的基本概念"></a>第十章 随机过程的基本概念</h1><h2 id="10-1-随机过程的定义及分类"><a href="#10-1-随机过程的定义及分类" class="headerlink" title="10.1 随机过程的定义及分类"></a>10.1 随机过程的定义及分类</h2><h3 id="1-随机过程的概念"><a href="#1-随机过程的概念" class="headerlink" title="1.随机过程的概念"></a>1.随机过程的概念</h3><h3 id="2-随机过程的分类"><a href="#2-随机过程的分类" class="headerlink" title="2.随机过程的分类"></a>2.随机过程的分类</h3><p>二阶矩过程，包括正态过程和平稳过程等</p>
-<p>马尔可夫过程…</p>
-<h2 id="10-2-随机过程的概率分布"><a href="#10-2-随机过程的概率分布" class="headerlink" title="10.2 随机过程的概率分布"></a>10.2 随机过程的概率分布</h2><h3 id="1-随机过程的-n-维分布函数"><a href="#1-随机过程的-n-维分布函数" class="headerlink" title="1.随机过程的 $n$ 维分布函数"></a>1.随机过程的 $n$ 维分布函数</h3><h3 id="2-独立过程"><a href="#2-独立过程" class="headerlink" title="2.独立过程"></a>2.独立过程</h3><p>任意 $n$ 个过程都是独立的，由过程的一维分布函数就能确定该过程的统计特征</p>
-<p><img src="/image-20230211095739087.png" alt="image-20230211095739087"></p>
-<h3 id="3-两个随机过程的有限维联合分布及独立性"><a href="#3-两个随机过程的有限维联合分布及独立性" class="headerlink" title="3.两个随机过程的有限维联合分布及独立性"></a>3.两个随机过程的有限维联合分布及独立性</h3><h2 id="10-3-随机过程的数字特征（比前面更易考）"><a href="#10-3-随机过程的数字特征（比前面更易考）" class="headerlink" title="10.3 随机过程的数字特征（比前面更易考）"></a>10.3 随机过程的数字特征（比前面更易考）</h2><blockquote>
-<p>随机过程是随机变量构成的集合，所以可以通过考察随机变量的数字特征来研究</p>
-</blockquote>
-<p><img src="/image-20230211100031053.png" alt="image-20230211100031053"></p>
-<h1 id="第十一章-平稳过程"><a href="#第十一章-平稳过程" class="headerlink" title="第十一章 平稳过程"></a>第十一章 平稳过程</h1><h2 id="考试题型"><a href="#考试题型" class="headerlink" title="考试题型"></a>考试题型</h2><p>先写 $\Theta$ 和 $X$ 基础的分布、再求数字特征，最后判断是不是平稳过程</p>
-<h2 id="11-1-严平稳过程"><a href="#11-1-严平稳过程" class="headerlink" title="11.1 严平稳过程"></a>11.1 严平稳过程</h2><h2 id="11-2-广义平稳过程（平稳过程）"><a href="#11-2-广义平稳过程（平稳过程）" class="headerlink" title="11.2 广义平稳过程（平稳过程）"></a>11.2 广义平稳过程（平稳过程）</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><p><img src="/1.png" alt="1"></p>
-<h3 id="2-数字特征的性质"><a href="#2-数字特征的性质" class="headerlink" title="2.数字特征的性质"></a>2.数字特征的性质</h3><h1 id="第十二章-马尔可夫链引论"><a href="#第十二章-马尔可夫链引论" class="headerlink" title="第十二章 马尔可夫链引论"></a>第十二章 马尔可夫链引论</h1><h2 id="考试题型-1"><a href="#考试题型-1" class="headerlink" title="考试题型"></a>考试题型</h2><p>判断、状态空间、一步转移矩阵、平稳分布、两步的总条件概率</p>
-<p>判断：<img src="/image-20230211091530921.png" alt="image-20230211091530921"></p>
-<p>用上面的判据好像稍微多一些</p>
-<p><img src="/image-20230211091800582.png" alt="image-20230211091800582"></p>
-<p><img src="/image-20230211093731986.png" alt="image-20230211093731986"></p>
-<p>两步的条件概率要注意马尔可夫的独立性，或者说是标明了一种确定的状态转移过程</p>
-<p>平稳过程和马尔可夫一般都作为最后一道题出现，但是他们的难度并不大，基本都是套路题，能拿的分要稳稳握住</p>
-<p>祝诸君考试都有好运气</p>
-]]></content>
-      <categories>
-        <category>概率统计</category>
-      </categories>
-      <tags>
-        <tag>概率统计</tag>
-        <tag>S3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浙大翁恺OO</title>
-    <url>/WK-OO/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p><em>Not finished</em></p>
-<p>浙大翁恺老师的 OO 入门课</p>
-</blockquote>
-<span id="more"></span>
-
-<p>[TOC]</p>
-<blockquote>
-<p><em>Refs</em>：翁恺 &amp; 黑马程序员</p>
-</blockquote>
-<h2 id="第一周-类与对象"><a href="#第一周-类与对象" class="headerlink" title="第一周 类与对象"></a>第一周 类与对象</h2><h3 id="用类制造对象"><a href="#用类制造对象" class="headerlink" title="用类制造对象"></a>用类制造对象</h3><p>前置知识：对象变量是对象的管理者而非所有者，所以涉及到赋值、函数参数传递和比较（如果两个对象变量相等说明管理的是同一内容，判断管理内容是否相同应用<code>equal</code>判断）都与普通变量有所不同。 </p>
-<p>现在，我们要来尝试自己定义类，然后用自己定义的类来创建对象</p>
-<h3 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h3><p>观察这类事物的特点，用一些成员和函数表示这个类</p>
-<ul>
-<li>private是对类而非对象，所以同一类的不同对象之间可以访问彼此的成员</li>
-<li>如果不声明默认friendly，可以在同一个包的文件下共用</li>
-<li>protected见继承中的project</li>
-</ul>
-<h3 id="成员变量和成员函数"><a href="#成员变量和成员函数" class="headerlink" title="成员变量和成员函数"></a>成员变量和成员函数</h3><p><code>this</code> 这个特殊的本地变量起着至关重要的作用</p>
-<ul>
-<li>注意：如果成员函数的参数与成员变量同名，那么会取作用域更小的，也即取参数作为这个变量名对应的变量</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">New</span> &#123;</span><br><span class="line">    <span class="type">int</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setPrice</span><span class="params">(<span class="type">int</span> price)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>成员函数内部调用其他成员函数也可不加<code>this.</code></p>
-<p>区别于定义在函数内部的本地变量，成员变量的生存期是对象的生存期，作用域是类内部的成员函数（也即类内的成员函数可以使用成员变量，成员变量初始化…）</p>
-<h3 id="对象初始化"><a href="#对象初始化" class="headerlink" title="对象初始化"></a>对象初始化</h3><p>成员变量在对象初始化时，如果未赋值，会安排一个初始值，当然也可以手动初始化（手动直接赋值、调用函数赋值）</p>
-<table>
-<thead>
-<tr>
-<th>变量类型</th>
-<th>初始值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>boolean</td>
-<td>false</td>
-</tr>
-<tr>
-<td>int</td>
-<td>0</td>
-</tr>
-<tr>
-<td>object（某个对象）</td>
-<td>null</td>
-</tr>
-</tbody></table>
-<p>构造函数（课上讲过不少了，我摸了（bushi））</p>
-<h2 id="第二周-对象交互"><a href="#第二周-对象交互" class="headerlink" title="第二周 对象交互"></a>第二周 对象交互</h2><h3 id="对象的识别"><a href="#对象的识别" class="headerlink" title="对象的识别"></a>对象的识别</h3><p>感觉和定义类是一回事，两件事情可以在定义类的时候同时完成。</p>
-<h3 id="对象的交互"><a href="#对象的交互" class="headerlink" title="对象的交互"></a>对象的交互</h3><p>课上讲过一嘴，说到可以用static修饰的“类全局变量”</p>
-<p>也可以通过将一个类的成员变量设置为其他类的对象来达到目的</p>
-<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220913223756886.png" alt="image-20220913223756886"></p>
-<p><strong>图1 以钟表为例来看对象的交互</strong></p>
-<h3 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h3><img src="../../AppData/Roaming/Typora/typora-user-images/image-20220913223824851.png" alt="image-20220913223824851" style="zoom: 33%;" />
-
-<p>图2 用鸡蛋图表示封装思想</p>
-<p><strong>封装思想</strong>：把数据和对数据的操作放在一起</p>
-<p>public：同一个编译单元（一个java文件）里只能有一个class为public，且public class的名字必须与编译单元同名</p>
-<p>如果不加public，则不能在这个package外面访问</p>
-<p>一个编译单元最多有一个public class，但也可以一个都没有</p>
-<p>文件结构：clock(project)-&gt;src-&gt;clock(package)-&gt;clock.java</p>
-<p><strong>import</strong>：用到的类不在同一个package里，就需要import</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> display.Display</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br></pre></td></tr></table></figure>
-
-<p>包的名字.包的类</p>
-<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164023484.png" alt="image-20220911164023484"></p>
-<p>如果不用import，也可以像这样给出全名</p>
-<p>也可以万能import（引用display所有内容，但是可能冲突，推荐import具体的类）</p>
-<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164335992.png" alt="image-20220911164335992"></p>
-<p>包的名字里面的点实际上表达文件夹层次</p>
-<p>Java通过这样的手段管理文件系统（</p>
-<p><strong>static：类变量</strong>，不属于任何一个对象，属于这个类，任何一个对象都拥有这个变量，但是</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>() &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Wrong usage</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">value</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        value++; <span class="comment">// cannot compile</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>static函数只能调用static函数，只能访问static成员变量（这回理解了）</p>
-<p>static函数和变量可以通过类访问，也可以通过对象访问，只是不能获得对象的具体信息</p>
-<p>static变量的初始化只执行一次，和对象的创建过程无关</p>
-<p>这就不得不提static的四种用法了（课上讲过，我摸了，略记一下）</p>
-<h2 id="第三周-对象容器"><a href="#第三周-对象容器" class="headerlink" title="第三周 对象容器"></a>第三周 对象容器</h2><h3 id="记事本的例子"><a href="#记事本的例子" class="headerlink" title="记事本的例子"></a>记事本的例子</h3><ul>
-<li>确定功能</li>
-<li>接口设计</li>
-</ul>
-<p>每一个类都写main，方便做调试</p>
-<h3 id="泛型容器"><a href="#泛型容器" class="headerlink" title="泛型容器"></a>泛型容器</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> ArrayList&lt;String&gt; notes = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(); <span class="comment">// ArrayList of String，用来存放String的ArrayList</span></span><br></pre></td></tr></table></figure>
-
-<p>ArrayList是一个类，notes本身是对象管理者</p>
-<p>容器类型、元素类型</p>
-<ul>
-<li>对象数组中的每个元素都是对象的管理者而非对象本身</li>
-</ul>
-<p>set：set相当于数学中的集合，元素不重复，且没有排序的概念</p>
-<p>toString函数直接输出这个对象，会输出toString()函数返回的字符串结果</p>
-<p>可以先写一个“空”的返回值，比如返回int类型的，先写个return 0，后面再改；</p>
-<p>返回String的先写个return “”;</p>
-<p>HashMap：想写出“聪明”的代码，和具体数据无关</p>
-<p>容器里的类型必须是对象，不能是基本元素，所以需要Integer这样的包裹类型</p>
-<p>包裹类型的变量可以直接接受所对应的基础类型变量</p>
-<p>所以HashMap的返回值也是对象，就是一个管理者</p>
-<p>如果存在会返回有效值，不存在返回null</p>
-<p>key唯一，后面的会覆盖前面的</p>
-<p>遍历没有特别简单的方法，<strong>可以考虑采取for-each遍历entrySet或者valueSet的方法</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(Integet k : name.keySet()) &#123;</span><br><span class="line">	<span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> name.get(k);</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>要写构造器constructor</p>
-<h2 id="第四周-继承与多态"><a href="#第四周-继承与多态" class="headerlink" title="第四周 继承与多态"></a>第四周 继承与多态</h2><blockquote>
-<p>一周后看：当时看觉得难是正常的，因为现在也觉得难（）</p>
-</blockquote>
-<p><strong>继承得到了父类的所有东西</strong>，item里面的所有都得到了，都是<strong>可能</strong>可以用的（至于为什么是可能，会涉及<strong>访问权限</strong>的问题，我们后面说）</p>
-<p>如果不在子类里定义title，那么就会报“The field Item.title is not visible”（此时没有super()）</p>
-<p><strong>父类的private成员真的只有父类自己才能用</strong></p>
-<p>虽然继承给了子类，但是子类不能直接用</p>
-<p>本来我们应该做的事情是让Item给Item的title赋值，所以应该由Item来做初始化</p>
-<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220914222324033.png" alt="image-20220914222324033"></p>
-<p>可以看到，虽然CD没有private的title，但是确实产生了title</p>
-<ul>
-<li>第一个解决方案：把标识符改成protected（自己可以访问，同一个包内的其他类可以访问，子类可以访问）<strong>这是一种没办法的办法</strong></li>
-</ul>
-<p>对item做一个constructor</p>
-<ul>
-<li>cd的构造器得拿到title，用<code>super(title);</code>把参数传给父类，父类构造器通过参数构造；</li>
-<li>如果用<code>super()</code>，找不到这个没有参数的构造器</li>
-<li>如果不通过<code>super()</code>传递参数，父类会用不带参数的构造器进行构造</li>
-</ul>
-<blockquote>
-<p>因为</p>
-</blockquote>
-<ul>
-<li>先做了父类的初始化（定义初始化和构造器），然后才来做子类自己定义的初始化（我理解这样方便覆盖），再进构造函数做其他事情</li>
-<li>需要保证父类的成员变量得到恰当的初始化——定义初始化、构造器（原来在二者兼备时优先定义初始化，然后构造器），总体的顺序是父类-&gt;子类，也即父类定义初始化、构造器-&gt;子类初始化、构造器，与是否采用super()传递参数无关</li>
-<li>同时存在两个成员，也是可以的，父类的被隐藏<ul>
-<li>计算机的基本原则：优先选择范围小的，也即title应该是DVD自己的title</li>
-<li>回到父类对父类成员变量操作时，操作的是父类自己的成员变量</li>
-</ul>
-</li>
-<li>总结一下<ul>
-<li>父类的所有内容都继承给子类<ul>
-<li>但是如果是private的，子类不能访问</li>
-<li>在谁的函数里面，所指的成员变量就是谁的<ul>
-<li>子类父类出现同名成员变量，在子类里面的就是子类自己的，在父类里面的就是父类自己的，之间没有任何联系</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>要用父类的print()，需要加一个super</strong>，比如下面这段代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span> &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;DVD:&quot;</span>);</span><br><span class="line">    <span class="built_in">super</span>.print();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>类定义了类型</p>
-<p>子类定义了子类型</p>
-<p>子类的对象可以被当作父类的对象来使用</p>
-<ul>
-<li>赋值给父类的对象</li>
-<li>传递给需要父类对象的函数</li>
-<li>放进存放父类对象的容器里</li>
-</ul>
-<p>成员函数的绑定都是动态绑定</p>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912171422963.png" alt="image-20220912171422963" style="zoom:50%;" />
-
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912172044907.png" alt="image-20220912172044907" style="zoom:50%;" />
-
-<p>记得这里有一个强制类型转换</p>
-<p>以及函数声明必须完全相同（函数名、参数表）</p>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912173013633.png" alt="image-20220912173013633" style="zoom:50%;" />
-
-<p>可扩展性：不需要修改就能添加新的内容</p>
-<p>可维护性：需要修改才能添加新的内容</p>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912173133898.png" alt="image-20220912173133898" style="zoom:50%;" />
-
-
-
-<h2 id="第五周-设计原则"><a href="#第五周-设计原则" class="headerlink" title="第五周 设计原则"></a>第五周 设计原则</h2><p>城堡游戏</p>
-<p>open declaration：进入对应的声明</p>
-<p>String类的操作系统开销大，可以用StringBuffer类</p>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912174838925.png" alt="image-20220912174838925" style="zoom:50%;" />
-
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912175117169.png" alt="image-20220912175117169" style="zoom:33%;" />
-
-<p>可扩展性：用HashMap避免“硬编码”（即不需要写出每一对对应的具体键值和值，只需要每次扩展时添加新的即可）</p>
-<h2 id="第六周-抽象与接口"><a href="#第六周-抽象与接口" class="headerlink" title="第六周 抽象与接口"></a>第六周 抽象与接口</h2><h3 id="6-1-抽象"><a href="#6-1-抽象" class="headerlink" title="6.1 抽象"></a>6.1 抽象</h3><p><strong>抽象就是为了防止被制造实体</strong></p>
-<p>抽象类的作用仅仅是表达接口，而不是具体的实现细节。抽象类中可以存在抽象方法。抽象方法也是使用abstract关键字来修饰。抽象的方法是不完全的，它只是一个<strong>方法签名</strong>而完全没有方法体</p>
-<p>但是为了表达类之间的关系，还需要这样一个类来表达。如第一章的例子，如果去掉 <code>Shape</code> 类，那么 <code>Circle</code> 和 <code>Rectangle</code> 类就没有关系了</p>
-<p>抽象函数<strong>（不能有括号）</strong>：表达概念而无法实现具体代码的函数，目的是为了告诉子类需要写 <code>draw()</code> 方法</p>
-<p>只要有一个函数是抽象的，类就是抽象的。（这很容易理解，否则便无法调用这个抽象方法）</p>
-<ul>
-<li>有抽象类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">draw</span><span class="params">(Graphics g)</span>;</span><br><span class="line"><span class="comment">// 注意不能有大括号，即不能定义函数体</span></span><br></pre></td></tr></table></figure>
-
-<p>抽象类<strong>（不能产生对象，但是可以定义变量）</strong>：表达概念而无法构造出实体的类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Shape</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Rectangle</span>(a, b);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>任何继承了抽象类的非抽象子类的对象可以赋值给这个变量（也即任何Shape类子类的对象都可以由s来管理）</li>
-</ul>
-<p>实现抽象函数</p>
-<ul>
-<li>继承自抽象类的子类必须覆盖父类中的抽象函数，这种覆盖叫做<strong>实现</strong></li>
-<li>否则这个类自己就会成为抽象类</li>
-</ul>
-<p>计算机中的两种抽象</p>
-<ul>
-<li>与具体相对<ul>
-<li>表达一种概念而非实体</li>
-</ul>
-</li>
-<li>与细节相对<ul>
-<li>表示在一定程度上忽略细节而着眼大局</li>
-</ul>
-</li>
-</ul>
-<h3 id="6-2-数据与表现分离"><a href="#6-2-数据与表现分离" class="headerlink" title="6.2 数据与表现分离"></a>6.2 数据与表现分离</h3><p>两种看程序的方法：</p>
-<ul>
-<li>看main函数，挨个展开需要看的子类代码（”自顶向下“方法）</li>
-<li>看最小的类，追到父类，从看懂小部件开始看懂整个代码（”自底向上“方法，联想HuffmanCode）</li>
-</ul>
-<p>JFrame、View（窗口）</p>
-<p><del>重绘这个图工作量太大了，先摸为敬</del></p>
-<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220912194352676.png" alt="image-20220912194352676"></p>
-<p>数据与表现分离</p>
-<ul>
-<li>程序的业务逻辑与表现无关<ul>
-<li>表现可以是图形的也可以是文本的</li>
-<li>表现可以是当地的也可以是远程的</li>
-</ul>
-</li>
-</ul>
-<p>（强调了一种“各司其职”的思想，写业务逻辑的程序员不需要关心表现是怎样的，不需要关心是通过网页输入字符串还是控制台输入还是blabla）</p>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912194831143.png" alt="image-20220912194831143" style="zoom:33%;" />
-
-<p>责任驱动设计</p>
-<ul>
-<li>将程序要实现的功能分配到合适的类&#x2F;对象中去</li>
-</ul>
-<p>网格化</p>
-<ul>
-<li>图形界面本身有更高的清晰度</li>
-<li>但是将画面网格化后数据更易处理</li>
-</ul>
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912195010980.png" alt="image-20220912195010980" style="zoom: 25%;" />
-
-<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912195043598.png" alt="image-20220912195043598" style="zoom:25%;" />
-
-<p>除了C++都不支持多继承<del>（那为啥不用C++）</del></p>
-<blockquote>
-<p>9.20更新：Java可以通过接口实现多继承</p>
-</blockquote>
-<p><strong>接口</strong></p>
-<ul>
-<li><strong>接口是纯抽象类</strong><ul>
-<li><strong>所有的成员函数都是抽象函数</strong></li>
-<li><strong>所有的成员变量都是public static final（常量）</strong>，static方便调用，接口名.函数名即可调用</li>
-<li>无构造方法</li>
-<li>成员变量：<ul>
-<li>JDK7：接口中只能有抽象方法</li>
-<li>JDK8：接口中可以定义有方法体的方法</li>
-<li>JDK9：接口中可以定义私有方法</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>接口规定了长什么样，但是不管里面有什么</li>
-</ul>
-<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220912220141030.png" alt="image-20220912220141030"></p>
-<p><code>cell o</code>的意思是任何实现了cell接口的都可以交给这个变量</p>
-<p>interface是一种特殊的class，<strong>和class的地位是一样的</strong>，原来用class的地方都可以用interface</p>
-<p>实现接口</p>
-<ul>
-<li>类用<code>extends</code>，接口用<code>complements</code></li>
-<li>类可以实现很多接口</li>
-<li>接口可以继承接口，但不能继承类</li>
-<li>接口不能实现接口</li>
-</ul>
-<p>讲的就是两个东西之间的链接</p>
-<p>需要其他服务的时候，不是定义一个类，而是定义一个接口</p>
-<p>cell是view和field定义的</p>
-<p><strong>面向接口的编程方式</strong></p>
-<ul>
-<li>设计程序时先定义接口，再实现类</li>
-<li>任何需要在函数间传入传出的一定是接口而不是具体的类</li>
-<li>是Java成功的关键之一，因为极适合多人同时写一个大程序</li>
-<li>也是Java被批评的要点之一，因为代码量膨胀起来很快</li>
-</ul>
-<blockquote>
-<p><em>补充自黑马程序员</em></p>
-</blockquote>
-<p>抽象类：更多地用作父类，是对事物的抽象</p>
-<p>抽取共性方法作为抽象方法，抽象方法所在的类便成为抽象类</p>
-<p>接口：更多地侧重于规则，是对行为的抽象（如游泳接口，可由动物和人实现）</p>
-<p>接口的子类也称作实现类</p>
-<ul>
-<li>要么重写接口中所有的抽象方法</li>
-<li>要么也是抽象类</li>
-</ul>
-<p>可以多实现</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Subclass</span> <span class="keyword">implements</span> <span class="title class_">Class1</span>, Class2 &#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>所以我感觉多接口继承也是用接口的重要原因之一</p>
-</blockquote>
-<p>接口和类之间的关系</p>
-<ul>
-<li>类和类的关系<ul>
-<li>继承关系，只能单继承，不能多继承，但是可以多重继承</li>
-</ul>
-</li>
-<li>类和接口的关系<ul>
-<li>实现关系，可以单实现，也可以多实现，还可以在继承一个类的同时实现多个接口<ul>
-<li>实现多个接口需要重写<strong>全部的</strong>抽象方法</li>
-<li>同名的话就是实现了不同接口的同名函数</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>接口和接口的关系<ul>
-<li>继承关系，可以单继承，也可以多继承<ul>
-<li>实现最下面的子接口的话，需要重写所有的抽象方法</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="第七周-控制反转与MVC模式"><a href="#第七周-控制反转与MVC模式" class="headerlink" title="第七周 控制反转与MVC模式"></a>第七周 控制反转与MVC模式</h2><h3 id="7-1-布局管理器"><a href="#7-1-布局管理器" class="headerlink" title="7.1 布局管理器"></a>7.1 布局管理器</h3><p>Swing：所有的东西都叫做部件、另外一种东西叫做容器</p>
-<p>容器可以加到容器里，部件也需要加到容器里</p>
-<p>容器管部件在哪里，显示多大</p>
-<p>布局管理器</p>
-<p>layout manager</p>
-<p>frame默认的layout manager是border</p>
-<p>这章似乎和图形可视化等等关系比较大，所以我摸了（）</p>
-<h2 id="第八周-异常处理与输入输出"><a href="#第八周-异常处理与输入输出" class="headerlink" title="第八周 异常处理与输入输出"></a>第八周 异常处理与输入输出</h2><h3 id="8-1-1-捕捉异常"><a href="#8-1-1-捕捉异常" class="headerlink" title="8.1.1 捕捉异常"></a>8.1.1 捕捉异常</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span></span><br><span class="line">    <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">    <span class="type">int</span> idx;</span><br><span class="line">    <span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">    idx = in.nextInt();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        a[idx] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Caught&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输入5，输出Hello</span></span><br><span class="line"><span class="comment">// 输入10，输出Caught</span></span><br><span class="line"><span class="comment">// 说明第6行没做，从第6行跳到了第9行</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="8-1-2-异常处理机制"><a href="#8-1-2-异常处理机制" class="headerlink" title="8.1.2 异常处理机制"></a>8.1.2 异常处理机制</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayIndex</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">        a[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            k();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;caught&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;main&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>a[10] = 10</code> 出了异常，之后的hello不会执行，离开f回到调用的地方<img src="D:\Working\MarkDownFiles\exception-execution.png"></p>
-<h3 id="8-1-3-捕捉到的异常"><a href="#8-1-3-捕捉到的异常" class="headerlink" title="8.1.3 捕捉到的异常"></a>8.1.3 捕捉到的异常</h3><p>捉到了做什么</p>
-<p><code>String getMessage()</code></p>
-<p><code>String toString()</code></p>
-<p><code>void printStackTrace</code></p>
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">caught</span><br><span class="line">10</span><br><span class="line">java.lang.ArrayIndexOutOfBoundsException: 10</span><br></pre></td></tr></table></figure>
-
-
-
-<p>再度抛出</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">catch (Exception e) &#123;</span><br><span class="line">     System.err.println(&quot;An exception with thrown&quot;);</span><br><span class="line">     throw e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果在这个层面上需要处理，但是不能做最终的决定</p>
-<h3 id="8-2-1-异常"><a href="#8-2-1-异常" class="headerlink" title="8.2.1 异常"></a>8.2.1 异常</h3><p>读文件的例子</p>
-<p>bussiness logic业务逻辑</p>
-<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220913194007073.png" alt="image-20220913194007073"></p>
-<p>如果某一步出了问题，就用catch解决问题</p>
-<p>异常：不寻常的事情发生之时，需要终止预期的任务，让另一段代码处理</p>
-<p>异常机制最大的好处就是清晰地分开了业务逻辑代码和遇到情况时的处理代码</p>
-<p>异常声明</p>
-<ul>
-<li>如果你的函数可能抛出异常，就必须在函数头部加以声明<code>void f() throws TooBig, TooSmall, DivZero &#123; //... &#125;</code></li>
-<li>可以声明并不会真正抛出的异常</li>
-</ul>
-<p>什么能扔？</p>
-<ul>
-<li>任何继承了Throwable类的对象</li>
-<li>Exception类继承了Throwable</li>
-<li>throw new Exception;</li>
-<li>throw new Exception(“Help”);</li>
-</ul>
-<p>catch怎么匹配的异常</p>
-<h3 id="8-3-1-流"><a href="#8-3-1-流" class="headerlink" title="8.3.1 流"></a>8.3.1 流</h3><p>流是输入输出的方式</p>
-<ul>
-<li>流是一维单向的<ul>
-<li>一维：用一个数字就可以表达位置</li>
-<li>单向：读 or 写</li>
-</ul>
-</li>
-</ul>
-<p>所有的IO操作都是有风险的</p>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="printf-格式化输出"><a href="#printf-格式化输出" class="headerlink" title="printf()格式化输出"></a>printf()格式化输出</h3><p>Java也支持<code>printf</code>格式化输出，格式与C语言相同</p>
-<p>两个类里的<code>main函数</code>可以同时运行，当然还要看评测要求</p>
-]]></content>
-      <categories>
-        <category>OO</category>
-      </categories>
-      <tags>
-        <tag>OO</tag>
-        <tag>网课笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>科目三实战技巧</title>
-    <url>/subject3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>笔者与科三的爱恨情仇</p>
-</blockquote>
-<span id="more"></span>
-
-<p>笔者去年没有练完的科三拖到了今年来练…在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
-<h3 id="上车准备"><a href="#上车准备" class="headerlink" title="上车准备"></a>上车准备</h3><blockquote>
-<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
-</blockquote>
-<h3 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h3><blockquote>
-<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
-</blockquote>
-<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><blockquote>
-<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
-</blockquote>
-<h3 id="行驶中"><a href="#行驶中" class="headerlink" title="行驶中"></a>行驶中</h3><blockquote>
-<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
-<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
-<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
-<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
-<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
-<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
-<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
-<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
-<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
-<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
-<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
-</blockquote>
+<p>首先要肯定，这部贺岁大戏确实花了心思在里面。取景比较考究，一众演员演技在线，用配乐演进和人物穿巷串联情节。</p>
+<p>不过作为张艺谋执导的电影，似乎还有不少地方做的不尽人意。</p>
+<p>剧情发展不合理。先说何立之死，何立心狠手辣，城府颇深，称得上有勇有谋。他既能知道刘喜和桃姑娘的关系，能猜出瑶琴是半路加入，便也不至于在临门一脚时匆匆靠近瑶琴打坏了一手稳赢的牌。瑶琴和张大都有枷锁，一把长刀在侧，到手的鸭子怎么看怎么不会飞，这里的发展更像是匆忙草草收尾了事，好让观众挨住隐隐的如厕之意。再者，于情于理没有让张大死的必要。于情，瑶琴守护大义守护真爱半路加入行动，张大本不必死，本可代岳将军见秦桧剐见山河收见国耻平，孙均性情中人，坐视侄儿死在眼前死不瞑目，坐视瑶琴让张大活下去的奉献化为乌有，更太过冷血乖戾，孙均一向鲁莽，喜好速战速决，甚至为秦桧挡下一刀，转变之大让人匪夷所思；于理，只有蓝玉一人在秦桧之侧，短刃也插在张大身上，枷锁解开身上亦无伤，孙均反手便可手刃秦桧昭告天下，退一万步来看，至少挟秦桧背满江红的夙愿可轻松实现，似乎也不必等待蓝绿二人均在时冒险逼迫，彼时二人利刃在手风险数倍，战场出生入死的将军更懂这个道理。最后，孙均一身伤痕，哪有力气纵马远去？不怕一身老伤皮开肉绽吗？</p>
+<p>剧情设定本就荒诞。以我对南宋将军的粗浅了解，似乎岳将军并不太在乎遗言是否能流传万古，他应该更在乎百姓的平安和故土的平复，就像辛稼轩本意也不在写词不在种树，“却将万字平戎策，换得东家种树书”，谁他妈要种树，老子要平戎定虏。能有人手刃秦桧厉兵秣马率军出征，岳将军九泉之下也可安息；放秦桧狗贼一条狗命，让他遗臭万年，who cares？谁他妈在乎秦桧是谁，老子只想看故国收复。确实有比生死重要百倍千倍的东西，但是这东西应该不只是岳将军的一首遗言。不得不说这里对岳将军的理解有些以己度人了，这里有种《1874》里“与你畅游战地”一般扯淡的浪漫。以及替身这件事，至少我个人感觉有些荒谬。</p>
+<p>总之，作为贺岁片，导演来分一杯羹，观众看个乐呵看个感动，能想起这位千年前的故人想起这首无人不知无人不晓的不朽词篇，便也还算，说得过去吧。</p>
 ]]></content>
       <categories>
         <category>生活记录</category>
       </categories>
       <tags>
-        <tag>科目三</tag>
+        <tag>观后感</tag>
       </tags>
   </entry>
   <entry>
@@ -3652,6 +2914,744 @@
         <tag>OO</tag>
         <tag>读书笔记</tag>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浙大翁恺OO</title>
+    <url>/WK-OO/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p><em>Not finished</em></p>
+<p>浙大翁恺老师的 OO 入门课</p>
+</blockquote>
+<span id="more"></span>
+
+<p>[TOC]</p>
+<blockquote>
+<p><em>Refs</em>：翁恺 &amp; 黑马程序员</p>
+</blockquote>
+<h2 id="第一周-类与对象"><a href="#第一周-类与对象" class="headerlink" title="第一周 类与对象"></a>第一周 类与对象</h2><h3 id="用类制造对象"><a href="#用类制造对象" class="headerlink" title="用类制造对象"></a>用类制造对象</h3><p>前置知识：对象变量是对象的管理者而非所有者，所以涉及到赋值、函数参数传递和比较（如果两个对象变量相等说明管理的是同一内容，判断管理内容是否相同应用<code>equal</code>判断）都与普通变量有所不同。 </p>
+<p>现在，我们要来尝试自己定义类，然后用自己定义的类来创建对象</p>
+<h3 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h3><p>观察这类事物的特点，用一些成员和函数表示这个类</p>
+<ul>
+<li>private是对类而非对象，所以同一类的不同对象之间可以访问彼此的成员</li>
+<li>如果不声明默认friendly，可以在同一个包的文件下共用</li>
+<li>protected见继承中的project</li>
+</ul>
+<h3 id="成员变量和成员函数"><a href="#成员变量和成员函数" class="headerlink" title="成员变量和成员函数"></a>成员变量和成员函数</h3><p><code>this</code> 这个特殊的本地变量起着至关重要的作用</p>
+<ul>
+<li>注意：如果成员函数的参数与成员变量同名，那么会取作用域更小的，也即取参数作为这个变量名对应的变量</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">New</span> &#123;</span><br><span class="line">    <span class="type">int</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setPrice</span><span class="params">(<span class="type">int</span> price)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>成员函数内部调用其他成员函数也可不加<code>this.</code></p>
+<p>区别于定义在函数内部的本地变量，成员变量的生存期是对象的生存期，作用域是类内部的成员函数（也即类内的成员函数可以使用成员变量，成员变量初始化…）</p>
+<h3 id="对象初始化"><a href="#对象初始化" class="headerlink" title="对象初始化"></a>对象初始化</h3><p>成员变量在对象初始化时，如果未赋值，会安排一个初始值，当然也可以手动初始化（手动直接赋值、调用函数赋值）</p>
+<table>
+<thead>
+<tr>
+<th>变量类型</th>
+<th>初始值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>object（某个对象）</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<p>构造函数（课上讲过不少了，我摸了（bushi））</p>
+<h2 id="第二周-对象交互"><a href="#第二周-对象交互" class="headerlink" title="第二周 对象交互"></a>第二周 对象交互</h2><h3 id="对象的识别"><a href="#对象的识别" class="headerlink" title="对象的识别"></a>对象的识别</h3><p>感觉和定义类是一回事，两件事情可以在定义类的时候同时完成。</p>
+<h3 id="对象的交互"><a href="#对象的交互" class="headerlink" title="对象的交互"></a>对象的交互</h3><p>课上讲过一嘴，说到可以用static修饰的“类全局变量”</p>
+<p>也可以通过将一个类的成员变量设置为其他类的对象来达到目的</p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220913223756886.png" alt="image-20220913223756886"></p>
+<p><strong>图1 以钟表为例来看对象的交互</strong></p>
+<h3 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h3><img src="../../AppData/Roaming/Typora/typora-user-images/image-20220913223824851.png" alt="image-20220913223824851" style="zoom: 33%;" />
+
+<p>图2 用鸡蛋图表示封装思想</p>
+<p><strong>封装思想</strong>：把数据和对数据的操作放在一起</p>
+<p>public：同一个编译单元（一个java文件）里只能有一个class为public，且public class的名字必须与编译单元同名</p>
+<p>如果不加public，则不能在这个package外面访问</p>
+<p>一个编译单元最多有一个public class，但也可以一个都没有</p>
+<p>文件结构：clock(project)-&gt;src-&gt;clock(package)-&gt;clock.java</p>
+<p><strong>import</strong>：用到的类不在同一个package里，就需要import</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> display.Display</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br></pre></td></tr></table></figure>
+
+<p>包的名字.包的类</p>
+<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164023484.png" alt="image-20220911164023484"></p>
+<p>如果不用import，也可以像这样给出全名</p>
+<p>也可以万能import（引用display所有内容，但是可能冲突，推荐import具体的类）</p>
+<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20220911164335992.png" alt="image-20220911164335992"></p>
+<p>包的名字里面的点实际上表达文件夹层次</p>
+<p>Java通过这样的手段管理文件系统（</p>
+<p><strong>static：类变量</strong>，不属于任何一个对象，属于这个类，任何一个对象都拥有这个变量，但是</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>() &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Wrong usage</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test</span>() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">value</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        value++; <span class="comment">// cannot compile</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>static函数只能调用static函数，只能访问static成员变量（这回理解了）</p>
+<p>static函数和变量可以通过类访问，也可以通过对象访问，只是不能获得对象的具体信息</p>
+<p>static变量的初始化只执行一次，和对象的创建过程无关</p>
+<p>这就不得不提static的四种用法了（课上讲过，我摸了，略记一下）</p>
+<h2 id="第三周-对象容器"><a href="#第三周-对象容器" class="headerlink" title="第三周 对象容器"></a>第三周 对象容器</h2><h3 id="记事本的例子"><a href="#记事本的例子" class="headerlink" title="记事本的例子"></a>记事本的例子</h3><ul>
+<li>确定功能</li>
+<li>接口设计</li>
+</ul>
+<p>每一个类都写main，方便做调试</p>
+<h3 id="泛型容器"><a href="#泛型容器" class="headerlink" title="泛型容器"></a>泛型容器</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> ArrayList&lt;String&gt; notes = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;String&gt;(); <span class="comment">// ArrayList of String，用来存放String的ArrayList</span></span><br></pre></td></tr></table></figure>
+
+<p>ArrayList是一个类，notes本身是对象管理者</p>
+<p>容器类型、元素类型</p>
+<ul>
+<li>对象数组中的每个元素都是对象的管理者而非对象本身</li>
+</ul>
+<p>set：set相当于数学中的集合，元素不重复，且没有排序的概念</p>
+<p>toString函数直接输出这个对象，会输出toString()函数返回的字符串结果</p>
+<p>可以先写一个“空”的返回值，比如返回int类型的，先写个return 0，后面再改；</p>
+<p>返回String的先写个return “”;</p>
+<p>HashMap：想写出“聪明”的代码，和具体数据无关</p>
+<p>容器里的类型必须是对象，不能是基本元素，所以需要Integer这样的包裹类型</p>
+<p>包裹类型的变量可以直接接受所对应的基础类型变量</p>
+<p>所以HashMap的返回值也是对象，就是一个管理者</p>
+<p>如果存在会返回有效值，不存在返回null</p>
+<p>key唯一，后面的会覆盖前面的</p>
+<p>遍历没有特别简单的方法，<strong>可以考虑采取for-each遍历entrySet或者valueSet的方法</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(Integet k : name.keySet()) &#123;</span><br><span class="line">	<span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> name.get(k);</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要写构造器constructor</p>
+<h2 id="第四周-继承与多态"><a href="#第四周-继承与多态" class="headerlink" title="第四周 继承与多态"></a>第四周 继承与多态</h2><blockquote>
+<p>一周后看：当时看觉得难是正常的，因为现在也觉得难（）</p>
+</blockquote>
+<p><strong>继承得到了父类的所有东西</strong>，item里面的所有都得到了，都是<strong>可能</strong>可以用的（至于为什么是可能，会涉及<strong>访问权限</strong>的问题，我们后面说）</p>
+<p>如果不在子类里定义title，那么就会报“The field Item.title is not visible”（此时没有super()）</p>
+<p><strong>父类的private成员真的只有父类自己才能用</strong></p>
+<p>虽然继承给了子类，但是子类不能直接用</p>
+<p>本来我们应该做的事情是让Item给Item的title赋值，所以应该由Item来做初始化</p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220914222324033.png" alt="image-20220914222324033"></p>
+<p>可以看到，虽然CD没有private的title，但是确实产生了title</p>
+<ul>
+<li>第一个解决方案：把标识符改成protected（自己可以访问，同一个包内的其他类可以访问，子类可以访问）<strong>这是一种没办法的办法</strong></li>
+</ul>
+<p>对item做一个constructor</p>
+<ul>
+<li>cd的构造器得拿到title，用<code>super(title);</code>把参数传给父类，父类构造器通过参数构造；</li>
+<li>如果用<code>super()</code>，找不到这个没有参数的构造器</li>
+<li>如果不通过<code>super()</code>传递参数，父类会用不带参数的构造器进行构造</li>
+</ul>
+<blockquote>
+<p>因为</p>
+</blockquote>
+<ul>
+<li>先做了父类的初始化（定义初始化和构造器），然后才来做子类自己定义的初始化（我理解这样方便覆盖），再进构造函数做其他事情</li>
+<li>需要保证父类的成员变量得到恰当的初始化——定义初始化、构造器（原来在二者兼备时优先定义初始化，然后构造器），总体的顺序是父类-&gt;子类，也即父类定义初始化、构造器-&gt;子类初始化、构造器，与是否采用super()传递参数无关</li>
+<li>同时存在两个成员，也是可以的，父类的被隐藏<ul>
+<li>计算机的基本原则：优先选择范围小的，也即title应该是DVD自己的title</li>
+<li>回到父类对父类成员变量操作时，操作的是父类自己的成员变量</li>
+</ul>
+</li>
+<li>总结一下<ul>
+<li>父类的所有内容都继承给子类<ul>
+<li>但是如果是private的，子类不能访问</li>
+<li>在谁的函数里面，所指的成员变量就是谁的<ul>
+<li>子类父类出现同名成员变量，在子类里面的就是子类自己的，在父类里面的就是父类自己的，之间没有任何联系</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>要用父类的print()，需要加一个super</strong>，比如下面这段代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span> &#123;</span><br><span class="line">    System.out.print(<span class="string">&quot;DVD:&quot;</span>);</span><br><span class="line">    <span class="built_in">super</span>.print();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>类定义了类型</p>
+<p>子类定义了子类型</p>
+<p>子类的对象可以被当作父类的对象来使用</p>
+<ul>
+<li>赋值给父类的对象</li>
+<li>传递给需要父类对象的函数</li>
+<li>放进存放父类对象的容器里</li>
+</ul>
+<p>成员函数的绑定都是动态绑定</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912171422963.png" alt="image-20220912171422963" style="zoom:50%;" />
+
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912172044907.png" alt="image-20220912172044907" style="zoom:50%;" />
+
+<p>记得这里有一个强制类型转换</p>
+<p>以及函数声明必须完全相同（函数名、参数表）</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912173013633.png" alt="image-20220912173013633" style="zoom:50%;" />
+
+<p>可扩展性：不需要修改就能添加新的内容</p>
+<p>可维护性：需要修改才能添加新的内容</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912173133898.png" alt="image-20220912173133898" style="zoom:50%;" />
+
+
+
+<h2 id="第五周-设计原则"><a href="#第五周-设计原则" class="headerlink" title="第五周 设计原则"></a>第五周 设计原则</h2><p>城堡游戏</p>
+<p>open declaration：进入对应的声明</p>
+<p>String类的操作系统开销大，可以用StringBuffer类</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912174838925.png" alt="image-20220912174838925" style="zoom:50%;" />
+
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912175117169.png" alt="image-20220912175117169" style="zoom:33%;" />
+
+<p>可扩展性：用HashMap避免“硬编码”（即不需要写出每一对对应的具体键值和值，只需要每次扩展时添加新的即可）</p>
+<h2 id="第六周-抽象与接口"><a href="#第六周-抽象与接口" class="headerlink" title="第六周 抽象与接口"></a>第六周 抽象与接口</h2><h3 id="6-1-抽象"><a href="#6-1-抽象" class="headerlink" title="6.1 抽象"></a>6.1 抽象</h3><p><strong>抽象就是为了防止被制造实体</strong></p>
+<p>抽象类的作用仅仅是表达接口，而不是具体的实现细节。抽象类中可以存在抽象方法。抽象方法也是使用abstract关键字来修饰。抽象的方法是不完全的，它只是一个<strong>方法签名</strong>而完全没有方法体</p>
+<p>但是为了表达类之间的关系，还需要这样一个类来表达。如第一章的例子，如果去掉 <code>Shape</code> 类，那么 <code>Circle</code> 和 <code>Rectangle</code> 类就没有关系了</p>
+<p>抽象函数<strong>（不能有括号）</strong>：表达概念而无法实现具体代码的函数，目的是为了告诉子类需要写 <code>draw()</code> 方法</p>
+<p>只要有一个函数是抽象的，类就是抽象的。（这很容易理解，否则便无法调用这个抽象方法）</p>
+<ul>
+<li>有抽象类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">draw</span><span class="params">(Graphics g)</span>;</span><br><span class="line"><span class="comment">// 注意不能有大括号，即不能定义函数体</span></span><br></pre></td></tr></table></figure>
+
+<p>抽象类<strong>（不能产生对象，但是可以定义变量）</strong>：表达概念而无法构造出实体的类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Shape</span> <span class="variable">s</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Rectangle</span>(a, b);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>任何继承了抽象类的非抽象子类的对象可以赋值给这个变量（也即任何Shape类子类的对象都可以由s来管理）</li>
+</ul>
+<p>实现抽象函数</p>
+<ul>
+<li>继承自抽象类的子类必须覆盖父类中的抽象函数，这种覆盖叫做<strong>实现</strong></li>
+<li>否则这个类自己就会成为抽象类</li>
+</ul>
+<p>计算机中的两种抽象</p>
+<ul>
+<li>与具体相对<ul>
+<li>表达一种概念而非实体</li>
+</ul>
+</li>
+<li>与细节相对<ul>
+<li>表示在一定程度上忽略细节而着眼大局</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-2-数据与表现分离"><a href="#6-2-数据与表现分离" class="headerlink" title="6.2 数据与表现分离"></a>6.2 数据与表现分离</h3><p>两种看程序的方法：</p>
+<ul>
+<li>看main函数，挨个展开需要看的子类代码（”自顶向下“方法）</li>
+<li>看最小的类，追到父类，从看懂小部件开始看懂整个代码（”自底向上“方法，联想HuffmanCode）</li>
+</ul>
+<p>JFrame、View（窗口）</p>
+<p><del>重绘这个图工作量太大了，先摸为敬</del></p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220912194352676.png" alt="image-20220912194352676"></p>
+<p>数据与表现分离</p>
+<ul>
+<li>程序的业务逻辑与表现无关<ul>
+<li>表现可以是图形的也可以是文本的</li>
+<li>表现可以是当地的也可以是远程的</li>
+</ul>
+</li>
+</ul>
+<p>（强调了一种“各司其职”的思想，写业务逻辑的程序员不需要关心表现是怎样的，不需要关心是通过网页输入字符串还是控制台输入还是blabla）</p>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912194831143.png" alt="image-20220912194831143" style="zoom:33%;" />
+
+<p>责任驱动设计</p>
+<ul>
+<li>将程序要实现的功能分配到合适的类&#x2F;对象中去</li>
+</ul>
+<p>网格化</p>
+<ul>
+<li>图形界面本身有更高的清晰度</li>
+<li>但是将画面网格化后数据更易处理</li>
+</ul>
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912195010980.png" alt="image-20220912195010980" style="zoom: 25%;" />
+
+<img src="../../AppData/Roaming/Typora/typora-user-images/image-20220912195043598.png" alt="image-20220912195043598" style="zoom:25%;" />
+
+<p>除了C++都不支持多继承<del>（那为啥不用C++）</del></p>
+<blockquote>
+<p>9.20更新：Java可以通过接口实现多继承</p>
+</blockquote>
+<p><strong>接口</strong></p>
+<ul>
+<li><strong>接口是纯抽象类</strong><ul>
+<li><strong>所有的成员函数都是抽象函数</strong></li>
+<li><strong>所有的成员变量都是public static final（常量）</strong>，static方便调用，接口名.函数名即可调用</li>
+<li>无构造方法</li>
+<li>成员变量：<ul>
+<li>JDK7：接口中只能有抽象方法</li>
+<li>JDK8：接口中可以定义有方法体的方法</li>
+<li>JDK9：接口中可以定义私有方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>接口规定了长什么样，但是不管里面有什么</li>
+</ul>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220912220141030.png" alt="image-20220912220141030"></p>
+<p><code>cell o</code>的意思是任何实现了cell接口的都可以交给这个变量</p>
+<p>interface是一种特殊的class，<strong>和class的地位是一样的</strong>，原来用class的地方都可以用interface</p>
+<p>实现接口</p>
+<ul>
+<li>类用<code>extends</code>，接口用<code>complements</code></li>
+<li>类可以实现很多接口</li>
+<li>接口可以继承接口，但不能继承类</li>
+<li>接口不能实现接口</li>
+</ul>
+<p>讲的就是两个东西之间的链接</p>
+<p>需要其他服务的时候，不是定义一个类，而是定义一个接口</p>
+<p>cell是view和field定义的</p>
+<p><strong>面向接口的编程方式</strong></p>
+<ul>
+<li>设计程序时先定义接口，再实现类</li>
+<li>任何需要在函数间传入传出的一定是接口而不是具体的类</li>
+<li>是Java成功的关键之一，因为极适合多人同时写一个大程序</li>
+<li>也是Java被批评的要点之一，因为代码量膨胀起来很快</li>
+</ul>
+<blockquote>
+<p><em>补充自黑马程序员</em></p>
+</blockquote>
+<p>抽象类：更多地用作父类，是对事物的抽象</p>
+<p>抽取共性方法作为抽象方法，抽象方法所在的类便成为抽象类</p>
+<p>接口：更多地侧重于规则，是对行为的抽象（如游泳接口，可由动物和人实现）</p>
+<p>接口的子类也称作实现类</p>
+<ul>
+<li>要么重写接口中所有的抽象方法</li>
+<li>要么也是抽象类</li>
+</ul>
+<p>可以多实现</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Subclass</span> <span class="keyword">implements</span> <span class="title class_">Class1</span>, Class2 &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>所以我感觉多接口继承也是用接口的重要原因之一</p>
+</blockquote>
+<p>接口和类之间的关系</p>
+<ul>
+<li>类和类的关系<ul>
+<li>继承关系，只能单继承，不能多继承，但是可以多重继承</li>
+</ul>
+</li>
+<li>类和接口的关系<ul>
+<li>实现关系，可以单实现，也可以多实现，还可以在继承一个类的同时实现多个接口<ul>
+<li>实现多个接口需要重写<strong>全部的</strong>抽象方法</li>
+<li>同名的话就是实现了不同接口的同名函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>接口和接口的关系<ul>
+<li>继承关系，可以单继承，也可以多继承<ul>
+<li>实现最下面的子接口的话，需要重写所有的抽象方法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="第七周-控制反转与MVC模式"><a href="#第七周-控制反转与MVC模式" class="headerlink" title="第七周 控制反转与MVC模式"></a>第七周 控制反转与MVC模式</h2><h3 id="7-1-布局管理器"><a href="#7-1-布局管理器" class="headerlink" title="7.1 布局管理器"></a>7.1 布局管理器</h3><p>Swing：所有的东西都叫做部件、另外一种东西叫做容器</p>
+<p>容器可以加到容器里，部件也需要加到容器里</p>
+<p>容器管部件在哪里，显示多大</p>
+<p>布局管理器</p>
+<p>layout manager</p>
+<p>frame默认的layout manager是border</p>
+<p>这章似乎和图形可视化等等关系比较大，所以我摸了（）</p>
+<h2 id="第八周-异常处理与输入输出"><a href="#第八周-异常处理与输入输出" class="headerlink" title="第八周 异常处理与输入输出"></a>第八周 异常处理与输入输出</h2><h3 id="8-1-1-捕捉异常"><a href="#8-1-1-捕捉异常" class="headerlink" title="8.1.1 捕捉异常"></a>8.1.1 捕捉异常</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span></span><br><span class="line">    <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">    <span class="type">int</span> idx;</span><br><span class="line">    <span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">    idx = in.nextInt();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        a[idx] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Caught&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输入5，输出Hello</span></span><br><span class="line"><span class="comment">// 输入10，输出Caught</span></span><br><span class="line"><span class="comment">// 说明第6行没做，从第6行跳到了第9行</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-1-2-异常处理机制"><a href="#8-1-2-异常处理机制" class="headerlink" title="8.1.2 异常处理机制"></a>8.1.2 异常处理机制</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayIndex</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">        a[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            k();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ArrayIndexOutOfBoundsException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;caught&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;main&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>a[10] = 10</code> 出了异常，之后的hello不会执行，离开f回到调用的地方<img src="D:\Working\MarkDownFiles\exception-execution.png"></p>
+<h3 id="8-1-3-捕捉到的异常"><a href="#8-1-3-捕捉到的异常" class="headerlink" title="8.1.3 捕捉到的异常"></a>8.1.3 捕捉到的异常</h3><p>捉到了做什么</p>
+<p><code>String getMessage()</code></p>
+<p><code>String toString()</code></p>
+<p><code>void printStackTrace</code></p>
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">caught</span><br><span class="line">10</span><br><span class="line">java.lang.ArrayIndexOutOfBoundsException: 10</span><br></pre></td></tr></table></figure>
+
+
+
+<p>再度抛出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">catch (Exception e) &#123;</span><br><span class="line">     System.err.println(&quot;An exception with thrown&quot;);</span><br><span class="line">     throw e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果在这个层面上需要处理，但是不能做最终的决定</p>
+<h3 id="8-2-1-异常"><a href="#8-2-1-异常" class="headerlink" title="8.2.1 异常"></a>8.2.1 异常</h3><p>读文件的例子</p>
+<p>bussiness logic业务逻辑</p>
+<p><img src="/../../AppData/Roaming/Typora/typora-user-images/image-20220913194007073.png" alt="image-20220913194007073"></p>
+<p>如果某一步出了问题，就用catch解决问题</p>
+<p>异常：不寻常的事情发生之时，需要终止预期的任务，让另一段代码处理</p>
+<p>异常机制最大的好处就是清晰地分开了业务逻辑代码和遇到情况时的处理代码</p>
+<p>异常声明</p>
+<ul>
+<li>如果你的函数可能抛出异常，就必须在函数头部加以声明<code>void f() throws TooBig, TooSmall, DivZero &#123; //... &#125;</code></li>
+<li>可以声明并不会真正抛出的异常</li>
+</ul>
+<p>什么能扔？</p>
+<ul>
+<li>任何继承了Throwable类的对象</li>
+<li>Exception类继承了Throwable</li>
+<li>throw new Exception;</li>
+<li>throw new Exception(“Help”);</li>
+</ul>
+<p>catch怎么匹配的异常</p>
+<h3 id="8-3-1-流"><a href="#8-3-1-流" class="headerlink" title="8.3.1 流"></a>8.3.1 流</h3><p>流是输入输出的方式</p>
+<ul>
+<li>流是一维单向的<ul>
+<li>一维：用一个数字就可以表达位置</li>
+<li>单向：读 or 写</li>
+</ul>
+</li>
+</ul>
+<p>所有的IO操作都是有风险的</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><h3 id="printf-格式化输出"><a href="#printf-格式化输出" class="headerlink" title="printf()格式化输出"></a>printf()格式化输出</h3><p>Java也支持<code>printf</code>格式化输出，格式与C语言相同</p>
+<p>两个类里的<code>main函数</code>可以同时运行，当然还要看评测要求</p>
+]]></content>
+      <categories>
+        <category>OO</category>
+      </categories>
+      <tags>
+        <tag>OO</tag>
+        <tag>网课笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>概率统计复习</title>
+    <url>/Probability-and-Statistics-Review/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>缓考笨比的临时抱佛脚<del>，是时候开始预习了</del></p>
+</blockquote>
+<span id="more"></span>
+
+<p>时间紧任务重，格式问题先摆烂了，各位看官对不住。毕竟考试要紧，考试要紧</p>
+<p><strong>8.5、9.3、9.4、11.5、12.3不考</strong></p>
+<p> [TOC]</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>笔记不重要，写不完鸽了就行，重要的是学会东西<del>（啊对对对，我也没见你学会啊）</del></p>
+<p><strong>本书结构</strong>：1-6章概率论</p>
+<p>7-9章数理统计</p>
+<p>10-12章随机过程</p>
+<h1 id="第一章-随机事件的概率"><a href="#第一章-随机事件的概率" class="headerlink" title="第一章 随机事件的概率"></a>第一章 随机事件的概率</h1><h2 id="1-1-随机事件与样本空间"><a href="#1-1-随机事件与样本空间" class="headerlink" title="1.1 随机事件与样本空间"></a>1.1 随机事件与样本空间</h2><h3 id="1-试验和事件"><a href="#1-试验和事件" class="headerlink" title="1.试验和事件"></a>1.试验和事件</h3><p>随机：其结果事先不可预言</p>
+<p><strong>不特殊说明，本书中试验都指随机试验</strong></p>
+<p>随机试验特征：</p>
+<ul>
+<li>相同条件下可以重复进行</li>
+<li>能够事先明确所有可能的实验结果范围</li>
+<li>实验前不能准确预言试验结果</li>
+</ul>
+<p>事件：试验的结果</p>
+<p>随机事件：试验中可能发生，也可能不发生，用大写字母 $A, B\dots$ 表示</p>
+<p>基本事件：随机试验的每一个可能结果，也是最简单的随机事件，用小写字母 $e, w$ 表示</p>
+<p>必然事件、不可能事件：</p>
+<p>必然事件用 $S$ 或 $Ω$ 表示，不可能事件用 $\empty$ 表示</p>
+<p>不是随机事件，讨论时为方便当作随机事件</p>
+<h3 id="2-样本空间"><a href="#2-样本空间" class="headerlink" title="2.样本空间"></a>2.样本空间</h3><p>试验 $E$ 的<strong>全部基本事件</strong>组成的集合</p>
+<p><strong>随机事件是样本空间的子集</strong></p>
+<p>不可能事件 $\empty$ 表示空集，必然事件 $S$ 表示样本空间</p>
+<p>&#x3D;&#x3D;为后文用集合论讨论事件间关系和运算做准备&#x3D;&#x3D;</p>
+<h3 id="3-随机事件的关系和运算"><a href="#3-随机事件的关系和运算" class="headerlink" title="3.随机事件的关系和运算"></a>3.随机事件的关系和运算</h3><p>包含、和、积、互不相容（互斥）、互逆（对立）、差</p>
+<p>推广到有限多个、用图形表示、运算律</p>
+<p> <img src="/Examples%5CChapter1%5C1.1.3-1.png"></p>
+<p>第一章比较简单，先鸽了，后面有空再补，因为🐓组、大⑤、离散赶得有点紧了（手动百丽破防哥）</p>
+<h1 id="第二章-随机变量及其分布"><a href="#第二章-随机变量及其分布" class="headerlink" title="第二章 随机变量及其分布"></a>第二章 随机变量及其分布</h1><h2 id="2-1-随机变量"><a href="#2-1-随机变量" class="headerlink" title="2.1 随机变量"></a>2.1 随机变量</h2><p><img src="/Notes%5CChapter2%5C2.1.1-1.png"></p>
+<p>数学本质是一个可测函数</p>
+<p>&#x3D;&#x3D;将随机事件的概率问题转化为随机变量取值的概率问题&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;因此，随机变量及其取值范围的概率问题是我们今后学习和研究的主要问题&#x3D;&#x3D;</p>
+<h2 id="2-2-随机变量的分布函数"><a href="#2-2-随机变量的分布函数" class="headerlink" title="2.2 随机变量的分布函数"></a>2.2 随机变量的分布函数</h2><p>&#x3D;&#x3D;分布函数非常重要&#x3D;&#x3D;</p>
+<p><strong>定义</strong>：设 $X$ 为随机变量，则 ${X \ge x} &#x3D; {e \in S|-\infty &lt; X(e) \le x}$ 为随机事件，令</p>
+<p>$F(x) &#x3D; P{X \le x},-\infty &lt; x &lt; +\infty$</p>
+<p>为随机变量 $X$ 的**$\textcolor{red}{概率分布函数}$<strong>，简称</strong>$\textcolor{red}{分布函数}$**，记作 $X \sim F(x)$</p>
+<p>$F(x)$ 等于 $X$ 在区间 $(- \infty ,x]$ 取值的概率</p>
+<h2 id="2-3-离散型随机变量及其概率分布"><a href="#2-3-离散型随机变量及其概率分布" class="headerlink" title="2.3 离散型随机变量及其概率分布"></a>2.3 离散型随机变量及其概率分布</h2><p>$X$ 取各个可能值的概率</p>
+<p>$p_k &#x3D; P{X &#x3D; x_k}, k &#x3D; 1,2,\dots$</p>
+<p>称为概率分布（分布律、分布列）</p>
+<h2 id="2-4-常用离散型随机变量的分布律"><a href="#2-4-常用离散型随机变量的分布律" class="headerlink" title="2.4 常用离散型随机变量的分布律"></a>2.4 常用离散型随机变量的分布律</h2><h3 id="1-两点分布（（0-1）分布）"><a href="#1-两点分布（（0-1）分布）" class="headerlink" title="1.两点分布（（0-1）分布）"></a>1.两点分布（（0-1）分布）</h3><p>服从（0-1）分布的试验叫做<strong>伯努利试验</strong></p>
+<h3 id="2-泊松分布"><a href="#2-泊松分布" class="headerlink" title="2.泊松分布"></a>2.泊松分布</h3><p>$P{X &#x3D; k}&#x3D;e^{-\lambda} \frac{\lambda ^ k}{k!},k&#x3D;0,1,2,\dots$</p>
+<p>其中 $\lambda &gt; 0$，称 $X$ 服从参数为 $\lambda$ 的泊松分布，记作 $X \sim \Pi(\lambda)$，这里用到幂级数展开式 $e^x &#x3D; \sum_{k&#x3D;0}^{+\infty}{\frac{x^k}{k!}}$</p>
+<blockquote>
+<p>我头一次明白这个式子，这是前面乘一个 $e^{-\lambda}$ 系数，然后后面做幂级数求和，得到结果 $e^{\lambda}$ ，乘积恰好为1</p>
+</blockquote>
+<h3 id="3-超几何分布"><a href="#3-超几何分布" class="headerlink" title="3.超几何分布"></a>3.超几何分布</h3><p>高中学的，多练例题即可</p>
+<h3 id="4-二项分布"><a href="#4-二项分布" class="headerlink" title="4.二项分布"></a>4.二项分布</h3><p>$P{X&#x3D;k}&#x3D;\sum_{k&#x3D;0}^{n} C_{n}^{k}p^kq^{n-k},k&#x3D;0,1,2,\dots$</p>
+<blockquote>
+<p>这公式真难敲啊，顺带提一嘴，我感觉这些没啥特别的，就是一个上标一个下标，把这个写好了就行。以及MarkDown没有自己的组合数</p>
+</blockquote>
+<p>$\bcancel{你没有自己的组合数吗}$</p>
+<p>是 $(p+q)^n$ 展开式中的一般项，记作 $X \sim B(n,p)$</p>
+<p>每次概率不改变的就是二项分布，<strong>常用的：放回式取用</strong></p>
+<h3 id="5-二项分布的近似计算和查泊松分布表"><a href="#5-二项分布的近似计算和查泊松分布表" class="headerlink" title="5.二项分布的近似计算和查泊松分布表"></a>5.二项分布的近似计算和查泊松分布表</h3><p>n很大，p很小的时候，二项分布接近泊松分布（一般 $n \ge 10, p_n \le 0.1$ 时)</p>
+<p>转换公式：$\lambda &#x3D; np$</p>
+<h2 id="2-5-连续型随机变量及其概率密度函数"><a href="#2-5-连续型随机变量及其概率密度函数" class="headerlink" title="2.5 连续型随机变量及其概率密度函数"></a>2.5 连续型随机变量及其概率密度函数</h2><p>$f(x)$ 为**$\textcolor{red}{概率密度函数}$<strong>（分布密度函数），简称</strong>$\textcolor{red}{概率密度}$**</p>
+<p>&#x3D;&#x3D;概率密度和分布函数都很重要，同时也要区分清楚&#x3D;&#x3D;</p>
+<h2 id="2-6-常用的连续型随机变量分布"><a href="#2-6-常用的连续型随机变量分布" class="headerlink" title="2.6 常用的连续型随机变量分布"></a>2.6 常用的连续型随机变量分布</h2><h3 id="1-均匀分布"><a href="#1-均匀分布" class="headerlink" title="1.均匀分布"></a>1.均匀分布</h3><p>$\zeta \sim U[a,b]$</p>
+<h3 id="2-指数分布"><a href="#2-指数分布" class="headerlink" title="2.指数分布"></a>2.指数分布</h3><p>$$<br>f(x)&#x3D;<br>\begin{cases}<br>\lambda e^{- \lambda x},x \ge 0,\<br>0,x &lt; 0<br>\end{cases}<br>$$</p>
+<p>分布函数<br>$$<br>F(x)&#x3D;<br>\begin{cases}<br>0,x&lt;0,\<br>\int_{-\infty}^x f(t)dt &#x3D; 1-e^{-\lambda x},x \ge 0<br>\end{cases}<br>$$</p>
+<h3 id="3-Welbull-分布"><a href="#3-Welbull-分布" class="headerlink" title="3.Welbull 分布"></a>3.Welbull 分布</h3><p>指数分布的一般情况，没怎么考过</p>
+<h3 id="4-Gamma-函数"><a href="#4-Gamma-函数" class="headerlink" title="4.$\Gamma$ 函数"></a>4.$\Gamma$ 函数</h3><p>类似于辅助的作用，单独考有点逆天，算了不写了</p>
+<h2 id="2-7-正态分布"><a href="#2-7-正态分布" class="headerlink" title="2.7 正态分布"></a>2.7 正态分布</h2><h3 id="1-欧拉-泊松积分"><a href="#1-欧拉-泊松积分" class="headerlink" title="1.欧拉-泊松积分"></a>1.欧拉-泊松积分</h3><p>很巧妙的算法，用二重积分证明<br>$$<br>\int _{-\infty} ^{+\infty} e^{-x^2} dx &#x3D; \sqrt{\pi}<br>$$</p>
+<h3 id="2-正态分布"><a href="#2-正态分布" class="headerlink" title="2.正态分布"></a>2.正态分布</h3><p>$\Huge f(x)&#x3D;\frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2 \sigma^2}},-\infty &lt; x &lt; +\infty$</p>
+<p>记作 $\zeta \sim N(\mu,\sigma^2)$</p>
+<p>$\Huge \textcolor{red}{非常非常非常重要}$</p>
+<p>性质：</p>
+<ul>
+<li>$x &#x3D; \mu$ 时，取最大值 $f(\mu) &#x3D; \Huge\frac{1}{\sigma \sqrt{2\pi}}$</li>
+</ul>
+<h3 id="3-标准正态分布"><a href="#3-标准正态分布" class="headerlink" title="3.标准正态分布"></a>3.标准正态分布</h3><p><img src="/Notes%5CChapter2%5C2.7.3-1.png"></p>
+<p>鸽了，哥们真不想打公式了妈的</p>
+<h3 id="4-正态分布与标准正态分布的关系"><a href="#4-正态分布与标准正态分布的关系" class="headerlink" title="4.正态分布与标准正态分布的关系"></a>4.正态分布与标准正态分布的关系</h3><p>$\Huge F(x) &#x3D; \Phi(\frac{x-\mu}{\sigma}),-\infty &lt; x &lt; +\infty$</p>
+<blockquote>
+<p>意义：将不好算的数据转化成可以查表的标准正态分布，相互转换得到结果</p>
+</blockquote>
+<h3 id="5-标准正态分布的-alpha-分位点"><a href="#5-标准正态分布的-alpha-分位点" class="headerlink" title="5.标准正态分布的 $\alpha$ 分位点"></a>5.标准正态分布的 $\alpha$ 分位点</h3><blockquote>
+<p>重要理解：分位点是一个横坐标，这个图是偶函数，要注意其对称轴是 x &#x3D; 0 而非 $\frac{1}{2}$</p>
+</blockquote>
+<p><img src="/Notes%5CChapter2%5C2.7.5-1.png"></p>
+<p><del>算了，和自己达成和解，公式太多了</del></p>
+<p>考的不多但是要求一定的记忆量</p>
+<h1 id="第三章-二维随机变量"><a href="#第三章-二维随机变量" class="headerlink" title="第三章 二维随机变量"></a>第三章 二维随机变量</h1><h2 id="3-1-随机向量与联合分布"><a href="#3-1-随机向量与联合分布" class="headerlink" title="3.1 随机向量与联合分布"></a>3.1 随机向量与联合分布</h2><h3 id="1-二维随机变量的定义和分布函数的基本性质"><a href="#1-二维随机变量的定义和分布函数的基本性质" class="headerlink" title="1.二维随机变量的定义和分布函数的基本性质"></a>1.二维随机变量的定义和分布函数的基本性质</h3><p>$$<br>F(x,y) &#x3D; P{X \le x, Y \le y} }&#x3D; P{e \in S|X(e) \le x, Y(e) \le y}<br>$$</p>
+<p>称为二维随机变量 $(X,Y)$ 的分布函数或随机变量 $X$ 和 $Y$ 的联合分布函数</p>
+<p><img src="/Notes%5CChapter3%5C3.1.1-1.png"></p>
+<p><img src="/Notes%5CChapter3%5C3.1.1-2.png"></p>
+<p><strong>千万注意这个交叉计算的方式</strong></p>
+<h3 id="2-二维离散型随机变量"><a href="#2-二维离散型随机变量" class="headerlink" title="2.二维离散型随机变量"></a>2.二维离散型随机变量</h3><p>没啥想写的，鸽了吧</p>
+<p>记得有的题目要用条件概率（P73）</p>
+<h3 id="3-二维连续型随机变量"><a href="#3-二维连续型随机变量" class="headerlink" title="3.二维连续型随机变量"></a>3.二维连续型随机变量</h3><p>$\huge \frac{\partial^2 F}{\partial x \partial y}(x_0,y_0) &#x3D; f(x_0,y_0)$</p>
+<p>$\huge P{(X,Y) \in D} &#x3D; \iint_{D}f(x,y)dxdy$</p>
+<p>这里涉及到一些二重积分的内容，但是我全忘了</p>
+<p>好消息，有淑芬书，坏消息，好像把淑芬书扔家里了</p>
+<p>这两个🦁都极其重要，务必<del>基佬</del>记牢</p>
+<h3 id="4-常用的二维连续型随机变量"><a href="#4-常用的二维连续型随机变量" class="headerlink" title="4.常用的二维连续型随机变量"></a>4.常用的二维连续型随机变量</h3><p><img src="/image-20230201132709759.png" alt="image-20230201132709759"></p>
+<p>这五个变量的意义请见第五章</p>
+<h2 id="3-2-边缘分布函数"><a href="#3-2-边缘分布函数" class="headerlink" title="3.2 边缘分布函数"></a>3.2 边缘分布函数</h2><blockquote>
+<p>考虑两个变量分布函数之间的关系</p>
+</blockquote>
+<p>$$<br>F_X(x) &#x3D; \lim_{y\rightarrow+\infty} F(x,y) &#x3D; F(x, +\infty)\</p>
+<p>F_Y(y) &#x3D; \lim_{x\rightarrow+\infty} F(x,y) &#x3D; F(+\infty, y)<br>$$<br>由联合分布函数可计算边缘分布函数，但反之不可确定</p>
+<h2 id="3-3-边缘分布律与条件分布律"><a href="#3-3-边缘分布律与条件分布律" class="headerlink" title="3.3 边缘分布律与条件分布律"></a>3.3 边缘分布律与条件分布律</h2><p>$(X, Y)$ 关于 $X$ 的变量分布律正好是联合分布律表中各行概率相加</p>
+<p>$(X, Y)$ 关于 $Y$ 的变量分布律正好是联合分布律表中各行概率相加</p>
+<p><img src="/image-20230201132953614.png" alt="image-20230201132953614"></p>
+<h2 id="3-4-边缘概率密度与条件概率密度"><a href="#3-4-边缘概率密度与条件概率密度" class="headerlink" title="3.4 边缘概率密度与条件概率密度"></a>3.4 边缘概率密度与条件概率密度</h2><h3 id="1-边缘概率密度"><a href="#1-边缘概率密度" class="headerlink" title="1.边缘概率密度"></a>1.边缘概率密度</h3><p>$$<br>f_X(x)&#x3D;\int_{-\infty}^{+\infty} f(x,y)dy\<br>f_Y(y)&#x3D;\int_{-\infty}^{+\infty} f(x,y)dx<br>$$</p>
+<h3 id="2-条件概率密度"><a href="#2-条件概率密度" class="headerlink" title="2.条件概率密度"></a>2.条件概率密度</h3><p><img src="/image-20230201133151631.png" alt="image-20230201133151631"><br>$$<br>F_{X|Y}(x|y) &#x3D; \frac{\frac{\partial}{\partial x}F(x,y)}{\frac{d}{dx}F_Y(y)}\<br>F_{Y|X}(y|x) &#x3D; \frac{\frac{\partial}{\partial y}F(x,y)}{\frac{d}{dy}F_X(x)}\<br>F_{X|Y}(x|y) &#x3D; \int_{-\infty}^x \frac{f(u,y)}{f_Y(y)} du\<br>F_{Y|X}(y|x) &#x3D; \int_{-\infty}^y \frac{f(x,v)}{f_X(x)} dv\<br>f_{X|Y}(x|y) &#x3D; \frac{f(x,y)}{f_Y(y)}\<br>f_{Y|X}(y|x) &#x3D; \frac{f(x,y)}{f_X(x)}<br>$$</p>
+<h2 id="3-5-相互独立的随机变量"><a href="#3-5-相互独立的随机变量" class="headerlink" title="3.5 相互独立的随机变量"></a>3.5 相互独立的随机变量</h2><h3 id="1-相互独立"><a href="#1-相互独立" class="headerlink" title="1.相互独立"></a>1.相互独立</h3><p>$$<br>P{X \le x, Y \le y} &#x3D; P{X \le x}·P{Y \le y} \<br>F(x, y) &#x3D; F_X(x)·F_Y(y), -\infty &lt; x, y &lt; \infty<br>$$</p>
+<h3 id="2-离散型随机变量相互独立判别定理"><a href="#2-离散型随机变量相互独立判别定理" class="headerlink" title="2.离散型随机变量相互独立判别定理"></a>2.离散型随机变量相互独立判别定理</h3><p>$$<br>P{X \le x_i, Y \le y_j} &#x3D; P{X \le x_i}·P{Y \le y_j},i,j&#x3D;1,2,\dots<br>$$</p>
+<h3 id="3-连续型随机变量相互独立判别定理"><a href="#3-连续型随机变量相互独立判别定理" class="headerlink" title="3.连续型随机变量相互独立判别定理"></a>3.连续型随机变量相互独立判别定理</h3><p>$$<br>f(x,y) &#x3D; f_X(x)·f_Y(y)<br>$$</p>
+<p>（几乎处处）</p>
+<h3 id="4-有限多个或可列个变量相互独立"><a href="#4-有限多个或可列个变量相互独立" class="headerlink" title="4.有限多个或可列个变量相互独立"></a>4.有限多个或可列个变量相互独立</h3><h1 id="第四章-随机变量的函数的分布"><a href="#第四章-随机变量的函数的分布" class="headerlink" title="第四章 随机变量的函数的分布"></a>第四章 随机变量的函数的分布</h1><blockquote>
+<p>用已有的概率分布求出函数式的概率分布</p>
+</blockquote>
+<h2 id="4-1-离散型随机变量的函数的分布"><a href="#4-1-离散型随机变量的函数的分布" class="headerlink" title="4.1 离散型随机变量的函数的分布"></a>4.1 离散型随机变量的函数的分布</h2><h3 id="1-一维离散型随机变量的函数的分布律"><a href="#1-一维离散型随机变量的函数的分布律" class="headerlink" title="1.一维离散型随机变量的函数的分布律"></a>1.一维离散型随机变量的函数的分布律</h3><p>y相同相加，不同分列</p>
+<h3 id="2-二维离散型随机变量的函数的分布律"><a href="#2-二维离散型随机变量的函数的分布律" class="headerlink" title="2.二维离散型随机变量的函数的分布律"></a>2.二维离散型随机变量的函数的分布律</h3><p>求出具体值</p>
+<h2 id="4-2-一维连续型随机变量的函数的分布"><a href="#4-2-一维连续型随机变量的函数的分布" class="headerlink" title="4.2 一维连续型随机变量的函数的分布"></a>4.2 一维连续型随机变量的函数的分布</h2><p>把y的范围转化成x的范围</p>
+<p>一般方法：先求 $Y &#x3D; g(X)$ 的分布函数 $F_Y(y)$，求导得到 $f_Y(y)$</p>
+<p>也有公式，可以无脑套用<img src="/image-20230201133941348.png" alt="image-20230201133941348"></p>
+<h2 id="4-3-二维连续型随机变量的函数的分布"><a href="#4-3-二维连续型随机变量的函数的分布" class="headerlink" title="4.3 二维连续型随机变量的函数的分布"></a>4.3 二维连续型随机变量的函数的分布</h2><p>转化成二重积分</p>
+<p>几种特殊的方法：</p>
+<h3 id="1-Z-x3D-X-Y-的分布"><a href="#1-Z-x3D-X-Y-的分布" class="headerlink" title="1.$Z &#x3D; X + Y$ 的分布"></a>1.$Z &#x3D; X + Y$ 的分布</h3><p>$$<br>f_Z(z)&#x3D;\int_{-\infty}^{+\infty} f(x,z-x)dx &#x3D; \int_{\over{AB}} f(x,y)dx<br>$$</p>
+<p>第二型曲线积分</p>
+<p>有点复杂啊，回头得好好看看</p>
+<h3 id="2-Z-x3D-max-X-Y-的分布"><a href="#2-Z-x3D-max-X-Y-的分布" class="headerlink" title="2.$Z &#x3D; max{X + Y}$ 的分布"></a>2.$Z &#x3D; max{X + Y}$ 的分布</h3><p>$$<br>{Z \le z} &#x3D; {X \le z, Y \le z}<br>$$</p>
+<p><img src="/Notes%5CChapter4%5C4.3.2-1.png"></p>
+<h3 id="3-Z-x3D-min-X-Y-的分布"><a href="#3-Z-x3D-min-X-Y-的分布" class="headerlink" title="3.$Z &#x3D; min{X + Y}$ 的分布"></a>3.$Z &#x3D; min{X + Y}$ 的分布</h3><p><img src="/Notes%5CChapter4%5C4.3.3-1.png"></p>
+<h1 id="第五章-随机变量的数字特征"><a href="#第五章-随机变量的数字特征" class="headerlink" title="第五章 随机变量的数字特征"></a>第五章 随机变量的数字特征</h1><p>数字特征，指联系于分布函数的某些数：如平均值，方差等。反映了随机变量在某些方面的特征</p>
+<p>确定分布函数需要一些参数，而参数又往往由某些数字特征或其他数值所决定，故找到这些特征便能确定分布函数。</p>
+<p>实际中确定这些特征比较困难，而且没有必要，有时只需要知晓随机变量的某些特征即可。</p>
+<h2 id="5-1-数学期望"><a href="#5-1-数学期望" class="headerlink" title="5.1 数学期望"></a>5.1 数学期望</h2><p>P129，例4，收敛需要特殊记一下</p>
+<p>相加相乘的性质</p>
+<p><img src="/image-20230201135028202.png" alt="image-20230201135028202"></p>
+<p><strong>几个定理</strong></p>
+<p><img src="/image-20230201134714012.png" alt="image-20230201134714012"></p>
+<p><img src="/image-20230201134726376.png" alt="image-20230201134726376"></p>
+<h2 id="5-2-方差"><a href="#5-2-方差" class="headerlink" title="5.2 方差"></a>5.2 方差</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>几种符号</p>
+<p>带括号不带括号，Var</p>
+<p>标准差、均方差</p>
+<p><strong>重要的计算公式 $ DX  &#x3D; EX^2 - (EX)^2 $</strong></p>
+<h3 id="2-性质"><a href="#2-性质" class="headerlink" title="2.性质"></a>2.性质</h3><p><img src="/image-20230201135954111.png" alt="image-20230201135954111"></p>
+<p><img src="/image-20230201140009843.png" alt="image-20230201140009843"></p>
+<h2 id="5-3-常用随机变量的数学期望和方差"><a href="#5-3-常用随机变量的数学期望和方差" class="headerlink" title="5.3 常用随机变量的数学期望和方差"></a>5.3 常用随机变量的数学期望和方差</h2><h3 id="0-1分布"><a href="#0-1分布" class="headerlink" title="0-1分布"></a>0-1分布</h3><p>$EX &#x3D; p, DX &#x3D; p(1-p)$</p>
+<h3 id="二项分布"><a href="#二项分布" class="headerlink" title="二项分布"></a>二项分布</h3><p>$EX &#x3D; np, DX &#x3D; npq$</p>
+<h3 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h3><p>$EX &#x3D; \lambda, DX &#x3D; \lambda$</p>
+<h3 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h3><p>$EX &#x3D; \frac{a + b}{2}, DX &#x3D; \frac{(b-a)^2}{12}$</p>
+<h3 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h3><p>$EX &#x3D; \frac{1}{\lambda}, DX &#x3D; \frac{1}{\lambda^2}$</p>
+<h2 id="5-4-协方差和相关系数"><a href="#5-4-协方差和相关系数" class="headerlink" title="5.4 协方差和相关系数"></a>5.4 协方差和相关系数</h2><p>表征二维向量 X 与 Y 之间的关系</p>
+<h3 id="1-协方差"><a href="#1-协方差" class="headerlink" title="1.协方差"></a>1.协方差</h3><p>$$ Cov(X,Y) &#x3D; E[(X - EX) · (Y - EY)] $$</p>
+<p>$$ Cov(X,Y) &#x3D; E(XY) - EX·EY $$</p>
+<p>性质为：</p>
+<h3 id="2-相关系数"><a href="#2-相关系数" class="headerlink" title="2.相关系数"></a>2.相关系数</h3><p>也称标准协方差，记作 $\rho$</p>
+<h3 id="3-计算举例"><a href="#3-计算举例" class="headerlink" title="3.计算举例"></a>3.计算举例</h3><blockquote>
+<p>时刻铭记：协方差本身就是一种方差，计算的时候不需要再乘上 $\sqrt{DX} \sqrt{DY}$ 了 </p>
+</blockquote>
+<h2 id="5-5-矩-协方差矩阵"><a href="#5-5-矩-协方差矩阵" class="headerlink" title="5.5 矩 协方差矩阵"></a>5.5 矩 协方差矩阵</h2><p>记一下概念就行，式子比较麻烦后面补</p>
+<p>以及这里应该不考，所以暂时先放了</p>
+<h1 id="第六章-大数定律和中心极限定理"><a href="#第六章-大数定律和中心极限定理" class="headerlink" title="第六章 大数定律和中心极限定理"></a>第六章 大数定律和中心极限定理</h1><p>极限可以刻画相同条件下大量重复的试验</p>
+<p><strong>这章的思路：</strong></p>
+<p><strong>大数定律：</strong></p>
+<blockquote>
+<p>随机事件的大量重复出现中，存在几乎必然的规律</p>
+</blockquote>
+<ul>
+<li><strong>事件的频率作为事件的概率的估计</strong></li>
+<li><strong>样本均值作为总体均值的估计</strong></li>
+</ul>
+<p><strong>中心极限定理：</strong></p>
+<ul>
+<li><strong>正态分布在概率论中占有极其重要的地位</strong></li>
+</ul>
+<h2 id="6-1-马尔可夫不等式和切比雪夫不等式"><a href="#6-1-马尔可夫不等式和切比雪夫不等式" class="headerlink" title="6.1 马尔可夫不等式和切比雪夫不等式"></a>6.1 马尔可夫不等式和切比雪夫不等式</h2><p>两个重要的不等式，研究大数定律的基本工具</p>
+<p><img src="/Notes%5CChapter6%5C6.1-1.png"><img src="/Notes%5CChapter6%5C6.1-2.png"></p>
+<p>马尔可夫不等式是前文提到的 k 阶绝对矩</p>
+<p>切比雪夫不等式主要用于概率估计和理论推导</p>
+<ul>
+<li>理论上证实了 方差度量随机变量取值偏离均值的程度</li>
+<li>引出了方差估计的“尾概率”</li>
+</ul>
+<p><img src="/Notes%5CChapter6%5C6.1-3.png"></p>
+<blockquote>
+<p>没有偏离，则是所有变量相同取值，很好理解</p>
+</blockquote>
+<h2 id="6-2-大数定律"><a href="#6-2-大数定律" class="headerlink" title="6.2 大数定律"></a>6.2 大数定律</h2><p>频率收敛到概率的理论根据</p>
+<p>我们只介绍一些弱的情况</p>
+<p><img src="/Notes%5CChapter6%5C6.2-1.png"><img src="/Notes%5CChapter6%5C6.2-2.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-3.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-4.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-5.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-6.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-7.png"></p>
+<h2 id="6-3-中心极限定理"><a href="#6-3-中心极限定理" class="headerlink" title="6.3 中心极限定理"></a>6.3 中心极限定理</h2><p>人们在对大量随机现象的研究中发现，如果一个量是由大量相互独立的随机因素所造成，而每一个因素在总量中所起的作用又较小，那么这种量通常服从或近似服从正态分布. 这种现象就是中心极限定理的客观背景.</p>
+<p><img src="/Notes%5CChapter6%5C6.3-1.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.3-2.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.3-3.png"></p>
+<p><strong>独立同分布的随机变量序列，它们本身不服从正态分布，但是多个随机变量和的极限分布是正态分布，这就是量变引起质变的道理．</strong></p>
+<p>设 $X_1,X_2,\dots,X_n,\dots$ 是相互独立的随机变量序列，且其服从参数为 $\lambda$ 的指数分布，则</p>
+<p><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220346361.png" alt="image-20221120220341455" style="zoom:67%;" /><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220355682.png" alt="image-20221120220355682" style="zoom:67%;" /><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220400188.png" alt="image-20221120220400188" style="zoom:67%;" /></p>
+<p>（公式太复杂，复制了个图片，摸了）</p>
+<h1 id="第七章-统计总体与样本"><a href="#第七章-统计总体与样本" class="headerlink" title="第七章 统计总体与样本"></a>第七章 统计总体与样本</h1><p><img src="/Notes%5CChapter7%5C7-1.png"></p>
+<p><strong>省流：只有参数估计和假设检验</strong></p>
+<h2 id="7-1-总体与样本"><a href="#7-1-总体与样本" class="headerlink" title="7.1 总体与样本"></a>7.1 总体与样本</h2><h3 id="1-总体与个体"><a href="#1-总体与个体" class="headerlink" title="1.总体与个体"></a>1.总体与个体</h3><p>总体：具有一定共同属性的研究对象的全体</p>
+<p>个体：组成总体的每一个元素</p>
+<p>总体通常用 $\Omega &#x3D; { \omega }$ 或 $S &#x3D; {e}$ 表示</p>
+<p>在实际中，我们主要关心的是研究对象的某一（或某几项）<strong>数量指标 $X&#x3D;X(\omega)$</strong> ，它是一个随机变量</p>
+<blockquote>
+<p>将总体的分布用随机变量刻画</p>
+</blockquote>
+<p>随机变量 $X$ 的分布就是总体的分布</p>
+<p>总体就是指随机变量 $X$ 或 $X$ 的取值集合 </p>
+<h3 id="2-样本与样本值"><a href="#2-样本与样本值" class="headerlink" title="2.样本与样本值"></a>2.样本与样本值</h3><p>用部分统计的方法</p>
+<p>从总体 $X$ 中有放回地随机抽取 $n$ 个数值，$x_i$ 是一次抽样观察（记录）的结果，$x_1,x_2,\dots,x_n$ 为总体 $X$ 的一组样本观察值，简称<strong>样本值</strong></p>
+<p><img src="/Notes%5CChapter7%5C7.1-1.png"></p>
+<p>这一段的一个重要的概念：<strong>观察值（样本值）独立与总体同分布</strong></p>
+<p>简单随机样本、简单随机抽样（不再赘述）</p>
+<p><strong>默认所提到的样本都是简单随机样本</strong></p>
+<p><img src="/Notes%5CChapter7%5C7.1-2.png"></p>
+<h2 id="7-2-样本矩和统计量"><a href="#7-2-样本矩和统计量" class="headerlink" title="7.2 样本矩和统计量"></a>7.2 样本矩和统计量</h2><blockquote>
+<p>一些加工样本的方法</p>
+</blockquote>
+<h3 id="1-样本矩"><a href="#1-样本矩" class="headerlink" title="1.样本矩"></a>1.样本矩</h3><p>样本 $k$ 阶矩（$k$ 阶原点矩）：<br>$$<br>A_k &#x3D; \frac{1}{n}\sum_{i &#x3D; 1}^n X_i ^ k<br>$$</p>
+<p>样本 $k$ 阶中心矩：<br>$$<br>B_k &#x3D; \frac{1}{n} \sum_{i &#x3D; 1} ^n (X_i - \overline{X}) ^ k<br>$$</p>
+<p>样本均值、样本方差、样本 $k$ 阶矩和样本 $k$ 阶中心矩都是<strong>随机变量</strong></p>
+<p><img src="/Notes%5CChapter7%5C7.2-1.png"></p>
+<p><img src="/Notes%5CChapter7%5C7.2-2.png"></p>
+<blockquote>
+<p>样本 $k$ 阶矩收敛于总体 $k$ 阶矩</p>
+</blockquote>
+<h3 id="2-统计量"><a href="#2-统计量" class="headerlink" title="2.统计量"></a>2.统计量</h3><blockquote>
+<p>对样本进行加工，需要针对不同的统计问题构造一个<strong>不含未知参数</strong>的样本的连续函数，称为统计量</p>
+</blockquote>
+<blockquote>
+<p>若含有总体的未知参数，即使得到了样本的观测数据，仍然不能由这些样本数据通过统计量计算出要估计的量的值</p>
+</blockquote>
+<h3 id="3-顺序统计量与经验分布函数"><a href="#3-顺序统计量与经验分布函数" class="headerlink" title="3.顺序统计量与经验分布函数"></a>3.顺序统计量与经验分布函数</h3><h2 id="7-3-常用统计量的分布"><a href="#7-3-常用统计量的分布" class="headerlink" title="7.3 常用统计量的分布"></a>7.3 常用统计量的分布</h2><blockquote>
+<p>统计量是对总体的分布或数字特征进行推断的基础。因此求统计量的分布是数理统计的基本问题之一</p>
+</blockquote>
+<blockquote>
+<p>只研究正态总体的统计量分布</p>
+</blockquote>
+<p><strong>见另一个手写文件</strong></p>
+<h1 id="第八章-参数估计"><a href="#第八章-参数估计" class="headerlink" title="第八章 参数估计"></a>第八章 参数估计</h1><h2 id="8-1-参数的点估计"><a href="#8-1-参数的点估计" class="headerlink" title="8.1 参数的点估计"></a>8.1 参数的点估计</h2><p><img src="/Notes%5CChapter8%5C8.1-1.png"></p>
+<p>用样本值估计总体的参数叫做参数估计</p>
+<p>参数估计分为点估计和区间估计</p>
+<p><strong>参数点估计的两种方法：矩估计法和极大似然估计法</strong></p>
+<p>对于同一个参数，得出的估计量也是有时相同有时不同</p>
+<h3 id="1-矩估计法"><a href="#1-矩估计法" class="headerlink" title="1.矩估计法"></a>1.矩估计法</h3><p>令样本矩 &#x3D; 总体矩解出矩估计量，矩估计量的观察值称为矩估计值</p>
+<p>当样本一阶原点矩的式子中不含 $\theta$ 时，需要求出二阶原点矩或者一阶绝对矩</p>
+<h3 id="2-极大似然估计法"><a href="#2-极大似然估计法" class="headerlink" title="2.极大似然估计法"></a>2.极大似然估计法</h3><p><strong>分连续型总体和离散型总体两种情况</strong></p>
+<p>连续型总体：$L(\theta) &#x3D; \Pi_{i &#x3D; 1} ^{n} f(x_i;\theta)$，求导求最大值对应的 $\theta$ 即为所求</p>
+<p>离散型总体：$L(\theta) &#x3D; \Pi_{i &#x3D; 1} ^{n} p(x_i;\theta)$，求导求最大值对应的 $\theta$ 即为所求</p>
+<p>喜欢考的题：P203，指数的取最小值，倒数的取最大值</p>
+<h2 id="8-2-点估计量的优良性"><a href="#8-2-点估计量的优良性" class="headerlink" title="8.2 点估计量的优良性"></a>8.2 点估计量的优良性</h2><blockquote>
+<p>评价估计量好坏的标准</p>
+</blockquote>
+<h3 id="1-无偏估计"><a href="#1-无偏估计" class="headerlink" title="1.无偏估计"></a>1.无偏估计</h3><p>$E(\hat{\theta}) &#x3D; \theta$</p>
+<p>对于几个无偏估计量应该也有区分他们好坏的标准</p>
+<h3 id="2-最小方差无偏估计"><a href="#2-最小方差无偏估计" class="headerlink" title="2.最小方差无偏估计"></a>2.最小方差无偏估计</h3><p>对任一无偏估计 $\hat{\theta_2}$ ，均有 $D(\hat{\theta_1}) \leq D(\hat{\theta_2})$</p>
+<p>对于正态总体找起来较为简单</p>
+<h3 id="3-一致估计"><a href="#3-一致估计" class="headerlink" title="3.一致估计"></a>3.一致估计</h3><h2 id="8-3-区间估计与置信区间"><a href="#8-3-区间估计与置信区间" class="headerlink" title="8.3 区间估计与置信区间"></a>8.3 区间估计与置信区间</h2><blockquote>
+<p>$\theta$ 所在区间和区间包含 $\theta$ 的可靠程度</p>
+</blockquote>
+<h3 id="1-置信区间"><a href="#1-置信区间" class="headerlink" title="1.置信区间"></a>1.置信区间</h3><h3 id="2-单侧置信限"><a href="#2-单侧置信限" class="headerlink" title="2.单侧置信限"></a>2.单侧置信限</h3><p>只关心置信区间的上限或下限</p>
+<p>目前仅能实现对正态总体的参数 $\mu$ 和 $\sigma$ 的区间估计</p>
+<h2 id="8-4-正态总体均值和方差的区间估计"><a href="#8-4-正态总体均值和方差的区间估计" class="headerlink" title="8.4 正态总体均值和方差的区间估计"></a>8.4 正态总体均值和方差的区间估计</h2><h3 id="1-均值-EX-的区间估计"><a href="#1-均值-EX-的区间估计" class="headerlink" title="1.均值 EX 的区间估计"></a>1.均值 EX 的区间估计</h3><h4 id="（1）方差DX已知，对EX进行区间估计"><a href="#（1）方差DX已知，对EX进行区间估计" class="headerlink" title="（1）方差DX已知，对EX进行区间估计"></a>（1）方差DX已知，对EX进行区间估计</h4><p>用统计量 $U$ 估计</p>
+<p>查这个比较多，因为算数简单</p>
+<h4 id="（2）方差DX未知，对EX进行区间估计"><a href="#（2）方差DX未知，对EX进行区间估计" class="headerlink" title="（2）方差DX未知，对EX进行区间估计"></a>（2）方差DX未知，对EX进行区间估计</h4><p>用统计量 $T$ 估计</p>
+<h3 id="2-方差-DX-的区间估计"><a href="#2-方差-DX-的区间估计" class="headerlink" title="2.方差 DX 的区间估计"></a>2.方差 DX 的区间估计</h3><h2 id="8-5-不考，略过"><a href="#8-5-不考，略过" class="headerlink" title="8.5 不考，略过"></a>8.5 不考，略过</h2><h1 id="第九章-假设检验"><a href="#第九章-假设检验" class="headerlink" title="第九章 假设检验"></a>第九章 假设检验</h1><p>先对<strong>总体</strong>做出某种假设，然后通过样本数据对假设做出接受或者拒绝</p>
+<h2 id="9-1-假设检验的提出及其基本思想"><a href="#9-1-假设检验的提出及其基本思想" class="headerlink" title="9.1 假设检验的提出及其基本思想"></a>9.1 假设检验的提出及其基本思想</h2><h2 id="9-2-正态总体均值和方差的假设检验"><a href="#9-2-正态总体均值和方差的假设检验" class="headerlink" title="9.2 正态总体均值和方差的假设检验"></a>9.2 正态总体均值和方差的假设检验</h2><h3 id="1-方差-sigma-2-已知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意"><a href="#1-方差-sigma-2-已知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意" class="headerlink" title="1.方差 $\sigma^2$ 已知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意"></a>1.方差 $\sigma^2$ 已知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</h3><p>采用统计量 $U_0 &#x3D; \frac{\overline{x} - \mu_0}{\sigma&#x2F;\sqrt{n}}$ 作为检验函数，$U_0 &#x3D; \frac{\overline{x} - \mu_0}{\sigma&#x2F;\sqrt{n}} \sim N(0,1)$</p>
+<h3 id="2-方差-sigma-2-未知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意"><a href="#2-方差-sigma-2-未知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意" class="headerlink" title="2.方差 $\sigma^2$ 未知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意"></a>2.方差 $\sigma^2$ 未知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</h3><p>采用统计量 $T &#x3D; \frac{\overline{x} - \mu_0}{s&#x2F;\sqrt{n}}$ 作为检验函数，$T &#x3D; \frac{\overline{x} - \mu_0}{s&#x2F;\sqrt{n}} \sim t(n-1)$</p>
+<h3 id="3-（单个）正态总体方差的假设检验"><a href="#3-（单个）正态总体方差的假设检验" class="headerlink" title="3.（单个）正态总体方差的假设检验"></a>3.（单个）正态总体方差的假设检验</h3><p>采用统计量 $W &#x3D; \frac{(n-1)s^{2}}{\sigma_0^2}$，$W &#x3D; \frac{(n-1)s^{2}}{\sigma_0^2} \sim \chi^2(n-1)$</p>
+<h2 id="9-3、9-4-不考，略过"><a href="#9-3、9-4-不考，略过" class="headerlink" title="9.3、9.4 不考，略过"></a>9.3、9.4 不考，略过</h2><h1 id="第十章-随机过程的基本概念"><a href="#第十章-随机过程的基本概念" class="headerlink" title="第十章 随机过程的基本概念"></a>第十章 随机过程的基本概念</h1><h2 id="10-1-随机过程的定义及分类"><a href="#10-1-随机过程的定义及分类" class="headerlink" title="10.1 随机过程的定义及分类"></a>10.1 随机过程的定义及分类</h2><h3 id="1-随机过程的概念"><a href="#1-随机过程的概念" class="headerlink" title="1.随机过程的概念"></a>1.随机过程的概念</h3><h3 id="2-随机过程的分类"><a href="#2-随机过程的分类" class="headerlink" title="2.随机过程的分类"></a>2.随机过程的分类</h3><p>二阶矩过程，包括正态过程和平稳过程等</p>
+<p>马尔可夫过程…</p>
+<h2 id="10-2-随机过程的概率分布"><a href="#10-2-随机过程的概率分布" class="headerlink" title="10.2 随机过程的概率分布"></a>10.2 随机过程的概率分布</h2><h3 id="1-随机过程的-n-维分布函数"><a href="#1-随机过程的-n-维分布函数" class="headerlink" title="1.随机过程的 $n$ 维分布函数"></a>1.随机过程的 $n$ 维分布函数</h3><h3 id="2-独立过程"><a href="#2-独立过程" class="headerlink" title="2.独立过程"></a>2.独立过程</h3><p>任意 $n$ 个过程都是独立的，由过程的一维分布函数就能确定该过程的统计特征</p>
+<p><img src="/image-20230211095739087.png" alt="image-20230211095739087"></p>
+<h3 id="3-两个随机过程的有限维联合分布及独立性"><a href="#3-两个随机过程的有限维联合分布及独立性" class="headerlink" title="3.两个随机过程的有限维联合分布及独立性"></a>3.两个随机过程的有限维联合分布及独立性</h3><h2 id="10-3-随机过程的数字特征（比前面更易考）"><a href="#10-3-随机过程的数字特征（比前面更易考）" class="headerlink" title="10.3 随机过程的数字特征（比前面更易考）"></a>10.3 随机过程的数字特征（比前面更易考）</h2><blockquote>
+<p>随机过程是随机变量构成的集合，所以可以通过考察随机变量的数字特征来研究</p>
+</blockquote>
+<p><img src="/image-20230211100031053.png" alt="image-20230211100031053"></p>
+<h1 id="第十一章-平稳过程"><a href="#第十一章-平稳过程" class="headerlink" title="第十一章 平稳过程"></a>第十一章 平稳过程</h1><h2 id="考试题型"><a href="#考试题型" class="headerlink" title="考试题型"></a>考试题型</h2><p>先写 $\Theta$ 和 $X$ 基础的分布、再求数字特征，最后判断是不是平稳过程</p>
+<h2 id="11-1-严平稳过程"><a href="#11-1-严平稳过程" class="headerlink" title="11.1 严平稳过程"></a>11.1 严平稳过程</h2><h2 id="11-2-广义平稳过程（平稳过程）"><a href="#11-2-广义平稳过程（平稳过程）" class="headerlink" title="11.2 广义平稳过程（平稳过程）"></a>11.2 广义平稳过程（平稳过程）</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><p><img src="/1.png" alt="1"></p>
+<h3 id="2-数字特征的性质"><a href="#2-数字特征的性质" class="headerlink" title="2.数字特征的性质"></a>2.数字特征的性质</h3><h1 id="第十二章-马尔可夫链引论"><a href="#第十二章-马尔可夫链引论" class="headerlink" title="第十二章 马尔可夫链引论"></a>第十二章 马尔可夫链引论</h1><h2 id="考试题型-1"><a href="#考试题型-1" class="headerlink" title="考试题型"></a>考试题型</h2><p>判断、状态空间、一步转移矩阵、平稳分布、两步的总条件概率</p>
+<p>判断：<img src="/image-20230211091530921.png" alt="image-20230211091530921"></p>
+<p>用上面的判据好像稍微多一些</p>
+<p><img src="/image-20230211091800582.png" alt="image-20230211091800582"></p>
+<p><img src="/image-20230211093731986.png" alt="image-20230211093731986"></p>
+<p>两步的条件概率要注意马尔可夫的独立性，或者说是标明了一种确定的状态转移过程</p>
+<p>平稳过程和马尔可夫一般都作为最后一道题出现，但是他们的难度并不大，基本都是套路题，能拿的分要稳稳握住</p>
+<p>祝诸君考试都有好运气</p>
+]]></content>
+      <categories>
+        <category>概率统计</category>
+      </categories>
+      <tags>
+        <tag>概率统计</tag>
+        <tag>S3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科目三实战技巧</title>
+    <url>/subject3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>笔者与科三的爱恨情仇</p>
+</blockquote>
+<span id="more"></span>
+
+<p>笔者去年没有练完的科三拖到了今年来练…在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
+<h3 id="上车准备"><a href="#上车准备" class="headerlink" title="上车准备"></a>上车准备</h3><blockquote>
+<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
+</blockquote>
+<h3 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h3><blockquote>
+<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
+</blockquote>
+<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><blockquote>
+<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
+</blockquote>
+<h3 id="行驶中"><a href="#行驶中" class="headerlink" title="行驶中"></a>行驶中</h3><blockquote>
+<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
+<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
+<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
+<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
+<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
+<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
+<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
+<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
+<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
+<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
+<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>生活记录</category>
+      </categories>
+      <tags>
+        <tag>科目三</tag>
       </tags>
   </entry>
 </search>
