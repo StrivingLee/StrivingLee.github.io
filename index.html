@@ -218,7 +218,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-03-19 19:48:38" itemprop="dateModified" datetime="2023-03-19T19:48:38+08:00">2023-03-19</time>
+                <time title="Modified: 2023-06-22 21:50:32" itemprop="dateModified" datetime="2023-06-22T21:50:32+08:00">2023-06-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,7 +243,7 @@
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1:22</span>
+              <span>1:24</span>
             </span>
 
         </div>
@@ -530,7 +530,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>permissions = <span class="string">&#x27;rw&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;w&#x27;</span> <span class="keyword">in</span> permissions</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>单引号、双引号和三个相同引号（单、双）均可以表示字符串</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;Let&#x27;s go&quot;</span></span><br><span class="line"><span class="string">&quot;Let&#x27;s go&quot;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;&quot;Hello, world!&quot; she said&#x27;</span></span><br><span class="line"><span class="string">&#x27;&quot;Hello, world!&quot; she said&#x27;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&quot;Let&#x27;s go&quot;</span></span><br><span class="line"><span class="string">&quot;Let&#x27;s go&quot;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;&quot;Hello, world!&quot; she said&#x27;</span></span><br><span class="line"><span class="string">&#x27;&quot;Hello, world!&quot; she said&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 当然这里也可将字符串中的单引号或双引号转义</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>字符串不可变！！！</strong>所以分片赋值是不合法的</p>
 <h3 id="长字符串"><a href="#长字符串" class="headerlink" title="长字符串"></a>长字符串</h3><p>用三个单引号或者双引号引用跨行字符串（不需要反斜线换行），常用于文档字符串，在特定地点充当注释</p>
@@ -1139,10 +1139,13 @@
 <li><a target="_blank" rel="noopener" href="https://www.runoob.com/python/file-methods.html">File 对象方法</a>: file 对象提供了操作文件的一系列方法。</li>
 <li><a target="_blank" rel="noopener" href="https://www.runoob.com/python/os-file-methods.html">OS 对象方法</a>: 提供了处理文件及目录的一系列方法。</li>
 </ul>
-<h1 id="七、异常处理"><a href="#七、异常处理" class="headerlink" title="七、异常处理"></a>七、异常处理</h1><p>python提供了两个非常重要的功能来处理python程序在运行中出现的异常和错误，便于调试python程序。</p>
+<h1 id="七、异常处理"><a href="#七、异常处理" class="headerlink" title="七、异常处理"></a>七、异常处理</h1><p>异常对象未被处理（或捕获）时，程序终止并将显示一条错误信息（traceback）</p>
+<p>异常事实上是某个类的实例，你能以各种方式引发和捕获这些实例，从而逮住错误并采取措施而非放任程序崩溃</p>
+<p>python提供了两个非常重要的功能来处理python程序在运行中出现的异常和错误，便于调试python程序。</p>
 <ul>
 <li>异常处理：try&#x2F;except</li>
 <li>断言(Assertions)</li>
+<li></li>
 </ul>
 <h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>捕捉异常可以使用 <code>try/except</code> 语句。</p>
 <p><code>try/except</code> 语句用来检测 <code>try</code> 语句块中的错误，从而让 <code>except</code> 语句捕获异常信息并处理。如果不想在异常发生时就结束程序，只需在 <code>try</code> 里捕获它</p>
@@ -1371,9 +1374,27 @@
 <li><strong>_foo</strong>: 以单下划线开头的表示的是 <code>protected</code> 类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于 <strong>from module import *</strong></li>
 <li><strong>__foo</strong>: 双下划线的表示的是 <code>private</code> 类型的变量, 只能是允许这个类本身进行访问了。</li>
 </ul>
-<h1 id="九、写在最后"><a href="#九、写在最后" class="headerlink" title="九、写在最后"></a>九、写在最后</h1><p>前前后后花了一周时间慢慢悠悠看书，后来发现书里的内容有一部分是 Python2.X 的过时内容。于是我重新打开书翻到序，作者说“对于这些改动，我持保守态度”。果然技术书籍（在版本更迭的情况下）还是看新的好</p>
-<p>题外话：菜鸟就图一乐，就是知识点罗列，真学好学精还得看经典书，书对知识点的诠释是知识清单所不及的</p>
-<p>快快乐乐慢慢悠悠看 Python 书的日子结束了，该进入哪一段紧张刺激的旅程了呢？</p>
+<h1 id="九、魔法方法、特性和迭代器"><a href="#九、魔法方法、特性和迭代器" class="headerlink" title="九、魔法方法、特性和迭代器"></a>九、魔法方法、特性和迭代器</h1><p>构造方法、析构方法</p>
+<h2 id="重写普通方法和特殊的构造函数"><a href="#重写普通方法和特殊的构造函数" class="headerlink" title="重写普通方法和特殊的构造函数"></a>重写普通方法和特殊的构造函数</h2><p>对类 B 的实例调用方法或访问其属性时，如果找不到，将在其超类 A 中查找</p>
+<p>重写构造函数时可能遇到一个特殊的问题：必须调用超类的构造函数，否则可能没有对应的成员</p>
+<h2 id="使用函数super"><a href="#使用函数super" class="headerlink" title="使用函数super"></a>使用函数super</h2><p>将当前类和当前实例作为参数，调用超类的方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Bird</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.hungry = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">eat</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> self.hungry:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;Aaaah ...&#x27;</span>)</span><br><span class="line">            self.hungry = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;No thanks!&#x27;</span>)</span><br><span class="line">            </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SongBird</span>(<span class="title class_ inherited__">Bird</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.sound = <span class="string">&#x27;Squawk!&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">sing</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(self.sound)</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数property"><a href="#函数property" class="headerlink" title="函数property"></a>函数property</h2><blockquote>
+<p>没读懂，todo</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Rectangle</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.width = <span class="number">0</span></span><br><span class="line">        self.height = <span class="number">0</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">set_size</span>(<span class="params">self, size</span>):</span><br><span class="line">        self.width, self.height = size</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_size</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.width, self.height</span><br><span class="line">    size = <span class="built_in">property</span>(get_size, set_size)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>对于新式类，应该使用特性而非存取方法</p>
+</blockquote>
+<h2 id="静态方法和类方法"><a href="#静态方法和类方法" class="headerlink" title="静态方法和类方法"></a>静态方法和类方法</h2><blockquote>
+<p>应用并不多，但是确实有用武之地（如工厂函数）</p>
+</blockquote>
+<h2 id="迭代器协议"><a href="#迭代器协议" class="headerlink" title="迭代器协议"></a>迭代器协议</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 9-6-1.py</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h2><p>包含 <code>yield</code> 语句的函数</p>
+<p>每次生成一个值，可以生成多个，每次使用都冻结，即在此停止执行，等待被重新唤醒。唤醒后从停止的地方继续执行</p>
 
       
     </div>
@@ -2391,13 +2412,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">163k</span>
+    <span title="Symbols count total">164k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">6:48</span>
+    <span title="Reading time total">6:49</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
