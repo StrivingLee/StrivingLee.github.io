@@ -14,27 +14,29 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"strivinglee.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Python的入门书，涵盖了很多方面的内容">
+  <meta name="description" content="Python的入门书，涵盖了很多方面的内容 结合了暑假 Python 课的内容">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础教程（第3版）阅读笔记">
 <meta property="og:url" content="https://strivinglee.github.io/notes-of-python-book-third-edition/index.html">
 <meta property="og:site_name" content="StrivingLee&#39;s Blog">
-<meta property="og:description" content="Python的入门书，涵盖了很多方面的内容">
+<meta property="og:description" content="Python的入门书，涵盖了很多方面的内容 结合了暑假 Python 课的内容">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230312020233185.png">
 <meta property="og:image" content="https://strivinglee.github.io/..%5Cimages%5Cpython-string-slice.png">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2013/11/2112205-861c05b2bdbc9c28.png">
 <meta property="article:published_time" content="2023-03-11T17:45:33.532Z">
-<meta property="article:modified_time" content="2023-06-24T12:33:24.969Z">
+<meta property="article:modified_time" content="2023-06-27T05:57:27.546Z">
 <meta property="article:author" content="StrivingLee">
-<meta property="article:tag" content="Python">
 <meta property="article:tag" content="读书笔记">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230312020233185.png">
 
@@ -237,7 +239,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-06-24 20:33:24" itemprop="dateModified" datetime="2023-06-24T20:33:24+08:00">2023-06-24</time>
+                <time title="Modified: 2023-06-27 13:57:27" itemprop="dateModified" datetime="2023-06-27T13:57:27+08:00">2023-06-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,14 +264,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>33k</span>
+              <span>34k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1:23</span>
+              <span>1:24</span>
             </span>
 
         </div>
@@ -283,6 +285,7 @@
       
         <blockquote>
 <p>Python的入门书，涵盖了很多方面的内容</p>
+<p>结合了暑假 Python 课的内容</p>
 </blockquote>
 <span id="more"></span>
 
@@ -304,9 +307,12 @@
 <h3 id="3、IDE-PyCharm"><a href="#3、IDE-PyCharm" class="headerlink" title="3、IDE: PyCharm"></a>3、IDE: PyCharm</h3><h2 id="中文编码"><a href="#中文编码" class="headerlink" title="中文编码"></a>中文编码</h2><p>Python3.X 源码文件默认使用utf-8编码，所以可以正常解析中文，无需指定 UTF-8 编码。如果使用编辑器，同时需要设置 py 文件存储的格式为 UTF-8</p>
 <h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>以下划线开头的标识符是有特殊意义的。</p>
 <p>以单下划线开头 <strong><code>_foo</code></strong> 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 <strong><code>from xxx import *</code></strong> 而导入。</p>
-<p>以双下划线开头的 <strong><code>__foo</code></strong> 代表类的私有成员，以双下划线开头和结尾的 <strong><code>__foo__</code></strong> 代表 Python 里特殊方法专用的标识，如 <strong><code>__init__()</code></strong> 代表类的构造函数。</p>
+<p>以双下划线开头的 <strong><code>__foo</code></strong> 代表类的 <code>private</code> 成员，以双下划线开头和结尾的 <strong><code>__foo__</code></strong> 代表 Python 里特殊方法专用的标识，如 <strong><code>__init__()</code></strong> 代表类的构造函数。</p>
 <p>分号用于分开一行内的多个语句</p>
 <h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><p>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。</p>
+<blockquote>
+<p>你只需要简单地在 PyCharm 里自动格式化就 OK</p>
+</blockquote>
 <h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>绝大部分算术运算符及位运算符同 C 语言（除 <code>//</code> 和 <code>and</code> <code>or</code> <code>not</code> ，这三位是布尔运算符）</p>
 <p>双斜线 <code>//</code> 会对结果进行 <code>floor</code> 操作，如</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span> // -<span class="number">3</span></span><br><span class="line">-<span class="number">4</span></span><br></pre></td></tr></table></figure>
@@ -317,7 +323,10 @@
 <h2 id="十六进制和八进制数"><a href="#十六进制和八进制数" class="headerlink" title="十六进制和八进制数"></a>十六进制和八进制数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0xAF</span></span><br><span class="line"><span class="number">175</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0</span>10</span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="comment"># 这个会报错，应该改为0o10</span></span><br><span class="line"><span class="comment">#   File &quot;&lt;stdin&gt;&quot;, line 1</span></span><br><span class="line"><span class="comment">#   010</span></span><br><span class="line"><span class="comment">#   ^</span></span><br><span class="line"><span class="comment"># SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0b1011010010</span></span><br><span class="line"><span class="number">722</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>Python 中变量没有默认值，必须给它赋值</p>
-<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><p>所有语句的基本特征：执行修改操作，如赋值语句改变变量，<code>print</code> 语句改变屏幕外观</p>
+<blockquote>
+<p>通过赋值的方式声明变量</p>
+</blockquote>
+<h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><p>所有语句的基本特征：执行修改操作，如赋值语句改变变量，<code>print</code> 语句改变屏幕外观（Python 2.X）</p>
 <blockquote>
 <p>很有意思的一句话</p>
 </blockquote>
@@ -345,8 +354,15 @@
 <blockquote>
 <p><em>在 Python3.X 版本中 long 类型被移除，使用 int 替代。</em></p>
 </blockquote>
-<p>数字变量是不可变的，如果改变值将重新分配内存空间</p>
-<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int(x [,base ])         将x转换为一个整数  </span><br><span class="line">float(x )               将x转换到一个浮点数  </span><br><span class="line">complex(real [,imag ])  创建一个复数  </span><br><span class="line">str(x )                 将对象 x 转换为字符串  </span><br><span class="line">repr(x )                将对象 x 转换为表达式字符串  </span><br><span class="line">eval(str )              用来计算在字符串中的有效Python表达式,并返回一个对象  </span><br><span class="line">tuple(s )               将序列 s 转换为一个元组  </span><br><span class="line">list(s )                将序列 s 转换为一个列表  </span><br><span class="line">chr(x )                 将一个整数转换为一个字符  </span><br><span class="line">unichr(x )              将一个整数转换为Unicode字符  </span><br><span class="line">ord(x )                 将一个字符转换为它的整数值  </span><br><span class="line">hex(x )                 将一个整数转换为一个十六进制字符串  </span><br><span class="line">oct(x )                 将一个整数转换为一个八进制字符串  </span><br></pre></td></tr></table></figure>
+<p>int 类型是无上限的，数字变量是不可变的，如果改变值将重新分配内存空间</p>
+<blockquote>
+<p>Python 中采用引用语义，如果对变量重新赋值会重新分配空间存放新值</p>
+<p>C 中采用值语义，更改原地址的数据内容</p>
+</blockquote>
+<p>一个小栗子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = a</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(a)</span><br><span class="line"><span class="number">2512373612848</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(b)</span><br><span class="line"><span class="number">2512373612848</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(a)</span><br><span class="line"><span class="number">2512373612912</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(b)</span><br><span class="line"><span class="number">2512373612848</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int(x [,base ])         将x转换为一个整数，base是基值（进制数）</span><br><span class="line">float(x )               将x转换到一个浮点数  </span><br><span class="line">complex(real [,imag ])  创建一个复数  </span><br><span class="line">str(x )                 将对象 x 转换为字符串  </span><br><span class="line">repr(x )                将对象 x 转换为表达式字符串  </span><br><span class="line">eval(str )              用来计算在字符串中的有效Python表达式,并返回一个对象  </span><br><span class="line">tuple(s )               将序列 s 转换为一个元组  </span><br><span class="line">list(s )                将序列 s 转换为一个列表  </span><br><span class="line">chr(x )                 将一个整数转换为一个字符  </span><br><span class="line">unichr(x )              将一个整数转换为Unicode字符  </span><br><span class="line">ord(x )                 将一个字符转换为它的整数值  </span><br><span class="line">hex(x )                 将一个整数转换为一个十六进制字符串  </span><br><span class="line">oct(x )                 将一个整数转换为一个八进制字符串  </span><br></pre></td></tr></table></figure>
 
 <h2 id="math、cmath"><a href="#math、cmath" class="headerlink" title="math、cmath"></a>math、cmath</h2><p>二者模块函数基本一致，只是运算对象不同</p>
 <h3 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h3><table>
@@ -532,9 +548,6 @@
 <p>负数下标表示倒数第几个</p>
 <h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">months = [</span><br><span class="line">    <span class="string">&#x27;January&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;February&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;March&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;April&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;May&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;June&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;July&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;August&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;September&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;October&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;November&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;December&#x27;</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">endings = [<span class="string">&#x27;st&#x27;</span>, <span class="string">&#x27;nd&#x27;</span>, <span class="string">&#x27;rd&#x27;</span>] + <span class="number">17</span> * [<span class="string">&#x27;th&#x27;</span>] \</span><br><span class="line">        + [<span class="string">&#x27;st&#x27;</span>, <span class="string">&#x27;nd&#x27;</span>, <span class="string">&#x27;rd&#x27;</span>] + <span class="number">7</span> * [<span class="string">&#x27;th&#x27;</span>] \</span><br><span class="line">        + [<span class="string">&#x27;st&#x27;</span>]</span><br><span class="line"></span><br><span class="line">year  = <span class="built_in">input</span>(<span class="string">&#x27;Year: &#x27;</span>)</span><br><span class="line">month = <span class="built_in">input</span>(<span class="string">&#x27;Month: &#x27;</span>)</span><br><span class="line">day   = <span class="built_in">input</span>(<span class="string">&#x27;Day: &#x27;</span>)</span><br><span class="line"></span><br><span class="line">month_number = <span class="built_in">int</span>(month)</span><br><span class="line">day_number = <span class="built_in">int</span>(day)</span><br><span class="line"></span><br><span class="line">month_name = months[month_number - <span class="number">1</span>]</span><br><span class="line">ordinal = day + endings[day_number - <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(month_name + <span class="string">&#x27; &#x27;</span> + ordinal + <span class="string">&#x27;. &#x27;</span> + year)</span><br><span class="line"></span><br><span class="line">-----下面是输入和输出-----</span><br><span class="line">Year: <span class="number">2023</span></span><br><span class="line">Month: <span class="number">1</span></span><br><span class="line">Day: <span class="number">15</span></span><br><span class="line">January 15th. <span class="number">2023</span></span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>在 PyCharm 里把 raw_input 改成 input才过编，有点奇怪</p>
-</blockquote>
 <h3 id="分片"><a href="#分片" class="headerlink" title="分片"></a>分片</h3><p>可以通过 <code>string[from:to]</code>  截取字符串的子串（注意不包含尾下标），为空表示取到头或尾</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line">numbers[<span class="number">0</span>:<span class="number">1</span>] <span class="comment"># 结果为[1]</span></span><br><span class="line"><span class="comment"># 第一个索引是需要提取的部分的第1个元素的编号，最后的索引是剩余部分的第1个元素的编号</span></span><br></pre></td></tr></table></figure>
 
@@ -547,6 +560,9 @@
 
 <h3 id="步长"><a href="#步长" class="headerlink" title="步长"></a>步长</h3><p>步长不能为0，但是可以为负数，表示从右向左提取</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers[<span class="number">8</span>:<span class="number">3</span>:-<span class="number">1</span>] <span class="comment"># 结果为[9, 8, 7, 6, 5]</span></span><br></pre></td></tr></table></figure>
+
+<p>一个经典的反置字符串的方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>[::-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
 
 <h3 id="序列相加"><a href="#序列相加" class="headerlink" title="序列相加"></a>序列相加</h3><p>类似于字符串，序列可以通过 + 号进行拼接</p>
 <p><strong>注：只有相同类型的序列才能进行拼接</strong></p>
@@ -653,6 +669,9 @@
 <p><code>sort</code></p>
 <p>高级排序：**<code>sort</code> 方法默认升序排序**，如果想按自定义方法排序，那么可以自定义 <code>compare(x, y)</code> 函数，此函数在 x &lt; y 时返回负数，x &gt; y 时返回正数，相等时返回 0</p>
 <p>还有另两个可选的参数——key 和 reverse（通过名字来指定的关键字参数）</p>
+<blockquote>
+<p>结合 lambda 表达式</p>
+</blockquote>
 <h2 id="元组-Tuple-——不可变序列"><a href="#元组-Tuple-——不可变序列" class="headerlink" title="元组(Tuple)——不可变序列"></a>元组(Tuple)——不可变序列</h2><h3 id="无关闭分隔符"><a href="#无关闭分隔符" class="headerlink" title="无关闭分隔符"></a>无关闭分隔符</h3><p>任意无符号的对象，以逗号隔开，默认为元组</p>
 <p>通过括号括起来的，空元组可以用没有内容的两个圆括号表示</p>
 <p>一个值的元组：必须加括号，如 <code>(42, )</code> ，很奇怪的语法，不是吗</p>
@@ -735,10 +754,13 @@
 <h2 id="条件和条件语句"><a href="#条件和条件语句" class="headerlink" title="条件和条件语句"></a>条件和条件语句</h2><p><strong>Python 中所有的值都可以解释为真值</strong></p>
 <p>Python 中没有 <code>switch</code>（Nintendo 不打钱！）只能用 <code>elif</code> 实现</p>
 <p>标准值 False、None、所有类型的数字 0（包括浮点型、长整型和其他类型）、空序列（比如空字符串、元组和列表）以及空的字典都为假，其他一切都被解释为真</p>
+<p>但是 <code>True</code> 只取值为 1！！！</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="literal">True</span> + <span class="literal">False</span> + <span class="number">42</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The result is 43</span></span><br></pre></td></tr></table></figure>
 
 <p>bool 函数可以用来转换布尔量，不过因为 Python 可以把所有的值都看作布尔值，所以这样也没太大必要</p>
 <p>注：尽管 [] “” 都是假值，但是它们并不相等（<code>bool([]) == bool(&quot;&quot;) == False</code>   <code>[] != &quot;&quot;</code>）</p>
+<p>equal to：regard as</p>
+<p>equivalent</p>
 <p><strong>Python 中不能比较不兼容对象</strong></p>
 <p><strong>Python 中比较运算和赋值运算都可以连接</strong> <code>0 &lt; age &lt; 100</code></p>
 <p>同一性运算符：<code>x is y</code></p>
@@ -1449,8 +1471,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Python/" rel="tag"># Python</a>
               <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"># 读书笔记</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
           </div>
 
         
@@ -1555,11 +1577,6 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element">
-    <a onclick="Chatra('openChat', true);"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="https://github.com/StrivingLee" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;StrivingLee" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
@@ -1604,13 +1621,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">129k</span>
+    <span title="Symbols count total">130k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">5:23</span>
+    <span title="Reading time total">5:24</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
@@ -1718,7 +1735,6 @@
   </script>
 
 
-  <script src="//code.tidio.co/.js"></script>
 
 
 
