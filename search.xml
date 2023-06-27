@@ -185,94 +185,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Typora数学公式</title>
-    <url>/MarkDown-Grammar/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>MarkDown 比较全的数学公式语法集合</p>
-</blockquote>
-<span id="more"></span>
-
-<p>[TOC]</p>
-<blockquote>
-<p>其实本质是对 Tex 语法的支持</p>
-</blockquote>
-<h3 id="一、打开Typora选择数学模块"><a href="#一、打开Typora选择数学模块" class="headerlink" title="一、打开Typora选择数学模块"></a>一、打开Typora选择数学模块</h3><p>三种打开方式：</p>
-<ul>
-<li>点击“段落” –&gt; “公式块”</li>
-<li>快捷键ctrl + shift +m</li>
-<li>“$$” + 回车</li>
-</ul>
-<h3 id="二、添加数学公式"><a href="#二、添加数学公式" class="headerlink" title="二、添加数学公式"></a>二、添加数学公式</h3><p>输出美观的数学公式，需要知道他们的格式和代码！<br>ps:Typora有时出现公式块无法删除，可能是软件bug，Ctrl + &#x2F; 打开源代码模式，在这里面可以进行删除<br>$$<br>e^{i\pi + 1} &#x3D; 2<br>$$</p>
-<h3 id="三、常用的公式格式代码练习"><a href="#三、常用的公式格式代码练习" class="headerlink" title="三、常用的公式格式代码练习"></a>三、常用的公式格式代码练习</h3><ol>
-<li>公式块内换行</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\\ 公式块内换行</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>常用基本函数：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">1、x^2 //上下标</span><br><span class="line">2、1/2 //分式1</span><br><span class="line">3、\frac&#123;1&#125;&#123;2&#125; //分式2</span><br><span class="line">4、\cdots //省略号</span><br><span class="line">5、\sqrt&#123;4&#125; //开根号</span><br><span class="line">6、\vec&#123;a&#125; //矢量</span><br><span class="line">7、\int&#123;x&#125;dx //积分1</span><br><span class="line">8、\int_&#123;1&#125;^&#123;2&#125;dx //积分2</span><br><span class="line">9、\lim&#123;a + b&#125; //极限1</span><br><span class="line">10、\lim_&#123;n\rightarrow + \infty&#125; //极限2</span><br><span class="line">11、\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125; //累加</span><br><span class="line">12、\prod_&#123;n=1&#125;^&#123;199&#125;&#123;x_n&#125; //累乘</span><br><span class="line">13、\sin&#123;(x + y)&#125; //三角函数</span><br><span class="line">14、\ln2 //对数函数1</span><br><span class="line">15、\log_28 //对数函数2</span><br><span class="line">16、a&#x27; //导数</span><br><span class="line">17、\partial&#123;F&#125; //偏微分</span><br><span class="line">18、\iint&#123;xy&#125;dxdy //二重积分</span><br><span class="line">19、\oiint&#123;x + y&#125;dxdy //二重环路积分</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>1、x^2\<br>2、1&#x2F;2\<br>3、\frac{1}{2}\<br>4、\cdots\<br>5、\sqrt{4}\<br>6、\vec{a}\<br>7、\int{x}dx\<br>8、\int_{1}^{2}dx\<br>9、\lim{a + b}\<br>10、\lim_{n\rightarrow + \infty}\<br>11、\sum_{n&#x3D;1}^{100}{a_n}\<br>12、\prod_{n&#x3D;1}^{199}{x_n}\<br>13、\sin{(x + y)}\<br>14、\ln2\<br>15、\log_28\<br>16、a’\<br>17、\partial{F}\<br>18、\iint{xy}dxdy\<br>19、\oiint{(x + y)}dxdy\<br>$$</p>
-<ol start="3">
-<li>公式块内左对齐：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125; //</span><br><span class="line">&amp;1、y = \sin(x) \\&amp;为对齐格式符</span><br><span class="line">&amp;2、</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{aligned}<br>&amp;1、y &#x3D; \sin(x) \<br>&amp;2、<br>\end{aligned}<br>$$</p>
-<ol start="4">
-<li>下标</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">v_1\\</span><br><span class="line">v_&#123;体积&#125; 下标为多个英文字母时，使用&#123;&#125;包起来：</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>v_1\<br>v_{体积}<br>$$</p>
-<ol start="5">
-<li>关系运算符：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\pm // ± plus&amp;minor</span><br><span class="line">\times // ×</span><br><span class="line">\div // ÷ divide</span><br><span class="line">\equiv // == equal</span><br><span class="line">\le // &lt;= lower&amp;equal</span><br><span class="line">\ge // &gt;= greater&amp;equal</span><br></pre></td></tr></table></figure>
-<p>$$<br>\pm\<br>\times \<br>\div\<br>\equiv\<br>\leq\<br>\geq<br>$$</p>
-<ol start="6">
-<li>花括号公式组合：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">c(u) =</span><br><span class="line">\begin&#123;cases&#125; </span><br><span class="line">\sqrt\frac&#123;1&#125;&#123;N&#125;, u = 0 \\ </span><br><span class="line">\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125;, n \neq0  neq:not equal</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>c(u) &#x3D;<br>\begin{cases}<br>\sqrt\frac{1}{N}, u &#x3D; 0 \<br>\sum_{n&#x3D;1}^{100}{a_n}, n \neq0<br>\end{cases}<br>$$</p>
-<ol start="7">
-<li>空格：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">a \quad b</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>a \quad b<br>$$</p>
-<ol start="8">
-<li>矩阵：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">0&amp;1&amp;1\\</span><br><span class="line">1&amp;1&amp;0\\</span><br><span class="line">1&amp;0&amp;1\\</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{matrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{matrix}<br>$$</p>
-<blockquote>
-<p> 在起始、结束标记用下列词替换 matrix：</p>
-<p>pmatrix：小括号边框<br>bmatrix：中括号边框 &#96;<br>Bmatrix：大括号边框<br>vmatrix：单竖线边框<br>Vmatrix：双竖线边框</p>
-</blockquote>
-<p>$$<br>\begin{pmatrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{pmatrix}<br>$$</p>
-<p>$$<br>\begin{vmatrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{vmatrix}<br>$$</p>
-<ol start="9">
-<li>特殊字符及希腊字母表：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\infty //无穷</span><br><span class="line">\emptyset //空集</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\infty \<br>\emptyset<br>$$</p>
-<ol start="10">
-<li>更多字符<br>更多特殊字符及希腊字母代码见wps中LaTex公式符号</li>
-</ol>
-<p>① 常用字母字符</p>
-<p><img src="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp" alt="img"></p>
-<p>② 特殊符号</p>
-<p><img src="https://i0.hdslb.com/bfs/article/5f471724c265c39e6c832a9a3212f67aa094791e.png@942w_387h_progressive.webp" alt="img"></p>
-<p><img src="https://i0.hdslb.com/bfs/article/a750d31bd5a69f8dd8b58c6b2d690988025d323c.png@942w_1500h_progressive.webp" alt="img"></p>
-]]></content>
-      <categories>
-        <category>MarkDown</category>
-      </categories>
-      <tags>
-        <tag>MarkDown</tag>
-        <tag>Grammar</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python基础教程（第3版）阅读笔记</title>
     <url>/notes-of-python-book-third-edition/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
@@ -1445,24 +1357,91 @@
       </tags>
   </entry>
   <entry>
-    <title>《满江红》观影感受</title>
-    <url>/impressions-of-Azolla/</url>
+    <title>Typora数学公式</title>
+    <url>/MarkDown-Grammar/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>说说我个人对《满江红》的一点看法</p>
+<p>MarkDown 比较全的数学公式语法集合</p>
 </blockquote>
 <span id="more"></span>
 
-<p>首先要肯定，这部贺岁大戏确实花了心思在里面。取景比较考究，一众演员演技在线，用配乐演进和人物穿巷串联情节。</p>
-<p>不过作为张艺谋执导的电影，似乎还有不少地方做的不尽人意。</p>
-<p>剧情发展不合理。先说何立之死，何立心狠手辣，城府颇深，称得上有勇有谋。他既能知道刘喜和桃姑娘的关系，能猜出瑶琴是半路加入，便也不至于在临门一脚时匆匆靠近瑶琴打坏了一手稳赢的牌。瑶琴和张大都有枷锁，一把长刀在侧，到手的鸭子怎么看怎么不会飞，这里的发展更像是匆忙草草收尾了事，好让观众挨住隐隐的如厕之意。再者，于情于理没有让张大死的必要。于情，瑶琴守护大义守护真爱半路加入行动，张大本不必死，本可代岳将军见秦桧剐见山河收见国耻平，孙均性情中人，坐视侄儿死在眼前死不瞑目，坐视瑶琴让张大活下去的奉献化为乌有，更太过冷血乖戾，孙均一向鲁莽，喜好速战速决，甚至为秦桧挡下一刀，转变之大让人匪夷所思；于理，只有蓝玉一人在秦桧之侧，短刃也插在张大身上，枷锁解开身上亦无伤，孙均反手便可手刃秦桧昭告天下，退一万步来看，至少挟秦桧背满江红的夙愿可轻松实现，似乎也不必等待蓝绿二人均在时冒险逼迫，彼时二人利刃在手风险数倍，战场出生入死的将军更懂这个道理。最后，孙均一身伤痕，哪有力气纵马远去？不怕一身老伤皮开肉绽吗？</p>
-<p>剧情设定本就荒诞。以我对南宋将军的粗浅了解，似乎岳将军并不太在乎遗言是否能流传万古，他应该更在乎百姓的平安和故土的平复，就像辛稼轩本意也不在写词不在种树，“却将万字平戎策，换得东家种树书”，谁他妈要种树，老子要平戎定虏。能有人手刃秦桧厉兵秣马率军出征，岳将军九泉之下也可安息；放秦桧狗贼一条狗命，让他遗臭万年，who cares？谁他妈在乎秦桧是谁，老子只想看故国收复。确实有比生死重要百倍千倍的东西，但是这东西应该不只是岳将军的一首遗言。不得不说这里对岳将军的理解有些以己度人了，这里有种《1874》里“与你畅游战地”一般扯淡的浪漫。以及替身这件事，至少我个人感觉有些荒谬。</p>
-<p>总之，作为贺岁片，导演来分一杯羹，观众看个乐呵看个感动，能想起这位千年前的故人想起这首无人不知无人不晓的不朽词篇，便也还算，说得过去吧。</p>
+<p>[TOC]</p>
+<blockquote>
+<p>其实本质是对 Tex 语法的支持</p>
+</blockquote>
+<h3 id="一、打开Typora选择数学模块"><a href="#一、打开Typora选择数学模块" class="headerlink" title="一、打开Typora选择数学模块"></a>一、打开Typora选择数学模块</h3><p>三种打开方式：</p>
+<ul>
+<li>点击“段落” –&gt; “公式块”</li>
+<li>快捷键ctrl + shift +m</li>
+<li>“$$” + 回车</li>
+</ul>
+<h3 id="二、添加数学公式"><a href="#二、添加数学公式" class="headerlink" title="二、添加数学公式"></a>二、添加数学公式</h3><p>输出美观的数学公式，需要知道他们的格式和代码！<br>ps:Typora有时出现公式块无法删除，可能是软件bug，Ctrl + &#x2F; 打开源代码模式，在这里面可以进行删除<br>$$<br>e^{i\pi + 1} &#x3D; 2<br>$$</p>
+<h3 id="三、常用的公式格式代码练习"><a href="#三、常用的公式格式代码练习" class="headerlink" title="三、常用的公式格式代码练习"></a>三、常用的公式格式代码练习</h3><ol>
+<li>公式块内换行</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\\ 公式块内换行</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>常用基本函数：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">1、x^2 //上下标</span><br><span class="line">2、1/2 //分式1</span><br><span class="line">3、\frac&#123;1&#125;&#123;2&#125; //分式2</span><br><span class="line">4、\cdots //省略号</span><br><span class="line">5、\sqrt&#123;4&#125; //开根号</span><br><span class="line">6、\vec&#123;a&#125; //矢量</span><br><span class="line">7、\int&#123;x&#125;dx //积分1</span><br><span class="line">8、\int_&#123;1&#125;^&#123;2&#125;dx //积分2</span><br><span class="line">9、\lim&#123;a + b&#125; //极限1</span><br><span class="line">10、\lim_&#123;n\rightarrow + \infty&#125; //极限2</span><br><span class="line">11、\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125; //累加</span><br><span class="line">12、\prod_&#123;n=1&#125;^&#123;199&#125;&#123;x_n&#125; //累乘</span><br><span class="line">13、\sin&#123;(x + y)&#125; //三角函数</span><br><span class="line">14、\ln2 //对数函数1</span><br><span class="line">15、\log_28 //对数函数2</span><br><span class="line">16、a&#x27; //导数</span><br><span class="line">17、\partial&#123;F&#125; //偏微分</span><br><span class="line">18、\iint&#123;xy&#125;dxdy //二重积分</span><br><span class="line">19、\oiint&#123;x + y&#125;dxdy //二重环路积分</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>1、x^2\<br>2、1&#x2F;2\<br>3、\frac{1}{2}\<br>4、\cdots\<br>5、\sqrt{4}\<br>6、\vec{a}\<br>7、\int{x}dx\<br>8、\int_{1}^{2}dx\<br>9、\lim{a + b}\<br>10、\lim_{n\rightarrow + \infty}\<br>11、\sum_{n&#x3D;1}^{100}{a_n}\<br>12、\prod_{n&#x3D;1}^{199}{x_n}\<br>13、\sin{(x + y)}\<br>14、\ln2\<br>15、\log_28\<br>16、a’\<br>17、\partial{F}\<br>18、\iint{xy}dxdy\<br>19、\oiint{(x + y)}dxdy\<br>$$</p>
+<ol start="3">
+<li>公式块内左对齐：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125; //</span><br><span class="line">&amp;1、y = \sin(x) \\&amp;为对齐格式符</span><br><span class="line">&amp;2、</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>\begin{aligned}<br>&amp;1、y &#x3D; \sin(x) \<br>&amp;2、<br>\end{aligned}<br>$$</p>
+<ol start="4">
+<li>下标</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">v_1\\</span><br><span class="line">v_&#123;体积&#125; 下标为多个英文字母时，使用&#123;&#125;包起来：</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>v_1\<br>v_{体积}<br>$$</p>
+<ol start="5">
+<li>关系运算符：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\pm // ± plus&amp;minor</span><br><span class="line">\times // ×</span><br><span class="line">\div // ÷ divide</span><br><span class="line">\equiv // == equal</span><br><span class="line">\le // &lt;= lower&amp;equal</span><br><span class="line">\ge // &gt;= greater&amp;equal</span><br></pre></td></tr></table></figure>
+<p>$$<br>\pm\<br>\times \<br>\div\<br>\equiv\<br>\leq\<br>\geq<br>$$</p>
+<ol start="6">
+<li>花括号公式组合：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">c(u) =</span><br><span class="line">\begin&#123;cases&#125; </span><br><span class="line">\sqrt\frac&#123;1&#125;&#123;N&#125;, u = 0 \\ </span><br><span class="line">\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125;, n \neq0  neq:not equal</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>c(u) &#x3D;<br>\begin{cases}<br>\sqrt\frac{1}{N}, u &#x3D; 0 \<br>\sum_{n&#x3D;1}^{100}{a_n}, n \neq0<br>\end{cases}<br>$$</p>
+<ol start="7">
+<li>空格：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">a \quad b</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>a \quad b<br>$$</p>
+<ol start="8">
+<li>矩阵：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">0&amp;1&amp;1\\</span><br><span class="line">1&amp;1&amp;0\\</span><br><span class="line">1&amp;0&amp;1\\</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>\begin{matrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{matrix}<br>$$</p>
+<blockquote>
+<p> 在起始、结束标记用下列词替换 matrix：</p>
+<p>pmatrix：小括号边框<br>bmatrix：中括号边框 &#96;<br>Bmatrix：大括号边框<br>vmatrix：单竖线边框<br>Vmatrix：双竖线边框</p>
+</blockquote>
+<p>$$<br>\begin{pmatrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{pmatrix}<br>$$</p>
+<p>$$<br>\begin{vmatrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{vmatrix}<br>$$</p>
+<ol start="9">
+<li>特殊字符及希腊字母表：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\infty //无穷</span><br><span class="line">\emptyset //空集</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p>$$<br>\infty \<br>\emptyset<br>$$</p>
+<ol start="10">
+<li>更多字符<br>更多特殊字符及希腊字母代码见wps中LaTex公式符号</li>
+</ol>
+<p>① 常用字母字符</p>
+<p><img src="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp" alt="img"></p>
+<p>② 特殊符号</p>
+<p><img src="https://i0.hdslb.com/bfs/article/5f471724c265c39e6c832a9a3212f67aa094791e.png@942w_387h_progressive.webp" alt="img"></p>
+<p><img src="https://i0.hdslb.com/bfs/article/a750d31bd5a69f8dd8b58c6b2d690988025d323c.png@942w_1500h_progressive.webp" alt="img"></p>
 ]]></content>
       <categories>
-        <category>生活记录</category>
+        <category>MarkDown</category>
       </categories>
       <tags>
-        <tag>观后感</tag>
+        <tag>MarkDown</tag>
+        <tag>Grammar</tag>
       </tags>
   </entry>
   <entry>
@@ -1867,6 +1846,27 @@
       </tags>
   </entry>
   <entry>
+    <title>《满江红》观影感受</title>
+    <url>/impressions-of-Azolla/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>说说我个人对《满江红》的一点看法</p>
+</blockquote>
+<span id="more"></span>
+
+<p>首先要肯定，这部贺岁大戏确实花了心思在里面。取景比较考究，一众演员演技在线，用配乐演进和人物穿巷串联情节。</p>
+<p>不过作为张艺谋执导的电影，似乎还有不少地方做的不尽人意。</p>
+<p>剧情发展不合理。先说何立之死，何立心狠手辣，城府颇深，称得上有勇有谋。他既能知道刘喜和桃姑娘的关系，能猜出瑶琴是半路加入，便也不至于在临门一脚时匆匆靠近瑶琴打坏了一手稳赢的牌。瑶琴和张大都有枷锁，一把长刀在侧，到手的鸭子怎么看怎么不会飞，这里的发展更像是匆忙草草收尾了事，好让观众挨住隐隐的如厕之意。再者，于情于理没有让张大死的必要。于情，瑶琴守护大义守护真爱半路加入行动，张大本不必死，本可代岳将军见秦桧剐见山河收见国耻平，孙均性情中人，坐视侄儿死在眼前死不瞑目，坐视瑶琴让张大活下去的奉献化为乌有，更太过冷血乖戾，孙均一向鲁莽，喜好速战速决，甚至为秦桧挡下一刀，转变之大让人匪夷所思；于理，只有蓝玉一人在秦桧之侧，短刃也插在张大身上，枷锁解开身上亦无伤，孙均反手便可手刃秦桧昭告天下，退一万步来看，至少挟秦桧背满江红的夙愿可轻松实现，似乎也不必等待蓝绿二人均在时冒险逼迫，彼时二人利刃在手风险数倍，战场出生入死的将军更懂这个道理。最后，孙均一身伤痕，哪有力气纵马远去？不怕一身老伤皮开肉绽吗？</p>
+<p>剧情设定本就荒诞。以我对南宋将军的粗浅了解，似乎岳将军并不太在乎遗言是否能流传万古，他应该更在乎百姓的平安和故土的平复，就像辛稼轩本意也不在写词不在种树，“却将万字平戎策，换得东家种树书”，谁他妈要种树，老子要平戎定虏。能有人手刃秦桧厉兵秣马率军出征，岳将军九泉之下也可安息；放秦桧狗贼一条狗命，让他遗臭万年，who cares？谁他妈在乎秦桧是谁，老子只想看故国收复。确实有比生死重要百倍千倍的东西，但是这东西应该不只是岳将军的一首遗言。不得不说这里对岳将军的理解有些以己度人了，这里有种《1874》里“与你畅游战地”一般扯淡的浪漫。以及替身这件事，至少我个人感觉有些荒谬。</p>
+<p>总之，作为贺岁片，导演来分一杯羹，观众看个乐呵看个感动，能想起这位千年前的故人想起这首无人不知无人不晓的不朽词篇，便也还算，说得过去吧。</p>
+]]></content>
+      <categories>
+        <category>生活记录</category>
+      </categories>
+      <tags>
+        <tag>观后感</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>时钟参与组合逻辑的心得</title>
     <url>/combinational-logic-concerning-clock/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
@@ -1894,313 +1894,6 @@
       </categories>
       <tags>
         <tag>CO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>概率统计复习</title>
-    <url>/Probability-and-Statistics-Review/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>缓考笨比的临时抱佛脚<del>，是时候开始预习了</del></p>
-</blockquote>
-<span id="more"></span>
-
-<p>时间紧任务重，格式问题先摆烂了，各位看官对不住。毕竟考试要紧，考试要紧</p>
-<p><strong>8.5、9.3、9.4、11.5、12.3不考</strong></p>
-<p> [TOC]</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>笔记不重要，写不完鸽了就行，重要的是学会东西<del>（啊对对对，我也没见你学会啊）</del></p>
-<p><strong>本书结构</strong>：1-6章概率论</p>
-<p>7-9章数理统计</p>
-<p>10-12章随机过程</p>
-<h1 id="第一章-随机事件的概率"><a href="#第一章-随机事件的概率" class="headerlink" title="第一章 随机事件的概率"></a>第一章 随机事件的概率</h1><h2 id="1-1-随机事件与样本空间"><a href="#1-1-随机事件与样本空间" class="headerlink" title="1.1 随机事件与样本空间"></a>1.1 随机事件与样本空间</h2><h3 id="1-试验和事件"><a href="#1-试验和事件" class="headerlink" title="1.试验和事件"></a>1.试验和事件</h3><p>随机：其结果事先不可预言</p>
-<p><strong>不特殊说明，本书中试验都指随机试验</strong></p>
-<p>随机试验特征：</p>
-<ul>
-<li>相同条件下可以重复进行</li>
-<li>能够事先明确所有可能的实验结果范围</li>
-<li>实验前不能准确预言试验结果</li>
-</ul>
-<p>事件：试验的结果</p>
-<p>随机事件：试验中可能发生，也可能不发生，用大写字母 $A, B\dots$ 表示</p>
-<p>基本事件：随机试验的每一个可能结果，也是最简单的随机事件，用小写字母 $e, w$ 表示</p>
-<p>必然事件、不可能事件：</p>
-<p>必然事件用 $S$ 或 $Ω$ 表示，不可能事件用 $\empty$ 表示</p>
-<p>不是随机事件，讨论时为方便当作随机事件</p>
-<h3 id="2-样本空间"><a href="#2-样本空间" class="headerlink" title="2.样本空间"></a>2.样本空间</h3><p>试验 $E$ 的<strong>全部基本事件</strong>组成的集合</p>
-<p><strong>随机事件是样本空间的子集</strong></p>
-<p>不可能事件 $\empty$ 表示空集，必然事件 $S$ 表示样本空间</p>
-<p>&#x3D;&#x3D;为后文用集合论讨论事件间关系和运算做准备&#x3D;&#x3D;</p>
-<h3 id="3-随机事件的关系和运算"><a href="#3-随机事件的关系和运算" class="headerlink" title="3.随机事件的关系和运算"></a>3.随机事件的关系和运算</h3><p>包含、和、积、互不相容（互斥）、互逆（对立）、差</p>
-<p>推广到有限多个、用图形表示、运算律</p>
-<p> <img src="/Examples%5CChapter1%5C1.1.3-1.png"></p>
-<p>第一章比较简单，先鸽了，后面有空再补，因为🐓组、大⑤、离散赶得有点紧了（手动百丽破防哥）</p>
-<h1 id="第二章-随机变量及其分布"><a href="#第二章-随机变量及其分布" class="headerlink" title="第二章 随机变量及其分布"></a>第二章 随机变量及其分布</h1><h2 id="2-1-随机变量"><a href="#2-1-随机变量" class="headerlink" title="2.1 随机变量"></a>2.1 随机变量</h2><p><img src="/Notes%5CChapter2%5C2.1.1-1.png"></p>
-<p>数学本质是一个可测函数</p>
-<p>&#x3D;&#x3D;将随机事件的概率问题转化为随机变量取值的概率问题&#x3D;&#x3D;</p>
-<p>&#x3D;&#x3D;因此，随机变量及其取值范围的概率问题是我们今后学习和研究的主要问题&#x3D;&#x3D;</p>
-<h2 id="2-2-随机变量的分布函数"><a href="#2-2-随机变量的分布函数" class="headerlink" title="2.2 随机变量的分布函数"></a>2.2 随机变量的分布函数</h2><p>&#x3D;&#x3D;分布函数非常重要&#x3D;&#x3D;</p>
-<p><strong>定义</strong>：设 $X$ 为随机变量，则 ${X \ge x} &#x3D; {e \in S|-\infty &lt; X(e) \le x}$ 为随机事件，令</p>
-<p>$F(x) &#x3D; P{X \le x},-\infty &lt; x &lt; +\infty$</p>
-<p>为随机变量 $X$ 的**$\textcolor{red}{概率分布函数}$<strong>，简称</strong>$\textcolor{red}{分布函数}$**，记作 $X \sim F(x)$</p>
-<p>$F(x)$ 等于 $X$ 在区间 $(- \infty ,x]$ 取值的概率</p>
-<h2 id="2-3-离散型随机变量及其概率分布"><a href="#2-3-离散型随机变量及其概率分布" class="headerlink" title="2.3 离散型随机变量及其概率分布"></a>2.3 离散型随机变量及其概率分布</h2><p>$X$ 取各个可能值的概率</p>
-<p>$p_k &#x3D; P{X &#x3D; x_k}, k &#x3D; 1,2,\dots$</p>
-<p>称为概率分布（分布律、分布列）</p>
-<h2 id="2-4-常用离散型随机变量的分布律"><a href="#2-4-常用离散型随机变量的分布律" class="headerlink" title="2.4 常用离散型随机变量的分布律"></a>2.4 常用离散型随机变量的分布律</h2><h3 id="1-两点分布（（0-1）分布）"><a href="#1-两点分布（（0-1）分布）" class="headerlink" title="1.两点分布（（0-1）分布）"></a>1.两点分布（（0-1）分布）</h3><p>服从（0-1）分布的试验叫做<strong>伯努利试验</strong></p>
-<h3 id="2-泊松分布"><a href="#2-泊松分布" class="headerlink" title="2.泊松分布"></a>2.泊松分布</h3><p>$P{X &#x3D; k}&#x3D;e^{-\lambda} \frac{\lambda ^ k}{k!},k&#x3D;0,1,2,\dots$</p>
-<p>其中 $\lambda &gt; 0$，称 $X$ 服从参数为 $\lambda$ 的泊松分布，记作 $X \sim \Pi(\lambda)$，这里用到幂级数展开式 $e^x &#x3D; \sum_{k&#x3D;0}^{+\infty}{\frac{x^k}{k!}}$</p>
-<blockquote>
-<p>我头一次明白这个式子，这是前面乘一个 $e^{-\lambda}$ 系数，然后后面做幂级数求和，得到结果 $e^{\lambda}$ ，乘积恰好为1</p>
-</blockquote>
-<h3 id="3-超几何分布"><a href="#3-超几何分布" class="headerlink" title="3.超几何分布"></a>3.超几何分布</h3><p>高中学的，多练例题即可</p>
-<h3 id="4-二项分布"><a href="#4-二项分布" class="headerlink" title="4.二项分布"></a>4.二项分布</h3><p>$P{X&#x3D;k}&#x3D;\sum_{k&#x3D;0}^{n} C_{n}^{k}p^kq^{n-k},k&#x3D;0,1,2,\dots$</p>
-<blockquote>
-<p>这公式真难敲啊，顺带提一嘴，我感觉这些没啥特别的，就是一个上标一个下标，把这个写好了就行。以及MarkDown没有自己的组合数</p>
-</blockquote>
-<p>$\bcancel{你没有自己的组合数吗}$</p>
-<p>是 $(p+q)^n$ 展开式中的一般项，记作 $X \sim B(n,p)$</p>
-<p>每次概率不改变的就是二项分布，<strong>常用的：放回式取用</strong></p>
-<h3 id="5-二项分布的近似计算和查泊松分布表"><a href="#5-二项分布的近似计算和查泊松分布表" class="headerlink" title="5.二项分布的近似计算和查泊松分布表"></a>5.二项分布的近似计算和查泊松分布表</h3><p>n很大，p很小的时候，二项分布接近泊松分布（一般 $n \ge 10, p_n \le 0.1$ 时)</p>
-<p>转换公式：$\lambda &#x3D; np$</p>
-<h2 id="2-5-连续型随机变量及其概率密度函数"><a href="#2-5-连续型随机变量及其概率密度函数" class="headerlink" title="2.5 连续型随机变量及其概率密度函数"></a>2.5 连续型随机变量及其概率密度函数</h2><p>$f(x)$ 为**$\textcolor{red}{概率密度函数}$<strong>（分布密度函数），简称</strong>$\textcolor{red}{概率密度}$**</p>
-<p>&#x3D;&#x3D;概率密度和分布函数都很重要，同时也要区分清楚&#x3D;&#x3D;</p>
-<h2 id="2-6-常用的连续型随机变量分布"><a href="#2-6-常用的连续型随机变量分布" class="headerlink" title="2.6 常用的连续型随机变量分布"></a>2.6 常用的连续型随机变量分布</h2><h3 id="1-均匀分布"><a href="#1-均匀分布" class="headerlink" title="1.均匀分布"></a>1.均匀分布</h3><p>$\zeta \sim U[a,b]$</p>
-<h3 id="2-指数分布"><a href="#2-指数分布" class="headerlink" title="2.指数分布"></a>2.指数分布</h3><p>$$<br>f(x)&#x3D;<br>\begin{cases}<br>\lambda e^{- \lambda x},x \ge 0,\<br>0,x &lt; 0<br>\end{cases}<br>$$</p>
-<p>分布函数<br>$$<br>F(x)&#x3D;<br>\begin{cases}<br>0,x&lt;0,\<br>\int_{-\infty}^x f(t)dt &#x3D; 1-e^{-\lambda x},x \ge 0<br>\end{cases}<br>$$</p>
-<h3 id="3-Welbull-分布"><a href="#3-Welbull-分布" class="headerlink" title="3.Welbull 分布"></a>3.Welbull 分布</h3><p>指数分布的一般情况，没怎么考过</p>
-<h3 id="4-Gamma-函数"><a href="#4-Gamma-函数" class="headerlink" title="4.$\Gamma$ 函数"></a>4.$\Gamma$ 函数</h3><p>类似于辅助的作用，单独考有点逆天，算了不写了</p>
-<h2 id="2-7-正态分布"><a href="#2-7-正态分布" class="headerlink" title="2.7 正态分布"></a>2.7 正态分布</h2><h3 id="1-欧拉-泊松积分"><a href="#1-欧拉-泊松积分" class="headerlink" title="1.欧拉-泊松积分"></a>1.欧拉-泊松积分</h3><p>很巧妙的算法，用二重积分证明<br>$$<br>\int _{-\infty} ^{+\infty} e^{-x^2} dx &#x3D; \sqrt{\pi}<br>$$</p>
-<h3 id="2-正态分布"><a href="#2-正态分布" class="headerlink" title="2.正态分布"></a>2.正态分布</h3><p>$\Huge f(x)&#x3D;\frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2 \sigma^2}},-\infty &lt; x &lt; +\infty$</p>
-<p>记作 $\zeta \sim N(\mu,\sigma^2)$</p>
-<p>$\Huge \textcolor{red}{非常非常非常重要}$</p>
-<p>性质：</p>
-<ul>
-<li>$x &#x3D; \mu$ 时，取最大值 $f(\mu) &#x3D; \Huge\frac{1}{\sigma \sqrt{2\pi}}$</li>
-</ul>
-<h3 id="3-标准正态分布"><a href="#3-标准正态分布" class="headerlink" title="3.标准正态分布"></a>3.标准正态分布</h3><p><img src="/Notes%5CChapter2%5C2.7.3-1.png"></p>
-<p>鸽了，哥们真不想打公式了妈的</p>
-<h3 id="4-正态分布与标准正态分布的关系"><a href="#4-正态分布与标准正态分布的关系" class="headerlink" title="4.正态分布与标准正态分布的关系"></a>4.正态分布与标准正态分布的关系</h3><p>$\Huge F(x) &#x3D; \Phi(\frac{x-\mu}{\sigma}),-\infty &lt; x &lt; +\infty$</p>
-<blockquote>
-<p>意义：将不好算的数据转化成可以查表的标准正态分布，相互转换得到结果</p>
-</blockquote>
-<h3 id="5-标准正态分布的-alpha-分位点"><a href="#5-标准正态分布的-alpha-分位点" class="headerlink" title="5.标准正态分布的 $\alpha$ 分位点"></a>5.标准正态分布的 $\alpha$ 分位点</h3><blockquote>
-<p>重要理解：分位点是一个横坐标，这个图是偶函数，要注意其对称轴是 x &#x3D; 0 而非 $\frac{1}{2}$</p>
-</blockquote>
-<p><img src="/Notes%5CChapter2%5C2.7.5-1.png"></p>
-<p><del>算了，和自己达成和解，公式太多了</del></p>
-<p>考的不多但是要求一定的记忆量</p>
-<h1 id="第三章-二维随机变量"><a href="#第三章-二维随机变量" class="headerlink" title="第三章 二维随机变量"></a>第三章 二维随机变量</h1><h2 id="3-1-随机向量与联合分布"><a href="#3-1-随机向量与联合分布" class="headerlink" title="3.1 随机向量与联合分布"></a>3.1 随机向量与联合分布</h2><h3 id="1-二维随机变量的定义和分布函数的基本性质"><a href="#1-二维随机变量的定义和分布函数的基本性质" class="headerlink" title="1.二维随机变量的定义和分布函数的基本性质"></a>1.二维随机变量的定义和分布函数的基本性质</h3><p>$$<br>F(x,y) &#x3D; P{X \le x, Y \le y} }&#x3D; P{e \in S|X(e) \le x, Y(e) \le y}<br>$$</p>
-<p>称为二维随机变量 $(X,Y)$ 的分布函数或随机变量 $X$ 和 $Y$ 的联合分布函数</p>
-<p><img src="/Notes%5CChapter3%5C3.1.1-1.png"></p>
-<p><img src="/Notes%5CChapter3%5C3.1.1-2.png"></p>
-<p><strong>千万注意这个交叉计算的方式</strong></p>
-<h3 id="2-二维离散型随机变量"><a href="#2-二维离散型随机变量" class="headerlink" title="2.二维离散型随机变量"></a>2.二维离散型随机变量</h3><p>没啥想写的，鸽了吧</p>
-<p>记得有的题目要用条件概率（P73）</p>
-<h3 id="3-二维连续型随机变量"><a href="#3-二维连续型随机变量" class="headerlink" title="3.二维连续型随机变量"></a>3.二维连续型随机变量</h3><p>$\huge \frac{\partial^2 F}{\partial x \partial y}(x_0,y_0) &#x3D; f(x_0,y_0)$</p>
-<p>$\huge P{(X,Y) \in D} &#x3D; \iint_{D}f(x,y)dxdy$</p>
-<p>这里涉及到一些二重积分的内容，但是我全忘了</p>
-<p>好消息，有淑芬书，坏消息，好像把淑芬书扔家里了</p>
-<p>这两个🦁都极其重要，务必<del>基佬</del>记牢</p>
-<h3 id="4-常用的二维连续型随机变量"><a href="#4-常用的二维连续型随机变量" class="headerlink" title="4.常用的二维连续型随机变量"></a>4.常用的二维连续型随机变量</h3><p><img src="/image-20230201132709759.png" alt="image-20230201132709759"></p>
-<p>这五个变量的意义请见第五章</p>
-<h2 id="3-2-边缘分布函数"><a href="#3-2-边缘分布函数" class="headerlink" title="3.2 边缘分布函数"></a>3.2 边缘分布函数</h2><blockquote>
-<p>考虑两个变量分布函数之间的关系</p>
-</blockquote>
-<p>$$<br>F_X(x) &#x3D; \lim_{y\rightarrow+\infty} F(x,y) &#x3D; F(x, +\infty)\</p>
-<p>F_Y(y) &#x3D; \lim_{x\rightarrow+\infty} F(x,y) &#x3D; F(+\infty, y)<br>$$<br>由联合分布函数可计算边缘分布函数，但反之不可确定</p>
-<h2 id="3-3-边缘分布律与条件分布律"><a href="#3-3-边缘分布律与条件分布律" class="headerlink" title="3.3 边缘分布律与条件分布律"></a>3.3 边缘分布律与条件分布律</h2><p>$(X, Y)$ 关于 $X$ 的变量分布律正好是联合分布律表中各行概率相加</p>
-<p>$(X, Y)$ 关于 $Y$ 的变量分布律正好是联合分布律表中各行概率相加</p>
-<p><img src="/image-20230201132953614.png" alt="image-20230201132953614"></p>
-<h2 id="3-4-边缘概率密度与条件概率密度"><a href="#3-4-边缘概率密度与条件概率密度" class="headerlink" title="3.4 边缘概率密度与条件概率密度"></a>3.4 边缘概率密度与条件概率密度</h2><h3 id="1-边缘概率密度"><a href="#1-边缘概率密度" class="headerlink" title="1.边缘概率密度"></a>1.边缘概率密度</h3><p>$$<br>f_X(x)&#x3D;\int_{-\infty}^{+\infty} f(x,y)dy\<br>f_Y(y)&#x3D;\int_{-\infty}^{+\infty} f(x,y)dx<br>$$</p>
-<h3 id="2-条件概率密度"><a href="#2-条件概率密度" class="headerlink" title="2.条件概率密度"></a>2.条件概率密度</h3><p><img src="/image-20230201133151631.png" alt="image-20230201133151631"><br>$$<br>F_{X|Y}(x|y) &#x3D; \frac{\frac{\partial}{\partial x}F(x,y)}{\frac{d}{dx}F_Y(y)}\<br>F_{Y|X}(y|x) &#x3D; \frac{\frac{\partial}{\partial y}F(x,y)}{\frac{d}{dy}F_X(x)}\<br>F_{X|Y}(x|y) &#x3D; \int_{-\infty}^x \frac{f(u,y)}{f_Y(y)} du\<br>F_{Y|X}(y|x) &#x3D; \int_{-\infty}^y \frac{f(x,v)}{f_X(x)} dv\<br>f_{X|Y}(x|y) &#x3D; \frac{f(x,y)}{f_Y(y)}\<br>f_{Y|X}(y|x) &#x3D; \frac{f(x,y)}{f_X(x)}<br>$$</p>
-<h2 id="3-5-相互独立的随机变量"><a href="#3-5-相互独立的随机变量" class="headerlink" title="3.5 相互独立的随机变量"></a>3.5 相互独立的随机变量</h2><h3 id="1-相互独立"><a href="#1-相互独立" class="headerlink" title="1.相互独立"></a>1.相互独立</h3><p>$$<br>P{X \le x, Y \le y} &#x3D; P{X \le x}·P{Y \le y} \<br>F(x, y) &#x3D; F_X(x)·F_Y(y), -\infty &lt; x, y &lt; \infty<br>$$</p>
-<h3 id="2-离散型随机变量相互独立判别定理"><a href="#2-离散型随机变量相互独立判别定理" class="headerlink" title="2.离散型随机变量相互独立判别定理"></a>2.离散型随机变量相互独立判别定理</h3><p>$$<br>P{X \le x_i, Y \le y_j} &#x3D; P{X \le x_i}·P{Y \le y_j},i,j&#x3D;1,2,\dots<br>$$</p>
-<h3 id="3-连续型随机变量相互独立判别定理"><a href="#3-连续型随机变量相互独立判别定理" class="headerlink" title="3.连续型随机变量相互独立判别定理"></a>3.连续型随机变量相互独立判别定理</h3><p>$$<br>f(x,y) &#x3D; f_X(x)·f_Y(y)<br>$$</p>
-<p>（几乎处处）</p>
-<h3 id="4-有限多个或可列个变量相互独立"><a href="#4-有限多个或可列个变量相互独立" class="headerlink" title="4.有限多个或可列个变量相互独立"></a>4.有限多个或可列个变量相互独立</h3><h1 id="第四章-随机变量的函数的分布"><a href="#第四章-随机变量的函数的分布" class="headerlink" title="第四章 随机变量的函数的分布"></a>第四章 随机变量的函数的分布</h1><blockquote>
-<p>用已有的概率分布求出函数式的概率分布</p>
-</blockquote>
-<h2 id="4-1-离散型随机变量的函数的分布"><a href="#4-1-离散型随机变量的函数的分布" class="headerlink" title="4.1 离散型随机变量的函数的分布"></a>4.1 离散型随机变量的函数的分布</h2><h3 id="1-一维离散型随机变量的函数的分布律"><a href="#1-一维离散型随机变量的函数的分布律" class="headerlink" title="1.一维离散型随机变量的函数的分布律"></a>1.一维离散型随机变量的函数的分布律</h3><p>y相同相加，不同分列</p>
-<h3 id="2-二维离散型随机变量的函数的分布律"><a href="#2-二维离散型随机变量的函数的分布律" class="headerlink" title="2.二维离散型随机变量的函数的分布律"></a>2.二维离散型随机变量的函数的分布律</h3><p>求出具体值</p>
-<h2 id="4-2-一维连续型随机变量的函数的分布"><a href="#4-2-一维连续型随机变量的函数的分布" class="headerlink" title="4.2 一维连续型随机变量的函数的分布"></a>4.2 一维连续型随机变量的函数的分布</h2><p>把y的范围转化成x的范围</p>
-<p>一般方法：先求 $Y &#x3D; g(X)$ 的分布函数 $F_Y(y)$，求导得到 $f_Y(y)$</p>
-<p>也有公式，可以无脑套用<img src="/image-20230201133941348.png" alt="image-20230201133941348"></p>
-<h2 id="4-3-二维连续型随机变量的函数的分布"><a href="#4-3-二维连续型随机变量的函数的分布" class="headerlink" title="4.3 二维连续型随机变量的函数的分布"></a>4.3 二维连续型随机变量的函数的分布</h2><p>转化成二重积分</p>
-<p>几种特殊的方法：</p>
-<h3 id="1-Z-x3D-X-Y-的分布"><a href="#1-Z-x3D-X-Y-的分布" class="headerlink" title="1.$Z &#x3D; X + Y$ 的分布"></a>1.$Z &#x3D; X + Y$ 的分布</h3><p>$$<br>f_Z(z)&#x3D;\int_{-\infty}^{+\infty} f(x,z-x)dx &#x3D; \int_{\over{AB}} f(x,y)dx<br>$$</p>
-<p>第二型曲线积分</p>
-<p>有点复杂啊，回头得好好看看</p>
-<h3 id="2-Z-x3D-max-X-Y-的分布"><a href="#2-Z-x3D-max-X-Y-的分布" class="headerlink" title="2.$Z &#x3D; max{X + Y}$ 的分布"></a>2.$Z &#x3D; max{X + Y}$ 的分布</h3><p>$$<br>{Z \le z} &#x3D; {X \le z, Y \le z}<br>$$</p>
-<p><img src="/Notes%5CChapter4%5C4.3.2-1.png"></p>
-<h3 id="3-Z-x3D-min-X-Y-的分布"><a href="#3-Z-x3D-min-X-Y-的分布" class="headerlink" title="3.$Z &#x3D; min{X + Y}$ 的分布"></a>3.$Z &#x3D; min{X + Y}$ 的分布</h3><p><img src="/Notes%5CChapter4%5C4.3.3-1.png"></p>
-<h1 id="第五章-随机变量的数字特征"><a href="#第五章-随机变量的数字特征" class="headerlink" title="第五章 随机变量的数字特征"></a>第五章 随机变量的数字特征</h1><p>数字特征，指联系于分布函数的某些数：如平均值，方差等。反映了随机变量在某些方面的特征</p>
-<p>确定分布函数需要一些参数，而参数又往往由某些数字特征或其他数值所决定，故找到这些特征便能确定分布函数。</p>
-<p>实际中确定这些特征比较困难，而且没有必要，有时只需要知晓随机变量的某些特征即可。</p>
-<h2 id="5-1-数学期望"><a href="#5-1-数学期望" class="headerlink" title="5.1 数学期望"></a>5.1 数学期望</h2><p>P129，例4，收敛需要特殊记一下</p>
-<p>相加相乘的性质</p>
-<p><img src="/image-20230201135028202.png" alt="image-20230201135028202"></p>
-<p><strong>几个定理</strong></p>
-<p><img src="/image-20230201134714012.png" alt="image-20230201134714012"></p>
-<p><img src="/image-20230201134726376.png" alt="image-20230201134726376"></p>
-<h2 id="5-2-方差"><a href="#5-2-方差" class="headerlink" title="5.2 方差"></a>5.2 方差</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>几种符号</p>
-<p>带括号不带括号，Var</p>
-<p>标准差、均方差</p>
-<p><strong>重要的计算公式 $ DX  &#x3D; EX^2 - (EX)^2 $</strong></p>
-<h3 id="2-性质"><a href="#2-性质" class="headerlink" title="2.性质"></a>2.性质</h3><p><img src="/image-20230201135954111.png" alt="image-20230201135954111"></p>
-<p><img src="/image-20230201140009843.png" alt="image-20230201140009843"></p>
-<h2 id="5-3-常用随机变量的数学期望和方差"><a href="#5-3-常用随机变量的数学期望和方差" class="headerlink" title="5.3 常用随机变量的数学期望和方差"></a>5.3 常用随机变量的数学期望和方差</h2><h3 id="0-1分布"><a href="#0-1分布" class="headerlink" title="0-1分布"></a>0-1分布</h3><p>$EX &#x3D; p, DX &#x3D; p(1-p)$</p>
-<h3 id="二项分布"><a href="#二项分布" class="headerlink" title="二项分布"></a>二项分布</h3><p>$EX &#x3D; np, DX &#x3D; npq$</p>
-<h3 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h3><p>$EX &#x3D; \lambda, DX &#x3D; \lambda$</p>
-<h3 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h3><p>$EX &#x3D; \frac{a + b}{2}, DX &#x3D; \frac{(b-a)^2}{12}$</p>
-<h3 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h3><p>$EX &#x3D; \frac{1}{\lambda}, DX &#x3D; \frac{1}{\lambda^2}$</p>
-<h2 id="5-4-协方差和相关系数"><a href="#5-4-协方差和相关系数" class="headerlink" title="5.4 协方差和相关系数"></a>5.4 协方差和相关系数</h2><p>表征二维向量 X 与 Y 之间的关系</p>
-<h3 id="1-协方差"><a href="#1-协方差" class="headerlink" title="1.协方差"></a>1.协方差</h3><p>$$ Cov(X,Y) &#x3D; E[(X - EX) · (Y - EY)] $$</p>
-<p>$$ Cov(X,Y) &#x3D; E(XY) - EX·EY $$</p>
-<p>性质为：</p>
-<h3 id="2-相关系数"><a href="#2-相关系数" class="headerlink" title="2.相关系数"></a>2.相关系数</h3><p>也称标准协方差，记作 $\rho$</p>
-<h3 id="3-计算举例"><a href="#3-计算举例" class="headerlink" title="3.计算举例"></a>3.计算举例</h3><blockquote>
-<p>时刻铭记：协方差本身就是一种方差，计算的时候不需要再乘上 $\sqrt{DX} \sqrt{DY}$ 了 </p>
-</blockquote>
-<h2 id="5-5-矩-协方差矩阵"><a href="#5-5-矩-协方差矩阵" class="headerlink" title="5.5 矩 协方差矩阵"></a>5.5 矩 协方差矩阵</h2><p>记一下概念就行，式子比较麻烦后面补</p>
-<p>以及这里应该不考，所以暂时先放了</p>
-<h1 id="第六章-大数定律和中心极限定理"><a href="#第六章-大数定律和中心极限定理" class="headerlink" title="第六章 大数定律和中心极限定理"></a>第六章 大数定律和中心极限定理</h1><p>极限可以刻画相同条件下大量重复的试验</p>
-<p><strong>这章的思路：</strong></p>
-<p><strong>大数定律：</strong></p>
-<blockquote>
-<p>随机事件的大量重复出现中，存在几乎必然的规律</p>
-</blockquote>
-<ul>
-<li><strong>事件的频率作为事件的概率的估计</strong></li>
-<li><strong>样本均值作为总体均值的估计</strong></li>
-</ul>
-<p><strong>中心极限定理：</strong></p>
-<ul>
-<li><strong>正态分布在概率论中占有极其重要的地位</strong></li>
-</ul>
-<h2 id="6-1-马尔可夫不等式和切比雪夫不等式"><a href="#6-1-马尔可夫不等式和切比雪夫不等式" class="headerlink" title="6.1 马尔可夫不等式和切比雪夫不等式"></a>6.1 马尔可夫不等式和切比雪夫不等式</h2><p>两个重要的不等式，研究大数定律的基本工具</p>
-<p><img src="/Notes%5CChapter6%5C6.1-1.png"><img src="/Notes%5CChapter6%5C6.1-2.png"></p>
-<p>马尔可夫不等式是前文提到的 k 阶绝对矩</p>
-<p>切比雪夫不等式主要用于概率估计和理论推导</p>
-<ul>
-<li>理论上证实了 方差度量随机变量取值偏离均值的程度</li>
-<li>引出了方差估计的“尾概率”</li>
-</ul>
-<p><img src="/Notes%5CChapter6%5C6.1-3.png"></p>
-<blockquote>
-<p>没有偏离，则是所有变量相同取值，很好理解</p>
-</blockquote>
-<h2 id="6-2-大数定律"><a href="#6-2-大数定律" class="headerlink" title="6.2 大数定律"></a>6.2 大数定律</h2><p>频率收敛到概率的理论根据</p>
-<p>我们只介绍一些弱的情况</p>
-<p><img src="/Notes%5CChapter6%5C6.2-1.png"><img src="/Notes%5CChapter6%5C6.2-2.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.2-3.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.2-4.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.2-5.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.2-6.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.2-7.png"></p>
-<h2 id="6-3-中心极限定理"><a href="#6-3-中心极限定理" class="headerlink" title="6.3 中心极限定理"></a>6.3 中心极限定理</h2><p>人们在对大量随机现象的研究中发现，如果一个量是由大量相互独立的随机因素所造成，而每一个因素在总量中所起的作用又较小，那么这种量通常服从或近似服从正态分布. 这种现象就是中心极限定理的客观背景.</p>
-<p><img src="/Notes%5CChapter6%5C6.3-1.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.3-2.png"></p>
-<p><img src="/Notes%5CChapter6%5C6.3-3.png"></p>
-<p><strong>独立同分布的随机变量序列，它们本身不服从正态分布，但是多个随机变量和的极限分布是正态分布，这就是量变引起质变的道理．</strong></p>
-<p>设 $X_1,X_2,\dots,X_n,\dots$ 是相互独立的随机变量序列，且其服从参数为 $\lambda$ 的指数分布，则</p>
-<p><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220346361.png" alt="image-20221120220341455" style="zoom:67%;" /><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220355682.png" alt="image-20221120220355682" style="zoom:67%;" /><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220400188.png" alt="image-20221120220400188" style="zoom:67%;" /></p>
-<p>（公式太复杂，复制了个图片，摸了）</p>
-<h1 id="第七章-统计总体与样本"><a href="#第七章-统计总体与样本" class="headerlink" title="第七章 统计总体与样本"></a>第七章 统计总体与样本</h1><p><img src="/Notes%5CChapter7%5C7-1.png"></p>
-<p><strong>省流：只有参数估计和假设检验</strong></p>
-<h2 id="7-1-总体与样本"><a href="#7-1-总体与样本" class="headerlink" title="7.1 总体与样本"></a>7.1 总体与样本</h2><h3 id="1-总体与个体"><a href="#1-总体与个体" class="headerlink" title="1.总体与个体"></a>1.总体与个体</h3><p>总体：具有一定共同属性的研究对象的全体</p>
-<p>个体：组成总体的每一个元素</p>
-<p>总体通常用 $\Omega &#x3D; { \omega }$ 或 $S &#x3D; {e}$ 表示</p>
-<p>在实际中，我们主要关心的是研究对象的某一（或某几项）<strong>数量指标 $X&#x3D;X(\omega)$</strong> ，它是一个随机变量</p>
-<blockquote>
-<p>将总体的分布用随机变量刻画</p>
-</blockquote>
-<p>随机变量 $X$ 的分布就是总体的分布</p>
-<p>总体就是指随机变量 $X$ 或 $X$ 的取值集合 </p>
-<h3 id="2-样本与样本值"><a href="#2-样本与样本值" class="headerlink" title="2.样本与样本值"></a>2.样本与样本值</h3><p>用部分统计的方法</p>
-<p>从总体 $X$ 中有放回地随机抽取 $n$ 个数值，$x_i$ 是一次抽样观察（记录）的结果，$x_1,x_2,\dots,x_n$ 为总体 $X$ 的一组样本观察值，简称<strong>样本值</strong></p>
-<p><img src="/Notes%5CChapter7%5C7.1-1.png"></p>
-<p>这一段的一个重要的概念：<strong>观察值（样本值）独立与总体同分布</strong></p>
-<p>简单随机样本、简单随机抽样（不再赘述）</p>
-<p><strong>默认所提到的样本都是简单随机样本</strong></p>
-<p><img src="/Notes%5CChapter7%5C7.1-2.png"></p>
-<h2 id="7-2-样本矩和统计量"><a href="#7-2-样本矩和统计量" class="headerlink" title="7.2 样本矩和统计量"></a>7.2 样本矩和统计量</h2><blockquote>
-<p>一些加工样本的方法</p>
-</blockquote>
-<h3 id="1-样本矩"><a href="#1-样本矩" class="headerlink" title="1.样本矩"></a>1.样本矩</h3><p>样本 $k$ 阶矩（$k$ 阶原点矩）：<br>$$<br>A_k &#x3D; \frac{1}{n}\sum_{i &#x3D; 1}^n X_i ^ k<br>$$</p>
-<p>样本 $k$ 阶中心矩：<br>$$<br>B_k &#x3D; \frac{1}{n} \sum_{i &#x3D; 1} ^n (X_i - \overline{X}) ^ k<br>$$</p>
-<p>样本均值、样本方差、样本 $k$ 阶矩和样本 $k$ 阶中心矩都是<strong>随机变量</strong></p>
-<p><img src="/Notes%5CChapter7%5C7.2-1.png"></p>
-<p><img src="/Notes%5CChapter7%5C7.2-2.png"></p>
-<blockquote>
-<p>样本 $k$ 阶矩收敛于总体 $k$ 阶矩</p>
-</blockquote>
-<h3 id="2-统计量"><a href="#2-统计量" class="headerlink" title="2.统计量"></a>2.统计量</h3><blockquote>
-<p>对样本进行加工，需要针对不同的统计问题构造一个<strong>不含未知参数</strong>的样本的连续函数，称为统计量</p>
-</blockquote>
-<blockquote>
-<p>若含有总体的未知参数，即使得到了样本的观测数据，仍然不能由这些样本数据通过统计量计算出要估计的量的值</p>
-</blockquote>
-<h3 id="3-顺序统计量与经验分布函数"><a href="#3-顺序统计量与经验分布函数" class="headerlink" title="3.顺序统计量与经验分布函数"></a>3.顺序统计量与经验分布函数</h3><h2 id="7-3-常用统计量的分布"><a href="#7-3-常用统计量的分布" class="headerlink" title="7.3 常用统计量的分布"></a>7.3 常用统计量的分布</h2><blockquote>
-<p>统计量是对总体的分布或数字特征进行推断的基础。因此求统计量的分布是数理统计的基本问题之一</p>
-</blockquote>
-<blockquote>
-<p>只研究正态总体的统计量分布</p>
-</blockquote>
-<p><strong>见另一个手写文件</strong></p>
-<h1 id="第八章-参数估计"><a href="#第八章-参数估计" class="headerlink" title="第八章 参数估计"></a>第八章 参数估计</h1><h2 id="8-1-参数的点估计"><a href="#8-1-参数的点估计" class="headerlink" title="8.1 参数的点估计"></a>8.1 参数的点估计</h2><p><img src="/Notes%5CChapter8%5C8.1-1.png"></p>
-<p>用样本值估计总体的参数叫做参数估计</p>
-<p>参数估计分为点估计和区间估计</p>
-<p><strong>参数点估计的两种方法：矩估计法和极大似然估计法</strong></p>
-<p>对于同一个参数，得出的估计量也是有时相同有时不同</p>
-<h3 id="1-矩估计法"><a href="#1-矩估计法" class="headerlink" title="1.矩估计法"></a>1.矩估计法</h3><p>令样本矩 &#x3D; 总体矩解出矩估计量，矩估计量的观察值称为矩估计值</p>
-<p>当样本一阶原点矩的式子中不含 $\theta$ 时，需要求出二阶原点矩或者一阶绝对矩</p>
-<h3 id="2-极大似然估计法"><a href="#2-极大似然估计法" class="headerlink" title="2.极大似然估计法"></a>2.极大似然估计法</h3><p><strong>分连续型总体和离散型总体两种情况</strong></p>
-<p>连续型总体：$L(\theta) &#x3D; \Pi_{i &#x3D; 1} ^{n} f(x_i;\theta)$，求导求最大值对应的 $\theta$ 即为所求</p>
-<p>离散型总体：$L(\theta) &#x3D; \Pi_{i &#x3D; 1} ^{n} p(x_i;\theta)$，求导求最大值对应的 $\theta$ 即为所求</p>
-<p>喜欢考的题：P203，指数的取最小值，倒数的取最大值</p>
-<h2 id="8-2-点估计量的优良性"><a href="#8-2-点估计量的优良性" class="headerlink" title="8.2 点估计量的优良性"></a>8.2 点估计量的优良性</h2><blockquote>
-<p>评价估计量好坏的标准</p>
-</blockquote>
-<h3 id="1-无偏估计"><a href="#1-无偏估计" class="headerlink" title="1.无偏估计"></a>1.无偏估计</h3><p>$E(\hat{\theta}) &#x3D; \theta$</p>
-<p>对于几个无偏估计量应该也有区分他们好坏的标准</p>
-<h3 id="2-最小方差无偏估计"><a href="#2-最小方差无偏估计" class="headerlink" title="2.最小方差无偏估计"></a>2.最小方差无偏估计</h3><p>对任一无偏估计 $\hat{\theta_2}$ ，均有 $D(\hat{\theta_1}) \leq D(\hat{\theta_2})$</p>
-<p>对于正态总体找起来较为简单</p>
-<h3 id="3-一致估计"><a href="#3-一致估计" class="headerlink" title="3.一致估计"></a>3.一致估计</h3><h2 id="8-3-区间估计与置信区间"><a href="#8-3-区间估计与置信区间" class="headerlink" title="8.3 区间估计与置信区间"></a>8.3 区间估计与置信区间</h2><blockquote>
-<p>$\theta$ 所在区间和区间包含 $\theta$ 的可靠程度</p>
-</blockquote>
-<h3 id="1-置信区间"><a href="#1-置信区间" class="headerlink" title="1.置信区间"></a>1.置信区间</h3><h3 id="2-单侧置信限"><a href="#2-单侧置信限" class="headerlink" title="2.单侧置信限"></a>2.单侧置信限</h3><p>只关心置信区间的上限或下限</p>
-<p>目前仅能实现对正态总体的参数 $\mu$ 和 $\sigma$ 的区间估计</p>
-<h2 id="8-4-正态总体均值和方差的区间估计"><a href="#8-4-正态总体均值和方差的区间估计" class="headerlink" title="8.4 正态总体均值和方差的区间估计"></a>8.4 正态总体均值和方差的区间估计</h2><h3 id="1-均值-EX-的区间估计"><a href="#1-均值-EX-的区间估计" class="headerlink" title="1.均值 EX 的区间估计"></a>1.均值 EX 的区间估计</h3><h4 id="（1）方差DX已知，对EX进行区间估计"><a href="#（1）方差DX已知，对EX进行区间估计" class="headerlink" title="（1）方差DX已知，对EX进行区间估计"></a>（1）方差DX已知，对EX进行区间估计</h4><p>用统计量 $U$ 估计</p>
-<p>查这个比较多，因为算数简单</p>
-<h4 id="（2）方差DX未知，对EX进行区间估计"><a href="#（2）方差DX未知，对EX进行区间估计" class="headerlink" title="（2）方差DX未知，对EX进行区间估计"></a>（2）方差DX未知，对EX进行区间估计</h4><p>用统计量 $T$ 估计</p>
-<h3 id="2-方差-DX-的区间估计"><a href="#2-方差-DX-的区间估计" class="headerlink" title="2.方差 DX 的区间估计"></a>2.方差 DX 的区间估计</h3><h2 id="8-5-不考，略过"><a href="#8-5-不考，略过" class="headerlink" title="8.5 不考，略过"></a>8.5 不考，略过</h2><h1 id="第九章-假设检验"><a href="#第九章-假设检验" class="headerlink" title="第九章 假设检验"></a>第九章 假设检验</h1><p>先对<strong>总体</strong>做出某种假设，然后通过样本数据对假设做出接受或者拒绝</p>
-<h2 id="9-1-假设检验的提出及其基本思想"><a href="#9-1-假设检验的提出及其基本思想" class="headerlink" title="9.1 假设检验的提出及其基本思想"></a>9.1 假设检验的提出及其基本思想</h2><h2 id="9-2-正态总体均值和方差的假设检验"><a href="#9-2-正态总体均值和方差的假设检验" class="headerlink" title="9.2 正态总体均值和方差的假设检验"></a>9.2 正态总体均值和方差的假设检验</h2><h3 id="1-方差-sigma-2-已知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意"><a href="#1-方差-sigma-2-已知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意" class="headerlink" title="1.方差 $\sigma^2$ 已知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意"></a>1.方差 $\sigma^2$ 已知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</h3><p>采用统计量 $U_0 &#x3D; \frac{\overline{x} - \mu_0}{\sigma&#x2F;\sqrt{n}}$ 作为检验函数，$U_0 &#x3D; \frac{\overline{x} - \mu_0}{\sigma&#x2F;\sqrt{n}} \sim N(0,1)$</p>
-<h3 id="2-方差-sigma-2-未知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意"><a href="#2-方差-sigma-2-未知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意" class="headerlink" title="2.方差 $\sigma^2$ 未知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意"></a>2.方差 $\sigma^2$ 未知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</h3><p>采用统计量 $T &#x3D; \frac{\overline{x} - \mu_0}{s&#x2F;\sqrt{n}}$ 作为检验函数，$T &#x3D; \frac{\overline{x} - \mu_0}{s&#x2F;\sqrt{n}} \sim t(n-1)$</p>
-<h3 id="3-（单个）正态总体方差的假设检验"><a href="#3-（单个）正态总体方差的假设检验" class="headerlink" title="3.（单个）正态总体方差的假设检验"></a>3.（单个）正态总体方差的假设检验</h3><p>采用统计量 $W &#x3D; \frac{(n-1)s^{2}}{\sigma_0^2}$，$W &#x3D; \frac{(n-1)s^{2}}{\sigma_0^2} \sim \chi^2(n-1)$</p>
-<h2 id="9-3、9-4-不考，略过"><a href="#9-3、9-4-不考，略过" class="headerlink" title="9.3、9.4 不考，略过"></a>9.3、9.4 不考，略过</h2><h1 id="第十章-随机过程的基本概念"><a href="#第十章-随机过程的基本概念" class="headerlink" title="第十章 随机过程的基本概念"></a>第十章 随机过程的基本概念</h1><h2 id="10-1-随机过程的定义及分类"><a href="#10-1-随机过程的定义及分类" class="headerlink" title="10.1 随机过程的定义及分类"></a>10.1 随机过程的定义及分类</h2><h3 id="1-随机过程的概念"><a href="#1-随机过程的概念" class="headerlink" title="1.随机过程的概念"></a>1.随机过程的概念</h3><h3 id="2-随机过程的分类"><a href="#2-随机过程的分类" class="headerlink" title="2.随机过程的分类"></a>2.随机过程的分类</h3><p>二阶矩过程，包括正态过程和平稳过程等</p>
-<p>马尔可夫过程…</p>
-<h2 id="10-2-随机过程的概率分布"><a href="#10-2-随机过程的概率分布" class="headerlink" title="10.2 随机过程的概率分布"></a>10.2 随机过程的概率分布</h2><h3 id="1-随机过程的-n-维分布函数"><a href="#1-随机过程的-n-维分布函数" class="headerlink" title="1.随机过程的 $n$ 维分布函数"></a>1.随机过程的 $n$ 维分布函数</h3><h3 id="2-独立过程"><a href="#2-独立过程" class="headerlink" title="2.独立过程"></a>2.独立过程</h3><p>任意 $n$ 个过程都是独立的，由过程的一维分布函数就能确定该过程的统计特征</p>
-<p><img src="/image-20230211095739087.png" alt="image-20230211095739087"></p>
-<h3 id="3-两个随机过程的有限维联合分布及独立性"><a href="#3-两个随机过程的有限维联合分布及独立性" class="headerlink" title="3.两个随机过程的有限维联合分布及独立性"></a>3.两个随机过程的有限维联合分布及独立性</h3><h2 id="10-3-随机过程的数字特征（比前面更易考）"><a href="#10-3-随机过程的数字特征（比前面更易考）" class="headerlink" title="10.3 随机过程的数字特征（比前面更易考）"></a>10.3 随机过程的数字特征（比前面更易考）</h2><blockquote>
-<p>随机过程是随机变量构成的集合，所以可以通过考察随机变量的数字特征来研究</p>
-</blockquote>
-<p><img src="/image-20230211100031053.png" alt="image-20230211100031053"></p>
-<h1 id="第十一章-平稳过程"><a href="#第十一章-平稳过程" class="headerlink" title="第十一章 平稳过程"></a>第十一章 平稳过程</h1><h2 id="考试题型"><a href="#考试题型" class="headerlink" title="考试题型"></a>考试题型</h2><p>先写 $\Theta$ 和 $X$ 基础的分布、再求数字特征，最后判断是不是平稳过程</p>
-<h2 id="11-1-严平稳过程"><a href="#11-1-严平稳过程" class="headerlink" title="11.1 严平稳过程"></a>11.1 严平稳过程</h2><h2 id="11-2-广义平稳过程（平稳过程）"><a href="#11-2-广义平稳过程（平稳过程）" class="headerlink" title="11.2 广义平稳过程（平稳过程）"></a>11.2 广义平稳过程（平稳过程）</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><p><img src="/1.png" alt="1"></p>
-<h3 id="2-数字特征的性质"><a href="#2-数字特征的性质" class="headerlink" title="2.数字特征的性质"></a>2.数字特征的性质</h3><h1 id="第十二章-马尔可夫链引论"><a href="#第十二章-马尔可夫链引论" class="headerlink" title="第十二章 马尔可夫链引论"></a>第十二章 马尔可夫链引论</h1><h2 id="考试题型-1"><a href="#考试题型-1" class="headerlink" title="考试题型"></a>考试题型</h2><p>判断、状态空间、一步转移矩阵、平稳分布、两步的总条件概率</p>
-<p>判断：<img src="/image-20230211091530921.png" alt="image-20230211091530921"></p>
-<p>用上面的判据好像稍微多一些</p>
-<p><img src="/image-20230211091800582.png" alt="image-20230211091800582"></p>
-<p><img src="/image-20230211093731986.png" alt="image-20230211093731986"></p>
-<p>两步的条件概率要注意马尔可夫的独立性，或者说是标明了一种确定的状态转移过程</p>
-<p>平稳过程和马尔可夫一般都作为最后一道题出现，但是他们的难度并不大，基本都是套路题，能拿的分要稳稳握住</p>
-<p>祝诸君考试都有好运气</p>
-]]></content>
-      <categories>
-        <category>概率统计</category>
-      </categories>
-      <tags>
-        <tag>概率统计</tag>
-        <tag>S3</tag>
       </tags>
   </entry>
   <entry>
@@ -2594,44 +2287,310 @@
       </tags>
   </entry>
   <entry>
-    <title>科目三实战技巧</title>
-    <url>/subject3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>笔者与科三的爱恨情仇</p>
+    <title>概率统计复习</title>
+    <url>/Probability-and-Statistics-Review/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>缓考笨比的临时抱佛脚<del>，是时候开始预习了</del></p>
 </blockquote>
 <span id="more"></span>
 
-<p>笔者去年没有练完的科三拖到了今年来练…在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
-<h3 id="上车准备"><a href="#上车准备" class="headerlink" title="上车准备"></a>上车准备</h3><blockquote>
-<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
+<p>时间紧任务重，格式问题先摆烂了，各位看官对不住。毕竟考试要紧，考试要紧</p>
+<p><strong>8.5、9.3、9.4、11.5、12.3不考</strong></p>
+<p> [TOC]</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>笔记不重要，写不完鸽了就行，重要的是学会东西<del>（啊对对对，我也没见你学会啊）</del></p>
+<p><strong>本书结构</strong>：1-6章概率论</p>
+<p>7-9章数理统计</p>
+<p>10-12章随机过程</p>
+<h1 id="第一章-随机事件的概率"><a href="#第一章-随机事件的概率" class="headerlink" title="第一章 随机事件的概率"></a>第一章 随机事件的概率</h1><h2 id="1-1-随机事件与样本空间"><a href="#1-1-随机事件与样本空间" class="headerlink" title="1.1 随机事件与样本空间"></a>1.1 随机事件与样本空间</h2><h3 id="1-试验和事件"><a href="#1-试验和事件" class="headerlink" title="1.试验和事件"></a>1.试验和事件</h3><p>随机：其结果事先不可预言</p>
+<p><strong>不特殊说明，本书中试验都指随机试验</strong></p>
+<p>随机试验特征：</p>
+<ul>
+<li>相同条件下可以重复进行</li>
+<li>能够事先明确所有可能的实验结果范围</li>
+<li>实验前不能准确预言试验结果</li>
+</ul>
+<p>事件：试验的结果</p>
+<p>随机事件：试验中可能发生，也可能不发生，用大写字母 $A, B\dots$ 表示</p>
+<p>基本事件：随机试验的每一个可能结果，也是最简单的随机事件，用小写字母 $e, w$ 表示</p>
+<p>必然事件、不可能事件：</p>
+<p>必然事件用 $S$ 或 $Ω$ 表示，不可能事件用 $\empty$ 表示</p>
+<p>不是随机事件，讨论时为方便当作随机事件</p>
+<h3 id="2-样本空间"><a href="#2-样本空间" class="headerlink" title="2.样本空间"></a>2.样本空间</h3><p>试验 $E$ 的<strong>全部基本事件</strong>组成的集合</p>
+<p><strong>随机事件是样本空间的子集</strong></p>
+<p>不可能事件 $\empty$ 表示空集，必然事件 $S$ 表示样本空间</p>
+<p>&#x3D;&#x3D;为后文用集合论讨论事件间关系和运算做准备&#x3D;&#x3D;</p>
+<h3 id="3-随机事件的关系和运算"><a href="#3-随机事件的关系和运算" class="headerlink" title="3.随机事件的关系和运算"></a>3.随机事件的关系和运算</h3><p>包含、和、积、互不相容（互斥）、互逆（对立）、差</p>
+<p>推广到有限多个、用图形表示、运算律</p>
+<p> <img src="/Examples%5CChapter1%5C1.1.3-1.png"></p>
+<p>第一章比较简单，先鸽了，后面有空再补，因为🐓组、大⑤、离散赶得有点紧了（手动百丽破防哥）</p>
+<h1 id="第二章-随机变量及其分布"><a href="#第二章-随机变量及其分布" class="headerlink" title="第二章 随机变量及其分布"></a>第二章 随机变量及其分布</h1><h2 id="2-1-随机变量"><a href="#2-1-随机变量" class="headerlink" title="2.1 随机变量"></a>2.1 随机变量</h2><p><img src="/Notes%5CChapter2%5C2.1.1-1.png"></p>
+<p>数学本质是一个可测函数</p>
+<p>&#x3D;&#x3D;将随机事件的概率问题转化为随机变量取值的概率问题&#x3D;&#x3D;</p>
+<p>&#x3D;&#x3D;因此，随机变量及其取值范围的概率问题是我们今后学习和研究的主要问题&#x3D;&#x3D;</p>
+<h2 id="2-2-随机变量的分布函数"><a href="#2-2-随机变量的分布函数" class="headerlink" title="2.2 随机变量的分布函数"></a>2.2 随机变量的分布函数</h2><p>&#x3D;&#x3D;分布函数非常重要&#x3D;&#x3D;</p>
+<p><strong>定义</strong>：设 $X$ 为随机变量，则 ${X \ge x} &#x3D; {e \in S|-\infty &lt; X(e) \le x}$ 为随机事件，令</p>
+<p>$F(x) &#x3D; P{X \le x},-\infty &lt; x &lt; +\infty$</p>
+<p>为随机变量 $X$ 的**$\textcolor{red}{概率分布函数}$<strong>，简称</strong>$\textcolor{red}{分布函数}$**，记作 $X \sim F(x)$</p>
+<p>$F(x)$ 等于 $X$ 在区间 $(- \infty ,x]$ 取值的概率</p>
+<h2 id="2-3-离散型随机变量及其概率分布"><a href="#2-3-离散型随机变量及其概率分布" class="headerlink" title="2.3 离散型随机变量及其概率分布"></a>2.3 离散型随机变量及其概率分布</h2><p>$X$ 取各个可能值的概率</p>
+<p>$p_k &#x3D; P{X &#x3D; x_k}, k &#x3D; 1,2,\dots$</p>
+<p>称为概率分布（分布律、分布列）</p>
+<h2 id="2-4-常用离散型随机变量的分布律"><a href="#2-4-常用离散型随机变量的分布律" class="headerlink" title="2.4 常用离散型随机变量的分布律"></a>2.4 常用离散型随机变量的分布律</h2><h3 id="1-两点分布（（0-1）分布）"><a href="#1-两点分布（（0-1）分布）" class="headerlink" title="1.两点分布（（0-1）分布）"></a>1.两点分布（（0-1）分布）</h3><p>服从（0-1）分布的试验叫做<strong>伯努利试验</strong></p>
+<h3 id="2-泊松分布"><a href="#2-泊松分布" class="headerlink" title="2.泊松分布"></a>2.泊松分布</h3><p>$P{X &#x3D; k}&#x3D;e^{-\lambda} \frac{\lambda ^ k}{k!},k&#x3D;0,1,2,\dots$</p>
+<p>其中 $\lambda &gt; 0$，称 $X$ 服从参数为 $\lambda$ 的泊松分布，记作 $X \sim \Pi(\lambda)$，这里用到幂级数展开式 $e^x &#x3D; \sum_{k&#x3D;0}^{+\infty}{\frac{x^k}{k!}}$</p>
+<blockquote>
+<p>我头一次明白这个式子，这是前面乘一个 $e^{-\lambda}$ 系数，然后后面做幂级数求和，得到结果 $e^{\lambda}$ ，乘积恰好为1</p>
 </blockquote>
-<h3 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h3><blockquote>
-<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
+<h3 id="3-超几何分布"><a href="#3-超几何分布" class="headerlink" title="3.超几何分布"></a>3.超几何分布</h3><p>高中学的，多练例题即可</p>
+<h3 id="4-二项分布"><a href="#4-二项分布" class="headerlink" title="4.二项分布"></a>4.二项分布</h3><p>$P{X&#x3D;k}&#x3D;\sum_{k&#x3D;0}^{n} C_{n}^{k}p^kq^{n-k},k&#x3D;0,1,2,\dots$</p>
+<blockquote>
+<p>这公式真难敲啊，顺带提一嘴，我感觉这些没啥特别的，就是一个上标一个下标，把这个写好了就行。以及MarkDown没有自己的组合数</p>
 </blockquote>
-<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><blockquote>
-<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
+<p>$\bcancel{你没有自己的组合数吗}$</p>
+<p>是 $(p+q)^n$ 展开式中的一般项，记作 $X \sim B(n,p)$</p>
+<p>每次概率不改变的就是二项分布，<strong>常用的：放回式取用</strong></p>
+<h3 id="5-二项分布的近似计算和查泊松分布表"><a href="#5-二项分布的近似计算和查泊松分布表" class="headerlink" title="5.二项分布的近似计算和查泊松分布表"></a>5.二项分布的近似计算和查泊松分布表</h3><p>n很大，p很小的时候，二项分布接近泊松分布（一般 $n \ge 10, p_n \le 0.1$ 时)</p>
+<p>转换公式：$\lambda &#x3D; np$</p>
+<h2 id="2-5-连续型随机变量及其概率密度函数"><a href="#2-5-连续型随机变量及其概率密度函数" class="headerlink" title="2.5 连续型随机变量及其概率密度函数"></a>2.5 连续型随机变量及其概率密度函数</h2><p>$f(x)$ 为**$\textcolor{red}{概率密度函数}$<strong>（分布密度函数），简称</strong>$\textcolor{red}{概率密度}$**</p>
+<p>&#x3D;&#x3D;概率密度和分布函数都很重要，同时也要区分清楚&#x3D;&#x3D;</p>
+<h2 id="2-6-常用的连续型随机变量分布"><a href="#2-6-常用的连续型随机变量分布" class="headerlink" title="2.6 常用的连续型随机变量分布"></a>2.6 常用的连续型随机变量分布</h2><h3 id="1-均匀分布"><a href="#1-均匀分布" class="headerlink" title="1.均匀分布"></a>1.均匀分布</h3><p>$\zeta \sim U[a,b]$</p>
+<h3 id="2-指数分布"><a href="#2-指数分布" class="headerlink" title="2.指数分布"></a>2.指数分布</h3><p>$$<br>f(x)&#x3D;<br>\begin{cases}<br>\lambda e^{- \lambda x},x \ge 0,\<br>0,x &lt; 0<br>\end{cases}<br>$$</p>
+<p>分布函数<br>$$<br>F(x)&#x3D;<br>\begin{cases}<br>0,x&lt;0,\<br>\int_{-\infty}^x f(t)dt &#x3D; 1-e^{-\lambda x},x \ge 0<br>\end{cases}<br>$$</p>
+<h3 id="3-Welbull-分布"><a href="#3-Welbull-分布" class="headerlink" title="3.Welbull 分布"></a>3.Welbull 分布</h3><p>指数分布的一般情况，没怎么考过</p>
+<h3 id="4-Gamma-函数"><a href="#4-Gamma-函数" class="headerlink" title="4.$\Gamma$ 函数"></a>4.$\Gamma$ 函数</h3><p>类似于辅助的作用，单独考有点逆天，算了不写了</p>
+<h2 id="2-7-正态分布"><a href="#2-7-正态分布" class="headerlink" title="2.7 正态分布"></a>2.7 正态分布</h2><h3 id="1-欧拉-泊松积分"><a href="#1-欧拉-泊松积分" class="headerlink" title="1.欧拉-泊松积分"></a>1.欧拉-泊松积分</h3><p>很巧妙的算法，用二重积分证明<br>$$<br>\int _{-\infty} ^{+\infty} e^{-x^2} dx &#x3D; \sqrt{\pi}<br>$$</p>
+<h3 id="2-正态分布"><a href="#2-正态分布" class="headerlink" title="2.正态分布"></a>2.正态分布</h3><p>$\Huge f(x)&#x3D;\frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2 \sigma^2}},-\infty &lt; x &lt; +\infty$</p>
+<p>记作 $\zeta \sim N(\mu,\sigma^2)$</p>
+<p>$\Huge \textcolor{red}{非常非常非常重要}$</p>
+<p>性质：</p>
+<ul>
+<li>$x &#x3D; \mu$ 时，取最大值 $f(\mu) &#x3D; \Huge\frac{1}{\sigma \sqrt{2\pi}}$</li>
+</ul>
+<h3 id="3-标准正态分布"><a href="#3-标准正态分布" class="headerlink" title="3.标准正态分布"></a>3.标准正态分布</h3><p><img src="/Notes%5CChapter2%5C2.7.3-1.png"></p>
+<p>鸽了，哥们真不想打公式了妈的</p>
+<h3 id="4-正态分布与标准正态分布的关系"><a href="#4-正态分布与标准正态分布的关系" class="headerlink" title="4.正态分布与标准正态分布的关系"></a>4.正态分布与标准正态分布的关系</h3><p>$\Huge F(x) &#x3D; \Phi(\frac{x-\mu}{\sigma}),-\infty &lt; x &lt; +\infty$</p>
+<blockquote>
+<p>意义：将不好算的数据转化成可以查表的标准正态分布，相互转换得到结果</p>
 </blockquote>
-<h3 id="行驶中"><a href="#行驶中" class="headerlink" title="行驶中"></a>行驶中</h3><blockquote>
-<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
-<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
-<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
-<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
-<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
-<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
-<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
-<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
-<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
-<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
-<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
+<h3 id="5-标准正态分布的-alpha-分位点"><a href="#5-标准正态分布的-alpha-分位点" class="headerlink" title="5.标准正态分布的 $\alpha$ 分位点"></a>5.标准正态分布的 $\alpha$ 分位点</h3><blockquote>
+<p>重要理解：分位点是一个横坐标，这个图是偶函数，要注意其对称轴是 x &#x3D; 0 而非 $\frac{1}{2}$</p>
 </blockquote>
+<p><img src="/Notes%5CChapter2%5C2.7.5-1.png"></p>
+<p><del>算了，和自己达成和解，公式太多了</del></p>
+<p>考的不多但是要求一定的记忆量</p>
+<h1 id="第三章-二维随机变量"><a href="#第三章-二维随机变量" class="headerlink" title="第三章 二维随机变量"></a>第三章 二维随机变量</h1><h2 id="3-1-随机向量与联合分布"><a href="#3-1-随机向量与联合分布" class="headerlink" title="3.1 随机向量与联合分布"></a>3.1 随机向量与联合分布</h2><h3 id="1-二维随机变量的定义和分布函数的基本性质"><a href="#1-二维随机变量的定义和分布函数的基本性质" class="headerlink" title="1.二维随机变量的定义和分布函数的基本性质"></a>1.二维随机变量的定义和分布函数的基本性质</h3><p>$$<br>F(x,y) &#x3D; P{X \le x, Y \le y} }&#x3D; P{e \in S|X(e) \le x, Y(e) \le y}<br>$$</p>
+<p>称为二维随机变量 $(X,Y)$ 的分布函数或随机变量 $X$ 和 $Y$ 的联合分布函数</p>
+<p><img src="/Notes%5CChapter3%5C3.1.1-1.png"></p>
+<p><img src="/Notes%5CChapter3%5C3.1.1-2.png"></p>
+<p><strong>千万注意这个交叉计算的方式</strong></p>
+<h3 id="2-二维离散型随机变量"><a href="#2-二维离散型随机变量" class="headerlink" title="2.二维离散型随机变量"></a>2.二维离散型随机变量</h3><p>没啥想写的，鸽了吧</p>
+<p>记得有的题目要用条件概率（P73）</p>
+<h3 id="3-二维连续型随机变量"><a href="#3-二维连续型随机变量" class="headerlink" title="3.二维连续型随机变量"></a>3.二维连续型随机变量</h3><p>$\huge \frac{\partial^2 F}{\partial x \partial y}(x_0,y_0) &#x3D; f(x_0,y_0)$</p>
+<p>$\huge P{(X,Y) \in D} &#x3D; \iint_{D}f(x,y)dxdy$</p>
+<p>这里涉及到一些二重积分的内容，但是我全忘了</p>
+<p>好消息，有淑芬书，坏消息，好像把淑芬书扔家里了</p>
+<p>这两个🦁都极其重要，务必<del>基佬</del>记牢</p>
+<h3 id="4-常用的二维连续型随机变量"><a href="#4-常用的二维连续型随机变量" class="headerlink" title="4.常用的二维连续型随机变量"></a>4.常用的二维连续型随机变量</h3><p><img src="/image-20230201132709759.png" alt="image-20230201132709759"></p>
+<p>这五个变量的意义请见第五章</p>
+<h2 id="3-2-边缘分布函数"><a href="#3-2-边缘分布函数" class="headerlink" title="3.2 边缘分布函数"></a>3.2 边缘分布函数</h2><blockquote>
+<p>考虑两个变量分布函数之间的关系</p>
+</blockquote>
+<p>$$<br>F_X(x) &#x3D; \lim_{y\rightarrow+\infty} F(x,y) &#x3D; F(x, +\infty)\</p>
+<p>F_Y(y) &#x3D; \lim_{x\rightarrow+\infty} F(x,y) &#x3D; F(+\infty, y)<br>$$<br>由联合分布函数可计算边缘分布函数，但反之不可确定</p>
+<h2 id="3-3-边缘分布律与条件分布律"><a href="#3-3-边缘分布律与条件分布律" class="headerlink" title="3.3 边缘分布律与条件分布律"></a>3.3 边缘分布律与条件分布律</h2><p>$(X, Y)$ 关于 $X$ 的变量分布律正好是联合分布律表中各行概率相加</p>
+<p>$(X, Y)$ 关于 $Y$ 的变量分布律正好是联合分布律表中各行概率相加</p>
+<p><img src="/image-20230201132953614.png" alt="image-20230201132953614"></p>
+<h2 id="3-4-边缘概率密度与条件概率密度"><a href="#3-4-边缘概率密度与条件概率密度" class="headerlink" title="3.4 边缘概率密度与条件概率密度"></a>3.4 边缘概率密度与条件概率密度</h2><h3 id="1-边缘概率密度"><a href="#1-边缘概率密度" class="headerlink" title="1.边缘概率密度"></a>1.边缘概率密度</h3><p>$$<br>f_X(x)&#x3D;\int_{-\infty}^{+\infty} f(x,y)dy\<br>f_Y(y)&#x3D;\int_{-\infty}^{+\infty} f(x,y)dx<br>$$</p>
+<h3 id="2-条件概率密度"><a href="#2-条件概率密度" class="headerlink" title="2.条件概率密度"></a>2.条件概率密度</h3><p><img src="/image-20230201133151631.png" alt="image-20230201133151631"><br>$$<br>F_{X|Y}(x|y) &#x3D; \frac{\frac{\partial}{\partial x}F(x,y)}{\frac{d}{dx}F_Y(y)}\<br>F_{Y|X}(y|x) &#x3D; \frac{\frac{\partial}{\partial y}F(x,y)}{\frac{d}{dy}F_X(x)}\<br>F_{X|Y}(x|y) &#x3D; \int_{-\infty}^x \frac{f(u,y)}{f_Y(y)} du\<br>F_{Y|X}(y|x) &#x3D; \int_{-\infty}^y \frac{f(x,v)}{f_X(x)} dv\<br>f_{X|Y}(x|y) &#x3D; \frac{f(x,y)}{f_Y(y)}\<br>f_{Y|X}(y|x) &#x3D; \frac{f(x,y)}{f_X(x)}<br>$$</p>
+<h2 id="3-5-相互独立的随机变量"><a href="#3-5-相互独立的随机变量" class="headerlink" title="3.5 相互独立的随机变量"></a>3.5 相互独立的随机变量</h2><h3 id="1-相互独立"><a href="#1-相互独立" class="headerlink" title="1.相互独立"></a>1.相互独立</h3><p>$$<br>P{X \le x, Y \le y} &#x3D; P{X \le x}·P{Y \le y} \<br>F(x, y) &#x3D; F_X(x)·F_Y(y), -\infty &lt; x, y &lt; \infty<br>$$</p>
+<h3 id="2-离散型随机变量相互独立判别定理"><a href="#2-离散型随机变量相互独立判别定理" class="headerlink" title="2.离散型随机变量相互独立判别定理"></a>2.离散型随机变量相互独立判别定理</h3><p>$$<br>P{X \le x_i, Y \le y_j} &#x3D; P{X \le x_i}·P{Y \le y_j},i,j&#x3D;1,2,\dots<br>$$</p>
+<h3 id="3-连续型随机变量相互独立判别定理"><a href="#3-连续型随机变量相互独立判别定理" class="headerlink" title="3.连续型随机变量相互独立判别定理"></a>3.连续型随机变量相互独立判别定理</h3><p>$$<br>f(x,y) &#x3D; f_X(x)·f_Y(y)<br>$$</p>
+<p>（几乎处处）</p>
+<h3 id="4-有限多个或可列个变量相互独立"><a href="#4-有限多个或可列个变量相互独立" class="headerlink" title="4.有限多个或可列个变量相互独立"></a>4.有限多个或可列个变量相互独立</h3><h1 id="第四章-随机变量的函数的分布"><a href="#第四章-随机变量的函数的分布" class="headerlink" title="第四章 随机变量的函数的分布"></a>第四章 随机变量的函数的分布</h1><blockquote>
+<p>用已有的概率分布求出函数式的概率分布</p>
+</blockquote>
+<h2 id="4-1-离散型随机变量的函数的分布"><a href="#4-1-离散型随机变量的函数的分布" class="headerlink" title="4.1 离散型随机变量的函数的分布"></a>4.1 离散型随机变量的函数的分布</h2><h3 id="1-一维离散型随机变量的函数的分布律"><a href="#1-一维离散型随机变量的函数的分布律" class="headerlink" title="1.一维离散型随机变量的函数的分布律"></a>1.一维离散型随机变量的函数的分布律</h3><p>y相同相加，不同分列</p>
+<h3 id="2-二维离散型随机变量的函数的分布律"><a href="#2-二维离散型随机变量的函数的分布律" class="headerlink" title="2.二维离散型随机变量的函数的分布律"></a>2.二维离散型随机变量的函数的分布律</h3><p>求出具体值</p>
+<h2 id="4-2-一维连续型随机变量的函数的分布"><a href="#4-2-一维连续型随机变量的函数的分布" class="headerlink" title="4.2 一维连续型随机变量的函数的分布"></a>4.2 一维连续型随机变量的函数的分布</h2><p>把y的范围转化成x的范围</p>
+<p>一般方法：先求 $Y &#x3D; g(X)$ 的分布函数 $F_Y(y)$，求导得到 $f_Y(y)$</p>
+<p>也有公式，可以无脑套用<img src="/image-20230201133941348.png" alt="image-20230201133941348"></p>
+<h2 id="4-3-二维连续型随机变量的函数的分布"><a href="#4-3-二维连续型随机变量的函数的分布" class="headerlink" title="4.3 二维连续型随机变量的函数的分布"></a>4.3 二维连续型随机变量的函数的分布</h2><p>转化成二重积分</p>
+<p>几种特殊的方法：</p>
+<h3 id="1-Z-x3D-X-Y-的分布"><a href="#1-Z-x3D-X-Y-的分布" class="headerlink" title="1.$Z &#x3D; X + Y$ 的分布"></a>1.$Z &#x3D; X + Y$ 的分布</h3><p>$$<br>f_Z(z)&#x3D;\int_{-\infty}^{+\infty} f(x,z-x)dx &#x3D; \int_{\over{AB}} f(x,y)dx<br>$$</p>
+<p>第二型曲线积分</p>
+<p>有点复杂啊，回头得好好看看</p>
+<h3 id="2-Z-x3D-max-X-Y-的分布"><a href="#2-Z-x3D-max-X-Y-的分布" class="headerlink" title="2.$Z &#x3D; max{X + Y}$ 的分布"></a>2.$Z &#x3D; max{X + Y}$ 的分布</h3><p>$$<br>{Z \le z} &#x3D; {X \le z, Y \le z}<br>$$</p>
+<p><img src="/Notes%5CChapter4%5C4.3.2-1.png"></p>
+<h3 id="3-Z-x3D-min-X-Y-的分布"><a href="#3-Z-x3D-min-X-Y-的分布" class="headerlink" title="3.$Z &#x3D; min{X + Y}$ 的分布"></a>3.$Z &#x3D; min{X + Y}$ 的分布</h3><p><img src="/Notes%5CChapter4%5C4.3.3-1.png"></p>
+<h1 id="第五章-随机变量的数字特征"><a href="#第五章-随机变量的数字特征" class="headerlink" title="第五章 随机变量的数字特征"></a>第五章 随机变量的数字特征</h1><p>数字特征，指联系于分布函数的某些数：如平均值，方差等。反映了随机变量在某些方面的特征</p>
+<p>确定分布函数需要一些参数，而参数又往往由某些数字特征或其他数值所决定，故找到这些特征便能确定分布函数。</p>
+<p>实际中确定这些特征比较困难，而且没有必要，有时只需要知晓随机变量的某些特征即可。</p>
+<h2 id="5-1-数学期望"><a href="#5-1-数学期望" class="headerlink" title="5.1 数学期望"></a>5.1 数学期望</h2><p>P129，例4，收敛需要特殊记一下</p>
+<p>相加相乘的性质</p>
+<p><img src="/image-20230201135028202.png" alt="image-20230201135028202"></p>
+<p><strong>几个定理</strong></p>
+<p><img src="/image-20230201134714012.png" alt="image-20230201134714012"></p>
+<p><img src="/image-20230201134726376.png" alt="image-20230201134726376"></p>
+<h2 id="5-2-方差"><a href="#5-2-方差" class="headerlink" title="5.2 方差"></a>5.2 方差</h2><h3 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h3><p>几种符号</p>
+<p>带括号不带括号，Var</p>
+<p>标准差、均方差</p>
+<p><strong>重要的计算公式 $ DX  &#x3D; EX^2 - (EX)^2 $</strong></p>
+<h3 id="2-性质"><a href="#2-性质" class="headerlink" title="2.性质"></a>2.性质</h3><p><img src="/image-20230201135954111.png" alt="image-20230201135954111"></p>
+<p><img src="/image-20230201140009843.png" alt="image-20230201140009843"></p>
+<h2 id="5-3-常用随机变量的数学期望和方差"><a href="#5-3-常用随机变量的数学期望和方差" class="headerlink" title="5.3 常用随机变量的数学期望和方差"></a>5.3 常用随机变量的数学期望和方差</h2><h3 id="0-1分布"><a href="#0-1分布" class="headerlink" title="0-1分布"></a>0-1分布</h3><p>$EX &#x3D; p, DX &#x3D; p(1-p)$</p>
+<h3 id="二项分布"><a href="#二项分布" class="headerlink" title="二项分布"></a>二项分布</h3><p>$EX &#x3D; np, DX &#x3D; npq$</p>
+<h3 id="泊松分布"><a href="#泊松分布" class="headerlink" title="泊松分布"></a>泊松分布</h3><p>$EX &#x3D; \lambda, DX &#x3D; \lambda$</p>
+<h3 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h3><p>$EX &#x3D; \frac{a + b}{2}, DX &#x3D; \frac{(b-a)^2}{12}$</p>
+<h3 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h3><p>$EX &#x3D; \frac{1}{\lambda}, DX &#x3D; \frac{1}{\lambda^2}$</p>
+<h2 id="5-4-协方差和相关系数"><a href="#5-4-协方差和相关系数" class="headerlink" title="5.4 协方差和相关系数"></a>5.4 协方差和相关系数</h2><p>表征二维向量 X 与 Y 之间的关系</p>
+<h3 id="1-协方差"><a href="#1-协方差" class="headerlink" title="1.协方差"></a>1.协方差</h3><p>$$ Cov(X,Y) &#x3D; E[(X - EX) · (Y - EY)] $$</p>
+<p>$$ Cov(X,Y) &#x3D; E(XY) - EX·EY $$</p>
+<p>性质为：</p>
+<h3 id="2-相关系数"><a href="#2-相关系数" class="headerlink" title="2.相关系数"></a>2.相关系数</h3><p>也称标准协方差，记作 $\rho$</p>
+<h3 id="3-计算举例"><a href="#3-计算举例" class="headerlink" title="3.计算举例"></a>3.计算举例</h3><blockquote>
+<p>时刻铭记：协方差本身就是一种方差，计算的时候不需要再乘上 $\sqrt{DX} \sqrt{DY}$ 了 </p>
+</blockquote>
+<h2 id="5-5-矩-协方差矩阵"><a href="#5-5-矩-协方差矩阵" class="headerlink" title="5.5 矩 协方差矩阵"></a>5.5 矩 协方差矩阵</h2><p>记一下概念就行，式子比较麻烦后面补</p>
+<p>以及这里应该不考，所以暂时先放了</p>
+<h1 id="第六章-大数定律和中心极限定理"><a href="#第六章-大数定律和中心极限定理" class="headerlink" title="第六章 大数定律和中心极限定理"></a>第六章 大数定律和中心极限定理</h1><p>极限可以刻画相同条件下大量重复的试验</p>
+<p><strong>这章的思路：</strong></p>
+<p><strong>大数定律：</strong></p>
+<blockquote>
+<p>随机事件的大量重复出现中，存在几乎必然的规律</p>
+</blockquote>
+<ul>
+<li><strong>事件的频率作为事件的概率的估计</strong></li>
+<li><strong>样本均值作为总体均值的估计</strong></li>
+</ul>
+<p><strong>中心极限定理：</strong></p>
+<ul>
+<li><strong>正态分布在概率论中占有极其重要的地位</strong></li>
+</ul>
+<h2 id="6-1-马尔可夫不等式和切比雪夫不等式"><a href="#6-1-马尔可夫不等式和切比雪夫不等式" class="headerlink" title="6.1 马尔可夫不等式和切比雪夫不等式"></a>6.1 马尔可夫不等式和切比雪夫不等式</h2><p>两个重要的不等式，研究大数定律的基本工具</p>
+<p><img src="/Notes%5CChapter6%5C6.1-1.png"><img src="/Notes%5CChapter6%5C6.1-2.png"></p>
+<p>马尔可夫不等式是前文提到的 k 阶绝对矩</p>
+<p>切比雪夫不等式主要用于概率估计和理论推导</p>
+<ul>
+<li>理论上证实了 方差度量随机变量取值偏离均值的程度</li>
+<li>引出了方差估计的“尾概率”</li>
+</ul>
+<p><img src="/Notes%5CChapter6%5C6.1-3.png"></p>
+<blockquote>
+<p>没有偏离，则是所有变量相同取值，很好理解</p>
+</blockquote>
+<h2 id="6-2-大数定律"><a href="#6-2-大数定律" class="headerlink" title="6.2 大数定律"></a>6.2 大数定律</h2><p>频率收敛到概率的理论根据</p>
+<p>我们只介绍一些弱的情况</p>
+<p><img src="/Notes%5CChapter6%5C6.2-1.png"><img src="/Notes%5CChapter6%5C6.2-2.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-3.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-4.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-5.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-6.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.2-7.png"></p>
+<h2 id="6-3-中心极限定理"><a href="#6-3-中心极限定理" class="headerlink" title="6.3 中心极限定理"></a>6.3 中心极限定理</h2><p>人们在对大量随机现象的研究中发现，如果一个量是由大量相互独立的随机因素所造成，而每一个因素在总量中所起的作用又较小，那么这种量通常服从或近似服从正态分布. 这种现象就是中心极限定理的客观背景.</p>
+<p><img src="/Notes%5CChapter6%5C6.3-1.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.3-2.png"></p>
+<p><img src="/Notes%5CChapter6%5C6.3-3.png"></p>
+<p><strong>独立同分布的随机变量序列，它们本身不服从正态分布，但是多个随机变量和的极限分布是正态分布，这就是量变引起质变的道理．</strong></p>
+<p>设 $X_1,X_2,\dots,X_n,\dots$ 是相互独立的随机变量序列，且其服从参数为 $\lambda$ 的指数分布，则</p>
+<p><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220346361.png" alt="image-20221120220341455" style="zoom:67%;" /><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220355682.png" alt="image-20221120220355682" style="zoom:67%;" /><img src="C:/Users/Lee/AppData/Roaming/Typora/typora-user-images/image-20221120220400188.png" alt="image-20221120220400188" style="zoom:67%;" /></p>
+<p>（公式太复杂，复制了个图片，摸了）</p>
+<h1 id="第七章-统计总体与样本"><a href="#第七章-统计总体与样本" class="headerlink" title="第七章 统计总体与样本"></a>第七章 统计总体与样本</h1><p><img src="/Notes%5CChapter7%5C7-1.png"></p>
+<p><strong>省流：只有参数估计和假设检验</strong></p>
+<h2 id="7-1-总体与样本"><a href="#7-1-总体与样本" class="headerlink" title="7.1 总体与样本"></a>7.1 总体与样本</h2><h3 id="1-总体与个体"><a href="#1-总体与个体" class="headerlink" title="1.总体与个体"></a>1.总体与个体</h3><p>总体：具有一定共同属性的研究对象的全体</p>
+<p>个体：组成总体的每一个元素</p>
+<p>总体通常用 $\Omega &#x3D; { \omega }$ 或 $S &#x3D; {e}$ 表示</p>
+<p>在实际中，我们主要关心的是研究对象的某一（或某几项）<strong>数量指标 $X&#x3D;X(\omega)$</strong> ，它是一个随机变量</p>
+<blockquote>
+<p>将总体的分布用随机变量刻画</p>
+</blockquote>
+<p>随机变量 $X$ 的分布就是总体的分布</p>
+<p>总体就是指随机变量 $X$ 或 $X$ 的取值集合 </p>
+<h3 id="2-样本与样本值"><a href="#2-样本与样本值" class="headerlink" title="2.样本与样本值"></a>2.样本与样本值</h3><p>用部分统计的方法</p>
+<p>从总体 $X$ 中有放回地随机抽取 $n$ 个数值，$x_i$ 是一次抽样观察（记录）的结果，$x_1,x_2,\dots,x_n$ 为总体 $X$ 的一组样本观察值，简称<strong>样本值</strong></p>
+<p><img src="/Notes%5CChapter7%5C7.1-1.png"></p>
+<p>这一段的一个重要的概念：<strong>观察值（样本值）独立与总体同分布</strong></p>
+<p>简单随机样本、简单随机抽样（不再赘述）</p>
+<p><strong>默认所提到的样本都是简单随机样本</strong></p>
+<p><img src="/Notes%5CChapter7%5C7.1-2.png"></p>
+<h2 id="7-2-样本矩和统计量"><a href="#7-2-样本矩和统计量" class="headerlink" title="7.2 样本矩和统计量"></a>7.2 样本矩和统计量</h2><blockquote>
+<p>一些加工样本的方法</p>
+</blockquote>
+<h3 id="1-样本矩"><a href="#1-样本矩" class="headerlink" title="1.样本矩"></a>1.样本矩</h3><p>样本 $k$ 阶矩（$k$ 阶原点矩）：<br>$$<br>A_k &#x3D; \frac{1}{n}\sum_{i &#x3D; 1}^n X_i ^ k<br>$$</p>
+<p>样本 $k$ 阶中心矩：<br>$$<br>B_k &#x3D; \frac{1}{n} \sum_{i &#x3D; 1} ^n (X_i - \overline{X}) ^ k<br>$$</p>
+<p>样本均值、样本方差、样本 $k$ 阶矩和样本 $k$ 阶中心矩都是<strong>随机变量</strong></p>
+<p><img src="/Notes%5CChapter7%5C7.2-1.png"></p>
+<p><img src="/Notes%5CChapter7%5C7.2-2.png"></p>
+<blockquote>
+<p>样本 $k$ 阶矩收敛于总体 $k$ 阶矩</p>
+</blockquote>
+<h3 id="2-统计量"><a href="#2-统计量" class="headerlink" title="2.统计量"></a>2.统计量</h3><blockquote>
+<p>对样本进行加工，需要针对不同的统计问题构造一个<strong>不含未知参数</strong>的样本的连续函数，称为统计量</p>
+</blockquote>
+<blockquote>
+<p>若含有总体的未知参数，即使得到了样本的观测数据，仍然不能由这些样本数据通过统计量计算出要估计的量的值</p>
+</blockquote>
+<h3 id="3-顺序统计量与经验分布函数"><a href="#3-顺序统计量与经验分布函数" class="headerlink" title="3.顺序统计量与经验分布函数"></a>3.顺序统计量与经验分布函数</h3><h2 id="7-3-常用统计量的分布"><a href="#7-3-常用统计量的分布" class="headerlink" title="7.3 常用统计量的分布"></a>7.3 常用统计量的分布</h2><blockquote>
+<p>统计量是对总体的分布或数字特征进行推断的基础。因此求统计量的分布是数理统计的基本问题之一</p>
+</blockquote>
+<blockquote>
+<p>只研究正态总体的统计量分布</p>
+</blockquote>
+<p><strong>见另一个手写文件</strong></p>
+<h1 id="第八章-参数估计"><a href="#第八章-参数估计" class="headerlink" title="第八章 参数估计"></a>第八章 参数估计</h1><h2 id="8-1-参数的点估计"><a href="#8-1-参数的点估计" class="headerlink" title="8.1 参数的点估计"></a>8.1 参数的点估计</h2><p><img src="/Notes%5CChapter8%5C8.1-1.png"></p>
+<p>用样本值估计总体的参数叫做参数估计</p>
+<p>参数估计分为点估计和区间估计</p>
+<p><strong>参数点估计的两种方法：矩估计法和极大似然估计法</strong></p>
+<p>对于同一个参数，得出的估计量也是有时相同有时不同</p>
+<h3 id="1-矩估计法"><a href="#1-矩估计法" class="headerlink" title="1.矩估计法"></a>1.矩估计法</h3><p>令样本矩 &#x3D; 总体矩解出矩估计量，矩估计量的观察值称为矩估计值</p>
+<p>当样本一阶原点矩的式子中不含 $\theta$ 时，需要求出二阶原点矩或者一阶绝对矩</p>
+<h3 id="2-极大似然估计法"><a href="#2-极大似然估计法" class="headerlink" title="2.极大似然估计法"></a>2.极大似然估计法</h3><p><strong>分连续型总体和离散型总体两种情况</strong></p>
+<p>连续型总体：$L(\theta) &#x3D; \Pi_{i &#x3D; 1} ^{n} f(x_i;\theta)$，求导求最大值对应的 $\theta$ 即为所求</p>
+<p>离散型总体：$L(\theta) &#x3D; \Pi_{i &#x3D; 1} ^{n} p(x_i;\theta)$，求导求最大值对应的 $\theta$ 即为所求</p>
+<p>喜欢考的题：P203，指数的取最小值，倒数的取最大值</p>
+<h2 id="8-2-点估计量的优良性"><a href="#8-2-点估计量的优良性" class="headerlink" title="8.2 点估计量的优良性"></a>8.2 点估计量的优良性</h2><blockquote>
+<p>评价估计量好坏的标准</p>
+</blockquote>
+<h3 id="1-无偏估计"><a href="#1-无偏估计" class="headerlink" title="1.无偏估计"></a>1.无偏估计</h3><p>$E(\hat{\theta}) &#x3D; \theta$</p>
+<p>对于几个无偏估计量应该也有区分他们好坏的标准</p>
+<h3 id="2-最小方差无偏估计"><a href="#2-最小方差无偏估计" class="headerlink" title="2.最小方差无偏估计"></a>2.最小方差无偏估计</h3><p>对任一无偏估计 $\hat{\theta_2}$ ，均有 $D(\hat{\theta_1}) \leq D(\hat{\theta_2})$</p>
+<p>对于正态总体找起来较为简单</p>
+<h3 id="3-一致估计"><a href="#3-一致估计" class="headerlink" title="3.一致估计"></a>3.一致估计</h3><h2 id="8-3-区间估计与置信区间"><a href="#8-3-区间估计与置信区间" class="headerlink" title="8.3 区间估计与置信区间"></a>8.3 区间估计与置信区间</h2><blockquote>
+<p>$\theta$ 所在区间和区间包含 $\theta$ 的可靠程度</p>
+</blockquote>
+<h3 id="1-置信区间"><a href="#1-置信区间" class="headerlink" title="1.置信区间"></a>1.置信区间</h3><h3 id="2-单侧置信限"><a href="#2-单侧置信限" class="headerlink" title="2.单侧置信限"></a>2.单侧置信限</h3><p>只关心置信区间的上限或下限</p>
+<p>目前仅能实现对正态总体的参数 $\mu$ 和 $\sigma$ 的区间估计</p>
+<h2 id="8-4-正态总体均值和方差的区间估计"><a href="#8-4-正态总体均值和方差的区间估计" class="headerlink" title="8.4 正态总体均值和方差的区间估计"></a>8.4 正态总体均值和方差的区间估计</h2><h3 id="1-均值-EX-的区间估计"><a href="#1-均值-EX-的区间估计" class="headerlink" title="1.均值 EX 的区间估计"></a>1.均值 EX 的区间估计</h3><h4 id="（1）方差DX已知，对EX进行区间估计"><a href="#（1）方差DX已知，对EX进行区间估计" class="headerlink" title="（1）方差DX已知，对EX进行区间估计"></a>（1）方差DX已知，对EX进行区间估计</h4><p>用统计量 $U$ 估计</p>
+<p>查这个比较多，因为算数简单</p>
+<h4 id="（2）方差DX未知，对EX进行区间估计"><a href="#（2）方差DX未知，对EX进行区间估计" class="headerlink" title="（2）方差DX未知，对EX进行区间估计"></a>（2）方差DX未知，对EX进行区间估计</h4><p>用统计量 $T$ 估计</p>
+<h3 id="2-方差-DX-的区间估计"><a href="#2-方差-DX-的区间估计" class="headerlink" title="2.方差 DX 的区间估计"></a>2.方差 DX 的区间估计</h3><h2 id="8-5-不考，略过"><a href="#8-5-不考，略过" class="headerlink" title="8.5 不考，略过"></a>8.5 不考，略过</h2><h1 id="第九章-假设检验"><a href="#第九章-假设检验" class="headerlink" title="第九章 假设检验"></a>第九章 假设检验</h1><p>先对<strong>总体</strong>做出某种假设，然后通过样本数据对假设做出接受或者拒绝</p>
+<h2 id="9-1-假设检验的提出及其基本思想"><a href="#9-1-假设检验的提出及其基本思想" class="headerlink" title="9.1 假设检验的提出及其基本思想"></a>9.1 假设检验的提出及其基本思想</h2><h2 id="9-2-正态总体均值和方差的假设检验"><a href="#9-2-正态总体均值和方差的假设检验" class="headerlink" title="9.2 正态总体均值和方差的假设检验"></a>9.2 正态总体均值和方差的假设检验</h2><h3 id="1-方差-sigma-2-已知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意"><a href="#1-方差-sigma-2-已知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意" class="headerlink" title="1.方差 $\sigma^2$ 已知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意"></a>1.方差 $\sigma^2$ 已知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</h3><p>采用统计量 $U_0 &#x3D; \frac{\overline{x} - \mu_0}{\sigma&#x2F;\sqrt{n}}$ 作为检验函数，$U_0 &#x3D; \frac{\overline{x} - \mu_0}{\sigma&#x2F;\sqrt{n}} \sim N(0,1)$</p>
+<h3 id="2-方差-sigma-2-未知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意"><a href="#2-方差-sigma-2-未知，检验假设-H-0-mu-x3D-mu-0-，-H-1-任意" class="headerlink" title="2.方差 $\sigma^2$ 未知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意"></a>2.方差 $\sigma^2$ 未知，检验假设 $H_0:\mu &#x3D; \mu_0$，$H_1$ 任意</h3><p>采用统计量 $T &#x3D; \frac{\overline{x} - \mu_0}{s&#x2F;\sqrt{n}}$ 作为检验函数，$T &#x3D; \frac{\overline{x} - \mu_0}{s&#x2F;\sqrt{n}} \sim t(n-1)$</p>
+<h3 id="3-（单个）正态总体方差的假设检验"><a href="#3-（单个）正态总体方差的假设检验" class="headerlink" title="3.（单个）正态总体方差的假设检验"></a>3.（单个）正态总体方差的假设检验</h3><p>采用统计量 $W &#x3D; \frac{(n-1)s^{2}}{\sigma_0^2}$，$W &#x3D; \frac{(n-1)s^{2}}{\sigma_0^2} \sim \chi^2(n-1)$</p>
+<h2 id="9-3、9-4-不考，略过"><a href="#9-3、9-4-不考，略过" class="headerlink" title="9.3、9.4 不考，略过"></a>9.3、9.4 不考，略过</h2><h1 id="第十章-随机过程的基本概念"><a href="#第十章-随机过程的基本概念" class="headerlink" title="第十章 随机过程的基本概念"></a>第十章 随机过程的基本概念</h1><h2 id="10-1-随机过程的定义及分类"><a href="#10-1-随机过程的定义及分类" class="headerlink" title="10.1 随机过程的定义及分类"></a>10.1 随机过程的定义及分类</h2><h3 id="1-随机过程的概念"><a href="#1-随机过程的概念" class="headerlink" title="1.随机过程的概念"></a>1.随机过程的概念</h3><h3 id="2-随机过程的分类"><a href="#2-随机过程的分类" class="headerlink" title="2.随机过程的分类"></a>2.随机过程的分类</h3><p>二阶矩过程，包括正态过程和平稳过程等</p>
+<p>马尔可夫过程…</p>
+<h2 id="10-2-随机过程的概率分布"><a href="#10-2-随机过程的概率分布" class="headerlink" title="10.2 随机过程的概率分布"></a>10.2 随机过程的概率分布</h2><h3 id="1-随机过程的-n-维分布函数"><a href="#1-随机过程的-n-维分布函数" class="headerlink" title="1.随机过程的 $n$ 维分布函数"></a>1.随机过程的 $n$ 维分布函数</h3><h3 id="2-独立过程"><a href="#2-独立过程" class="headerlink" title="2.独立过程"></a>2.独立过程</h3><p>任意 $n$ 个过程都是独立的，由过程的一维分布函数就能确定该过程的统计特征</p>
+<p><img src="/image-20230211095739087.png" alt="image-20230211095739087"></p>
+<h3 id="3-两个随机过程的有限维联合分布及独立性"><a href="#3-两个随机过程的有限维联合分布及独立性" class="headerlink" title="3.两个随机过程的有限维联合分布及独立性"></a>3.两个随机过程的有限维联合分布及独立性</h3><h2 id="10-3-随机过程的数字特征（比前面更易考）"><a href="#10-3-随机过程的数字特征（比前面更易考）" class="headerlink" title="10.3 随机过程的数字特征（比前面更易考）"></a>10.3 随机过程的数字特征（比前面更易考）</h2><blockquote>
+<p>随机过程是随机变量构成的集合，所以可以通过考察随机变量的数字特征来研究</p>
+</blockquote>
+<p><img src="/image-20230211100031053.png" alt="image-20230211100031053"></p>
+<h1 id="第十一章-平稳过程"><a href="#第十一章-平稳过程" class="headerlink" title="第十一章 平稳过程"></a>第十一章 平稳过程</h1><h2 id="考试题型"><a href="#考试题型" class="headerlink" title="考试题型"></a>考试题型</h2><p>先写 $\Theta$ 和 $X$ 基础的分布、再求数字特征，最后判断是不是平稳过程</p>
+<h2 id="11-1-严平稳过程"><a href="#11-1-严平稳过程" class="headerlink" title="11.1 严平稳过程"></a>11.1 严平稳过程</h2><h2 id="11-2-广义平稳过程（平稳过程）"><a href="#11-2-广义平稳过程（平稳过程）" class="headerlink" title="11.2 广义平稳过程（平稳过程）"></a>11.2 广义平稳过程（平稳过程）</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><p><img src="/1.png" alt="1"></p>
+<h3 id="2-数字特征的性质"><a href="#2-数字特征的性质" class="headerlink" title="2.数字特征的性质"></a>2.数字特征的性质</h3><h1 id="第十二章-马尔可夫链引论"><a href="#第十二章-马尔可夫链引论" class="headerlink" title="第十二章 马尔可夫链引论"></a>第十二章 马尔可夫链引论</h1><h2 id="考试题型-1"><a href="#考试题型-1" class="headerlink" title="考试题型"></a>考试题型</h2><p>判断、状态空间、一步转移矩阵、平稳分布、两步的总条件概率</p>
+<p>判断：<img src="/image-20230211091530921.png" alt="image-20230211091530921"></p>
+<p>用上面的判据好像稍微多一些</p>
+<p><img src="/image-20230211091800582.png" alt="image-20230211091800582"></p>
+<p><img src="/image-20230211093731986.png" alt="image-20230211093731986"></p>
+<p>两步的条件概率要注意马尔可夫的独立性，或者说是标明了一种确定的状态转移过程</p>
+<p>平稳过程和马尔可夫一般都作为最后一道题出现，但是他们的难度并不大，基本都是套路题，能拿的分要稳稳握住</p>
+<p>祝诸君考试都有好运气</p>
 ]]></content>
       <categories>
-        <category>生活记录</category>
+        <category>概率统计</category>
       </categories>
       <tags>
-        <tag>科目三</tag>
+        <tag>概率统计</tag>
+        <tag>S3</tag>
       </tags>
   </entry>
   <entry>
@@ -3669,6 +3628,47 @@
         <tag>OO</tag>
         <tag>读书笔记</tag>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科目三实战技巧</title>
+    <url>/subject3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>笔者与科三的爱恨情仇</p>
+</blockquote>
+<span id="more"></span>
+
+<p>笔者去年没有练完的科三拖到了今年来练…在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
+<h3 id="上车准备"><a href="#上车准备" class="headerlink" title="上车准备"></a>上车准备</h3><blockquote>
+<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
+</blockquote>
+<h3 id="灯光"><a href="#灯光" class="headerlink" title="灯光"></a>灯光</h3><blockquote>
+<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
+</blockquote>
+<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><blockquote>
+<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
+</blockquote>
+<h3 id="行驶中"><a href="#行驶中" class="headerlink" title="行驶中"></a>行驶中</h3><blockquote>
+<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
+<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
+<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
+<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
+<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
+<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
+<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
+<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
+<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
+<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
+<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>生活记录</category>
+      </categories>
+      <tags>
+        <tag>科目三</tag>
       </tags>
   </entry>
 </search>
