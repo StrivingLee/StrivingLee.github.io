@@ -2743,18 +2743,15 @@
   <entry>
     <title>组合数学笔记</title>
     <url>/combinatorics-notes/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="7747f7f56d1b975d0e869813bb45d0e6e6ad460dccc98ee1ff109dc0d1820d32">ec02d9eae55be838821bc29a9d67230acebf99edf234d20645c2216bc8fb232c697ec67fd618b5fe6810232f922b6f2464c6e4f598b46f6f65f6791eb326df7f6d071adc2c8d64ceece96dd647a1f8c94d2102bdae5359640e86269c541d6be2a6e6d4a5d5d3198fb8c3d6f868f174c02fe68440762ab5db643ea67941d70107ea955c28839b9986077a00d16854acd68691f36c249b87268de0551d54b21069f9f3141551d7d8cf2d110e265c64feba1526f03d19bf809ce9f1f97cd711bbfaca284ab530e582a2f719c8b5787461e2348ee1344e773c779809369b4be6379073ebbbe02405a61a0d1bf3dff6629cf2553094e512fca33d008753372d0507f63199cca6cb6ebc8dd35934adddb2e32af3562aa4b1f7a98340bb173a36d8a21905e05344937b4382f36505b0880c1df21bda7d8844c95689a2343c6374ba4bc5abf9f0399eb07521f0d176f51ab458f75c32c12d0e5f65ba94ac472e862eda4654083ba2970874fa264c215bea7b330a79f78efe7bc68938dc893b90002eeddca45ebc3318fca6d4b7bfec6f8eba6e8fe829582ff694c068df0bc50f59b8c3fc47faab96b4ee261f156ca7ab61f0f7d025332c7eacb34d1e9cecb7a3e89adc6a119d2cb754322e5fd661419a6a623d46fca05f9991ca35ce7ae3c245259361173adcab963b186b6dd5e21dcf4982e95253071e872ec460900c8f3e38ab4714b0ca94988309b05a16aba2b781e5c3a4638cd1ef3a74e8ff59c04d0a4bb634b9428d73925b853fc775348c1fb282a547cfabee2d0631436fe9b9bebfd37979a6edf8effb7cffb0a751619566d684495e63</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="总述">总述</h2>
+<blockquote>
+<p>2023 春组合数学笔记，博文实在 deploy 不上去，参见我的 Github 吧</p>
+<span id="more"></span>
+</blockquote>
+<p><a
+href="%5BStrivingLee/Introductory-Combinatorics:%20Course%20resources%20of%20BUAA%20introductory%20combinatorics%20(github.com)%5D(https://github.com/StrivingLee/Introductory-Combinatorics)">Click
+here to see the remote repository</a></p>
+]]></content>
       <tags>
         <tag>数学基础</tag>
         <tag>课程笔记</tag>
