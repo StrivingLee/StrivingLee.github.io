@@ -29,15 +29,11 @@
 <meta property="og:site_name" content="StrivingLee&#39;s Blog">
 <meta property="og:description" content="MarkDown 比较全的数学公式语法集合">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp">
-<meta property="og:image" content="https://i0.hdslb.com/bfs/article/5f471724c265c39e6c832a9a3212f67aa094791e.png@942w_387h_progressive.webp">
-<meta property="og:image" content="https://i0.hdslb.com/bfs/article/a750d31bd5a69f8dd8b58c6b2d690988025d323c.png@942w_1500h_progressive.webp">
 <meta property="article:published_time" content="2022-07-27T13:05:21.485Z">
 <meta property="article:modified_time" content="2023-06-30T13:55:34.202Z">
 <meta property="article:author" content="StrivingLee">
 <meta property="article:tag" content="Grammar">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp">
 
 <link rel="canonical" href="https://strivinglee.github.io/MarkDown-Grammar/">
 
@@ -260,7 +256,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.3k</span>
+              <span>2.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -283,78 +279,154 @@
 <p>MarkDown 比较全的数学公式语法集合</p>
 </blockquote>
 <span id="more"></span>
-
-<p>[TOC]</p>
-<blockquote>
-<p>其实本质是对 Tex 语法的支持</p>
-</blockquote>
-<h3 id="一、打开Typora选择数学模块"><a href="#一、打开Typora选择数学模块" class="headerlink" title="一、打开Typora选择数学模块"></a>一、打开Typora选择数学模块</h3><p>三种打开方式：</p>
-<ul>
-<li>点击“段落” –&gt; “公式块”</li>
-<li>快捷键ctrl + shift +m</li>
-<li>“$$” + 回车</li>
-</ul>
-<h3 id="二、添加数学公式"><a href="#二、添加数学公式" class="headerlink" title="二、添加数学公式"></a>二、添加数学公式</h3><p>输出美观的数学公式，需要知道他们的格式和代码！<br>ps:Typora有时出现公式块无法删除，可能是软件bug，Ctrl + &#x2F; 打开源代码模式，在这里面可以进行删除<br>$$<br>e^{i\pi + 1} &#x3D; 2<br>$$</p>
-<h3 id="三、常用的公式格式代码练习"><a href="#三、常用的公式格式代码练习" class="headerlink" title="三、常用的公式格式代码练习"></a>三、常用的公式格式代码练习</h3><ol>
+<p>[TOC] &gt; 其实本质是对 Tex 语法的支持</p>
+<h3 id="一打开typora选择数学模块">一、打开Typora选择数学模块</h3>
+<p>三种打开方式： * 点击“段落” --&gt; “公式块” * 快捷键ctrl + shift +m *
+“$$” + 回车</p>
+<h3 id="二添加数学公式">二、添加数学公式</h3>
+<p>输出美观的数学公式，需要知道他们的格式和代码！
+ps:Typora有时出现公式块无法删除，可能是软件bug，Ctrl + /
+打开源代码模式，在这里面可以进行删除 <span class="math display">\[
+e^{i\pi + 1} = 2
+\]</span> ### 三、常用的公式格式代码练习</p>
+<ol type="1">
 <li>公式块内换行</li>
 </ol>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\\ 公式块内换行</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
+<ol start="2" type="1">
 <li>常用基本函数：</li>
 </ol>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">1、x^2 //上下标</span><br><span class="line">2、1/2 //分式1</span><br><span class="line">3、\frac&#123;1&#125;&#123;2&#125; //分式2</span><br><span class="line">4、\cdots //省略号</span><br><span class="line">5、\sqrt&#123;4&#125; //开根号</span><br><span class="line">6、\vec&#123;a&#125; //矢量</span><br><span class="line">7、\int&#123;x&#125;dx //积分1</span><br><span class="line">8、\int_&#123;1&#125;^&#123;2&#125;dx //积分2</span><br><span class="line">9、\lim&#123;a + b&#125; //极限1</span><br><span class="line">10、\lim_&#123;n\rightarrow + \infty&#125; //极限2</span><br><span class="line">11、\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125; //累加</span><br><span class="line">12、\prod_&#123;n=1&#125;^&#123;199&#125;&#123;x_n&#125; //累乘</span><br><span class="line">13、\sin&#123;(x + y)&#125; //三角函数</span><br><span class="line">14、\ln2 //对数函数1</span><br><span class="line">15、\log_28 //对数函数2</span><br><span class="line">16、a&#x27; //导数</span><br><span class="line">17、\partial&#123;F&#125; //偏微分</span><br><span class="line">18、\iint&#123;xy&#125;dxdy //二重积分</span><br><span class="line">19、\oiint&#123;x + y&#125;dxdy //二重环路积分</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-
-<p>$$<br>1、x^2\<br>2、1&#x2F;2\<br>3、\frac{1}{2}\<br>4、\cdots\<br>5、\sqrt{4}\<br>6、\vec{a}\<br>7、\int{x}dx\<br>8、\int_{1}^{2}dx\<br>9、\lim{a + b}\<br>10、\lim_{n\rightarrow + \infty}\<br>11、\sum_{n&#x3D;1}^{100}{a_n}\<br>12、\prod_{n&#x3D;1}^{199}{x_n}\<br>13、\sin{(x + y)}\<br>14、\ln2\<br>15、\log_28\<br>16、a’\<br>17、\partial{F}\<br>18、\iint{xy}dxdy\<br>19、\oiint{(x + y)}dxdy\<br>$$</p>
-<ol start="3">
+<p><span class="math display">\[
+1、x^2\\
+2、1/2\\
+3、\frac{1}{2}\\
+4、\cdots\\
+5、\sqrt{4}\\
+6、\vec{a}\\
+7、\int{x}dx\\
+8、\int_{1}^{2}dx\\
+9、\lim{a + b}\\
+10、\lim_{n\rightarrow + \infty}\\
+11、\sum_{n=1}^{100}{a_n}\\
+12、\prod_{n=1}^{199}{x_n}\\
+13、\sin{(x + y)}\\
+14、\ln2\\
+15、\log_28\\
+16、a&#39;\\
+17、\partial{F}\\
+18、\iint{xy}dxdy\\
+19、\oiint{(x + y)}dxdy\\
+\]</span></p>
+<ol start="3" type="1">
 <li>公式块内左对齐：</li>
 </ol>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125; //</span><br><span class="line">&amp;1、y = \sin(x) \\&amp;为对齐格式符</span><br><span class="line">&amp;2、</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{aligned}<br>&amp;1、y &#x3D; \sin(x) \<br>&amp;2、<br>\end{aligned}<br>$$</p>
-<ol start="4">
+<p><span class="math display">\[
+\begin{aligned}
+&amp;1、y = \sin(x) \\
+&amp;2、
+\end{aligned}
+\]</span></p>
+<ol start="4" type="1">
 <li>下标</li>
 </ol>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">v_1\\</span><br><span class="line">v_&#123;体积&#125; 下标为多个英文字母时，使用&#123;&#125;包起来：</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>v_1\<br>v_{体积}<br>$$</p>
-<ol start="5">
+<p><span class="math display">\[
+v_1\\
+v_{体积}
+\]</span></p>
+<ol start="5" type="1">
 <li>关系运算符：</li>
 </ol>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\pm // ± plus&amp;minor</span><br><span class="line">\times // ×</span><br><span class="line">\div // ÷ divide</span><br><span class="line">\equiv // == equal</span><br><span class="line">\le // &lt;= lower&amp;equal</span><br><span class="line">\ge // &gt;= greater&amp;equal</span><br></pre></td></tr></table></figure>
-<p>$$<br>\pm\<br>\times \<br>\div\<br>\equiv\<br>\leq\<br>\geq<br>$$</p>
-<ol start="6">
+<p><span class="math display">\[
+\pm\\
+\times \\
+\div\\
+\equiv\\
+\leq\\
+\geq
+\]</span></p>
+<ol start="6" type="1">
 <li>花括号公式组合：</li>
 </ol>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">c(u) =</span><br><span class="line">\begin&#123;cases&#125; </span><br><span class="line">\sqrt\frac&#123;1&#125;&#123;N&#125;, u = 0 \\ </span><br><span class="line">\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125;, n \neq0  neq:not equal</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>c(u) &#x3D;<br>\begin{cases}<br>\sqrt\frac{1}{N}, u &#x3D; 0 \<br>\sum_{n&#x3D;1}^{100}{a_n}, n \neq0<br>\end{cases}<br>$$</p>
-<ol start="7">
+<p><span class="math display">\[
+c(u) =
+\begin{cases}
+\sqrt\frac{1}{N}, u = 0 \\
+\sum_{n=1}^{100}{a_n}, n \neq0
+\end{cases}
+\]</span></p>
+<ol start="7" type="1">
 <li>空格：</li>
 </ol>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">a \quad b</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>a \quad b<br>$$</p>
-<ol start="8">
+<p><span class="math display">\[
+a \quad b
+\]</span></p>
+<ol start="8" type="1">
 <li>矩阵：</li>
 </ol>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">0&amp;1&amp;1\\</span><br><span class="line">1&amp;1&amp;0\\</span><br><span class="line">1&amp;0&amp;1\\</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\begin{matrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{matrix}<br>$$</p>
+<p><span class="math display">\[
+\begin{matrix}
+0&amp;1&amp;1\\
+1&amp;1&amp;0\\
+1&amp;0&amp;1\\
+\end{matrix}
+\]</span></p>
 <blockquote>
-<p> 在起始、结束标记用下列词替换 matrix：</p>
-<p>pmatrix：小括号边框<br>bmatrix：中括号边框 &#96;<br>Bmatrix：大括号边框<br>vmatrix：单竖线边框<br>Vmatrix：双竖线边框</p>
+<p>在起始、结束标记用下列词替换 matrix：</p>
+<p>pmatrix：小括号边框 bmatrix：中括号边框 ` Bmatrix：大括号边框
+vmatrix：单竖线边框 Vmatrix：双竖线边框</p>
 </blockquote>
-<p>$$<br>\begin{pmatrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{pmatrix}<br>$$</p>
-<p>$$<br>\begin{vmatrix}<br>0&amp;1&amp;1\<br>1&amp;1&amp;0\<br>1&amp;0&amp;1\<br>\end{vmatrix}<br>$$</p>
-<ol start="9">
+<p><span class="math display">\[
+\begin{pmatrix}
+0&amp;1&amp;1\\
+1&amp;1&amp;0\\
+1&amp;0&amp;1\\
+\end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{vmatrix}
+0&amp;1&amp;1\\
+1&amp;1&amp;0\\
+1&amp;0&amp;1\\
+\end{vmatrix}
+\]</span></p>
+<ol start="9" type="1">
 <li>特殊字符及希腊字母表：</li>
 </ol>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\infty //无穷</span><br><span class="line">\emptyset //空集</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p>$$<br>\infty \<br>\emptyset<br>$$</p>
-<ol start="10">
-<li>更多字符<br>更多特殊字符及希腊字母代码见wps中LaTex公式符号</li>
+<p><span class="math display">\[
+\infty \\
+\emptyset
+\]</span></p>
+<ol start="10" type="1">
+<li>更多字符 更多特殊字符及希腊字母代码见wps中LaTex公式符号</li>
 </ol>
 <p>① 常用字母字符</p>
-<p><img src="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp" alt="img"></p>
+<figure>
+<img
+src="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>② 特殊符号</p>
-<p><img src="https://i0.hdslb.com/bfs/article/5f471724c265c39e6c832a9a3212f67aa094791e.png@942w_387h_progressive.webp" alt="img"></p>
-<p><img src="https://i0.hdslb.com/bfs/article/a750d31bd5a69f8dd8b58c6b2d690988025d323c.png@942w_1500h_progressive.webp" alt="img"></p>
+<figure>
+<img
+src="https://i0.hdslb.com/bfs/article/5f471724c265c39e6c832a9a3212f67aa094791e.png@942w_387h_progressive.webp"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="https://i0.hdslb.com/bfs/article/a750d31bd5a69f8dd8b58c6b2d690988025d323c.png@942w_1500h_progressive.webp"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 
     </div>
 
@@ -454,7 +526,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%89%93%E5%BC%80Typora%E9%80%89%E6%8B%A9%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9D%97"><span class="nav-number">1.</span> <span class="nav-text">一、打开Typora选择数学模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%B7%BB%E5%8A%A0%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">二、添加数学公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%B8%B8%E7%94%A8%E7%9A%84%E5%85%AC%E5%BC%8F%E6%A0%BC%E5%BC%8F%E4%BB%A3%E7%A0%81%E7%BB%83%E4%B9%A0"><span class="nav-number">3.</span> <span class="nav-text">三、常用的公式格式代码练习</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E6%89%93%E5%BC%80typora%E9%80%89%E6%8B%A9%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9D%97"><span class="nav-number">1.</span> <span class="nav-text">一、打开Typora选择数学模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%B7%BB%E5%8A%A0%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">二、添加数学公式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -557,13 +629,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">153k</span>
+    <span title="Symbols count total">155k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">6:23</span>
+    <span title="Reading time total">6:28</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

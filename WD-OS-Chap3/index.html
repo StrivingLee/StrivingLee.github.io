@@ -29,24 +29,12 @@
 <meta property="og:site_name" content="StrivingLee&#39;s Blog">
 <meta property="og:description" content="王道考研 OS 的枯燥无味的 第三章 内存管理 知识点罗列">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211427483.png">
-<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211633198.png">
-<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301212008948.png">
-<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302080121468.png">
-<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302084959938.png">
-<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302085922698.png">
-<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303145710216.png">
-<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150047904.png">
-<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150248805.png">
-<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150603552.png">
-<meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150658994.png">
 <meta property="article:published_time" content="2023-01-29T14:43:09.276Z">
 <meta property="article:modified_time" content="2023-06-30T13:55:39.792Z">
 <meta property="article:author" content="StrivingLee">
 <meta property="article:tag" content="OS">
 <meta property="article:tag" content="WangDao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211427483.png">
 
 <link rel="canonical" href="https://strivinglee.github.io/WD-OS-Chap3/">
 
@@ -273,7 +261,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>627</span>
+              <span>855</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -296,41 +284,111 @@
 <p>王道考研 OS 的枯燥无味的 第三章 内存管理 知识点罗列</p>
 </blockquote>
 <span id="more"></span>
-
-<h2 id="内存的基础知识"><a href="#内存的基础知识" class="headerlink" title="内存的基础知识"></a>内存的基础知识</h2><p>按xx编址，一个地址对应的存储单元对应的是1xx</p>
+<h2 id="内存的基础知识">内存的基础知识</h2>
+<p>按xx编址，一个地址对应的存储单元对应的是1xx</p>
 <p>比如按字节编址</p>
 <p>程序执行前需要先放到内存中才能被CPU处理</p>
-<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211427483.png" alt="image-20230301211427483"></p>
-<h2 id="内存管理的概念"><a href="#内存管理的概念" class="headerlink" title="内存管理的概念"></a>内存管理的概念</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211633198.png" alt="image-20230301211633198"></p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211427483.png"
+alt="image-20230301211427483" />
+<figcaption aria-hidden="true">image-20230301211427483</figcaption>
+</figure>
+<h2 id="内存管理的概念">内存管理的概念</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211633198.png"
+alt="image-20230301211633198" />
+<figcaption aria-hidden="true">image-20230301211633198</figcaption>
+</figure>
 <p>重定位寄存器中存放的是进程的起始物理地址。界地址寄存器中存放的是进程的最大逻辑地址。</p>
-<h2 id="覆盖与交换（内存空间的扩充方式）"><a href="#覆盖与交换（内存空间的扩充方式）" class="headerlink" title="覆盖与交换（内存空间的扩充方式）"></a>覆盖与交换（内存空间的扩充方式）</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301212008948.png" alt="image-20230301212008948"></p>
+<h2
+id="覆盖与交换内存空间的扩充方式">覆盖与交换（内存空间的扩充方式）</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301212008948.png"
+alt="image-20230301212008948" />
+<figcaption aria-hidden="true">image-20230301212008948</figcaption>
+</figure>
 <p>暂时换出外存等待的进程状态为挂起状态（挂起态，suspend）</p>
 <p>文件区空间：离散分配方式</p>
 <p>对换区空间：连续分配方式</p>
-<p>对换区的I&#x2F;O速度更快</p>
+<p>对换区的I/O速度更快</p>
 <p>交换通常在许多进程运行且内存吃紧时进行，而系统负荷降低就暂停</p>
 <p>PCB会常驻内存，不会被换出外存</p>
-<h2 id="连续分配管理方式"><a href="#连续分配管理方式" class="headerlink" title="连续分配管理方式"></a>连续分配管理方式</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302080121468.png" alt="image-20230302080121468"></p>
+<h2 id="连续分配管理方式">连续分配管理方式</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302080121468.png"
+alt="image-20230302080121468" />
+<figcaption aria-hidden="true">image-20230302080121468</figcaption>
+</figure>
 <p>三种连续分配管理都无外部碎片</p>
-<h2 id="动态内存分配方法"><a href="#动态内存分配方法" class="headerlink" title="动态内存分配方法"></a>动态内存分配方法</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302084959938.png" alt="image-20230302084959938"></p>
-<p>​	</p>
-<h2 id="基本分页存储管理的基本概念"><a href="#基本分页存储管理的基本概念" class="headerlink" title="基本分页存储管理的基本概念"></a>基本分页存储管理的基本概念</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302085922698.png" alt="image-20230302085922698"></p>
+<h2 id="动态内存分配方法">动态内存分配方法</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302084959938.png"
+alt="image-20230302084959938" />
+<figcaption aria-hidden="true">image-20230302084959938</figcaption>
+</figure>
+<p>​</p>
+<h2 id="基本分页存储管理的基本概念">基本分页存储管理的基本概念</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302085922698.png"
+alt="image-20230302085922698" />
+<figcaption aria-hidden="true">image-20230302085922698</figcaption>
+</figure>
 <p>页号可以隐藏存储（如用hash来保存）</p>
 <p>然进程的各个页面是离散存放的，但是页面内部是连续存放的</p>
-<p>页号 &#x3D; 逻辑地址&#x2F;页面长度</p>
-<p>页内偏移量 &#x3D; 逻辑地址 % 页面长度</p>
-<h2 id="基本地址变换结构"><a href="#基本地址变换结构" class="headerlink" title="基本地址变换结构"></a>基本地址变换结构</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303145710216.png" alt="image-20230303145710216"></p>
+<p>页号 = 逻辑地址/页面长度</p>
+<p>页内偏移量 = 逻辑地址 % 页面长度</p>
+<h2 id="基本地址变换结构">基本地址变换结构</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303145710216.png"
+alt="image-20230303145710216" />
+<figcaption aria-hidden="true">image-20230303145710216</figcaption>
+</figure>
 <p>过程再整理下</p>
-<h2 id="具有快表的地址变换机构"><a href="#具有快表的地址变换机构" class="headerlink" title="具有快表的地址变换机构"></a>具有快表的地址变换机构</h2><p>是基本地址变换机构的改进版本</p>
-<h2 id="两级页表"><a href="#两级页表" class="headerlink" title="两级页表"></a>两级页表</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150047904.png" alt="image-20230303150047904"></p>
-<h2 id="基本分段存储管理方式"><a href="#基本分段存储管理方式" class="headerlink" title="基本分段存储管理方式"></a>基本分段存储管理方式</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150248805.png" alt="image-20230303150248805"></p>
-<h2 id="段页式管理"><a href="#段页式管理" class="headerlink" title="段页式管理"></a>段页式管理</h2><p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150603552.png" alt="image-20230303150603552"></p>
-<h2 id="虚拟内存的基本概念"><a href="#虚拟内存的基本概念" class="headerlink" title="虚拟内存的基本概念"></a>虚拟内存的基本概念</h2><p>在传统存储管理方式的基础上引入了交换技术、覆盖技术，使得内存利用率有所提升，并且能从逻辑上扩充内存容量</p>
-<p><img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150658994.png" alt="image-20230303150658994"></p>
+<h2 id="具有快表的地址变换机构">具有快表的地址变换机构</h2>
+<p>是基本地址变换机构的改进版本</p>
+<h2 id="两级页表">两级页表</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150047904.png"
+alt="image-20230303150047904" />
+<figcaption aria-hidden="true">image-20230303150047904</figcaption>
+</figure>
+<h2 id="基本分段存储管理方式">基本分段存储管理方式</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150248805.png"
+alt="image-20230303150248805" />
+<figcaption aria-hidden="true">image-20230303150248805</figcaption>
+</figure>
+<h2 id="段页式管理">段页式管理</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150603552.png"
+alt="image-20230303150603552" />
+<figcaption aria-hidden="true">image-20230303150603552</figcaption>
+</figure>
+<h2 id="虚拟内存的基本概念">虚拟内存的基本概念</h2>
+<p>在传统存储管理方式的基础上引入了交换技术、覆盖技术，使得内存利用率有所提升，并且能从逻辑上扩充内存容量</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150658994.png"
+alt="image-20230303150658994" />
+<figcaption aria-hidden="true">image-20230303150658994</figcaption>
+</figure>
 <p>虚拟内存的最大容量是由计算机的地址结构（CPU寻址范围）确定的</p>
-<p>虚拟内存的实际容量 &#x3D; min（内存和外存容量之和，CPU寻址范围）</p>
-<h2 id="请求分页管理方式"><a href="#请求分页管理方式" class="headerlink" title="请求分页管理方式"></a>请求分页管理方式</h2><h2 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h2><p>好多，详见 PPT，不做总结了，直接贴图吧（不是）</p>
-<h2 id="页面分配策略"><a href="#页面分配策略" class="headerlink" title="页面分配策略"></a>页面分配策略</h2>
+<p>虚拟内存的实际容量 = min（内存和外存容量之和，CPU寻址范围）</p>
+<h2 id="请求分页管理方式">请求分页管理方式</h2>
+<h2 id="页面置换算法">页面置换算法</h2>
+<p>好多，详见 PPT，不做总结了，直接贴图吧（不是）</p>
+<h2 id="页面分配策略">页面分配策略</h2>
+
     </div>
 
     
@@ -433,7 +491,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">内存的基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">内存管理的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2%EF%BC%88%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E6%89%A9%E5%85%85%E6%96%B9%E5%BC%8F%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">覆盖与交换（内存空间的扩充方式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">连续分配管理方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">动态内存分配方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">6.</span> <span class="nav-text">基本分页存储管理的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2%E7%BB%93%E6%9E%84"><span class="nav-number">7.</span> <span class="nav-text">基本地址变换结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E6%9C%89%E5%BF%AB%E8%A1%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2%E6%9C%BA%E6%9E%84"><span class="nav-number">8.</span> <span class="nav-text">具有快表的地址变换机构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8"><span class="nav-number">9.</span> <span class="nav-text">两级页表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E6%AE%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">10.</span> <span class="nav-text">基本分段存储管理方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%AE%A1%E7%90%86"><span class="nav-number">11.</span> <span class="nav-text">段页式管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">12.</span> <span class="nav-text">虚拟内存的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">13.</span> <span class="nav-text">请求分页管理方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="nav-number">14.</span> <span class="nav-text">页面置换算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5"><span class="nav-number">15.</span> <span class="nav-text">页面分配策略</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">内存的基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">内存管理的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E4%B8%8E%E4%BA%A4%E6%8D%A2%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E7%9A%84%E6%89%A9%E5%85%85%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">覆盖与交换（内存空间的扩充方式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">连续分配管理方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">动态内存分配方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">6.</span> <span class="nav-text">基本分页存储管理的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2%E7%BB%93%E6%9E%84"><span class="nav-number">7.</span> <span class="nav-text">基本地址变换结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E6%9C%89%E5%BF%AB%E8%A1%A8%E7%9A%84%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2%E6%9C%BA%E6%9E%84"><span class="nav-number">8.</span> <span class="nav-text">具有快表的地址变换机构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8"><span class="nav-number">9.</span> <span class="nav-text">两级页表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E6%AE%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">10.</span> <span class="nav-text">基本分段存储管理方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F%E7%AE%A1%E7%90%86"><span class="nav-number">11.</span> <span class="nav-text">段页式管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">12.</span> <span class="nav-text">虚拟内存的基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%88%86%E9%A1%B5%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">13.</span> <span class="nav-text">请求分页管理方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="nav-number">14.</span> <span class="nav-text">页面置换算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E5%88%86%E9%85%8D%E7%AD%96%E7%95%A5"><span class="nav-number">15.</span> <span class="nav-text">页面分配策略</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -536,13 +594,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">153k</span>
+    <span title="Symbols count total">155k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">6:23</span>
+    <span title="Reading time total">6:28</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
