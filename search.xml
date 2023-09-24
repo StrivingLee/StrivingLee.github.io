@@ -576,41 +576,6 @@ alt="img" />
       </tags>
   </entry>
   <entry>
-    <title>VSCode配置latex</title>
-    <url>/vscode-configure-latex/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>记录采用 <span class="math inline">\(MixTEX\)</span> 在 <span
-class="math inline">\(VSCode\)</span> 搭建 <span
-class="math inline">\(\LaTeX\)</span> 环境的过程</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="安装编译器">安装编译器</h2>
-<p>原 <code>TexLive</code> 体积过大，采用包管理器进行安装</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 MikTeX</span></span><br><span class="line">scoop install miktex</span><br></pre></td></tr></table></figure>
-<h2 id="配置-vscode">配置 VSCode</h2>
-<p>安装 <code>LaTeX Workshop</code> 扩展</p>
-<p>加入如下配置：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-shell-escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;%DOCFILE%&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="解决报错">解决报错</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">major issue: So far, you have not checked for MiKTeX updates.</span><br></pre></td></tr></table></figure>
-<p>找到MikTex
-Console这个程序，右键点击“以管理员身份运行”，然后点击“检查更新”</p>
-<blockquote>
-<p><em>Ref:</em></p>
-<p><em><a href="https://zhuanlan.zhihu.com/p/139210056">搭建 LaTeX
-舒适写作环境（VSCode） - 知乎 (zhihu.com)</a></em></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Tools</category>
-        <category>S5</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>Path</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Visual Group Theory</title>
     <url>/visual-group-theory-notes/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="总述">总述</h2>
@@ -1141,6 +1106,162 @@ alt="image-20230514230616848" />
       <tags>
         <tag>Notes</tag>
         <tag>Group Theory</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VSCode配置latex</title>
+    <url>/vscode-configure-latex/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>记录采用 <span class="math inline">\(MixTEX\)</span> 在 <span
+class="math inline">\(VSCode\)</span> 搭建 <span
+class="math inline">\(\LaTeX\)</span> 环境的过程</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="安装编译器">安装编译器</h2>
+<p>原 <code>TexLive</code> 体积过大，采用包管理器进行安装</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 MikTeX</span></span><br><span class="line">scoop install miktex</span><br></pre></td></tr></table></figure>
+<h2 id="配置-vscode">配置 VSCode</h2>
+<p>安装 <code>LaTeX Workshop</code> 扩展</p>
+<p>加入如下配置：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-shell-escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;%DOCFILE%&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="解决报错">解决报错</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">major issue: So far, you have not checked for MiKTeX updates.</span><br></pre></td></tr></table></figure>
+<p>找到MikTex
+Console这个程序，右键点击“以管理员身份运行”，然后点击“检查更新”</p>
+<blockquote>
+<p><em>Ref:</em></p>
+<p><em><a href="https://zhuanlan.zhihu.com/p/139210056">搭建 LaTeX
+舒适写作环境（VSCode） - 知乎 (zhihu.com)</a></em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Tools</category>
+        <category>S5</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>Path</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WangDao OS Chapter3</title>
+    <url>/WD-OS-Chap3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>王道考研 OS 的枯燥无味的 第三章 内存管理 知识点罗列</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="内存的基础知识">内存的基础知识</h2>
+<p>按xx编址，一个地址对应的存储单元对应的是1xx</p>
+<p>比如按字节编址</p>
+<p>程序执行前需要先放到内存中才能被CPU处理</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211427483.png"
+alt="image-20230301211427483" />
+<figcaption aria-hidden="true">image-20230301211427483</figcaption>
+</figure>
+<h2 id="内存管理的概念">内存管理的概念</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211633198.png"
+alt="image-20230301211633198" />
+<figcaption aria-hidden="true">image-20230301211633198</figcaption>
+</figure>
+<p>重定位寄存器中存放的是进程的起始物理地址。界地址寄存器中存放的是进程的最大逻辑地址。</p>
+<h2
+id="覆盖与交换内存空间的扩充方式">覆盖与交换（内存空间的扩充方式）</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301212008948.png"
+alt="image-20230301212008948" />
+<figcaption aria-hidden="true">image-20230301212008948</figcaption>
+</figure>
+<p>暂时换出外存等待的进程状态为挂起状态（挂起态，suspend）</p>
+<p>文件区空间：离散分配方式</p>
+<p>对换区空间：连续分配方式</p>
+<p>对换区的I/O速度更快</p>
+<p>交换通常在许多进程运行且内存吃紧时进行，而系统负荷降低就暂停</p>
+<p>PCB会常驻内存，不会被换出外存</p>
+<h2 id="连续分配管理方式">连续分配管理方式</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302080121468.png"
+alt="image-20230302080121468" />
+<figcaption aria-hidden="true">image-20230302080121468</figcaption>
+</figure>
+<p>三种连续分配管理都无外部碎片</p>
+<h2 id="动态内存分配方法">动态内存分配方法</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302084959938.png"
+alt="image-20230302084959938" />
+<figcaption aria-hidden="true">image-20230302084959938</figcaption>
+</figure>
+<p>​</p>
+<h2 id="基本分页存储管理的基本概念">基本分页存储管理的基本概念</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302085922698.png"
+alt="image-20230302085922698" />
+<figcaption aria-hidden="true">image-20230302085922698</figcaption>
+</figure>
+<p>页号可以隐藏存储（如用hash来保存）</p>
+<p>然进程的各个页面是离散存放的，但是页面内部是连续存放的</p>
+<p>页号 = 逻辑地址/页面长度</p>
+<p>页内偏移量 = 逻辑地址 % 页面长度</p>
+<h2 id="基本地址变换结构">基本地址变换结构</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303145710216.png"
+alt="image-20230303145710216" />
+<figcaption aria-hidden="true">image-20230303145710216</figcaption>
+</figure>
+<p>过程再整理下</p>
+<h2 id="具有快表的地址变换机构">具有快表的地址变换机构</h2>
+<p>是基本地址变换机构的改进版本</p>
+<h2 id="两级页表">两级页表</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150047904.png"
+alt="image-20230303150047904" />
+<figcaption aria-hidden="true">image-20230303150047904</figcaption>
+</figure>
+<h2 id="基本分段存储管理方式">基本分段存储管理方式</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150248805.png"
+alt="image-20230303150248805" />
+<figcaption aria-hidden="true">image-20230303150248805</figcaption>
+</figure>
+<h2 id="段页式管理">段页式管理</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150603552.png"
+alt="image-20230303150603552" />
+<figcaption aria-hidden="true">image-20230303150603552</figcaption>
+</figure>
+<h2 id="虚拟内存的基本概念">虚拟内存的基本概念</h2>
+<p>在传统存储管理方式的基础上引入了交换技术、覆盖技术，使得内存利用率有所提升，并且能从逻辑上扩充内存容量</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150658994.png"
+alt="image-20230303150658994" />
+<figcaption aria-hidden="true">image-20230303150658994</figcaption>
+</figure>
+<p>虚拟内存的最大容量是由计算机的地址结构（CPU寻址范围）确定的</p>
+<p>虚拟内存的实际容量 = min（内存和外存容量之和，CPU寻址范围）</p>
+<h2 id="请求分页管理方式">请求分页管理方式</h2>
+<h2 id="页面置换算法">页面置换算法</h2>
+<p>好多，详见 PPT，不做总结了，直接贴图吧（不是）</p>
+<h2 id="页面分配策略">页面分配策略</h2>
+]]></content>
+      <categories>
+        <category>OS</category>
+        <category>S3 Winter</category>
+      </categories>
+      <tags>
+        <tag>OS</tag>
+        <tag>WangDao</tag>
       </tags>
   </entry>
   <entry>
@@ -3172,124 +3293,25 @@ V(mutex) 会导致资源永不被释放，等待进程永不被唤醒。</p>
       </tags>
   </entry>
   <entry>
-    <title>WangDao OS Chapter3</title>
-    <url>/WD-OS-Chap3/</url>
+    <title>《满江红》观影感受</title>
+    <url>/MJH-talks/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>王道考研 OS 的枯燥无味的 第三章 内存管理 知识点罗列</p>
+<p>说说我个人对《满江红》的一点看法</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="内存的基础知识">内存的基础知识</h2>
-<p>按xx编址，一个地址对应的存储单元对应的是1xx</p>
-<p>比如按字节编址</p>
-<p>程序执行前需要先放到内存中才能被CPU处理</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211427483.png"
-alt="image-20230301211427483" />
-<figcaption aria-hidden="true">image-20230301211427483</figcaption>
-</figure>
-<h2 id="内存管理的概念">内存管理的概念</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211633198.png"
-alt="image-20230301211633198" />
-<figcaption aria-hidden="true">image-20230301211633198</figcaption>
-</figure>
-<p>重定位寄存器中存放的是进程的起始物理地址。界地址寄存器中存放的是进程的最大逻辑地址。</p>
-<h2
-id="覆盖与交换内存空间的扩充方式">覆盖与交换（内存空间的扩充方式）</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301212008948.png"
-alt="image-20230301212008948" />
-<figcaption aria-hidden="true">image-20230301212008948</figcaption>
-</figure>
-<p>暂时换出外存等待的进程状态为挂起状态（挂起态，suspend）</p>
-<p>文件区空间：离散分配方式</p>
-<p>对换区空间：连续分配方式</p>
-<p>对换区的I/O速度更快</p>
-<p>交换通常在许多进程运行且内存吃紧时进行，而系统负荷降低就暂停</p>
-<p>PCB会常驻内存，不会被换出外存</p>
-<h2 id="连续分配管理方式">连续分配管理方式</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302080121468.png"
-alt="image-20230302080121468" />
-<figcaption aria-hidden="true">image-20230302080121468</figcaption>
-</figure>
-<p>三种连续分配管理都无外部碎片</p>
-<h2 id="动态内存分配方法">动态内存分配方法</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302084959938.png"
-alt="image-20230302084959938" />
-<figcaption aria-hidden="true">image-20230302084959938</figcaption>
-</figure>
-<p>​</p>
-<h2 id="基本分页存储管理的基本概念">基本分页存储管理的基本概念</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302085922698.png"
-alt="image-20230302085922698" />
-<figcaption aria-hidden="true">image-20230302085922698</figcaption>
-</figure>
-<p>页号可以隐藏存储（如用hash来保存）</p>
-<p>然进程的各个页面是离散存放的，但是页面内部是连续存放的</p>
-<p>页号 = 逻辑地址/页面长度</p>
-<p>页内偏移量 = 逻辑地址 % 页面长度</p>
-<h2 id="基本地址变换结构">基本地址变换结构</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303145710216.png"
-alt="image-20230303145710216" />
-<figcaption aria-hidden="true">image-20230303145710216</figcaption>
-</figure>
-<p>过程再整理下</p>
-<h2 id="具有快表的地址变换机构">具有快表的地址变换机构</h2>
-<p>是基本地址变换机构的改进版本</p>
-<h2 id="两级页表">两级页表</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150047904.png"
-alt="image-20230303150047904" />
-<figcaption aria-hidden="true">image-20230303150047904</figcaption>
-</figure>
-<h2 id="基本分段存储管理方式">基本分段存储管理方式</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150248805.png"
-alt="image-20230303150248805" />
-<figcaption aria-hidden="true">image-20230303150248805</figcaption>
-</figure>
-<h2 id="段页式管理">段页式管理</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150603552.png"
-alt="image-20230303150603552" />
-<figcaption aria-hidden="true">image-20230303150603552</figcaption>
-</figure>
-<h2 id="虚拟内存的基本概念">虚拟内存的基本概念</h2>
-<p>在传统存储管理方式的基础上引入了交换技术、覆盖技术，使得内存利用率有所提升，并且能从逻辑上扩充内存容量</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150658994.png"
-alt="image-20230303150658994" />
-<figcaption aria-hidden="true">image-20230303150658994</figcaption>
-</figure>
-<p>虚拟内存的最大容量是由计算机的地址结构（CPU寻址范围）确定的</p>
-<p>虚拟内存的实际容量 = min（内存和外存容量之和，CPU寻址范围）</p>
-<h2 id="请求分页管理方式">请求分页管理方式</h2>
-<h2 id="页面置换算法">页面置换算法</h2>
-<p>好多，详见 PPT，不做总结了，直接贴图吧（不是）</p>
-<h2 id="页面分配策略">页面分配策略</h2>
+<p>首先要肯定，这部贺岁大戏确实花了心思在里面。取景比较考究，一众演员演技在线，用配乐演进和人物穿巷串联情节。</p>
+<p>不过作为张艺谋执导的电影，似乎还有不少地方做的不尽人意。</p>
+<p>剧情发展不合理。先说何立之死，何立心狠手辣，城府颇深，称得上有勇有谋。他既能知道刘喜和桃姑娘的关系，能猜出瑶琴是半路加入，便也不至于在临门一脚时匆匆靠近瑶琴打坏了一手稳赢的牌。瑶琴和张大都有枷锁，一把长刀在侧，到手的鸭子怎么看怎么不会飞，这里的发展更像是匆忙草草收尾了事，好让观众挨住隐隐的如厕之意。再者，于情于理没有让张大死的必要。于情，瑶琴守护大义守护真爱半路加入行动，张大本不必死，本可代岳将军见秦桧剐见山河收见国耻平，孙均性情中人，坐视侄儿死在眼前死不瞑目，坐视瑶琴让张大活下去的奉献化为乌有，更太过冷血乖戾，孙均一向鲁莽，喜好速战速决，甚至为秦桧挡下一刀，转变之大让人匪夷所思；于理，只有蓝玉一人在秦桧之侧，短刃也插在张大身上，枷锁解开身上亦无伤，孙均反手便可手刃秦桧昭告天下，退一万步来看，至少挟秦桧背满江红的夙愿可轻松实现，似乎也不必等待蓝绿二人均在时冒险逼迫，彼时二人利刃在手风险数倍，战场出生入死的将军更懂这个道理。最后，孙均一身伤痕，哪有力气纵马远去？不怕一身老伤皮开肉绽吗？</p>
+<p>剧情设定本就荒诞。以我对南宋将军的粗浅了解，似乎岳将军并不太在乎遗言是否能流传万古，他应该更在乎百姓的平安和故土的平复，就像辛稼轩本意也不在写词不在种树，“却将万字平戎策，换得东家种树书”，谁他妈要种树，老子要平戎定虏。能有人手刃秦桧厉兵秣马率军出征，岳将军九泉之下也可安息；放秦桧狗贼一条狗命，让他遗臭万年，who
+cares？谁他妈在乎秦桧是谁，老子只想看故国收复。确实有比生死重要百倍千倍的东西，但是这东西应该不只是岳将军的一首遗言。不得不说这里对岳将军的理解有些以己度人了，这里有种《1874》里“与你畅游战地”一般扯淡的浪漫。以及替身这件事，至少我个人感觉有些荒谬。</p>
+<p>总之，作为贺岁片，导演来分一杯羹，观众看个乐呵看个感动，能想起这位千年前的故人想起这首无人不知无人不晓的不朽词篇，便也还算，说得过去吧。</p>
 ]]></content>
       <categories>
-        <category>OS</category>
+        <category>生活记录</category>
         <category>S3 Winter</category>
       </categories>
       <tags>
-        <tag>OS</tag>
-        <tag>WangDao</tag>
+        <tag>观后感</tag>
       </tags>
   </entry>
   <entry>
@@ -5479,28 +5501,6 @@ Git
       <tags>
         <tag>Notes</tag>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《满江红》观影感受</title>
-    <url>/MJH-talks/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>说说我个人对《满江红》的一点看法</p>
-</blockquote>
-<span id="more"></span>
-<p>首先要肯定，这部贺岁大戏确实花了心思在里面。取景比较考究，一众演员演技在线，用配乐演进和人物穿巷串联情节。</p>
-<p>不过作为张艺谋执导的电影，似乎还有不少地方做的不尽人意。</p>
-<p>剧情发展不合理。先说何立之死，何立心狠手辣，城府颇深，称得上有勇有谋。他既能知道刘喜和桃姑娘的关系，能猜出瑶琴是半路加入，便也不至于在临门一脚时匆匆靠近瑶琴打坏了一手稳赢的牌。瑶琴和张大都有枷锁，一把长刀在侧，到手的鸭子怎么看怎么不会飞，这里的发展更像是匆忙草草收尾了事，好让观众挨住隐隐的如厕之意。再者，于情于理没有让张大死的必要。于情，瑶琴守护大义守护真爱半路加入行动，张大本不必死，本可代岳将军见秦桧剐见山河收见国耻平，孙均性情中人，坐视侄儿死在眼前死不瞑目，坐视瑶琴让张大活下去的奉献化为乌有，更太过冷血乖戾，孙均一向鲁莽，喜好速战速决，甚至为秦桧挡下一刀，转变之大让人匪夷所思；于理，只有蓝玉一人在秦桧之侧，短刃也插在张大身上，枷锁解开身上亦无伤，孙均反手便可手刃秦桧昭告天下，退一万步来看，至少挟秦桧背满江红的夙愿可轻松实现，似乎也不必等待蓝绿二人均在时冒险逼迫，彼时二人利刃在手风险数倍，战场出生入死的将军更懂这个道理。最后，孙均一身伤痕，哪有力气纵马远去？不怕一身老伤皮开肉绽吗？</p>
-<p>剧情设定本就荒诞。以我对南宋将军的粗浅了解，似乎岳将军并不太在乎遗言是否能流传万古，他应该更在乎百姓的平安和故土的平复，就像辛稼轩本意也不在写词不在种树，“却将万字平戎策，换得东家种树书”，谁他妈要种树，老子要平戎定虏。能有人手刃秦桧厉兵秣马率军出征，岳将军九泉之下也可安息；放秦桧狗贼一条狗命，让他遗臭万年，who
-cares？谁他妈在乎秦桧是谁，老子只想看故国收复。确实有比生死重要百倍千倍的东西，但是这东西应该不只是岳将军的一首遗言。不得不说这里对岳将军的理解有些以己度人了，这里有种《1874》里“与你畅游战地”一般扯淡的浪漫。以及替身这件事，至少我个人感觉有些荒谬。</p>
-<p>总之，作为贺岁片，导演来分一杯羹，观众看个乐呵看个感动，能想起这位千年前的故人想起这首无人不知无人不晓的不朽词篇，便也还算，说得过去吧。</p>
-]]></content>
-      <categories>
-        <category>生活记录</category>
-        <category>S3 Winter</category>
-      </categories>
-      <tags>
-        <tag>观后感</tag>
       </tags>
   </entry>
   <entry>
