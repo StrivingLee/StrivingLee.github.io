@@ -1,6 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>《C陷阱与缺陷》读书笔记</title>
+    <url>/c-traps-pitfalls-notes/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="总述">总述</h2>
+<blockquote>
+<p>C 陷阱与缺陷读书笔记，批判阅读</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="c-陷阱与缺陷">C 陷阱与缺陷</h1>
+<h2 id="第1章-词法陷阱">第1章 词法陷阱</h2>
+<h3 id="不同于">1.1 =不同于==</h3>
+<p>不应该关闭警告选项，而应进行显式比较</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// improper</span></span><br><span class="line"><span class="keyword">if</span> (x = y)</span><br><span class="line">    foo();</span><br><span class="line"></span><br><span class="line"><span class="comment">// proper</span></span><br><span class="line"><span class="keyword">if</span> ((x = y) != <span class="number">0</span>)</span><br><span class="line">    foo();</span><br></pre></td></tr></table></figure>
+<p>赋值误写为比较</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ((filedsc == open(argv[i], <span class="number">0</span>)) &lt; <span class="number">0</span>)</span><br><span class="line">    error();</span><br><span class="line"><span class="comment">// 完全没有调用error的机会</span></span><br></pre></td></tr></table></figure>
+<h3 id="和不同于和">1.2 &amp;和|不同于&amp;&amp;和||</h3>
+<p>见后</p>
+<h3 id="词法分析中的贪心法">1.3 词法分析中的“贪心法”</h3>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">a---b;</span><br><span class="line"><span class="comment">/* is same as</span></span><br><span class="line"><span class="comment"> * a -- -b</span></span><br><span class="line"><span class="comment"> * is different from</span></span><br><span class="line"><span class="comment"> * a - --b</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">y = x<span class="comment">/*p; // is regarded as MULTI</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">y = x / *p; <span class="comment">// x point to p</span></span><br><span class="line">y = x/(*p);</span><br></pre></td></tr></table></figure>
+<h3 id="整型常量">1.4 整型常量</h3>
+<p>1-4.c</p>
+<p>不允许出现9</p>
+<h3 id="字符和字符串">1.5 字符和字符串</h3>
+<p>双引号引起的字符串代表指向无名数组起始字符的指针，无名数组用引号之间的字符以及二进制为0的字符
+<code>\0</code> 初始化</p>
+<h3 id="练习题">练习题</h3>
+<h2 id="第2章-语法陷阱">第2章 语法陷阱</h2>
+<h3 id="理解函数声明">2.1 理解函数声明</h3>
+<p>C
+变量的声明由两部分构成：类型以及一组类似表达式的声明符(declarator)</p>
+<p>声明符与表达式类似，对它求值返回一个声明中给定类型的结果</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> ((f));</span><br></pre></td></tr></table></figure>
+<p>这个声明的含义是，当对其求值时，<code>((f))</code>
+的类型为浮点类型，由此推知 <code>f</code> 的类型也是浮点类型</p>
+<p>且 <code>()</code> 结合优先级高于 <code>*</code></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> *<span class="title function_">g</span><span class="params">()</span>, <span class="params">(*h)</span><span class="params">()</span>;</span><br><span class="line"><span class="comment">// is same as the following statement</span></span><br><span class="line"><span class="type">float</span> *(g()), (*h)();</span><br></pre></td></tr></table></figure>
+<p>知道如何声明一个类型的变量后就很容易得到该类型的类型转换符了：去掉声明中的变量名和末尾分号</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">(<span class="type">float</span> (*)())</span><br></pre></td></tr></table></figure>
+<p>调用函数</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">(*fp)();</span><br><span class="line"><span class="comment">// abbr</span></span><br><span class="line">fp();</span><br></pre></td></tr></table></figure>
+<p>todo</p>
+<h2 id="第3章-语义陷阱">第3章 语义陷阱</h2>
+<h3 id="指针与数组">3.1 指针与数组</h3>
+<p>二维数组事实上是一个指向一维数组的指针数组</p>
+<p>所以取行就只需取一个下标</p>
+<h3 id="非数组的指针">3.2 非数组的指针</h3>
+<p><code>malloc()</code> 可能会返回 <code>NULL</code>
+作为内存分配失败的标志（不过一般来说也许不用？）</p>
+<h3 id="作为参数的数组声明">3.3 作为参数的数组声明</h3>
+<p>用数组作为函数参数没什么意义，和传入首地址是等效的</p>
+<p>他卖了个关子 todo</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="type">char</span> *hello;</span><br><span class="line"><span class="keyword">extern</span> <span class="type">char</span> hello[];</span><br></pre></td></tr></table></figure>
+<h3 id="避免举隅法">3.4 避免“举隅法”</h3>
+<p>玄之又玄，大概就是表达复制指针并不复制原始内容，即shallow
+copy，当然，修改字符串常量的行为貌似是UB，与编译器实现有关</p>
+<h3 id="空指针并非空字符串">3.5 空指针并非空字符串</h3>
+<p>编译器保证由0转换而来的指针不等于任何有效的指针</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> NULL 0</span></span><br></pre></td></tr></table></figure>
+<p>不能访问空指针指向的内容</p>
+<h3 id="边界计算与不对称边界">3.6 边界计算与不对称边界</h3>
+<p>不对称边界：左闭右开，在数学上的不对称的丑陋带来了编程时出奇的方便</p>
+<p>另一种看待不对称问题的方式：把上界视作某序列中第一个被占用的元素，把下界视作序列中第一个被释放的元素</p>
+<p>来看一段例子：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> N 1024</span></span><br><span class="line"><span class="type">static</span> <span class="type">char</span> buffer[N];</span><br><span class="line"><span class="type">static</span> <span class="type">char</span> *bufptr;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">bufwrite</span><span class="params">(<span class="type">char</span> *p, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (--n &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (bufptr == &amp;buffer[N])</span><br><span class="line">            flushbuffer();</span><br><span class="line">        -bufptr++ = *p++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ANSI C 标准中允许与“溢界”的元素地址相比较，但是对其引用是非法的</p>
+<p><code>memcpy()</code>
+提供了一次复制多个字符的方法，并且通常借助汇编语言的实现提高速度</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">bufwrite</span><span class="params">(<span class="type">char</span> *p, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="type">int</span> k, rem;</span><br><span class="line">        <span class="keyword">if</span> (bufptr == &amp;buffer[N])</span><br><span class="line">            flushbuffer();</span><br><span class="line">        rem = N - (bufptr - buffer);</span><br><span class="line">        k = n &gt; rem ? rem : n;</span><br><span class="line">        <span class="built_in">memcpy</span>(bufptr, p, k);</span><br><span class="line">        bufptr += k;</span><br><span class="line">        p += k;</span><br><span class="line">        n -= k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在“师出有名”的情况下，我们应该有信心写对这些技巧性很强的代码</p>
+<p>另一个打印给定行号or列号字符的函数</p>
+<h3 id="求值顺序">3.7 求值顺序</h3>
+<p>主要说了短路求值</p>
+<h3 id="运算符和">3.8 运算符&amp;&amp;、||和!</h3>
+<p>逻辑运算符只会返回0或1</p>
+<p>&amp;和|两侧的值都会算出，而不会短路求值</p>
+<h3 id="溢出">3.9 溢出</h3>
+<h3 id="为函数-main-提供返回值">3.10 为函数 main 提供返回值</h3>
+<p>忘记显示声明 main 返回值为 int，而又在前面定义了其他 struct</p>
+<h2 id="第4章-连接">第4章 连接</h2>
+<h3 id="什么是连接器">4.1 什么是连接器</h3>
+<h3 id="声明与定义">4.2 声明与定义</h3>
+<p>外部变量尽量不要重复定义</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// file1.c</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// file2.c</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">9</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="命名冲突与static修饰符">4.3 命名冲突与static修饰符</h3>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">int</span> a;</span><br></pre></td></tr></table></figure>
+<p>将 a 的作用域限制在一个源文件内</p>
+<p>因此，如果若干个函数需要共享一组外部对象，可以将这些函数放到一个源文件中，把他们需要用到的对象在同一个源文件中用
+static
+声明，如果一个函数仅仅被同一个源文件中的其他函数调用，我们就应该声明该函数为
+static</p>
+<h3 id="形参实参与返回值">4.4 形参、实参与返回值</h3>
+<p>如果一个函数在被定义或声明之前被调用，它的返回类型默认为 int</p>
+<p>C 中形参和实参匹配的规则略为复杂，ANSI C
+允许程序员在声明时指定函数的参数类型，如</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">double</span> <span class="title function_">square</span><span class="params">(<span class="type">double</span>)</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">square(<span class="number">2</span>); <span class="comment">// legal, is same as square((double)2)</span></span><br></pre></td></tr></table></figure>
+<p>如果一个函数没有 float、short 或者 char
+类型的参数，在函数声明中可以省略参数类型的说明</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">isvowel</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">isvowel</span><span class="params">(<span class="type">int</span> c)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> c == <span class="string">&#x27;a&#x27;</span> || c == <span class="string">&#x27;e&#x27;</span> || c == <span class="string">&#x27;i&#x27;</span> || c == <span class="string">&#x27;o&#x27;</span> || c == <span class="string">&#x27;u&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>scanf 和 printf</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;c);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// expected: 0 1 2 3 4</span></span><br><span class="line"><span class="comment">// actual:   0 0 0 0 0</span></span><br></pre></td></tr></table></figure>
+<p>字符 c 附近的内存因为整型所占存储空间大于字符型而被覆盖</p>
+<h3 id="检查外部类型">4.5 检查外部类型</h3>
+<p>保证 extern 变量与其声明一致</p>
+<h3 id="头文件">4.6 头文件</h3>
+<h2 id="第5章-库函数">第5章 库函数</h2>
+<p><strong>尽可能</strong>使用库函数</p>
+<h3 id="返回整数的getchar函数">5.1 返回整数的getchar函数</h3>
+<p>不知所云，不管了</p>
+<h3 id="更新顺序文件">5.2 更新顺序文件</h3>
+<p>fread 操作，用到时候再细究</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (fread( (<span class="type">char</span> *)&amp;rec, <span class="keyword">sizeof</span>(rec), <span class="number">1</span>, fp) == <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// do something on rec</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="comment">/*rec needs to be update*/</span>) &#123;</span><br><span class="line">        fseek(fp, -(<span class="type">long</span>)<span class="keyword">sizeof</span>(rec), <span class="number">1</span>);</span><br><span class="line">        fwrite( (<span class="type">char</span> *)&amp;rec, <span class="keyword">sizeof</span>(rec))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="缓存输出与内存分配">5.3 缓存输出与内存分配</h3>
+<p>程序输出的两种方式：</p>
+<ul>
+<li>即时处理（系统负担较大）</li>
+<li>先暂存再大块写入</li>
+</ul>
+<p>因此 C
+语言实现通常都允许程序员进行实际的写操作之前控制产生的输出数据量，一般通过库函数
+<code>setbuf(stdout, buf)</code> 实现</p>
+<p>这个语句通知输入/输出库，所有写入到 stdout 的输出都应该使用 buf
+作为缓冲区，直到 buf 被填满或者程序员直接调用
+fflush（对于写操作打开的文件，fflush
+会直接导致输出缓冲区的内容被实际写入该文件）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> BUF[BUFSIZ];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> c;</span><br><span class="line">    </span><br><span class="line">    setbuf(<span class="built_in">stdout</span>, buf);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> ((c = getchar()) != EOF)</span><br><span class="line">        <span class="built_in">putchar</span>(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用errno检测错误">5.4 使用errno检测错误</h3>
+<p>先检测作为错误指示的返回值，确定已经执行失败，再检查 errno
+确定出错原因</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="comment">/*wrong return value*/</span>) &#123;</span><br><span class="line">    <span class="comment">// check errno</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="库函数signal">5.5 库函数signal</h3>
+<p>signal 是一种捕获异步事件的方式</p>
+<p>信号是真正的“异步”，可能在 C
+语言执行期间的任何时刻发生，甚至可能出现在 malloc
+等复杂函数的执行过程中。因此从安全角度考虑，信号处理函数不应该调用上述类型的库函数</p>
+<p>唯一绝对安全可移植的操作：print 错误语句，exit 退出</p>
+<h2 id="第6章-预处理器">第6章 预处理器</h2>
+<blockquote>
+<p>主要讲的宏的事情</p>
+</blockquote>
+<h3 id="不能忽视宏定义中的空格">6.1 不能忽视宏定义中的空格</h3>
+<h3 id="宏并不是函数">6.2 宏并不是函数</h3>
+<p>主要是括号的问题</p>
+<p>但是比如下面这段就会出现重复计算的bug</p>
+<p>经典的把 <code>toupper</code> 定义成宏：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">toupper</span>(*p++);</span><br></pre></td></tr></table></figure>
+<p>嵌套宏也可能导致代码过长，比如四层嵌套的 <code>max</code> 语句</p>
+<p>其实写成四行 if-else 更好</p>
+<h3 id="宏并不是语句">6.3 宏并不是语句</h3>
+<h3 id="宏并不是类型定义">6.4 宏并不是类型定义</h3>
+<blockquote>
+<p>省流：用 typedef</p>
+</blockquote>
+<h2 id="第7章-可移植性缺陷">第7章 可移植性缺陷</h2>
+<p>就感觉...没太大必要</p>
+<p>就摸了（不是）</p>
+]]></content>
+      <categories>
+        <category>C&amp;C++</category>
+        <category>Notes</category>
+        <category>S4 Summer</category>
+      </categories>
+      <tags>
+        <tag>C&amp;C++</tag>
+        <tag>Notes</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OO Pre Review</title>
     <url>/OO-Pre-Review/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面">写在前面</h2>
@@ -243,178 +412,9 @@ copy即可（其实也节省了代码量）</p>
       </tags>
   </entry>
   <entry>
-    <title>《C陷阱与缺陷》读书笔记</title>
-    <url>/c-traps-pitfalls-notes/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="总述">总述</h2>
-<blockquote>
-<p>C 陷阱与缺陷读书笔记，批判阅读</p>
-</blockquote>
-<span id="more"></span>
-<h1 id="c-陷阱与缺陷">C 陷阱与缺陷</h1>
-<h2 id="第1章-词法陷阱">第1章 词法陷阱</h2>
-<h3 id="不同于">1.1 =不同于==</h3>
-<p>不应该关闭警告选项，而应进行显式比较</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// improper</span></span><br><span class="line"><span class="keyword">if</span> (x = y)</span><br><span class="line">    foo();</span><br><span class="line"></span><br><span class="line"><span class="comment">// proper</span></span><br><span class="line"><span class="keyword">if</span> ((x = y) != <span class="number">0</span>)</span><br><span class="line">    foo();</span><br></pre></td></tr></table></figure>
-<p>赋值误写为比较</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ((filedsc == open(argv[i], <span class="number">0</span>)) &lt; <span class="number">0</span>)</span><br><span class="line">    error();</span><br><span class="line"><span class="comment">// 完全没有调用error的机会</span></span><br></pre></td></tr></table></figure>
-<h3 id="和不同于和">1.2 &amp;和|不同于&amp;&amp;和||</h3>
-<p>见后</p>
-<h3 id="词法分析中的贪心法">1.3 词法分析中的“贪心法”</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">a---b;</span><br><span class="line"><span class="comment">/* is same as</span></span><br><span class="line"><span class="comment"> * a -- -b</span></span><br><span class="line"><span class="comment"> * is different from</span></span><br><span class="line"><span class="comment"> * a - --b</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">y = x<span class="comment">/*p; // is regarded as MULTI</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">y = x / *p; <span class="comment">// x point to p</span></span><br><span class="line">y = x/(*p);</span><br></pre></td></tr></table></figure>
-<h3 id="整型常量">1.4 整型常量</h3>
-<p>1-4.c</p>
-<p>不允许出现9</p>
-<h3 id="字符和字符串">1.5 字符和字符串</h3>
-<p>双引号引起的字符串代表指向无名数组起始字符的指针，无名数组用引号之间的字符以及二进制为0的字符
-<code>\0</code> 初始化</p>
-<h3 id="练习题">练习题</h3>
-<h2 id="第2章-语法陷阱">第2章 语法陷阱</h2>
-<h3 id="理解函数声明">2.1 理解函数声明</h3>
-<p>C
-变量的声明由两部分构成：类型以及一组类似表达式的声明符(declarator)</p>
-<p>声明符与表达式类似，对它求值返回一个声明中给定类型的结果</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> ((f));</span><br></pre></td></tr></table></figure>
-<p>这个声明的含义是，当对其求值时，<code>((f))</code>
-的类型为浮点类型，由此推知 <code>f</code> 的类型也是浮点类型</p>
-<p>且 <code>()</code> 结合优先级高于 <code>*</code></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> *<span class="title function_">g</span><span class="params">()</span>, <span class="params">(*h)</span><span class="params">()</span>;</span><br><span class="line"><span class="comment">// is same as the following statement</span></span><br><span class="line"><span class="type">float</span> *(g()), (*h)();</span><br></pre></td></tr></table></figure>
-<p>知道如何声明一个类型的变量后就很容易得到该类型的类型转换符了：去掉声明中的变量名和末尾分号</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">(<span class="type">float</span> (*)())</span><br></pre></td></tr></table></figure>
-<p>调用函数</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">(*fp)();</span><br><span class="line"><span class="comment">// abbr</span></span><br><span class="line">fp();</span><br></pre></td></tr></table></figure>
-<p>todo</p>
-<h2 id="第3章-语义陷阱">第3章 语义陷阱</h2>
-<h3 id="指针与数组">3.1 指针与数组</h3>
-<p>二维数组事实上是一个指向一维数组的指针数组</p>
-<p>所以取行就只需取一个下标</p>
-<h3 id="非数组的指针">3.2 非数组的指针</h3>
-<p><code>malloc()</code> 可能会返回 <code>NULL</code>
-作为内存分配失败的标志（不过一般来说也许不用？）</p>
-<h3 id="作为参数的数组声明">3.3 作为参数的数组声明</h3>
-<p>用数组作为函数参数没什么意义，和传入首地址是等效的</p>
-<p>他卖了个关子 todo</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="type">char</span> *hello;</span><br><span class="line"><span class="keyword">extern</span> <span class="type">char</span> hello[];</span><br></pre></td></tr></table></figure>
-<h3 id="避免举隅法">3.4 避免“举隅法”</h3>
-<p>玄之又玄，大概就是表达复制指针并不复制原始内容，即shallow
-copy，当然，修改字符串常量的行为貌似是UB，与编译器实现有关</p>
-<h3 id="空指针并非空字符串">3.5 空指针并非空字符串</h3>
-<p>编译器保证由0转换而来的指针不等于任何有效的指针</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> NULL 0</span></span><br></pre></td></tr></table></figure>
-<p>不能访问空指针指向的内容</p>
-<h3 id="边界计算与不对称边界">3.6 边界计算与不对称边界</h3>
-<p>不对称边界：左闭右开，在数学上的不对称的丑陋带来了编程时出奇的方便</p>
-<p>另一种看待不对称问题的方式：把上界视作某序列中第一个被占用的元素，把下界视作序列中第一个被释放的元素</p>
-<p>来看一段例子：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> N 1024</span></span><br><span class="line"><span class="type">static</span> <span class="type">char</span> buffer[N];</span><br><span class="line"><span class="type">static</span> <span class="type">char</span> *bufptr;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">bufwrite</span><span class="params">(<span class="type">char</span> *p, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (--n &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (bufptr == &amp;buffer[N])</span><br><span class="line">            flushbuffer();</span><br><span class="line">        -bufptr++ = *p++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>ANSI C 标准中允许与“溢界”的元素地址相比较，但是对其引用是非法的</p>
-<p><code>memcpy()</code>
-提供了一次复制多个字符的方法，并且通常借助汇编语言的实现提高速度</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">bufwrite</span><span class="params">(<span class="type">char</span> *p, <span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="type">int</span> k, rem;</span><br><span class="line">        <span class="keyword">if</span> (bufptr == &amp;buffer[N])</span><br><span class="line">            flushbuffer();</span><br><span class="line">        rem = N - (bufptr - buffer);</span><br><span class="line">        k = n &gt; rem ? rem : n;</span><br><span class="line">        <span class="built_in">memcpy</span>(bufptr, p, k);</span><br><span class="line">        bufptr += k;</span><br><span class="line">        p += k;</span><br><span class="line">        n -= k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在“师出有名”的情况下，我们应该有信心写对这些技巧性很强的代码</p>
-<p>另一个打印给定行号or列号字符的函数</p>
-<h3 id="求值顺序">3.7 求值顺序</h3>
-<p>主要说了短路求值</p>
-<h3 id="运算符和">3.8 运算符&amp;&amp;、||和!</h3>
-<p>逻辑运算符只会返回0或1</p>
-<p>&amp;和|两侧的值都会算出，而不会短路求值</p>
-<h3 id="溢出">3.9 溢出</h3>
-<h3 id="为函数-main-提供返回值">3.10 为函数 main 提供返回值</h3>
-<p>忘记显示声明 main 返回值为 int，而又在前面定义了其他 struct</p>
-<h2 id="第4章-连接">第4章 连接</h2>
-<h3 id="什么是连接器">4.1 什么是连接器</h3>
-<h3 id="声明与定义">4.2 声明与定义</h3>
-<p>外部变量尽量不要重复定义</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// file1.c</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// file2.c</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">9</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="命名冲突与static修饰符">4.3 命名冲突与static修饰符</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">int</span> a;</span><br></pre></td></tr></table></figure>
-<p>将 a 的作用域限制在一个源文件内</p>
-<p>因此，如果若干个函数需要共享一组外部对象，可以将这些函数放到一个源文件中，把他们需要用到的对象在同一个源文件中用
-static
-声明，如果一个函数仅仅被同一个源文件中的其他函数调用，我们就应该声明该函数为
-static</p>
-<h3 id="形参实参与返回值">4.4 形参、实参与返回值</h3>
-<p>如果一个函数在被定义或声明之前被调用，它的返回类型默认为 int</p>
-<p>C 中形参和实参匹配的规则略为复杂，ANSI C
-允许程序员在声明时指定函数的参数类型，如</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">double</span> <span class="title function_">square</span><span class="params">(<span class="type">double</span>)</span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">square(<span class="number">2</span>); <span class="comment">// legal, is same as square((double)2)</span></span><br></pre></td></tr></table></figure>
-<p>如果一个函数没有 float、short 或者 char
-类型的参数，在函数声明中可以省略参数类型的说明</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">isvowel</span><span class="params">()</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">isvowel</span><span class="params">(<span class="type">int</span> c)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> c == <span class="string">&#x27;a&#x27;</span> || c == <span class="string">&#x27;e&#x27;</span> || c == <span class="string">&#x27;i&#x27;</span> || c == <span class="string">&#x27;o&#x27;</span> || c == <span class="string">&#x27;u&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>scanf 和 printf</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;c);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// expected: 0 1 2 3 4</span></span><br><span class="line"><span class="comment">// actual:   0 0 0 0 0</span></span><br></pre></td></tr></table></figure>
-<p>字符 c 附近的内存因为整型所占存储空间大于字符型而被覆盖</p>
-<h3 id="检查外部类型">4.5 检查外部类型</h3>
-<p>保证 extern 变量与其声明一致</p>
-<h3 id="头文件">4.6 头文件</h3>
-<h2 id="第5章-库函数">第5章 库函数</h2>
-<p><strong>尽可能</strong>使用库函数</p>
-<h3 id="返回整数的getchar函数">5.1 返回整数的getchar函数</h3>
-<p>不知所云，不管了</p>
-<h3 id="更新顺序文件">5.2 更新顺序文件</h3>
-<p>fread 操作，用到时候再细究</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (fread( (<span class="type">char</span> *)&amp;rec, <span class="keyword">sizeof</span>(rec), <span class="number">1</span>, fp) == <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// do something on rec</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="comment">/*rec needs to be update*/</span>) &#123;</span><br><span class="line">        fseek(fp, -(<span class="type">long</span>)<span class="keyword">sizeof</span>(rec), <span class="number">1</span>);</span><br><span class="line">        fwrite( (<span class="type">char</span> *)&amp;rec, <span class="keyword">sizeof</span>(rec))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="缓存输出与内存分配">5.3 缓存输出与内存分配</h3>
-<p>程序输出的两种方式：</p>
-<ul>
-<li>即时处理（系统负担较大）</li>
-<li>先暂存再大块写入</li>
-</ul>
-<p>因此 C
-语言实现通常都允许程序员进行实际的写操作之前控制产生的输出数据量，一般通过库函数
-<code>setbuf(stdout, buf)</code> 实现</p>
-<p>这个语句通知输入/输出库，所有写入到 stdout 的输出都应该使用 buf
-作为缓冲区，直到 buf 被填满或者程序员直接调用
-fflush（对于写操作打开的文件，fflush
-会直接导致输出缓冲区的内容被实际写入该文件）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> BUF[BUFSIZ];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> c;</span><br><span class="line">    </span><br><span class="line">    setbuf(<span class="built_in">stdout</span>, buf);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> ((c = getchar()) != EOF)</span><br><span class="line">        <span class="built_in">putchar</span>(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="使用errno检测错误">5.4 使用errno检测错误</h3>
-<p>先检测作为错误指示的返回值，确定已经执行失败，再检查 errno
-确定出错原因</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="comment">/*wrong return value*/</span>) &#123;</span><br><span class="line">    <span class="comment">// check errno</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="库函数signal">5.5 库函数signal</h3>
-<p>signal 是一种捕获异步事件的方式</p>
-<p>信号是真正的“异步”，可能在 C
-语言执行期间的任何时刻发生，甚至可能出现在 malloc
-等复杂函数的执行过程中。因此从安全角度考虑，信号处理函数不应该调用上述类型的库函数</p>
-<p>唯一绝对安全可移植的操作：print 错误语句，exit 退出</p>
-<h2 id="第6章-预处理器">第6章 预处理器</h2>
-<blockquote>
-<p>主要讲的宏的事情</p>
-</blockquote>
-<h3 id="不能忽视宏定义中的空格">6.1 不能忽视宏定义中的空格</h3>
-<h3 id="宏并不是函数">6.2 宏并不是函数</h3>
-<p>主要是括号的问题</p>
-<p>但是比如下面这段就会出现重复计算的bug</p>
-<p>经典的把 <code>toupper</code> 定义成宏：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">toupper</span>(*p++);</span><br></pre></td></tr></table></figure>
-<p>嵌套宏也可能导致代码过长，比如四层嵌套的 <code>max</code> 语句</p>
-<p>其实写成四行 if-else 更好</p>
-<h3 id="宏并不是语句">6.3 宏并不是语句</h3>
-<h3 id="宏并不是类型定义">6.4 宏并不是类型定义</h3>
-<blockquote>
-<p>省流：用 typedef</p>
-</blockquote>
-<h2 id="第7章-可移植性缺陷">第7章 可移植性缺陷</h2>
-<p>就感觉...没太大必要</p>
-<p>就摸了（不是）</p>
-]]></content>
-      <categories>
-        <category>C&amp;C++</category>
-        <category>Notes</category>
-        <category>S4 Summer</category>
-      </categories>
-      <tags>
-        <tag>C&amp;C++</tag>
-        <tag>Notes</tag>
-      </tags>
-  </entry>
-  <entry>
     <title></title>
     <url>//</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: 「BUAA-CO」Pre</span><br><span class="line">link: co-pre</span><br><span class="line">tags: [ComputerOrganization, Replay]</span><br><span class="line">categories:</span><br><span class="line">  - [ComputerOrganization]</span><br><span class="line">  - [S5]</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: CO Pre</span><br><span class="line">link: co-pre</span><br><span class="line">tags: [CO, Replay]</span><br><span class="line">categories:</span><br><span class="line">  - [CO]</span><br><span class="line">  - [S5]</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>2023年Pre题目回忆版及我的3A答案回忆版</p>
 </blockquote>
@@ -519,6 +519,738 @@ logisim 中的实现较为简单。</p>
 <p>电路外观如图（已隐去部分内容）</p>
 <p>最后，祝大家上机顺利，学有所获！</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Typora数学公式</title>
+    <url>/MarkDown-Grammar/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>MarkDown 比较全的数学公式语法集合</p>
+</blockquote>
+<span id="more"></span>
+<p>[TOC] &gt; 其实本质是对 Tex 语法的支持</p>
+<h3 id="一打开typora选择数学模块">一、打开Typora选择数学模块</h3>
+<p>三种打开方式： * 点击“段落” --&gt; “公式块” * 快捷键ctrl + shift +m *
+“$$” + 回车</p>
+<h3 id="二添加数学公式">二、添加数学公式</h3>
+<p>输出美观的数学公式，需要知道他们的格式和代码！
+ps:Typora有时出现公式块无法删除，可能是软件bug，Ctrl + /
+打开源代码模式，在这里面可以进行删除 <span class="math display">\[
+e^{i\pi + 1} = 2
+\]</span> ### 三、常用的公式格式代码练习</p>
+<ol type="1">
+<li>公式块内换行</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\\ 公式块内换行</span><br></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>常用基本函数：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">1、x^2 //上下标</span><br><span class="line">2、1/2 //分式1</span><br><span class="line">3、\frac&#123;1&#125;&#123;2&#125; //分式2</span><br><span class="line">4、\cdots //省略号</span><br><span class="line">5、\sqrt&#123;4&#125; //开根号</span><br><span class="line">6、\vec&#123;a&#125; //矢量</span><br><span class="line">7、\int&#123;x&#125;dx //积分1</span><br><span class="line">8、\int_&#123;1&#125;^&#123;2&#125;dx //积分2</span><br><span class="line">9、\lim&#123;a + b&#125; //极限1</span><br><span class="line">10、\lim_&#123;n\rightarrow + \infty&#125; //极限2</span><br><span class="line">11、\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125; //累加</span><br><span class="line">12、\prod_&#123;n=1&#125;^&#123;199&#125;&#123;x_n&#125; //累乘</span><br><span class="line">13、\sin&#123;(x + y)&#125; //三角函数</span><br><span class="line">14、\ln2 //对数函数1</span><br><span class="line">15、\log_28 //对数函数2</span><br><span class="line">16、a&#x27; //导数</span><br><span class="line">17、\partial&#123;F&#125; //偏微分</span><br><span class="line">18、\iint&#123;xy&#125;dxdy //二重积分</span><br><span class="line">19、\oiint&#123;x + y&#125;dxdy //二重环路积分</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+1、x^2\\
+2、1/2\\
+3、\frac{1}{2}\\
+4、\cdots\\
+5、\sqrt{4}\\
+6、\vec{a}\\
+7、\int{x}dx\\
+8、\int_{1}^{2}dx\\
+9、\lim{a + b}\\
+10、\lim_{n\rightarrow + \infty}\\
+11、\sum_{n=1}^{100}{a_n}\\
+12、\prod_{n=1}^{199}{x_n}\\
+13、\sin{(x + y)}\\
+14、\ln2\\
+15、\log_28\\
+16、a&#39;\\
+17、\partial{F}\\
+18、\iint{xy}dxdy\\
+19、\oiint{(x + y)}dxdy\\
+\]</span></p>
+<ol start="3" type="1">
+<li>公式块内左对齐：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125; //</span><br><span class="line">&amp;1、y = \sin(x) \\&amp;为对齐格式符</span><br><span class="line">&amp;2、</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;1、y = \sin(x) \\
+&amp;2、
+\end{aligned}
+\]</span></p>
+<ol start="4" type="1">
+<li>下标</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">v_1\\</span><br><span class="line">v_&#123;体积&#125; 下标为多个英文字母时，使用&#123;&#125;包起来：</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+v_1\\
+v_{体积}
+\]</span></p>
+<ol start="5" type="1">
+<li>关系运算符：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\pm // ± plus&amp;minor</span><br><span class="line">\times // ×</span><br><span class="line">\div // ÷ divide</span><br><span class="line">\equiv // == equal</span><br><span class="line">\le // &lt;= lower&amp;equal</span><br><span class="line">\ge // &gt;= greater&amp;equal</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\pm\\
+\times \\
+\div\\
+\equiv\\
+\leq\\
+\geq
+\]</span></p>
+<ol start="6" type="1">
+<li>花括号公式组合：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">c(u) =</span><br><span class="line">\begin&#123;cases&#125; </span><br><span class="line">\sqrt\frac&#123;1&#125;&#123;N&#125;, u = 0 \\ </span><br><span class="line">\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125;, n \neq0  neq:not equal</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+c(u) =
+\begin{cases}
+\sqrt\frac{1}{N}, u = 0 \\
+\sum_{n=1}^{100}{a_n}, n \neq0
+\end{cases}
+\]</span></p>
+<ol start="7" type="1">
+<li>空格：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">a \quad b</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+a \quad b
+\]</span></p>
+<ol start="8" type="1">
+<li>矩阵：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">0&amp;1&amp;1\\</span><br><span class="line">1&amp;1&amp;0\\</span><br><span class="line">1&amp;0&amp;1\\</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\begin{matrix}
+0&amp;1&amp;1\\
+1&amp;1&amp;0\\
+1&amp;0&amp;1\\
+\end{matrix}
+\]</span></p>
+<blockquote>
+<p>在起始、结束标记用下列词替换 matrix：</p>
+<p>pmatrix：小括号边框 bmatrix：中括号边框 ` Bmatrix：大括号边框
+vmatrix：单竖线边框 Vmatrix：双竖线边框</p>
+</blockquote>
+<p><span class="math display">\[
+\begin{pmatrix}
+0&amp;1&amp;1\\
+1&amp;1&amp;0\\
+1&amp;0&amp;1\\
+\end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{vmatrix}
+0&amp;1&amp;1\\
+1&amp;1&amp;0\\
+1&amp;0&amp;1\\
+\end{vmatrix}
+\]</span></p>
+<ol start="9" type="1">
+<li>特殊字符及希腊字母表：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\infty //无穷</span><br><span class="line">\emptyset //空集</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\infty \\
+\emptyset
+\]</span></p>
+<ol start="10" type="1">
+<li>更多字符 更多特殊字符及希腊字母代码见wps中LaTex公式符号</li>
+</ol>
+<p>① 常用字母字符</p>
+<figure>
+<img
+src="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>② 特殊符号</p>
+<figure>
+<img
+src="https://i0.hdslb.com/bfs/article/5f471724c265c39e6c832a9a3212f67aa094791e.png@942w_387h_progressive.webp"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="https://i0.hdslb.com/bfs/article/a750d31bd5a69f8dd8b58c6b2d690988025d323c.png@942w_1500h_progressive.webp"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>Tools</category>
+        <category>S2</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VSCode配置latex</title>
+    <url>/vscode-configure-latex/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>记录采用 <span class="math inline">\(MixTEX\)</span> 在 <span
+class="math inline">\(VSCode\)</span> 搭建 <span
+class="math inline">\(\LaTeX\)</span> 环境的过程</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="安装编译器">安装编译器</h2>
+<p>原 <code>TexLive</code> 体积过大，采用包管理器进行安装</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 MikTeX</span></span><br><span class="line">scoop install miktex</span><br></pre></td></tr></table></figure>
+<h2 id="配置-vscode">配置 VSCode</h2>
+<p>安装 <code>LaTeX Workshop</code> 扩展</p>
+<p>加入如下配置：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-shell-escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;%DOCFILE%&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="解决报错">解决报错</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">major issue: So far, you have not checked for MiKTeX updates.</span><br></pre></td></tr></table></figure>
+<p>找到MikTex
+Console这个程序，右键点击“以管理员身份运行”，然后点击“检查更新”</p>
+<blockquote>
+<p><em>Ref:</em></p>
+<p><em><a href="https://zhuanlan.zhihu.com/p/139210056">搭建 LaTeX
+舒适写作环境（VSCode） - 知乎 (zhihu.com)</a></em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Tools</category>
+        <category>S5</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>Path</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Visual Group Theory</title>
+    <url>/visual-group-theory-notes/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="总述">总述</h2>
+<blockquote>
+<p>English notes of Visual Group Theory</p>
+<span id="more"></span>
+</blockquote>
+<h1 id="visual-group-theory">Visual Group Theory</h1>
+<blockquote>
+<p>Start on 7-5-2023</p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>Three nonstandard aspect of nonstandard approach in the book:</p>
+<ul>
+<li><strong>images and visual examples</strong>-the heart</li>
+<li>focuses more on finite groups than infinite ones-easier to diagram
+and give a solid foundation of intuition</li>
+<li>approaches groups from the opposite direction of traditional
+textbooks-groups are defined to be collections of actions and later
+proved to be sets with binary operations</li>
+<li><strong>linear order</strong>, to be read in order</li>
+<li>exceptions: Chapter 5 and Chapter 10, you can skip most of them
+without understanding other chapters. But the definition of abelian in
+Section 5.2 and the Cauchy's Theorem in Section 9.2 are important</li>
+</ul>
+<h2 id="what-is-a-group">What is a group?</h2>
+<blockquote>
+<p>Group theory is not primarily about numbers, but rather about
+<strong>patterns</strong> and <strong>symmetry</strong></p>
+</blockquote>
+<h4 id="four-key-observations">Four key observations</h4>
+<p>Observation 1</p>
+<ul>
+<li>There is a predefined list of moves that never changes.</li>
+</ul>
+<p>Observation 2</p>
+<ul>
+<li>Every move is reversible.</li>
+</ul>
+<p>Observation 3</p>
+<ul>
+<li>Every move is deterministic.</li>
+</ul>
+<p>Observation 4</p>
+<ul>
+<li>Moves can be combined in any sequence.</li>
+</ul>
+<p>A move is a twist of one of the six faces.</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507155405607.png"
+alt="image-20230507155405607" />
+<figcaption aria-hidden="true">image-20230507155405607</figcaption>
+</figure>
+<p>Let's rephrase the 4 observations as rules (axioms) that will define
+the boundaries of our objects of study.</p>
+<h4 id="rules-of-groups">Rules of groups</h4>
+<p>Rule 1</p>
+<ul>
+<li>There is a predefined of <strong>actions</strong> that never
+changes.</li>
+</ul>
+<p>Rule 2</p>
+<ul>
+<li>Every action is reversible.</li>
+</ul>
+<p>Rule 3</p>
+<ul>
+<li>Every action is deterministic.</li>
+</ul>
+<p>Rule 4</p>
+<ul>
+<li>Any sequence of consecutive actions is also an action.</li>
+</ul>
+<blockquote>
+<p>We swapped the word "move" for "action"</p>
+<p>The (usually short) list of actions required by Rule 1 is our set of
+building blocks; called the <strong>generators</strong>.</p>
+<p><strong>Not</strong> all actions are generators. Generators are the
+subset of all possible actions in a group.</p>
+<p>Rule 4 tells us that any sequence of the generators is also an
+action.</p>
+</blockquote>
+<p>Our unofficial definition of a group (We'll make things a bit
+rigorous later.)</p>
+<h4 id="definition-informal">Definition (informal)</h4>
+<blockquote>
+<p>A group is a set of actions satisfying Rules 1-4.</p>
+</blockquote>
+<p>Let's call these generators a, b, c, d, e, and f. Every word over the
+alphabet <span class="math inline">\(\{a, b, c, d, e, f\}\)</span>
+describes a unique configuration of the cube (starting from the solved
+position)</p>
+<blockquote>
+<p>Obviously, I don't care which is which.</p>
+</blockquote>
+<h4 id="summary-of-the-big-ideas">Summary of the big ideas</h4>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507160953096.png"
+alt="image-20230507160953096" />
+<figcaption aria-hidden="true">image-20230507160953096</figcaption>
+</figure>
+<h2 id="cayley-graphs">Cayley graphs</h2>
+<h3 id="a-road-map-for-the-rubiks-cube">A road map for the Rubik's
+Cube</h3>
+<p>Let's pretend for a moment that we were interested in writing a
+complete solutions manual for the Rubik's Cube. And let me be more
+specific</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507161729491.png"
+alt="image-20230507161729491" />
+<figcaption aria-hidden="true">image-20230507161729491</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507161902686.png"
+alt="image-20230507161902686" />
+<figcaption aria-hidden="true">image-20230507161902686</figcaption>
+</figure>
+<blockquote>
+<p>We can think of the <em>Big Book</em> as a road map for the Rubik's
+Cube. Each page says "you are here" and “if you follow this road, you'll
+end up over there."</p>
+</blockquote>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507162334393.png"
+alt="image-20230507162334393" />
+<figcaption aria-hidden="true">image-20230507162334393</figcaption>
+</figure>
+<blockquote>
+<p>Despite the Big Book's apparent shortcomings, it made for a good
+thought experiment. The Big Book is a map of a group. The Big Book
+introduced the mapmaking ideas, although the map is too large. We can
+use the same ideas to map out any group. In fact, we shall frequently do
+exactly that.</p>
+<p>And Let's try something simpler....</p>
+</blockquote>
+<h3 id="the-rectangle-puzzle">The Rectangle Puzzle</h3>
+<blockquote>
+<p>How can we check the moves of the Rectangle Puzzle form a group?</p>
+</blockquote>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507165129308.png"
+alt="image-20230507165129308" />
+<figcaption aria-hidden="true">image-20230507165129308</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507170457691.png"
+alt="image-20230507170457691" />
+<figcaption aria-hidden="true">image-20230507170457691</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507170733456.png"
+alt="image-20230507170733456" />
+<figcaption aria-hidden="true">image-20230507170733456</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507171547441.png"
+alt="image-20230507171547441" />
+<figcaption aria-hidden="true">image-20230507171547441</figcaption>
+</figure>
+<h3 id="more-on-arrows">More on arrows</h3>
+<ul>
+<li><p>node <span class="math inline">\(y\)</span> is the result of
+applying the action $ g G $ to node $x $.</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173327983.png"
+alt="image-20230507173327983" />
+<figcaption aria-hidden="true">image-20230507173327983</figcaption>
+</figure></li>
+<li><p>if an action <span class="math inline">\(h \in G\)</span> is its
+own inverse (that is, <span class="math inline">\(h ^ 2 = e\)</span>),
+then we have a 2-way arrow. For clarity, our convention is to drop the
+tips on all 2-way arrows like that</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173338448.png"
+alt="image-20230507173338448" />
+<figcaption aria-hidden="true">image-20230507173338448</figcaption>
+</figure></li>
+<li><p>When we focus on a group's structure, we frequently omit the
+labels at the nodes</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173356200.png"
+alt="image-20230507173356200" />
+<figcaption aria-hidden="true">image-20230507173356200</figcaption>
+</figure></li>
+</ul>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507185713813.png"
+alt="image-20230507185713813" />
+<figcaption aria-hidden="true">image-20230507185713813</figcaption>
+</figure>
+<blockquote>
+<p>isomorphic: corresponding or similar in form and relations.</p>
+</blockquote>
+<h3 id="the-klein-4-group">The Klein 4-group</h3>
+<p>Any group with the same Cayley diagram as the Rectangle Puzzle and
+the 2-Light Switch Group is called the Klein 4-group, denoted by <span
+class="math inline">\(V_4\)</span> for <em>vierergruppe</em>,
+“four-group" in German. It is named after the mathematician Felix
+Klein.</p>
+<h3 id="the-triangle-puzzle">The triangle puzzle</h3>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507190725806.png"
+alt="image-20230507190725806" />
+<figcaption aria-hidden="true">image-20230507190725806</figcaption>
+</figure>
+<h3 id="properties-of-cayley-graphs">Properties of Cayley graphs</h3>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507191305245.png"
+alt="image-20230507191305245" />
+<figcaption aria-hidden="true">image-20230507191305245</figcaption>
+</figure>
+<h3 id="a-theorem-and-proof">A Theorem and Proof!</h3>
+<p>Theorem Suppose an action <span class="math inline">\(g\)</span> has
+the property that <span class="math inline">\(gx = x\)</span> for some
+other action <span class="math inline">\(x\)</span>. Then g is the
+<em>identity action</em>, i.e., <span class="math inline">\(gh = h =
+hg\)</span> for all other actions <span
+class="math inline">\(h\)</span>.</p>
+<blockquote>
+<p><span class="math inline">\(g\)</span> apply to <em>anything
+else</em> !</p>
+</blockquote>
+<p>Proof:</p>
+<blockquote>
+<p>The identity action (we'll denote by 1) is simply the action <span
+class="math inline">\(hh^{-1}\)</span>, for any action <span
+class="math inline">\(h\)</span>. If <span class="math inline">\(gx =
+x\)</span>, then multiplying by <span
+class="math inline">\(x^{-1}\)</span> <em>on the right</em> yields:</p>
+<p><span class="math display">\[g = gxx^{-1} = xx^{-1} = 1\]</span>.</p>
+<p>Thus <span class="math inline">\(g\)</span> is the identity
+action.</p>
+</blockquote>
+<h2 id="groups-in-science-art-and-mathematics">Groups in science, art,
+and mathematics</h2>
+<h3 id="group-of-symmetries">Group of symmetries</h3>
+<h3 id="how-to-make-a-group-out-of-symmetries">How to make a group out
+of symmetries</h3>
+<p>Groups relate to symmetry because an object's symmetries can be
+described using arrangements of the object's parts.</p>
+<p>Algorithm 1. Identify all the parts of the object that are similar
+(e.g., the corners of an n-gon), and give each such part a different
+number. 2. Consider the actions that may rearrange the numbered parts,
+but leave the object it the same physical space. (This collection of
+actions forms a group. 3. (Optional) If you want to visualize the group,
+explore and map it as we did in the previous lecture with the rectangle
+puzzle, etc.</p>
+<p><strong>Footprint</strong>: the physical space that an object
+occupies</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507193006888.png"
+alt="image-20230507193006888" />
+<figcaption aria-hidden="true">image-20230507193006888</figcaption>
+</figure>
+<blockquote>
+<p>This section seems to be useless. So if I have time later, let's
+continue to see at 9:37.</p>
+</blockquote>
+<h2 id="group-presentations">Group presentations</h2>
+<blockquote>
+<p>Our definition of groups before (a collection of actions that obeyed
+Rules 1-4) is not the ordinary definition of a group. We'll be working
+toward introducing the standard (and more formal) definition of a group.
+Along the way, we will learn some helpful <strong>tools</strong> to get
+us there.</p>
+<p>Group presentations, an algebraic device to concisely describe groups
+by their <strong>generators</strong> and <strong>relations</strong>.</p>
+</blockquote>
+<h3 id="more-on-cayley-diagrams">More on Cayley diagrams</h3>
+<p>All arrows of a fixed color correspond to the same generator.</p>
+<p>Two things with the node:</p>
+<ul>
+<li><p>Labeling the nodes with configurations of a thing we are acting
+on</p></li>
+<li><p>Leaving the nodes unlabeled (this is the "abstract Cayley
+diagram”)</p></li>
+<li><p>Label the nodes with actions (this is called a “diagram of
+actions").</p>
+<blockquote>
+<p>motivated by the fact that every <strong>path</strong> in the Cayley
+diagram represents an <strong>action</strong> of the group</p>
+</blockquote></li>
+</ul>
+<p>Motivating idea If we distinguish one node as the “unscrambled”
+configuration and label that with the identity action, then we can label
+each remaining node with the action that it takes to reach it from the
+unscrambled state.</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507210640251.png"
+alt="image-20230507210640251" />
+<figcaption aria-hidden="true">image-20230507210640251</figcaption>
+</figure>
+<h3 id="a-group-calculator">A "group calculator"</h3>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510215301253.png"
+alt="image-20230510215301253" />
+<figcaption aria-hidden="true">image-20230510215301253</figcaption>
+</figure>
+<p>A concise way to describe <span class="math inline">\(V_4\)</span> is
+the following group representation: <span class="math display">\[
+V_4 = &lt;v, h | v^2 = e, h^2 = e, vh = hv &gt;
+\]</span> The following is one (of many!) presentations for this group:
+<span class="math display">\[
+D_3 = &lt;r, f | r^3 = e, f^2 = e, r^2f = fr&gt;
+\]</span></p>
+<blockquote>
+<p>To be more precise</p>
+</blockquote>
+<p>If we want to be more precise, we use a <strong>group
+presentation</strong> of the following form: <span
+class="math display">\[
+G = &lt;generators | relations&gt;
+\]</span> The vertical bar here can be thought of as meaning "subject
+to".<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510220205721.png"
+alt="image-20230510220205721" /></p>
+<blockquote>
+<p>The famous "halting problem" is unsolvable</p>
+</blockquote>
+<h2 id="multiplication-tables">Multiplication tables</h2>
+<blockquote>
+<p>We are almost ready to introduce the formal definition of a group In
+this lecture, we will introduce one more useful algebraic tool for
+better understanding groups: multiplication tables. We will also look
+more closely at inverses of the actions in a group. Finally, we will
+introduce a new group of size 8 called the quaternions which frequently
+arise in theoretical physics.</p>
+</blockquote>
+<h3 id="inverses">Inverses</h3>
+<p>denoted by <span class="math inline">\(g^{-1}\)</span></p>
+<h3 id="multiplication-tables-1">Multiplication tables</h3>
+<p>follow the convention that write row <span
+class="math inline">\(g\)</span> before column <span
+class="math inline">\(h\)</span></p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510221817825.png"
+alt="image-20230510221817825" />
+<figcaption aria-hidden="true">image-20230510221817825</figcaption>
+</figure>
+<h3 id="some-remarks">Some remarks</h3>
+<p>A group is abelian <span class="math inline">\(iff\)</span> its
+multiplication table is symmetric about the “main diagonal."</p>
+<p>In each row and each column, each group action occurs exactly
+once.</p>
+<blockquote>
+<p>The following theorem will explain that</p>
+</blockquote>
+<p><strong>Theorem:</strong> An element cannot appear twice in the same
+row or column of a multiplication table.</p>
+<p><strong>Proof:</strong></p>
+<p>Suppose that in row <span class="math inline">\(a\)</span>, the
+element <span class="math inline">\(g\)</span> appears in columns <span
+class="math inline">\(b\)</span> and <span
+class="math inline">\(c\)</span>. Algebraically, this means <span
+class="math display">\[
+ab=g=ac
+\]</span> Multiplying everything on the left by <span
+class="math inline">\(a^{-1}\)</span> yields <span
+class="math display">\[
+a^{-l}ab=a^{-1}g=a^{-1}ac \Rightarrow b = c
+\]</span> Thus, <span class="math inline">\(g\)</span> (or any element)
+element cannot appear twice in the same row.</p>
+<p>Similarly, we can finish the proof for column.</p>
+<h3 id="the-quaternion-group">The quaternion group</h3>
+<h2 id="the-formal-definition-of-a-group">The formal definition of a
+group</h2>
+<p><span class="math inline">\(S\)</span> is closed on the operation
+*</p>
+<h3 id="associativity">Associativity</h3>
+<p>交换律</p>
+<p>An operation is associative if parentheses are permitted anywhere,
+but required nowhere.</p>
+<h3 id="formal-definitions">Formal definitions</h3>
+<p>Viewing groups from these two different paradigms:</p>
+<ul>
+<li>a group as a collection of actions</li>
+<li>a group as a set with a binary operation</li>
+</ul>
+<h3 id="properties">Properties</h3>
+<p><strong>Theorem: </strong>Every element of a group has a
+<em>unique</em> inverse</p>
+<p><strong>Proof:</strong></p>
+<p><strong>Theorem:</strong> Every group has a <em>unique</em> identity
+element</p>
+<h2 id="cyclic-and-abelian-groups">Cyclic and abelian groups</h2>
+<h3 id="overview-1">Overview</h3>
+<p><span class="math inline">\(5\)</span> families of groups:</p>
+<ul>
+<li>cyclic groups</li>
+<li>abelian groups</li>
+<li>dihedral groups</li>
+<li>symmetric groups</li>
+<li>alternating groups</li>
+</ul>
+<p>Informally, a group is cyclic if it is generated by a single element,
+and is abelian if multiplication commutes. (Like <span
+class="math inline">\(a * b = b * a, \forall a, b \in G\)</span>)</p>
+<h3 id="cyclic-groups-additively">Cyclic groups, additively</h3>
+<p><strong>Definition:</strong> A group is cyclic if it can be generated
+by a single element.</p>
+<blockquote>
+<p>Finite cyclic groups describe the symmetry of objects that have
+<em>only</em> rotational symmetry.</p>
+</blockquote>
+<p><span class="math display">\[
+C_n = &lt;r| r^n = e&gt;
+\]</span></p>
+<p><strong>Remark:</strong> This is a natural generator, but not the
+only one. For instance, <span class="math inline">\(r^3\)</span> is also
+a generator.</p>
+<p><strong>Definition:</strong> The order of a group <span
+class="math inline">\(G\)</span> is the number of distinct elements in
+<span class="math inline">\(G\)</span>, denoted by <span
+class="math inline">\(|G|\)</span>.</p>
+<p>The cyclic group of order <span class="math inline">\(n\)</span>
+(i.e., <span class="math inline">\(n\)</span> rotations) is denoted
+<span class="math inline">\(C_n\)</span> (or sometimes by <span
+class="math inline">\(\mathbb{Z}_n\)</span>). In fact, the alternative
+notation <span class="math inline">\(\mathbb{Z}_n\)</span> comes from
+the fact that the binary operation in <span
+class="math inline">\(C_n\)</span> is just modular addition. To add two
+numbers in <span class="math inline">\(\mathbb{Z}_n\)</span>, add them
+as integers, divide by <span class="math inline">\(n\)</span>, and take
+the remainder.</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512195612827.png"
+alt="image-20230512195612827" />
+<figcaption aria-hidden="true">image-20230512195612827</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512195732611.png"
+alt="image-20230512195732611" />
+<figcaption aria-hidden="true">image-20230512195732611</figcaption>
+</figure>
+<h3 id="cyclic-groups-multiplicatively">Cyclic groups,
+multiplicatively</h3>
+<p>If <span class="math inline">\(r\)</span> is a generator (e.g., a
+rotation by <span class="math inline">\(2 \pi /n\)</span>), then we can
+denote the <span class="math inline">\(n\)</span> elements by <span
+class="math display">\[
+1, r, r^2, \dots , r^{n-1}
+\]</span> Think of <span class="math inline">\(r\)</span> as the complex
+number <span class="math inline">\(e^{2\pi i/n}\)</span>, with the group
+operation being <em>multiplication!</em></p>
+<blockquote>
+<p>复数相乘，模相乘，辐角相加</p>
+</blockquote>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512202225352.png"
+alt="image-20230512202225352" />
+<figcaption aria-hidden="true">image-20230512202225352</figcaption>
+</figure>
+<h3 id="more-on-cyclic-groups">More on cyclic groups</h3>
+<p>The (unique) infinite cyclic group (additively) is (<span
+class="math inline">\(\mathbb{Z}, +\)</span>), the integers under
+addition. Using multiplicative notation, the infinite cyclic group is
+<span class="math display">\[
+G=&lt;r\quad|\quad&gt;=\{r^k : k \in \mathbb{Z}\}
+\]</span> For the infinite group <span
+class="math inline">\((\mathbb{Z}, +)\)</span>, only <span
+class="math inline">\(1\)</span> or <span
+class="math inline">\(-1\)</span> can be generators. (Considering
+multiple generators are pointless.)</p>
+<p><strong>Proposition:</strong> Any number from <span
+class="math inline">\(\{0, 1, \dots, n-1\}\)</span> that is relatively
+prime to <span class="math inline">\(n\)</span> will generate <span
+class="math inline">\(\mathbb{Z}_n\)</span>.</p>
+<p>For example, <span class="math inline">\(1, 2, 3, 4\)</span> all
+generate <span class="math inline">\(\mathbb{Z}_5\)</span>. i.e., <span
+class="math display">\[
+\mathbb{Z}_5 = &lt;1&gt; = &lt;2&gt; = &lt;3&gt; = &lt;4&gt;.
+\]</span></p>
+<blockquote>
+<p>The above notation just means "generated by" instead of a
+presentation.</p>
+</blockquote>
+<p><strong>Observation:</strong> One of the most important properties of
+the multiplication tables is that, if the headings on the multiplication
+table are arranged in the "natural" order <span
+class="math inline">\((0, 1, 2, \dots , n-1)\)</span> or <span
+class="math inline">\((e, r, r^2, \dots, r^{n-1})\)</span>, then each
+row is a cyclic shift to the left of the row above it.</p>
+<h3 id="orbits">Orbits</h3>
+<p>Orbits are usually written with braces. In the case, the orbit of
+<span class="math inline">\(r\)</span> is <span
+class="math inline">\(\{e, r, r^2\}\)</span>, and the orbit of <span
+class="math inline">\(f\)</span> is <span class="math inline">\(\{e,
+f\}\)</span></p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230514201107827.png"
+alt="image-20230514201107827" />
+<figcaption aria-hidden="true">image-20230514201107827</figcaption>
+</figure>
+<p><strong>Definition:</strong> The order of an element</p>
+<blockquote>
+<p>Anything you can get by the path, following or backwards</p>
+</blockquote>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230514230616848.png"
+alt="image-20230514230616848" />
+<figcaption aria-hidden="true">image-20230514230616848</figcaption>
+</figure>
+]]></content>
+      <tags>
+        <tag>Notes</tag>
+        <tag>Group Theory</tag>
+      </tags>
   </entry>
   <entry>
     <title>Python基础教程（第3版）阅读笔记</title>
@@ -1975,213 +2707,14 @@ style="text-align: left;">如果用print输出后，必须跟一个空格符，�
 </ul>
 ]]></content>
       <categories>
-        <category>Python</category>
         <category>Notes</category>
+        <category>Python</category>
         <category>S4 Summer</category>
         <category>S3 Winter</category>
       </categories>
       <tags>
         <tag>Notes</tag>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VSCode配置latex</title>
-    <url>/vscode-configure-latex/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>记录采用 <span class="math inline">\(MixTEX\)</span> 在 <span
-class="math inline">\(VSCode\)</span> 搭建 <span
-class="math inline">\(\LaTeX\)</span> 环境的过程</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="安装编译器">安装编译器</h2>
-<p>原 <code>TexLive</code> 体积过大，采用包管理器进行安装</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 MikTeX</span></span><br><span class="line">scoop install miktex</span><br></pre></td></tr></table></figure>
-<h2 id="配置-vscode">配置 VSCode</h2>
-<p>安装 <code>LaTeX Workshop</code> 扩展</p>
-<p>加入如下配置：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-shell-escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;%DOCFILE%&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="解决报错">解决报错</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">major issue: So far, you have not checked for MiKTeX updates.</span><br></pre></td></tr></table></figure>
-<p>找到MikTex
-Console这个程序，右键点击“以管理员身份运行”，然后点击“检查更新”</p>
-<blockquote>
-<p><em>Ref:</em></p>
-<p><em><a href="https://zhuanlan.zhihu.com/p/139210056">搭建 LaTeX
-舒适写作环境（VSCode） - 知乎 (zhihu.com)</a></em></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Tools</category>
-        <category>S5</category>
-      </categories>
-      <tags>
-        <tag>Path</tag>
-        <tag>LaTeX</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Typora数学公式</title>
-    <url>/MarkDown-Grammar/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>MarkDown 比较全的数学公式语法集合</p>
-</blockquote>
-<span id="more"></span>
-<p>[TOC] &gt; 其实本质是对 Tex 语法的支持</p>
-<h3 id="一打开typora选择数学模块">一、打开Typora选择数学模块</h3>
-<p>三种打开方式： * 点击“段落” --&gt; “公式块” * 快捷键ctrl + shift +m *
-“$$” + 回车</p>
-<h3 id="二添加数学公式">二、添加数学公式</h3>
-<p>输出美观的数学公式，需要知道他们的格式和代码！
-ps:Typora有时出现公式块无法删除，可能是软件bug，Ctrl + /
-打开源代码模式，在这里面可以进行删除 <span class="math display">\[
-e^{i\pi + 1} = 2
-\]</span> ### 三、常用的公式格式代码练习</p>
-<ol type="1">
-<li>公式块内换行</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\\ 公式块内换行</span><br></pre></td></tr></table></figure>
-<ol start="2" type="1">
-<li>常用基本函数：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">1、x^2 //上下标</span><br><span class="line">2、1/2 //分式1</span><br><span class="line">3、\frac&#123;1&#125;&#123;2&#125; //分式2</span><br><span class="line">4、\cdots //省略号</span><br><span class="line">5、\sqrt&#123;4&#125; //开根号</span><br><span class="line">6、\vec&#123;a&#125; //矢量</span><br><span class="line">7、\int&#123;x&#125;dx //积分1</span><br><span class="line">8、\int_&#123;1&#125;^&#123;2&#125;dx //积分2</span><br><span class="line">9、\lim&#123;a + b&#125; //极限1</span><br><span class="line">10、\lim_&#123;n\rightarrow + \infty&#125; //极限2</span><br><span class="line">11、\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125; //累加</span><br><span class="line">12、\prod_&#123;n=1&#125;^&#123;199&#125;&#123;x_n&#125; //累乘</span><br><span class="line">13、\sin&#123;(x + y)&#125; //三角函数</span><br><span class="line">14、\ln2 //对数函数1</span><br><span class="line">15、\log_28 //对数函数2</span><br><span class="line">16、a&#x27; //导数</span><br><span class="line">17、\partial&#123;F&#125; //偏微分</span><br><span class="line">18、\iint&#123;xy&#125;dxdy //二重积分</span><br><span class="line">19、\oiint&#123;x + y&#125;dxdy //二重环路积分</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-1、x^2\\
-2、1/2\\
-3、\frac{1}{2}\\
-4、\cdots\\
-5、\sqrt{4}\\
-6、\vec{a}\\
-7、\int{x}dx\\
-8、\int_{1}^{2}dx\\
-9、\lim{a + b}\\
-10、\lim_{n\rightarrow + \infty}\\
-11、\sum_{n=1}^{100}{a_n}\\
-12、\prod_{n=1}^{199}{x_n}\\
-13、\sin{(x + y)}\\
-14、\ln2\\
-15、\log_28\\
-16、a&#39;\\
-17、\partial{F}\\
-18、\iint{xy}dxdy\\
-19、\oiint{(x + y)}dxdy\\
-\]</span></p>
-<ol start="3" type="1">
-<li>公式块内左对齐：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125; //</span><br><span class="line">&amp;1、y = \sin(x) \\&amp;为对齐格式符</span><br><span class="line">&amp;2、</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;1、y = \sin(x) \\
-&amp;2、
-\end{aligned}
-\]</span></p>
-<ol start="4" type="1">
-<li>下标</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">v_1\\</span><br><span class="line">v_&#123;体积&#125; 下标为多个英文字母时，使用&#123;&#125;包起来：</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-v_1\\
-v_{体积}
-\]</span></p>
-<ol start="5" type="1">
-<li>关系运算符：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\pm // ± plus&amp;minor</span><br><span class="line">\times // ×</span><br><span class="line">\div // ÷ divide</span><br><span class="line">\equiv // == equal</span><br><span class="line">\le // &lt;= lower&amp;equal</span><br><span class="line">\ge // &gt;= greater&amp;equal</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-\pm\\
-\times \\
-\div\\
-\equiv\\
-\leq\\
-\geq
-\]</span></p>
-<ol start="6" type="1">
-<li>花括号公式组合：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">c(u) =</span><br><span class="line">\begin&#123;cases&#125; </span><br><span class="line">\sqrt\frac&#123;1&#125;&#123;N&#125;, u = 0 \\ </span><br><span class="line">\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125;, n \neq0  neq:not equal</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-c(u) =
-\begin{cases}
-\sqrt\frac{1}{N}, u = 0 \\
-\sum_{n=1}^{100}{a_n}, n \neq0
-\end{cases}
-\]</span></p>
-<ol start="7" type="1">
-<li>空格：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">a \quad b</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-a \quad b
-\]</span></p>
-<ol start="8" type="1">
-<li>矩阵：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">0&amp;1&amp;1\\</span><br><span class="line">1&amp;1&amp;0\\</span><br><span class="line">1&amp;0&amp;1\\</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-\begin{matrix}
-0&amp;1&amp;1\\
-1&amp;1&amp;0\\
-1&amp;0&amp;1\\
-\end{matrix}
-\]</span></p>
-<blockquote>
-<p>在起始、结束标记用下列词替换 matrix：</p>
-<p>pmatrix：小括号边框 bmatrix：中括号边框 ` Bmatrix：大括号边框
-vmatrix：单竖线边框 Vmatrix：双竖线边框</p>
-</blockquote>
-<p><span class="math display">\[
-\begin{pmatrix}
-0&amp;1&amp;1\\
-1&amp;1&amp;0\\
-1&amp;0&amp;1\\
-\end{pmatrix}
-\]</span></p>
-<p><span class="math display">\[
-\begin{vmatrix}
-0&amp;1&amp;1\\
-1&amp;1&amp;0\\
-1&amp;0&amp;1\\
-\end{vmatrix}
-\]</span></p>
-<ol start="9" type="1">
-<li>特殊字符及希腊字母表：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\infty //无穷</span><br><span class="line">\emptyset //空集</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-\infty \\
-\emptyset
-\]</span></p>
-<ol start="10" type="1">
-<li>更多字符 更多特殊字符及希腊字母代码见wps中LaTex公式符号</li>
-</ol>
-<p>① 常用字母字符</p>
-<figure>
-<img
-src="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>② 特殊符号</p>
-<figure>
-<img
-src="https://i0.hdslb.com/bfs/article/5f471724c265c39e6c832a9a3212f67aa094791e.png@942w_387h_progressive.webp"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="https://i0.hdslb.com/bfs/article/a750d31bd5a69f8dd8b58c6b2d690988025d323c.png@942w_1500h_progressive.webp"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>Tools</category>
-        <category>S2</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
       </tags>
   </entry>
   <entry>
@@ -4365,12 +4898,133 @@ Git
 ]]></content>
       <categories>
         <category>Tools</category>
-        <category>S3</category>
         <category>Notes</category>
+        <category>S3</category>
       </categories>
       <tags>
         <tag>Notes</tag>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WangDao OS Chapter3</title>
+    <url>/WD-OS-Chap3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>王道考研 OS 的枯燥无味的 第三章 内存管理 知识点罗列</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="内存的基础知识">内存的基础知识</h2>
+<p>按xx编址，一个地址对应的存储单元对应的是1xx</p>
+<p>比如按字节编址</p>
+<p>程序执行前需要先放到内存中才能被CPU处理</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211427483.png"
+alt="image-20230301211427483" />
+<figcaption aria-hidden="true">image-20230301211427483</figcaption>
+</figure>
+<h2 id="内存管理的概念">内存管理的概念</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211633198.png"
+alt="image-20230301211633198" />
+<figcaption aria-hidden="true">image-20230301211633198</figcaption>
+</figure>
+<p>重定位寄存器中存放的是进程的起始物理地址。界地址寄存器中存放的是进程的最大逻辑地址。</p>
+<h2
+id="覆盖与交换内存空间的扩充方式">覆盖与交换（内存空间的扩充方式）</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301212008948.png"
+alt="image-20230301212008948" />
+<figcaption aria-hidden="true">image-20230301212008948</figcaption>
+</figure>
+<p>暂时换出外存等待的进程状态为挂起状态（挂起态，suspend）</p>
+<p>文件区空间：离散分配方式</p>
+<p>对换区空间：连续分配方式</p>
+<p>对换区的I/O速度更快</p>
+<p>交换通常在许多进程运行且内存吃紧时进行，而系统负荷降低就暂停</p>
+<p>PCB会常驻内存，不会被换出外存</p>
+<h2 id="连续分配管理方式">连续分配管理方式</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302080121468.png"
+alt="image-20230302080121468" />
+<figcaption aria-hidden="true">image-20230302080121468</figcaption>
+</figure>
+<p>三种连续分配管理都无外部碎片</p>
+<h2 id="动态内存分配方法">动态内存分配方法</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302084959938.png"
+alt="image-20230302084959938" />
+<figcaption aria-hidden="true">image-20230302084959938</figcaption>
+</figure>
+<p>​</p>
+<h2 id="基本分页存储管理的基本概念">基本分页存储管理的基本概念</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302085922698.png"
+alt="image-20230302085922698" />
+<figcaption aria-hidden="true">image-20230302085922698</figcaption>
+</figure>
+<p>页号可以隐藏存储（如用hash来保存）</p>
+<p>然进程的各个页面是离散存放的，但是页面内部是连续存放的</p>
+<p>页号 = 逻辑地址/页面长度</p>
+<p>页内偏移量 = 逻辑地址 % 页面长度</p>
+<h2 id="基本地址变换结构">基本地址变换结构</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303145710216.png"
+alt="image-20230303145710216" />
+<figcaption aria-hidden="true">image-20230303145710216</figcaption>
+</figure>
+<p>过程再整理下</p>
+<h2 id="具有快表的地址变换机构">具有快表的地址变换机构</h2>
+<p>是基本地址变换机构的改进版本</p>
+<h2 id="两级页表">两级页表</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150047904.png"
+alt="image-20230303150047904" />
+<figcaption aria-hidden="true">image-20230303150047904</figcaption>
+</figure>
+<h2 id="基本分段存储管理方式">基本分段存储管理方式</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150248805.png"
+alt="image-20230303150248805" />
+<figcaption aria-hidden="true">image-20230303150248805</figcaption>
+</figure>
+<h2 id="段页式管理">段页式管理</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150603552.png"
+alt="image-20230303150603552" />
+<figcaption aria-hidden="true">image-20230303150603552</figcaption>
+</figure>
+<h2 id="虚拟内存的基本概念">虚拟内存的基本概念</h2>
+<p>在传统存储管理方式的基础上引入了交换技术、覆盖技术，使得内存利用率有所提升，并且能从逻辑上扩充内存容量</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150658994.png"
+alt="image-20230303150658994" />
+<figcaption aria-hidden="true">image-20230303150658994</figcaption>
+</figure>
+<p>虚拟内存的最大容量是由计算机的地址结构（CPU寻址范围）确定的</p>
+<p>虚拟内存的实际容量 = min（内存和外存容量之和，CPU寻址范围）</p>
+<h2 id="请求分页管理方式">请求分页管理方式</h2>
+<h2 id="页面置换算法">页面置换算法</h2>
+<p>好多，详见 PPT，不做总结了，直接贴图吧（不是）</p>
+<h2 id="页面分配策略">页面分配策略</h2>
+]]></content>
+      <categories>
+        <category>OS</category>
+        <category>S3 Winter</category>
+      </categories>
+      <tags>
+        <tag>OS</tag>
+        <tag>WangDao</tag>
       </tags>
   </entry>
   <entry>
@@ -4926,660 +5580,6 @@ V(mutex) 会导致资源永不被释放，等待进程永不被唤醒。</p>
 <p><strong>本节易错点</strong>：实现互斥和实现同步的两个P操作的先后顺序（死锁问题）</p>
 <h2 id="多生产者-多消费者">多生产者-多消费者</h2>
 <p>后面有点难了，感觉王道不太够用了，先鸽了后面补</p>
-]]></content>
-      <categories>
-        <category>OS</category>
-        <category>S3 Winter</category>
-      </categories>
-      <tags>
-        <tag>OS</tag>
-        <tag>WangDao</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Visual Group Theory</title>
-    <url>/visual-group-theory-notes/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="总述">总述</h2>
-<blockquote>
-<p>English notes of Visual Group Theory</p>
-<span id="more"></span>
-</blockquote>
-<h1 id="visual-group-theory">Visual Group Theory</h1>
-<blockquote>
-<p>Start on 7-5-2023</p>
-</blockquote>
-<h2 id="overview">Overview</h2>
-<p>Three nonstandard aspect of nonstandard approach in the book:</p>
-<ul>
-<li><strong>images and visual examples</strong>-the heart</li>
-<li>focuses more on finite groups than infinite ones-easier to diagram
-and give a solid foundation of intuition</li>
-<li>approaches groups from the opposite direction of traditional
-textbooks-groups are defined to be collections of actions and later
-proved to be sets with binary operations</li>
-<li><strong>linear order</strong>, to be read in order</li>
-<li>exceptions: Chapter 5 and Chapter 10, you can skip most of them
-without understanding other chapters. But the definition of abelian in
-Section 5.2 and the Cauchy's Theorem in Section 9.2 are important</li>
-</ul>
-<h2 id="what-is-a-group">What is a group?</h2>
-<blockquote>
-<p>Group theory is not primarily about numbers, but rather about
-<strong>patterns</strong> and <strong>symmetry</strong></p>
-</blockquote>
-<h4 id="four-key-observations">Four key observations</h4>
-<p>Observation 1</p>
-<ul>
-<li>There is a predefined list of moves that never changes.</li>
-</ul>
-<p>Observation 2</p>
-<ul>
-<li>Every move is reversible.</li>
-</ul>
-<p>Observation 3</p>
-<ul>
-<li>Every move is deterministic.</li>
-</ul>
-<p>Observation 4</p>
-<ul>
-<li>Moves can be combined in any sequence.</li>
-</ul>
-<p>A move is a twist of one of the six faces.</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507155405607.png"
-alt="image-20230507155405607" />
-<figcaption aria-hidden="true">image-20230507155405607</figcaption>
-</figure>
-<p>Let's rephrase the 4 observations as rules (axioms) that will define
-the boundaries of our objects of study.</p>
-<h4 id="rules-of-groups">Rules of groups</h4>
-<p>Rule 1</p>
-<ul>
-<li>There is a predefined of <strong>actions</strong> that never
-changes.</li>
-</ul>
-<p>Rule 2</p>
-<ul>
-<li>Every action is reversible.</li>
-</ul>
-<p>Rule 3</p>
-<ul>
-<li>Every action is deterministic.</li>
-</ul>
-<p>Rule 4</p>
-<ul>
-<li>Any sequence of consecutive actions is also an action.</li>
-</ul>
-<blockquote>
-<p>We swapped the word "move" for "action"</p>
-<p>The (usually short) list of actions required by Rule 1 is our set of
-building blocks; called the <strong>generators</strong>.</p>
-<p><strong>Not</strong> all actions are generators. Generators are the
-subset of all possible actions in a group.</p>
-<p>Rule 4 tells us that any sequence of the generators is also an
-action.</p>
-</blockquote>
-<p>Our unofficial definition of a group (We'll make things a bit
-rigorous later.)</p>
-<h4 id="definition-informal">Definition (informal)</h4>
-<blockquote>
-<p>A group is a set of actions satisfying Rules 1-4.</p>
-</blockquote>
-<p>Let's call these generators a, b, c, d, e, and f. Every word over the
-alphabet <span class="math inline">\(\{a, b, c, d, e, f\}\)</span>
-describes a unique configuration of the cube (starting from the solved
-position)</p>
-<blockquote>
-<p>Obviously, I don't care which is which.</p>
-</blockquote>
-<h4 id="summary-of-the-big-ideas">Summary of the big ideas</h4>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507160953096.png"
-alt="image-20230507160953096" />
-<figcaption aria-hidden="true">image-20230507160953096</figcaption>
-</figure>
-<h2 id="cayley-graphs">Cayley graphs</h2>
-<h3 id="a-road-map-for-the-rubiks-cube">A road map for the Rubik's
-Cube</h3>
-<p>Let's pretend for a moment that we were interested in writing a
-complete solutions manual for the Rubik's Cube. And let me be more
-specific</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507161729491.png"
-alt="image-20230507161729491" />
-<figcaption aria-hidden="true">image-20230507161729491</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507161902686.png"
-alt="image-20230507161902686" />
-<figcaption aria-hidden="true">image-20230507161902686</figcaption>
-</figure>
-<blockquote>
-<p>We can think of the <em>Big Book</em> as a road map for the Rubik's
-Cube. Each page says "you are here" and “if you follow this road, you'll
-end up over there."</p>
-</blockquote>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507162334393.png"
-alt="image-20230507162334393" />
-<figcaption aria-hidden="true">image-20230507162334393</figcaption>
-</figure>
-<blockquote>
-<p>Despite the Big Book's apparent shortcomings, it made for a good
-thought experiment. The Big Book is a map of a group. The Big Book
-introduced the mapmaking ideas, although the map is too large. We can
-use the same ideas to map out any group. In fact, we shall frequently do
-exactly that.</p>
-<p>And Let's try something simpler....</p>
-</blockquote>
-<h3 id="the-rectangle-puzzle">The Rectangle Puzzle</h3>
-<blockquote>
-<p>How can we check the moves of the Rectangle Puzzle form a group?</p>
-</blockquote>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507165129308.png"
-alt="image-20230507165129308" />
-<figcaption aria-hidden="true">image-20230507165129308</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507170457691.png"
-alt="image-20230507170457691" />
-<figcaption aria-hidden="true">image-20230507170457691</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507170733456.png"
-alt="image-20230507170733456" />
-<figcaption aria-hidden="true">image-20230507170733456</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507171547441.png"
-alt="image-20230507171547441" />
-<figcaption aria-hidden="true">image-20230507171547441</figcaption>
-</figure>
-<h3 id="more-on-arrows">More on arrows</h3>
-<ul>
-<li><p>node <span class="math inline">\(y\)</span> is the result of
-applying the action $ g G $ to node $x $.</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173327983.png"
-alt="image-20230507173327983" />
-<figcaption aria-hidden="true">image-20230507173327983</figcaption>
-</figure></li>
-<li><p>if an action <span class="math inline">\(h \in G\)</span> is its
-own inverse (that is, <span class="math inline">\(h ^ 2 = e\)</span>),
-then we have a 2-way arrow. For clarity, our convention is to drop the
-tips on all 2-way arrows like that</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173338448.png"
-alt="image-20230507173338448" />
-<figcaption aria-hidden="true">image-20230507173338448</figcaption>
-</figure></li>
-<li><p>When we focus on a group's structure, we frequently omit the
-labels at the nodes</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173356200.png"
-alt="image-20230507173356200" />
-<figcaption aria-hidden="true">image-20230507173356200</figcaption>
-</figure></li>
-</ul>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507185713813.png"
-alt="image-20230507185713813" />
-<figcaption aria-hidden="true">image-20230507185713813</figcaption>
-</figure>
-<blockquote>
-<p>isomorphic: corresponding or similar in form and relations.</p>
-</blockquote>
-<h3 id="the-klein-4-group">The Klein 4-group</h3>
-<p>Any group with the same Cayley diagram as the Rectangle Puzzle and
-the 2-Light Switch Group is called the Klein 4-group, denoted by <span
-class="math inline">\(V_4\)</span> for <em>vierergruppe</em>,
-“four-group" in German. It is named after the mathematician Felix
-Klein.</p>
-<h3 id="the-triangle-puzzle">The triangle puzzle</h3>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507190725806.png"
-alt="image-20230507190725806" />
-<figcaption aria-hidden="true">image-20230507190725806</figcaption>
-</figure>
-<h3 id="properties-of-cayley-graphs">Properties of Cayley graphs</h3>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507191305245.png"
-alt="image-20230507191305245" />
-<figcaption aria-hidden="true">image-20230507191305245</figcaption>
-</figure>
-<h3 id="a-theorem-and-proof">A Theorem and Proof!</h3>
-<p>Theorem Suppose an action <span class="math inline">\(g\)</span> has
-the property that <span class="math inline">\(gx = x\)</span> for some
-other action <span class="math inline">\(x\)</span>. Then g is the
-<em>identity action</em>, i.e., <span class="math inline">\(gh = h =
-hg\)</span> for all other actions <span
-class="math inline">\(h\)</span>.</p>
-<blockquote>
-<p><span class="math inline">\(g\)</span> apply to <em>anything
-else</em> !</p>
-</blockquote>
-<p>Proof:</p>
-<blockquote>
-<p>The identity action (we'll denote by 1) is simply the action <span
-class="math inline">\(hh^{-1}\)</span>, for any action <span
-class="math inline">\(h\)</span>. If <span class="math inline">\(gx =
-x\)</span>, then multiplying by <span
-class="math inline">\(x^{-1}\)</span> <em>on the right</em> yields:</p>
-<p><span class="math display">\[g = gxx^{-1} = xx^{-1} = 1\]</span>.</p>
-<p>Thus <span class="math inline">\(g\)</span> is the identity
-action.</p>
-</blockquote>
-<h2 id="groups-in-science-art-and-mathematics">Groups in science, art,
-and mathematics</h2>
-<h3 id="group-of-symmetries">Group of symmetries</h3>
-<h3 id="how-to-make-a-group-out-of-symmetries">How to make a group out
-of symmetries</h3>
-<p>Groups relate to symmetry because an object's symmetries can be
-described using arrangements of the object's parts.</p>
-<p>Algorithm 1. Identify all the parts of the object that are similar
-(e.g., the corners of an n-gon), and give each such part a different
-number. 2. Consider the actions that may rearrange the numbered parts,
-but leave the object it the same physical space. (This collection of
-actions forms a group. 3. (Optional) If you want to visualize the group,
-explore and map it as we did in the previous lecture with the rectangle
-puzzle, etc.</p>
-<p><strong>Footprint</strong>: the physical space that an object
-occupies</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507193006888.png"
-alt="image-20230507193006888" />
-<figcaption aria-hidden="true">image-20230507193006888</figcaption>
-</figure>
-<blockquote>
-<p>This section seems to be useless. So if I have time later, let's
-continue to see at 9:37.</p>
-</blockquote>
-<h2 id="group-presentations">Group presentations</h2>
-<blockquote>
-<p>Our definition of groups before (a collection of actions that obeyed
-Rules 1-4) is not the ordinary definition of a group. We'll be working
-toward introducing the standard (and more formal) definition of a group.
-Along the way, we will learn some helpful <strong>tools</strong> to get
-us there.</p>
-<p>Group presentations, an algebraic device to concisely describe groups
-by their <strong>generators</strong> and <strong>relations</strong>.</p>
-</blockquote>
-<h3 id="more-on-cayley-diagrams">More on Cayley diagrams</h3>
-<p>All arrows of a fixed color correspond to the same generator.</p>
-<p>Two things with the node:</p>
-<ul>
-<li><p>Labeling the nodes with configurations of a thing we are acting
-on</p></li>
-<li><p>Leaving the nodes unlabeled (this is the "abstract Cayley
-diagram”)</p></li>
-<li><p>Label the nodes with actions (this is called a “diagram of
-actions").</p>
-<blockquote>
-<p>motivated by the fact that every <strong>path</strong> in the Cayley
-diagram represents an <strong>action</strong> of the group</p>
-</blockquote></li>
-</ul>
-<p>Motivating idea If we distinguish one node as the “unscrambled”
-configuration and label that with the identity action, then we can label
-each remaining node with the action that it takes to reach it from the
-unscrambled state.</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507210640251.png"
-alt="image-20230507210640251" />
-<figcaption aria-hidden="true">image-20230507210640251</figcaption>
-</figure>
-<h3 id="a-group-calculator">A "group calculator"</h3>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510215301253.png"
-alt="image-20230510215301253" />
-<figcaption aria-hidden="true">image-20230510215301253</figcaption>
-</figure>
-<p>A concise way to describe <span class="math inline">\(V_4\)</span> is
-the following group representation: <span class="math display">\[
-V_4 = &lt;v, h | v^2 = e, h^2 = e, vh = hv &gt;
-\]</span> The following is one (of many!) presentations for this group:
-<span class="math display">\[
-D_3 = &lt;r, f | r^3 = e, f^2 = e, r^2f = fr&gt;
-\]</span></p>
-<blockquote>
-<p>To be more precise</p>
-</blockquote>
-<p>If we want to be more precise, we use a <strong>group
-presentation</strong> of the following form: <span
-class="math display">\[
-G = &lt;generators | relations&gt;
-\]</span> The vertical bar here can be thought of as meaning "subject
-to".<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510220205721.png"
-alt="image-20230510220205721" /></p>
-<blockquote>
-<p>The famous "halting problem" is unsolvable</p>
-</blockquote>
-<h2 id="multiplication-tables">Multiplication tables</h2>
-<blockquote>
-<p>We are almost ready to introduce the formal definition of a group In
-this lecture, we will introduce one more useful algebraic tool for
-better understanding groups: multiplication tables. We will also look
-more closely at inverses of the actions in a group. Finally, we will
-introduce a new group of size 8 called the quaternions which frequently
-arise in theoretical physics.</p>
-</blockquote>
-<h3 id="inverses">Inverses</h3>
-<p>denoted by <span class="math inline">\(g^{-1}\)</span></p>
-<h3 id="multiplication-tables-1">Multiplication tables</h3>
-<p>follow the convention that write row <span
-class="math inline">\(g\)</span> before column <span
-class="math inline">\(h\)</span></p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510221817825.png"
-alt="image-20230510221817825" />
-<figcaption aria-hidden="true">image-20230510221817825</figcaption>
-</figure>
-<h3 id="some-remarks">Some remarks</h3>
-<p>A group is abelian <span class="math inline">\(iff\)</span> its
-multiplication table is symmetric about the “main diagonal."</p>
-<p>In each row and each column, each group action occurs exactly
-once.</p>
-<blockquote>
-<p>The following theorem will explain that</p>
-</blockquote>
-<p><strong>Theorem:</strong> An element cannot appear twice in the same
-row or column of a multiplication table.</p>
-<p><strong>Proof:</strong></p>
-<p>Suppose that in row <span class="math inline">\(a\)</span>, the
-element <span class="math inline">\(g\)</span> appears in columns <span
-class="math inline">\(b\)</span> and <span
-class="math inline">\(c\)</span>. Algebraically, this means <span
-class="math display">\[
-ab=g=ac
-\]</span> Multiplying everything on the left by <span
-class="math inline">\(a^{-1}\)</span> yields <span
-class="math display">\[
-a^{-l}ab=a^{-1}g=a^{-1}ac \Rightarrow b = c
-\]</span> Thus, <span class="math inline">\(g\)</span> (or any element)
-element cannot appear twice in the same row.</p>
-<p>Similarly, we can finish the proof for column.</p>
-<h3 id="the-quaternion-group">The quaternion group</h3>
-<h2 id="the-formal-definition-of-a-group">The formal definition of a
-group</h2>
-<p><span class="math inline">\(S\)</span> is closed on the operation
-*</p>
-<h3 id="associativity">Associativity</h3>
-<p>交换律</p>
-<p>An operation is associative if parentheses are permitted anywhere,
-but required nowhere.</p>
-<h3 id="formal-definitions">Formal definitions</h3>
-<p>Viewing groups from these two different paradigms:</p>
-<ul>
-<li>a group as a collection of actions</li>
-<li>a group as a set with a binary operation</li>
-</ul>
-<h3 id="properties">Properties</h3>
-<p><strong>Theorem: </strong>Every element of a group has a
-<em>unique</em> inverse</p>
-<p><strong>Proof:</strong></p>
-<p><strong>Theorem:</strong> Every group has a <em>unique</em> identity
-element</p>
-<h2 id="cyclic-and-abelian-groups">Cyclic and abelian groups</h2>
-<h3 id="overview-1">Overview</h3>
-<p><span class="math inline">\(5\)</span> families of groups:</p>
-<ul>
-<li>cyclic groups</li>
-<li>abelian groups</li>
-<li>dihedral groups</li>
-<li>symmetric groups</li>
-<li>alternating groups</li>
-</ul>
-<p>Informally, a group is cyclic if it is generated by a single element,
-and is abelian if multiplication commutes. (Like <span
-class="math inline">\(a * b = b * a, \forall a, b \in G\)</span>)</p>
-<h3 id="cyclic-groups-additively">Cyclic groups, additively</h3>
-<p><strong>Definition:</strong> A group is cyclic if it can be generated
-by a single element.</p>
-<blockquote>
-<p>Finite cyclic groups describe the symmetry of objects that have
-<em>only</em> rotational symmetry.</p>
-</blockquote>
-<p><span class="math display">\[
-C_n = &lt;r| r^n = e&gt;
-\]</span></p>
-<p><strong>Remark:</strong> This is a natural generator, but not the
-only one. For instance, <span class="math inline">\(r^3\)</span> is also
-a generator.</p>
-<p><strong>Definition:</strong> The order of a group <span
-class="math inline">\(G\)</span> is the number of distinct elements in
-<span class="math inline">\(G\)</span>, denoted by <span
-class="math inline">\(|G|\)</span>.</p>
-<p>The cyclic group of order <span class="math inline">\(n\)</span>
-(i.e., <span class="math inline">\(n\)</span> rotations) is denoted
-<span class="math inline">\(C_n\)</span> (or sometimes by <span
-class="math inline">\(\mathbb{Z}_n\)</span>). In fact, the alternative
-notation <span class="math inline">\(\mathbb{Z}_n\)</span> comes from
-the fact that the binary operation in <span
-class="math inline">\(C_n\)</span> is just modular addition. To add two
-numbers in <span class="math inline">\(\mathbb{Z}_n\)</span>, add them
-as integers, divide by <span class="math inline">\(n\)</span>, and take
-the remainder.</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512195612827.png"
-alt="image-20230512195612827" />
-<figcaption aria-hidden="true">image-20230512195612827</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512195732611.png"
-alt="image-20230512195732611" />
-<figcaption aria-hidden="true">image-20230512195732611</figcaption>
-</figure>
-<h3 id="cyclic-groups-multiplicatively">Cyclic groups,
-multiplicatively</h3>
-<p>If <span class="math inline">\(r\)</span> is a generator (e.g., a
-rotation by <span class="math inline">\(2 \pi /n\)</span>), then we can
-denote the <span class="math inline">\(n\)</span> elements by <span
-class="math display">\[
-1, r, r^2, \dots , r^{n-1}
-\]</span> Think of <span class="math inline">\(r\)</span> as the complex
-number <span class="math inline">\(e^{2\pi i/n}\)</span>, with the group
-operation being <em>multiplication!</em></p>
-<blockquote>
-<p>复数相乘，模相乘，辐角相加</p>
-</blockquote>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512202225352.png"
-alt="image-20230512202225352" />
-<figcaption aria-hidden="true">image-20230512202225352</figcaption>
-</figure>
-<h3 id="more-on-cyclic-groups">More on cyclic groups</h3>
-<p>The (unique) infinite cyclic group (additively) is (<span
-class="math inline">\(\mathbb{Z}, +\)</span>), the integers under
-addition. Using multiplicative notation, the infinite cyclic group is
-<span class="math display">\[
-G=&lt;r\quad|\quad&gt;=\{r^k : k \in \mathbb{Z}\}
-\]</span> For the infinite group <span
-class="math inline">\((\mathbb{Z}, +)\)</span>, only <span
-class="math inline">\(1\)</span> or <span
-class="math inline">\(-1\)</span> can be generators. (Considering
-multiple generators are pointless.)</p>
-<p><strong>Proposition:</strong> Any number from <span
-class="math inline">\(\{0, 1, \dots, n-1\}\)</span> that is relatively
-prime to <span class="math inline">\(n\)</span> will generate <span
-class="math inline">\(\mathbb{Z}_n\)</span>.</p>
-<p>For example, <span class="math inline">\(1, 2, 3, 4\)</span> all
-generate <span class="math inline">\(\mathbb{Z}_5\)</span>. i.e., <span
-class="math display">\[
-\mathbb{Z}_5 = &lt;1&gt; = &lt;2&gt; = &lt;3&gt; = &lt;4&gt;.
-\]</span></p>
-<blockquote>
-<p>The above notation just means "generated by" instead of a
-presentation.</p>
-</blockquote>
-<p><strong>Observation:</strong> One of the most important properties of
-the multiplication tables is that, if the headings on the multiplication
-table are arranged in the "natural" order <span
-class="math inline">\((0, 1, 2, \dots , n-1)\)</span> or <span
-class="math inline">\((e, r, r^2, \dots, r^{n-1})\)</span>, then each
-row is a cyclic shift to the left of the row above it.</p>
-<h3 id="orbits">Orbits</h3>
-<p>Orbits are usually written with braces. In the case, the orbit of
-<span class="math inline">\(r\)</span> is <span
-class="math inline">\(\{e, r, r^2\}\)</span>, and the orbit of <span
-class="math inline">\(f\)</span> is <span class="math inline">\(\{e,
-f\}\)</span></p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230514201107827.png"
-alt="image-20230514201107827" />
-<figcaption aria-hidden="true">image-20230514201107827</figcaption>
-</figure>
-<p><strong>Definition:</strong> The order of an element</p>
-<blockquote>
-<p>Anything you can get by the path, following or backwards</p>
-</blockquote>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230514230616848.png"
-alt="image-20230514230616848" />
-<figcaption aria-hidden="true">image-20230514230616848</figcaption>
-</figure>
-]]></content>
-      <tags>
-        <tag>Notes</tag>
-        <tag>Group Theory</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>WangDao OS Chapter3</title>
-    <url>/WD-OS-Chap3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>王道考研 OS 的枯燥无味的 第三章 内存管理 知识点罗列</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="内存的基础知识">内存的基础知识</h2>
-<p>按xx编址，一个地址对应的存储单元对应的是1xx</p>
-<p>比如按字节编址</p>
-<p>程序执行前需要先放到内存中才能被CPU处理</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211427483.png"
-alt="image-20230301211427483" />
-<figcaption aria-hidden="true">image-20230301211427483</figcaption>
-</figure>
-<h2 id="内存管理的概念">内存管理的概念</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211633198.png"
-alt="image-20230301211633198" />
-<figcaption aria-hidden="true">image-20230301211633198</figcaption>
-</figure>
-<p>重定位寄存器中存放的是进程的起始物理地址。界地址寄存器中存放的是进程的最大逻辑地址。</p>
-<h2
-id="覆盖与交换内存空间的扩充方式">覆盖与交换（内存空间的扩充方式）</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301212008948.png"
-alt="image-20230301212008948" />
-<figcaption aria-hidden="true">image-20230301212008948</figcaption>
-</figure>
-<p>暂时换出外存等待的进程状态为挂起状态（挂起态，suspend）</p>
-<p>文件区空间：离散分配方式</p>
-<p>对换区空间：连续分配方式</p>
-<p>对换区的I/O速度更快</p>
-<p>交换通常在许多进程运行且内存吃紧时进行，而系统负荷降低就暂停</p>
-<p>PCB会常驻内存，不会被换出外存</p>
-<h2 id="连续分配管理方式">连续分配管理方式</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302080121468.png"
-alt="image-20230302080121468" />
-<figcaption aria-hidden="true">image-20230302080121468</figcaption>
-</figure>
-<p>三种连续分配管理都无外部碎片</p>
-<h2 id="动态内存分配方法">动态内存分配方法</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302084959938.png"
-alt="image-20230302084959938" />
-<figcaption aria-hidden="true">image-20230302084959938</figcaption>
-</figure>
-<p>​</p>
-<h2 id="基本分页存储管理的基本概念">基本分页存储管理的基本概念</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302085922698.png"
-alt="image-20230302085922698" />
-<figcaption aria-hidden="true">image-20230302085922698</figcaption>
-</figure>
-<p>页号可以隐藏存储（如用hash来保存）</p>
-<p>然进程的各个页面是离散存放的，但是页面内部是连续存放的</p>
-<p>页号 = 逻辑地址/页面长度</p>
-<p>页内偏移量 = 逻辑地址 % 页面长度</p>
-<h2 id="基本地址变换结构">基本地址变换结构</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303145710216.png"
-alt="image-20230303145710216" />
-<figcaption aria-hidden="true">image-20230303145710216</figcaption>
-</figure>
-<p>过程再整理下</p>
-<h2 id="具有快表的地址变换机构">具有快表的地址变换机构</h2>
-<p>是基本地址变换机构的改进版本</p>
-<h2 id="两级页表">两级页表</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150047904.png"
-alt="image-20230303150047904" />
-<figcaption aria-hidden="true">image-20230303150047904</figcaption>
-</figure>
-<h2 id="基本分段存储管理方式">基本分段存储管理方式</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150248805.png"
-alt="image-20230303150248805" />
-<figcaption aria-hidden="true">image-20230303150248805</figcaption>
-</figure>
-<h2 id="段页式管理">段页式管理</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150603552.png"
-alt="image-20230303150603552" />
-<figcaption aria-hidden="true">image-20230303150603552</figcaption>
-</figure>
-<h2 id="虚拟内存的基本概念">虚拟内存的基本概念</h2>
-<p>在传统存储管理方式的基础上引入了交换技术、覆盖技术，使得内存利用率有所提升，并且能从逻辑上扩充内存容量</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150658994.png"
-alt="image-20230303150658994" />
-<figcaption aria-hidden="true">image-20230303150658994</figcaption>
-</figure>
-<p>虚拟内存的最大容量是由计算机的地址结构（CPU寻址范围）确定的</p>
-<p>虚拟内存的实际容量 = min（内存和外存容量之和，CPU寻址范围）</p>
-<h2 id="请求分页管理方式">请求分页管理方式</h2>
-<h2 id="页面置换算法">页面置换算法</h2>
-<p>好多，详见 PPT，不做总结了，直接贴图吧（不是）</p>
-<h2 id="页面分配策略">页面分配策略</h2>
 ]]></content>
       <categories>
         <category>OS</category>
@@ -6725,12 +6725,12 @@ alt="image-20220913194007073" />
 ]]></content>
       <categories>
         <category>OO</category>
-        <category>S3</category>
         <category>Notes</category>
+        <category>S3</category>
       </categories>
       <tags>
-        <tag>OO</tag>
         <tag>Notes</tag>
+        <tag>OO</tag>
       </tags>
   </entry>
   <entry>
