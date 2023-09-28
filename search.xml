@@ -412,10 +412,9 @@ copy即可（其实也节省了代码量）</p>
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>//</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: CO Pre</span><br><span class="line">link: co-pre</span><br><span class="line">tags: [CO, Replay]</span><br><span class="line">categories:</span><br><span class="line">  - [CO]</span><br><span class="line">  - [S5]</span><br></pre></td></tr></table></figure>
-<blockquote>
+    <title>「BUAA-CO」 Pre</title>
+    <url>/co-pre/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>2023年Pre题目回忆版及我的3A答案回忆版</p>
 </blockquote>
 <span id="more"></span>
@@ -519,737 +518,13 @@ logisim 中的实现较为简单。</p>
 <p>电路外观如图（已隐去部分内容）</p>
 <p>最后，祝大家上机顺利，学有所获！</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Typora数学公式</title>
-    <url>/MarkDown-Grammar/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>MarkDown 比较全的数学公式语法集合</p>
-</blockquote>
-<span id="more"></span>
-<p>[TOC] &gt; 其实本质是对 Tex 语法的支持</p>
-<h3 id="一打开typora选择数学模块">一、打开Typora选择数学模块</h3>
-<p>三种打开方式： * 点击“段落” --&gt; “公式块” * 快捷键ctrl + shift +m *
-“$$” + 回车</p>
-<h3 id="二添加数学公式">二、添加数学公式</h3>
-<p>输出美观的数学公式，需要知道他们的格式和代码！
-ps:Typora有时出现公式块无法删除，可能是软件bug，Ctrl + /
-打开源代码模式，在这里面可以进行删除 <span class="math display">\[
-e^{i\pi + 1} = 2
-\]</span> ### 三、常用的公式格式代码练习</p>
-<ol type="1">
-<li>公式块内换行</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\\ 公式块内换行</span><br></pre></td></tr></table></figure>
-<ol start="2" type="1">
-<li>常用基本函数：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">1、x^2 //上下标</span><br><span class="line">2、1/2 //分式1</span><br><span class="line">3、\frac&#123;1&#125;&#123;2&#125; //分式2</span><br><span class="line">4、\cdots //省略号</span><br><span class="line">5、\sqrt&#123;4&#125; //开根号</span><br><span class="line">6、\vec&#123;a&#125; //矢量</span><br><span class="line">7、\int&#123;x&#125;dx //积分1</span><br><span class="line">8、\int_&#123;1&#125;^&#123;2&#125;dx //积分2</span><br><span class="line">9、\lim&#123;a + b&#125; //极限1</span><br><span class="line">10、\lim_&#123;n\rightarrow + \infty&#125; //极限2</span><br><span class="line">11、\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125; //累加</span><br><span class="line">12、\prod_&#123;n=1&#125;^&#123;199&#125;&#123;x_n&#125; //累乘</span><br><span class="line">13、\sin&#123;(x + y)&#125; //三角函数</span><br><span class="line">14、\ln2 //对数函数1</span><br><span class="line">15、\log_28 //对数函数2</span><br><span class="line">16、a&#x27; //导数</span><br><span class="line">17、\partial&#123;F&#125; //偏微分</span><br><span class="line">18、\iint&#123;xy&#125;dxdy //二重积分</span><br><span class="line">19、\oiint&#123;x + y&#125;dxdy //二重环路积分</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-1、x^2\\
-2、1/2\\
-3、\frac{1}{2}\\
-4、\cdots\\
-5、\sqrt{4}\\
-6、\vec{a}\\
-7、\int{x}dx\\
-8、\int_{1}^{2}dx\\
-9、\lim{a + b}\\
-10、\lim_{n\rightarrow + \infty}\\
-11、\sum_{n=1}^{100}{a_n}\\
-12、\prod_{n=1}^{199}{x_n}\\
-13、\sin{(x + y)}\\
-14、\ln2\\
-15、\log_28\\
-16、a&#39;\\
-17、\partial{F}\\
-18、\iint{xy}dxdy\\
-19、\oiint{(x + y)}dxdy\\
-\]</span></p>
-<ol start="3" type="1">
-<li>公式块内左对齐：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125; //</span><br><span class="line">&amp;1、y = \sin(x) \\&amp;为对齐格式符</span><br><span class="line">&amp;2、</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;1、y = \sin(x) \\
-&amp;2、
-\end{aligned}
-\]</span></p>
-<ol start="4" type="1">
-<li>下标</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">v_1\\</span><br><span class="line">v_&#123;体积&#125; 下标为多个英文字母时，使用&#123;&#125;包起来：</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-v_1\\
-v_{体积}
-\]</span></p>
-<ol start="5" type="1">
-<li>关系运算符：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\pm // ± plus&amp;minor</span><br><span class="line">\times // ×</span><br><span class="line">\div // ÷ divide</span><br><span class="line">\equiv // == equal</span><br><span class="line">\le // &lt;= lower&amp;equal</span><br><span class="line">\ge // &gt;= greater&amp;equal</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-\pm\\
-\times \\
-\div\\
-\equiv\\
-\leq\\
-\geq
-\]</span></p>
-<ol start="6" type="1">
-<li>花括号公式组合：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">c(u) =</span><br><span class="line">\begin&#123;cases&#125; </span><br><span class="line">\sqrt\frac&#123;1&#125;&#123;N&#125;, u = 0 \\ </span><br><span class="line">\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125;, n \neq0  neq:not equal</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-c(u) =
-\begin{cases}
-\sqrt\frac{1}{N}, u = 0 \\
-\sum_{n=1}^{100}{a_n}, n \neq0
-\end{cases}
-\]</span></p>
-<ol start="7" type="1">
-<li>空格：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">a \quad b</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-a \quad b
-\]</span></p>
-<ol start="8" type="1">
-<li>矩阵：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">0&amp;1&amp;1\\</span><br><span class="line">1&amp;1&amp;0\\</span><br><span class="line">1&amp;0&amp;1\\</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-\begin{matrix}
-0&amp;1&amp;1\\
-1&amp;1&amp;0\\
-1&amp;0&amp;1\\
-\end{matrix}
-\]</span></p>
-<blockquote>
-<p>在起始、结束标记用下列词替换 matrix：</p>
-<p>pmatrix：小括号边框 bmatrix：中括号边框 ` Bmatrix：大括号边框
-vmatrix：单竖线边框 Vmatrix：双竖线边框</p>
-</blockquote>
-<p><span class="math display">\[
-\begin{pmatrix}
-0&amp;1&amp;1\\
-1&amp;1&amp;0\\
-1&amp;0&amp;1\\
-\end{pmatrix}
-\]</span></p>
-<p><span class="math display">\[
-\begin{vmatrix}
-0&amp;1&amp;1\\
-1&amp;1&amp;0\\
-1&amp;0&amp;1\\
-\end{vmatrix}
-\]</span></p>
-<ol start="9" type="1">
-<li>特殊字符及希腊字母表：</li>
-</ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\infty //无穷</span><br><span class="line">\emptyset //空集</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p><span class="math display">\[
-\infty \\
-\emptyset
-\]</span></p>
-<ol start="10" type="1">
-<li>更多字符 更多特殊字符及希腊字母代码见wps中LaTex公式符号</li>
-</ol>
-<p>① 常用字母字符</p>
-<figure>
-<img
-src="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>② 特殊符号</p>
-<figure>
-<img
-src="https://i0.hdslb.com/bfs/article/5f471724c265c39e6c832a9a3212f67aa094791e.png@942w_387h_progressive.webp"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="https://i0.hdslb.com/bfs/article/a750d31bd5a69f8dd8b58c6b2d690988025d323c.png@942w_1500h_progressive.webp"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-]]></content>
       <categories>
-        <category>Tools</category>
-        <category>S2</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VSCode配置latex</title>
-    <url>/vscode-configure-latex/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>记录采用 <span class="math inline">\(MixTEX\)</span> 在 <span
-class="math inline">\(VSCode\)</span> 搭建 <span
-class="math inline">\(\LaTeX\)</span> 环境的过程</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="安装编译器">安装编译器</h2>
-<p>原 <code>TexLive</code> 体积过大，采用包管理器进行安装</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 MikTeX</span></span><br><span class="line">scoop install miktex</span><br></pre></td></tr></table></figure>
-<h2 id="配置-vscode">配置 VSCode</h2>
-<p>安装 <code>LaTeX Workshop</code> 扩展</p>
-<p>加入如下配置：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-shell-escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;%DOCFILE%&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="解决报错">解决报错</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">major issue: So far, you have not checked for MiKTeX updates.</span><br></pre></td></tr></table></figure>
-<p>找到MikTex
-Console这个程序，右键点击“以管理员身份运行”，然后点击“检查更新”</p>
-<blockquote>
-<p><em>Ref:</em></p>
-<p><em><a href="https://zhuanlan.zhihu.com/p/139210056">搭建 LaTeX
-舒适写作环境（VSCode） - 知乎 (zhihu.com)</a></em></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Tools</category>
+        <category>CO</category>
         <category>S5</category>
       </categories>
       <tags>
-        <tag>LaTeX</tag>
-        <tag>Path</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Visual Group Theory</title>
-    <url>/visual-group-theory-notes/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="总述">总述</h2>
-<blockquote>
-<p>English notes of Visual Group Theory</p>
-<span id="more"></span>
-</blockquote>
-<h1 id="visual-group-theory">Visual Group Theory</h1>
-<blockquote>
-<p>Start on 7-5-2023</p>
-</blockquote>
-<h2 id="overview">Overview</h2>
-<p>Three nonstandard aspect of nonstandard approach in the book:</p>
-<ul>
-<li><strong>images and visual examples</strong>-the heart</li>
-<li>focuses more on finite groups than infinite ones-easier to diagram
-and give a solid foundation of intuition</li>
-<li>approaches groups from the opposite direction of traditional
-textbooks-groups are defined to be collections of actions and later
-proved to be sets with binary operations</li>
-<li><strong>linear order</strong>, to be read in order</li>
-<li>exceptions: Chapter 5 and Chapter 10, you can skip most of them
-without understanding other chapters. But the definition of abelian in
-Section 5.2 and the Cauchy's Theorem in Section 9.2 are important</li>
-</ul>
-<h2 id="what-is-a-group">What is a group?</h2>
-<blockquote>
-<p>Group theory is not primarily about numbers, but rather about
-<strong>patterns</strong> and <strong>symmetry</strong></p>
-</blockquote>
-<h4 id="four-key-observations">Four key observations</h4>
-<p>Observation 1</p>
-<ul>
-<li>There is a predefined list of moves that never changes.</li>
-</ul>
-<p>Observation 2</p>
-<ul>
-<li>Every move is reversible.</li>
-</ul>
-<p>Observation 3</p>
-<ul>
-<li>Every move is deterministic.</li>
-</ul>
-<p>Observation 4</p>
-<ul>
-<li>Moves can be combined in any sequence.</li>
-</ul>
-<p>A move is a twist of one of the six faces.</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507155405607.png"
-alt="image-20230507155405607" />
-<figcaption aria-hidden="true">image-20230507155405607</figcaption>
-</figure>
-<p>Let's rephrase the 4 observations as rules (axioms) that will define
-the boundaries of our objects of study.</p>
-<h4 id="rules-of-groups">Rules of groups</h4>
-<p>Rule 1</p>
-<ul>
-<li>There is a predefined of <strong>actions</strong> that never
-changes.</li>
-</ul>
-<p>Rule 2</p>
-<ul>
-<li>Every action is reversible.</li>
-</ul>
-<p>Rule 3</p>
-<ul>
-<li>Every action is deterministic.</li>
-</ul>
-<p>Rule 4</p>
-<ul>
-<li>Any sequence of consecutive actions is also an action.</li>
-</ul>
-<blockquote>
-<p>We swapped the word "move" for "action"</p>
-<p>The (usually short) list of actions required by Rule 1 is our set of
-building blocks; called the <strong>generators</strong>.</p>
-<p><strong>Not</strong> all actions are generators. Generators are the
-subset of all possible actions in a group.</p>
-<p>Rule 4 tells us that any sequence of the generators is also an
-action.</p>
-</blockquote>
-<p>Our unofficial definition of a group (We'll make things a bit
-rigorous later.)</p>
-<h4 id="definition-informal">Definition (informal)</h4>
-<blockquote>
-<p>A group is a set of actions satisfying Rules 1-4.</p>
-</blockquote>
-<p>Let's call these generators a, b, c, d, e, and f. Every word over the
-alphabet <span class="math inline">\(\{a, b, c, d, e, f\}\)</span>
-describes a unique configuration of the cube (starting from the solved
-position)</p>
-<blockquote>
-<p>Obviously, I don't care which is which.</p>
-</blockquote>
-<h4 id="summary-of-the-big-ideas">Summary of the big ideas</h4>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507160953096.png"
-alt="image-20230507160953096" />
-<figcaption aria-hidden="true">image-20230507160953096</figcaption>
-</figure>
-<h2 id="cayley-graphs">Cayley graphs</h2>
-<h3 id="a-road-map-for-the-rubiks-cube">A road map for the Rubik's
-Cube</h3>
-<p>Let's pretend for a moment that we were interested in writing a
-complete solutions manual for the Rubik's Cube. And let me be more
-specific</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507161729491.png"
-alt="image-20230507161729491" />
-<figcaption aria-hidden="true">image-20230507161729491</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507161902686.png"
-alt="image-20230507161902686" />
-<figcaption aria-hidden="true">image-20230507161902686</figcaption>
-</figure>
-<blockquote>
-<p>We can think of the <em>Big Book</em> as a road map for the Rubik's
-Cube. Each page says "you are here" and “if you follow this road, you'll
-end up over there."</p>
-</blockquote>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507162334393.png"
-alt="image-20230507162334393" />
-<figcaption aria-hidden="true">image-20230507162334393</figcaption>
-</figure>
-<blockquote>
-<p>Despite the Big Book's apparent shortcomings, it made for a good
-thought experiment. The Big Book is a map of a group. The Big Book
-introduced the mapmaking ideas, although the map is too large. We can
-use the same ideas to map out any group. In fact, we shall frequently do
-exactly that.</p>
-<p>And Let's try something simpler....</p>
-</blockquote>
-<h3 id="the-rectangle-puzzle">The Rectangle Puzzle</h3>
-<blockquote>
-<p>How can we check the moves of the Rectangle Puzzle form a group?</p>
-</blockquote>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507165129308.png"
-alt="image-20230507165129308" />
-<figcaption aria-hidden="true">image-20230507165129308</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507170457691.png"
-alt="image-20230507170457691" />
-<figcaption aria-hidden="true">image-20230507170457691</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507170733456.png"
-alt="image-20230507170733456" />
-<figcaption aria-hidden="true">image-20230507170733456</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507171547441.png"
-alt="image-20230507171547441" />
-<figcaption aria-hidden="true">image-20230507171547441</figcaption>
-</figure>
-<h3 id="more-on-arrows">More on arrows</h3>
-<ul>
-<li><p>node <span class="math inline">\(y\)</span> is the result of
-applying the action $ g G $ to node $x $.</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173327983.png"
-alt="image-20230507173327983" />
-<figcaption aria-hidden="true">image-20230507173327983</figcaption>
-</figure></li>
-<li><p>if an action <span class="math inline">\(h \in G\)</span> is its
-own inverse (that is, <span class="math inline">\(h ^ 2 = e\)</span>),
-then we have a 2-way arrow. For clarity, our convention is to drop the
-tips on all 2-way arrows like that</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173338448.png"
-alt="image-20230507173338448" />
-<figcaption aria-hidden="true">image-20230507173338448</figcaption>
-</figure></li>
-<li><p>When we focus on a group's structure, we frequently omit the
-labels at the nodes</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173356200.png"
-alt="image-20230507173356200" />
-<figcaption aria-hidden="true">image-20230507173356200</figcaption>
-</figure></li>
-</ul>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507185713813.png"
-alt="image-20230507185713813" />
-<figcaption aria-hidden="true">image-20230507185713813</figcaption>
-</figure>
-<blockquote>
-<p>isomorphic: corresponding or similar in form and relations.</p>
-</blockquote>
-<h3 id="the-klein-4-group">The Klein 4-group</h3>
-<p>Any group with the same Cayley diagram as the Rectangle Puzzle and
-the 2-Light Switch Group is called the Klein 4-group, denoted by <span
-class="math inline">\(V_4\)</span> for <em>vierergruppe</em>,
-“four-group" in German. It is named after the mathematician Felix
-Klein.</p>
-<h3 id="the-triangle-puzzle">The triangle puzzle</h3>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507190725806.png"
-alt="image-20230507190725806" />
-<figcaption aria-hidden="true">image-20230507190725806</figcaption>
-</figure>
-<h3 id="properties-of-cayley-graphs">Properties of Cayley graphs</h3>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507191305245.png"
-alt="image-20230507191305245" />
-<figcaption aria-hidden="true">image-20230507191305245</figcaption>
-</figure>
-<h3 id="a-theorem-and-proof">A Theorem and Proof!</h3>
-<p>Theorem Suppose an action <span class="math inline">\(g\)</span> has
-the property that <span class="math inline">\(gx = x\)</span> for some
-other action <span class="math inline">\(x\)</span>. Then g is the
-<em>identity action</em>, i.e., <span class="math inline">\(gh = h =
-hg\)</span> for all other actions <span
-class="math inline">\(h\)</span>.</p>
-<blockquote>
-<p><span class="math inline">\(g\)</span> apply to <em>anything
-else</em> !</p>
-</blockquote>
-<p>Proof:</p>
-<blockquote>
-<p>The identity action (we'll denote by 1) is simply the action <span
-class="math inline">\(hh^{-1}\)</span>, for any action <span
-class="math inline">\(h\)</span>. If <span class="math inline">\(gx =
-x\)</span>, then multiplying by <span
-class="math inline">\(x^{-1}\)</span> <em>on the right</em> yields:</p>
-<p><span class="math display">\[g = gxx^{-1} = xx^{-1} = 1\]</span>.</p>
-<p>Thus <span class="math inline">\(g\)</span> is the identity
-action.</p>
-</blockquote>
-<h2 id="groups-in-science-art-and-mathematics">Groups in science, art,
-and mathematics</h2>
-<h3 id="group-of-symmetries">Group of symmetries</h3>
-<h3 id="how-to-make-a-group-out-of-symmetries">How to make a group out
-of symmetries</h3>
-<p>Groups relate to symmetry because an object's symmetries can be
-described using arrangements of the object's parts.</p>
-<p>Algorithm 1. Identify all the parts of the object that are similar
-(e.g., the corners of an n-gon), and give each such part a different
-number. 2. Consider the actions that may rearrange the numbered parts,
-but leave the object it the same physical space. (This collection of
-actions forms a group. 3. (Optional) If you want to visualize the group,
-explore and map it as we did in the previous lecture with the rectangle
-puzzle, etc.</p>
-<p><strong>Footprint</strong>: the physical space that an object
-occupies</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507193006888.png"
-alt="image-20230507193006888" />
-<figcaption aria-hidden="true">image-20230507193006888</figcaption>
-</figure>
-<blockquote>
-<p>This section seems to be useless. So if I have time later, let's
-continue to see at 9:37.</p>
-</blockquote>
-<h2 id="group-presentations">Group presentations</h2>
-<blockquote>
-<p>Our definition of groups before (a collection of actions that obeyed
-Rules 1-4) is not the ordinary definition of a group. We'll be working
-toward introducing the standard (and more formal) definition of a group.
-Along the way, we will learn some helpful <strong>tools</strong> to get
-us there.</p>
-<p>Group presentations, an algebraic device to concisely describe groups
-by their <strong>generators</strong> and <strong>relations</strong>.</p>
-</blockquote>
-<h3 id="more-on-cayley-diagrams">More on Cayley diagrams</h3>
-<p>All arrows of a fixed color correspond to the same generator.</p>
-<p>Two things with the node:</p>
-<ul>
-<li><p>Labeling the nodes with configurations of a thing we are acting
-on</p></li>
-<li><p>Leaving the nodes unlabeled (this is the "abstract Cayley
-diagram”)</p></li>
-<li><p>Label the nodes with actions (this is called a “diagram of
-actions").</p>
-<blockquote>
-<p>motivated by the fact that every <strong>path</strong> in the Cayley
-diagram represents an <strong>action</strong> of the group</p>
-</blockquote></li>
-</ul>
-<p>Motivating idea If we distinguish one node as the “unscrambled”
-configuration and label that with the identity action, then we can label
-each remaining node with the action that it takes to reach it from the
-unscrambled state.</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507210640251.png"
-alt="image-20230507210640251" />
-<figcaption aria-hidden="true">image-20230507210640251</figcaption>
-</figure>
-<h3 id="a-group-calculator">A "group calculator"</h3>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510215301253.png"
-alt="image-20230510215301253" />
-<figcaption aria-hidden="true">image-20230510215301253</figcaption>
-</figure>
-<p>A concise way to describe <span class="math inline">\(V_4\)</span> is
-the following group representation: <span class="math display">\[
-V_4 = &lt;v, h | v^2 = e, h^2 = e, vh = hv &gt;
-\]</span> The following is one (of many!) presentations for this group:
-<span class="math display">\[
-D_3 = &lt;r, f | r^3 = e, f^2 = e, r^2f = fr&gt;
-\]</span></p>
-<blockquote>
-<p>To be more precise</p>
-</blockquote>
-<p>If we want to be more precise, we use a <strong>group
-presentation</strong> of the following form: <span
-class="math display">\[
-G = &lt;generators | relations&gt;
-\]</span> The vertical bar here can be thought of as meaning "subject
-to".<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510220205721.png"
-alt="image-20230510220205721" /></p>
-<blockquote>
-<p>The famous "halting problem" is unsolvable</p>
-</blockquote>
-<h2 id="multiplication-tables">Multiplication tables</h2>
-<blockquote>
-<p>We are almost ready to introduce the formal definition of a group In
-this lecture, we will introduce one more useful algebraic tool for
-better understanding groups: multiplication tables. We will also look
-more closely at inverses of the actions in a group. Finally, we will
-introduce a new group of size 8 called the quaternions which frequently
-arise in theoretical physics.</p>
-</blockquote>
-<h3 id="inverses">Inverses</h3>
-<p>denoted by <span class="math inline">\(g^{-1}\)</span></p>
-<h3 id="multiplication-tables-1">Multiplication tables</h3>
-<p>follow the convention that write row <span
-class="math inline">\(g\)</span> before column <span
-class="math inline">\(h\)</span></p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510221817825.png"
-alt="image-20230510221817825" />
-<figcaption aria-hidden="true">image-20230510221817825</figcaption>
-</figure>
-<h3 id="some-remarks">Some remarks</h3>
-<p>A group is abelian <span class="math inline">\(iff\)</span> its
-multiplication table is symmetric about the “main diagonal."</p>
-<p>In each row and each column, each group action occurs exactly
-once.</p>
-<blockquote>
-<p>The following theorem will explain that</p>
-</blockquote>
-<p><strong>Theorem:</strong> An element cannot appear twice in the same
-row or column of a multiplication table.</p>
-<p><strong>Proof:</strong></p>
-<p>Suppose that in row <span class="math inline">\(a\)</span>, the
-element <span class="math inline">\(g\)</span> appears in columns <span
-class="math inline">\(b\)</span> and <span
-class="math inline">\(c\)</span>. Algebraically, this means <span
-class="math display">\[
-ab=g=ac
-\]</span> Multiplying everything on the left by <span
-class="math inline">\(a^{-1}\)</span> yields <span
-class="math display">\[
-a^{-l}ab=a^{-1}g=a^{-1}ac \Rightarrow b = c
-\]</span> Thus, <span class="math inline">\(g\)</span> (or any element)
-element cannot appear twice in the same row.</p>
-<p>Similarly, we can finish the proof for column.</p>
-<h3 id="the-quaternion-group">The quaternion group</h3>
-<h2 id="the-formal-definition-of-a-group">The formal definition of a
-group</h2>
-<p><span class="math inline">\(S\)</span> is closed on the operation
-*</p>
-<h3 id="associativity">Associativity</h3>
-<p>交换律</p>
-<p>An operation is associative if parentheses are permitted anywhere,
-but required nowhere.</p>
-<h3 id="formal-definitions">Formal definitions</h3>
-<p>Viewing groups from these two different paradigms:</p>
-<ul>
-<li>a group as a collection of actions</li>
-<li>a group as a set with a binary operation</li>
-</ul>
-<h3 id="properties">Properties</h3>
-<p><strong>Theorem: </strong>Every element of a group has a
-<em>unique</em> inverse</p>
-<p><strong>Proof:</strong></p>
-<p><strong>Theorem:</strong> Every group has a <em>unique</em> identity
-element</p>
-<h2 id="cyclic-and-abelian-groups">Cyclic and abelian groups</h2>
-<h3 id="overview-1">Overview</h3>
-<p><span class="math inline">\(5\)</span> families of groups:</p>
-<ul>
-<li>cyclic groups</li>
-<li>abelian groups</li>
-<li>dihedral groups</li>
-<li>symmetric groups</li>
-<li>alternating groups</li>
-</ul>
-<p>Informally, a group is cyclic if it is generated by a single element,
-and is abelian if multiplication commutes. (Like <span
-class="math inline">\(a * b = b * a, \forall a, b \in G\)</span>)</p>
-<h3 id="cyclic-groups-additively">Cyclic groups, additively</h3>
-<p><strong>Definition:</strong> A group is cyclic if it can be generated
-by a single element.</p>
-<blockquote>
-<p>Finite cyclic groups describe the symmetry of objects that have
-<em>only</em> rotational symmetry.</p>
-</blockquote>
-<p><span class="math display">\[
-C_n = &lt;r| r^n = e&gt;
-\]</span></p>
-<p><strong>Remark:</strong> This is a natural generator, but not the
-only one. For instance, <span class="math inline">\(r^3\)</span> is also
-a generator.</p>
-<p><strong>Definition:</strong> The order of a group <span
-class="math inline">\(G\)</span> is the number of distinct elements in
-<span class="math inline">\(G\)</span>, denoted by <span
-class="math inline">\(|G|\)</span>.</p>
-<p>The cyclic group of order <span class="math inline">\(n\)</span>
-(i.e., <span class="math inline">\(n\)</span> rotations) is denoted
-<span class="math inline">\(C_n\)</span> (or sometimes by <span
-class="math inline">\(\mathbb{Z}_n\)</span>). In fact, the alternative
-notation <span class="math inline">\(\mathbb{Z}_n\)</span> comes from
-the fact that the binary operation in <span
-class="math inline">\(C_n\)</span> is just modular addition. To add two
-numbers in <span class="math inline">\(\mathbb{Z}_n\)</span>, add them
-as integers, divide by <span class="math inline">\(n\)</span>, and take
-the remainder.</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512195612827.png"
-alt="image-20230512195612827" />
-<figcaption aria-hidden="true">image-20230512195612827</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512195732611.png"
-alt="image-20230512195732611" />
-<figcaption aria-hidden="true">image-20230512195732611</figcaption>
-</figure>
-<h3 id="cyclic-groups-multiplicatively">Cyclic groups,
-multiplicatively</h3>
-<p>If <span class="math inline">\(r\)</span> is a generator (e.g., a
-rotation by <span class="math inline">\(2 \pi /n\)</span>), then we can
-denote the <span class="math inline">\(n\)</span> elements by <span
-class="math display">\[
-1, r, r^2, \dots , r^{n-1}
-\]</span> Think of <span class="math inline">\(r\)</span> as the complex
-number <span class="math inline">\(e^{2\pi i/n}\)</span>, with the group
-operation being <em>multiplication!</em></p>
-<blockquote>
-<p>复数相乘，模相乘，辐角相加</p>
-</blockquote>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512202225352.png"
-alt="image-20230512202225352" />
-<figcaption aria-hidden="true">image-20230512202225352</figcaption>
-</figure>
-<h3 id="more-on-cyclic-groups">More on cyclic groups</h3>
-<p>The (unique) infinite cyclic group (additively) is (<span
-class="math inline">\(\mathbb{Z}, +\)</span>), the integers under
-addition. Using multiplicative notation, the infinite cyclic group is
-<span class="math display">\[
-G=&lt;r\quad|\quad&gt;=\{r^k : k \in \mathbb{Z}\}
-\]</span> For the infinite group <span
-class="math inline">\((\mathbb{Z}, +)\)</span>, only <span
-class="math inline">\(1\)</span> or <span
-class="math inline">\(-1\)</span> can be generators. (Considering
-multiple generators are pointless.)</p>
-<p><strong>Proposition:</strong> Any number from <span
-class="math inline">\(\{0, 1, \dots, n-1\}\)</span> that is relatively
-prime to <span class="math inline">\(n\)</span> will generate <span
-class="math inline">\(\mathbb{Z}_n\)</span>.</p>
-<p>For example, <span class="math inline">\(1, 2, 3, 4\)</span> all
-generate <span class="math inline">\(\mathbb{Z}_5\)</span>. i.e., <span
-class="math display">\[
-\mathbb{Z}_5 = &lt;1&gt; = &lt;2&gt; = &lt;3&gt; = &lt;4&gt;.
-\]</span></p>
-<blockquote>
-<p>The above notation just means "generated by" instead of a
-presentation.</p>
-</blockquote>
-<p><strong>Observation:</strong> One of the most important properties of
-the multiplication tables is that, if the headings on the multiplication
-table are arranged in the "natural" order <span
-class="math inline">\((0, 1, 2, \dots , n-1)\)</span> or <span
-class="math inline">\((e, r, r^2, \dots, r^{n-1})\)</span>, then each
-row is a cyclic shift to the left of the row above it.</p>
-<h3 id="orbits">Orbits</h3>
-<p>Orbits are usually written with braces. In the case, the orbit of
-<span class="math inline">\(r\)</span> is <span
-class="math inline">\(\{e, r, r^2\}\)</span>, and the orbit of <span
-class="math inline">\(f\)</span> is <span class="math inline">\(\{e,
-f\}\)</span></p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230514201107827.png"
-alt="image-20230514201107827" />
-<figcaption aria-hidden="true">image-20230514201107827</figcaption>
-</figure>
-<p><strong>Definition:</strong> The order of an element</p>
-<blockquote>
-<p>Anything you can get by the path, following or backwards</p>
-</blockquote>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230514230616848.png"
-alt="image-20230514230616848" />
-<figcaption aria-hidden="true">image-20230514230616848</figcaption>
-</figure>
-]]></content>
-      <tags>
-        <tag>Notes</tag>
-        <tag>Group Theory</tag>
+        <tag>CO</tag>
+        <tag>Replay</tag>
       </tags>
   </entry>
   <entry>
@@ -2707,8 +1982,8 @@ style="text-align: left;">如果用print输出后，必须跟一个空格符，�
 </ul>
 ]]></content>
       <categories>
-        <category>Notes</category>
         <category>Python</category>
+        <category>Notes</category>
         <category>S4 Summer</category>
         <category>S3 Winter</category>
       </categories>
@@ -2718,709 +1993,735 @@ style="text-align: left;">如果用print输出后，必须跟一个空格符，�
       </tags>
   </entry>
   <entry>
-    <title>WangDao OS Chapter2</title>
-    <url>/WD-OS-Chap2/</url>
+    <title>Typora数学公式</title>
+    <url>/MarkDown-Grammar/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>枯燥无味的王道考研 OS 第二章 进程与线程 知识点罗列</p>
+<p>MarkDown 比较全的数学公式语法集合</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="进程的概念组成特征">进程的概念、组成、特征</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124175307299.png"
-alt="2.1-总" />
-<figcaption aria-hidden="true">2.1-总</figcaption>
-</figure>
-<h3 id="进程的概念">进程的概念</h3>
-<p>程序是静态的，进程是动态的，是程序的一次执行过程</p>
-<p>QQ.exe 和启动 QQ</p>
-<h3 id="进程的组成">进程的组成</h3>
+<p>[TOC] &gt; 其实本质是对 Tex 语法的支持</p>
+<h3 id="一打开typora选择数学模块">一、打开Typora选择数学模块</h3>
+<p>三种打开方式： * 点击“段落” --&gt; “公式块” * 快捷键ctrl + shift +m *
+“$$” + 回车</p>
+<h3 id="二添加数学公式">二、添加数学公式</h3>
+<p>输出美观的数学公式，需要知道他们的格式和代码！
+ps:Typora有时出现公式块无法删除，可能是软件bug，Ctrl + /
+打开源代码模式，在这里面可以进行删除 <span class="math display">\[
+e^{i\pi + 1} = 2
+\]</span> ### 三、常用的公式格式代码练习</p>
+<ol type="1">
+<li>公式块内换行</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\\ 公式块内换行</span><br></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>常用基本函数：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">1、x^2 //上下标</span><br><span class="line">2、1/2 //分式1</span><br><span class="line">3、\frac&#123;1&#125;&#123;2&#125; //分式2</span><br><span class="line">4、\cdots //省略号</span><br><span class="line">5、\sqrt&#123;4&#125; //开根号</span><br><span class="line">6、\vec&#123;a&#125; //矢量</span><br><span class="line">7、\int&#123;x&#125;dx //积分1</span><br><span class="line">8、\int_&#123;1&#125;^&#123;2&#125;dx //积分2</span><br><span class="line">9、\lim&#123;a + b&#125; //极限1</span><br><span class="line">10、\lim_&#123;n\rightarrow + \infty&#125; //极限2</span><br><span class="line">11、\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125; //累加</span><br><span class="line">12、\prod_&#123;n=1&#125;^&#123;199&#125;&#123;x_n&#125; //累乘</span><br><span class="line">13、\sin&#123;(x + y)&#125; //三角函数</span><br><span class="line">14、\ln2 //对数函数1</span><br><span class="line">15、\log_28 //对数函数2</span><br><span class="line">16、a&#x27; //导数</span><br><span class="line">17、\partial&#123;F&#125; //偏微分</span><br><span class="line">18、\iint&#123;xy&#125;dxdy //二重积分</span><br><span class="line">19、\oiint&#123;x + y&#125;dxdy //二重环路积分</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+1、x^2\\
+2、1/2\\
+3、\frac{1}{2}\\
+4、\cdots\\
+5、\sqrt{4}\\
+6、\vec{a}\\
+7、\int{x}dx\\
+8、\int_{1}^{2}dx\\
+9、\lim{a + b}\\
+10、\lim_{n\rightarrow + \infty}\\
+11、\sum_{n=1}^{100}{a_n}\\
+12、\prod_{n=1}^{199}{x_n}\\
+13、\sin{(x + y)}\\
+14、\ln2\\
+15、\log_28\\
+16、a&#39;\\
+17、\partial{F}\\
+18、\iint{xy}dxdy\\
+19、\oiint{(x + y)}dxdy\\
+\]</span></p>
+<ol start="3" type="1">
+<li>公式块内左对齐：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;aligned&#125; //</span><br><span class="line">&amp;1、y = \sin(x) \\&amp;为对齐格式符</span><br><span class="line">&amp;2、</span><br><span class="line">\end&#123;aligned&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;1、y = \sin(x) \\
+&amp;2、
+\end{aligned}
+\]</span></p>
+<ol start="4" type="1">
+<li>下标</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">v_1\\</span><br><span class="line">v_&#123;体积&#125; 下标为多个英文字母时，使用&#123;&#125;包起来：</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+v_1\\
+v_{体积}
+\]</span></p>
+<ol start="5" type="1">
+<li>关系运算符：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">\pm // ± plus&amp;minor</span><br><span class="line">\times // ×</span><br><span class="line">\div // ÷ divide</span><br><span class="line">\equiv // == equal</span><br><span class="line">\le // &lt;= lower&amp;equal</span><br><span class="line">\ge // &gt;= greater&amp;equal</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\pm\\
+\times \\
+\div\\
+\equiv\\
+\leq\\
+\geq
+\]</span></p>
+<ol start="6" type="1">
+<li>花括号公式组合：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">c(u) =</span><br><span class="line">\begin&#123;cases&#125; </span><br><span class="line">\sqrt\frac&#123;1&#125;&#123;N&#125;, u = 0 \\ </span><br><span class="line">\sum_&#123;n=1&#125;^&#123;100&#125;&#123;a_n&#125;, n \neq0  neq:not equal</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+c(u) =
+\begin{cases}
+\sqrt\frac{1}{N}, u = 0 \\
+\sum_{n=1}^{100}{a_n}, n \neq0
+\end{cases}
+\]</span></p>
+<ol start="7" type="1">
+<li>空格：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">a \quad b</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+a \quad b
+\]</span></p>
+<ol start="8" type="1">
+<li>矩阵：</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin&#123;matrix&#125;</span><br><span class="line">0&amp;1&amp;1\\</span><br><span class="line">1&amp;1&amp;0\\</span><br><span class="line">1&amp;0&amp;1\\</span><br><span class="line">\end&#123;matrix&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\begin{matrix}
+0&amp;1&amp;1\\
+1&amp;1&amp;0\\
+1&amp;0&amp;1\\
+\end{matrix}
+\]</span></p>
 <blockquote>
-<p>准确来说是进程实体的组成</p>
+<p>在起始、结束标记用下列词替换 matrix：</p>
+<p>pmatrix：小括号边框 bmatrix：中括号边框 ` Bmatrix：大括号边框
+vmatrix：单竖线边框 Vmatrix：双竖线边框</p>
 </blockquote>
-<h4 id="pcb">PCB</h4>
-<p>PCB(Process Control
-Block)：进程控制块，保存操作系统管理各个并发进程时所需要的信息</p>
-<p><strong>PCB 是进程存在的唯一标志</strong>，进程创建时操作系统会创建
-PCB，进程结束时操作系统会回收 PCB</p>
-<p><strong>供给操作系统使用</strong></p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124174652024.png"
-alt="2.1.2.1-PCB组成" />
-<figcaption aria-hidden="true">2.1.2.1-PCB组成</figcaption>
-</figure>
-<h4 id="程序段数据段">程序段、数据段</h4>
-<p>程序段：程序代码（指令序列）</p>
-<p>数据段：运行过程中产生的各种数据（如定义的变量）</p>
-<p><strong>供给进程自身使用</strong>，与进程自身运行逻辑有关</p>
-<h4 id="进程实体">进程实体</h4>
-<p>进程实体（进程映像）由PCB、程序段、数据段组成，反应了进程在某一时刻的状态</p>
-<p>所以可以这样定义进程：<strong>进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位</strong></p>
-<blockquote>
-<p>调度指上 CPU 运行</p>
-</blockquote>
-<p>进程是动态的，进程实体（进程映像）是静态的。</p>
-<h3 id="进程的特征">进程的特征</h3>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124175212607.png"
-alt="2.1.3" />
-<figcaption aria-hidden="true">2.1.3</figcaption>
-</figure>
-<p>其中，动态性是进程<strong>最基本</strong>的特征</p>
-<h2 id="进程的状态与转换">进程的状态与转换</h2>
-<figure>
-<img
-src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124201936453.png"
-alt="2.2总" />
-<figcaption aria-hidden="true">2.2总</figcaption>
-</figure>
-<h3 id="进程的状态">进程的状态</h3>
-<p>创建态：进程正在被创建，操作系统为进程分配资源，初始化 PCB</p>
-<p>就绪态：进程已经创建完成具备运行条件，但是没有空闲
-CPU，暂时不能运行</p>
-<p>运行态：进程正在 CPU 上运行，CPU 执行进程对应的程序</p>
-<p>阻塞态：进程运行过程中，在等待某个事件的发生而无法继续运行，操作系统会让进程下
-CPU 进入阻塞态</p>
-<p>终止态：操作系统让进程下 CPU，并回收内存空间与该进程的 PCB</p>
-<h3 id="进程的状态转换">进程的状态转换</h3>
-<figure>
-<img
-src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124201325614.png"
-alt="2.2.2丁字裤模型" />
-<figcaption aria-hidden="true">2.2.2丁字裤模型</figcaption>
-</figure>
-<p>PCB 中也有一个变量 state 对应进程的当前状态</p>
-<h3 id="进程的组织">进程的组织</h3>
-<h4 id="链接">链接</h4>
-<p>按照进程状态将 PCB 分为多个队列，指针指向当前处于某状态的进程</p>
-<p>如就绪队列指针指向当前处于就绪态的进程</p>
-<p>单核 CPU 同一时刻只能有一个进程处于运行态，多核 CPU
-可有多个进程同时处于运行态</p>
-<h4 id="索引">索引</h4>
-<p>按照进程状态的不同建立索引表</p>
-<h2 id="进程控制">进程控制</h2>
-<p>简而言之就是实现进程状态的转换</p>
-<h3 id="相关原语">相关原语</h3>
-<p>原语通过“关中断指令”和“开中断指令”两个<strong>特权指令</strong>实现原子性</p>
-<p>CPU
-在正常情况下每执行完一条指令都会例行检查是否有中断信号，而关中断之后便不再进行该检查</p>
-<figure>
-<img
-src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202446434.png"
-alt="2.3.1创建" />
-<figcaption aria-hidden="true">2.3.1创建</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202503059.png"
-alt="2.3.1终止" />
-<figcaption aria-hidden="true">2.3.1终止</figcaption>
-</figure>
-<p>将任意状态的进程转变为终止态最终消失</p>
-<p>正常结束：进程调用 exit 系统调用请求终止</p>
-<p>异常结束：除 0，非法使用特权指令等被操作系统杀掉</p>
-<p>外界干预：任务管理器用户杀掉</p>
-<figure>
-<img
-src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202905434.png"
-alt="2.3.1阻塞和唤醒" />
-<figcaption aria-hidden="true">2.3.1阻塞和唤醒</figcaption>
-</figure>
-<p>阻塞和唤醒的原因应为同一件事</p>
-<figure>
-<img
-src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202955702.png"
-alt="2.3.1切换" />
-<figcaption aria-hidden="true">2.3.1切换</figcaption>
-</figure>
-<p>正确完成切换的前提是先在寄存器中保存进程的运行环境（必要的寄存器信息）</p>
-<p>进程控制原语的三点共同点：</p>
-<ol type="1">
-<li><p>更新 PCB 中的信息</p></li>
-<li><p>将 PCB 装入合适的队列</p></li>
-<li><p>分配和回收资源</p></li>
+<p><span class="math display">\[
+\begin{pmatrix}
+0&amp;1&amp;1\\
+1&amp;1&amp;0\\
+1&amp;0&amp;1\\
+\end{pmatrix}
+\]</span></p>
+<p><span class="math display">\[
+\begin{vmatrix}
+0&amp;1&amp;1\\
+1&amp;1&amp;0\\
+1&amp;0&amp;1\\
+\end{vmatrix}
+\]</span></p>
+<ol start="9" type="1">
+<li>特殊字符及希腊字母表：</li>
 </ol>
-<h2 id="进程通信ipc">进程通信（IPC）</h2>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">\infty //无穷</span><br><span class="line">\emptyset //空集</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><span class="math display">\[
+\infty \\
+\emptyset
+\]</span></p>
+<ol start="10" type="1">
+<li>更多字符 更多特殊字符及希腊字母代码见wps中LaTex公式符号</li>
+</ol>
+<p>① 常用字母字符</p>
 <figure>
 <img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230126055115286.png"
-alt="2.4总" />
-<figcaption aria-hidden="true">2.4总</figcaption>
+src="https://i0.hdslb.com/bfs/article/a76a8e35df7722e6b3d02b70f579380bc768afbf.png@921w_459h_progressive.webp"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
 </figure>
-<p>两个进程之间产生数据交互</p>
-<p>因为进程是分配系统资源的单位，所以各进程拥有的内存地址空间相互独立</p>
-<h3 id="共享存储">共享存储</h3>
-<p>基于数据结构、基于共享空间</p>
-<h3 id="消息传递">消息传递</h3>
-<p>以格式化的信息（Message）为单位，通过发送消息、接收消息两个原语进行数据交换</p>
-<h3 id="管道通信">管道通信</h3>
-<p>“管道”是一个特殊的共享文件，又名pipe文件。其实就是在内存中开辟一个大小固定的内存缓冲区</p>
-<p>采用半双工通信，单向传输，各进程互斥地访问管道</p>
-<p>管道写满，写进程阻塞；管道读空，读进程阻塞</p>
-<h2 id="线程概念-多线程模型">线程概念 多线程模型</h2>
-<h3 id="线程的概念及属性优点">线程的概念及属性、优点</h3>
-<p>有的进程可能需要“同时”做很多事，而传统的进程只能串行地执行一系列程序。为此引入“线程”增加并发度。</p>
-<p>可以把线程理解为“轻量级进程”。线程是一个基本的CPU执行单元，也是程序执行流的最小单位。</p>
-<p>引入线程之后，不仅是进程之间可以并发，进程内的各线程之间也可以并发，从而进一步提升了系统的并发度，使得一个进程内</p>
-<p>也可以并发处理各种任务（如QQ视频、文字聊天、传文件）</p>
-<p>引入线程后，进程只作为除CPU之外的系统资源的分配单元（如打印机、内存地址空间等都是分配给进程的）。线程则作为处理机的分配单元。</p>
-<h3 id="线程的属性">线程的属性</h3>
-<h3 id="线程的实现方式">线程的实现方式</h3>
-<p>用户级线程（User-Level Thread, ULT）和内核级线程（Kernel-Level
-Thread, KLT）</p>
-<p>从代码的角度看，线程其实就是一段代码逻辑。</p>
-<table>
-<colgroup>
-<col style="width: 34%" />
-<col style="width: 32%" />
-<col style="width: 32%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>ULT</th>
-<th>KLT</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>线程的管理工作由谁来完成？</td>
-<td>应用程序</td>
-<td>OS kernel</td>
-</tr>
-<tr class="even">
-<td>线程切换时 CPU 状态</td>
-<td>用户态</td>
-<td>核心态</td>
-</tr>
-<tr class="odd">
-<td>操作系统是否能意识到用户级线程的存在？</td>
-<td>否，只有用户看来是多线程</td>
-<td>是，OS 通过 TCB 对线程进行管理</td>
-</tr>
-<tr class="even">
-<td>优点</td>
-<td>不需变态，开销小，效率高</td>
-<td>并发能力强，可在多核处理机上并行运行</td>
-</tr>
-<tr class="odd">
-<td>缺点</td>
-<td>并发度低，不能在多核处理机上并行运行</td>
-<td>需变态，开销大，效率低</td>
-</tr>
-</tbody>
-</table>
-<p>注：TCB 类比 PCB，线程控制块</p>
-<p>可以看到二者互为优缺点</p>
-<h3 id="多线程模型">多线程模型</h3>
-<p>在<strong>支持内核级线程 KLT
-的系统中</strong>，根据用户级线程和内核级线程的映射关系，划分出几种多线程模型</p>
-<p>前面的数目是 ULT，后面的数目是 KLT</p>
-<p>一对一有 KLT 的缺点，多对一有 ULT 的缺点，多对多综合了</p>
-<p>多对多模型：n 个ULT 映射到 m 个 KLT（n &gt;= m）。每个 ULT 对应 m 个
-KLT</p>
-<p>克服了多对一模型并发度不高的缺点（一个阻塞全体阻塞），又克服了一对一模型中一个用线程库
-户进程占用太多内核级线程，开销太大的缺点。</p>
-<p>可以这么理解：</p>
-<p>用户级线程是“代码逻辑”的载体</p>
-<p>内核级线程是“运行机会”的载体</p>
-<p>一段“代码逻辑”只有获得了“运行机会”才能被 CPU <del>CPU</del>执行</p>
+<p>② 特殊符号</p>
 <figure>
-<img src="image-20230126063144860.png" alt="image-20230126063144860" />
-<figcaption aria-hidden="true">image-20230126063144860</figcaption>
+<img
+src="https://i0.hdslb.com/bfs/article/5f471724c265c39e6c832a9a3212f67aa094791e.png@942w_387h_progressive.webp"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
 </figure>
-<h2 id="线程的组织与控制">线程的组织与控制</h2>
-<p><img src="TCB%20与线程表.png" /></p>
-<h2 id="调度的基本概念">调度的基本概念</h2>
-<p>调度研究用某种规则决定处理任务顺序的问题</p>
-<p>高级调度（作业调度）。按一定的原则从外存的作业后备队列中挑选一个作业调入内存，并创建进程。每个作业只调入一次，调出一次。作业调入时会建立PCB，调出时才撤销PCB。</p>
-<p>低级调度（进程调度/处理机调度）——
-按照某种策略从就绪队列中选取一个进程，将处理机分配给它。</p>
-<p>进程调度是操作系统中最基本的一种调度，在一般的操作系统中都必须配置进程调度。进程调度的频率很高，一般几十毫秒一次。</p>
-<p>内存不够时，可将某些进程的数据调出外存。等内存空闲或者进程需要运行时再重新调入内存。</p>
-<p>暂时调到外存等待的进程状态为挂起状态。被挂起的进程PCB会被组织成挂起队列</p>
-<p>中级调度（内存调度）——按照某种策略决定将哪个处于挂起状态的进程重新调入内存。</p>
-<p>一个进程可能会被多次调出、调入内存，因此中级调度发生的频率要比高级调度更高。</p>
-<p>暂时调到外存等待的进程状态为挂起状态（挂起态，suspend）</p>
-<p>挂起态又可以进一步细分为就绪挂起、阻塞挂起两种状态</p>
-<p>注意“挂起”和“阻塞”的区别，两种状态都是暂时不能获得CPU的服务，但挂起态是将进程映像调到外存去了，而阻塞态下进程映像还在内存中。</p>
-<p>有的操作系统会把就绪挂起、阻塞挂起分为两个挂起队列，甚至会根据阻塞原因不同再把阻塞挂起进程进一步细分为多个队列。</p>
 <figure>
-<img src="三层调度的对比.png" alt="三层调度的对比" />
-<figcaption aria-hidden="true">三层调度的对比</figcaption>
+<img
+src="https://i0.hdslb.com/bfs/article/a750d31bd5a69f8dd8b58c6b2d690988025d323c.png@942w_1500h_progressive.webp"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
 </figure>
-<h2 id="进程调度的基本概念">进程调度的基本概念</h2>
-<figure>
-<img src="image-20230126073913377.png" alt="image-20230126073913377" />
-<figcaption aria-hidden="true">image-20230126073913377</figcaption>
-</figure>
-<h2 id="调度器闲逛进程">调度器、闲逛进程</h2>
-<h3 id="调度器">调度器</h3>
-<p>调度程序决定：</p>
-<p>让谁运行？——调度算法</p>
-<p>运行多长时间？——时间片大小</p>
-<p>调度时机——什么事件会触发“调度程序” ？</p>
-<p>• 创建新进程</p>
-<p>• 进程退出</p>
-<p>• 运行进程阻塞</p>
-<p>• I/O中断发生（可能唤醒某些阻塞进程）</p>
-<p>• 非抢占式调度策略，只有运行进程阻塞或</p>
-<p>退出才触发调度程序工作</p>
-<p>• 抢占式调度策略，每个时钟中断或k个时钟</p>
-<p>中断会触发调度程序工作</p>
-<figure>
-<img src="image-20230126074912039.png" alt="image-20230126074912039" />
-<figcaption aria-hidden="true">image-20230126074912039</figcaption>
-</figure>
-<h3 id="闲逛进程">闲逛进程</h3>
-<p>没有其他就绪进程时，运行闲逛进程</p>
-<p>闲逛进程的特性：</p>
-<p>• 优先级最低</p>
-<p>•
-可以是0地址指令，占一个完整的指令周期（指令周期末尾例行检查中断）</p>
-<p>• 能耗低</p>
-<h2 id="调度算法一">调度算法（一）</h2>
-<p>算法的学习思路</p>
-<table>
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 32%" />
-<col style="width: 32%" />
-<col style="width: 23%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>FCFS</th>
-<th>SJF</th>
-<th>HRRN</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>算法思想</td>
-<td>公平</td>
-<td>平均等待时间、平均周转时间、平均带权周转时间最少</td>
-<td>综合考虑作业/进程的等待时间和要求服务的时间</td>
-</tr>
-<tr class="even">
-<td>算法规则</td>
-<td>按照作业/进程到达的先后顺序进行服务</td>
-<td>要求服务时间最短的作业/进程优先得到服务</td>
-<td>选择响应比最高的作业/进程为其服务</td>
-</tr>
-<tr class="odd">
-<td>作业调度 还是 进程调度</td>
-<td>均可。用于作业调度时，考虑的是哪个作业先到达后备队列；用于进程调度时，考虑的是哪个进程先到达就绪队列</td>
-<td>均可。用于进程调度时称为“短进程优先（SPF, Shortest Process
-First）算法”</td>
-<td>均可</td>
-</tr>
-<tr class="even">
-<td>是否可抢占</td>
-<td>非抢占式</td>
-<td>非抢占式，抢占式为最短剩余时间优先算法（SRTN, Shortest Remaining
-Time Next）</td>
-<td>非抢占式</td>
-</tr>
-<tr class="odd">
-<td>优点</td>
-<td>公平、算法实现简单</td>
-<td>“最短的”平均等待时间、平均周转时间</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>缺点</td>
-<td>对长作业有利，对短作业不利</td>
-<td>对短作业有利，对长作业不利</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>是否会导致饥饿</td>
-<td>不会</td>
-<td>会（一直是短作业/进程会使长作业/进程饥饿）</td>
-<td>不会</td>
-</tr>
-</tbody>
-</table>
-<p>饥饿（某进程/作业长期得不到服务）</p>
-<p>先来先服务（FCFS, First Come First Serve）</p>
-<p>短作业优先（SJF, Shortest Job First）</p>
-<p>高响应比优先（HRRN, Highest Response Ratio Next）</p>
-<p>常用的计算量如下： <span class="math display">\[
-周转时间 = 完成时间 - 到达时间 \\
-带权周转时间 = 周转时间/运行时间 \\
-等待时间 = 周转时间 – 运行时间 \\
-对于有计算和I/O操作的进程，其等待时间 = 周转时间 - 运行时间 -
-I/O操作的时间 \\
-响应比 = \frac{等待时间+要求服务时间}{要求服务时间}
-\]</span> FCFS
-算法是在每次调度的时候选择一个等待时间最长的作业（进程）为其服务。但是没有考虑到作业的运行时间，因此导致了对短作业不友好的问题</p>
-<p>SJF
-算法是选择一个执行时间最短的作业为其服务。但是又完全不考虑各个作业的等待时间，因此导致了对长作业不友好的问题，甚至还会造成饥饿问题</p>
-<p>能不能设计一个算法，既考虑到各个作业的等待时间，也能兼顾运行时间呢？——高响应比优先算法</p>
-<p>对于 SRTN
-算法，每当有进程加入就绪队列改变时就需要调度，如果新到达的进程剩余时间比当前运行的进程剩余时间更短，则由新进程抢占处理机，当前运行进程重新回到就绪队列。另外，当一个进程完成时也需要调度</p>
-<p>这几种算法主要关心对用户的公平性、平均周转时间、平均等待时间等评价系统整体性能的指标，但是不关心“响应时间”，也并不区分任务的紧急程度，因此对于用户来说，交互性很糟糕。因此这三种算法一般适合用于早期的批处理系统，当然，FCFS算法也常结合其他的算法使用，在现在也扮演着很重要的角色。而适合用于交互式系统的调度算法将在下个小节介绍</p>
-<h2 id="调度算法二">调度算法（二）</h2>
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 33%" />
-<col style="width: 28%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th>时间片轮转</th>
-<th>优先级调度算法</th>
-<th>HRRN</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>算法思想</td>
-<td>公平</td>
-<td>区分紧急程度</td>
-<td>综合考虑作业/进程的等待时间和要求服务的时间</td>
-</tr>
-<tr class="even">
-<td>算法规则</td>
-<td>按照进程到达就绪队列的顺序，轮流让各个进程执行一个时间片</td>
-<td>要求优先级最高的作业/进程优先得到服务</td>
-<td>选择响应比最高的作业/进程为其服务</td>
-</tr>
-<tr class="odd">
-<td>作业调度 还是 进程调度</td>
-<td>进程调度</td>
-<td>作业调度、进程调度、I/O调度均可</td>
-<td>均可</td>
-</tr>
-<tr class="even">
-<td>是否可抢占</td>
-<td>抢占式，通过时钟中断通知</td>
-<td>均有，抢占式需要在就绪队列变化时检查是否发生抢占</td>
-<td>非抢占式</td>
-</tr>
-<tr class="odd">
-<td>优点</td>
-<td>公平、响应快、适用分时操作系统</td>
-<td>适用于实时操作系统，可以灵活调整</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>缺点</td>
-<td>进程切换产生系统开销、不区分任务的紧急程度</td>
-<td>持续的高优先级进程到来会导致饥饿</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>是否会导致饥饿</td>
-<td>不会</td>
-<td>会（一直是高优先级进程会使低优先级进程饥饿）</td>
-<td>不会</td>
-</tr>
-</tbody>
-</table>
-<p>RR
-算法常用于分时操作系统，更注重“响应时间”，因而此处不计算周转时间</p>
-<p>时间片没用完但是运行完了也会主动放弃处理机发生调度</p>
-<p>如果时间片太大，使得每个进程都可以在一个时间片内就完成，则 RR
-算法退化为 FCFS 算法，并且会增大进程响应时间。因此时间片不能太大</p>
-<p>另一方面，进程调度、切换是有时间代价的（保存、恢复运行环境），因此如果时间片太小，进程切换过于频繁，系统会花大量的时间来处理进程切换，从而导致实际用于进程执行的时间比例减少。可见时间片也不能太小</p>
-<p>FCFS算法的优点是公平</p>
-<p>SJF 算法的优点是能尽快处理完短作业，平均等待/周转时间等参数很优秀</p>
-<p>法</p>
-<p>时间片轮转调度算法可以让各个进程得到及时的响应</p>
-<p>优先级调度算法可以灵活地调整各种进程被服务的机会</p>
-<p>能否对其他算法做个折中权衡？得到一个综合表现优秀平衡的算法呢？——多级反馈队列调度算法</p>
-<p>交互式操作系统（包括分时操作系统、实时操作系统等）更注重系统的‘响应时间、公平性、平衡性等指标。而这几种算法恰好也能较好地满足交互式系统的需求。因此这三种算法适合用于交互式系统。</p>
-<h2 id="调度算法三">调度算法（三）</h2>
-<p>系统中按进程类型设置多个队列，进程创建成功后插入某个队列</p>
-<p>!(image-20230128213255504.png)</p>
-<p>队列之间可采取固定优先级，或时间片划分</p>
-<p>固定优先级：高优先级空时低优先级进程才能被调度</p>
-<p>时间片划分：如三个队列分配时间50%、40%、10%</p>
-<h2 id="进程同步-进程互斥">进程同步 进程互斥</h2>
-<p>进程具有异步性，操作系统要提供“进程同步机制”来解决异步问题</p>
-<p>进程的“并发”需要“共享”的支持</p>
-<p><strong>临界资源：一个时间段内只允许一个进程使用的资源</strong></p>
-<p>对临界资源的访问，必须互斥地进行。也叫做间接制约关系</p>
-<p>对临界资源的互斥访问，可以在逻辑上分为如下四个部分：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">	entry section;</span><br><span class="line">    critical section;</span><br><span class="line">    <span class="built_in">exit</span> section;</span><br><span class="line">    remainder section;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>进入区：检查能否进入并上锁</p>
-<p>临界区：访问临界资源的代码</p>
-<p>退出区：解锁</p>
-<p>剩余区：其他处理</p>
-<p><strong>四个重要原则：空闲让进、忙则等待、有限等待、让权等待</strong></p>
-<ol type="1">
-<li><p>空闲让进。临界区空闲时，可以允许一个请求进入临界区的进程立即进入临界区；</p></li>
-<li><p>忙则等待。当已有进程进入临界区时，其他试图进入临界区的进程必须等待；</p></li>
-<li><p>有限等待。对请求访问的进程，应保证能在有限时间内进入临界区（保证不会饥饿）；</p></li>
-<li><p>让权等待。当进程不能进入临界区时，应立即释放处理机，防止进程忙等待。</p></li>
-</ol>
-<h2 id="进程互斥的软件实现方法">进程互斥的软件实现方法</h2>
-<figure>
-<img src="image-20230128215145390.png" alt="image-20230128215145390" />
-<figcaption aria-hidden="true">image-20230128215145390</figcaption>
-</figure>
-<p>代码示例：</p>
-<p>单标志法</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> turn = <span class="number">0</span>; <span class="comment">// turn是当前允许进入临界区的进程号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line"><span class="keyword">while</span> (turn != <span class="number">0</span>);</span><br><span class="line">critical section;</span><br><span class="line">turn = <span class="number">1</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line"><span class="keyword">while</span> (turn != <span class="number">1</span>);</span><br><span class="line">critical section;</span><br><span class="line">turn = <span class="number">0</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-<p>双标志先检查法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>]); <span class="comment">//P1想要进入</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>]);</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-<p>先“检查”后“上锁”，进入区的“检查”和“上锁” 两个处理不是一气呵成的</p>
-<p>双标志后检查法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>]); <span class="comment">//P1想要进入</span></span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>]);</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-<p>Peterson算法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line"><span class="type">int</span> turn = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">turn = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>] &amp;&amp; turn == <span class="number">1</span>); <span class="comment">//P1想要进入</span></span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">turn = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>] &amp;&amp; turn == <span class="number">0</span>);</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-<p>Peterson
-算法相较于之前三种软件解决方案来说，是最好的，但依然不够好。</p>
-<h2 id="进程互斥的硬件实现方法">进程互斥的硬件实现方法</h2>
-<figure>
-<img src="image-20230129064919699.png" alt="image-20230129064919699" />
-<figcaption aria-hidden="true">image-20230129064919699</figcaption>
-</figure>
-<p>TSL</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">TestAndSet</span> <span class="params">(<span class="type">bool</span> *lock)</span> &#123;</span><br><span class="line">    <span class="type">bool</span> pre;</span><br><span class="line">    pre = lock*;</span><br><span class="line">    *lock = <span class="literal">true</span>; <span class="comment">// true表示加锁</span></span><br><span class="line">    <span class="keyword">return</span> pre; <span class="comment">// 你读读就会明白</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实现互斥</span></span><br><span class="line"><span class="keyword">while</span> (TestAndSet (&amp;lock));</span><br><span class="line">critical section;</span><br><span class="line">lock = <span class="literal">false</span>; <span class="comment">// unlock</span></span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-<p>Swap</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">swap (<span class="type">bool</span> *a, <span class="type">bool</span> *b) &#123;</span><br><span class="line">    <span class="type">bool</span> temp;</span><br><span class="line">    temp = *a;</span><br><span class="line">    *a = *b;</span><br><span class="line">    *b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实现互斥</span></span><br><span class="line"><span class="type">bool</span> pre = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (pre == <span class="literal">true</span>)</span><br><span class="line">    swap (&amp;lock, &amp;pre);</span><br><span class="line">critical section;</span><br><span class="line">lock = <span class="literal">false</span>; <span class="comment">// unlock</span></span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
-<h2 id="互斥锁">互斥锁</h2>
-<p>解决临界区最简单的工具就是互斥锁（mutex
-lock）。进程在进入临界区时获得锁；退出时释放锁。函数 acquire()
-获得锁，release() 释放锁。</p>
-<p>每个互斥锁有一个布尔变量 available
-表示锁是否可用。如果锁是可用的，调用 acquire()
-会成功，且锁不再可用。当一个进程试图获取不可用的锁时，会被阻塞，直到锁被释放。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">acquire() &#123;</span><br><span class="line">    <span class="keyword">while</span> (!available); <span class="comment">// 忙等待</span></span><br><span class="line">    available = <span class="literal">false</span>; <span class="comment">// 获得锁</span></span><br><span class="line">&#125; <span class="comment">// entry section</span></span><br><span class="line">release() &#123;</span><br><span class="line">    available = <span class="literal">true</span>; <span class="comment">// 释放锁</span></span><br><span class="line">&#125; <span class="comment">// exit section</span></span><br></pre></td></tr></table></figure>
-<p>acquire() release()
-的执行是<strong>原子操作</strong>，因此互斥锁通常采用硬件机制来实现。
-<strong>互斥锁的主要缺点是忙等待</strong>，当有一个进程在临界区中，任何其他进程在进入临界区时必须连续循环调用
-acquire()。当多个进程共享同一 CPU 时，就浪费了 CPU
-周期。因此，互斥锁通常用于<strong>多处理器系统</strong>，一个线程可以在一个处理器上等待，不影响其他线程的执行。
-需要连续循环忙等的互斥锁，都可称为自旋锁（spin
-lock），如TSL指令、swap指令、单标志法</p>
-<p>所以可以得出锁的特性：</p>
-<p>• 需忙等，进程时间片用完才下处理机，违反“让权等待”</p>
-<p>•
-优点：等待期间不用切换进程上下文，多处理器系统中，若上锁的时间短，则等待代价很低</p>
-<p>•
-常用于多处理器系统，一个核忙等，其他核照常工作，并快速释放临界区</p>
-<p>• 不太适用于单处理机系统，忙等的过程中不可能解锁</p>
-<h2 id="信号量机制">信号量机制</h2>
-<figure>
-<img src="image-20230129073214410.png" alt="image-20230129073214410" />
-<figcaption aria-hidden="true">image-20230129073214410</figcaption>
-</figure>
-<p>Dijkstra！</p>
-<p>前面遗留的问题：不能同时进行</p>
-<p>如果把进入区、退出区的操作都用“原语”实现就能解决</p>
-<p><strong>用户进程</strong>可以通过使用操作系统提供的一对原语来对信号量进行操作</p>
-<p>信号量其实就是一个变量
-，可以用一个信号量来表示系统中某种资源的数量。与整数变量不同的是，对信号量的操作只有三种，初始化、P操作、V操作</p>
-<p>比如：系统中只有一台打印机，就可以设置一个初值为 1 的信号量。</p>
-<p>一对原语：wait(S) 原语和 signal(S)
-原语，可以把原语理解为我们自己写的函数，函数名分别为 wait 和
-signal，括号里的信号量 S 其实就是函数调用时传入的一个参数。简称为
-P、V操作，分别写为 P(S)、V(S)</p>
-<p>整型信号量：</p>
-<p>Eg ：某计算机系统中有一台打印机…</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> S = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">wait</span> <span class="params">(<span class="type">int</span> S)</span> &#123; <span class="comment">// 相当于进入区</span></span><br><span class="line">    <span class="keyword">while</span> (S &lt;= <span class="number">0</span>); <span class="comment">// 资源数不够则循环等待</span></span><br><span class="line">    S--; <span class="comment">// 资源数足够则占用一个</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">signal</span> <span class="params">(<span class="type">int</span> S)</span> &#123; <span class="comment">// 相当于退出区</span></span><br><span class="line">    S++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// process P0</span></span><br><span class="line">wait(S);</span><br><span class="line"><span class="comment">// use the printer, critical section</span></span><br><span class="line">signal(S);</span><br><span class="line"></span><br><span class="line"><span class="comment">// process P1</span></span><br><span class="line">wait(S);</span><br><span class="line"><span class="comment">// use the printer, critical section</span></span><br><span class="line">signal(S);</span><br></pre></td></tr></table></figure>
-<p>整型信号量存在“忙等”问题，可以用记录型数据结构表示信号量</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> value; <span class="comment">// 剩余资源数</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">process</span> *<span class="title">L</span>;</span> <span class="comment">// 等待队列</span></span><br><span class="line">&#125; semaphore;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">wait</span> <span class="params">(semaphore S)</span> &#123;</span><br><span class="line">    S.value--;</span><br><span class="line">    <span class="keyword">if</span> (S.value &lt; <span class="number">0</span>)</span><br><span class="line">        block (S.L);</span><br><span class="line">    <span class="comment">// 如果剩余资源数不够，使用block原语使进程从运行态进入阻塞态，并把挂到信号量S的等待队列（即阻塞队列）中</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">signal</span> <span class="params">(semaphore S)</span> &#123;</span><br><span class="line">    S.value++;</span><br><span class="line">    <span class="keyword">if</span> (S.value &lt;= <span class="number">0</span>)</span><br><span class="line">        wakeup(S.L);</span><br><span class="line">    <span class="comment">// 释放资源后，若还有别的进程在等待这种资源，则使用wakeup 原语唤醒等待队列中的一个进程，该进程从阻塞态变为就绪态</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>默认为记录型信号量</p>
-<h2
-id="用信号量机制实现进程互斥同步前驱关系">用信号量机制实现进程互斥、同步、前驱关系</h2>
-<figure>
-<img src="image-20230129222621004.png" alt="image-20230129222621004" />
-<figcaption aria-hidden="true">image-20230129222621004</figcaption>
-</figure>
-<p>本节核心内容：信号量的值 =
-这种资源的剩余数量（信号量的值如果小于0，说明此时有进程在等待这种资源）</p>
-<h3 id="互斥关系">互斥关系</h3>
-<p>不同的临界资源需要设置不同的互斥信号量。</p>
-<p>P、V操作必须成对出现。缺少P(mutex) 就不能保证临界资源的互斥访问。缺少
-V(mutex) 会导致资源永不被释放，等待进程永不被唤醒。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">semaphore mutex = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">P1() &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    P(mutex);</span><br><span class="line">    critical section;</span><br><span class="line">    V(mutex);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">P2() &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    P(mutex);</span><br><span class="line">    critical section;</span><br><span class="line">    V(mutex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="同步关系">同步关系</h3>
-<p>进程同步问题：让本来异步并发的进程互相配合，有序推进。</p>
-<ol type="1">
-<li><p>分析什么地方需要实现“同步关系”，即必须保证“一前一后”执行的两个操作（或两句代码）</p></li>
-<li><p>设置同步信号量 S, 初始为 0</p></li>
-<li><p>在“前操作”之后执行 V(S)</p></li>
-<li><p>在“后操作”之前执行 P(S)</p></li>
-</ol>
-<h3 id="前驱关系">前驱关系</h3>
-<p>本质上是多级同步关系</p>
-<h2 id="生产者消费者问题">生产者消费者问题</h2>
-<p>背景：系统中有一组生产者进程和一组消费者进程，生产者进程每次生产一个产品放入缓冲区，消费者进程每次从缓冲区中取出一个产品并使用。（注：这里的“产品”理解为某种数据）</p>
-<p>生产者、消费者共享一个初始为空、大小为n的缓冲区。</p>
-<p>只有缓冲区没满时，生产者才能把产品放入缓冲区，否则必须等待。</p>
-<p>只有缓冲区不空时，消费者才能从中取出产品，否则必须等待。</p>
-<p>缓冲区是临界资源，各进程必须<strong>互斥</strong>地访问。</p>
-<p>分析关系、确定PV操作、设置信号量初值</p>
-<p>实现互斥是在同一进程中进行一对PV操作</p>
-<p>实现两进程的同步关系，是在其中一个进程中执行P，另一进程中执行V</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">semaphore mutex = <span class="number">1</span>;</span><br><span class="line">semaphore empty = n;</span><br><span class="line">semaphore full = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">producer () &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        produce a product;</span><br><span class="line">        P(empty); <span class="comment">// 消耗一个空闲缓冲区</span></span><br><span class="line">        P(mutex);</span><br><span class="line">        put the product into the buffer;</span><br><span class="line">        V(mutex);</span><br><span class="line">        V(full); <span class="comment">// 增加一个产品</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">consumer () &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        P(full); <span class="comment">// 消耗一个产品（非空缓冲区）</span></span><br><span class="line">        P(mutex);</span><br><span class="line">        get a product from the buffer;</span><br><span class="line">        V(mutex);</span><br><span class="line">        V(empty); <span class="comment">// 增加一个空闲缓冲区</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>实现互斥的P操作一定要在实现同步的P操作之后。</p>
-<p>V操作不会导致进程阻塞，因此两个V操作顺序可以交换。</p>
-<p><strong>本节易错点</strong>：实现互斥和实现同步的两个P操作的先后顺序（死锁问题）</p>
-<h2 id="多生产者-多消费者">多生产者-多消费者</h2>
-<p>后面有点难了，感觉王道不太够用了，先鸽了后面补</p>
 ]]></content>
       <categories>
-        <category>OS</category>
-        <category>S3 Winter</category>
+        <category>Tools</category>
+        <category>S2</category>
       </categories>
       <tags>
-        <tag>OS</tag>
-        <tag>WangDao</tag>
+        <tag>LaTeX</tag>
       </tags>
   </entry>
   <entry>
-    <title>WangDao OS Chapter3</title>
-    <url>/WD-OS-Chap3/</url>
+    <title>VSCode配置latex</title>
+    <url>/vscode-configure-latex/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>王道考研 OS 的枯燥无味的 第三章 内存管理 知识点罗列</p>
+<p>记录采用 <span class="math inline">\(MixTEX\)</span> 在 <span
+class="math inline">\(VSCode\)</span> 搭建 <span
+class="math inline">\(\LaTeX\)</span> 环境的过程</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="内存的基础知识">内存的基础知识</h2>
-<p>按xx编址，一个地址对应的存储单元对应的是1xx</p>
-<p>比如按字节编址</p>
-<p>程序执行前需要先放到内存中才能被CPU处理</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211427483.png"
-alt="image-20230301211427483" />
-<figcaption aria-hidden="true">image-20230301211427483</figcaption>
-</figure>
-<h2 id="内存管理的概念">内存管理的概念</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211633198.png"
-alt="image-20230301211633198" />
-<figcaption aria-hidden="true">image-20230301211633198</figcaption>
-</figure>
-<p>重定位寄存器中存放的是进程的起始物理地址。界地址寄存器中存放的是进程的最大逻辑地址。</p>
-<h2
-id="覆盖与交换内存空间的扩充方式">覆盖与交换（内存空间的扩充方式）</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301212008948.png"
-alt="image-20230301212008948" />
-<figcaption aria-hidden="true">image-20230301212008948</figcaption>
-</figure>
-<p>暂时换出外存等待的进程状态为挂起状态（挂起态，suspend）</p>
-<p>文件区空间：离散分配方式</p>
-<p>对换区空间：连续分配方式</p>
-<p>对换区的I/O速度更快</p>
-<p>交换通常在许多进程运行且内存吃紧时进行，而系统负荷降低就暂停</p>
-<p>PCB会常驻内存，不会被换出外存</p>
-<h2 id="连续分配管理方式">连续分配管理方式</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302080121468.png"
-alt="image-20230302080121468" />
-<figcaption aria-hidden="true">image-20230302080121468</figcaption>
-</figure>
-<p>三种连续分配管理都无外部碎片</p>
-<h2 id="动态内存分配方法">动态内存分配方法</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302084959938.png"
-alt="image-20230302084959938" />
-<figcaption aria-hidden="true">image-20230302084959938</figcaption>
-</figure>
-<p>​</p>
-<h2 id="基本分页存储管理的基本概念">基本分页存储管理的基本概念</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302085922698.png"
-alt="image-20230302085922698" />
-<figcaption aria-hidden="true">image-20230302085922698</figcaption>
-</figure>
-<p>页号可以隐藏存储（如用hash来保存）</p>
-<p>然进程的各个页面是离散存放的，但是页面内部是连续存放的</p>
-<p>页号 = 逻辑地址/页面长度</p>
-<p>页内偏移量 = 逻辑地址 % 页面长度</p>
-<h2 id="基本地址变换结构">基本地址变换结构</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303145710216.png"
-alt="image-20230303145710216" />
-<figcaption aria-hidden="true">image-20230303145710216</figcaption>
-</figure>
-<p>过程再整理下</p>
-<h2 id="具有快表的地址变换机构">具有快表的地址变换机构</h2>
-<p>是基本地址变换机构的改进版本</p>
-<h2 id="两级页表">两级页表</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150047904.png"
-alt="image-20230303150047904" />
-<figcaption aria-hidden="true">image-20230303150047904</figcaption>
-</figure>
-<h2 id="基本分段存储管理方式">基本分段存储管理方式</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150248805.png"
-alt="image-20230303150248805" />
-<figcaption aria-hidden="true">image-20230303150248805</figcaption>
-</figure>
-<h2 id="段页式管理">段页式管理</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150603552.png"
-alt="image-20230303150603552" />
-<figcaption aria-hidden="true">image-20230303150603552</figcaption>
-</figure>
-<h2 id="虚拟内存的基本概念">虚拟内存的基本概念</h2>
-<p>在传统存储管理方式的基础上引入了交换技术、覆盖技术，使得内存利用率有所提升，并且能从逻辑上扩充内存容量</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150658994.png"
-alt="image-20230303150658994" />
-<figcaption aria-hidden="true">image-20230303150658994</figcaption>
-</figure>
-<p>虚拟内存的最大容量是由计算机的地址结构（CPU寻址范围）确定的</p>
-<p>虚拟内存的实际容量 = min（内存和外存容量之和，CPU寻址范围）</p>
-<h2 id="请求分页管理方式">请求分页管理方式</h2>
-<h2 id="页面置换算法">页面置换算法</h2>
-<p>好多，详见 PPT，不做总结了，直接贴图吧（不是）</p>
-<h2 id="页面分配策略">页面分配策略</h2>
+<h2 id="安装编译器">安装编译器</h2>
+<p>原 <code>TexLive</code> 体积过大，采用包管理器进行安装</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 MikTeX</span></span><br><span class="line">scoop install miktex</span><br></pre></td></tr></table></figure>
+<h2 id="配置-vscode">配置 VSCode</h2>
+<p>安装 <code>LaTeX Workshop</code> 扩展</p>
+<p>加入如下配置：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-shell-escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;%DOCFILE%&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="解决报错">解决报错</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">major issue: So far, you have not checked for MiKTeX updates.</span><br></pre></td></tr></table></figure>
+<p>找到MikTex
+Console这个程序，右键点击“以管理员身份运行”，然后点击“检查更新”</p>
+<blockquote>
+<p><em>Ref:</em></p>
+<p><em><a href="https://zhuanlan.zhihu.com/p/139210056">搭建 LaTeX
+舒适写作环境（VSCode） - 知乎 (zhihu.com)</a></em></p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>OS</category>
-        <category>S3 Winter</category>
+        <category>Tools</category>
+        <category>S5</category>
       </categories>
       <tags>
-        <tag>OS</tag>
-        <tag>WangDao</tag>
+        <tag>LaTeX</tag>
+        <tag>Path</tag>
       </tags>
   </entry>
   <entry>
-    <title>《满江红》观影感受</title>
-    <url>/MJH-talks/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>说说我个人对《满江红》的一点看法</p>
-</blockquote>
+    <title>Visual Group Theory</title>
+    <url>/visual-group-theory-notes/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="总述">总述</h2>
+<blockquote>
+<p>English notes of Visual Group Theory</p>
 <span id="more"></span>
-<p>首先要肯定，这部贺岁大戏确实花了心思在里面。取景比较考究，一众演员演技在线，用配乐演进和人物穿巷串联情节。</p>
-<p>不过作为张艺谋执导的电影，似乎还有不少地方做的不尽人意。</p>
-<p>剧情发展不合理。先说何立之死，何立心狠手辣，城府颇深，称得上有勇有谋。他既能知道刘喜和桃姑娘的关系，能猜出瑶琴是半路加入，便也不至于在临门一脚时匆匆靠近瑶琴打坏了一手稳赢的牌。瑶琴和张大都有枷锁，一把长刀在侧，到手的鸭子怎么看怎么不会飞，这里的发展更像是匆忙草草收尾了事，好让观众挨住隐隐的如厕之意。再者，于情于理没有让张大死的必要。于情，瑶琴守护大义守护真爱半路加入行动，张大本不必死，本可代岳将军见秦桧剐见山河收见国耻平，孙均性情中人，坐视侄儿死在眼前死不瞑目，坐视瑶琴让张大活下去的奉献化为乌有，更太过冷血乖戾，孙均一向鲁莽，喜好速战速决，甚至为秦桧挡下一刀，转变之大让人匪夷所思；于理，只有蓝玉一人在秦桧之侧，短刃也插在张大身上，枷锁解开身上亦无伤，孙均反手便可手刃秦桧昭告天下，退一万步来看，至少挟秦桧背满江红的夙愿可轻松实现，似乎也不必等待蓝绿二人均在时冒险逼迫，彼时二人利刃在手风险数倍，战场出生入死的将军更懂这个道理。最后，孙均一身伤痕，哪有力气纵马远去？不怕一身老伤皮开肉绽吗？</p>
-<p>剧情设定本就荒诞。以我对南宋将军的粗浅了解，似乎岳将军并不太在乎遗言是否能流传万古，他应该更在乎百姓的平安和故土的平复，就像辛稼轩本意也不在写词不在种树，“却将万字平戎策，换得东家种树书”，谁他妈要种树，老子要平戎定虏。能有人手刃秦桧厉兵秣马率军出征，岳将军九泉之下也可安息；放秦桧狗贼一条狗命，让他遗臭万年，who
-cares？谁他妈在乎秦桧是谁，老子只想看故国收复。确实有比生死重要百倍千倍的东西，但是这东西应该不只是岳将军的一首遗言。不得不说这里对岳将军的理解有些以己度人了，这里有种《1874》里“与你畅游战地”一般扯淡的浪漫。以及替身这件事，至少我个人感觉有些荒谬。</p>
-<p>总之，作为贺岁片，导演来分一杯羹，观众看个乐呵看个感动，能想起这位千年前的故人想起这首无人不知无人不晓的不朽词篇，便也还算，说得过去吧。</p>
+</blockquote>
+<h1 id="visual-group-theory">Visual Group Theory</h1>
+<blockquote>
+<p>Start on 7-5-2023</p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>Three nonstandard aspect of nonstandard approach in the book:</p>
+<ul>
+<li><strong>images and visual examples</strong>-the heart</li>
+<li>focuses more on finite groups than infinite ones-easier to diagram
+and give a solid foundation of intuition</li>
+<li>approaches groups from the opposite direction of traditional
+textbooks-groups are defined to be collections of actions and later
+proved to be sets with binary operations</li>
+<li><strong>linear order</strong>, to be read in order</li>
+<li>exceptions: Chapter 5 and Chapter 10, you can skip most of them
+without understanding other chapters. But the definition of abelian in
+Section 5.2 and the Cauchy's Theorem in Section 9.2 are important</li>
+</ul>
+<h2 id="what-is-a-group">What is a group?</h2>
+<blockquote>
+<p>Group theory is not primarily about numbers, but rather about
+<strong>patterns</strong> and <strong>symmetry</strong></p>
+</blockquote>
+<h4 id="four-key-observations">Four key observations</h4>
+<p>Observation 1</p>
+<ul>
+<li>There is a predefined list of moves that never changes.</li>
+</ul>
+<p>Observation 2</p>
+<ul>
+<li>Every move is reversible.</li>
+</ul>
+<p>Observation 3</p>
+<ul>
+<li>Every move is deterministic.</li>
+</ul>
+<p>Observation 4</p>
+<ul>
+<li>Moves can be combined in any sequence.</li>
+</ul>
+<p>A move is a twist of one of the six faces.</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507155405607.png"
+alt="image-20230507155405607" />
+<figcaption aria-hidden="true">image-20230507155405607</figcaption>
+</figure>
+<p>Let's rephrase the 4 observations as rules (axioms) that will define
+the boundaries of our objects of study.</p>
+<h4 id="rules-of-groups">Rules of groups</h4>
+<p>Rule 1</p>
+<ul>
+<li>There is a predefined of <strong>actions</strong> that never
+changes.</li>
+</ul>
+<p>Rule 2</p>
+<ul>
+<li>Every action is reversible.</li>
+</ul>
+<p>Rule 3</p>
+<ul>
+<li>Every action is deterministic.</li>
+</ul>
+<p>Rule 4</p>
+<ul>
+<li>Any sequence of consecutive actions is also an action.</li>
+</ul>
+<blockquote>
+<p>We swapped the word "move" for "action"</p>
+<p>The (usually short) list of actions required by Rule 1 is our set of
+building blocks; called the <strong>generators</strong>.</p>
+<p><strong>Not</strong> all actions are generators. Generators are the
+subset of all possible actions in a group.</p>
+<p>Rule 4 tells us that any sequence of the generators is also an
+action.</p>
+</blockquote>
+<p>Our unofficial definition of a group (We'll make things a bit
+rigorous later.)</p>
+<h4 id="definition-informal">Definition (informal)</h4>
+<blockquote>
+<p>A group is a set of actions satisfying Rules 1-4.</p>
+</blockquote>
+<p>Let's call these generators a, b, c, d, e, and f. Every word over the
+alphabet <span class="math inline">\(\{a, b, c, d, e, f\}\)</span>
+describes a unique configuration of the cube (starting from the solved
+position)</p>
+<blockquote>
+<p>Obviously, I don't care which is which.</p>
+</blockquote>
+<h4 id="summary-of-the-big-ideas">Summary of the big ideas</h4>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507160953096.png"
+alt="image-20230507160953096" />
+<figcaption aria-hidden="true">image-20230507160953096</figcaption>
+</figure>
+<h2 id="cayley-graphs">Cayley graphs</h2>
+<h3 id="a-road-map-for-the-rubiks-cube">A road map for the Rubik's
+Cube</h3>
+<p>Let's pretend for a moment that we were interested in writing a
+complete solutions manual for the Rubik's Cube. And let me be more
+specific</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507161729491.png"
+alt="image-20230507161729491" />
+<figcaption aria-hidden="true">image-20230507161729491</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507161902686.png"
+alt="image-20230507161902686" />
+<figcaption aria-hidden="true">image-20230507161902686</figcaption>
+</figure>
+<blockquote>
+<p>We can think of the <em>Big Book</em> as a road map for the Rubik's
+Cube. Each page says "you are here" and “if you follow this road, you'll
+end up over there."</p>
+</blockquote>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507162334393.png"
+alt="image-20230507162334393" />
+<figcaption aria-hidden="true">image-20230507162334393</figcaption>
+</figure>
+<blockquote>
+<p>Despite the Big Book's apparent shortcomings, it made for a good
+thought experiment. The Big Book is a map of a group. The Big Book
+introduced the mapmaking ideas, although the map is too large. We can
+use the same ideas to map out any group. In fact, we shall frequently do
+exactly that.</p>
+<p>And Let's try something simpler....</p>
+</blockquote>
+<h3 id="the-rectangle-puzzle">The Rectangle Puzzle</h3>
+<blockquote>
+<p>How can we check the moves of the Rectangle Puzzle form a group?</p>
+</blockquote>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507165129308.png"
+alt="image-20230507165129308" />
+<figcaption aria-hidden="true">image-20230507165129308</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507170457691.png"
+alt="image-20230507170457691" />
+<figcaption aria-hidden="true">image-20230507170457691</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507170733456.png"
+alt="image-20230507170733456" />
+<figcaption aria-hidden="true">image-20230507170733456</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507171547441.png"
+alt="image-20230507171547441" />
+<figcaption aria-hidden="true">image-20230507171547441</figcaption>
+</figure>
+<h3 id="more-on-arrows">More on arrows</h3>
+<ul>
+<li><p>node <span class="math inline">\(y\)</span> is the result of
+applying the action $ g G $ to node $x $.</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173327983.png"
+alt="image-20230507173327983" />
+<figcaption aria-hidden="true">image-20230507173327983</figcaption>
+</figure></li>
+<li><p>if an action <span class="math inline">\(h \in G\)</span> is its
+own inverse (that is, <span class="math inline">\(h ^ 2 = e\)</span>),
+then we have a 2-way arrow. For clarity, our convention is to drop the
+tips on all 2-way arrows like that</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173338448.png"
+alt="image-20230507173338448" />
+<figcaption aria-hidden="true">image-20230507173338448</figcaption>
+</figure></li>
+<li><p>When we focus on a group's structure, we frequently omit the
+labels at the nodes</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507173356200.png"
+alt="image-20230507173356200" />
+<figcaption aria-hidden="true">image-20230507173356200</figcaption>
+</figure></li>
+</ul>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507185713813.png"
+alt="image-20230507185713813" />
+<figcaption aria-hidden="true">image-20230507185713813</figcaption>
+</figure>
+<blockquote>
+<p>isomorphic: corresponding or similar in form and relations.</p>
+</blockquote>
+<h3 id="the-klein-4-group">The Klein 4-group</h3>
+<p>Any group with the same Cayley diagram as the Rectangle Puzzle and
+the 2-Light Switch Group is called the Klein 4-group, denoted by <span
+class="math inline">\(V_4\)</span> for <em>vierergruppe</em>,
+“four-group" in German. It is named after the mathematician Felix
+Klein.</p>
+<h3 id="the-triangle-puzzle">The triangle puzzle</h3>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507190725806.png"
+alt="image-20230507190725806" />
+<figcaption aria-hidden="true">image-20230507190725806</figcaption>
+</figure>
+<h3 id="properties-of-cayley-graphs">Properties of Cayley graphs</h3>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507191305245.png"
+alt="image-20230507191305245" />
+<figcaption aria-hidden="true">image-20230507191305245</figcaption>
+</figure>
+<h3 id="a-theorem-and-proof">A Theorem and Proof!</h3>
+<p>Theorem Suppose an action <span class="math inline">\(g\)</span> has
+the property that <span class="math inline">\(gx = x\)</span> for some
+other action <span class="math inline">\(x\)</span>. Then g is the
+<em>identity action</em>, i.e., <span class="math inline">\(gh = h =
+hg\)</span> for all other actions <span
+class="math inline">\(h\)</span>.</p>
+<blockquote>
+<p><span class="math inline">\(g\)</span> apply to <em>anything
+else</em> !</p>
+</blockquote>
+<p>Proof:</p>
+<blockquote>
+<p>The identity action (we'll denote by 1) is simply the action <span
+class="math inline">\(hh^{-1}\)</span>, for any action <span
+class="math inline">\(h\)</span>. If <span class="math inline">\(gx =
+x\)</span>, then multiplying by <span
+class="math inline">\(x^{-1}\)</span> <em>on the right</em> yields:</p>
+<p><span class="math display">\[g = gxx^{-1} = xx^{-1} = 1\]</span>.</p>
+<p>Thus <span class="math inline">\(g\)</span> is the identity
+action.</p>
+</blockquote>
+<h2 id="groups-in-science-art-and-mathematics">Groups in science, art,
+and mathematics</h2>
+<h3 id="group-of-symmetries">Group of symmetries</h3>
+<h3 id="how-to-make-a-group-out-of-symmetries">How to make a group out
+of symmetries</h3>
+<p>Groups relate to symmetry because an object's symmetries can be
+described using arrangements of the object's parts.</p>
+<p>Algorithm 1. Identify all the parts of the object that are similar
+(e.g., the corners of an n-gon), and give each such part a different
+number. 2. Consider the actions that may rearrange the numbered parts,
+but leave the object it the same physical space. (This collection of
+actions forms a group. 3. (Optional) If you want to visualize the group,
+explore and map it as we did in the previous lecture with the rectangle
+puzzle, etc.</p>
+<p><strong>Footprint</strong>: the physical space that an object
+occupies</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507193006888.png"
+alt="image-20230507193006888" />
+<figcaption aria-hidden="true">image-20230507193006888</figcaption>
+</figure>
+<blockquote>
+<p>This section seems to be useless. So if I have time later, let's
+continue to see at 9:37.</p>
+</blockquote>
+<h2 id="group-presentations">Group presentations</h2>
+<blockquote>
+<p>Our definition of groups before (a collection of actions that obeyed
+Rules 1-4) is not the ordinary definition of a group. We'll be working
+toward introducing the standard (and more formal) definition of a group.
+Along the way, we will learn some helpful <strong>tools</strong> to get
+us there.</p>
+<p>Group presentations, an algebraic device to concisely describe groups
+by their <strong>generators</strong> and <strong>relations</strong>.</p>
+</blockquote>
+<h3 id="more-on-cayley-diagrams">More on Cayley diagrams</h3>
+<p>All arrows of a fixed color correspond to the same generator.</p>
+<p>Two things with the node:</p>
+<ul>
+<li><p>Labeling the nodes with configurations of a thing we are acting
+on</p></li>
+<li><p>Leaving the nodes unlabeled (this is the "abstract Cayley
+diagram”)</p></li>
+<li><p>Label the nodes with actions (this is called a “diagram of
+actions").</p>
+<blockquote>
+<p>motivated by the fact that every <strong>path</strong> in the Cayley
+diagram represents an <strong>action</strong> of the group</p>
+</blockquote></li>
+</ul>
+<p>Motivating idea If we distinguish one node as the “unscrambled”
+configuration and label that with the identity action, then we can label
+each remaining node with the action that it takes to reach it from the
+unscrambled state.</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230507210640251.png"
+alt="image-20230507210640251" />
+<figcaption aria-hidden="true">image-20230507210640251</figcaption>
+</figure>
+<h3 id="a-group-calculator">A "group calculator"</h3>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510215301253.png"
+alt="image-20230510215301253" />
+<figcaption aria-hidden="true">image-20230510215301253</figcaption>
+</figure>
+<p>A concise way to describe <span class="math inline">\(V_4\)</span> is
+the following group representation: <span class="math display">\[
+V_4 = &lt;v, h | v^2 = e, h^2 = e, vh = hv &gt;
+\]</span> The following is one (of many!) presentations for this group:
+<span class="math display">\[
+D_3 = &lt;r, f | r^3 = e, f^2 = e, r^2f = fr&gt;
+\]</span></p>
+<blockquote>
+<p>To be more precise</p>
+</blockquote>
+<p>If we want to be more precise, we use a <strong>group
+presentation</strong> of the following form: <span
+class="math display">\[
+G = &lt;generators | relations&gt;
+\]</span> The vertical bar here can be thought of as meaning "subject
+to".<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510220205721.png"
+alt="image-20230510220205721" /></p>
+<blockquote>
+<p>The famous "halting problem" is unsolvable</p>
+</blockquote>
+<h2 id="multiplication-tables">Multiplication tables</h2>
+<blockquote>
+<p>We are almost ready to introduce the formal definition of a group In
+this lecture, we will introduce one more useful algebraic tool for
+better understanding groups: multiplication tables. We will also look
+more closely at inverses of the actions in a group. Finally, we will
+introduce a new group of size 8 called the quaternions which frequently
+arise in theoretical physics.</p>
+</blockquote>
+<h3 id="inverses">Inverses</h3>
+<p>denoted by <span class="math inline">\(g^{-1}\)</span></p>
+<h3 id="multiplication-tables-1">Multiplication tables</h3>
+<p>follow the convention that write row <span
+class="math inline">\(g\)</span> before column <span
+class="math inline">\(h\)</span></p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230510221817825.png"
+alt="image-20230510221817825" />
+<figcaption aria-hidden="true">image-20230510221817825</figcaption>
+</figure>
+<h3 id="some-remarks">Some remarks</h3>
+<p>A group is abelian <span class="math inline">\(iff\)</span> its
+multiplication table is symmetric about the “main diagonal."</p>
+<p>In each row and each column, each group action occurs exactly
+once.</p>
+<blockquote>
+<p>The following theorem will explain that</p>
+</blockquote>
+<p><strong>Theorem:</strong> An element cannot appear twice in the same
+row or column of a multiplication table.</p>
+<p><strong>Proof:</strong></p>
+<p>Suppose that in row <span class="math inline">\(a\)</span>, the
+element <span class="math inline">\(g\)</span> appears in columns <span
+class="math inline">\(b\)</span> and <span
+class="math inline">\(c\)</span>. Algebraically, this means <span
+class="math display">\[
+ab=g=ac
+\]</span> Multiplying everything on the left by <span
+class="math inline">\(a^{-1}\)</span> yields <span
+class="math display">\[
+a^{-l}ab=a^{-1}g=a^{-1}ac \Rightarrow b = c
+\]</span> Thus, <span class="math inline">\(g\)</span> (or any element)
+element cannot appear twice in the same row.</p>
+<p>Similarly, we can finish the proof for column.</p>
+<h3 id="the-quaternion-group">The quaternion group</h3>
+<h2 id="the-formal-definition-of-a-group">The formal definition of a
+group</h2>
+<p><span class="math inline">\(S\)</span> is closed on the operation
+*</p>
+<h3 id="associativity">Associativity</h3>
+<p>交换律</p>
+<p>An operation is associative if parentheses are permitted anywhere,
+but required nowhere.</p>
+<h3 id="formal-definitions">Formal definitions</h3>
+<p>Viewing groups from these two different paradigms:</p>
+<ul>
+<li>a group as a collection of actions</li>
+<li>a group as a set with a binary operation</li>
+</ul>
+<h3 id="properties">Properties</h3>
+<p><strong>Theorem: </strong>Every element of a group has a
+<em>unique</em> inverse</p>
+<p><strong>Proof:</strong></p>
+<p><strong>Theorem:</strong> Every group has a <em>unique</em> identity
+element</p>
+<h2 id="cyclic-and-abelian-groups">Cyclic and abelian groups</h2>
+<h3 id="overview-1">Overview</h3>
+<p><span class="math inline">\(5\)</span> families of groups:</p>
+<ul>
+<li>cyclic groups</li>
+<li>abelian groups</li>
+<li>dihedral groups</li>
+<li>symmetric groups</li>
+<li>alternating groups</li>
+</ul>
+<p>Informally, a group is cyclic if it is generated by a single element,
+and is abelian if multiplication commutes. (Like <span
+class="math inline">\(a * b = b * a, \forall a, b \in G\)</span>)</p>
+<h3 id="cyclic-groups-additively">Cyclic groups, additively</h3>
+<p><strong>Definition:</strong> A group is cyclic if it can be generated
+by a single element.</p>
+<blockquote>
+<p>Finite cyclic groups describe the symmetry of objects that have
+<em>only</em> rotational symmetry.</p>
+</blockquote>
+<p><span class="math display">\[
+C_n = &lt;r| r^n = e&gt;
+\]</span></p>
+<p><strong>Remark:</strong> This is a natural generator, but not the
+only one. For instance, <span class="math inline">\(r^3\)</span> is also
+a generator.</p>
+<p><strong>Definition:</strong> The order of a group <span
+class="math inline">\(G\)</span> is the number of distinct elements in
+<span class="math inline">\(G\)</span>, denoted by <span
+class="math inline">\(|G|\)</span>.</p>
+<p>The cyclic group of order <span class="math inline">\(n\)</span>
+(i.e., <span class="math inline">\(n\)</span> rotations) is denoted
+<span class="math inline">\(C_n\)</span> (or sometimes by <span
+class="math inline">\(\mathbb{Z}_n\)</span>). In fact, the alternative
+notation <span class="math inline">\(\mathbb{Z}_n\)</span> comes from
+the fact that the binary operation in <span
+class="math inline">\(C_n\)</span> is just modular addition. To add two
+numbers in <span class="math inline">\(\mathbb{Z}_n\)</span>, add them
+as integers, divide by <span class="math inline">\(n\)</span>, and take
+the remainder.</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512195612827.png"
+alt="image-20230512195612827" />
+<figcaption aria-hidden="true">image-20230512195612827</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512195732611.png"
+alt="image-20230512195732611" />
+<figcaption aria-hidden="true">image-20230512195732611</figcaption>
+</figure>
+<h3 id="cyclic-groups-multiplicatively">Cyclic groups,
+multiplicatively</h3>
+<p>If <span class="math inline">\(r\)</span> is a generator (e.g., a
+rotation by <span class="math inline">\(2 \pi /n\)</span>), then we can
+denote the <span class="math inline">\(n\)</span> elements by <span
+class="math display">\[
+1, r, r^2, \dots , r^{n-1}
+\]</span> Think of <span class="math inline">\(r\)</span> as the complex
+number <span class="math inline">\(e^{2\pi i/n}\)</span>, with the group
+operation being <em>multiplication!</em></p>
+<blockquote>
+<p>复数相乘，模相乘，辐角相加</p>
+</blockquote>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230512202225352.png"
+alt="image-20230512202225352" />
+<figcaption aria-hidden="true">image-20230512202225352</figcaption>
+</figure>
+<h3 id="more-on-cyclic-groups">More on cyclic groups</h3>
+<p>The (unique) infinite cyclic group (additively) is (<span
+class="math inline">\(\mathbb{Z}, +\)</span>), the integers under
+addition. Using multiplicative notation, the infinite cyclic group is
+<span class="math display">\[
+G=&lt;r\quad|\quad&gt;=\{r^k : k \in \mathbb{Z}\}
+\]</span> For the infinite group <span
+class="math inline">\((\mathbb{Z}, +)\)</span>, only <span
+class="math inline">\(1\)</span> or <span
+class="math inline">\(-1\)</span> can be generators. (Considering
+multiple generators are pointless.)</p>
+<p><strong>Proposition:</strong> Any number from <span
+class="math inline">\(\{0, 1, \dots, n-1\}\)</span> that is relatively
+prime to <span class="math inline">\(n\)</span> will generate <span
+class="math inline">\(\mathbb{Z}_n\)</span>.</p>
+<p>For example, <span class="math inline">\(1, 2, 3, 4\)</span> all
+generate <span class="math inline">\(\mathbb{Z}_5\)</span>. i.e., <span
+class="math display">\[
+\mathbb{Z}_5 = &lt;1&gt; = &lt;2&gt; = &lt;3&gt; = &lt;4&gt;.
+\]</span></p>
+<blockquote>
+<p>The above notation just means "generated by" instead of a
+presentation.</p>
+</blockquote>
+<p><strong>Observation:</strong> One of the most important properties of
+the multiplication tables is that, if the headings on the multiplication
+table are arranged in the "natural" order <span
+class="math inline">\((0, 1, 2, \dots , n-1)\)</span> or <span
+class="math inline">\((e, r, r^2, \dots, r^{n-1})\)</span>, then each
+row is a cyclic shift to the left of the row above it.</p>
+<h3 id="orbits">Orbits</h3>
+<p>Orbits are usually written with braces. In the case, the orbit of
+<span class="math inline">\(r\)</span> is <span
+class="math inline">\(\{e, r, r^2\}\)</span>, and the orbit of <span
+class="math inline">\(f\)</span> is <span class="math inline">\(\{e,
+f\}\)</span></p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230514201107827.png"
+alt="image-20230514201107827" />
+<figcaption aria-hidden="true">image-20230514201107827</figcaption>
+</figure>
+<p><strong>Definition:</strong> The order of an element</p>
+<blockquote>
+<p>Anything you can get by the path, following or backwards</p>
+</blockquote>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230514230616848.png"
+alt="image-20230514230616848" />
+<figcaption aria-hidden="true">image-20230514230616848</figcaption>
+</figure>
 ]]></content>
-      <categories>
-        <category>生活记录</category>
-        <category>S3 Winter</category>
-      </categories>
       <tags>
-        <tag>观后感</tag>
+        <tag>Notes</tag>
+        <tag>Group Theory</tag>
       </tags>
   </entry>
   <entry>
@@ -5613,6 +4914,712 @@ Git
       </tags>
   </entry>
   <entry>
+    <title>WangDao OS Chapter2</title>
+    <url>/WD-OS-Chap2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>枯燥无味的王道考研 OS 第二章 进程与线程 知识点罗列</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="进程的概念组成特征">进程的概念、组成、特征</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124175307299.png"
+alt="2.1-总" />
+<figcaption aria-hidden="true">2.1-总</figcaption>
+</figure>
+<h3 id="进程的概念">进程的概念</h3>
+<p>程序是静态的，进程是动态的，是程序的一次执行过程</p>
+<p>QQ.exe 和启动 QQ</p>
+<h3 id="进程的组成">进程的组成</h3>
+<blockquote>
+<p>准确来说是进程实体的组成</p>
+</blockquote>
+<h4 id="pcb">PCB</h4>
+<p>PCB(Process Control
+Block)：进程控制块，保存操作系统管理各个并发进程时所需要的信息</p>
+<p><strong>PCB 是进程存在的唯一标志</strong>，进程创建时操作系统会创建
+PCB，进程结束时操作系统会回收 PCB</p>
+<p><strong>供给操作系统使用</strong></p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124174652024.png"
+alt="2.1.2.1-PCB组成" />
+<figcaption aria-hidden="true">2.1.2.1-PCB组成</figcaption>
+</figure>
+<h4 id="程序段数据段">程序段、数据段</h4>
+<p>程序段：程序代码（指令序列）</p>
+<p>数据段：运行过程中产生的各种数据（如定义的变量）</p>
+<p><strong>供给进程自身使用</strong>，与进程自身运行逻辑有关</p>
+<h4 id="进程实体">进程实体</h4>
+<p>进程实体（进程映像）由PCB、程序段、数据段组成，反应了进程在某一时刻的状态</p>
+<p>所以可以这样定义进程：<strong>进程是进程实体的运行过程，是系统进行资源分配和调度的一个独立单位</strong></p>
+<blockquote>
+<p>调度指上 CPU 运行</p>
+</blockquote>
+<p>进程是动态的，进程实体（进程映像）是静态的。</p>
+<h3 id="进程的特征">进程的特征</h3>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230124175212607.png"
+alt="2.1.3" />
+<figcaption aria-hidden="true">2.1.3</figcaption>
+</figure>
+<p>其中，动态性是进程<strong>最基本</strong>的特征</p>
+<h2 id="进程的状态与转换">进程的状态与转换</h2>
+<figure>
+<img
+src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124201936453.png"
+alt="2.2总" />
+<figcaption aria-hidden="true">2.2总</figcaption>
+</figure>
+<h3 id="进程的状态">进程的状态</h3>
+<p>创建态：进程正在被创建，操作系统为进程分配资源，初始化 PCB</p>
+<p>就绪态：进程已经创建完成具备运行条件，但是没有空闲
+CPU，暂时不能运行</p>
+<p>运行态：进程正在 CPU 上运行，CPU 执行进程对应的程序</p>
+<p>阻塞态：进程运行过程中，在等待某个事件的发生而无法继续运行，操作系统会让进程下
+CPU 进入阻塞态</p>
+<p>终止态：操作系统让进程下 CPU，并回收内存空间与该进程的 PCB</p>
+<h3 id="进程的状态转换">进程的状态转换</h3>
+<figure>
+<img
+src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124201325614.png"
+alt="2.2.2丁字裤模型" />
+<figcaption aria-hidden="true">2.2.2丁字裤模型</figcaption>
+</figure>
+<p>PCB 中也有一个变量 state 对应进程的当前状态</p>
+<h3 id="进程的组织">进程的组织</h3>
+<h4 id="链接">链接</h4>
+<p>按照进程状态将 PCB 分为多个队列，指针指向当前处于某状态的进程</p>
+<p>如就绪队列指针指向当前处于就绪态的进程</p>
+<p>单核 CPU 同一时刻只能有一个进程处于运行态，多核 CPU
+可有多个进程同时处于运行态</p>
+<h4 id="索引">索引</h4>
+<p>按照进程状态的不同建立索引表</p>
+<h2 id="进程控制">进程控制</h2>
+<p>简而言之就是实现进程状态的转换</p>
+<h3 id="相关原语">相关原语</h3>
+<p>原语通过“关中断指令”和“开中断指令”两个<strong>特权指令</strong>实现原子性</p>
+<p>CPU
+在正常情况下每执行完一条指令都会例行检查是否有中断信号，而关中断之后便不再进行该检查</p>
+<figure>
+<img
+src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202446434.png"
+alt="2.3.1创建" />
+<figcaption aria-hidden="true">2.3.1创建</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202503059.png"
+alt="2.3.1终止" />
+<figcaption aria-hidden="true">2.3.1终止</figcaption>
+</figure>
+<p>将任意状态的进程转变为终止态最终消失</p>
+<p>正常结束：进程调用 exit 系统调用请求终止</p>
+<p>异常结束：除 0，非法使用特权指令等被操作系统杀掉</p>
+<p>外界干预：任务管理器用户杀掉</p>
+<figure>
+<img
+src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202905434.png"
+alt="2.3.1阻塞和唤醒" />
+<figcaption aria-hidden="true">2.3.1阻塞和唤醒</figcaption>
+</figure>
+<p>阻塞和唤醒的原因应为同一件事</p>
+<figure>
+<img
+src="C:\Users\Lee/AppData/Roaming/Typora/typora-user-images/image-20230124202955702.png"
+alt="2.3.1切换" />
+<figcaption aria-hidden="true">2.3.1切换</figcaption>
+</figure>
+<p>正确完成切换的前提是先在寄存器中保存进程的运行环境（必要的寄存器信息）</p>
+<p>进程控制原语的三点共同点：</p>
+<ol type="1">
+<li><p>更新 PCB 中的信息</p></li>
+<li><p>将 PCB 装入合适的队列</p></li>
+<li><p>分配和回收资源</p></li>
+</ol>
+<h2 id="进程通信ipc">进程通信（IPC）</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230126055115286.png"
+alt="2.4总" />
+<figcaption aria-hidden="true">2.4总</figcaption>
+</figure>
+<p>两个进程之间产生数据交互</p>
+<p>因为进程是分配系统资源的单位，所以各进程拥有的内存地址空间相互独立</p>
+<h3 id="共享存储">共享存储</h3>
+<p>基于数据结构、基于共享空间</p>
+<h3 id="消息传递">消息传递</h3>
+<p>以格式化的信息（Message）为单位，通过发送消息、接收消息两个原语进行数据交换</p>
+<h3 id="管道通信">管道通信</h3>
+<p>“管道”是一个特殊的共享文件，又名pipe文件。其实就是在内存中开辟一个大小固定的内存缓冲区</p>
+<p>采用半双工通信，单向传输，各进程互斥地访问管道</p>
+<p>管道写满，写进程阻塞；管道读空，读进程阻塞</p>
+<h2 id="线程概念-多线程模型">线程概念 多线程模型</h2>
+<h3 id="线程的概念及属性优点">线程的概念及属性、优点</h3>
+<p>有的进程可能需要“同时”做很多事，而传统的进程只能串行地执行一系列程序。为此引入“线程”增加并发度。</p>
+<p>可以把线程理解为“轻量级进程”。线程是一个基本的CPU执行单元，也是程序执行流的最小单位。</p>
+<p>引入线程之后，不仅是进程之间可以并发，进程内的各线程之间也可以并发，从而进一步提升了系统的并发度，使得一个进程内</p>
+<p>也可以并发处理各种任务（如QQ视频、文字聊天、传文件）</p>
+<p>引入线程后，进程只作为除CPU之外的系统资源的分配单元（如打印机、内存地址空间等都是分配给进程的）。线程则作为处理机的分配单元。</p>
+<h3 id="线程的属性">线程的属性</h3>
+<h3 id="线程的实现方式">线程的实现方式</h3>
+<p>用户级线程（User-Level Thread, ULT）和内核级线程（Kernel-Level
+Thread, KLT）</p>
+<p>从代码的角度看，线程其实就是一段代码逻辑。</p>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 32%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>ULT</th>
+<th>KLT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>线程的管理工作由谁来完成？</td>
+<td>应用程序</td>
+<td>OS kernel</td>
+</tr>
+<tr class="even">
+<td>线程切换时 CPU 状态</td>
+<td>用户态</td>
+<td>核心态</td>
+</tr>
+<tr class="odd">
+<td>操作系统是否能意识到用户级线程的存在？</td>
+<td>否，只有用户看来是多线程</td>
+<td>是，OS 通过 TCB 对线程进行管理</td>
+</tr>
+<tr class="even">
+<td>优点</td>
+<td>不需变态，开销小，效率高</td>
+<td>并发能力强，可在多核处理机上并行运行</td>
+</tr>
+<tr class="odd">
+<td>缺点</td>
+<td>并发度低，不能在多核处理机上并行运行</td>
+<td>需变态，开销大，效率低</td>
+</tr>
+</tbody>
+</table>
+<p>注：TCB 类比 PCB，线程控制块</p>
+<p>可以看到二者互为优缺点</p>
+<h3 id="多线程模型">多线程模型</h3>
+<p>在<strong>支持内核级线程 KLT
+的系统中</strong>，根据用户级线程和内核级线程的映射关系，划分出几种多线程模型</p>
+<p>前面的数目是 ULT，后面的数目是 KLT</p>
+<p>一对一有 KLT 的缺点，多对一有 ULT 的缺点，多对多综合了</p>
+<p>多对多模型：n 个ULT 映射到 m 个 KLT（n &gt;= m）。每个 ULT 对应 m 个
+KLT</p>
+<p>克服了多对一模型并发度不高的缺点（一个阻塞全体阻塞），又克服了一对一模型中一个用线程库
+户进程占用太多内核级线程，开销太大的缺点。</p>
+<p>可以这么理解：</p>
+<p>用户级线程是“代码逻辑”的载体</p>
+<p>内核级线程是“运行机会”的载体</p>
+<p>一段“代码逻辑”只有获得了“运行机会”才能被 CPU <del>CPU</del>执行</p>
+<figure>
+<img src="image-20230126063144860.png" alt="image-20230126063144860" />
+<figcaption aria-hidden="true">image-20230126063144860</figcaption>
+</figure>
+<h2 id="线程的组织与控制">线程的组织与控制</h2>
+<p><img src="TCB%20与线程表.png" /></p>
+<h2 id="调度的基本概念">调度的基本概念</h2>
+<p>调度研究用某种规则决定处理任务顺序的问题</p>
+<p>高级调度（作业调度）。按一定的原则从外存的作业后备队列中挑选一个作业调入内存，并创建进程。每个作业只调入一次，调出一次。作业调入时会建立PCB，调出时才撤销PCB。</p>
+<p>低级调度（进程调度/处理机调度）——
+按照某种策略从就绪队列中选取一个进程，将处理机分配给它。</p>
+<p>进程调度是操作系统中最基本的一种调度，在一般的操作系统中都必须配置进程调度。进程调度的频率很高，一般几十毫秒一次。</p>
+<p>内存不够时，可将某些进程的数据调出外存。等内存空闲或者进程需要运行时再重新调入内存。</p>
+<p>暂时调到外存等待的进程状态为挂起状态。被挂起的进程PCB会被组织成挂起队列</p>
+<p>中级调度（内存调度）——按照某种策略决定将哪个处于挂起状态的进程重新调入内存。</p>
+<p>一个进程可能会被多次调出、调入内存，因此中级调度发生的频率要比高级调度更高。</p>
+<p>暂时调到外存等待的进程状态为挂起状态（挂起态，suspend）</p>
+<p>挂起态又可以进一步细分为就绪挂起、阻塞挂起两种状态</p>
+<p>注意“挂起”和“阻塞”的区别，两种状态都是暂时不能获得CPU的服务，但挂起态是将进程映像调到外存去了，而阻塞态下进程映像还在内存中。</p>
+<p>有的操作系统会把就绪挂起、阻塞挂起分为两个挂起队列，甚至会根据阻塞原因不同再把阻塞挂起进程进一步细分为多个队列。</p>
+<figure>
+<img src="三层调度的对比.png" alt="三层调度的对比" />
+<figcaption aria-hidden="true">三层调度的对比</figcaption>
+</figure>
+<h2 id="进程调度的基本概念">进程调度的基本概念</h2>
+<figure>
+<img src="image-20230126073913377.png" alt="image-20230126073913377" />
+<figcaption aria-hidden="true">image-20230126073913377</figcaption>
+</figure>
+<h2 id="调度器闲逛进程">调度器、闲逛进程</h2>
+<h3 id="调度器">调度器</h3>
+<p>调度程序决定：</p>
+<p>让谁运行？——调度算法</p>
+<p>运行多长时间？——时间片大小</p>
+<p>调度时机——什么事件会触发“调度程序” ？</p>
+<p>• 创建新进程</p>
+<p>• 进程退出</p>
+<p>• 运行进程阻塞</p>
+<p>• I/O中断发生（可能唤醒某些阻塞进程）</p>
+<p>• 非抢占式调度策略，只有运行进程阻塞或</p>
+<p>退出才触发调度程序工作</p>
+<p>• 抢占式调度策略，每个时钟中断或k个时钟</p>
+<p>中断会触发调度程序工作</p>
+<figure>
+<img src="image-20230126074912039.png" alt="image-20230126074912039" />
+<figcaption aria-hidden="true">image-20230126074912039</figcaption>
+</figure>
+<h3 id="闲逛进程">闲逛进程</h3>
+<p>没有其他就绪进程时，运行闲逛进程</p>
+<p>闲逛进程的特性：</p>
+<p>• 优先级最低</p>
+<p>•
+可以是0地址指令，占一个完整的指令周期（指令周期末尾例行检查中断）</p>
+<p>• 能耗低</p>
+<h2 id="调度算法一">调度算法（一）</h2>
+<p>算法的学习思路</p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 32%" />
+<col style="width: 32%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>FCFS</th>
+<th>SJF</th>
+<th>HRRN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>算法思想</td>
+<td>公平</td>
+<td>平均等待时间、平均周转时间、平均带权周转时间最少</td>
+<td>综合考虑作业/进程的等待时间和要求服务的时间</td>
+</tr>
+<tr class="even">
+<td>算法规则</td>
+<td>按照作业/进程到达的先后顺序进行服务</td>
+<td>要求服务时间最短的作业/进程优先得到服务</td>
+<td>选择响应比最高的作业/进程为其服务</td>
+</tr>
+<tr class="odd">
+<td>作业调度 还是 进程调度</td>
+<td>均可。用于作业调度时，考虑的是哪个作业先到达后备队列；用于进程调度时，考虑的是哪个进程先到达就绪队列</td>
+<td>均可。用于进程调度时称为“短进程优先（SPF, Shortest Process
+First）算法”</td>
+<td>均可</td>
+</tr>
+<tr class="even">
+<td>是否可抢占</td>
+<td>非抢占式</td>
+<td>非抢占式，抢占式为最短剩余时间优先算法（SRTN, Shortest Remaining
+Time Next）</td>
+<td>非抢占式</td>
+</tr>
+<tr class="odd">
+<td>优点</td>
+<td>公平、算法实现简单</td>
+<td>“最短的”平均等待时间、平均周转时间</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>缺点</td>
+<td>对长作业有利，对短作业不利</td>
+<td>对短作业有利，对长作业不利</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>是否会导致饥饿</td>
+<td>不会</td>
+<td>会（一直是短作业/进程会使长作业/进程饥饿）</td>
+<td>不会</td>
+</tr>
+</tbody>
+</table>
+<p>饥饿（某进程/作业长期得不到服务）</p>
+<p>先来先服务（FCFS, First Come First Serve）</p>
+<p>短作业优先（SJF, Shortest Job First）</p>
+<p>高响应比优先（HRRN, Highest Response Ratio Next）</p>
+<p>常用的计算量如下： <span class="math display">\[
+周转时间 = 完成时间 - 到达时间 \\
+带权周转时间 = 周转时间/运行时间 \\
+等待时间 = 周转时间 – 运行时间 \\
+对于有计算和I/O操作的进程，其等待时间 = 周转时间 - 运行时间 -
+I/O操作的时间 \\
+响应比 = \frac{等待时间+要求服务时间}{要求服务时间}
+\]</span> FCFS
+算法是在每次调度的时候选择一个等待时间最长的作业（进程）为其服务。但是没有考虑到作业的运行时间，因此导致了对短作业不友好的问题</p>
+<p>SJF
+算法是选择一个执行时间最短的作业为其服务。但是又完全不考虑各个作业的等待时间，因此导致了对长作业不友好的问题，甚至还会造成饥饿问题</p>
+<p>能不能设计一个算法，既考虑到各个作业的等待时间，也能兼顾运行时间呢？——高响应比优先算法</p>
+<p>对于 SRTN
+算法，每当有进程加入就绪队列改变时就需要调度，如果新到达的进程剩余时间比当前运行的进程剩余时间更短，则由新进程抢占处理机，当前运行进程重新回到就绪队列。另外，当一个进程完成时也需要调度</p>
+<p>这几种算法主要关心对用户的公平性、平均周转时间、平均等待时间等评价系统整体性能的指标，但是不关心“响应时间”，也并不区分任务的紧急程度，因此对于用户来说，交互性很糟糕。因此这三种算法一般适合用于早期的批处理系统，当然，FCFS算法也常结合其他的算法使用，在现在也扮演着很重要的角色。而适合用于交互式系统的调度算法将在下个小节介绍</p>
+<h2 id="调度算法二">调度算法（二）</h2>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 33%" />
+<col style="width: 28%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>时间片轮转</th>
+<th>优先级调度算法</th>
+<th>HRRN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>算法思想</td>
+<td>公平</td>
+<td>区分紧急程度</td>
+<td>综合考虑作业/进程的等待时间和要求服务的时间</td>
+</tr>
+<tr class="even">
+<td>算法规则</td>
+<td>按照进程到达就绪队列的顺序，轮流让各个进程执行一个时间片</td>
+<td>要求优先级最高的作业/进程优先得到服务</td>
+<td>选择响应比最高的作业/进程为其服务</td>
+</tr>
+<tr class="odd">
+<td>作业调度 还是 进程调度</td>
+<td>进程调度</td>
+<td>作业调度、进程调度、I/O调度均可</td>
+<td>均可</td>
+</tr>
+<tr class="even">
+<td>是否可抢占</td>
+<td>抢占式，通过时钟中断通知</td>
+<td>均有，抢占式需要在就绪队列变化时检查是否发生抢占</td>
+<td>非抢占式</td>
+</tr>
+<tr class="odd">
+<td>优点</td>
+<td>公平、响应快、适用分时操作系统</td>
+<td>适用于实时操作系统，可以灵活调整</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>缺点</td>
+<td>进程切换产生系统开销、不区分任务的紧急程度</td>
+<td>持续的高优先级进程到来会导致饥饿</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>是否会导致饥饿</td>
+<td>不会</td>
+<td>会（一直是高优先级进程会使低优先级进程饥饿）</td>
+<td>不会</td>
+</tr>
+</tbody>
+</table>
+<p>RR
+算法常用于分时操作系统，更注重“响应时间”，因而此处不计算周转时间</p>
+<p>时间片没用完但是运行完了也会主动放弃处理机发生调度</p>
+<p>如果时间片太大，使得每个进程都可以在一个时间片内就完成，则 RR
+算法退化为 FCFS 算法，并且会增大进程响应时间。因此时间片不能太大</p>
+<p>另一方面，进程调度、切换是有时间代价的（保存、恢复运行环境），因此如果时间片太小，进程切换过于频繁，系统会花大量的时间来处理进程切换，从而导致实际用于进程执行的时间比例减少。可见时间片也不能太小</p>
+<p>FCFS算法的优点是公平</p>
+<p>SJF 算法的优点是能尽快处理完短作业，平均等待/周转时间等参数很优秀</p>
+<p>法</p>
+<p>时间片轮转调度算法可以让各个进程得到及时的响应</p>
+<p>优先级调度算法可以灵活地调整各种进程被服务的机会</p>
+<p>能否对其他算法做个折中权衡？得到一个综合表现优秀平衡的算法呢？——多级反馈队列调度算法</p>
+<p>交互式操作系统（包括分时操作系统、实时操作系统等）更注重系统的‘响应时间、公平性、平衡性等指标。而这几种算法恰好也能较好地满足交互式系统的需求。因此这三种算法适合用于交互式系统。</p>
+<h2 id="调度算法三">调度算法（三）</h2>
+<p>系统中按进程类型设置多个队列，进程创建成功后插入某个队列</p>
+<p>!(image-20230128213255504.png)</p>
+<p>队列之间可采取固定优先级，或时间片划分</p>
+<p>固定优先级：高优先级空时低优先级进程才能被调度</p>
+<p>时间片划分：如三个队列分配时间50%、40%、10%</p>
+<h2 id="进程同步-进程互斥">进程同步 进程互斥</h2>
+<p>进程具有异步性，操作系统要提供“进程同步机制”来解决异步问题</p>
+<p>进程的“并发”需要“共享”的支持</p>
+<p><strong>临界资源：一个时间段内只允许一个进程使用的资源</strong></p>
+<p>对临界资源的访问，必须互斥地进行。也叫做间接制约关系</p>
+<p>对临界资源的互斥访问，可以在逻辑上分为如下四个部分：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">	entry section;</span><br><span class="line">    critical section;</span><br><span class="line">    <span class="built_in">exit</span> section;</span><br><span class="line">    remainder section;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>进入区：检查能否进入并上锁</p>
+<p>临界区：访问临界资源的代码</p>
+<p>退出区：解锁</p>
+<p>剩余区：其他处理</p>
+<p><strong>四个重要原则：空闲让进、忙则等待、有限等待、让权等待</strong></p>
+<ol type="1">
+<li><p>空闲让进。临界区空闲时，可以允许一个请求进入临界区的进程立即进入临界区；</p></li>
+<li><p>忙则等待。当已有进程进入临界区时，其他试图进入临界区的进程必须等待；</p></li>
+<li><p>有限等待。对请求访问的进程，应保证能在有限时间内进入临界区（保证不会饥饿）；</p></li>
+<li><p>让权等待。当进程不能进入临界区时，应立即释放处理机，防止进程忙等待。</p></li>
+</ol>
+<h2 id="进程互斥的软件实现方法">进程互斥的软件实现方法</h2>
+<figure>
+<img src="image-20230128215145390.png" alt="image-20230128215145390" />
+<figcaption aria-hidden="true">image-20230128215145390</figcaption>
+</figure>
+<p>代码示例：</p>
+<p>单标志法</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> turn = <span class="number">0</span>; <span class="comment">// turn是当前允许进入临界区的进程号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line"><span class="keyword">while</span> (turn != <span class="number">0</span>);</span><br><span class="line">critical section;</span><br><span class="line">turn = <span class="number">1</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line"><span class="keyword">while</span> (turn != <span class="number">1</span>);</span><br><span class="line">critical section;</span><br><span class="line">turn = <span class="number">0</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+<p>双标志先检查法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>]); <span class="comment">//P1想要进入</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>]);</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+<p>先“检查”后“上锁”，进入区的“检查”和“上锁” 两个处理不是一气呵成的</p>
+<p>双标志后检查法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>]); <span class="comment">//P1想要进入</span></span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>]);</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+<p>Peterson算法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> flag[<span class="number">2</span>]; <span class="comment">// 表示进入临界区意愿的数组</span></span><br><span class="line"><span class="type">int</span> turn = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P0 process</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">turn = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">1</span>] &amp;&amp; turn == <span class="number">1</span>); <span class="comment">//P1想要进入</span></span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br><span class="line"></span><br><span class="line"><span class="comment">// P1 process</span></span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">turn = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (flag[<span class="number">0</span>] &amp;&amp; turn == <span class="number">0</span>);</span><br><span class="line">critical section;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+<p>Peterson
+算法相较于之前三种软件解决方案来说，是最好的，但依然不够好。</p>
+<h2 id="进程互斥的硬件实现方法">进程互斥的硬件实现方法</h2>
+<figure>
+<img src="image-20230129064919699.png" alt="image-20230129064919699" />
+<figcaption aria-hidden="true">image-20230129064919699</figcaption>
+</figure>
+<p>TSL</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">TestAndSet</span> <span class="params">(<span class="type">bool</span> *lock)</span> &#123;</span><br><span class="line">    <span class="type">bool</span> pre;</span><br><span class="line">    pre = lock*;</span><br><span class="line">    *lock = <span class="literal">true</span>; <span class="comment">// true表示加锁</span></span><br><span class="line">    <span class="keyword">return</span> pre; <span class="comment">// 你读读就会明白</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实现互斥</span></span><br><span class="line"><span class="keyword">while</span> (TestAndSet (&amp;lock));</span><br><span class="line">critical section;</span><br><span class="line">lock = <span class="literal">false</span>; <span class="comment">// unlock</span></span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+<p>Swap</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">swap (<span class="type">bool</span> *a, <span class="type">bool</span> *b) &#123;</span><br><span class="line">    <span class="type">bool</span> temp;</span><br><span class="line">    temp = *a;</span><br><span class="line">    *a = *b;</span><br><span class="line">    *b = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实现互斥</span></span><br><span class="line"><span class="type">bool</span> pre = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">while</span> (pre == <span class="literal">true</span>)</span><br><span class="line">    swap (&amp;lock, &amp;pre);</span><br><span class="line">critical section;</span><br><span class="line">lock = <span class="literal">false</span>; <span class="comment">// unlock</span></span><br><span class="line">remainder section;</span><br></pre></td></tr></table></figure>
+<h2 id="互斥锁">互斥锁</h2>
+<p>解决临界区最简单的工具就是互斥锁（mutex
+lock）。进程在进入临界区时获得锁；退出时释放锁。函数 acquire()
+获得锁，release() 释放锁。</p>
+<p>每个互斥锁有一个布尔变量 available
+表示锁是否可用。如果锁是可用的，调用 acquire()
+会成功，且锁不再可用。当一个进程试图获取不可用的锁时，会被阻塞，直到锁被释放。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">acquire() &#123;</span><br><span class="line">    <span class="keyword">while</span> (!available); <span class="comment">// 忙等待</span></span><br><span class="line">    available = <span class="literal">false</span>; <span class="comment">// 获得锁</span></span><br><span class="line">&#125; <span class="comment">// entry section</span></span><br><span class="line">release() &#123;</span><br><span class="line">    available = <span class="literal">true</span>; <span class="comment">// 释放锁</span></span><br><span class="line">&#125; <span class="comment">// exit section</span></span><br></pre></td></tr></table></figure>
+<p>acquire() release()
+的执行是<strong>原子操作</strong>，因此互斥锁通常采用硬件机制来实现。
+<strong>互斥锁的主要缺点是忙等待</strong>，当有一个进程在临界区中，任何其他进程在进入临界区时必须连续循环调用
+acquire()。当多个进程共享同一 CPU 时，就浪费了 CPU
+周期。因此，互斥锁通常用于<strong>多处理器系统</strong>，一个线程可以在一个处理器上等待，不影响其他线程的执行。
+需要连续循环忙等的互斥锁，都可称为自旋锁（spin
+lock），如TSL指令、swap指令、单标志法</p>
+<p>所以可以得出锁的特性：</p>
+<p>• 需忙等，进程时间片用完才下处理机，违反“让权等待”</p>
+<p>•
+优点：等待期间不用切换进程上下文，多处理器系统中，若上锁的时间短，则等待代价很低</p>
+<p>•
+常用于多处理器系统，一个核忙等，其他核照常工作，并快速释放临界区</p>
+<p>• 不太适用于单处理机系统，忙等的过程中不可能解锁</p>
+<h2 id="信号量机制">信号量机制</h2>
+<figure>
+<img src="image-20230129073214410.png" alt="image-20230129073214410" />
+<figcaption aria-hidden="true">image-20230129073214410</figcaption>
+</figure>
+<p>Dijkstra！</p>
+<p>前面遗留的问题：不能同时进行</p>
+<p>如果把进入区、退出区的操作都用“原语”实现就能解决</p>
+<p><strong>用户进程</strong>可以通过使用操作系统提供的一对原语来对信号量进行操作</p>
+<p>信号量其实就是一个变量
+，可以用一个信号量来表示系统中某种资源的数量。与整数变量不同的是，对信号量的操作只有三种，初始化、P操作、V操作</p>
+<p>比如：系统中只有一台打印机，就可以设置一个初值为 1 的信号量。</p>
+<p>一对原语：wait(S) 原语和 signal(S)
+原语，可以把原语理解为我们自己写的函数，函数名分别为 wait 和
+signal，括号里的信号量 S 其实就是函数调用时传入的一个参数。简称为
+P、V操作，分别写为 P(S)、V(S)</p>
+<p>整型信号量：</p>
+<p>Eg ：某计算机系统中有一台打印机…</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> S = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">wait</span> <span class="params">(<span class="type">int</span> S)</span> &#123; <span class="comment">// 相当于进入区</span></span><br><span class="line">    <span class="keyword">while</span> (S &lt;= <span class="number">0</span>); <span class="comment">// 资源数不够则循环等待</span></span><br><span class="line">    S--; <span class="comment">// 资源数足够则占用一个</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">signal</span> <span class="params">(<span class="type">int</span> S)</span> &#123; <span class="comment">// 相当于退出区</span></span><br><span class="line">    S++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// process P0</span></span><br><span class="line">wait(S);</span><br><span class="line"><span class="comment">// use the printer, critical section</span></span><br><span class="line">signal(S);</span><br><span class="line"></span><br><span class="line"><span class="comment">// process P1</span></span><br><span class="line">wait(S);</span><br><span class="line"><span class="comment">// use the printer, critical section</span></span><br><span class="line">signal(S);</span><br></pre></td></tr></table></figure>
+<p>整型信号量存在“忙等”问题，可以用记录型数据结构表示信号量</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> value; <span class="comment">// 剩余资源数</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">process</span> *<span class="title">L</span>;</span> <span class="comment">// 等待队列</span></span><br><span class="line">&#125; semaphore;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">wait</span> <span class="params">(semaphore S)</span> &#123;</span><br><span class="line">    S.value--;</span><br><span class="line">    <span class="keyword">if</span> (S.value &lt; <span class="number">0</span>)</span><br><span class="line">        block (S.L);</span><br><span class="line">    <span class="comment">// 如果剩余资源数不够，使用block原语使进程从运行态进入阻塞态，并把挂到信号量S的等待队列（即阻塞队列）中</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">signal</span> <span class="params">(semaphore S)</span> &#123;</span><br><span class="line">    S.value++;</span><br><span class="line">    <span class="keyword">if</span> (S.value &lt;= <span class="number">0</span>)</span><br><span class="line">        wakeup(S.L);</span><br><span class="line">    <span class="comment">// 释放资源后，若还有别的进程在等待这种资源，则使用wakeup 原语唤醒等待队列中的一个进程，该进程从阻塞态变为就绪态</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>默认为记录型信号量</p>
+<h2
+id="用信号量机制实现进程互斥同步前驱关系">用信号量机制实现进程互斥、同步、前驱关系</h2>
+<figure>
+<img src="image-20230129222621004.png" alt="image-20230129222621004" />
+<figcaption aria-hidden="true">image-20230129222621004</figcaption>
+</figure>
+<p>本节核心内容：信号量的值 =
+这种资源的剩余数量（信号量的值如果小于0，说明此时有进程在等待这种资源）</p>
+<h3 id="互斥关系">互斥关系</h3>
+<p>不同的临界资源需要设置不同的互斥信号量。</p>
+<p>P、V操作必须成对出现。缺少P(mutex) 就不能保证临界资源的互斥访问。缺少
+V(mutex) 会导致资源永不被释放，等待进程永不被唤醒。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">semaphore mutex = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">P1() &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    P(mutex);</span><br><span class="line">    critical section;</span><br><span class="line">    V(mutex);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">P2() &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">    P(mutex);</span><br><span class="line">    critical section;</span><br><span class="line">    V(mutex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="同步关系">同步关系</h3>
+<p>进程同步问题：让本来异步并发的进程互相配合，有序推进。</p>
+<ol type="1">
+<li><p>分析什么地方需要实现“同步关系”，即必须保证“一前一后”执行的两个操作（或两句代码）</p></li>
+<li><p>设置同步信号量 S, 初始为 0</p></li>
+<li><p>在“前操作”之后执行 V(S)</p></li>
+<li><p>在“后操作”之前执行 P(S)</p></li>
+</ol>
+<h3 id="前驱关系">前驱关系</h3>
+<p>本质上是多级同步关系</p>
+<h2 id="生产者消费者问题">生产者消费者问题</h2>
+<p>背景：系统中有一组生产者进程和一组消费者进程，生产者进程每次生产一个产品放入缓冲区，消费者进程每次从缓冲区中取出一个产品并使用。（注：这里的“产品”理解为某种数据）</p>
+<p>生产者、消费者共享一个初始为空、大小为n的缓冲区。</p>
+<p>只有缓冲区没满时，生产者才能把产品放入缓冲区，否则必须等待。</p>
+<p>只有缓冲区不空时，消费者才能从中取出产品，否则必须等待。</p>
+<p>缓冲区是临界资源，各进程必须<strong>互斥</strong>地访问。</p>
+<p>分析关系、确定PV操作、设置信号量初值</p>
+<p>实现互斥是在同一进程中进行一对PV操作</p>
+<p>实现两进程的同步关系，是在其中一个进程中执行P，另一进程中执行V</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">semaphore mutex = <span class="number">1</span>;</span><br><span class="line">semaphore empty = n;</span><br><span class="line">semaphore full = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">producer () &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        produce a product;</span><br><span class="line">        P(empty); <span class="comment">// 消耗一个空闲缓冲区</span></span><br><span class="line">        P(mutex);</span><br><span class="line">        put the product into the buffer;</span><br><span class="line">        V(mutex);</span><br><span class="line">        V(full); <span class="comment">// 增加一个产品</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">consumer () &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        P(full); <span class="comment">// 消耗一个产品（非空缓冲区）</span></span><br><span class="line">        P(mutex);</span><br><span class="line">        get a product from the buffer;</span><br><span class="line">        V(mutex);</span><br><span class="line">        V(empty); <span class="comment">// 增加一个空闲缓冲区</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现互斥的P操作一定要在实现同步的P操作之后。</p>
+<p>V操作不会导致进程阻塞，因此两个V操作顺序可以交换。</p>
+<p><strong>本节易错点</strong>：实现互斥和实现同步的两个P操作的先后顺序（死锁问题）</p>
+<h2 id="多生产者-多消费者">多生产者-多消费者</h2>
+<p>后面有点难了，感觉王道不太够用了，先鸽了后面补</p>
+]]></content>
+      <categories>
+        <category>OS</category>
+        <category>S3 Winter</category>
+      </categories>
+      <tags>
+        <tag>OS</tag>
+        <tag>WangDao</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WangDao OS Chapter3</title>
+    <url>/WD-OS-Chap3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>王道考研 OS 的枯燥无味的 第三章 内存管理 知识点罗列</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="内存的基础知识">内存的基础知识</h2>
+<p>按xx编址，一个地址对应的存储单元对应的是1xx</p>
+<p>比如按字节编址</p>
+<p>程序执行前需要先放到内存中才能被CPU处理</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211427483.png"
+alt="image-20230301211427483" />
+<figcaption aria-hidden="true">image-20230301211427483</figcaption>
+</figure>
+<h2 id="内存管理的概念">内存管理的概念</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301211633198.png"
+alt="image-20230301211633198" />
+<figcaption aria-hidden="true">image-20230301211633198</figcaption>
+</figure>
+<p>重定位寄存器中存放的是进程的起始物理地址。界地址寄存器中存放的是进程的最大逻辑地址。</p>
+<h2
+id="覆盖与交换内存空间的扩充方式">覆盖与交换（内存空间的扩充方式）</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230301212008948.png"
+alt="image-20230301212008948" />
+<figcaption aria-hidden="true">image-20230301212008948</figcaption>
+</figure>
+<p>暂时换出外存等待的进程状态为挂起状态（挂起态，suspend）</p>
+<p>文件区空间：离散分配方式</p>
+<p>对换区空间：连续分配方式</p>
+<p>对换区的I/O速度更快</p>
+<p>交换通常在许多进程运行且内存吃紧时进行，而系统负荷降低就暂停</p>
+<p>PCB会常驻内存，不会被换出外存</p>
+<h2 id="连续分配管理方式">连续分配管理方式</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302080121468.png"
+alt="image-20230302080121468" />
+<figcaption aria-hidden="true">image-20230302080121468</figcaption>
+</figure>
+<p>三种连续分配管理都无外部碎片</p>
+<h2 id="动态内存分配方法">动态内存分配方法</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302084959938.png"
+alt="image-20230302084959938" />
+<figcaption aria-hidden="true">image-20230302084959938</figcaption>
+</figure>
+<p>​</p>
+<h2 id="基本分页存储管理的基本概念">基本分页存储管理的基本概念</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230302085922698.png"
+alt="image-20230302085922698" />
+<figcaption aria-hidden="true">image-20230302085922698</figcaption>
+</figure>
+<p>页号可以隐藏存储（如用hash来保存）</p>
+<p>然进程的各个页面是离散存放的，但是页面内部是连续存放的</p>
+<p>页号 = 逻辑地址/页面长度</p>
+<p>页内偏移量 = 逻辑地址 % 页面长度</p>
+<h2 id="基本地址变换结构">基本地址变换结构</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303145710216.png"
+alt="image-20230303145710216" />
+<figcaption aria-hidden="true">image-20230303145710216</figcaption>
+</figure>
+<p>过程再整理下</p>
+<h2 id="具有快表的地址变换机构">具有快表的地址变换机构</h2>
+<p>是基本地址变换机构的改进版本</p>
+<h2 id="两级页表">两级页表</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150047904.png"
+alt="image-20230303150047904" />
+<figcaption aria-hidden="true">image-20230303150047904</figcaption>
+</figure>
+<h2 id="基本分段存储管理方式">基本分段存储管理方式</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150248805.png"
+alt="image-20230303150248805" />
+<figcaption aria-hidden="true">image-20230303150248805</figcaption>
+</figure>
+<h2 id="段页式管理">段页式管理</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150603552.png"
+alt="image-20230303150603552" />
+<figcaption aria-hidden="true">image-20230303150603552</figcaption>
+</figure>
+<h2 id="虚拟内存的基本概念">虚拟内存的基本概念</h2>
+<p>在传统存储管理方式的基础上引入了交换技术、覆盖技术，使得内存利用率有所提升，并且能从逻辑上扩充内存容量</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230303150658994.png"
+alt="image-20230303150658994" />
+<figcaption aria-hidden="true">image-20230303150658994</figcaption>
+</figure>
+<p>虚拟内存的最大容量是由计算机的地址结构（CPU寻址范围）确定的</p>
+<p>虚拟内存的实际容量 = min（内存和外存容量之和，CPU寻址范围）</p>
+<h2 id="请求分页管理方式">请求分页管理方式</h2>
+<h2 id="页面置换算法">页面置换算法</h2>
+<p>好多，详见 PPT，不做总结了，直接贴图吧（不是）</p>
+<h2 id="页面分配策略">页面分配策略</h2>
+]]></content>
+      <categories>
+        <category>OS</category>
+        <category>S3 Winter</category>
+      </categories>
+      <tags>
+        <tag>OS</tag>
+        <tag>WangDao</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《满江红》观影感受</title>
+    <url>/MJH-talks/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>说说我个人对《满江红》的一点看法</p>
+</blockquote>
+<span id="more"></span>
+<p>首先要肯定，这部贺岁大戏确实花了心思在里面。取景比较考究，一众演员演技在线，用配乐演进和人物穿巷串联情节。</p>
+<p>不过作为张艺谋执导的电影，似乎还有不少地方做的不尽人意。</p>
+<p>剧情发展不合理。先说何立之死，何立心狠手辣，城府颇深，称得上有勇有谋。他既能知道刘喜和桃姑娘的关系，能猜出瑶琴是半路加入，便也不至于在临门一脚时匆匆靠近瑶琴打坏了一手稳赢的牌。瑶琴和张大都有枷锁，一把长刀在侧，到手的鸭子怎么看怎么不会飞，这里的发展更像是匆忙草草收尾了事，好让观众挨住隐隐的如厕之意。再者，于情于理没有让张大死的必要。于情，瑶琴守护大义守护真爱半路加入行动，张大本不必死，本可代岳将军见秦桧剐见山河收见国耻平，孙均性情中人，坐视侄儿死在眼前死不瞑目，坐视瑶琴让张大活下去的奉献化为乌有，更太过冷血乖戾，孙均一向鲁莽，喜好速战速决，甚至为秦桧挡下一刀，转变之大让人匪夷所思；于理，只有蓝玉一人在秦桧之侧，短刃也插在张大身上，枷锁解开身上亦无伤，孙均反手便可手刃秦桧昭告天下，退一万步来看，至少挟秦桧背满江红的夙愿可轻松实现，似乎也不必等待蓝绿二人均在时冒险逼迫，彼时二人利刃在手风险数倍，战场出生入死的将军更懂这个道理。最后，孙均一身伤痕，哪有力气纵马远去？不怕一身老伤皮开肉绽吗？</p>
+<p>剧情设定本就荒诞。以我对南宋将军的粗浅了解，似乎岳将军并不太在乎遗言是否能流传万古，他应该更在乎百姓的平安和故土的平复，就像辛稼轩本意也不在写词不在种树，“却将万字平戎策，换得东家种树书”，谁他妈要种树，老子要平戎定虏。能有人手刃秦桧厉兵秣马率军出征，岳将军九泉之下也可安息；放秦桧狗贼一条狗命，让他遗臭万年，who
+cares？谁他妈在乎秦桧是谁，老子只想看故国收复。确实有比生死重要百倍千倍的东西，但是这东西应该不只是岳将军的一首遗言。不得不说这里对岳将军的理解有些以己度人了，这里有种《1874》里“与你畅游战地”一般扯淡的浪漫。以及替身这件事，至少我个人感觉有些荒谬。</p>
+<p>总之，作为贺岁片，导演来分一杯羹，观众看个乐呵看个感动，能想起这位千年前的故人想起这首无人不知无人不晓的不朽词篇，便也还算，说得过去吧。</p>
+]]></content>
+      <categories>
+        <category>生活记录</category>
+        <category>S3 Winter</category>
+      </categories>
+      <tags>
+        <tag>观后感</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>时钟参与组合逻辑的心得</title>
     <url>/combinational-logic-concerning-clock/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面">写在前面</h2>
@@ -5650,8 +5657,8 @@ P148）从而，部分器件在一定条件下会不满足时钟约束。太多�
 <p>最后，希望大家能从讨论区中相互借鉴，相互帮助，共同学习~</p>
 ]]></content>
       <categories>
-        <category>S3</category>
         <category>CO</category>
+        <category>S3</category>
       </categories>
       <tags>
         <tag>CO</tag>
@@ -6297,6 +6304,52 @@ alt="image-20230211091530921" /></p>
       </tags>
   </entry>
   <entry>
+    <title>科目三实战技巧</title>
+    <url>/subject3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言">前言</h2>
+<blockquote>
+<p>笔者与科三的爱恨情仇</p>
+</blockquote>
+<span id="more"></span>
+<p>笔者去年没有练完的科三拖到了今年来练...在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
+<h3 id="上车准备">上车准备</h3>
+<blockquote>
+<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
+</blockquote>
+<h3 id="灯光">灯光</h3>
+<blockquote>
+<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
+</blockquote>
+<h3 id="起步">起步</h3>
+<blockquote>
+<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
+</blockquote>
+<h3 id="行驶中">行驶中</h3>
+<blockquote>
+<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
+<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
+<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
+<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
+<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
+<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
+<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
+<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
+<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
+<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
+<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>生活记录</category>
+        <category>S3 Winter</category>
+      </categories>
+      <tags>
+        <tag>科目三</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>浙大翁恺OO</title>
     <url>/WK-OO/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言">前言</h2>
@@ -6731,52 +6784,6 @@ alt="image-20220913194007073" />
       <tags>
         <tag>Notes</tag>
         <tag>OO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>科目三实战技巧</title>
-    <url>/subject3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言">前言</h2>
-<blockquote>
-<p>笔者与科三的爱恨情仇</p>
-</blockquote>
-<span id="more"></span>
-<p>笔者去年没有练完的科三拖到了今年来练...在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
-<h3 id="上车准备">上车准备</h3>
-<blockquote>
-<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
-</blockquote>
-<h3 id="灯光">灯光</h3>
-<blockquote>
-<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
-</blockquote>
-<h3 id="起步">起步</h3>
-<blockquote>
-<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
-</blockquote>
-<h3 id="行驶中">行驶中</h3>
-<blockquote>
-<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
-<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
-<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
-<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
-<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
-<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
-<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
-<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
-<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
-<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
-<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>生活记录</category>
-        <category>S3 Winter</category>
-      </categories>
-      <tags>
-        <tag>科目三</tag>
       </tags>
   </entry>
   <entry>
