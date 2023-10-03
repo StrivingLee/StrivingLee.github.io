@@ -170,33 +170,6 @@ fflush（对于写操作打开的文件，fflush
       </tags>
   </entry>
   <entry>
-    <title>「D2L」19-Convolution</title>
-    <url>/d2l-19-convolution/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>动手学深度学习19 卷积层</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="回顾单隐藏层-mlp">回顾：单隐藏层 MLP</h2>
-<p>// todo</p>
-<blockquote>
-<p>MLP是一种稠密的特征提取方式，而人类学习到的很有可能是一种稀疏的特征。</p>
-</blockquote>
-<p><strong>两个原则</strong></p>
-<ul>
-<li>平移不变性</li>
-<li>局部性</li>
-</ul>
-]]></content>
-      <categories>
-        <category>AI</category>
-        <category>S5</category>
-      </categories>
-      <tags>
-        <tag>Notes</tag>
-        <tag>AI</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OO Pre Review</title>
     <url>/OO-Pre-Review/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面">写在前面</h2>
@@ -439,6 +412,33 @@ copy即可（其实也节省了代码量）</p>
       </tags>
   </entry>
   <entry>
+    <title>「D2L」19-Convolution</title>
+    <url>/d2l-19-convolution/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>动手学深度学习19 卷积层</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="回顾单隐藏层-mlp">回顾：单隐藏层 MLP</h2>
+<p>// todo</p>
+<blockquote>
+<p>MLP是一种稠密的特征提取方式，而人类学习到的很有可能是一种稀疏的特征。</p>
+</blockquote>
+<p><strong>两个原则</strong></p>
+<ul>
+<li>平移不变性</li>
+<li>局部性</li>
+</ul>
+]]></content>
+      <categories>
+        <category>AI</category>
+        <category>S5</category>
+      </categories>
+      <tags>
+        <tag>Notes</tag>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>「BUAA-CO」 Pre</title>
     <url>/co-pre/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
@@ -552,6 +552,57 @@ logisim 中的实现较为简单。</p>
       <tags>
         <tag>CO</tag>
         <tag>Replay</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>恋爱讲座</title>
+    <url>/romantic-tutorial/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>2022 年的一场恋爱讲座笔记</p>
+</blockquote>
+<span id="more"></span>
+<h3 id="qa-恋爱前我准备好了吗">Q&amp;A 恋爱前我准备好了吗?</h3>
+<p>Q1：我怀疑自己没有爱的能力</p>
+<p>Q2：和喜欢的人聊天总会紧张，觉得自己不能和好朋友聊天那样正常发挥</p>
+<p>Q3：如何看出来女生对一个男生的态度?</p>
+<ul>
+<li><p>用想象两人在一起后的方式来安抚紧张情绪</p></li>
+<li><p>不太赞成疾风劲雨的表白，建议多接触脱敏。也可以更了解真实的对方，避免荷尔蒙上头的冲动</p></li>
+<li><p>提一些更小的要求，如“做我npy吧”是个大要求，“今天一起吃个饭”是更小更具体的要求</p></li>
+<li><p>给对方选择权更高的决定，如吃饭退出的成本可能比较高，但是散步不想散就随时可以走</p></li>
+</ul>
+<h3 id="酝酿恋爱">酝酿恋爱</h3>
+<p>普通——关系好——时机成熟时表达</p>
+<p><strong>爱要表达</strong>：鼓起勇气，发觉对方对你有好感，你往前推动一步</p>
+<p>设计一些<strong>体验式的活动</strong>，相对多与对方接触</p>
+<p><strong>表白</strong>：私密空间的个性化表达</p>
+<ul>
+<li>推荐一本书《如何让你爱的人爱上你》</li>
+</ul>
+<h3 id="恋爱中">恋爱中</h3>
+<p>激情淡薄是自然的现象</p>
+<p>你是否在这个过程中压抑了自己的心理而仅仅是期待对方做出改变？应该表达出自己的情绪和感受。比如，你期待对方在你的生日给你送礼物，对方没有送。看看ta关注生日吗？ta在生日时渴望有礼物吗？毕竟大家来自不同的地方，不同的性别（也可能相同），不同的原生家庭，有差异是最正常不过的事情。那你应该提前真诚地和ta说：“生日对我来说很重要，我期待这一天收到礼物”</p>
+<p><strong>明确表达</strong>需要、意见和不愉快，给亲密关系以讨论差异、表达不一致的<strong>空间</strong></p>
+<h3 id="分手">分手</h3>
+<p>爱是强烈的，后悔也是真的</p>
+<p>失落情绪是自然的，刻意通过“喝酒蹦迪”等形式屏蔽失落情绪也许对你的影响更大。也许用半年的时间来缓和都是正常的。</p>
+<blockquote>
+<p>当然如果超过半年的界限，建议寻找心理咨询</p>
+</blockquote>
+<p>合理向同性异性朋友倾诉。</p>
+<blockquote>
+<p>尝试和异性朋友倾诉，有利于得到异性的观点，丰富角度</p>
+</blockquote>
+<p>但仍然值得与你，没错过什么再分开。——《黄金广场》陈奕迅</p>
+<p>投入地爱一次</p>
+<p><strong>祝大家都能获得恋爱的自由</strong></p>
+]]></content>
+      <categories>
+        <category>Romantic</category>
+        <category>S2</category>
+      </categories>
+      <tags>
+        <tag>Romantic</tag>
       </tags>
   </entry>
   <entry>
@@ -716,41 +767,6 @@ alt="img" />
       </categories>
       <tags>
         <tag>LaTeX</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VSCode配置latex</title>
-    <url>/vscode-configure-latex/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>记录采用 <span class="math inline">\(MixTEX\)</span> 在 <span
-class="math inline">\(VSCode\)</span> 搭建 <span
-class="math inline">\(\LaTeX\)</span> 环境的过程</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="安装编译器">安装编译器</h2>
-<p>原 <code>TexLive</code> 体积过大，采用包管理器进行安装</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 MikTeX</span></span><br><span class="line">scoop install miktex</span><br></pre></td></tr></table></figure>
-<h2 id="配置-vscode">配置 VSCode</h2>
-<p>安装 <code>LaTeX Workshop</code> 扩展</p>
-<p>加入如下配置：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-shell-escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;%DOCFILE%&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="解决报错">解决报错</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">major issue: So far, you have not checked for MiKTeX updates.</span><br></pre></td></tr></table></figure>
-<p>找到MikTex
-Console这个程序，右键点击“以管理员身份运行”，然后点击“检查更新”</p>
-<blockquote>
-<p><em>Ref:</em></p>
-<p><em><a href="https://zhuanlan.zhihu.com/p/139210056">搭建 LaTeX
-舒适写作环境（VSCode） - 知乎 (zhihu.com)</a></em></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Tools</category>
-        <category>S5</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>Path</tag>
       </tags>
   </entry>
   <entry>
@@ -2749,6 +2765,41 @@ style="text-align: left;">如果用print输出后，必须跟一个空格符，�
       <tags>
         <tag>Notes</tag>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VSCode配置latex</title>
+    <url>/vscode-configure-latex/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>记录采用 <span class="math inline">\(MixTEX\)</span> 在 <span
+class="math inline">\(VSCode\)</span> 搭建 <span
+class="math inline">\(\LaTeX\)</span> 环境的过程</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="安装编译器">安装编译器</h2>
+<p>原 <code>TexLive</code> 体积过大，采用包管理器进行安装</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 MikTeX</span></span><br><span class="line">scoop install miktex</span><br></pre></td></tr></table></figure>
+<h2 id="配置-vscode">配置 VSCode</h2>
+<p>安装 <code>LaTeX Workshop</code> 扩展</p>
+<p>加入如下配置：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-shell-escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;%DOCFILE%&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="解决报错">解决报错</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">major issue: So far, you have not checked for MiKTeX updates.</span><br></pre></td></tr></table></figure>
+<p>找到MikTex
+Console这个程序，右键点击“以管理员身份运行”，然后点击“检查更新”</p>
+<blockquote>
+<p><em>Ref:</em></p>
+<p><em><a href="https://zhuanlan.zhihu.com/p/139210056">搭建 LaTeX
+舒适写作环境（VSCode） - 知乎 (zhihu.com)</a></em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Tools</category>
+        <category>S5</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>Path</tag>
       </tags>
   </entry>
   <entry>
@@ -4931,8 +4982,8 @@ Git
 仓库托管服务器，你需要知道些什么。</p>
 ]]></content>
       <categories>
-        <category>Tools</category>
         <category>Notes</category>
+        <category>Tools</category>
         <category>S3</category>
       </categories>
       <tags>
