@@ -44,7 +44,7 @@
 <meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230611221943614.png">
 <meta property="og:image" content="c:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230613133725520.png">
 <meta property="article:published_time" content="2023-06-27T19:19:57.878Z">
-<meta property="article:modified_time" content="2023-09-28T14:08:37.837Z">
+<meta property="article:modified_time" content="2023-10-04T01:18:18.502Z">
 <meta property="article:author" content="StrivingLee">
 <meta property="article:tag" content="Notes">
 <meta property="article:tag" content="Combinatorics">
@@ -245,7 +245,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-28 22:08:37" itemprop="dateModified" datetime="2023-09-28T22:08:37+08:00">2023-09-28</time>
+                <time title="Modified: 2023-10-04 09:18:18" itemprop="dateModified" datetime="2023-10-04T09:18:18+08:00">2023-10-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1532,7 +1532,7 @@ class="math inline">\(S\)</span> 的排列一一对应，相应地，最大链�
 <span class="math inline">\(n!\)</span></li>
 <li>构造方法：
 <ul>
-<li><span class="math inline">\(A_0 = \empty\)</span></li>
+<li><span class="math inline">\(A_0 = \emptyset\)</span></li>
 <li>从 <span class="math inline">\(S\)</span> 中选择元素 <span
 class="math inline">\(i_1\)</span>，<span class="math inline">\(A_1 =
 \{i_1\}\)</span></li>
@@ -1764,13 +1764,12 @@ D_8=14833\)</span></li>
 <li><p>例：确定 <span class="math inline">\({1, 2,…, 8}\)</span>
 的排列中恰有四个整数在它们的自然位置上的排列数。</p>
 <ul>
-<li><p>解：任选四个整数在自然位置上：$(</p>
-<span class="math display">\[\begin{matrix} 8 \\ 4 \end{matrix}\]</span>
-<p>) $</p>
+<li><p>解：任选四个整数在自然位置上：<span
+class="math inline">\(\begin{pmatrix} 8 \\ 4 \end{pmatrix}\)</span></p>
 <p>剩下四个整数不在其自然位置上： <span
 class="math inline">\(D_4\)</span></p>
 <p>因此，恰有四个整数在它们的自然位置上的排列数为<span
-class="math inline">\(\left( \begin{matrix} 8 \\ 4 \end{matrix} \right)
+class="math inline">\(\begin{pmatrix} 8 \\ 4 \end{pmatrix}
 D_4\)</span></p></li>
 </ul></li>
 <li><p><strong>错位排列的递推关系1：</strong><span
@@ -2728,7 +2727,7 @@ class="math inline">\(•\)</span>”，如果以下四个条件满足，则称�
 <ul>
 <li>群的阶：有限群 <span class="math inline">\(G\)</span>
 的元素个数，记为 <span class="math inline">\(|G|\)</span></li>
-<li>循环群的生成元：<span class="math inline">\(\exist a \in
+<li>循环群的生成元：<span class="math inline">\(\exists a \in
 G\)</span>，<span class="math inline">\(G\)</span> 中任意元素 <span
 class="math inline">\(b\)</span> 均可以表示成 <span
 class="math inline">\(a\)</span> 的方幂，则称 <span
@@ -3025,12 +3024,11 @@ class="math inline">\(P_{D_4}(z_1,z_2,z_3,z_4)=\dfrac{1}{8}(z_1^4+2z_4+3z_2^2+2z
 class="math inline">\(\{u_1,u_2,\ldots,u_k\}\)</span> 是 <span
 class="math inline">\(k\)</span> 种颜色的一个集合，则针对各颜色数目的
 <span class="math inline">\(C\)</span>
-的非等价着色数的生成函数是由循环</p>
-<p>指数 <span class="math inline">\(P_G(z_1,z_2,...,z_n)\)</span>
-通过做变量代换 <span
+的非等价着色数的生成函数是由循环指数 <span
+class="math inline">\(P_G(z_1,z_2,...,z_n)\)</span> 通过做变量代换 <span
 class="math inline">\(z_j=u_1^j+u_2^j+...+u_k^j(j=1,2,...,n)\)</span>
-得到的表达式 $
-P_G(u_1+u_2++u_k,u_1<sup>2+u_2</sup>2++u_k<sup>2,,u_1</sup>n+u_2<sup>n++u_k</sup>n)$</p>
+得到的表达式 <span
+class="math inline">\(P_G(u_1+u_2+\text{...}+u_k,u_1^2+u_2^2+\text{...}+u_k^2,\text{...},u_1^n+u_2^n+\text{...}+u_k^n)\)</span></p>
 <ul>
 <li><p><span
 class="math inline">\(u_1^{p_1}u_2^{p_2}...u_k^{p_k}\)</span> 的系数等于
