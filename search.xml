@@ -165,630 +165,124 @@ fflush（对于写操作打开的文件，fflush
         <category>S4 Summer</category>
       </categories>
       <tags>
-        <tag>Notes</tag>
         <tag>C</tag>
+        <tag>Notes</tag>
       </tags>
   </entry>
   <entry>
-    <title>「SUSTECH-C++11」</title>
-    <url>/cpp11-sustech/</url>
+    <title>「BUAA-CO」 Pre</title>
+    <url>/co-pre/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>Notes of SUSTECH C++11</p>
+<p>2023年Pre题目回忆版及我的3A答案回忆版</p>
 </blockquote>
 <span id="more"></span>
-<h1 id="chapter1-introduction-and-background">Chapter1 Introduction and
-Background</h1>
-<blockquote>
-<p>第一章、基础知识</p>
-</blockquote>
-<h2 id="g">g++</h2>
-<p>1、编译 hello.cpp 文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">g++ hello.cpp</span><br></pre></td></tr></table></figure>
-<p>2、使用 c++11：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">g++ hello.cpp --std=c++11</span><br></pre></td></tr></table></figure>
-<p>3、自定义生成文件名：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">g++ hello.cpp --std=c++11 -o hello</span><br></pre></td></tr></table></figure>
-<p>4、运行生成的文件：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./hello</span><br></pre></td></tr></table></figure>
-<h2 id="compile-and-link">Compile and Link</h2>
-<p>函数声明一般放在 <code>*.hpp</code> 文件中</p>
-<p>分门别类管理，节约编译时间，条理清晰</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mul.hpp&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="type">int</span> result;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Pick two integers:&quot;</span>;</span><br><span class="line">    cin &gt;&gt; a;</span><br><span class="line">    cin &gt;&gt; b;</span><br><span class="line">    result = <span class="built_in">mul</span>(a, b);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The result is &quot;</span> &lt;&lt; result &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// mul.hpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">mul</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// mul.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mul.hpp&quot;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">mul</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="Images/compile-and-link.png" alt="compile-and-link" />
-<figcaption aria-hidden="true">compile-and-link</figcaption>
-</figure>
-<p>注：g++ 的 -c 选项表示只编译不链接。</p>
-<p>好处：分开编译，<strong>节约编译时间</strong></p>
-<p><strong>引号和尖括号引用的区别</strong></p>
-<ul>
-<li>尖括号：编译器从编译器指定的 include 路径寻找头文件</li>
-<li>引号：从指定的和当前路径寻找</li>
-</ul>
-<h2 id="debug">Debug</h2>
-<p>错误三大类：</p>
-<ul>
-<li>编译错误：编译时就出错了，一般由语法造成</li>
-<li>链接错误：错误提示一般与 symbol 有关，顺藤摸瓜查这个符号</li>
-<li>运行错误：编译链接正常，运行时报错</li>
-</ul>
-<h2 id="preprocessor-and-macros">Preprocessor and Macros</h2>
-<p>预处理指令是以“#”开头的指令，只能占一行，换行需要转义符</p>
-<h2 id="simple-input-and-output">Simple Input and Output</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::ostream cout;</span><br><span class="line">std::istream cin;</span><br></pre></td></tr></table></figure>
-<p><code>&lt;&lt;</code> 是运算符，采用运算符重载定义，返回值依然是
-<code>cout</code>，故可以链式调用</p>
-<h2 id="arguments">Arguments</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// arguments.cpp</span></span><br></pre></td></tr></table></figure>
-<h1 id="chapter2-data-types-and-arithmetic-operations">Chapter2 Data
-Types and Arithmetic Operations</h1>
-<blockquote>
-<p>第二章、数据类型及算术运算</p>
-<p>整形类型，浮点类型，算数运算，类型转换</p>
-</blockquote>
-<h2 id="integer-numbers">Integer Numbers</h2>
-<p>Please initialize variables <strong>EXPLICITLY</strong>!</p>
-<p>新的初始化方式</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">num</span> <span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line"><span class="type">int</span> num &#123;<span class="number">10</span>&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="data-width-and-more-integer-types">Data Width and More Integer
-Types</h2>
-<p>C 和 C++ 标准并未固定数据位宽</p>
-<p><code>long long int</code> 保证 64 位</p>
-<p><code>sizeof</code> 是
-<code>operator</code>，因为函数的参数必须是变量</p>
-<p>c++标准并没有规定char（-128~127）表示unsigned char（0~255）还是signed
-char。不同平台不一样。</p>
-<p>从c++11开始增加了 char16_t（16位的char）、char32_t（32位的char）
-类型，可以表示中文字符。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> <span class="type">16_t</span> c = <span class="string">u&#x27;于&#x27;</span>;</span><br><span class="line"><span class="type">char</span> <span class="type">32_t</span> c = <span class="string">U&#x27;于&#x27;</span>;</span><br></pre></td></tr></table></figure>
-<p>字符类型前面添加 <code>+</code> 会隐式转换为整数</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> b = <span class="literal">true</span>;</span><br><span class="line"><span class="type">int</span> i = b; <span class="comment">// the value of i is 1</span></span><br><span class="line"><span class="type">bool</span> b = <span class="number">-256</span>; <span class="comment">// 非0值均为1 unrecommended conversion</span></span><br><span class="line"><span class="type">bool</span> b = (<span class="number">-256</span> != <span class="number">0</span>); <span class="comment">// better choice</span></span><br></pre></td></tr></table></figure>
-<h2 id="boolean-in-c">Boolean in C</h2>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">char</span> <span class="type">bool</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> true 1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> false 0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdbool.h&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="textttsize_t"><span
-class="math inline">\(\texttt{size\_t}\)</span></h2>
-<p><code>sizeof</code> 的返回值类型</p>
-<p>表达内存、表达元素的个数等等</p>
-<p>自减时不会减到负数，循环时不能自减，否则会无限循环</p>
-<h2 id="fixed-width-integer-types-since-c11">Fixed Width Integer Types
-(since C++11)</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Defined in &lt;cstdint&gt;</span></span><br><span class="line"><span class="type">int8_t</span>;</span><br><span class="line"><span class="type">int16_t</span>;</span><br><span class="line"><span class="type">int32_t</span>;</span><br><span class="line"><span class="type">int64_t</span>;</span><br><span class="line"><span class="type">uint8_t</span>;</span><br><span class="line"><span class="type">uint16_t</span>;</span><br><span class="line"><span class="type">uint32_t</span>;</span><br><span class="line"><span class="type">uint64_t</span>;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// Some useful macros</span></span><br><span class="line">INT8_MIN;</span><br><span class="line">INT16_MIN;</span><br><span class="line">INT32_MIN;</span><br><span class="line">INT64_MIN;</span><br><span class="line">INT8_MAX;</span><br><span class="line">INT16_MAX;</span><br><span class="line">INT32_MAX;</span><br><span class="line">INT64_MAX;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h2 id="floating-point-numbers">Floating Point Numbers</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="type">float</span> f1 = <span class="number">1.2f</span>;</span><br><span class="line">    <span class="type">float</span> f2 = f1 * <span class="number">1000000000000000</span>; <span class="comment">//1.0e15</span></span><br><span class="line">    cout &lt;&lt; std::fixed &lt;&lt; std::<span class="built_in">setprecision</span>(<span class="number">15</span>) &lt;&lt; f1 &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; std::fixed &lt;&lt; std::<span class="built_in">setprecision</span>(<span class="number">15</span>) &lt;&lt; f2 &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>原因在于小数是无限的，计算机表示数据有位数限制。写一个很长的小数，计算机不一定能表示出来。所以计算机表示浮点数的时候进行了采样。比如上面要表示一个15位有效数字的1.2，得到的是计算机在那段范围进行了采样后的结果。</p>
-<p>如果支持 <code>long double</code>，则为 128
-位。半精度是深度学习中大量使用的，但是不属于 C++ 标准</p>
-<p>double 类型的数据操作比 float 更慢。</p>
-<h2 id="constant-numbers">Constant Numbers</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="number">95</span>; <span class="comment">// decimal</span></span><br><span class="line"><span class="number">0137</span>; <span class="comment">// octal</span></span><br><span class="line"><span class="number">0x5F</span>; <span class="comment">// hexadecimal</span></span><br><span class="line"><span class="number">95</span>; <span class="comment">// int</span></span><br><span class="line"><span class="number">95u</span>; <span class="comment">// unsigned int</span></span><br><span class="line"><span class="number">95l</span>; <span class="comment">// long</span></span><br><span class="line"><span class="number">95ul</span>; <span class="comment">// unsigned long</span></span><br><span class="line"><span class="number">95lu</span>; <span class="comment">// unsigned long</span></span><br><span class="line"></span><br><span class="line"><span class="number">6.02e23</span>L; <span class="comment">// long double</span></span><br></pre></td></tr></table></figure>
-<h2 id="textttauto"><span
-class="math inline">\(\texttt{auto}\)</span></h2>
-<p><code>auto</code> is placeholder type specifier</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span> a = <span class="number">2</span>; <span class="comment">// int</span></span><br><span class="line"><span class="keyword">auto</span> bc = <span class="number">2.3</span>; <span class="comment">// double</span></span><br><span class="line"><span class="keyword">auto</span> c; <span class="comment">// valid in C, error in C++</span></span><br><span class="line"><span class="keyword">auto</span> d = a * <span class="number">1.2</span>; <span class="comment">// double</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Question</span></span><br><span class="line"><span class="keyword">auto</span> a = <span class="number">2</span>;</span><br><span class="line">a = <span class="number">2.3</span>; <span class="comment">// will a be converted to double again? No</span></span><br></pre></td></tr></table></figure>
-<h2 id="conversion">Conversion</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> num1 = (<span class="type">int</span>)<span class="string">&#x27;C&#x27;</span>; <span class="comment">// C-style</span></span><br><span class="line"><span class="type">int</span> num2 = <span class="built_in">int</span>(<span class="string">&#x27;C&#x27;</span>); <span class="comment">// function style</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> f = <span class="number">17</span> / <span class="number">5</span>; <span class="comment">// f will be 3.f</span></span><br></pre></td></tr></table></figure>
-<h1 id="chapter3-statements">Chapter3 Statements</h1>
-<blockquote>
-<p>第三章、语句</p>
-</blockquote>
-<h2 id="assign-statement">Assign Statement</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="type">int</span> * p = <span class="built_in">get</span>())&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>赋值表达式的值是等号右边的内容。</p>
-<h2 id="textttgoto"><span
-class="math inline">\(\texttt{goto}\)</span></h2>
-<p>在函数的末尾进行错误处理、清理等操作。当程序出错时跳转到错误处理的相关代码，其他情况不建议使用
-goto 语句。</p>
-<h2 id="textttswitch"><span
-class="math inline">\(\texttt{switch}\)</span></h2>
-<p>更像 goto 语句，所以要注意写 break</p>
-<h1 id="chapter4-arrays">Chapter4 Arrays</h1>
-<blockquote>
-<p>数组</p>
-<p>数组（一维数组，定长数组，变长数组，多维数组，常量数组等等，字符串string），结构体(struct)【将不同的数据类型统一起来，用法基本上同后面学到的类】，联合体（union）【共享同一块地址】以及枚举（enum）[替换常量],</p>
-</blockquote>
-<h2 id="variable-length-arrays">Variable-length Arrays</h2>
-<p>运行时才能确定数组的大小，如果用常量开，编译时便可确定</p>
-<p>不一定能够直接初始化</p>
-<p>C 和 C++
-禁止数组首地址的赋值，这样两个数组地址指向同一块内存，有一个数组丢失</p>
-<p>循环逐个赋值或者内存拷贝函数赋值</p>
-<p>无越界检查</p>
-<p>在 C/C++ 中数组不是对象，这点不同于 Java</p>
-<h2 id="textttconst-arrays"><span
-class="math inline">\(\texttt{const}\)</span> arrays</h2>
-<p>常常用作函数传参</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">wchat_t</span>[] s1 = <span class="string">L&quot;ABCD&quot;</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">char16_t</span>[] s2 = <span class="string">u&quot;ABCD&quot;</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">char32_t</span>[] s3 = <span class="string">U&quot;ABCD&quot;</span>;</span><br></pre></td></tr></table></figure>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">char</span> *<span class="title">strcpy</span><span class="params">(<span class="type">char</span>* dst, <span class="type">const</span> <span class="type">char</span>* src)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>如果溢出了也会继续复制，所以有了更安全的 <code>strncpy</code></p>
-<h2 id="textttstring-class"><span
-class="math inline">\(\texttt{string}\)</span> class</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::string str1 = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">std::string str2 = <span class="string">&quot;Lee&quot;</span>;</span><br><span class="line">std::string result = str1 + <span class="string">&quot;, &quot;</span> + str2;</span><br></pre></td></tr></table></figure>
-<h2 id="different-types-of-textttstring">Different Types of <span
-class="math inline">\(\texttt{string}\)</span></h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::string</span><br><span class="line">std::wstring</span><br><span class="line">std::u8string <span class="comment">// C++20</span></span><br><span class="line">std::u16string <span class="comment">// C++11</span></span><br><span class="line">std::u32string <span class="comment">// C++11</span></span><br></pre></td></tr></table></figure>
-<p>直接用方括号下标访问不会有异常，at 方法越界会有异常</p>
-<h2 id="textttstruct"><span
-class="math inline">\(\texttt{struct}\)</span></h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Point</span> point1 = &#123;.type=TYPE_INT8, .data8=&#123;<span class="number">-2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="textttenum"><span
-class="math inline">\(\texttt{enum}\)</span></h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">color</span> &#123;WHITE, BLACK, RED, GREEN, BLUE, YELLOW, NUM_COLORS&#125;;</span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">color</span> pen_color = RED;</span><br><span class="line">pen_color = <span class="built_in">color</span>(<span class="number">3</span>); <span class="comment">// type convertion</span></span><br><span class="line">pen_color += <span class="number">1</span>; <span class="comment">// ERROR!</span></span><br><span class="line"><span class="type">int</span> color_index = pen_color;</span><br><span class="line">color_index += <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="texttttypedef"><span
-class="math inline">\(\texttt{typedef}\)</span></h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">char</span> vec3b[<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> color[<span class="number">3</span>];</span><br><span class="line">vec3b color = &#123;<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="chapter5-pointers-and-memory-management">Chapter5 Pointers and
-Memory Management</h1>
-<blockquote>
-<p>第五章、指针与内存管理</p>
-</blockquote>
-<h2 id="constant-pointers">Constant Pointers</h2>
-<p>指针指向的内容不能通过 <code>*</code> 取内容来修改</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// You cannot change the value p1 points to through p1</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> * p1 = &amp;num;</span><br><span class="line">*p1 = <span class="number">3</span>; <span class="comment">// error</span></span><br><span class="line">num = <span class="number">3</span>; <span class="comment">// okay</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// You cannot change the value of p2</span></span><br><span class="line"><span class="type">int</span> * <span class="type">const</span> p2 = &amp;num;</span><br><span class="line">*p2 = <span class="number">3</span>; <span class="comment">// okay</span></span><br><span class="line"><span class="type">int</span> another = <span class="number">2</span>;</span><br><span class="line">p2 = &amp;another; <span class="comment">// error</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// You cannot change either of them</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> p3 = &amp;num;</span><br><span class="line"><span class="comment">// But you can still change num directly</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">foo</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *p)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// play a trick to remove const restriction?</span></span><br><span class="line">    <span class="type">char</span> * p2 = p; <span class="comment">// syntax error</span></span><br><span class="line">    <span class="comment">// You cannot assign a const pointer to non-const one</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="textttsize_t-1"><span
-class="math inline">\(\texttt{size\_t}\)</span></h2>
-<p>一个无符号整型，表示当前系统内存中可以存储的最大对象的大小。</p>
-<h2 id="memory-types">Memory Types</h2>
-<ul>
-<li>代码区：存放程序的执行指令，试图写入的操作会被系统 kill。</li>
-<li>静态变量区：初始化的、未初始化的分开存放。</li>
-<li>堆内存区：动态申请的内存会存放此处，</li>
-<li>栈内存区：临时、局部变量存放在此区。</li>
-</ul>
-<p><img src="Images/memory-types.png" alt="memory-types" style="zoom:50%;" /></p>
-<h2 id="textttvoid-malloc-size_t-size"><span
-class="math inline">\(\texttt{void* malloc( size\_t size
-)}\)</span></h2>
-<ul>
-<li>单位是字节。</li>
-<li>分配的内存是未初始化的，不改变原有存储内容。</li>
-<li>存在内存对齐机制，比如：int * p1 = (int*) malloc
-(4);只想分配4字节，但是不同操作系统分配的是不同的，有的会最小分配4字节，有的会最小分配16字节。</li>
-<li><strong>当程序结束后操作系统会把分配给该程序的所有内存回收。</strong></li>
-</ul>
-<h2 id="memory-leak">Memory Leak</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">p = (<span class="type">int</span> *) <span class="built_in">malloc</span>(<span class="number">4</span> * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">p = (<span class="type">int</span> *) <span class="built_in">malloc</span>(<span class="number">8</span> * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line"><span class="built_in">free</span>(p);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> *p = (<span class="type">int</span> *) <span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="textttnew"><span
-class="math inline">\(\texttt{new}\)</span></h2>
-<blockquote>
-<p>Operator new is similar with malloc() but with more features</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//allocate an int, default initializer (do nothing)</span></span><br><span class="line"><span class="type">int</span> * p1 = <span class="keyword">new</span> <span class="type">int</span>; </span><br><span class="line"><span class="comment">//allocate an int, initialized to 0</span></span><br><span class="line"><span class="type">int</span> * p2 =  <span class="keyword">new</span> <span class="built_in">int</span>();</span><br><span class="line"><span class="comment">//allocate an int, initialized to 5</span></span><br><span class="line"><span class="type">int</span> * p3 =  <span class="keyword">new</span> <span class="built_in">int</span>(<span class="number">5</span>); </span><br><span class="line"><span class="comment">//allocate an int, initialized to 0</span></span><br><span class="line"><span class="type">int</span> * p4 =  <span class="keyword">new</span> <span class="type">int</span>&#123;&#125;;<span class="comment">//C++11    </span></span><br><span class="line"><span class="comment">//allocate an int, initialized to 5</span></span><br><span class="line"><span class="type">int</span> * p5 =  <span class="keyword">new</span> <span class="type">int</span> &#123;<span class="number">5</span>&#125;;<span class="comment">//C++11</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//allocate a Student object, default initializer</span></span><br><span class="line">Student * ps1 = <span class="keyword">new</span> Student;</span><br><span class="line"><span class="comment">//allocate a Student object, initialize the members</span></span><br><span class="line">Student * ps2 = <span class="keyword">new</span> Student &#123;<span class="string">&quot;Yu&quot;</span>, <span class="number">2020</span>, <span class="number">1</span>&#125;; <span class="comment">//C++11</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//allocate 16 int, default initializer (do nothing) </span></span><br><span class="line"><span class="type">int</span> * pa1 = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">16</span>];</span><br><span class="line"><span class="comment">//allocate 16 int, zero initialized </span></span><br><span class="line"><span class="type">int</span> * pa2 = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">16</span>]();</span><br><span class="line"><span class="comment">//allocate 16 int, zero initialized </span></span><br><span class="line"><span class="type">int</span> * pa3 = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">16</span>]&#123;&#125;; <span class="comment">//C++11</span></span><br><span class="line"><span class="comment">//allocate 16 int, the first 3 element are initialized to 1,2,3, the rest 0</span></span><br><span class="line"><span class="type">int</span> * pa4 = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">16</span>]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;; <span class="comment">//C++11</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//allocate memory for 16 Student objects, default initializer</span></span><br><span class="line">Student * psa1 = <span class="keyword">new</span> Student[<span class="number">16</span>];</span><br><span class="line"><span class="comment">//allocate memory for 16 Student objects, the first two are explicitly initialized</span></span><br><span class="line">Student * psa2 = <span class="keyword">new</span> Student[<span class="number">16</span>]&#123;&#123;<span class="string">&quot;Li&quot;</span>, <span class="number">2000</span>,<span class="number">1</span>&#125;, &#123;<span class="string">&quot;Yu&quot;</span>, <span class="number">2001</span>,<span class="number">1</span>&#125;&#125;; <span class="comment">//C++11</span></span><br></pre></td></tr></table></figure>
-<h2 id="textttdelete"><span
-class="math inline">\(\texttt{delete}\)</span></h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//deallocate memory</span></span><br><span class="line"><span class="keyword">delete</span> p1;</span><br><span class="line"><span class="comment">//deallocate memory</span></span><br><span class="line"><span class="keyword">delete</span> ps1;</span><br><span class="line"></span><br><span class="line"><span class="comment">//deallocate the memory of the array</span></span><br><span class="line"><span class="keyword">delete</span> pa1;</span><br><span class="line"><span class="comment">//deallocate the memory of the array</span></span><br><span class="line"><span class="keyword">delete</span> []pa2;</span><br><span class="line"></span><br><span class="line"><span class="comment">//deallocate the memory of the array, and call the destructor of the first element</span></span><br><span class="line"><span class="keyword">delete</span> psa1;</span><br><span class="line"><span class="comment">//deallocate the memory of the array, and call the destructors of all the elements</span></span><br><span class="line"><span class="keyword">delete</span> []psa2;</span><br></pre></td></tr></table></figure>
-<p>养成用 <code>delete []</code> 的习惯是比较安全的</p>
-<h1 id="chapter6-7-functions">Chapter6-7 Functions</h1>
-<blockquote>
-<p>第六章、函数</p>
-<p>1、函数的定义 2、函数的返回值（本质就是值复制）
-3、函数的参数（深拷贝与浅拷贝
-也就是对应大的值传递还是地址传递地问题。最终在实际中的体现就是深拷贝在函数里面的修改会对外面的参数有影响。）
-4、函数的声明与使用（通常函数编辑的时候，首先在入口处要对参数进行各种检查，这样可以避免出现BUG）
-5、引用：相比较于指针，引用一定要初始化，会更加的安全。
-6、内联函数，就是以空间换时间的作用；</p>
-<p>第七章、函数的扩展：默认参数问题以及函数模板等等
-1、默认参数都是从后面开始写的；
-2、函数的重载：函数名相同，签名不同的函数，主要的作用就是在调用的时候能根据参数的传入不同，调用不同的函数体。
-3、函数模板：本质上就是泛型，类似于C#中的泛型，在定义的时候是不会生成代码，在实例化的时候才生成真正的代码。
-多态的本质就是延迟定义，这样可以让程序变得更加灵活。 4、函数指针：
-就是指向函数的指针。
-类似于C#中的委托，这样做到深层次可以实现事件进行异步通讯。 5、函数引用：
-6、递归函数：优点就是可以让复杂程序变得简单，比如树的遍历等等；缺点就是占据内存高，计算复杂度高，同时耗时且理解困难。</p>
-</blockquote>
-<p>The parameters should be checked first!!</p>
-<p>好的风格是先声明，否则要不断调整函数的顺序</p>
-<p>一般把函数的声明放在头文件里</p>
-<h2 id="function-calling">Function Calling</h2>
-<ul>
-<li>应用程序执行的时候实际上是二进制指令一条条地往CPU里面搬，每一段代码都是一条条指令。</li>
-<li>当碰到函数时，因为函数的指令不一定和当前执行的指令放在一起的，那么在执行函数时会跳到其他位置去执行，在跳之前一般要保存当前的状态，即各种数据入栈。</li>
-<li>执行完函数之后从栈中取出各种数据。拿到函数返回值（如果有），继续执行原来的代码。</li>
-<li>程序执行的代价就是各种数据的出入栈的花费，如果函数非常复杂那么代价可以忽略不计，如果是简单的函数又频繁调用代价就大了，这时候可以设为内联函数。</li>
-</ul>
-<h2 id="references">References</h2>
-<blockquote>
-<p>an alias to an already-existing variable/object</p>
-</blockquote>
-<ul>
-<li>A reference <strong>must</strong> be initialized after its
-declaration.</li>
-<li>References are much safer.</li>
-<li>Affecting the original object, to avoid this, add <code>const</code>
-modifier.</li>
-<li>Higher efficiency without data copying.</li>
-</ul>
-<h2 id="multiple-return-values">Multiple Return Values</h2>
-<ul>
-<li>such as matrix addition function</li>
-<li>A suggested prototype
-<ul>
-<li>To use references to avoid data copying</li>
-<li>To use const parameters to avoid input data being modified</li>
-<li>To use non-const reference parameters to receive the output</li>
-</ul></li>
-</ul>
-<h2 id="inline-functions">Inline Functions</h2>
-<ul>
-<li><p>inline 只是对编译器的一种建议</p></li>
-<li><p>内联后的代码大概如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> num1 = <span class="number">20</span>;</span><br><span class="line">    <span class="type">int</span> num2 = <span class="number">30</span>;</span><br><span class="line">    <span class="type">int</span> maxv =</span><br><span class="line">    &#123; <span class="keyword">if</span> (num1 &gt; num2)</span><br><span class="line">        <span class="keyword">return</span> num1;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> num2; &#125;</span><br><span class="line">    maxv =</span><br><span class="line">    &#123; <span class="keyword">if</span> (numn &gt; maxv)</span><br><span class="line">        <span class="keyword">return</span> numn;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> maxv; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="default-arguments">Default Arguments</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">float</span> <span class="title">norm</span><span class="params">(<span class="type">float</span> x, <span class="type">float</span> y, <span class="type">float</span> z = <span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="comment">// z is parameter, 0 is argument</span></span><br></pre></td></tr></table></figure>
-<p>只能从尾部开始，只能定义一次，效果可以叠加</p>
-<h2 id="function-overloading">Function Overloading</h2>
-<p>返回值不参与比较，两个参数列表相同但返回值不同的函数被认为是同一个函数。</p>
-<h2 id="function-templates">Function Templates</h2>
-<p>编译器不会为模板函数生成机器指令，因为不知道具体的类型，只有模板实例化时才会生成机器指令。</p>
-<p>函数模板实例化：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function">T <span class="title">sum</span><span class="params">(T x, T y)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The input type is &quot;</span> &lt;&lt; <span class="built_in">typeid</span>(T).<span class="built_in">name</span>() &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// instantiates explictly</span></span><br><span class="line"><span class="keyword">template</span> <span class="type">double</span> <span class="built_in">sum</span>&lt;<span class="type">double</span>&gt;(<span class="type">double</span>, <span class="type">double</span>);</span><br><span class="line"><span class="keyword">template</span> <span class="type">char</span> sum&lt;&gt;(<span class="type">char</span>, <span class="type">char</span>);</span><br><span class="line"><span class="function"><span class="keyword">template</span> <span class="type">int</span> <span class="title">sum</span><span class="params">(<span class="type">int</span>, <span class="type">int</span>)</span></span>;</span><br></pre></td></tr></table></figure>
-<h2 id="specialization">Specialization</h2>
-<p>特化</p>
-<p>如对于结构类型：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Point</span> &#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>直接执行会报错，需要针对此类型进行特例化：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line">Point <span class="built_in">sum</span>&lt;Point&gt;(Point pt1, Point pt2) &#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The input type is &quot;</span> &lt;&lt; <span class="built_in">typeid</span>(pt1).<span class="built_in">name</span>() &lt;&lt; endl;</span><br><span class="line">    Point pt;</span><br><span class="line">    pt.x = pt1.x + pt2.x;</span><br><span class="line">    pt.y = pt1.y + pt2.y;</span><br><span class="line">    <span class="keyword">return</span> pt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意此处必须加 <code>&lt;&gt;</code></p>
-<h2 id="function-pointers">Function Pointers</h2>
-<p>指向的是指令区的数据，指向指令的地址</p>
-<p>有些时候需要用到代表某一类函数的函数指针，例如标准库容器的自定义操作</p>
-<p>还有一种是把函数作为参数传入另一个函数作为<strong>回调函数</strong>，如
-<code>qsort</code> 的调用</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">float</span> <span class="title">norm_l1</span><span class="params">(<span class="type">float</span> x, <span class="type">float</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="type">float</span> <span class="title">norm_l2</span><span class="params">(<span class="type">float</span> x, <span class="type">float</span> y)</span></span>;</span><br><span class="line"><span class="built_in">float</span> (*norm_ptr)(<span class="type">float</span> x, <span class="type">float</span> y);</span><br><span class="line">norm_ptr = norm_l1; <span class="comment">// pointing</span></span><br><span class="line">norm_ptr = &amp;norm_l2;</span><br><span class="line"><span class="type">float</span> len1 = <span class="built_in">norm_ptr</span>(<span class="number">-3.0f</span>, <span class="number">4.0f</span>); <span class="comment">// invoking</span></span><br><span class="line"><span class="type">float</span> len1 = (*norm_ptr)(<span class="number">-3.0f</span>, <span class="number">4.0f</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="function-references">Function References</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">float</span> <span class="title">norm_l1</span><span class="params">(<span class="type">float</span> x, <span class="type">float</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="type">float</span> <span class="title">norm_l2</span><span class="params">(<span class="type">float</span> x, <span class="type">float</span> y)</span></span>;</span><br><span class="line"><span class="built_in">float</span> (&amp;norm_ref)(<span class="type">float</span> x, <span class="type">float</span> y) = norm_l1;</span><br></pre></td></tr></table></figure>
-<p>当然函数引用越少越好</p>
-<h2 id="recursive-functions">Recursive Functions</h2>
-<h1 id="chapter8-optimizations">Chapter8 Optimizations</h1>
-<blockquote>
-<p>第八章、Arm下的C++和C编程</p>
-<p>1、平台不一样 2、如何让程序加速？ 本质就是三点：短，简单，高效；
-主要包括以下几点：A、算法合适；B、代码简洁；C、内存优化；D、避免内存复制；E、循环里面不要使用printf、cout
-F、可以使用查表法；G、SIMD,OPENMP自带的加速机制；
-3、如何避免内存的复制？</p>
-</blockquote>
-<ol type="1">
-<li>优化算法，从算法的时间复杂度、空间复杂度方面考虑优化算法。</li>
-<li>现在的编译器非常强大，把代码写得简洁以便编译器可以优化。</li>
-<li>考虑内存操作的影响。计算机的储存机制是分层的，最慢的、储存量最大的是磁盘，读取数据时会（计时用户只需要读取少量数据也会）一次性读取大量数据到内存，再一层层读到
-cache 里面，所以读写数据时如果数据的地址是连续的就会很快。</li>
-<li>避免拷贝大的对象。</li>
-<li>尽可能不要再循环里面打印内容。</li>
-<li>查表法。比如 sin()、cos()
-这些计算很费时间，可以计算出其常用的值存到数组，可以大大提高效率。处理复杂操作可以考虑使用。</li>
-</ol>
-<h1 id="chapter9-basics-of-classes">Chapter9 Basics of Classes</h1>
-<blockquote>
-<p>第九章、类与对象</p>
-<p>1、类：类成员变量以及类成员方法；
-2、文件结构设计：头文件（.hpp），函数具体实现（.cpp），主函数实现（main.cpp）
-3、构造函数以及析构函数 4、this 指针：指定当前的对象 5、const 成员与
-static 成员</p>
-</blockquote>
-<p>操作结构时要非常小心数据取值和地址越界问题</p>
-<h2 id="access-specifier">Access Specifier</h2>
-<p>成员默认是 <code>private</code></p>
-<h2 id="member-functions">Member Functions</h2>
-<p>成员函数可以在类里也可以在类外。可以仅在类中放函数声明</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// member-function.cpp</span></span><br></pre></td></tr></table></figure>
-<p>类中定义的函数默认是 <code>inline</code> 函数</p>
-<p>建议：</p>
-<ul>
-<li>简单且适合内联的函数放在类内</li>
-<li>操作复杂的函数建议放到类的外部</li>
-</ul>
-<h2 id="file-structure">File Structure</h2>
-<p>将类的声明放到头文件</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Chapter9/files</span></span><br></pre></td></tr></table></figure>
-<h2 id="constructors">Constructors</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// constructor.cpp</span></span><br></pre></td></tr></table></figure>
-<h2 id="destructors">Destructors</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// destructor.cpp</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>加波浪线 <code>~</code></li>
-<li>不允许重载</li>
-<li>无参数无返回值</li>
-</ul>
-<h2 id="textttthis-pointer"><span
-class="math inline">\(\texttt{this}\)</span> pointer</h2>
-<p>表示当前对象</p>
-<blockquote>
-<p>类似 Python 的 self</p>
-</blockquote>
-<h3 id="textttconst-and-textttstatic-members"><span
-class="math inline">\(\texttt{const}\)</span> and <span
-class="math inline">\(\texttt{static}\)</span> members</h3>
-<ul>
-<li><span class="math inline">\(\texttt{const}\)</span> variables</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> * p_int;</span><br><span class="line"><span class="type">int</span> <span class="type">const</span> * p_int;</span><br><span class="line"><span class="comment">// 相同，指针指向的内容不能通过指针修改</span></span><br><span class="line"><span class="type">int</span> * <span class="type">const</span> p_int;</span><br><span class="line"><span class="comment">// 指针一定指向某个不可修改的地址</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><span class="math inline">\(\texttt{static}\)</span> members</li>
-</ul>
-<h1 id="chapter10-advances-in-classes">Chapter10 Advances in
-Classes</h1>
-<blockquote>
-<p>第十章、运算符重载</p>
-<p>1、运算符重载的主要目的是简化程序
-2、友元函数：函数的朋友，可以不受限类的约束，因为它不是类的成员；
-3、类型转换：在运算符重载的过程中，通常会遇到各种类型的转换，注意最好使用显式转换，不建议使用隐式转换。
-4、自增与自减运算符的重载： 可以让代码更加地简洁；</p>
-</blockquote>
-<h2 id="textttfriend-functions"><span
-class="math inline">\(\texttt{friend}\)</span> functions</h2>
-<ul>
-<li>在类中声明</li>
-<li>有权限访问类的所有成员</li>
-<li><strong>不是</strong>类的成员，所以在类外定义的时候不加
-<code>classname::</code></li>
-<li><strong>可以用来重定义输入输出操作，类似 Java 中的
-<code>toString</code></strong></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.cpp time.hpp</span></span><br></pre></td></tr></table></figure>
-<h2 id="user-defined-type-conversion">User-defined Type Conversion</h2>
-<p>一行定义并初始化会调用构造函数，而先定义不初始化后面再赋值会调用赋值运算符</p>
-<h2 id="increment-and-decrement-operators">Increment and Decrement
-Operators</h2>
-<figure>
-<img src="Images/operators-can-be-overloaded.png"
-alt="operators-can-be-overloaded" />
-<figcaption aria-hidden="true">operators-can-be-overloaded</figcaption>
-</figure>
-<h1 id="chapter11-dynamic-memory-management-in-classes">Chapter11
-Dynamic Memory Management in Classes</h1>
-<blockquote>
-<p>第十一章、类的动态内存操作 1、默认构造函数： 2、动态内存的例子；
-3、内存泄漏的解法； 4、软拷贝 5、智能指针可以自动释放内存；
-（只管申请，不管释放：本质就是模板类，在析构函数中根据引用次数减少到指定值时（比如到0时）就会自动删除delete[]从而释放内存。）</p>
-</blockquote>
-<h2 id="default-operations">Default Operations</h2>
-<ul>
-<li>默认构造函数</li>
-<li>隐式定义的析构函数</li>
-<li>默认拷贝构造函数</li>
-<li>默认拷贝赋值运算符</li>
-</ul>
-<h2 id="an-example-with-dynamic-memory">An Example with Dynamic
-Memory</h2>
-<h2 id="hard-copy">Hard Copy</h2>
-<ul>
-<li>自定义拷贝构造函数</li>
-<li>自定义拷贝运算符重载使指针指向自己申请的内存。</li>
-</ul>
-<h2 id="soft-copy">Soft Copy</h2>
-<blockquote>
-<p>Hard copy 的时间和空间代价较高</p>
-</blockquote>
-<ul>
-<li>浅拷贝，使用引用计数。</li>
-</ul>
-<h2 id="smart-pointers">Smart Pointers</h2>
-<ul>
-<li><span class="math inline">\(\texttt{std::shared\_ptr}\)</span></li>
-</ul>
-<p>​ 允许多个对象同时指向一块内存，当没有指针指向这块内存时会被销毁</p>
-<ul>
-<li><span class="math inline">\(\texttt{std::unique\_ptr}\)</span></li>
-</ul>
-<p>​ 不允许和别人分享</p>
-<h1 id="chapter12-class-inheritance">Chapter12 Class Inheritance</h1>
-<blockquote>
-<p>第十二章、改善你的源代码
-1、一些建议：A、使用size_t代替int;B、矩阵拷贝不适用双层循环，使用内存可能更好；C、使用一维数组，而不是使用二维数组。D、不要使用太多的循环结构；E、多对输入参数进行检查，这样可以避免更多的bug.F、将代码写得更加具有可移植性，这样可以方便拓展；G、文件命名规则；H、代码优化无止境。
-2、头文件里面应用了单例模式； 3、代码最好要做到高内聚低耦合。
-4、派生类：子类继承父类的所有特性，先执行父类的构造函数，析构函数则是相反。
-5、访问权限的控制：private,public,protected具有不同的访问权限与范围。
-6、虚函数：虚函数就是在父类中进行申明，在子类中进行实现与重写。这样可以实现多态，延迟定义：
-在C#中，虚函数是一种很好的抽象，著名的抽象工厂，抽象方法以及抽象类也是类似于这种思想实现的。
-虚函数的本质就是动态绑定，非虚函数就是静态绑定。
-7、析构函数一定是虚函数。 8、静态与动态的内存申请：
-9、opencv中的实例；</p>
-</blockquote>
-<h2 id="suggestions-to-project3-2021">Suggestions to Project3 2021</h2>
-<ul>
-<li>用 <span class="math inline">\(\texttt{size\_t}\)</span>
-表达行数和列数</li>
-<li>用 <span class="math inline">\(\texttt{memcpy}\)</span>
-完成矩阵的拷贝</li>
-<li>数据检查是减少程序调试时间最重要的一点</li>
-<li><strong>做Project一定要作为一种艺术</strong></li>
-</ul>
-<h2 id="reference-implementation">Reference Implementation</h2>
-<ul>
-<li>第二次申请失败的可能性较高：多次申请内存可能导致泄露</li>
-<li>不能第二次申请失败就直接返回，需要把第一次申请的内存释放掉</li>
-<li>申请矩阵和矩阵加法分开实现，在加法函数内部调用申请函数，分工明确</li>
-<li>用 bool 表示成功与否，相加的结果放在参数中返回</li>
-<li>在写代码时多写 debug
-信息，产品交付时要少，否则容易被攻击者猜测实现方案</li>
-<li>不要依赖编译器的优化，自己能做就尽量做掉</li>
-</ul>
-<h2 id="derived-classes">Derived Classes</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Base</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">int</span> b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span> : <span class="keyword">public</span> Base &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> c;</span><br><span class="line">    <span class="built_in">Derived</span>(<span class="type">int</span> c) : <span class="built_in">Base</span>(c<span class="number">-2</span>, c<span class="number">-1</span>), <span class="built_in">c</span>(c) &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Constructors
-<ul>
-<li>先执行父类的构造函数</li>
-</ul></li>
-<li>Destructors
-<ul>
-<li>先执行子类的析构函数</li>
-</ul></li>
-</ul>
-<p>对基类数据的保护程度：public &lt; protected &lt; private</p>
-<ol type="1">
-<li>基类中的私有数据：三种方式都不能访问。</li>
-<li>基类中的 protected 数据：以 public、protected
-方式继承，该数据在子类还是 protected 的；以private
-方式继承，该数据在子类中是不可直接访问的（可以通过父类间接访问）。</li>
-<li>基类中的 public 数据：以 public 方式继承，该数据在子类是 public
-的，以 protected 方式继承，该数据在子类中是 protected 的，以 private
-方式继承，该数据在子类中是不可直接访问的。</li>
-</ol>
-<h2 id="virtual-functions">Virtual Functions</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// virtual.cpp</span></span><br></pre></td></tr></table></figure>
-<p>虚函数用于多态</p>
-<p>其区别在于绑定</p>
-<ul>
-<li>静态绑定：编译器在编译期确定调用哪个函数</li>
-<li>动态绑定：在运行时根据传入参数的类型确定执行的函数。</li>
-</ul>
-<p>动态绑定原理：一旦定义了虚函数，类的成员变量会多出一个指向自身函数表的指针，这个成员变量是类的第一个成员变量。执行时查虚函数表确定实际执行的函数。</p>
-<p>析构函数一定是虚函数，否则调用析构函数时只会调用父类的析构函数。</p>
-<h2 id="inheritance-and-dynamic-memory-allocation">Inheritance and
-Dynamic Memory Allocation</h2>
-<p>如果基类使用了动态内存分配，并且重写了拷贝构造函数和赋值运算符</p>
-<ul>
-<li>子类不使用动态内存分配，无需特殊操作</li>
-<li>子类使用动态内存分配，需要重写拷贝构造函数和赋值运算符</li>
-</ul>
-<h1 id="chapter13-class-templates-and-std-library">Chapter13 Class
-Templates and std Library</h1>
-<blockquote>
-<p>第十三章、类模板和标准库
-1、类模板是最近C++标准推出的功能，主要也就是泛型在类上面的实现。
-2、可以更加灵活地调用类，泛型（模板）的出现主要就是延迟创建，让使用变得更加方便；</p>
-<p>3、模板还可以相互继承； 4、C++中有很多的标准类模板；</p>
-</blockquote>
-<h2 id="review-function-templates">Review: Function Templates</h2>
-<p>是一个空壳子，编译器对空壳子不做任何事情。只有在实例化以后才会做事</p>
-<p>Function Templates：空壳子</p>
-<p>Template Functions：函数模板初始化后的具体函数</p>
-<p><code>= delete</code> 表示不调用默认生成的函数</p>
-<h2 id="template-non-type-parameters">Template non-type Parameters</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="type">size_t</span> rows, <span class="type">size_t</span> cols&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Mat</span> &#123;</span><br><span class="line">    T data[rows][cols];</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Mat</span>()&#123;&#125;</span><br><span class="line">    <span class="function">T <span class="title">getElement</span><span class="params">(<span class="type">size_t</span> r, <span class="type">size_t</span> c)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">setElement</span><span class="params">(<span class="type">size_t</span> r, <span class="type">size_t</span> c, T value)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><code>rows</code>、<code>cols</code> 在编译的时候就确定了：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">Mat&lt;<span class="type">int</span>, <span class="number">3</span>, <span class="number">3</span>&gt; vec;</span><br></pre></td></tr></table></figure>
-<h2 id="class-template-specialization">Class Template
-Specialization</h2>
-<p>我非要用 <code>bool</code> 类型实例化对操作内容为完整字节的模板类</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// specialization.cpp</span></span><br></pre></td></tr></table></figure>
-<h2 id="textttstd-classes"><span
-class="math inline">\(\texttt{std}\)</span> classes</h2>
-<ul>
-<li><span class="math inline">\(\texttt{std::string}\)</span></li>
-<li><span class="math inline">\(\texttt{std::array}\)</span></li>
-<li><span class="math inline">\(\texttt{vector}\)</span></li>
-<li><span class="math inline">\(\texttt{list}\)</span></li>
-<li><span class="math inline">\(\texttt{set}\)</span></li>
-<li><span class="math inline">\(\texttt{map}\)</span></li>
-<li><span class="math inline">\(\texttt{stack}\)</span></li>
-</ul>
-<h1 id="chapter14-error-handling">Chapter14 Error Handling</h1>
-<blockquote>
-<p>第十四章、错误处理机制 1、cin ,cout,cerr等不同的信息输出到多管道中；
-2、assert 是一个宏，不是一个标准；
-3、exception异常，通常使用try……catch对不同的异常进行捕获。
-4、还有更多的异常捕获机制，就是对应于不同的异常进行捕获，然后进行相应的处理。</p>
-</blockquote>
-<h2 id="standard-output-stream-and-standard-error-stream">Standard
-Output Stream and Standard Error Stream</h2>
-<p>在输出很多的时候可以通过管道重定向到文件，不重定向都会输出到控制台</p>
-<p>一些操作：</p>
-<h2 id="assert">assert</h2>
-<p><span class="math inline">\(\texttt{assert}\)</span>
-是一个像函数的宏定义，定义在 <span
-class="math inline">\(\texttt{&lt;assert.h&gt;}\)</span> 和 <span
-class="math inline">\(\texttt{&lt;cassert&gt;}\)</span> 头文件中</p>
-<p>条件不满足会做相应的处理，并调用 <span
-class="math inline">\(\texttt{abort()}\)</span> 函数终止程序</p>
-<p>如果在产品发布时想去掉 assert 信息，可以在文件中定义
-<code>NDEBUG</code> 或者在编译时定义一个宏</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">g++ assert.cpp -DNDEBUG</span><br></pre></td></tr></table></figure>
-<h2 id="exceptions">Exceptions</h2>
-<p>几种可能的处理方式：</p>
-<ul>
-<li>直接 kill 程序</li>
-<li>用返回值表示成功与否，缺点是需要引入额外的参数</li>
-<li>抛出异常</li>
-</ul>
-<p><span class="math inline">\(\texttt{throw}\)</span>
-应该会跳过后续的执行语句</p>
-<p>函数层层调用，最内层的函数抛出异常，如果外层的函数不捕获异常，那么异常会层层往外扔直到主函数，如果到最后异常没有被捕获那么程序会被kill。</p>
-<h2 id="catch-all-handler">Catch-all Handler</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">catch</span>(...) <span class="comment">// 这里就是...</span></span><br></pre></td></tr></table></figure>
-<p>三个点表示匹配任何异常，即任何扔到主函数的异常都被捕获，可防止程序被kill。</p>
-<h2 id="exceptions-and-inheritance">Exceptions and Inheritance</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// derived.cpp</span></span><br></pre></td></tr></table></figure>
-<h2 id="textttstdexception"><span
-class="math inline">\(\texttt{std::exception}\)</span></h2>
-<p>是标准库定义的标准异常类，可以重写 <span
-class="math inline">\(\texttt{std::exception::what()}\)</span>
-方法返回一个字符串</p>
-<p>当new申请内存失败时，默认会抛出异常。</p>
-<h2 id="exception-specifications-and-textttnoexcept">Exception
-Specifications and <span
-class="math inline">\(\texttt{noexcept}\)</span></h2>
-<p>如果抛出异常编译期就会出错</p>
-<h2 id="textttnothrow-new"><span class="math inline">\(\texttt{nothrow
-new}\)</span></h2>
-<p><span class="math inline">\(\texttt{std::nothrow}\)</span></p>
-<h1 id="chapter15-nested-classes-and-rtti">Chapter15 Nested Classes and
-RTTI</h1>
-<blockquote>
-<p>第十五章、拓展的C++知识
-1、友元类：友元函数不是成员函数。友元类可以调用基类的私有成员；
-2、Nested types嵌套：
-3、RTTI和不同的数据类型转换：（记住一点那就是最好使用显式转换，不然出现信息都是都是容易造成bug的问题的出现。）
-4、</p>
-</blockquote>
-<h2 id="textttfriend-classes"><span
-class="math inline">\(\texttt{friend}\)</span> Classes</h2>
-<p>友元类可以访问类的私有成员。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// friend.cpp</span></span><br></pre></td></tr></table></figure>
-<h2 id="textttfriend-member-functions"><span
-class="math inline">\(\texttt{friend}\)</span> Member Functions</h2>
-<p>限制友元类只有一部分函数可以访问类的私有成员：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<p>编译时如果遇到“死锁”，考虑将类的声明和类的成员函数声明先写出，后续补充其定义。</p>
-<h2 id="nested-types">Nested Types</h2>
-<h2 id="rtti-and-type-cast-operators">RTTI and Type Cast Operators</h2>
-<p>RTTI: Runtime Type Identification</p>
-<ul>
-<li><span
-class="math inline">\(\texttt{dynamic\_cast}\)</span>：将<strong>多态类型</strong>进行转换</li>
-<li><span class="math inline">\(\texttt{typeid}\)</span>：返回类型
-id</li>
-<li><span
-class="math inline">\(\texttt{type\_info}\)</span>：返回的对象</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// typeid.cpp</span></span><br></pre></td></tr></table></figure>
-<h2 id="more-type-cast-operators">More Type Cast Operators</h2>
-<ul>
-<li><span class="math inline">\(\texttt{const\_cast}\)</span></li>
-<li><span class="math inline">\(\texttt{static\_cast}\)</span></li>
-<li><span class="math inline">\(\texttt{reinterpret\_cast}\)</span></li>
-</ul>
-<h1 id="appendix">Appendix</h1>
-<blockquote>
-<p>附录 1、OPENBLAS项目创始人介绍如何进行代码优化：1、局部性原理2、GEMM
-2、OPENCV中国区域负责人：Vadim Pisarevsky与于教授的对答环节：</p>
-</blockquote>
-<h2
-id="interview-with-vadim-pisarevsky-on-class-textttcvmat-in-opencv">Interview
-with Vadim Pisarevsky on class <span
-class="math inline">\(\texttt{cv::Mat}\)</span> in OpenCV</h2>
-<ol type="1">
-<li>（长久来看）建议关注算法、概念、技术，而不是特定的特性或者编程语言本身。</li>
-<li>不要尝试把你学到的花哨功能全部用到开发上，因为过一段时间你可以就都不懂你的代码了。</li>
-<li>“当程序员避免使用原始指针而使用智能指针等封装好的结构，内存泄漏的问题就降到几乎为零”</li>
-<li>c++语言变得越来越复杂，但应该形成自己的提高程序稳定性的方法论，比如：</li>
-</ol>
-<ul>
-<li>尽量不要手动管理内存，使用已有的容器。</li>
-<li>在重构和优化之前要进行回归测试。</li>
-<li>写代码时应注意让程序更容易调试，不要用复杂的语言结构（代码应该越简单越好）。</li>
-</ul>
+<p>文件在我的 GitHub</p>
+<h2 id="supaltitude">1.supaltitude</h2>
+<p>骑手在初始海拔为 <span class="math inline">\(0\)</span>
+的原点，依次读入数组大小 <span class="math inline">\(n\)</span>
+和相邻两地点的海拔差 <span
+class="math inline">\(gain[n]\)</span>，输出骑手所经过的最高海拔</p>
+<p>数据范围 <span class="math inline">\(1 \le n \le 64\)</span></p>
+<p><span class="math inline">\(-128 \le gain[n] \le 128\)</span></p>
+<p>思路：题目所求即为数组最大前缀和，维护一个变量保存当前前缀和，并维护最大值即可，没有开辟数组空间的必要</p>
+<p><strong>注</strong>：保存最高海拔的前提是数组的下标连续，而不能像买卖理财产品，只在有收益的时候售出。也即如下的代码思路是错误的（虽然我相信聪明的大家都想到了）</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (data &gt; <span class="number">0</span>) &#123; <span class="comment">// data is the input value</span></span><br><span class="line">    sum += data;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// do nothing</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码挖空：</p>
+<figure class="highlight mips"><table><tr><td class="code"><pre><span class="line"><span class="meta">.text</span></span><br><span class="line"><span class="symbol">main:</span></span><br><span class="line">    <span class="comment"># get n</span></span><br><span class="line">    <span class="comment"># set prefix sum, maximum value and loop var</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">for_loop:</span></span><br><span class="line">    <span class="comment"># get data</span></span><br><span class="line">    <span class="keyword">add </span> $<span class="built_in">s1</span>, $<span class="built_in">s1</span>, $<span class="built_in">t1</span></span><br><span class="line"><span class="symbol">if:</span></span><br><span class="line">    <span class="comment"># no need to update, jump to &#x27;else&#x27; label </span></span><br><span class="line">    <span class="keyword">move </span>$<span class="built_in">s2</span>, $<span class="built_in">s1</span> <span class="comment">#update</span></span><br><span class="line"><span class="symbol">else:</span></span><br><span class="line">    <span class="keyword">addi </span>$<span class="built_in">t0</span>, $<span class="built_in">t0</span>, <span class="number">1</span> <span class="comment"># DONT FORGET TO INCREMENT LOOP VAR</span></span><br><span class="line">    <span class="keyword">bne </span> $<span class="built_in">t0</span>, $<span class="built_in">s0</span>, for_loop</span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">loop_end:</span></span><br><span class="line">    <span class="comment"># DONT FORGET TO PRINT</span></span><br></pre></td></tr></table></figure>
+<p>此外建议大家在编写汇编代码时多用伪指令，能显著加快编程速度（毕竟这就是伪指令的使命）</p>
+<p>如 <code>blt</code> 省去了 <code>slt</code> 和 <code>beq</code>
+的使用，将两条指令合为一条；<code>move</code> 比 <code>add</code>
+指令少一个操作数；<code>li</code> 比 <code>addi</code>
+少两个操作数等等</p>
+<h2 id="nodescendsequence">2.noDescendSequence</h2>
+<p>识别16bit输入从高位到低位每4bit组成的4位序列是否为不下降序列</p>
+<table>
+<thead>
+<tr class="header">
+<th>信号</th>
+<th>方向</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>data[15:0]</td>
+<td>input</td>
+<td>代表4位4bit输入</td>
+</tr>
+<tr class="even">
+<td>result</td>
+<td>out</td>
+<td>输出结果：是否为不下降序列</td>
+</tr>
+</tbody>
+</table>
+<p>思路：本题<strong>不涉及时序逻辑</strong>，直接取 <code>data</code>
+的对应位进行比较即可。一行代码我就不贴出来了（</p>
+<h2 id="tetris">3.tetris</h2>
+<p>模拟8位俄罗斯方块游戏设计 Mealy 状态机</p>
+<table>
+<thead>
+<tr class="header">
+<th>信号</th>
+<th>方向</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>input[7:0]</td>
+<td>I</td>
+<td>八位独热码，模拟掉落一个俄罗斯方块</td>
+</tr>
+<tr class="even">
+<td>reset</td>
+<td>I</td>
+<td><strong>异步复位</strong></td>
+</tr>
+<tr class="odd">
+<td>clk</td>
+<td>I</td>
+<td>时钟信号</td>
+</tr>
+<tr class="even">
+<td>output[1:0]</td>
+<td>O</td>
+<td>输出状态</td>
+</tr>
+</tbody>
+</table>
+<p>reset为<strong>异步复位</strong>，当reset为高电平时，状态恢复到一开始状态</p>
+<p>状态：输出01表示输入位置已有方块，放置无效，保持原状态</p>
+<p>输出10表示有效放置</p>
+<p>输出11表示消去一行</p>
+<h3 id="思路">思路</h3>
+<p><strong>第一步也是最重要的一步，确定状态机类型。一时不慎，满盘皆输！！！</strong></p>
+<p>方块的摆放情况数为 8 位二进制数的数量 <span
+class="math inline">\(2^8\)</span>，再考虑每次独热码输入有 8
+种，<strong>有效的</strong>状态转移真值表共约 <span
+class="math inline">\(8 \times 2^8\)</span>
+行，再考虑到无效的状态转移行，故采用真值表刻画状态转移的方式应该不是题目意图<del>（当然如果你毅力超群，我致以崇高敬意）</del>。我采取的方案是用当前的方块摆放情况表示状态，在
+Mealy 状态机的输出模块再转换成 <code>output[1:0]</code></p>
+<p>放置方块的行为让我联想到二进制的按位运算。判断某位是否已有方块，只需将输入和当前方块<strong>按位与</strong>，结果非
+0
+即为无效放置。而更新状态，只需将输入和当前方块放置状态<strong>按位或</strong>，注意<strong>特判</strong>放满后清空即可。</p>
+<h3 id="tips">Tips</h3>
+<p>注意到 logisim 中寄存器初值为 0，所以不用进行寄存器的初始化。</p>
+<p>注意判断<strong>复位方式</strong>是同步复位还是异步复位。异步复位在
+logisim 中的实现较为简单。</p>
+<p>此外，注意判断<strong>时钟</strong>是输入还是自带信号。</p>
+<p>还有一件事<del>（成龙历险记老爹音）</del>，题目要求的电路外观似乎不同于三输入一输出的默认外观，只需将左边三输入向下移动一格即可，外观的线不是很重要。</p>
+<p>电路外观如图（已隐去部分内容）</p>
+<p>最后，祝大家上机顺利，学有所获！</p>
 ]]></content>
       <categories>
+        <category>CO</category>
         <category>S5</category>
-        <category>C++</category>
       </categories>
       <tags>
-        <tag>Notes</tag>
-        <tag>C++</tag>
+        <tag>CO</tag>
+        <tag>Replay</tag>
       </tags>
   </entry>
   <entry>
@@ -1034,122 +528,6 @@ copy即可（其实也节省了代码量）</p>
       </tags>
   </entry>
   <entry>
-    <title>「BUAA-CO」 Pre</title>
-    <url>/co-pre/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>2023年Pre题目回忆版及我的3A答案回忆版</p>
-</blockquote>
-<span id="more"></span>
-<p>文件在我的 GitHub</p>
-<h2 id="supaltitude">1.supaltitude</h2>
-<p>骑手在初始海拔为 <span class="math inline">\(0\)</span>
-的原点，依次读入数组大小 <span class="math inline">\(n\)</span>
-和相邻两地点的海拔差 <span
-class="math inline">\(gain[n]\)</span>，输出骑手所经过的最高海拔</p>
-<p>数据范围 <span class="math inline">\(1 \le n \le 64\)</span></p>
-<p><span class="math inline">\(-128 \le gain[n] \le 128\)</span></p>
-<p>思路：题目所求即为数组最大前缀和，维护一个变量保存当前前缀和，并维护最大值即可，没有开辟数组空间的必要</p>
-<p><strong>注</strong>：保存最高海拔的前提是数组的下标连续，而不能像买卖理财产品，只在有收益的时候售出。也即如下的代码思路是错误的（虽然我相信聪明的大家都想到了）</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (data &gt; <span class="number">0</span>) &#123; <span class="comment">// data is the input value</span></span><br><span class="line">    sum += data;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// do nothing</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>代码挖空：</p>
-<figure class="highlight mips"><table><tr><td class="code"><pre><span class="line"><span class="meta">.text</span></span><br><span class="line"><span class="symbol">main:</span></span><br><span class="line">    <span class="comment"># get n</span></span><br><span class="line">    <span class="comment"># set prefix sum, maximum value and loop var</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">for_loop:</span></span><br><span class="line">    <span class="comment"># get data</span></span><br><span class="line">    <span class="keyword">add </span> $<span class="built_in">s1</span>, $<span class="built_in">s1</span>, $<span class="built_in">t1</span></span><br><span class="line"><span class="symbol">if:</span></span><br><span class="line">    <span class="comment"># no need to update, jump to &#x27;else&#x27; label </span></span><br><span class="line">    <span class="keyword">move </span>$<span class="built_in">s2</span>, $<span class="built_in">s1</span> <span class="comment">#update</span></span><br><span class="line"><span class="symbol">else:</span></span><br><span class="line">    <span class="keyword">addi </span>$<span class="built_in">t0</span>, $<span class="built_in">t0</span>, <span class="number">1</span> <span class="comment"># DONT FORGET TO INCREMENT LOOP VAR</span></span><br><span class="line">    <span class="keyword">bne </span> $<span class="built_in">t0</span>, $<span class="built_in">s0</span>, for_loop</span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">loop_end:</span></span><br><span class="line">    <span class="comment"># DONT FORGET TO PRINT</span></span><br></pre></td></tr></table></figure>
-<p>此外建议大家在编写汇编代码时多用伪指令，能显著加快编程速度（毕竟这就是伪指令的使命）</p>
-<p>如 <code>blt</code> 省去了 <code>slt</code> 和 <code>beq</code>
-的使用，将两条指令合为一条；<code>move</code> 比 <code>add</code>
-指令少一个操作数；<code>li</code> 比 <code>addi</code>
-少两个操作数等等</p>
-<h2 id="nodescendsequence">2.noDescendSequence</h2>
-<p>识别16bit输入从高位到低位每4bit组成的4位序列是否为不下降序列</p>
-<table>
-<thead>
-<tr class="header">
-<th>信号</th>
-<th>方向</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>data[15:0]</td>
-<td>input</td>
-<td>代表4位4bit输入</td>
-</tr>
-<tr class="even">
-<td>result</td>
-<td>out</td>
-<td>输出结果：是否为不下降序列</td>
-</tr>
-</tbody>
-</table>
-<p>思路：本题<strong>不涉及时序逻辑</strong>，直接取 <code>data</code>
-的对应位进行比较即可。一行代码我就不贴出来了（</p>
-<h2 id="tetris">3.tetris</h2>
-<p>模拟8位俄罗斯方块游戏设计 Mealy 状态机</p>
-<table>
-<thead>
-<tr class="header">
-<th>信号</th>
-<th>方向</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>input[7:0]</td>
-<td>I</td>
-<td>八位独热码，模拟掉落一个俄罗斯方块</td>
-</tr>
-<tr class="even">
-<td>reset</td>
-<td>I</td>
-<td><strong>异步复位</strong></td>
-</tr>
-<tr class="odd">
-<td>clk</td>
-<td>I</td>
-<td>时钟信号</td>
-</tr>
-<tr class="even">
-<td>output[1:0]</td>
-<td>O</td>
-<td>输出状态</td>
-</tr>
-</tbody>
-</table>
-<p>reset为<strong>异步复位</strong>，当reset为高电平时，状态恢复到一开始状态</p>
-<p>状态：输出01表示输入位置已有方块，放置无效，保持原状态</p>
-<p>输出10表示有效放置</p>
-<p>输出11表示消去一行</p>
-<h3 id="思路">思路</h3>
-<p><strong>第一步也是最重要的一步，确定状态机类型。一时不慎，满盘皆输！！！</strong></p>
-<p>方块的摆放情况数为 8 位二进制数的数量 <span
-class="math inline">\(2^8\)</span>，再考虑每次独热码输入有 8
-种，<strong>有效的</strong>状态转移真值表共约 <span
-class="math inline">\(8 \times 2^8\)</span>
-行，再考虑到无效的状态转移行，故采用真值表刻画状态转移的方式应该不是题目意图<del>（当然如果你毅力超群，我致以崇高敬意）</del>。我采取的方案是用当前的方块摆放情况表示状态，在
-Mealy 状态机的输出模块再转换成 <code>output[1:0]</code></p>
-<p>放置方块的行为让我联想到二进制的按位运算。判断某位是否已有方块，只需将输入和当前方块<strong>按位与</strong>，结果非
-0
-即为无效放置。而更新状态，只需将输入和当前方块放置状态<strong>按位或</strong>，注意<strong>特判</strong>放满后清空即可。</p>
-<h3 id="tips">Tips</h3>
-<p>注意到 logisim 中寄存器初值为 0，所以不用进行寄存器的初始化。</p>
-<p>注意判断<strong>复位方式</strong>是同步复位还是异步复位。异步复位在
-logisim 中的实现较为简单。</p>
-<p>此外，注意判断<strong>时钟</strong>是输入还是自带信号。</p>
-<p>还有一件事<del>（成龙历险记老爹音）</del>，题目要求的电路外观似乎不同于三输入一输出的默认外观，只需将左边三输入向下移动一格即可，外观的线不是很重要。</p>
-<p>电路外观如图（已隐去部分内容）</p>
-<p>最后，祝大家上机顺利，学有所获！</p>
-]]></content>
-      <categories>
-        <category>S5</category>
-        <category>CO</category>
-      </categories>
-      <tags>
-        <tag>CO</tag>
-        <tag>Replay</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Typora数学公式</title>
     <url>/MarkDown-Grammar/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
@@ -1306,11 +684,46 @@ alt="img" />
 </figure>
 ]]></content>
       <categories>
-        <category>S2</category>
         <category>Tools</category>
+        <category>S2</category>
       </categories>
       <tags>
         <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS Code配置LaTeX</title>
+    <url>/vscode-configure-latex/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>记录在 Windows10 中采用 <span class="math inline">\(MixTEX\)</span>
+在 VS Code 搭建 <span class="math inline">\(\LaTeX\)</span>
+环境的过程</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="安装编译器">安装编译器</h2>
+<p>原 <code>TexLive</code> 体积过大，采用包管理器进行安装</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 MikTeX</span></span><br><span class="line">scoop install miktex</span><br></pre></td></tr></table></figure>
+<h2 id="配置-vs-code">配置 VS Code</h2>
+<p>安装 <code>LaTeX Workshop</code> 扩展</p>
+<p>加入如下配置：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-shell-escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;%DOCFILE%&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="解决报错">解决报错</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">major issue: So far, you have not checked for MiKTeX updates.</span><br></pre></td></tr></table></figure>
+<p>找到 <code>MikTex Console</code>
+这个程序，右键点击“以管理员身份运行”，然后点击“检查更新”</p>
+<blockquote>
+<p><em>Ref:</em></p>
+<p><em><a href="https://zhuanlan.zhihu.com/p/139210056">搭建 LaTeX
+舒适写作环境（VSCode） - 知乎 (zhihu.com)</a></em></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Tools</category>
+        <category>S5</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+        <tag>Path</tag>
       </tags>
   </entry>
   <entry>
@@ -1318,13 +731,10 @@ alt="img" />
     <url>/visual-group-theory-notes/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="总述">总述</h2>
 <blockquote>
-<p>English notes of Visual Group Theory</p>
+<p>Lectures of Visual Group Theory</p>
 </blockquote>
 <span id="more"></span>
 <h1 id="visual-group-theory">Visual Group Theory</h1>
-<blockquote>
-<p>Start on 5-7-2023</p>
-</blockquote>
 <h2 id="overview">Overview</h2>
 <p>Three nonstandard aspect of nonstandard approach in the book:</p>
 <ul>
@@ -1847,41 +1257,6 @@ alt="image-20230514230616848" />
       </tags>
   </entry>
   <entry>
-    <title>VS Code配置LaTeX</title>
-    <url>/vscode-configure-latex/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>记录在 Windows10 中采用 <span class="math inline">\(MixTEX\)</span>
-在 VS Code 搭建 <span class="math inline">\(\LaTeX\)</span>
-环境的过程</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="安装编译器">安装编译器</h2>
-<p>原 <code>TexLive</code> 体积过大，采用包管理器进行安装</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 MikTeX</span></span><br><span class="line">scoop install miktex</span><br></pre></td></tr></table></figure>
-<h2 id="配置-vs-code">配置 VS Code</h2>
-<p>安装 <code>LaTeX Workshop</code> 扩展</p>
-<p>加入如下配置：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-shell-escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;%DOC%&quot;</span></span><br><span class="line">      <span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;%DOCFILE%&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">      <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="解决报错">解决报错</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">major issue: So far, you have not checked for MiKTeX updates.</span><br></pre></td></tr></table></figure>
-<p>找到 <code>MikTex Console</code>
-这个程序，右键点击“以管理员身份运行”，然后点击“检查更新”</p>
-<blockquote>
-<p><em>Ref:</em></p>
-<p><em><a href="https://zhuanlan.zhihu.com/p/139210056">搭建 LaTeX
-舒适写作环境（VSCode） - 知乎 (zhihu.com)</a></em></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>S5</category>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-        <tag>Path</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《满江红》观影感受</title>
     <url>/MJH-talks/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
@@ -1896,69 +1271,11 @@ cares？谁他妈在乎秦桧是谁，老子只想看故国收复。确实有比
 <p>总之，作为贺岁片，导演来分一杯羹，观众看个乐呵看个感动，能想起这位千年前的故人想起这首无人不知无人不晓的不朽词篇，便也还算，说得过去吧。</p>
 ]]></content>
       <categories>
-        <category>S3 Winter</category>
         <category>生活记录</category>
+        <category>S3 Winter</category>
       </categories>
       <tags>
         <tag>观后感</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>「Toolkit」 Everything</title>
-    <url>/everything/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>Everything 的使用小技巧</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="多关键字">多关键字</h2>
-<p>用空格分开</p>
-<blockquote>
-<p>表示真正的空格和 Shell 中的常用方法一样，用英文半角引号包裹，如
-<code>"Program Files"</code></p>
-</blockquote>
-<h2 id="相或关键字">相或关键字</h2>
-<p><code>免费|freeware</code>，可以连续使用</p>
-<h2 id="取反关键字">取反关键字</h2>
-<p>搜索所有包含 abc 但不包含 123 的文件：<code>abc !123</code></p>
-<h2 id="文件大小">文件大小</h2>
-<p>大于 300MB 的 rar 压缩文件：<code>*.rar size:&gt;300MB</code></p>
-<p>大小 1M 至 5M 的文件：<code>size:1MB-5MB</code></p>
-<p>大小为 1024 字节：<code>size:1024</code></p>
-<h2 id="指定目录">指定目录</h2>
-<p><code>Path target</code></p>
-<h2 id="指定盘符">指定盘符</h2>
-<h2 id="文件内容">文件内容</h2>
-<p><code>content:tips</code></p>
-<h2 id="指定目录-1">指定目录</h2>
-<p><code>D:\我的文件夹名\ *.p??</code>，在D:pdf 文件，ppt 文件等，但不含
-pptx 文件。</p>
-<h2 id="指定文件">指定文件</h2>
-<p><code>file:*.png</code></p>
-<h2 id="扩展名">扩展名</h2>
-<p><code>C: ext:png;gif;jpg</code></p>
-<h2 id="最近更改">最近更改</h2>
-<p><code>rc:2021/09/03 rc:today rc:yesterday rc:last2hours rc:last10mins</code></p>
-<h2 id="日期">日期</h2>
-<p><code>dateaccessed:&lt;date&gt;</code> 或
-<code>da:&lt;date&gt;</code></p>
-<p><code>dateaccessed:&lt;date&gt;</code> 或
-<code>da:&lt;date&gt;</code></p>
-<p><code>datemodified:&lt;date&gt;</code> 或
-<code>dm:&lt;date&gt;</code></p>
-<p><code>daterun:&lt;date&gt;</code> 或 <code>dr:&lt;date&gt;</code></p>
-<h2 id="重复文件">重复文件</h2>
-<p><code>ext:jpg dupe: sizedupe: size:&gt;300kb</code></p>
-<h2 id="反向搜索">反向搜索</h2>
-<p><code>D:\我的文件 *.xls !\生活文件夹 !~</code></p>
-]]></content>
-      <categories>
-        <category>S6</category>
-        <category>Toolkit</category>
-        <category>Everything</category>
-      </categories>
-      <tags>
-        <tag>Toolkit</tag>
-        <tag>Everything</tag>
       </tags>
   </entry>
   <entry>
@@ -2157,13 +1474,71 @@ id="主动的阅读基础一个阅读者要提出的四个基本问题">主动�
 <p>如果作者提供帮助，不要太骄傲而拒绝；但是也不要完全相信</p>
 ]]></content>
       <categories>
-        <category>S5</category>
         <category>Notes</category>
+        <category>S5</category>
         <category>Reading</category>
       </categories>
       <tags>
         <tag>Notes</tag>
         <tag>Reading</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>「Toolkit」 Everything</title>
+    <url>/everything/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>Everything 的使用小技巧</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="多关键字">多关键字</h2>
+<p>用空格分开</p>
+<blockquote>
+<p>表示真正的空格和 Shell 中的常用方法一样，用英文半角引号包裹，如
+<code>"Program Files"</code></p>
+</blockquote>
+<h2 id="相或关键字">相或关键字</h2>
+<p><code>免费|freeware</code>，可以连续使用</p>
+<h2 id="取反关键字">取反关键字</h2>
+<p>搜索所有包含 abc 但不包含 123 的文件：<code>abc !123</code></p>
+<h2 id="文件大小">文件大小</h2>
+<p>大于 300MB 的 rar 压缩文件：<code>*.rar size:&gt;300MB</code></p>
+<p>大小 1M 至 5M 的文件：<code>size:1MB-5MB</code></p>
+<p>大小为 1024 字节：<code>size:1024</code></p>
+<h2 id="指定目录">指定目录</h2>
+<p><code>Path target</code></p>
+<h2 id="指定盘符">指定盘符</h2>
+<h2 id="文件内容">文件内容</h2>
+<p><code>content:tips</code></p>
+<h2 id="指定目录-1">指定目录</h2>
+<p><code>D:\我的文件夹名\ *.p??</code>，在D:pdf 文件，ppt 文件等，但不含
+pptx 文件。</p>
+<h2 id="指定文件">指定文件</h2>
+<p><code>file:*.png</code></p>
+<h2 id="扩展名">扩展名</h2>
+<p><code>C: ext:png;gif;jpg</code></p>
+<h2 id="最近更改">最近更改</h2>
+<p><code>rc:2021/09/03 rc:today rc:yesterday rc:last2hours rc:last10mins</code></p>
+<h2 id="日期">日期</h2>
+<p><code>dateaccessed:&lt;date&gt;</code> 或
+<code>da:&lt;date&gt;</code></p>
+<p><code>dateaccessed:&lt;date&gt;</code> 或
+<code>da:&lt;date&gt;</code></p>
+<p><code>datemodified:&lt;date&gt;</code> 或
+<code>dm:&lt;date&gt;</code></p>
+<p><code>daterun:&lt;date&gt;</code> 或 <code>dr:&lt;date&gt;</code></p>
+<h2 id="重复文件">重复文件</h2>
+<p><code>ext:jpg dupe: sizedupe: size:&gt;300kb</code></p>
+<h2 id="反向搜索">反向搜索</h2>
+<p><code>D:\我的文件 *.xls !\生活文件夹 !~</code></p>
+]]></content>
+      <categories>
+        <category>Toolkit</category>
+        <category>Everything</category>
+        <category>S6</category>
+      </categories>
+      <tags>
+        <tag>Toolkit</tag>
+        <tag>Everything</tag>
       </tags>
   </entry>
   <entry>
@@ -2209,6 +1584,52 @@ P148）从而，部分器件在一定条件下会不满足时钟约束。太多�
       </categories>
       <tags>
         <tag>CO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科目三实战技巧</title>
+    <url>/subject3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言">前言</h2>
+<blockquote>
+<p>笔者与科三的爱恨情仇</p>
+</blockquote>
+<span id="more"></span>
+<p>笔者去年没有练完的科三拖到了今年来练...在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
+<h3 id="上车准备">上车准备</h3>
+<blockquote>
+<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
+</blockquote>
+<h3 id="灯光">灯光</h3>
+<blockquote>
+<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
+</blockquote>
+<h3 id="起步">起步</h3>
+<blockquote>
+<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
+</blockquote>
+<h3 id="行驶中">行驶中</h3>
+<blockquote>
+<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
+<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
+<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
+<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
+<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
+<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
+<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
+<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
+<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
+<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
+<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
+<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>生活记录</category>
+        <category>S3 Winter</category>
+      </categories>
+      <tags>
+        <tag>科目三</tag>
       </tags>
   </entry>
   <entry>
@@ -2639,8 +2060,8 @@ alt="image-20220913194007073" />
 <p>两个类里的<code>main函数</code>可以同时运行，当然还要看评测要求</p>
 ]]></content>
       <categories>
-        <category>Notes</category>
         <category>OO</category>
+        <category>Notes</category>
         <category>S3</category>
       </categories>
       <tags>
@@ -2649,49 +2070,42 @@ alt="image-20220913194007073" />
       </tags>
   </entry>
   <entry>
-    <title>科目三实战技巧</title>
-    <url>/subject3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="前言">前言</h2>
+    <title>「Badminton」</title>
+    <url>/badminton/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="羽毛球练习技巧">羽毛球练习技巧</h1>
 <blockquote>
-<p>笔者与科三的爱恨情仇</p>
+<p>记录一些一对一课程和网课的内容</p>
 </blockquote>
 <span id="more"></span>
-<p>笔者去年没有练完的科三拖到了今年来练...在模拟了两次破费一百大洋后终于掌握要诀，肉疼的笔者心里那个不服，用键盘<del>讨伐</del>记录如下</p>
-<h3 id="上车准备">上车准备</h3>
-<blockquote>
-<p>先上车进行身份验证，直到听到“请进行下车准备”时，观察左后视镜，扭头观察左后方无车后打开车门下车。逆时针绕车，在距离每个感应点20-30cm处交叉手臂几次，隐约听到车内“正在经过车尾”。绕车结束后上车，检查远光灯复位，挡位处在空挡，手刹拉起。调整座椅，系好安全带。</p>
-</blockquote>
-<h3 id="灯光">灯光</h3>
-<blockquote>
-<p>听到“请启动发动机”口令后，踩住离合器一次性把火打着，（随机考五个灯光）</p>
-</blockquote>
-<h3 id="起步">起步</h3>
-<blockquote>
-<p>听到“关闭灯光请起步”语音，打左转向灯，按喇叭两次，挂一档松手刹，左右观察驶入第二车道。加油门挂二档</p>
-</blockquote>
-<h3 id="行驶中">行驶中</h3>
-<blockquote>
-<p>行驶中第一个项目<strong>通过学校</strong>，无语音播报。观察左内右后视镜轻点刹车，需要注意，轻点刹车要使车有<strong>顿挫感</strong>。</p>
-<p>第二个项目<strong>通过公交车站</strong>，无语音播报。观察左内右后视镜轻点刹车。</p>
-<p>第三个项目<strong>直线行驶</strong>，听到“直线行驶”语音后，车在车道中间正负15cm，方向盘角度不超过15度，行驶一百米。</p>
-<p>第四个项目<strong>前方路口左转</strong>，听到“前方路口左转”语音后，踩一次<strong>刹车</strong>，打<strong>左转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，注意避让对侧直行社会车辆，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第五个项目<strong>加减挡</strong>，无语音播报。车速15迈左右挂二挡，25迈左右挂三挡，35迈左右挂四挡，踩油门保持车速35迈，默念6-7个数（5s）。松开油门回三挡，轻踩刹车，25迈以下回二挡。注意<strong>不要越级挂挡</strong>。</p>
-<p>第六个项目<strong>前方路口直行</strong>，听到“前方路口直行”语音后，观察左内右后视镜<strong>轻点刹车</strong>。</p>
-<p>第七个项目<strong>会车</strong>，听到前方会车语音以后，观察左内右后视镜<strong>轻点刹车。</strong></p>
-<p>第八个项目<strong>掉头</strong>，听到“前方请找合适地点掉头”语音后，变更至最左侧车道，<strong>打左转向灯</strong>，快掉头时换一挡，在掉头前刹车一次，刷新一挡行驶距离（一挡连续行驶不能超过50m）。左打死观察左右情况掉头。</p>
-<p>第九个项目<strong>变更车道</strong>，听到“变更车道”语音后，打右转向灯，看右后视镜并扭头观察右后方，往右打方向盘变道。</p>
-<p>第十个项目<strong>前方路口右转</strong>，听到“前方路口右转”语音后，踩一次<strong>刹车</strong>，打<strong>右转向灯</strong>，观察左内右后视镜<strong>轻点刹车</strong>，注意观察路口情况，<strong>避免斑马线停车</strong>。保险起见在路口斑马线前再踩一次<strong>刹车</strong>。</p>
-<p>第十一个项目<strong>超越前方车辆</strong>，听到“超越前方车辆语音”后，<strong>打左转向灯</strong>，看左后视镜并扭头观察左后方，往左变道，行驶四十米（约7-8条白线），看右后视镜并扭头观察右后方，变道驶回原车道。</p>
-<p>第十二个项目<strong>通过人行横道</strong>，观察左内右观察后视镜<strong>轻点刹车</strong>。</p>
-<p>第十三个项目<strong>靠边停车</strong>，听到“前方请找合适路段靠边停车”语音后，<strong>打右转向灯</strong>，看右后视镜并扭头观察右后方变道。挂一档靠边慢溜，车身与边线不能超过30cm（约一条半白线宽）。注意看前方将车顺正再看后视镜确认距离。如需调整应先顺正再微调。即使已发出“操作完毕请下车”语音仍可继续微调。确认可以以后，拉起手刹，摘空挡，熄火。踩住离合和刹车，确认上述三项复位。松安全带，松离合，松脚刹，观察左内右后视镜和左扭头观察左后方，确认安全后开关车门但不下车，开关车门的时间不能超过15秒。听到语音播报成绩，考试结束。</p>
-</blockquote>
+<p>整体思路：单打练习一致性，双打求快</p>
+<p>平时练习：跳绳是最练协调的，1min一组，练十组，隔天练</p>
+<h2 id="正手后场动作">正手后场动作</h2>
+<p>高远球、吊球、杀球的击球点依次向下</p>
+<p>杀球需要打球头和球的靠近球头羽毛部分</p>
+<p>发力的关键：手腕</p>
+<p>手腕灵活可以用更小的动作打出更大的鞭打效果，方便做出更隐蔽的动作</p>
+<h2 id="反手后场动作">反手后场动作</h2>
+<p>相较于正手的高位击球点，反手的发力不能顺利传达，需要降低击球点获得引拍空间</p>
+<p>步伐</p>
+<p>具体的引拍方式为内收</p>
+<h2 id="前场动作">前场动作</h2>
+<p>记得弓步放着，脚的方向和前进方向一致</p>
+<h2 id="接杀">接杀</h2>
+<p>主要反手握拍动作，因为防守范围更大</p>
+<p>球拍横在自己的身体面前，减少引拍时间，处于居中的位置</p>
+<p>弹后场需要更靠前的位置，更快的挥速</p>
+<p>手腕要立腕，抬大臂内收小臂手腕</p>
+<p>重心随着身体顶起的动作做起伏</p>
+<p>腋下反拍正打大概率只能抽到后场</p>
 ]]></content>
       <categories>
-        <category>S3 Winter</category>
-        <category>生活记录</category>
+        <category>Play</category>
+        <category>Badminton</category>
+        <category>S6</category>
       </categories>
       <tags>
-        <tag>科目三</tag>
+        <tag>Physical Training</tag>
+        <tag>Badminton</tag>
       </tags>
   </entry>
   <entry>
@@ -3665,8 +3079,8 @@ alt="image-20230501102809077" />
 <h2 id="编译程序的辅助功能">10.9 编译程序的辅助功能</h2>
 ]]></content>
       <categories>
-        <category>S5</category>
         <category>Notes</category>
+        <category>S5</category>
         <category>编译</category>
       </categories>
       <tags>
@@ -3675,34 +3089,37 @@ alt="image-20230501102809077" />
       </tags>
   </entry>
   <entry>
-    <title>「Badminton」</title>
-    <url>/badminton/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="羽毛球练习技巧">羽毛球练习技巧</h1>
-<blockquote>
-<p>记录一些一对一课程和网课的内容</p>
+    <title>诗经小作业之文本配乐</title>
+    <url>/set-music/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>2024 诗经小作业之文本配乐，给《汝坟》配《1874》的胡乱涂抹思想过程</p>
 </blockquote>
 <span id="more"></span>
-<p>整体思路：单打练习一致性，双打求快</p>
-<p>平时练习：跳绳是最练协调的，1min一组，练十组，隔天练</p>
-<h2 id="正手后场动作">正手后场动作</h2>
-<p>高远球、吊球、杀球的击球点依次向下</p>
-<p>杀球需要打球头和球的靠近球头羽毛部分</p>
-<p>发力的关键：手腕</p>
-<p>手腕灵活可以用更小的动作打出更大的鞭打效果，方便做出更隐蔽的动作</p>
-<h2 id="反手后场动作">反手后场动作</h2>
-<p>相较于正手的高位击球点，反手的发力不能顺利传达，需要降低击球点获得引拍空间</p>
-<p>具体的引拍方式为内收</p>
-<h2 id="前场动作">前场动作</h2>
-<p>记得弓步放着，脚的方向和前进方向一致</p>
+<h2 id="汝坟">汝坟</h2>
+<p>遵彼汝坟，伐其条枚； 未见君子，惄如调饥。 遵彼汝坟，伐其条肄；
+既见君子，不我遐弃。 鲂鱼赪尾，王室如燬； 虽则如燬，父母孔迩。</p>
+<h2 id="配乐及联系">配乐及联系</h2>
+<p>这是高亨在《诗经今注》里面的背景介绍：</p>
+<p>西周末年，周幽王无道，犬戎入寇，攻破镐京。周南地区一个在王朝做小官的人逃难回到家中，他的妻很喜欢，作此诗安慰他。</p>
+<p>诗的含义很易懂，沿着汝河的河岸砍伐枝条，思念效忠王室的爱人。未见之时惆怅如早上空腹苦捱饥饿，见面后才更想多多挽留。王室的情况非常危急！即使王室情况危急，你能不能也多陪伴我一会，我们的父母就在身边。</p>
+<p>我感念于封建时代的真爱，就算在战时这一男人需要效忠封建王室的时刻，女人也是如此钟爱她的男人。有别于君臣父子的礼乐教化，女人反而希望男人能多留在身边陪陪父母和家人。这是人类自然而崇高的情感，王室的需要和女人的需要交织在这个男人身上，这种小爱和大忠的冲突反而折射出小爱的光辉。</p>
+<p>想给这首诗作配一首陈奕迅的《1874》，这首歌写歌手本该拥有一个同时代的完美恋人，却因命运的阴差阳错没有遇到，怀疑是爱人早生了
+100 年，也即比歌手出生年 1974 更早 100
+年，这首歌由此得名。词人另辟蹊径，通过这种方式大胆表达对爱人的呼唤和自身的孤独感。</p>
+<p>《汝坟》写一种两人相同时代不同空间的遗憾和孤独，《1874》写一种两人已经不在同一时代，遑论同一空间。空间和时间上的无法厮守相互呼应。时空纠缠交错，爱人各自寂寥”情人若寂寥地出生在
+1874，刚好早一百年一个世纪“，最后回归于玫瑰色的略有些浮夸的浪漫——”如果不可相约在和平地方，也与你畅游战地“，想想相约战地又怎么幸福，再想想，能相约还有什么不能幸福。</p>
+<p>附两个 live 的版本吧，06 Get A Life 的西洋乐器伴奏，24 Fear and
+Dreams
+的孤独圆舞。孤独之人对爱的呼唤甚是强烈，战争更加剧了这种孤独，强化了这种呼唤。</p>
 ]]></content>
       <categories>
+        <category>Music</category>
+        <category>Poetry</category>
         <category>S6</category>
-        <category>Play</category>
-        <category>Badminton</category>
       </categories>
       <tags>
-        <tag>Physical Training</tag>
-        <tag>Badminton</tag>
+        <tag>Music</tag>
+        <tag>Poetry</tag>
       </tags>
   </entry>
   <entry>
@@ -6473,6 +5890,628 @@ class="math inline">\(P_{D_4}(z_1,z_2,z_3,z_4)=\dfrac{1}{8}(z_1^4+2z_4+3z_2^2+2z
       <tags>
         <tag>Notes</tag>
         <tag>Combinatorics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>「SUSTECH-C++11」</title>
+    <url>/cpp11-sustech/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>Notes of SUSTECH C++11</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="chapter1-introduction-and-background">Chapter1 Introduction and
+Background</h1>
+<blockquote>
+<p>第一章、基础知识</p>
+</blockquote>
+<h2 id="g">g++</h2>
+<p>1、编译 hello.cpp 文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">g++ hello.cpp</span><br></pre></td></tr></table></figure>
+<p>2、使用 c++11：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">g++ hello.cpp --std=c++11</span><br></pre></td></tr></table></figure>
+<p>3、自定义生成文件名：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">g++ hello.cpp --std=c++11 -o hello</span><br></pre></td></tr></table></figure>
+<p>4、运行生成的文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./hello</span><br></pre></td></tr></table></figure>
+<h2 id="compile-and-link">Compile and Link</h2>
+<p>函数声明一般放在 <code>*.hpp</code> 文件中</p>
+<p>分门别类管理，节约编译时间，条理清晰</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mul.hpp&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="type">int</span> result;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Pick two integers:&quot;</span>;</span><br><span class="line">    cin &gt;&gt; a;</span><br><span class="line">    cin &gt;&gt; b;</span><br><span class="line">    result = <span class="built_in">mul</span>(a, b);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The result is &quot;</span> &lt;&lt; result &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// mul.hpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">mul</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// mul.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mul.hpp&quot;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">mul</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="Images/compile-and-link.png" alt="compile-and-link" />
+<figcaption aria-hidden="true">compile-and-link</figcaption>
+</figure>
+<p>注：g++ 的 -c 选项表示只编译不链接。</p>
+<p>好处：分开编译，<strong>节约编译时间</strong></p>
+<p><strong>引号和尖括号引用的区别</strong></p>
+<ul>
+<li>尖括号：编译器从编译器指定的 include 路径寻找头文件</li>
+<li>引号：从指定的和当前路径寻找</li>
+</ul>
+<h2 id="debug">Debug</h2>
+<p>错误三大类：</p>
+<ul>
+<li>编译错误：编译时就出错了，一般由语法造成</li>
+<li>链接错误：错误提示一般与 symbol 有关，顺藤摸瓜查这个符号</li>
+<li>运行错误：编译链接正常，运行时报错</li>
+</ul>
+<h2 id="preprocessor-and-macros">Preprocessor and Macros</h2>
+<p>预处理指令是以“#”开头的指令，只能占一行，换行需要转义符</p>
+<h2 id="simple-input-and-output">Simple Input and Output</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">std::ostream cout;</span><br><span class="line">std::istream cin;</span><br></pre></td></tr></table></figure>
+<p><code>&lt;&lt;</code> 是运算符，采用运算符重载定义，返回值依然是
+<code>cout</code>，故可以链式调用</p>
+<h2 id="arguments">Arguments</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// arguments.cpp</span></span><br></pre></td></tr></table></figure>
+<h1 id="chapter2-data-types-and-arithmetic-operations">Chapter2 Data
+Types and Arithmetic Operations</h1>
+<blockquote>
+<p>第二章、数据类型及算术运算</p>
+<p>整形类型，浮点类型，算数运算，类型转换</p>
+</blockquote>
+<h2 id="integer-numbers">Integer Numbers</h2>
+<p>Please initialize variables <strong>EXPLICITLY</strong>!</p>
+<p>新的初始化方式</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">num</span> <span class="params">(<span class="number">10</span>)</span></span>;</span><br><span class="line"><span class="type">int</span> num &#123;<span class="number">10</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="data-width-and-more-integer-types">Data Width and More Integer
+Types</h2>
+<p>C 和 C++ 标准并未固定数据位宽</p>
+<p><code>long long int</code> 保证 64 位</p>
+<p><code>sizeof</code> 是
+<code>operator</code>，因为函数的参数必须是变量</p>
+<p>c++标准并没有规定char（-128~127）表示unsigned char（0~255）还是signed
+char。不同平台不一样。</p>
+<p>从c++11开始增加了 char16_t（16位的char）、char32_t（32位的char）
+类型，可以表示中文字符。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> <span class="type">16_t</span> c = <span class="string">u&#x27;于&#x27;</span>;</span><br><span class="line"><span class="type">char</span> <span class="type">32_t</span> c = <span class="string">U&#x27;于&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>字符类型前面添加 <code>+</code> 会隐式转换为整数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">bool</span> b = <span class="literal">true</span>;</span><br><span class="line"><span class="type">int</span> i = b; <span class="comment">// the value of i is 1</span></span><br><span class="line"><span class="type">bool</span> b = <span class="number">-256</span>; <span class="comment">// 非0值均为1 unrecommended conversion</span></span><br><span class="line"><span class="type">bool</span> b = (<span class="number">-256</span> != <span class="number">0</span>); <span class="comment">// better choice</span></span><br></pre></td></tr></table></figure>
+<h2 id="boolean-in-c">Boolean in C</h2>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">char</span> <span class="type">bool</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> true 1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> false 0</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdbool.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="textttsize_t"><span
+class="math inline">\(\texttt{size\_t}\)</span></h2>
+<p><code>sizeof</code> 的返回值类型</p>
+<p>表达内存、表达元素的个数等等</p>
+<p>自减时不会减到负数，循环时不能自减，否则会无限循环</p>
+<h2 id="fixed-width-integer-types-since-c11">Fixed Width Integer Types
+(since C++11)</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Defined in &lt;cstdint&gt;</span></span><br><span class="line"><span class="type">int8_t</span>;</span><br><span class="line"><span class="type">int16_t</span>;</span><br><span class="line"><span class="type">int32_t</span>;</span><br><span class="line"><span class="type">int64_t</span>;</span><br><span class="line"><span class="type">uint8_t</span>;</span><br><span class="line"><span class="type">uint16_t</span>;</span><br><span class="line"><span class="type">uint32_t</span>;</span><br><span class="line"><span class="type">uint64_t</span>;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="comment">// Some useful macros</span></span><br><span class="line">INT8_MIN;</span><br><span class="line">INT16_MIN;</span><br><span class="line">INT32_MIN;</span><br><span class="line">INT64_MIN;</span><br><span class="line">INT8_MAX;</span><br><span class="line">INT16_MAX;</span><br><span class="line">INT32_MAX;</span><br><span class="line">INT64_MAX;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="floating-point-numbers">Floating Point Numbers</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="type">float</span> f1 = <span class="number">1.2f</span>;</span><br><span class="line">    <span class="type">float</span> f2 = f1 * <span class="number">1000000000000000</span>; <span class="comment">//1.0e15</span></span><br><span class="line">    cout &lt;&lt; std::fixed &lt;&lt; std::<span class="built_in">setprecision</span>(<span class="number">15</span>) &lt;&lt; f1 &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; std::fixed &lt;&lt; std::<span class="built_in">setprecision</span>(<span class="number">15</span>) &lt;&lt; f2 &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原因在于小数是无限的，计算机表示数据有位数限制。写一个很长的小数，计算机不一定能表示出来。所以计算机表示浮点数的时候进行了采样。比如上面要表示一个15位有效数字的1.2，得到的是计算机在那段范围进行了采样后的结果。</p>
+<p>如果支持 <code>long double</code>，则为 128
+位。半精度是深度学习中大量使用的，但是不属于 C++ 标准</p>
+<p>double 类型的数据操作比 float 更慢。</p>
+<h2 id="constant-numbers">Constant Numbers</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="number">95</span>; <span class="comment">// decimal</span></span><br><span class="line"><span class="number">0137</span>; <span class="comment">// octal</span></span><br><span class="line"><span class="number">0x5F</span>; <span class="comment">// hexadecimal</span></span><br><span class="line"><span class="number">95</span>; <span class="comment">// int</span></span><br><span class="line"><span class="number">95u</span>; <span class="comment">// unsigned int</span></span><br><span class="line"><span class="number">95l</span>; <span class="comment">// long</span></span><br><span class="line"><span class="number">95ul</span>; <span class="comment">// unsigned long</span></span><br><span class="line"><span class="number">95lu</span>; <span class="comment">// unsigned long</span></span><br><span class="line"></span><br><span class="line"><span class="number">6.02e23</span>L; <span class="comment">// long double</span></span><br></pre></td></tr></table></figure>
+<h2 id="textttauto"><span
+class="math inline">\(\texttt{auto}\)</span></h2>
+<p><code>auto</code> is placeholder type specifier</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span> a = <span class="number">2</span>; <span class="comment">// int</span></span><br><span class="line"><span class="keyword">auto</span> bc = <span class="number">2.3</span>; <span class="comment">// double</span></span><br><span class="line"><span class="keyword">auto</span> c; <span class="comment">// valid in C, error in C++</span></span><br><span class="line"><span class="keyword">auto</span> d = a * <span class="number">1.2</span>; <span class="comment">// double</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Question</span></span><br><span class="line"><span class="keyword">auto</span> a = <span class="number">2</span>;</span><br><span class="line">a = <span class="number">2.3</span>; <span class="comment">// will a be converted to double again? No</span></span><br></pre></td></tr></table></figure>
+<h2 id="conversion">Conversion</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> num1 = (<span class="type">int</span>)<span class="string">&#x27;C&#x27;</span>; <span class="comment">// C-style</span></span><br><span class="line"><span class="type">int</span> num2 = <span class="built_in">int</span>(<span class="string">&#x27;C&#x27;</span>); <span class="comment">// function style</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">float</span> f = <span class="number">17</span> / <span class="number">5</span>; <span class="comment">// f will be 3.f</span></span><br></pre></td></tr></table></figure>
+<h1 id="chapter3-statements">Chapter3 Statements</h1>
+<blockquote>
+<p>第三章、语句</p>
+</blockquote>
+<h2 id="assign-statement">Assign Statement</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="type">int</span> * p = <span class="built_in">get</span>())&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>赋值表达式的值是等号右边的内容。</p>
+<h2 id="textttgoto"><span
+class="math inline">\(\texttt{goto}\)</span></h2>
+<p>在函数的末尾进行错误处理、清理等操作。当程序出错时跳转到错误处理的相关代码，其他情况不建议使用
+goto 语句。</p>
+<h2 id="textttswitch"><span
+class="math inline">\(\texttt{switch}\)</span></h2>
+<p>更像 goto 语句，所以要注意写 break</p>
+<h1 id="chapter4-arrays">Chapter4 Arrays</h1>
+<blockquote>
+<p>数组</p>
+<p>数组（一维数组，定长数组，变长数组，多维数组，常量数组等等，字符串string），结构体(struct)【将不同的数据类型统一起来，用法基本上同后面学到的类】，联合体（union）【共享同一块地址】以及枚举（enum）[替换常量],</p>
+</blockquote>
+<h2 id="variable-length-arrays">Variable-length Arrays</h2>
+<p>运行时才能确定数组的大小，如果用常量开，编译时便可确定</p>
+<p>不一定能够直接初始化</p>
+<p>C 和 C++
+禁止数组首地址的赋值，这样两个数组地址指向同一块内存，有一个数组丢失</p>
+<p>循环逐个赋值或者内存拷贝函数赋值</p>
+<p>无越界检查</p>
+<p>在 C/C++ 中数组不是对象，这点不同于 Java</p>
+<h2 id="textttconst-arrays"><span
+class="math inline">\(\texttt{const}\)</span> arrays</h2>
+<p>常常用作函数传参</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">wchat_t</span>[] s1 = <span class="string">L&quot;ABCD&quot;</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">char16_t</span>[] s2 = <span class="string">u&quot;ABCD&quot;</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">char32_t</span>[] s3 = <span class="string">U&quot;ABCD&quot;</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">char</span> *<span class="title">strcpy</span><span class="params">(<span class="type">char</span>* dst, <span class="type">const</span> <span class="type">char</span>* src)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>如果溢出了也会继续复制，所以有了更安全的 <code>strncpy</code></p>
+<h2 id="textttstring-class"><span
+class="math inline">\(\texttt{string}\)</span> class</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::string str1 = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">std::string str2 = <span class="string">&quot;Lee&quot;</span>;</span><br><span class="line">std::string result = str1 + <span class="string">&quot;, &quot;</span> + str2;</span><br></pre></td></tr></table></figure>
+<h2 id="different-types-of-textttstring">Different Types of <span
+class="math inline">\(\texttt{string}\)</span></h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">std::string</span><br><span class="line">std::wstring</span><br><span class="line">std::u8string <span class="comment">// C++20</span></span><br><span class="line">std::u16string <span class="comment">// C++11</span></span><br><span class="line">std::u32string <span class="comment">// C++11</span></span><br></pre></td></tr></table></figure>
+<p>直接用方括号下标访问不会有异常，at 方法越界会有异常</p>
+<h2 id="textttstruct"><span
+class="math inline">\(\texttt{struct}\)</span></h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Point</span> point1 = &#123;.type=TYPE_INT8, .data8=&#123;<span class="number">-2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="textttenum"><span
+class="math inline">\(\texttt{enum}\)</span></h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">color</span> &#123;WHITE, BLACK, RED, GREEN, BLUE, YELLOW, NUM_COLORS&#125;;</span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">color</span> pen_color = RED;</span><br><span class="line">pen_color = <span class="built_in">color</span>(<span class="number">3</span>); <span class="comment">// type convertion</span></span><br><span class="line">pen_color += <span class="number">1</span>; <span class="comment">// ERROR!</span></span><br><span class="line"><span class="type">int</span> color_index = pen_color;</span><br><span class="line">color_index += <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="texttttypedef"><span
+class="math inline">\(\texttt{typedef}\)</span></h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">unsigned</span> <span class="type">char</span> vec3b[<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> color[<span class="number">3</span>];</span><br><span class="line">vec3b color = &#123;<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="chapter5-pointers-and-memory-management">Chapter5 Pointers and
+Memory Management</h1>
+<blockquote>
+<p>第五章、指针与内存管理</p>
+</blockquote>
+<h2 id="constant-pointers">Constant Pointers</h2>
+<p>指针指向的内容不能通过 <code>*</code> 取内容来修改</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// You cannot change the value p1 points to through p1</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> * p1 = &amp;num;</span><br><span class="line">*p1 = <span class="number">3</span>; <span class="comment">// error</span></span><br><span class="line">num = <span class="number">3</span>; <span class="comment">// okay</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// You cannot change the value of p2</span></span><br><span class="line"><span class="type">int</span> * <span class="type">const</span> p2 = &amp;num;</span><br><span class="line">*p2 = <span class="number">3</span>; <span class="comment">// okay</span></span><br><span class="line"><span class="type">int</span> another = <span class="number">2</span>;</span><br><span class="line">p2 = &amp;another; <span class="comment">// error</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// You cannot change either of them</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> p3 = &amp;num;</span><br><span class="line"><span class="comment">// But you can still change num directly</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">foo</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *p)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// play a trick to remove const restriction?</span></span><br><span class="line">    <span class="type">char</span> * p2 = p; <span class="comment">// syntax error</span></span><br><span class="line">    <span class="comment">// You cannot assign a const pointer to non-const one</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="textttsize_t-1"><span
+class="math inline">\(\texttt{size\_t}\)</span></h2>
+<p>一个无符号整型，表示当前系统内存中可以存储的最大对象的大小。</p>
+<h2 id="memory-types">Memory Types</h2>
+<ul>
+<li>代码区：存放程序的执行指令，试图写入的操作会被系统 kill。</li>
+<li>静态变量区：初始化的、未初始化的分开存放。</li>
+<li>堆内存区：动态申请的内存会存放此处，</li>
+<li>栈内存区：临时、局部变量存放在此区。</li>
+</ul>
+<p><img src="Images/memory-types.png" alt="memory-types" style="zoom:50%;" /></p>
+<h2 id="textttvoid-malloc-size_t-size"><span
+class="math inline">\(\texttt{void* malloc( size\_t size
+)}\)</span></h2>
+<ul>
+<li>单位是字节。</li>
+<li>分配的内存是未初始化的，不改变原有存储内容。</li>
+<li>存在内存对齐机制，比如：int * p1 = (int*) malloc
+(4);只想分配4字节，但是不同操作系统分配的是不同的，有的会最小分配4字节，有的会最小分配16字节。</li>
+<li><strong>当程序结束后操作系统会把分配给该程序的所有内存回收。</strong></li>
+</ul>
+<h2 id="memory-leak">Memory Leak</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">p = (<span class="type">int</span> *) <span class="built_in">malloc</span>(<span class="number">4</span> * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">p = (<span class="type">int</span> *) <span class="built_in">malloc</span>(<span class="number">8</span> * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line"><span class="built_in">free</span>(p);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> *p = (<span class="type">int</span> *) <span class="built_in">malloc</span>(<span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="textttnew"><span
+class="math inline">\(\texttt{new}\)</span></h2>
+<blockquote>
+<p>Operator new is similar with malloc() but with more features</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//allocate an int, default initializer (do nothing)</span></span><br><span class="line"><span class="type">int</span> * p1 = <span class="keyword">new</span> <span class="type">int</span>; </span><br><span class="line"><span class="comment">//allocate an int, initialized to 0</span></span><br><span class="line"><span class="type">int</span> * p2 =  <span class="keyword">new</span> <span class="built_in">int</span>();</span><br><span class="line"><span class="comment">//allocate an int, initialized to 5</span></span><br><span class="line"><span class="type">int</span> * p3 =  <span class="keyword">new</span> <span class="built_in">int</span>(<span class="number">5</span>); </span><br><span class="line"><span class="comment">//allocate an int, initialized to 0</span></span><br><span class="line"><span class="type">int</span> * p4 =  <span class="keyword">new</span> <span class="type">int</span>&#123;&#125;;<span class="comment">//C++11    </span></span><br><span class="line"><span class="comment">//allocate an int, initialized to 5</span></span><br><span class="line"><span class="type">int</span> * p5 =  <span class="keyword">new</span> <span class="type">int</span> &#123;<span class="number">5</span>&#125;;<span class="comment">//C++11</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//allocate a Student object, default initializer</span></span><br><span class="line">Student * ps1 = <span class="keyword">new</span> Student;</span><br><span class="line"><span class="comment">//allocate a Student object, initialize the members</span></span><br><span class="line">Student * ps2 = <span class="keyword">new</span> Student &#123;<span class="string">&quot;Yu&quot;</span>, <span class="number">2020</span>, <span class="number">1</span>&#125;; <span class="comment">//C++11</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//allocate 16 int, default initializer (do nothing) </span></span><br><span class="line"><span class="type">int</span> * pa1 = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">16</span>];</span><br><span class="line"><span class="comment">//allocate 16 int, zero initialized </span></span><br><span class="line"><span class="type">int</span> * pa2 = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">16</span>]();</span><br><span class="line"><span class="comment">//allocate 16 int, zero initialized </span></span><br><span class="line"><span class="type">int</span> * pa3 = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">16</span>]&#123;&#125;; <span class="comment">//C++11</span></span><br><span class="line"><span class="comment">//allocate 16 int, the first 3 element are initialized to 1,2,3, the rest 0</span></span><br><span class="line"><span class="type">int</span> * pa4 = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">16</span>]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;; <span class="comment">//C++11</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//allocate memory for 16 Student objects, default initializer</span></span><br><span class="line">Student * psa1 = <span class="keyword">new</span> Student[<span class="number">16</span>];</span><br><span class="line"><span class="comment">//allocate memory for 16 Student objects, the first two are explicitly initialized</span></span><br><span class="line">Student * psa2 = <span class="keyword">new</span> Student[<span class="number">16</span>]&#123;&#123;<span class="string">&quot;Li&quot;</span>, <span class="number">2000</span>,<span class="number">1</span>&#125;, &#123;<span class="string">&quot;Yu&quot;</span>, <span class="number">2001</span>,<span class="number">1</span>&#125;&#125;; <span class="comment">//C++11</span></span><br></pre></td></tr></table></figure>
+<h2 id="textttdelete"><span
+class="math inline">\(\texttt{delete}\)</span></h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//deallocate memory</span></span><br><span class="line"><span class="keyword">delete</span> p1;</span><br><span class="line"><span class="comment">//deallocate memory</span></span><br><span class="line"><span class="keyword">delete</span> ps1;</span><br><span class="line"></span><br><span class="line"><span class="comment">//deallocate the memory of the array</span></span><br><span class="line"><span class="keyword">delete</span> pa1;</span><br><span class="line"><span class="comment">//deallocate the memory of the array</span></span><br><span class="line"><span class="keyword">delete</span> []pa2;</span><br><span class="line"></span><br><span class="line"><span class="comment">//deallocate the memory of the array, and call the destructor of the first element</span></span><br><span class="line"><span class="keyword">delete</span> psa1;</span><br><span class="line"><span class="comment">//deallocate the memory of the array, and call the destructors of all the elements</span></span><br><span class="line"><span class="keyword">delete</span> []psa2;</span><br></pre></td></tr></table></figure>
+<p>养成用 <code>delete []</code> 的习惯是比较安全的</p>
+<h1 id="chapter6-7-functions">Chapter6-7 Functions</h1>
+<blockquote>
+<p>第六章、函数</p>
+<p>1、函数的定义 2、函数的返回值（本质就是值复制）
+3、函数的参数（深拷贝与浅拷贝
+也就是对应大的值传递还是地址传递地问题。最终在实际中的体现就是深拷贝在函数里面的修改会对外面的参数有影响。）
+4、函数的声明与使用（通常函数编辑的时候，首先在入口处要对参数进行各种检查，这样可以避免出现BUG）
+5、引用：相比较于指针，引用一定要初始化，会更加的安全。
+6、内联函数，就是以空间换时间的作用；</p>
+<p>第七章、函数的扩展：默认参数问题以及函数模板等等
+1、默认参数都是从后面开始写的；
+2、函数的重载：函数名相同，签名不同的函数，主要的作用就是在调用的时候能根据参数的传入不同，调用不同的函数体。
+3、函数模板：本质上就是泛型，类似于C#中的泛型，在定义的时候是不会生成代码，在实例化的时候才生成真正的代码。
+多态的本质就是延迟定义，这样可以让程序变得更加灵活。 4、函数指针：
+就是指向函数的指针。
+类似于C#中的委托，这样做到深层次可以实现事件进行异步通讯。 5、函数引用：
+6、递归函数：优点就是可以让复杂程序变得简单，比如树的遍历等等；缺点就是占据内存高，计算复杂度高，同时耗时且理解困难。</p>
+</blockquote>
+<p>The parameters should be checked first!!</p>
+<p>好的风格是先声明，否则要不断调整函数的顺序</p>
+<p>一般把函数的声明放在头文件里</p>
+<h2 id="function-calling">Function Calling</h2>
+<ul>
+<li>应用程序执行的时候实际上是二进制指令一条条地往CPU里面搬，每一段代码都是一条条指令。</li>
+<li>当碰到函数时，因为函数的指令不一定和当前执行的指令放在一起的，那么在执行函数时会跳到其他位置去执行，在跳之前一般要保存当前的状态，即各种数据入栈。</li>
+<li>执行完函数之后从栈中取出各种数据。拿到函数返回值（如果有），继续执行原来的代码。</li>
+<li>程序执行的代价就是各种数据的出入栈的花费，如果函数非常复杂那么代价可以忽略不计，如果是简单的函数又频繁调用代价就大了，这时候可以设为内联函数。</li>
+</ul>
+<h2 id="references">References</h2>
+<blockquote>
+<p>an alias to an already-existing variable/object</p>
+</blockquote>
+<ul>
+<li>A reference <strong>must</strong> be initialized after its
+declaration.</li>
+<li>References are much safer.</li>
+<li>Affecting the original object, to avoid this, add <code>const</code>
+modifier.</li>
+<li>Higher efficiency without data copying.</li>
+</ul>
+<h2 id="multiple-return-values">Multiple Return Values</h2>
+<ul>
+<li>such as matrix addition function</li>
+<li>A suggested prototype
+<ul>
+<li>To use references to avoid data copying</li>
+<li>To use const parameters to avoid input data being modified</li>
+<li>To use non-const reference parameters to receive the output</li>
+</ul></li>
+</ul>
+<h2 id="inline-functions">Inline Functions</h2>
+<ul>
+<li><p>inline 只是对编译器的一种建议</p></li>
+<li><p>内联后的代码大概如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> num1 = <span class="number">20</span>;</span><br><span class="line">    <span class="type">int</span> num2 = <span class="number">30</span>;</span><br><span class="line">    <span class="type">int</span> maxv =</span><br><span class="line">    &#123; <span class="keyword">if</span> (num1 &gt; num2)</span><br><span class="line">        <span class="keyword">return</span> num1;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> num2; &#125;</span><br><span class="line">    maxv =</span><br><span class="line">    &#123; <span class="keyword">if</span> (numn &gt; maxv)</span><br><span class="line">        <span class="keyword">return</span> numn;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> maxv; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="default-arguments">Default Arguments</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">float</span> <span class="title">norm</span><span class="params">(<span class="type">float</span> x, <span class="type">float</span> y, <span class="type">float</span> z = <span class="number">0</span>)</span></span>;</span><br><span class="line"><span class="comment">// z is parameter, 0 is argument</span></span><br></pre></td></tr></table></figure>
+<p>只能从尾部开始，只能定义一次，效果可以叠加</p>
+<h2 id="function-overloading">Function Overloading</h2>
+<p>返回值不参与比较，两个参数列表相同但返回值不同的函数被认为是同一个函数。</p>
+<h2 id="function-templates">Function Templates</h2>
+<p>编译器不会为模板函数生成机器指令，因为不知道具体的类型，只有模板实例化时才会生成机器指令。</p>
+<p>函数模板实例化：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function">T <span class="title">sum</span><span class="params">(T x, T y)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The input type is &quot;</span> &lt;&lt; <span class="built_in">typeid</span>(T).<span class="built_in">name</span>() &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// instantiates explictly</span></span><br><span class="line"><span class="keyword">template</span> <span class="type">double</span> <span class="built_in">sum</span>&lt;<span class="type">double</span>&gt;(<span class="type">double</span>, <span class="type">double</span>);</span><br><span class="line"><span class="keyword">template</span> <span class="type">char</span> sum&lt;&gt;(<span class="type">char</span>, <span class="type">char</span>);</span><br><span class="line"><span class="function"><span class="keyword">template</span> <span class="type">int</span> <span class="title">sum</span><span class="params">(<span class="type">int</span>, <span class="type">int</span>)</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="specialization">Specialization</h2>
+<p>特化</p>
+<p>如对于结构类型：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Point</span> &#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>直接执行会报错，需要针对此类型进行特例化：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line">Point <span class="built_in">sum</span>&lt;Point&gt;(Point pt1, Point pt2) &#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The input type is &quot;</span> &lt;&lt; <span class="built_in">typeid</span>(pt1).<span class="built_in">name</span>() &lt;&lt; endl;</span><br><span class="line">    Point pt;</span><br><span class="line">    pt.x = pt1.x + pt2.x;</span><br><span class="line">    pt.y = pt1.y + pt2.y;</span><br><span class="line">    <span class="keyword">return</span> pt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意此处必须加 <code>&lt;&gt;</code></p>
+<h2 id="function-pointers">Function Pointers</h2>
+<p>指向的是指令区的数据，指向指令的地址</p>
+<p>有些时候需要用到代表某一类函数的函数指针，例如标准库容器的自定义操作</p>
+<p>还有一种是把函数作为参数传入另一个函数作为<strong>回调函数</strong>，如
+<code>qsort</code> 的调用</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">float</span> <span class="title">norm_l1</span><span class="params">(<span class="type">float</span> x, <span class="type">float</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="type">float</span> <span class="title">norm_l2</span><span class="params">(<span class="type">float</span> x, <span class="type">float</span> y)</span></span>;</span><br><span class="line"><span class="built_in">float</span> (*norm_ptr)(<span class="type">float</span> x, <span class="type">float</span> y);</span><br><span class="line">norm_ptr = norm_l1; <span class="comment">// pointing</span></span><br><span class="line">norm_ptr = &amp;norm_l2;</span><br><span class="line"><span class="type">float</span> len1 = <span class="built_in">norm_ptr</span>(<span class="number">-3.0f</span>, <span class="number">4.0f</span>); <span class="comment">// invoking</span></span><br><span class="line"><span class="type">float</span> len1 = (*norm_ptr)(<span class="number">-3.0f</span>, <span class="number">4.0f</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="function-references">Function References</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">float</span> <span class="title">norm_l1</span><span class="params">(<span class="type">float</span> x, <span class="type">float</span> y)</span></span>;</span><br><span class="line"><span class="function"><span class="type">float</span> <span class="title">norm_l2</span><span class="params">(<span class="type">float</span> x, <span class="type">float</span> y)</span></span>;</span><br><span class="line"><span class="built_in">float</span> (&amp;norm_ref)(<span class="type">float</span> x, <span class="type">float</span> y) = norm_l1;</span><br></pre></td></tr></table></figure>
+<p>当然函数引用越少越好</p>
+<h2 id="recursive-functions">Recursive Functions</h2>
+<h1 id="chapter8-optimizations">Chapter8 Optimizations</h1>
+<blockquote>
+<p>第八章、Arm下的C++和C编程</p>
+<p>1、平台不一样 2、如何让程序加速？ 本质就是三点：短，简单，高效；
+主要包括以下几点：A、算法合适；B、代码简洁；C、内存优化；D、避免内存复制；E、循环里面不要使用printf、cout
+F、可以使用查表法；G、SIMD,OPENMP自带的加速机制；
+3、如何避免内存的复制？</p>
+</blockquote>
+<ol type="1">
+<li>优化算法，从算法的时间复杂度、空间复杂度方面考虑优化算法。</li>
+<li>现在的编译器非常强大，把代码写得简洁以便编译器可以优化。</li>
+<li>考虑内存操作的影响。计算机的储存机制是分层的，最慢的、储存量最大的是磁盘，读取数据时会（计时用户只需要读取少量数据也会）一次性读取大量数据到内存，再一层层读到
+cache 里面，所以读写数据时如果数据的地址是连续的就会很快。</li>
+<li>避免拷贝大的对象。</li>
+<li>尽可能不要再循环里面打印内容。</li>
+<li>查表法。比如 sin()、cos()
+这些计算很费时间，可以计算出其常用的值存到数组，可以大大提高效率。处理复杂操作可以考虑使用。</li>
+</ol>
+<h1 id="chapter9-basics-of-classes">Chapter9 Basics of Classes</h1>
+<blockquote>
+<p>第九章、类与对象</p>
+<p>1、类：类成员变量以及类成员方法；
+2、文件结构设计：头文件（.hpp），函数具体实现（.cpp），主函数实现（main.cpp）
+3、构造函数以及析构函数 4、this 指针：指定当前的对象 5、const 成员与
+static 成员</p>
+</blockquote>
+<p>操作结构时要非常小心数据取值和地址越界问题</p>
+<h2 id="access-specifier">Access Specifier</h2>
+<p>成员默认是 <code>private</code></p>
+<h2 id="member-functions">Member Functions</h2>
+<p>成员函数可以在类里也可以在类外。可以仅在类中放函数声明</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// member-function.cpp</span></span><br></pre></td></tr></table></figure>
+<p>类中定义的函数默认是 <code>inline</code> 函数</p>
+<p>建议：</p>
+<ul>
+<li>简单且适合内联的函数放在类内</li>
+<li>操作复杂的函数建议放到类的外部</li>
+</ul>
+<h2 id="file-structure">File Structure</h2>
+<p>将类的声明放到头文件</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Chapter9/files</span></span><br></pre></td></tr></table></figure>
+<h2 id="constructors">Constructors</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// constructor.cpp</span></span><br></pre></td></tr></table></figure>
+<h2 id="destructors">Destructors</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// destructor.cpp</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>加波浪线 <code>~</code></li>
+<li>不允许重载</li>
+<li>无参数无返回值</li>
+</ul>
+<h2 id="textttthis-pointer"><span
+class="math inline">\(\texttt{this}\)</span> pointer</h2>
+<p>表示当前对象</p>
+<blockquote>
+<p>类似 Python 的 self</p>
+</blockquote>
+<h3 id="textttconst-and-textttstatic-members"><span
+class="math inline">\(\texttt{const}\)</span> and <span
+class="math inline">\(\texttt{static}\)</span> members</h3>
+<ul>
+<li><span class="math inline">\(\texttt{const}\)</span> variables</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> * p_int;</span><br><span class="line"><span class="type">int</span> <span class="type">const</span> * p_int;</span><br><span class="line"><span class="comment">// 相同，指针指向的内容不能通过指针修改</span></span><br><span class="line"><span class="type">int</span> * <span class="type">const</span> p_int;</span><br><span class="line"><span class="comment">// 指针一定指向某个不可修改的地址</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><span class="math inline">\(\texttt{static}\)</span> members</li>
+</ul>
+<h1 id="chapter10-advances-in-classes">Chapter10 Advances in
+Classes</h1>
+<blockquote>
+<p>第十章、运算符重载</p>
+<p>1、运算符重载的主要目的是简化程序
+2、友元函数：函数的朋友，可以不受限类的约束，因为它不是类的成员；
+3、类型转换：在运算符重载的过程中，通常会遇到各种类型的转换，注意最好使用显式转换，不建议使用隐式转换。
+4、自增与自减运算符的重载： 可以让代码更加地简洁；</p>
+</blockquote>
+<h2 id="textttfriend-functions"><span
+class="math inline">\(\texttt{friend}\)</span> functions</h2>
+<ul>
+<li>在类中声明</li>
+<li>有权限访问类的所有成员</li>
+<li><strong>不是</strong>类的成员，所以在类外定义的时候不加
+<code>classname::</code></li>
+<li><strong>可以用来重定义输入输出操作，类似 Java 中的
+<code>toString</code></strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.cpp time.hpp</span></span><br></pre></td></tr></table></figure>
+<h2 id="user-defined-type-conversion">User-defined Type Conversion</h2>
+<p>一行定义并初始化会调用构造函数，而先定义不初始化后面再赋值会调用赋值运算符</p>
+<h2 id="increment-and-decrement-operators">Increment and Decrement
+Operators</h2>
+<figure>
+<img src="Images/operators-can-be-overloaded.png"
+alt="operators-can-be-overloaded" />
+<figcaption aria-hidden="true">operators-can-be-overloaded</figcaption>
+</figure>
+<h1 id="chapter11-dynamic-memory-management-in-classes">Chapter11
+Dynamic Memory Management in Classes</h1>
+<blockquote>
+<p>第十一章、类的动态内存操作 1、默认构造函数： 2、动态内存的例子；
+3、内存泄漏的解法； 4、软拷贝 5、智能指针可以自动释放内存；
+（只管申请，不管释放：本质就是模板类，在析构函数中根据引用次数减少到指定值时（比如到0时）就会自动删除delete[]从而释放内存。）</p>
+</blockquote>
+<h2 id="default-operations">Default Operations</h2>
+<ul>
+<li>默认构造函数</li>
+<li>隐式定义的析构函数</li>
+<li>默认拷贝构造函数</li>
+<li>默认拷贝赋值运算符</li>
+</ul>
+<h2 id="an-example-with-dynamic-memory">An Example with Dynamic
+Memory</h2>
+<h2 id="hard-copy">Hard Copy</h2>
+<ul>
+<li>自定义拷贝构造函数</li>
+<li>自定义拷贝运算符重载使指针指向自己申请的内存。</li>
+</ul>
+<h2 id="soft-copy">Soft Copy</h2>
+<blockquote>
+<p>Hard copy 的时间和空间代价较高</p>
+</blockquote>
+<ul>
+<li>浅拷贝，使用引用计数。</li>
+</ul>
+<h2 id="smart-pointers">Smart Pointers</h2>
+<ul>
+<li><span class="math inline">\(\texttt{std::shared\_ptr}\)</span></li>
+</ul>
+<p>​ 允许多个对象同时指向一块内存，当没有指针指向这块内存时会被销毁</p>
+<ul>
+<li><span class="math inline">\(\texttt{std::unique\_ptr}\)</span></li>
+</ul>
+<p>​ 不允许和别人分享</p>
+<h1 id="chapter12-class-inheritance">Chapter12 Class Inheritance</h1>
+<blockquote>
+<p>第十二章、改善你的源代码
+1、一些建议：A、使用size_t代替int;B、矩阵拷贝不适用双层循环，使用内存可能更好；C、使用一维数组，而不是使用二维数组。D、不要使用太多的循环结构；E、多对输入参数进行检查，这样可以避免更多的bug.F、将代码写得更加具有可移植性，这样可以方便拓展；G、文件命名规则；H、代码优化无止境。
+2、头文件里面应用了单例模式； 3、代码最好要做到高内聚低耦合。
+4、派生类：子类继承父类的所有特性，先执行父类的构造函数，析构函数则是相反。
+5、访问权限的控制：private,public,protected具有不同的访问权限与范围。
+6、虚函数：虚函数就是在父类中进行申明，在子类中进行实现与重写。这样可以实现多态，延迟定义：
+在C#中，虚函数是一种很好的抽象，著名的抽象工厂，抽象方法以及抽象类也是类似于这种思想实现的。
+虚函数的本质就是动态绑定，非虚函数就是静态绑定。
+7、析构函数一定是虚函数。 8、静态与动态的内存申请：
+9、opencv中的实例；</p>
+</blockquote>
+<h2 id="suggestions-to-project3-2021">Suggestions to Project3 2021</h2>
+<ul>
+<li>用 <span class="math inline">\(\texttt{size\_t}\)</span>
+表达行数和列数</li>
+<li>用 <span class="math inline">\(\texttt{memcpy}\)</span>
+完成矩阵的拷贝</li>
+<li>数据检查是减少程序调试时间最重要的一点</li>
+<li><strong>做Project一定要作为一种艺术</strong></li>
+</ul>
+<h2 id="reference-implementation">Reference Implementation</h2>
+<ul>
+<li>第二次申请失败的可能性较高：多次申请内存可能导致泄露</li>
+<li>不能第二次申请失败就直接返回，需要把第一次申请的内存释放掉</li>
+<li>申请矩阵和矩阵加法分开实现，在加法函数内部调用申请函数，分工明确</li>
+<li>用 bool 表示成功与否，相加的结果放在参数中返回</li>
+<li>在写代码时多写 debug
+信息，产品交付时要少，否则容易被攻击者猜测实现方案</li>
+<li>不要依赖编译器的优化，自己能做就尽量做掉</li>
+</ul>
+<h2 id="derived-classes">Derived Classes</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Base</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> a;</span><br><span class="line">    <span class="type">int</span> b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span> : <span class="keyword">public</span> Base &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> c;</span><br><span class="line">    <span class="built_in">Derived</span>(<span class="type">int</span> c) : <span class="built_in">Base</span>(c<span class="number">-2</span>, c<span class="number">-1</span>), <span class="built_in">c</span>(c) &#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Constructors
+<ul>
+<li>先执行父类的构造函数</li>
+</ul></li>
+<li>Destructors
+<ul>
+<li>先执行子类的析构函数</li>
+</ul></li>
+</ul>
+<p>对基类数据的保护程度：public &lt; protected &lt; private</p>
+<ol type="1">
+<li>基类中的私有数据：三种方式都不能访问。</li>
+<li>基类中的 protected 数据：以 public、protected
+方式继承，该数据在子类还是 protected 的；以private
+方式继承，该数据在子类中是不可直接访问的（可以通过父类间接访问）。</li>
+<li>基类中的 public 数据：以 public 方式继承，该数据在子类是 public
+的，以 protected 方式继承，该数据在子类中是 protected 的，以 private
+方式继承，该数据在子类中是不可直接访问的。</li>
+</ol>
+<h2 id="virtual-functions">Virtual Functions</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// virtual.cpp</span></span><br></pre></td></tr></table></figure>
+<p>虚函数用于多态</p>
+<p>其区别在于绑定</p>
+<ul>
+<li>静态绑定：编译器在编译期确定调用哪个函数</li>
+<li>动态绑定：在运行时根据传入参数的类型确定执行的函数。</li>
+</ul>
+<p>动态绑定原理：一旦定义了虚函数，类的成员变量会多出一个指向自身函数表的指针，这个成员变量是类的第一个成员变量。执行时查虚函数表确定实际执行的函数。</p>
+<p>析构函数一定是虚函数，否则调用析构函数时只会调用父类的析构函数。</p>
+<h2 id="inheritance-and-dynamic-memory-allocation">Inheritance and
+Dynamic Memory Allocation</h2>
+<p>如果基类使用了动态内存分配，并且重写了拷贝构造函数和赋值运算符</p>
+<ul>
+<li>子类不使用动态内存分配，无需特殊操作</li>
+<li>子类使用动态内存分配，需要重写拷贝构造函数和赋值运算符</li>
+</ul>
+<h1 id="chapter13-class-templates-and-std-library">Chapter13 Class
+Templates and std Library</h1>
+<blockquote>
+<p>第十三章、类模板和标准库
+1、类模板是最近C++标准推出的功能，主要也就是泛型在类上面的实现。
+2、可以更加灵活地调用类，泛型（模板）的出现主要就是延迟创建，让使用变得更加方便；</p>
+<p>3、模板还可以相互继承； 4、C++中有很多的标准类模板；</p>
+</blockquote>
+<h2 id="review-function-templates">Review: Function Templates</h2>
+<p>是一个空壳子，编译器对空壳子不做任何事情。只有在实例化以后才会做事</p>
+<p>Function Templates：空壳子</p>
+<p>Template Functions：函数模板初始化后的具体函数</p>
+<p><code>= delete</code> 表示不调用默认生成的函数</p>
+<h2 id="template-non-type-parameters">Template non-type Parameters</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="type">size_t</span> rows, <span class="type">size_t</span> cols&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Mat</span> &#123;</span><br><span class="line">    T data[rows][cols];</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Mat</span>()&#123;&#125;</span><br><span class="line">    <span class="function">T <span class="title">getElement</span><span class="params">(<span class="type">size_t</span> r, <span class="type">size_t</span> c)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">setElement</span><span class="params">(<span class="type">size_t</span> r, <span class="type">size_t</span> c, T value)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>rows</code>、<code>cols</code> 在编译的时候就确定了：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">Mat&lt;<span class="type">int</span>, <span class="number">3</span>, <span class="number">3</span>&gt; vec;</span><br></pre></td></tr></table></figure>
+<h2 id="class-template-specialization">Class Template
+Specialization</h2>
+<p>我非要用 <code>bool</code> 类型实例化对操作内容为完整字节的模板类</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// specialization.cpp</span></span><br></pre></td></tr></table></figure>
+<h2 id="textttstd-classes"><span
+class="math inline">\(\texttt{std}\)</span> classes</h2>
+<ul>
+<li><span class="math inline">\(\texttt{std::string}\)</span></li>
+<li><span class="math inline">\(\texttt{std::array}\)</span></li>
+<li><span class="math inline">\(\texttt{vector}\)</span></li>
+<li><span class="math inline">\(\texttt{list}\)</span></li>
+<li><span class="math inline">\(\texttt{set}\)</span></li>
+<li><span class="math inline">\(\texttt{map}\)</span></li>
+<li><span class="math inline">\(\texttt{stack}\)</span></li>
+</ul>
+<h1 id="chapter14-error-handling">Chapter14 Error Handling</h1>
+<blockquote>
+<p>第十四章、错误处理机制 1、cin ,cout,cerr等不同的信息输出到多管道中；
+2、assert 是一个宏，不是一个标准；
+3、exception异常，通常使用try……catch对不同的异常进行捕获。
+4、还有更多的异常捕获机制，就是对应于不同的异常进行捕获，然后进行相应的处理。</p>
+</blockquote>
+<h2 id="standard-output-stream-and-standard-error-stream">Standard
+Output Stream and Standard Error Stream</h2>
+<p>在输出很多的时候可以通过管道重定向到文件，不重定向都会输出到控制台</p>
+<p>一些操作：</p>
+<h2 id="assert">assert</h2>
+<p><span class="math inline">\(\texttt{assert}\)</span>
+是一个像函数的宏定义，定义在 <span
+class="math inline">\(\texttt{&lt;assert.h&gt;}\)</span> 和 <span
+class="math inline">\(\texttt{&lt;cassert&gt;}\)</span> 头文件中</p>
+<p>条件不满足会做相应的处理，并调用 <span
+class="math inline">\(\texttt{abort()}\)</span> 函数终止程序</p>
+<p>如果在产品发布时想去掉 assert 信息，可以在文件中定义
+<code>NDEBUG</code> 或者在编译时定义一个宏</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">g++ assert.cpp -DNDEBUG</span><br></pre></td></tr></table></figure>
+<h2 id="exceptions">Exceptions</h2>
+<p>几种可能的处理方式：</p>
+<ul>
+<li>直接 kill 程序</li>
+<li>用返回值表示成功与否，缺点是需要引入额外的参数</li>
+<li>抛出异常</li>
+</ul>
+<p><span class="math inline">\(\texttt{throw}\)</span>
+应该会跳过后续的执行语句</p>
+<p>函数层层调用，最内层的函数抛出异常，如果外层的函数不捕获异常，那么异常会层层往外扔直到主函数，如果到最后异常没有被捕获那么程序会被kill。</p>
+<h2 id="catch-all-handler">Catch-all Handler</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">catch</span>(...) <span class="comment">// 这里就是...</span></span><br></pre></td></tr></table></figure>
+<p>三个点表示匹配任何异常，即任何扔到主函数的异常都被捕获，可防止程序被kill。</p>
+<h2 id="exceptions-and-inheritance">Exceptions and Inheritance</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// derived.cpp</span></span><br></pre></td></tr></table></figure>
+<h2 id="textttstdexception"><span
+class="math inline">\(\texttt{std::exception}\)</span></h2>
+<p>是标准库定义的标准异常类，可以重写 <span
+class="math inline">\(\texttt{std::exception::what()}\)</span>
+方法返回一个字符串</p>
+<p>当new申请内存失败时，默认会抛出异常。</p>
+<h2 id="exception-specifications-and-textttnoexcept">Exception
+Specifications and <span
+class="math inline">\(\texttt{noexcept}\)</span></h2>
+<p>如果抛出异常编译期就会出错</p>
+<h2 id="textttnothrow-new"><span class="math inline">\(\texttt{nothrow
+new}\)</span></h2>
+<p><span class="math inline">\(\texttt{std::nothrow}\)</span></p>
+<h1 id="chapter15-nested-classes-and-rtti">Chapter15 Nested Classes and
+RTTI</h1>
+<blockquote>
+<p>第十五章、拓展的C++知识
+1、友元类：友元函数不是成员函数。友元类可以调用基类的私有成员；
+2、Nested types嵌套：
+3、RTTI和不同的数据类型转换：（记住一点那就是最好使用显式转换，不然出现信息都是都是容易造成bug的问题的出现。）
+4、</p>
+</blockquote>
+<h2 id="textttfriend-classes"><span
+class="math inline">\(\texttt{friend}\)</span> Classes</h2>
+<p>友元类可以访问类的私有成员。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// friend.cpp</span></span><br></pre></td></tr></table></figure>
+<h2 id="textttfriend-member-functions"><span
+class="math inline">\(\texttt{friend}\)</span> Member Functions</h2>
+<p>限制友元类只有一部分函数可以访问类的私有成员：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>编译时如果遇到“死锁”，考虑将类的声明和类的成员函数声明先写出，后续补充其定义。</p>
+<h2 id="nested-types">Nested Types</h2>
+<h2 id="rtti-and-type-cast-operators">RTTI and Type Cast Operators</h2>
+<p>RTTI: Runtime Type Identification</p>
+<ul>
+<li><span
+class="math inline">\(\texttt{dynamic\_cast}\)</span>：将<strong>多态类型</strong>进行转换</li>
+<li><span class="math inline">\(\texttt{typeid}\)</span>：返回类型
+id</li>
+<li><span
+class="math inline">\(\texttt{type\_info}\)</span>：返回的对象</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// typeid.cpp</span></span><br></pre></td></tr></table></figure>
+<h2 id="more-type-cast-operators">More Type Cast Operators</h2>
+<ul>
+<li><span class="math inline">\(\texttt{const\_cast}\)</span></li>
+<li><span class="math inline">\(\texttt{static\_cast}\)</span></li>
+<li><span class="math inline">\(\texttt{reinterpret\_cast}\)</span></li>
+</ul>
+<h1 id="appendix">Appendix</h1>
+<blockquote>
+<p>附录 1、OPENBLAS项目创始人介绍如何进行代码优化：1、局部性原理2、GEMM
+2、OPENCV中国区域负责人：Vadim Pisarevsky与于教授的对答环节：</p>
+</blockquote>
+<h2
+id="interview-with-vadim-pisarevsky-on-class-textttcvmat-in-opencv">Interview
+with Vadim Pisarevsky on class <span
+class="math inline">\(\texttt{cv::Mat}\)</span> in OpenCV</h2>
+<ol type="1">
+<li>（长久来看）建议关注算法、概念、技术，而不是特定的特性或者编程语言本身。</li>
+<li>不要尝试把你学到的花哨功能全部用到开发上，因为过一段时间你可以就都不懂你的代码了。</li>
+<li>“当程序员避免使用原始指针而使用智能指针等封装好的结构，内存泄漏的问题就降到几乎为零”</li>
+<li>c++语言变得越来越复杂，但应该形成自己的提高程序稳定性的方法论，比如：</li>
+</ol>
+<ul>
+<li>尽量不要手动管理内存，使用已有的容器。</li>
+<li>在重构和优化之前要进行回归测试。</li>
+<li>写代码时应注意让程序更容易调试，不要用复杂的语言结构（代码应该越简单越好）。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>S5</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>Notes</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
 </search>
