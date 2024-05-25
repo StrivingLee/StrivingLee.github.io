@@ -170,6 +170,364 @@ fflush（对于写操作打开的文件，fflush
       </tags>
   </entry>
   <entry>
+    <title>OO Pre Review</title>
+    <url>/OO-Pre-Review/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面">写在前面</h2>
+<blockquote>
+<p>OO Pre 的学期总结，痛并快乐着</p>
+</blockquote>
+<span id="more"></span>
+<p>[TOC]</p>
+<p>也记得找jsgg debug的时候，他说：你push到仓库里，我明天帮你看看</p>
+<p>可惜我当时甚至还没学会用idea进行版本管理</p>
+<h2 id="pre0_task1">Pre0_task1</h2>
+<blockquote>
+<p>本次目标：完成git和idea的安装，学习其基本用法</p>
+</blockquote>
+<p>题外话，Git 这东西真的魔力很大，但是确实也有点难学</p>
+<p>课程组推荐给大家的我也推荐给大家（</p>
+<h3 id="git-相关">Git 相关：</h3>
+<ol type="1">
+<li><p><a href="https://juejin.cn/post/6844904191203213326">Git 使用心得
+&amp; 常见问题整理</a></p></li>
+<li><p><a
+href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰老师的 Git
+教程</a></p></li>
+<li><p><a href="https://learngitbranching.js.org/">Git
+基础可视化教程</a> 与 <a
+href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1">Git
+进阶可视化教程</a></p></li>
+<li><p><a href="https://www.progit.cn/">Git Pro</a></p></li>
+</ol>
+<h3 id="java相关">Java相关：</h3>
+<p><a href="https://docs.oracle.com/en/java/javase/18/docs/api/">JDK
+Document</a></p>
+<h3 id="commit-message">Commit message</h3>
+<p>可以采用插件规范自己的 <code>commit message</code>
+，摘录一些如下：（来源于<a
+href="https://blog.csdn.net/m0_46636892/article/details/122093889">陈大大的期待的CSDN博客</a>）</p>
+<p>Git Commit Template插件在使用时选择的git提交类型解释：</p>
+<blockquote>
+<p>feat
+功能feature的意思，也是最常用的。当你的功能有变更的时候，都可以采用这种类型的type</p>
+<p>fix 当然指的是bug修复</p>
+<p>docs 更新了文档，或者更新了注释</p>
+<p>style 代码格式调整，比如执行了format、更改了tab显示等</p>
+<p>refactor
+重构代码。指的是代码结构的调整，比如使用了一些设计模式重新组织了代码</p>
+<p>perf
+对项目或者模块进行了性能优化。比如一些jvm的参数改动，把stringbuffer改为stringbuilder等</p>
+<p>test 这个简单，就是增加了单元测试和自动化相关的代码</p>
+<p>build 影响编译的一些更改，比如更改了maven插件、增加了npm的过程等</p>
+<p>ci
+持续集成方面的更改。现在有些build系统喜欢把ci功能使用yml描述。如有这种更改，建议使用ci</p>
+<p>chore
+其他改动。比如一些注释修改或者文件清理。不影响src和test代码文件的，都可以放在这里</p>
+<p>revert 回滚了一些前面的代码</p>
+</blockquote>
+<h2 id="pre1_task1">Pre1_task1</h2>
+<blockquote>
+<p>本次目标：初识Java，实现一系列基础的类，并且熟悉类、属性和方法的使用</p>
+</blockquote>
+<p>本次作业只需要使用Java基础语法、容器和简单的getter、setter，以及对大数类
+<code>BigInteger</code> 用法有基本了解即可完成</p>
+<h3 id="关于容器">关于容器：</h3>
+<p>容器是好用的，容器是需要学习的</p>
+<p><strong>容器是现代程序设计非常基础而重要的手段</strong></p>
+<p>如果采用类似C语言结构体数组的写法，通过遍历数组查找所需要的信息，就不太符合Java的感觉，更好的做法是采用HashMap。概括起来就是下面这句话：</p>
+<blockquote>
+<p>不要重复造轮子！不要重复造轮子！不要重复造轮子！</p>
+</blockquote>
+<h3 id="关于面向对象">关于面向对象：</h3>
+<blockquote>
+<p>面向对象是一种主流的软件开发方法，也是一种思维方式，其核心是识别类，并在类之间建立层次式的协作关系。</p>
+</blockquote>
+<p>有兴趣的同学也可以看这篇读书笔记——《面向对象是如何工作的（第2版）》读书笔记</p>
+<p><del>啊当然也是还在紧锣密鼓地筹备当中辣</del></p>
+<h3 id="关于构造函数constructor">关于构造函数Constructor</h3>
+<p>一个压行的方法是将参数传入constuctor，省去了多次调用set方法</p>
+<blockquote>
+<p>关于构造函数的理解：</p>
+<p>构造函数的用途是在你需要创建一个对象的时候完成一些初始化工作，并给对象的所有属性赋予初始值。</p>
+<p>也就是这两步：①创建这个对象 ②给这个对象部分初始化</p>
+</blockquote>
+<p>一个愚蠢的压行方法：不用中间变量存储读入，直接将读入传入</p>
+<p>详细说明如下<del>，但是貌似不符合软工要求</del></p>
+<p>有条理的写法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> ...</span><br><span class="line">    </span><br><span class="line"><span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"><span class="type">String</span> <span class="variable">userId</span> <span class="operator">=</span> in.next();</span><br><span class="line"><span class="type">String</span> <span class="variable">bottleId</span> <span class="operator">=</span> in.next();</span><br><span class="line">function(userId, bottleId);</span><br></pre></td></tr></table></figure>
+<p>不太好的压行写法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> ...</span><br><span class="line">    </span><br><span class="line"><span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">function(in.next(), in.next());</span><br></pre></td></tr></table></figure>
+<h3 id="多说一嘴">多说一嘴</h3>
+<p>为什么 ArrayList
+可以存不同的对象呢？（这会在本单元第2、3次作业中有所体现），记住Java中一句非常重要的话：<code>Everything is reference</code>
+，这会帮助你理解很多问题</p>
+<p>什么、不太明白，请耐心看下去哦~</p>
+<p>toString() 方法</p>
+<p>操作10要求输出特定的<code>Bottle</code>类型实例的属性，建议在
+<code>Bottle</code> 类中重写<code>toString</code> 方法，示例如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Bottle</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> id;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="meta">@Override</span> <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;The bottle&#x27;s id is &quot;</span> + id + <span class="string">&quot;.&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] argv)</span> &#123;</span><br><span class="line">        <span class="type">Bottle</span> <span class="variable">bottle</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Bottle</span>();</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">        System.out.println(bottle);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出 : The bottle&#x27;s id is 1.</span></span><br></pre></td></tr></table></figure>
+<p><code>java.io.PrintStream.println(Object x)</code>函数将调用<code>String.valueOf(x)</code>以获得实例<code>x</code>的字符串描述，而<code>java.lang.String.valueOf(Object x)</code>函数将在<code>x</code>不为<code>null</code>时返回<code>x.toString()</code>，因此我们可以通过重写<code>toString</code>方法使<code>println</code>函数输出自定义格式的“实例属性”。详见
+<a
+href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/io/PrintStream.html#println()">println()
+- JDK Documentation</a> 和 <a
+href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/String.html#valueOf(java.lang.Object)">valueOf()
+- JDK Documentation</a> 。</p>
+<blockquote>
+<p>简而言之这个 toString() 就是对象的字符串描述，println() 会打印它</p>
+</blockquote>
+<h2 id="pre1_task2">Pre1_task2</h2>
+<blockquote>
+<p>本次目标：多态和继承的练习，以及了解工厂模式</p>
+</blockquote>
+<p><del>虽然我没写出来工厂模式，但是我觉得这很漂亮，很符合我对设计模式的想象</del></p>
+<p><del>工厂模式可以看我的另一篇博客（啊写好了会post上来的，问就是还在紧锣密鼓地筹备当中）</del></p>
+<h3 id="一继承">一、继承</h3>
+<blockquote>
+<p>继承就是定义子类继承父类的特征和行为，使得子类可以拥有父类的属性和方法，从而起到代码复用的目的。</p>
+<p><strong>从语义上来说，在 <code>A</code> 和 <code>B</code> 类型满足
+<em>is-a</em> 关系（A is a B），即<code>A</code> 类型是 <code>B</code>
+类型的一种时，可以使用继承来在程序表述。</strong></p>
+</blockquote>
+<h3 id="二向上转型upcasting">二、向上转型（Upcasting）</h3>
+<blockquote>
+<p>在建立了继承关系之后，可以使用<strong>父类型</strong>去引用通过<strong>子类型</strong>创建的对象。</p>
+</blockquote>
+<p>在调用构造函数的时候会涉及先后问题，这里要注意，是先调用父类的构造函数，再调用子类的构造函数，具体代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 父类构造函数</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Equipment</span><span class="params">(<span class="type">int</span> tmpId, String tmpName, <span class="type">long</span> tmpPrice)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.id = tmpId;</span><br><span class="line">    <span class="built_in">this</span>.name = tmpName;</span><br><span class="line">    <span class="built_in">this</span>.price = tmpPrice;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子类构造函数</span></span><br><span class="line"><span class="comment">// public class Bottle extends Equipment</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Bottle</span><span class="params">(<span class="type">int</span> tmpId, String tmpName, <span class="type">long</span> tmpPrice,</span></span><br><span class="line"><span class="params">                  <span class="type">double</span> tmpCapacity, <span class="type">boolean</span> tmpFilled)</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>(tmpId, tmpName, tmpPrice);</span><br><span class="line">    <span class="built_in">this</span>.capacity = tmpCapacity;</span><br><span class="line">    <span class="built_in">this</span>.filled = tmpFilled;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// public class HealingPotion extends Bottle</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">HealingPotion</span><span class="params">(<span class="type">int</span> tmpId, String tmpName, <span class="type">long</span> tmpPrice,</span></span><br><span class="line"><span class="params">                         <span class="type">double</span> tmpCap, <span class="type">boolean</span> tmpFilled, <span class="type">double</span> tmpEff)</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>(tmpId, tmpName, tmpPrice, tmpCap, tmpFilled);</span><br><span class="line">    <span class="built_in">this</span>.efficiency = tmpEff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三向下转型downcasting">三、向下转型（Downcasting）</h3>
+<blockquote>
+<p>一种比较危险的行为，需要搭配 instanceof 来使用</p>
+</blockquote>
+<p>Java 语言提供了一个特殊的关键词 <code>instanceof</code>
+用来判断一个对象引用所指向的对象的创建类型是否为特定的某个类，一般写为
+<code>obj instanceof A</code>，其中 obj 为一个对象引用，A
+为一个类型（类或接口），这个表达式的取值结果为布尔型，如果 obj
+的创建类型为 A，则结果为 true，否则为 false。在这个表达式取值为 true
+的情况下，可以使用<strong>向下转型</strong> (down cast) 来使用一个 A
+类型的对象来引用obj： <code>A ao = (A)obj</code> 。注意，实际上 obj
+所指向对象的创建类型永远不会发生变化，转型的只是对象引用类型。</p>
+<p>本次作业中的应用为：哦好像没有应用，在下一个 task 里有应用</p>
+<h3 id="四对象方法的重写和复用">四、对象方法的重写和复用</h3>
+<blockquote>
+<p>有时候，具有继承关系的类的某些行为具有递进关系，但又有自己特定的行为。</p>
+<p>我们期望这两个类中实现的特定方法同名。<strong>这种让子类重新实现一个在父类中已经实现的方法是面向对象的一个重要机制，称为方法重写。</strong>方法重写获得的直接好处是让子类与父类在相应方法的调用上保持了一致性。</p>
+<p>更通俗的说，重写方法与父类方法在行为上具有相似功能，但子类重写的方法一般额外增加一些行为。</p>
+<p>在程序编写方面，一般会为重写方法标上一个@Override标签。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Course</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line">    Course(String name) &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">displayInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;这门课很难&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">OOCourse</span> <span class="keyword">extends</span> <span class="title class_">Course</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">displayInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;这门课很难&quot;</span>); <span class="comment">// 这里出现了代码拷贝，是低质量的代码</span></span><br><span class="line">        System.out.println(<span class="string">&quot;上面那句是放p&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建议更换为下面的代码：</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">OOCourse</span> <span class="keyword">extends</span> <span class="title class_">Course</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">displayInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.displayInfo(); <span class="comment">// 调用了类Course中定义的方法</span></span><br><span class="line">        System.out.println(<span class="string">&quot;上面那句是放p&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Java语言提供了一个重要的关键词<strong>super</strong>，它实际指代的是当前对象从父类继承得到的内容</p>
+<blockquote>
+<p>联想上面构造函数里的super，你甚至可以理解为，这个super会替换为这个类的父类名称，这里使用
+<code>Course.displayInfo()</code> 也是一样的效果，同理，构造函数
+<code>super(argument)</code> 也可以替换为
+<code>Course(argument)</code></p>
+</blockquote>
+<h3 id="五多态">五、多态</h3>
+<p>实际调用的方法与对象<strong>引用的类型</strong>无关，取决于被引用对象的<strong>创建类型</strong>。请看下面的代码示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Course</span> <span class="variable">c1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Course</span>();</span><br><span class="line"><span class="type">Course</span> <span class="variable">c2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">OOCourse</span>();</span><br><span class="line">c1.displayInfo();</span><br><span class="line">c2.displayInfo();</span><br></pre></td></tr></table></figure>
+<p>其中通过c1调用的实际是Course类实现的displayInfo方法，而通过c2调用的则是OOCourse类重写的displayInfo方法，但实际上c1和c2的引用类型都是Course。上面我们提到的这个特性，就叫做多态。</p>
+<p><strong>参差多态，乃是幸福本源</strong>（逃）</p>
+<h3 id="六异常处理">六、异常处理</h3>
+<blockquote>
+<p>异常：程序运行时发生了意外的事件，阻止了程序按照程序员的预期正常执行</p>
+</blockquote>
+<p>运行出错后，Java
+提供了一种优秀的解决办法：异常处理机制，它采取显式的方式处理异常，包括两个方面：</p>
+<ul>
+<li>引入了专门的表达和处理方式，代码上一目了然就能看出是异常处理；</li>
+<li>一旦发生异常，会强迫程序执行进入异常处理分支。</li>
+</ul>
+<p>在Java语言中，每个异常都被封装为Exception，异常有抛出和捕捉两种处理方式。所谓抛出，就是使用Java提供的throw关键词来产生一个Exception或者其某个子类的对象；而捕捉则是通过catch关键词来捕捉在一段代码的执行过程中所抛出的相关异常对象。</p>
+<p>课程推荐使用异常处理机制来区分处理显著不同于一般情况下的数据状态。使用异常处理可以让你的代码更加清晰易于理解，降低出现
+bug 的可能性。</p>
+<p>👆上面内容来自指导书<del>，相信我不说你也看出来了</del></p>
+<p>前面代码出现异常后，后面的代码不会执行，程序会抛出异常并结束（×）</p>
+<p>异常发生并不意味着程序终止，找到地方可以处理这个异常即可</p>
+<p>当然，当前作用域，异常后面的部分不会执行</p>
+<p>具体运行过程为：</p>
+<p><img src="..\images\exception-execution.png" /></p>
+<p>一个很全面覆盖上面流程图的例子：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayIndex</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">        a[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">g</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">h</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">100</span>) &#123;</span><br><span class="line">            g();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">k</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            h();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NullPointerException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;k()&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            k();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NullPointerException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;caught&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;main&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<p>解释：</p>
+<p>f产生异常，所处不是try，所处是函数g，返回调用者g</p>
+<p>g与f同理，返回调用者h</p>
+<p>h产生异常，所处不是try，所处是if语句，不是函数，退出到if大括号的外层，此时所处是函数，返回调用者k</p>
+<p>k产生异常，产生异常的代码块所处是try，catch异常不匹配（因为是AIOOBE），退出到外层</p>
+<p>能不能把所有代码放到一个try块里，这样啥异常都能输出啊（逃）</p>
+<p>《Core Java》的第七章相关内容请见：<del>紧锣密鼓筹备中</del></p>
+<h2 id="pre1_task3">Pre1_task3</h2>
+<h3 id="前言-碎碎念">前言 &amp; 碎碎念</h3>
+<blockquote>
+<p>这次作业真的有点难度，我也是借助了 bygg <span class="citation"
+data-cites="一个虚空的blog地址">@一个虚空的blog地址</span> 的力量才勉强
+AK 了</p>
+</blockquote>
+<p>难点主要在 deep clone 和 所属关系的复制</p>
+<p>deep clone 这里呼应了前面说的向下转型 downcasting，具体来说，需要根据
+Commodity 的类型创建对应的 Commodity 副本，此时需要用到 instanceof
+运算符</p>
+<p>具体的实现可以见代码，代码我放到 GitHub仓库 里了</p>
+<p>这里的版本控制的实现，和 Git
+的好像不大一样，先挖个坑，有空思考了回来填上</p>
+<p>一个细的点在于，不能对 Adventurer 所拥有的 Adventurer 直接 deep
+clone</p>
+<p>举个例子，A 雇佣了 B，如果 deep clone，B 使用道具后的后果不能同步给 A
+雇佣的这个 B，所以两个 B 就不一样了。这里直接 shallow
+copy即可（其实也节省了代码量）</p>
+<h2 id="pre2_task1">Pre2_task1</h2>
+<p>挺好做的，可以用捕获组，也可以用字符串类的方法，不过后面迭代比较痛苦</p>
+<p>另外，关于 substring()
+方法，建议大家多试试下标的选择。不要怕麻烦，这个地方很可能背刺你</p>
+<h2 id="pre2_task2">Pre2_task2</h2>
+<p>这次也很简单。我感觉正则的题目比第一次的大模拟还是友好不少的</p>
+<h2 id="pre2_task3">Pre2_task3</h2>
+<p>注意跨年日期的判断（可以参考我的狼人样例，能过了强测基本没问题）</p>
+<h2 id="pre3_task1">Pre3_task1</h2>
+<p>想起pre1_task3那周，我在图书馆坐了整整一周，最后还是de不出bug，果然肉眼debug的形式是不行的。</p>
+<p>建议大家自己捏一些数据</p>
+<p>我的数据也放在 GitHub仓库 里了</p>
+<p>正则表达式的题目，就建议大家多试多练多学习。我个人感觉没什么好说的，大家比我聪明，看一看就能学会</p>
+<p>我一直没学先验后验什么的，挖个坑，下学期学，下学期一定学，嗯</p>
+<h2 id="最后的最后">最后的最后</h2>
+<p>看过很多博客，还是觉得qsgg的“<strong>只有</strong>一个曲别针的小男孩”的故事最入我心</p>
+<p>小男孩经过一系列的交换，把手里的曲别针换成了别墅</p>
+<p>可我觉得这故事没什么意思，我更想看到小男孩用别墅继续交换继续交换，最后虽然损失了别墅，但是收获了远比别墅珍贵更多的东西，最后云淡风轻：“嗯，不过损失一个曲别针而已，我得到的是更大的世界”</p>
+<p>我来的时候连一个曲别针也没有，我走的时候却收获了很多故事，认识了很多朋友，收获了比别墅价值大得多的东西</p>
+<p>很多很多年以后，可能我还会想起那个新主楼的夜晚和风景，和五教二楼的美丽对拍</p>
+<p>或许要问有什么遗憾，那就是最后一次的作业赶时间没用递归下降完成。以及这门课确实有点耽误我计组的时间了，不过这都过去了</p>
+<p>他给我的最大的宝藏就是，如果方法得当，愿意多做调试愿意自己多捏数据，你能够对自己的成绩有十足的把握，每次强测之前我都有信心这次再拿100。以及，他让我知道小白也有从零开始成为金刚的权利，真的让我尝到了取得小成就的满足</p>
+<p>后面的文字写的有些仓促，主要是计组进度压上来，顶不住了，对不住各位认真读到这里的看官</p>
+<p>以及正则的题目确实不难，希望大家认真学认真练</p>
+<p>希望诸位看官能从我这堆毫无章法的文字中读出些东西</p>
+<p>如果看完什么也没看明白，那是怪我水平粗浅，与诸位无关</p>
+<p>一路顺风</p>
+]]></content>
+      <categories>
+        <category>OO</category>
+        <category>S3</category>
+      </categories>
+      <tags>
+        <tag>OO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>「BUAA-CO」 Pre</title>
+    <url>/co-pre/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>2023年Pre题目回忆版及我的3A答案回忆版</p>
+</blockquote>
+<span id="more"></span>
+<p>文件在我的 GitHub</p>
+<h2 id="supaltitude">1.supaltitude</h2>
+<p>骑手在初始海拔为 <span class="math inline">\(0\)</span>
+的原点，依次读入数组大小 <span class="math inline">\(n\)</span>
+和相邻两地点的海拔差 <span
+class="math inline">\(gain[n]\)</span>，输出骑手所经过的最高海拔</p>
+<p>数据范围 <span class="math inline">\(1 \le n \le 64\)</span></p>
+<p><span class="math inline">\(-128 \le gain[n] \le 128\)</span></p>
+<p>思路：题目所求即为数组最大前缀和，维护一个变量保存当前前缀和，并维护最大值即可，没有开辟数组空间的必要</p>
+<p><strong>注</strong>：保存最高海拔的前提是数组的下标连续，而不能像买卖理财产品，只在有收益的时候售出。也即如下的代码思路是错误的（虽然我相信聪明的大家都想到了）</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (data &gt; <span class="number">0</span>) &#123; <span class="comment">// data is the input value</span></span><br><span class="line">    sum += data;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// do nothing</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码挖空：</p>
+<figure class="highlight mips"><table><tr><td class="code"><pre><span class="line"><span class="meta">.text</span></span><br><span class="line"><span class="symbol">main:</span></span><br><span class="line">    <span class="comment"># get n</span></span><br><span class="line">    <span class="comment"># set prefix sum, maximum value and loop var</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">for_loop:</span></span><br><span class="line">    <span class="comment"># get data</span></span><br><span class="line">    <span class="keyword">add </span> $<span class="built_in">s1</span>, $<span class="built_in">s1</span>, $<span class="built_in">t1</span></span><br><span class="line"><span class="symbol">if:</span></span><br><span class="line">    <span class="comment"># no need to update, jump to &#x27;else&#x27; label </span></span><br><span class="line">    <span class="keyword">move </span>$<span class="built_in">s2</span>, $<span class="built_in">s1</span> <span class="comment">#update</span></span><br><span class="line"><span class="symbol">else:</span></span><br><span class="line">    <span class="keyword">addi </span>$<span class="built_in">t0</span>, $<span class="built_in">t0</span>, <span class="number">1</span> <span class="comment"># DONT FORGET TO INCREMENT LOOP VAR</span></span><br><span class="line">    <span class="keyword">bne </span> $<span class="built_in">t0</span>, $<span class="built_in">s0</span>, for_loop</span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">loop_end:</span></span><br><span class="line">    <span class="comment"># DONT FORGET TO PRINT</span></span><br></pre></td></tr></table></figure>
+<p>此外建议大家在编写汇编代码时多用伪指令，能显著加快编程速度（毕竟这就是伪指令的使命）</p>
+<p>如 <code>blt</code> 省去了 <code>slt</code> 和 <code>beq</code>
+的使用，将两条指令合为一条；<code>move</code> 比 <code>add</code>
+指令少一个操作数；<code>li</code> 比 <code>addi</code>
+少两个操作数等等</p>
+<h2 id="nodescendsequence">2.noDescendSequence</h2>
+<p>识别16bit输入从高位到低位每4bit组成的4位序列是否为不下降序列</p>
+<table>
+<thead>
+<tr class="header">
+<th>信号</th>
+<th>方向</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>data[15:0]</td>
+<td>input</td>
+<td>代表4位4bit输入</td>
+</tr>
+<tr class="even">
+<td>result</td>
+<td>out</td>
+<td>输出结果：是否为不下降序列</td>
+</tr>
+</tbody>
+</table>
+<p>思路：本题<strong>不涉及时序逻辑</strong>，直接取 <code>data</code>
+的对应位进行比较即可。一行代码我就不贴出来了（</p>
+<h2 id="tetris">3.tetris</h2>
+<p>模拟8位俄罗斯方块游戏设计 Mealy 状态机</p>
+<table>
+<thead>
+<tr class="header">
+<th>信号</th>
+<th>方向</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>input[7:0]</td>
+<td>I</td>
+<td>八位独热码，模拟掉落一个俄罗斯方块</td>
+</tr>
+<tr class="even">
+<td>reset</td>
+<td>I</td>
+<td><strong>异步复位</strong></td>
+</tr>
+<tr class="odd">
+<td>clk</td>
+<td>I</td>
+<td>时钟信号</td>
+</tr>
+<tr class="even">
+<td>output[1:0]</td>
+<td>O</td>
+<td>输出状态</td>
+</tr>
+</tbody>
+</table>
+<p>reset为<strong>异步复位</strong>，当reset为高电平时，状态恢复到一开始状态</p>
+<p>状态：输出01表示输入位置已有方块，放置无效，保持原状态</p>
+<p>输出10表示有效放置</p>
+<p>输出11表示消去一行</p>
+<h3 id="思路">思路</h3>
+<p><strong>第一步也是最重要的一步，确定状态机类型。一时不慎，满盘皆输！！！</strong></p>
+<p>方块的摆放情况数为 8 位二进制数的数量 <span
+class="math inline">\(2^8\)</span>，再考虑每次独热码输入有 8
+种，<strong>有效的</strong>状态转移真值表共约 <span
+class="math inline">\(8 \times 2^8\)</span>
+行，再考虑到无效的状态转移行，故采用真值表刻画状态转移的方式应该不是题目意图<del>（当然如果你毅力超群，我致以崇高敬意）</del>。我采取的方案是用当前的方块摆放情况表示状态，在
+Mealy 状态机的输出模块再转换成 <code>output[1:0]</code></p>
+<p>放置方块的行为让我联想到二进制的按位运算。判断某位是否已有方块，只需将输入和当前方块<strong>按位与</strong>，结果非
+0
+即为无效放置。而更新状态，只需将输入和当前方块放置状态<strong>按位或</strong>，注意<strong>特判</strong>放满后清空即可。</p>
+<h3 id="tips">Tips</h3>
+<p>注意到 logisim 中寄存器初值为 0，所以不用进行寄存器的初始化。</p>
+<p>注意判断<strong>复位方式</strong>是同步复位还是异步复位。异步复位在
+logisim 中的实现较为简单。</p>
+<p>此外，注意判断<strong>时钟</strong>是输入还是自带信号。</p>
+<p>还有一件事<del>（成龙历险记老爹音）</del>，题目要求的电路外观似乎不同于三输入一输出的默认外观，只需将左边三输入向下移动一格即可，外观的线不是很重要。</p>
+<p>电路外观如图（已隐去部分内容）</p>
+<p>最后，祝大家上机顺利，学有所获！</p>
+]]></content>
+      <categories>
+        <category>S5</category>
+        <category>CO</category>
+      </categories>
+      <tags>
+        <tag>CO</tag>
+        <tag>Replay</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>「SUSTECH-C++11」</title>
     <url>/cpp11-sustech/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
@@ -195,7 +553,7 @@ Background</h1>
 <p>分门别类管理，节约编译时间，条理清晰</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// main.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mul.hpp&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    <span class="type">int</span> result;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Pick two integers:&quot;</span>;</span><br><span class="line">    cin &gt;&gt; a;</span><br><span class="line">    cin &gt;&gt; b;</span><br><span class="line">    result = <span class="built_in">mul</span>(a, b);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The result is &quot;</span> &lt;&lt; result &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// mul.hpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">mul</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// mul.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mul.hpp&quot;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">mul</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure>
-<img src="/images/compile-and-link.png" alt="compile-and-link" />
+<img src="SUSTECH-C++11/compile-and-link.png" alt="compile-and-link" />
 <figcaption aria-hidden="true">compile-and-link</figcaption>
 </figure>
 <p>注：g++ 的 -c 选项表示只编译不链接。</p>
@@ -789,364 +1147,6 @@ class="math inline">\(\texttt{cv::Mat}\)</span> in OpenCV</h2>
       <tags>
         <tag>Notes</tag>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OO Pre Review</title>
-    <url>/OO-Pre-Review/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="写在前面">写在前面</h2>
-<blockquote>
-<p>OO Pre 的学期总结，痛并快乐着</p>
-</blockquote>
-<span id="more"></span>
-<p>[TOC]</p>
-<p>也记得找jsgg debug的时候，他说：你push到仓库里，我明天帮你看看</p>
-<p>可惜我当时甚至还没学会用idea进行版本管理</p>
-<h2 id="pre0_task1">Pre0_task1</h2>
-<blockquote>
-<p>本次目标：完成git和idea的安装，学习其基本用法</p>
-</blockquote>
-<p>题外话，Git 这东西真的魔力很大，但是确实也有点难学</p>
-<p>课程组推荐给大家的我也推荐给大家（</p>
-<h3 id="git-相关">Git 相关：</h3>
-<ol type="1">
-<li><p><a href="https://juejin.cn/post/6844904191203213326">Git 使用心得
-&amp; 常见问题整理</a></p></li>
-<li><p><a
-href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰老师的 Git
-教程</a></p></li>
-<li><p><a href="https://learngitbranching.js.org/">Git
-基础可视化教程</a> 与 <a
-href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1">Git
-进阶可视化教程</a></p></li>
-<li><p><a href="https://www.progit.cn/">Git Pro</a></p></li>
-</ol>
-<h3 id="java相关">Java相关：</h3>
-<p><a href="https://docs.oracle.com/en/java/javase/18/docs/api/">JDK
-Document</a></p>
-<h3 id="commit-message">Commit message</h3>
-<p>可以采用插件规范自己的 <code>commit message</code>
-，摘录一些如下：（来源于<a
-href="https://blog.csdn.net/m0_46636892/article/details/122093889">陈大大的期待的CSDN博客</a>）</p>
-<p>Git Commit Template插件在使用时选择的git提交类型解释：</p>
-<blockquote>
-<p>feat
-功能feature的意思，也是最常用的。当你的功能有变更的时候，都可以采用这种类型的type</p>
-<p>fix 当然指的是bug修复</p>
-<p>docs 更新了文档，或者更新了注释</p>
-<p>style 代码格式调整，比如执行了format、更改了tab显示等</p>
-<p>refactor
-重构代码。指的是代码结构的调整，比如使用了一些设计模式重新组织了代码</p>
-<p>perf
-对项目或者模块进行了性能优化。比如一些jvm的参数改动，把stringbuffer改为stringbuilder等</p>
-<p>test 这个简单，就是增加了单元测试和自动化相关的代码</p>
-<p>build 影响编译的一些更改，比如更改了maven插件、增加了npm的过程等</p>
-<p>ci
-持续集成方面的更改。现在有些build系统喜欢把ci功能使用yml描述。如有这种更改，建议使用ci</p>
-<p>chore
-其他改动。比如一些注释修改或者文件清理。不影响src和test代码文件的，都可以放在这里</p>
-<p>revert 回滚了一些前面的代码</p>
-</blockquote>
-<h2 id="pre1_task1">Pre1_task1</h2>
-<blockquote>
-<p>本次目标：初识Java，实现一系列基础的类，并且熟悉类、属性和方法的使用</p>
-</blockquote>
-<p>本次作业只需要使用Java基础语法、容器和简单的getter、setter，以及对大数类
-<code>BigInteger</code> 用法有基本了解即可完成</p>
-<h3 id="关于容器">关于容器：</h3>
-<p>容器是好用的，容器是需要学习的</p>
-<p><strong>容器是现代程序设计非常基础而重要的手段</strong></p>
-<p>如果采用类似C语言结构体数组的写法，通过遍历数组查找所需要的信息，就不太符合Java的感觉，更好的做法是采用HashMap。概括起来就是下面这句话：</p>
-<blockquote>
-<p>不要重复造轮子！不要重复造轮子！不要重复造轮子！</p>
-</blockquote>
-<h3 id="关于面向对象">关于面向对象：</h3>
-<blockquote>
-<p>面向对象是一种主流的软件开发方法，也是一种思维方式，其核心是识别类，并在类之间建立层次式的协作关系。</p>
-</blockquote>
-<p>有兴趣的同学也可以看这篇读书笔记——《面向对象是如何工作的（第2版）》读书笔记</p>
-<p><del>啊当然也是还在紧锣密鼓地筹备当中辣</del></p>
-<h3 id="关于构造函数constructor">关于构造函数Constructor</h3>
-<p>一个压行的方法是将参数传入constuctor，省去了多次调用set方法</p>
-<blockquote>
-<p>关于构造函数的理解：</p>
-<p>构造函数的用途是在你需要创建一个对象的时候完成一些初始化工作，并给对象的所有属性赋予初始值。</p>
-<p>也就是这两步：①创建这个对象 ②给这个对象部分初始化</p>
-</blockquote>
-<p>一个愚蠢的压行方法：不用中间变量存储读入，直接将读入传入</p>
-<p>详细说明如下<del>，但是貌似不符合软工要求</del></p>
-<p>有条理的写法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> ...</span><br><span class="line">    </span><br><span class="line"><span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line"><span class="type">String</span> <span class="variable">userId</span> <span class="operator">=</span> in.next();</span><br><span class="line"><span class="type">String</span> <span class="variable">bottleId</span> <span class="operator">=</span> in.next();</span><br><span class="line">function(userId, bottleId);</span><br></pre></td></tr></table></figure>
-<p>不太好的压行写法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> ...</span><br><span class="line">    </span><br><span class="line"><span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">function(in.next(), in.next());</span><br></pre></td></tr></table></figure>
-<h3 id="多说一嘴">多说一嘴</h3>
-<p>为什么 ArrayList
-可以存不同的对象呢？（这会在本单元第2、3次作业中有所体现），记住Java中一句非常重要的话：<code>Everything is reference</code>
-，这会帮助你理解很多问题</p>
-<p>什么、不太明白，请耐心看下去哦~</p>
-<p>toString() 方法</p>
-<p>操作10要求输出特定的<code>Bottle</code>类型实例的属性，建议在
-<code>Bottle</code> 类中重写<code>toString</code> 方法，示例如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Bottle</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> id;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="meta">@Override</span> <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;The bottle&#x27;s id is &quot;</span> + id + <span class="string">&quot;.&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] argv)</span> &#123;</span><br><span class="line">        <span class="type">Bottle</span> <span class="variable">bottle</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Bottle</span>();</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">        System.out.println(bottle);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出 : The bottle&#x27;s id is 1.</span></span><br></pre></td></tr></table></figure>
-<p><code>java.io.PrintStream.println(Object x)</code>函数将调用<code>String.valueOf(x)</code>以获得实例<code>x</code>的字符串描述，而<code>java.lang.String.valueOf(Object x)</code>函数将在<code>x</code>不为<code>null</code>时返回<code>x.toString()</code>，因此我们可以通过重写<code>toString</code>方法使<code>println</code>函数输出自定义格式的“实例属性”。详见
-<a
-href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/io/PrintStream.html#println()">println()
-- JDK Documentation</a> 和 <a
-href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/lang/String.html#valueOf(java.lang.Object)">valueOf()
-- JDK Documentation</a> 。</p>
-<blockquote>
-<p>简而言之这个 toString() 就是对象的字符串描述，println() 会打印它</p>
-</blockquote>
-<h2 id="pre1_task2">Pre1_task2</h2>
-<blockquote>
-<p>本次目标：多态和继承的练习，以及了解工厂模式</p>
-</blockquote>
-<p><del>虽然我没写出来工厂模式，但是我觉得这很漂亮，很符合我对设计模式的想象</del></p>
-<p><del>工厂模式可以看我的另一篇博客（啊写好了会post上来的，问就是还在紧锣密鼓地筹备当中）</del></p>
-<h3 id="一继承">一、继承</h3>
-<blockquote>
-<p>继承就是定义子类继承父类的特征和行为，使得子类可以拥有父类的属性和方法，从而起到代码复用的目的。</p>
-<p><strong>从语义上来说，在 <code>A</code> 和 <code>B</code> 类型满足
-<em>is-a</em> 关系（A is a B），即<code>A</code> 类型是 <code>B</code>
-类型的一种时，可以使用继承来在程序表述。</strong></p>
-</blockquote>
-<h3 id="二向上转型upcasting">二、向上转型（Upcasting）</h3>
-<blockquote>
-<p>在建立了继承关系之后，可以使用<strong>父类型</strong>去引用通过<strong>子类型</strong>创建的对象。</p>
-</blockquote>
-<p>在调用构造函数的时候会涉及先后问题，这里要注意，是先调用父类的构造函数，再调用子类的构造函数，具体代码如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 父类构造函数</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Equipment</span><span class="params">(<span class="type">int</span> tmpId, String tmpName, <span class="type">long</span> tmpPrice)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.id = tmpId;</span><br><span class="line">    <span class="built_in">this</span>.name = tmpName;</span><br><span class="line">    <span class="built_in">this</span>.price = tmpPrice;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子类构造函数</span></span><br><span class="line"><span class="comment">// public class Bottle extends Equipment</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Bottle</span><span class="params">(<span class="type">int</span> tmpId, String tmpName, <span class="type">long</span> tmpPrice,</span></span><br><span class="line"><span class="params">                  <span class="type">double</span> tmpCapacity, <span class="type">boolean</span> tmpFilled)</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>(tmpId, tmpName, tmpPrice);</span><br><span class="line">    <span class="built_in">this</span>.capacity = tmpCapacity;</span><br><span class="line">    <span class="built_in">this</span>.filled = tmpFilled;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// public class HealingPotion extends Bottle</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">HealingPotion</span><span class="params">(<span class="type">int</span> tmpId, String tmpName, <span class="type">long</span> tmpPrice,</span></span><br><span class="line"><span class="params">                         <span class="type">double</span> tmpCap, <span class="type">boolean</span> tmpFilled, <span class="type">double</span> tmpEff)</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>(tmpId, tmpName, tmpPrice, tmpCap, tmpFilled);</span><br><span class="line">    <span class="built_in">this</span>.efficiency = tmpEff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="三向下转型downcasting">三、向下转型（Downcasting）</h3>
-<blockquote>
-<p>一种比较危险的行为，需要搭配 instanceof 来使用</p>
-</blockquote>
-<p>Java 语言提供了一个特殊的关键词 <code>instanceof</code>
-用来判断一个对象引用所指向的对象的创建类型是否为特定的某个类，一般写为
-<code>obj instanceof A</code>，其中 obj 为一个对象引用，A
-为一个类型（类或接口），这个表达式的取值结果为布尔型，如果 obj
-的创建类型为 A，则结果为 true，否则为 false。在这个表达式取值为 true
-的情况下，可以使用<strong>向下转型</strong> (down cast) 来使用一个 A
-类型的对象来引用obj： <code>A ao = (A)obj</code> 。注意，实际上 obj
-所指向对象的创建类型永远不会发生变化，转型的只是对象引用类型。</p>
-<p>本次作业中的应用为：哦好像没有应用，在下一个 task 里有应用</p>
-<h3 id="四对象方法的重写和复用">四、对象方法的重写和复用</h3>
-<blockquote>
-<p>有时候，具有继承关系的类的某些行为具有递进关系，但又有自己特定的行为。</p>
-<p>我们期望这两个类中实现的特定方法同名。<strong>这种让子类重新实现一个在父类中已经实现的方法是面向对象的一个重要机制，称为方法重写。</strong>方法重写获得的直接好处是让子类与父类在相应方法的调用上保持了一致性。</p>
-<p>更通俗的说，重写方法与父类方法在行为上具有相似功能，但子类重写的方法一般额外增加一些行为。</p>
-<p>在程序编写方面，一般会为重写方法标上一个@Override标签。</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Course</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line">    Course(String name) &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">displayInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;这门课很难&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">OOCourse</span> <span class="keyword">extends</span> <span class="title class_">Course</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">displayInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;这门课很难&quot;</span>); <span class="comment">// 这里出现了代码拷贝，是低质量的代码</span></span><br><span class="line">        System.out.println(<span class="string">&quot;上面那句是放p&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建议更换为下面的代码：</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">OOCourse</span> <span class="keyword">extends</span> <span class="title class_">Course</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">displayInfo</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.displayInfo(); <span class="comment">// 调用了类Course中定义的方法</span></span><br><span class="line">        System.out.println(<span class="string">&quot;上面那句是放p&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Java语言提供了一个重要的关键词<strong>super</strong>，它实际指代的是当前对象从父类继承得到的内容</p>
-<blockquote>
-<p>联想上面构造函数里的super，你甚至可以理解为，这个super会替换为这个类的父类名称，这里使用
-<code>Course.displayInfo()</code> 也是一样的效果，同理，构造函数
-<code>super(argument)</code> 也可以替换为
-<code>Course(argument)</code></p>
-</blockquote>
-<h3 id="五多态">五、多态</h3>
-<p>实际调用的方法与对象<strong>引用的类型</strong>无关，取决于被引用对象的<strong>创建类型</strong>。请看下面的代码示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Course</span> <span class="variable">c1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Course</span>();</span><br><span class="line"><span class="type">Course</span> <span class="variable">c2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">OOCourse</span>();</span><br><span class="line">c1.displayInfo();</span><br><span class="line">c2.displayInfo();</span><br></pre></td></tr></table></figure>
-<p>其中通过c1调用的实际是Course类实现的displayInfo方法，而通过c2调用的则是OOCourse类重写的displayInfo方法，但实际上c1和c2的引用类型都是Course。上面我们提到的这个特性，就叫做多态。</p>
-<p><strong>参差多态，乃是幸福本源</strong>（逃）</p>
-<h3 id="六异常处理">六、异常处理</h3>
-<blockquote>
-<p>异常：程序运行时发生了意外的事件，阻止了程序按照程序员的预期正常执行</p>
-</blockquote>
-<p>运行出错后，Java
-提供了一种优秀的解决办法：异常处理机制，它采取显式的方式处理异常，包括两个方面：</p>
-<ul>
-<li>引入了专门的表达和处理方式，代码上一目了然就能看出是异常处理；</li>
-<li>一旦发生异常，会强迫程序执行进入异常处理分支。</li>
-</ul>
-<p>在Java语言中，每个异常都被封装为Exception，异常有抛出和捕捉两种处理方式。所谓抛出，就是使用Java提供的throw关键词来产生一个Exception或者其某个子类的对象；而捕捉则是通过catch关键词来捕捉在一段代码的执行过程中所抛出的相关异常对象。</p>
-<p>课程推荐使用异常处理机制来区分处理显著不同于一般情况下的数据状态。使用异常处理可以让你的代码更加清晰易于理解，降低出现
-bug 的可能性。</p>
-<p>👆上面内容来自指导书<del>，相信我不说你也看出来了</del></p>
-<p>前面代码出现异常后，后面的代码不会执行，程序会抛出异常并结束（×）</p>
-<p>异常发生并不意味着程序终止，找到地方可以处理这个异常即可</p>
-<p>当然，当前作用域，异常后面的部分不会执行</p>
-<p>具体运行过程为：</p>
-<p><img src="..\images\exception-execution.png" /></p>
-<p>一个很全面覆盖上面流程图的例子：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ArrayIndex</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">f</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">        a[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">g</span><span class="params">()</span> &#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">h</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">100</span>) &#123;</span><br><span class="line">            g();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">k</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            h();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NullPointerException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;k()&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            k();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NullPointerException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;caught&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;main&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<p>解释：</p>
-<p>f产生异常，所处不是try，所处是函数g，返回调用者g</p>
-<p>g与f同理，返回调用者h</p>
-<p>h产生异常，所处不是try，所处是if语句，不是函数，退出到if大括号的外层，此时所处是函数，返回调用者k</p>
-<p>k产生异常，产生异常的代码块所处是try，catch异常不匹配（因为是AIOOBE），退出到外层</p>
-<p>能不能把所有代码放到一个try块里，这样啥异常都能输出啊（逃）</p>
-<p>《Core Java》的第七章相关内容请见：<del>紧锣密鼓筹备中</del></p>
-<h2 id="pre1_task3">Pre1_task3</h2>
-<h3 id="前言-碎碎念">前言 &amp; 碎碎念</h3>
-<blockquote>
-<p>这次作业真的有点难度，我也是借助了 bygg <span class="citation"
-data-cites="一个虚空的blog地址">@一个虚空的blog地址</span> 的力量才勉强
-AK 了</p>
-</blockquote>
-<p>难点主要在 deep clone 和 所属关系的复制</p>
-<p>deep clone 这里呼应了前面说的向下转型 downcasting，具体来说，需要根据
-Commodity 的类型创建对应的 Commodity 副本，此时需要用到 instanceof
-运算符</p>
-<p>具体的实现可以见代码，代码我放到 GitHub仓库 里了</p>
-<p>这里的版本控制的实现，和 Git
-的好像不大一样，先挖个坑，有空思考了回来填上</p>
-<p>一个细的点在于，不能对 Adventurer 所拥有的 Adventurer 直接 deep
-clone</p>
-<p>举个例子，A 雇佣了 B，如果 deep clone，B 使用道具后的后果不能同步给 A
-雇佣的这个 B，所以两个 B 就不一样了。这里直接 shallow
-copy即可（其实也节省了代码量）</p>
-<h2 id="pre2_task1">Pre2_task1</h2>
-<p>挺好做的，可以用捕获组，也可以用字符串类的方法，不过后面迭代比较痛苦</p>
-<p>另外，关于 substring()
-方法，建议大家多试试下标的选择。不要怕麻烦，这个地方很可能背刺你</p>
-<h2 id="pre2_task2">Pre2_task2</h2>
-<p>这次也很简单。我感觉正则的题目比第一次的大模拟还是友好不少的</p>
-<h2 id="pre2_task3">Pre2_task3</h2>
-<p>注意跨年日期的判断（可以参考我的狼人样例，能过了强测基本没问题）</p>
-<h2 id="pre3_task1">Pre3_task1</h2>
-<p>想起pre1_task3那周，我在图书馆坐了整整一周，最后还是de不出bug，果然肉眼debug的形式是不行的。</p>
-<p>建议大家自己捏一些数据</p>
-<p>我的数据也放在 GitHub仓库 里了</p>
-<p>正则表达式的题目，就建议大家多试多练多学习。我个人感觉没什么好说的，大家比我聪明，看一看就能学会</p>
-<p>我一直没学先验后验什么的，挖个坑，下学期学，下学期一定学，嗯</p>
-<h2 id="最后的最后">最后的最后</h2>
-<p>看过很多博客，还是觉得qsgg的“<strong>只有</strong>一个曲别针的小男孩”的故事最入我心</p>
-<p>小男孩经过一系列的交换，把手里的曲别针换成了别墅</p>
-<p>可我觉得这故事没什么意思，我更想看到小男孩用别墅继续交换继续交换，最后虽然损失了别墅，但是收获了远比别墅珍贵更多的东西，最后云淡风轻：“嗯，不过损失一个曲别针而已，我得到的是更大的世界”</p>
-<p>我来的时候连一个曲别针也没有，我走的时候却收获了很多故事，认识了很多朋友，收获了比别墅价值大得多的东西</p>
-<p>很多很多年以后，可能我还会想起那个新主楼的夜晚和风景，和五教二楼的美丽对拍</p>
-<p>或许要问有什么遗憾，那就是最后一次的作业赶时间没用递归下降完成。以及这门课确实有点耽误我计组的时间了，不过这都过去了</p>
-<p>他给我的最大的宝藏就是，如果方法得当，愿意多做调试愿意自己多捏数据，你能够对自己的成绩有十足的把握，每次强测之前我都有信心这次再拿100。以及，他让我知道小白也有从零开始成为金刚的权利，真的让我尝到了取得小成就的满足</p>
-<p>后面的文字写的有些仓促，主要是计组进度压上来，顶不住了，对不住各位认真读到这里的看官</p>
-<p>以及正则的题目确实不难，希望大家认真学认真练</p>
-<p>希望诸位看官能从我这堆毫无章法的文字中读出些东西</p>
-<p>如果看完什么也没看明白，那是怪我水平粗浅，与诸位无关</p>
-<p>一路顺风</p>
-]]></content>
-      <categories>
-        <category>OO</category>
-        <category>S3</category>
-      </categories>
-      <tags>
-        <tag>OO</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>「BUAA-CO」 Pre</title>
-    <url>/co-pre/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>2023年Pre题目回忆版及我的3A答案回忆版</p>
-</blockquote>
-<span id="more"></span>
-<p>文件在我的 GitHub</p>
-<h2 id="supaltitude">1.supaltitude</h2>
-<p>骑手在初始海拔为 <span class="math inline">\(0\)</span>
-的原点，依次读入数组大小 <span class="math inline">\(n\)</span>
-和相邻两地点的海拔差 <span
-class="math inline">\(gain[n]\)</span>，输出骑手所经过的最高海拔</p>
-<p>数据范围 <span class="math inline">\(1 \le n \le 64\)</span></p>
-<p><span class="math inline">\(-128 \le gain[n] \le 128\)</span></p>
-<p>思路：题目所求即为数组最大前缀和，维护一个变量保存当前前缀和，并维护最大值即可，没有开辟数组空间的必要</p>
-<p><strong>注</strong>：保存最高海拔的前提是数组的下标连续，而不能像买卖理财产品，只在有收益的时候售出。也即如下的代码思路是错误的（虽然我相信聪明的大家都想到了）</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (data &gt; <span class="number">0</span>) &#123; <span class="comment">// data is the input value</span></span><br><span class="line">    sum += data;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// do nothing</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>代码挖空：</p>
-<figure class="highlight mips"><table><tr><td class="code"><pre><span class="line"><span class="meta">.text</span></span><br><span class="line"><span class="symbol">main:</span></span><br><span class="line">    <span class="comment"># get n</span></span><br><span class="line">    <span class="comment"># set prefix sum, maximum value and loop var</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">for_loop:</span></span><br><span class="line">    <span class="comment"># get data</span></span><br><span class="line">    <span class="keyword">add </span> $<span class="built_in">s1</span>, $<span class="built_in">s1</span>, $<span class="built_in">t1</span></span><br><span class="line"><span class="symbol">if:</span></span><br><span class="line">    <span class="comment"># no need to update, jump to &#x27;else&#x27; label </span></span><br><span class="line">    <span class="keyword">move </span>$<span class="built_in">s2</span>, $<span class="built_in">s1</span> <span class="comment">#update</span></span><br><span class="line"><span class="symbol">else:</span></span><br><span class="line">    <span class="keyword">addi </span>$<span class="built_in">t0</span>, $<span class="built_in">t0</span>, <span class="number">1</span> <span class="comment"># DONT FORGET TO INCREMENT LOOP VAR</span></span><br><span class="line">    <span class="keyword">bne </span> $<span class="built_in">t0</span>, $<span class="built_in">s0</span>, for_loop</span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">loop_end:</span></span><br><span class="line">    <span class="comment"># DONT FORGET TO PRINT</span></span><br></pre></td></tr></table></figure>
-<p>此外建议大家在编写汇编代码时多用伪指令，能显著加快编程速度（毕竟这就是伪指令的使命）</p>
-<p>如 <code>blt</code> 省去了 <code>slt</code> 和 <code>beq</code>
-的使用，将两条指令合为一条；<code>move</code> 比 <code>add</code>
-指令少一个操作数；<code>li</code> 比 <code>addi</code>
-少两个操作数等等</p>
-<h2 id="nodescendsequence">2.noDescendSequence</h2>
-<p>识别16bit输入从高位到低位每4bit组成的4位序列是否为不下降序列</p>
-<table>
-<thead>
-<tr class="header">
-<th>信号</th>
-<th>方向</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>data[15:0]</td>
-<td>input</td>
-<td>代表4位4bit输入</td>
-</tr>
-<tr class="even">
-<td>result</td>
-<td>out</td>
-<td>输出结果：是否为不下降序列</td>
-</tr>
-</tbody>
-</table>
-<p>思路：本题<strong>不涉及时序逻辑</strong>，直接取 <code>data</code>
-的对应位进行比较即可。一行代码我就不贴出来了（</p>
-<h2 id="tetris">3.tetris</h2>
-<p>模拟8位俄罗斯方块游戏设计 Mealy 状态机</p>
-<table>
-<thead>
-<tr class="header">
-<th>信号</th>
-<th>方向</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>input[7:0]</td>
-<td>I</td>
-<td>八位独热码，模拟掉落一个俄罗斯方块</td>
-</tr>
-<tr class="even">
-<td>reset</td>
-<td>I</td>
-<td><strong>异步复位</strong></td>
-</tr>
-<tr class="odd">
-<td>clk</td>
-<td>I</td>
-<td>时钟信号</td>
-</tr>
-<tr class="even">
-<td>output[1:0]</td>
-<td>O</td>
-<td>输出状态</td>
-</tr>
-</tbody>
-</table>
-<p>reset为<strong>异步复位</strong>，当reset为高电平时，状态恢复到一开始状态</p>
-<p>状态：输出01表示输入位置已有方块，放置无效，保持原状态</p>
-<p>输出10表示有效放置</p>
-<p>输出11表示消去一行</p>
-<h3 id="思路">思路</h3>
-<p><strong>第一步也是最重要的一步，确定状态机类型。一时不慎，满盘皆输！！！</strong></p>
-<p>方块的摆放情况数为 8 位二进制数的数量 <span
-class="math inline">\(2^8\)</span>，再考虑每次独热码输入有 8
-种，<strong>有效的</strong>状态转移真值表共约 <span
-class="math inline">\(8 \times 2^8\)</span>
-行，再考虑到无效的状态转移行，故采用真值表刻画状态转移的方式应该不是题目意图<del>（当然如果你毅力超群，我致以崇高敬意）</del>。我采取的方案是用当前的方块摆放情况表示状态，在
-Mealy 状态机的输出模块再转换成 <code>output[1:0]</code></p>
-<p>放置方块的行为让我联想到二进制的按位运算。判断某位是否已有方块，只需将输入和当前方块<strong>按位与</strong>，结果非
-0
-即为无效放置。而更新状态，只需将输入和当前方块放置状态<strong>按位或</strong>，注意<strong>特判</strong>放满后清空即可。</p>
-<h3 id="tips">Tips</h3>
-<p>注意到 logisim 中寄存器初值为 0，所以不用进行寄存器的初始化。</p>
-<p>注意判断<strong>复位方式</strong>是同步复位还是异步复位。异步复位在
-logisim 中的实现较为简单。</p>
-<p>此外，注意判断<strong>时钟</strong>是输入还是自带信号。</p>
-<p>还有一件事<del>（成龙历险记老爹音）</del>，题目要求的电路外观似乎不同于三输入一输出的默认外观，只需将左边三输入向下移动一格即可，外观的线不是很重要。</p>
-<p>电路外观如图（已隐去部分内容）</p>
-<p>最后，祝大家上机顺利，学有所获！</p>
-]]></content>
-      <categories>
-        <category>S5</category>
-        <category>CO</category>
-      </categories>
-      <tags>
-        <tag>CO</tag>
-        <tag>Replay</tag>
       </tags>
   </entry>
   <entry>
@@ -1893,8 +1893,8 @@ cares？谁他妈在乎秦桧是谁，老子只想看故国收复。确实有比
 <p>总之，作为贺岁片，导演来分一杯羹，观众看个乐呵看个感动，能想起这位千年前的故人想起这首无人不知无人不晓的不朽词篇，便也还算，说得过去吧。</p>
 ]]></content>
       <categories>
-        <category>生活记录</category>
         <category>S3 Winter</category>
+        <category>生活记录</category>
       </categories>
       <tags>
         <tag>观后感</tag>
@@ -1949,8 +1949,8 @@ pptx 文件。</p>
 <p><code>D:\我的文件 *.xls !\生活文件夹 !~</code></p>
 ]]></content>
       <categories>
-        <category>S6</category>
         <category>Toolkit</category>
+        <category>S6</category>
         <category>Everything</category>
       </categories>
       <tags>
@@ -2684,11 +2684,1052 @@ alt="image-20220913194007073" />
 </blockquote>
 ]]></content>
       <categories>
-        <category>生活记录</category>
         <category>S3 Winter</category>
+        <category>生活记录</category>
       </categories>
       <tags>
         <tag>科目三</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>「Badminton」</title>
+    <url>/badminton/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="羽毛球练习技巧">羽毛球练习技巧</h1>
+<blockquote>
+<p>记录一些一对一课程和网课的内容</p>
+</blockquote>
+<span id="more"></span>
+<p>整体思路：单打练习一致性，双打求快</p>
+<p>平时练习：跳绳是最练协调的，1min一组，练十组，隔天练</p>
+<h2 id="步伐">步伐</h2>
+<h3 id="并步">并步</h3>
+<p>后脚启动</p>
+<h2 id="正手主动后场">正手主动后场</h2>
+<p>高远球、吊球、杀球的击球点依次向下</p>
+<p>杀球需要打球头和球的靠近球头羽毛部分，可以在击球瞬间收腕，但是别提前掉腕</p>
+<p>发力的关键：手腕</p>
+<p>手腕灵活可以用更小的动作打出更大的鞭打效果，方便做出更隐蔽的动作</p>
+<h2 id="正手被动后场">正手被动后场</h2>
+<p>转髋迈步，脚尖向后，举拍</p>
+<p>保持低位重心，做后交叉，脚尖向外</p>
+<p>展肩，做抽打动作</p>
+<ul>
+<li>横向</li>
+<li>纵向</li>
+</ul>
+<h2 id="反手后场动作">反手后场动作</h2>
+<p>相较于正手的高位击球点，反手的发力不能顺利传达，需要降低击球点获得引拍空间</p>
+<p>步伐</p>
+<p>具体的引拍方式为内收，依靠展体的力量</p>
+<p>注意重心起伏波浪式发力</p>
+<h2 id="前场动作">前场动作</h2>
+<p>记得弓步放着，脚的方向和前进方向一致</p>
+<h2 id="接杀">接杀</h2>
+<p>主要反手握拍动作，因为防守范围更大</p>
+<p>球拍横在自己的身体面前，减少引拍时间，处于居中的位置</p>
+<p>弹后场需要更靠前的位置，更快的挥速</p>
+<p>手腕要立腕，抬大臂内收小臂手腕</p>
+<p>重心随着身体顶起的动作做起伏</p>
+<p>腋下反拍正打大概率只能抽到后场</p>
+<p>接杀重要的地方是启动，伸拍是次要的</p>
+<h3 id="启动">启动</h3>
+<p>启动的重要目的有两个，一个是改变脚尖朝向，另一个是把身体推出去</p>
+<h3 id="正手接杀">正手接杀</h3>
+<p>接杀启动步脚尖朝球，先伸拍但是不引拍</p>
+<p>拍头朝上，如果杀得重就上抬拍面</p>
+<p>降点是用腿，不是降低拍面，降低拍面的效果不敢保证</p>
+<h2 id="推挑">推挑</h2>
+<h3 id="正手">正手</h3>
+<p>有个往上翻腕的动作</p>
+]]></content>
+      <categories>
+        <category>S6</category>
+        <category>Play</category>
+        <category>Badminton</category>
+      </categories>
+      <tags>
+        <tag>Physical Training</tag>
+        <tag>Badminton</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《编译技术》笔记</title>
+    <url>/compiling-technique-notes/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="总述">总述</h2>
+<blockquote>
+<p>北航张莉《编译技术》笔记，看着玩玩</p>
+</blockquote>
+<span id="more"></span>
+<h1 id="第一章-编译概述">第一章 编译概述</h1>
+<h2 id="什么是程序设计语言">1.1 什么是程序设计语言</h2>
+<p>人与计算机之间的中介，充当通信工具</p>
+<h3 id="程序设计语言的定义方法">1.1.1 程序设计语言的定义方法</h3>
+<p>对语言结构形式的描述：文法(grammar)或语法(syntax)</p>
+<p>语言所表达内容的含义：语义</p>
+<p><strong>本书采用属性文法。</strong>属性文法是一种半形式化的语义描述方法</p>
+<h3 id="程序设计语言的处理系统">1.1.2 程序设计语言的处理系统</h3>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428170824268.png"
+alt="image-20230428170824268" />
+<figcaption aria-hidden="true">image-20230428170824268</figcaption>
+</figure>
+<p>源程序(source program)、源语言(source language)、目标程序(object
+program)或目标代码(object code)、目标语言(object language)</p>
+<h3 id="编译程序和解释程序">1.1.3 编译程序和解释程序</h3>
+<p>编译程序也可以输出介于低级语言和高级语言之间的某种中间语言(intermediate)</p>
+<blockquote>
+<p>中间程序可以理解为某种虚拟计算机的机器语言</p>
+</blockquote>
+<p>解释程序(interpreter)：能对编译得到的中间语言（甚至是源语言）进行解释执行的程序</p>
+<blockquote>
+<p>解释程序可以理解为这种虚拟计算机的模拟软件</p>
+</blockquote>
+<p>编译型语言运行时不需要重新翻译，执行效率高；但是依赖编译器，跨平台性差</p>
+<p>常常用于开发操作系统、大型应用程序、数据库系统等</p>
+<p>常见的编译型语言有 C/C++、Pascal/Object Pascal(Delphi)等</p>
+<p>解释执行程序：需要对中间代码甚至源代码逐行解释，速度较慢，优点为：</p>
+<ol type="1">
+<li>可以运行时动态确定数据</li>
+<li>中间代码的信息可以辅助调试</li>
+<li>可以边修改边解释执行，缩短再次编译运行的时间</li>
+<li>处理系统易开发</li>
+<li>中间代码占用内存少</li>
+<li>易于移植（中间语言的机器无关性）</li>
+</ol>
+<p><strong>T型图</strong></p>
+<h2 id="与编译程序相关的处理系统">1.2 与编译程序相关的处理系统</h2>
+<p><strong>1.各种翻译程序</strong></p>
+<blockquote>
+<p>翻译是广义的翻译，开阔下思路</p>
+</blockquote>
+<p><strong>2.预处理器</strong></p>
+<p>把源程序变换为<strong>其它语言程序</strong>再进行编译。当然，与源程序的不对应性会导致程序调试困难</p>
+<p><strong>3.宏处理器</strong></p>
+<h2 id="编译程序和程序设计环境">1.3 编译程序和程序设计环境</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428171210972.png"
+alt="image-20230428171210972" />
+<figcaption aria-hidden="true">image-20230428171210972</figcaption>
+</figure>
+<h2 id="编译程序的构造">1.4 编译程序的构造</h2>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428171300901.png"
+alt="image-20230428171300901" />
+<figcaption aria-hidden="true">image-20230428171300901</figcaption>
+</figure>
+<p><strong>1.词法分析</strong></p>
+<p>是以识别单词为目标的简单的语法分析程序</p>
+<p><code>token</code> 的种类：</p>
+<ul>
+<li>保留字或关键词，如
+<code>begin</code>、<code>if</code>、<code>for</code></li>
+<li>标识符</li>
+<li>常量，包括浮点数、整数、各进制数、字符常量、字符串常量等</li>
+<li>分界符和运算符</li>
+</ul>
+<p>空格和注释会被过滤</p>
+<blockquote>
+<p>可以用枚举类具体实现</p>
+</blockquote>
+<p><strong>2.语法分析</strong></p>
+<p>根据语法规则将token组合成大的语法类或语法成分，如变量声明、表达式、语句、函数和过程等</p>
+<p>输出：一棵语法分析树（简称语法树）</p>
+<ul>
+<li><p>叶结点：token</p></li>
+<li><p>非叶结点：语法成分</p></li>
+</ul>
+<p><strong>3.语义分析</strong></p>
+<p>确定源程序的意义</p>
+<p>事实上还要同时进行语义检查，比如赋值类型不匹配等</p>
+<p>语义动作还包括生成中间代码</p>
+<p><strong>4.代码生成</strong></p>
+<p>通常是将源程序的中间形式转换为汇编语言或者机器语言，可通过代码优化进一步优化</p>
+<p><strong>5.代码优化</strong></p>
+<p>机器无关的优化</p>
+<ul>
+<li><p>常数表达式的计算、应用操作符的性质（结合性、可交换性、分配性等）</p></li>
+<li><p>多次出现的相同子表达式一次性计算、将循环内不变的语句移到循环外等</p></li>
+</ul>
+<p>机器有关的优化</p>
+<ul>
+<li>寄存器分配等</li>
+</ul>
+<p><strong>6.符号表管理</strong></p>
+<p><strong>7.错误检测与处理</strong></p>
+<p>以上是逻辑结构，实现时常常结合实现</p>
+<p><strong>8.前端和后端(front end and back end)</strong></p>
+<p>前端：与源语言有关而与目标机无关的部分（即分析部分）</p>
+<ul>
+<li>词法分析、语法分析</li>
+<li>符号表建立</li>
+<li>语义分析、中间代码生成</li>
+<li>相应部分的错误处理和符号表操作</li>
+<li>与机器无关的代码优化</li>
+</ul>
+<p>后端：与目标机有关的部分（即综合部分），与源语言无关而仅仅依赖于中间语言</p>
+<ul>
+<li>目标代码生成</li>
+<li>相应部分的错误处理和符号表操作</li>
+<li>与机器有关的代码优化</li>
+</ul>
+<p><strong>9.遍(pass)</strong></p>
+<h2 id="编译技术在软件工程中的应用">1.5 编译技术在软件工程中的应用</h2>
+<p>略，用处不大</p>
+<h2 id="练习-1">练习 1</h2>
+<p>基本是概念复述</p>
+<h1 id="第二章-文法和语言的概念和表示">第二章
+文法和语言的概念和表示</h1>
+<h2 id="文法的非形式讨论">2.1 文法的非形式讨论</h2>
+<p><strong>文法</strong>：形式上描述和规定语言结构的规则，也称语法</p>
+<h3 id="语法树">2.1.1 语法树</h3>
+<table>
+<thead>
+<tr class="header">
+<th>语法树结点</th>
+<th>语法</th>
+<th>形式语言</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>带尖括号的结点</td>
+<td>语法成分</td>
+<td>非终结符号</td>
+</tr>
+<tr class="even">
+<td>不带尖括号的结点</td>
+<td>单词符号</td>
+<td>终结符号</td>
+</tr>
+</tbody>
+</table>
+<h3 id="规则">2.1.2 规则</h3>
+<h3 id="推导">2.1.3 推导</h3>
+<p>通常把规则称为<strong>产生式</strong>，用符号 <code>:==</code> 或
+<span class="math inline">\(\rightarrow\)</span> 表示</p>
+<p>用符号 <span class="math inline">\(\Rightarrow\)</span> 表示推导</p>
+<p>两个以上的语法成分同时存在时可任选其中之一并根据规则重复上述推导，直到推出句子</p>
+<h3 id="练习-2-1">练习 2-1</h3>
+<h2 id="符号符号串及其集合的运算">2.2 符号、符号串及其集合的运算</h2>
+<p>任何一种语言都是由该语言的<strong>基本符号</strong>所组成的<strong>符号串集合</strong></p>
+<h3 id="字母表和符号串">2.2.1 字母表和符号串</h3>
+<p><strong>字母表</strong>：元素的<strong>非空有穷</strong>集合</p>
+<p><strong>符号</strong>：字母表中的元素</p>
+<p><strong>符号串</strong>：由字母表中的符号所组成的任何<strong>有穷</strong>序列</p>
+<p><strong>空符号串 <span
+class="math inline">\(\varepsilon\)</span></strong>
+：不包含任何符号的符号串</p>
+<p><strong>符号串的递归定义</strong>：</p>
+<ul>
+<li>$ $ 是 <span class="math inline">\(\Sigma\)</span> 上的符号串</li>
+<li>若 $ x$ 是 <span class="math inline">\(\Sigma\)</span>
+上的符号串，且 <span class="math inline">\(a \in \Sigma\)</span> ，则 $
+xa $ 或 $ ax $ 是 <span class="math inline">\(\Sigma\)</span>
+上的符号串</li>
+<li>$ y $ 是 <span class="math inline">\(\Sigma\)</span>
+上的符号串，当且仅当 <span class="math inline">\(y\)</span> 可由 ① 和 ②
+产生</li>
+</ul>
+<blockquote>
+<p>前后拼接</p>
+</blockquote>
+<p>通常用 <span class="math inline">\(a、b \dots\)</span> 和 <span
+class="math inline">\(S、T、U \dots\)</span> 表示符号，用 <span
+class="math inline">\(s、t、u\)</span> 表示符号串，用 <span
+class="math inline">\(A、B、C、 \dots 、 R\)</span> 表示符号串集合</p>
+<h3 id="符号串及其集合的运算">2.2.2 符号串及其集合的运算</h3>
+<p><strong>符号串相等</strong>：各个符号依次相等</p>
+<blockquote>
+<p>符号串中符号的顺序很重要</p>
+</blockquote>
+<p><strong>符号串的运算</strong>：</p>
+<ul>
+<li><p>符号串长度：$ |x| $，数值上等于组成该符号串的符号个数</p></li>
+<li><p>符号串连接：若 <span class="math inline">\(x\)</span> 和 $ y $
+是两个符号串，其连接为 $ xy $ ，特殊地，有 $ x = x = x $</p></li>
+<li><p>集合的乘积运算：符号串集合 $ A $ 和 $ B $ 的乘积 <span
+class="math inline">\(AB = \{xy | x \in A, y \in B\}\)</span>
+，特殊地，有 $ {} A = A {} = A $</p></li>
+<li><p>符号串的幂运算：<img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428181309643.png" alt="image-20230428181309643" style="zoom:50%;" /></p></li>
+<li><p>集合的幂运算：</p>
+<p><img src="D:\Programing\Compilers\Notes\WolfBook\Images\集合幂运算.png" alt="集合幂运算" style="zoom:50%;" /></p></li>
+<li><p>集合 <span class="math inline">\(A\)</span> 的闭包 <span
+class="math inline">\(A^*\)</span> 和 集合 $ A $ 的正闭包 <span
+class="math inline">\(A^+\)</span> ：$ A^+ = A^1 A^2  A^n \ A ^* = A^0
+A^*$，有 <span class="math inline">\(A^+ = AA^* = A^*A\)</span></p></li>
+</ul>
+<h2 id="文法和语言的形式定义">2.3 文法和语言的形式定义</h2>
+<h3 id="文法的形式定义">2.3.1 文法的形式定义</h3>
+<p><strong>产生式或规则</strong>：有序对 $(U, x) $ ，通常写作 <span
+class="math inline">\(U::=x\)</span> 或 <span class="math inline">\(U
+\rightarrow x\)</span>，其中 <span class="math inline">\(U\)</span>
+是符号，是产生式的左部，<span class="math inline">\(x\)</span>
+是有穷符号串，是产生式的右部</p>
+<p><strong>字汇表</strong>：所有的规则左部和右部中的所有符号组成的集合</p>
+<p><strong>非终结符号</strong>：文法 <span
+class="math inline">\(G\)</span>
+中作为规则左部出现的符号，也称语法成分，形成了非终结符号集 <span
+class="math inline">\(V_n\)</span></p>
+<p><strong>终结符号</strong>：规则中不属于 <span
+class="math inline">\(V_n\)</span> 的符号，形成了终结符号集合 <span
+class="math inline">\(V_t\)</span></p>
+<p><strong>识别符号或开始符号</strong>：符号 <span
+class="math inline">\(Z\)</span> 至少是一条规则的左部</p>
+<p><strong>BNF 表示法</strong>：</p>
+<blockquote>
+<p>合并具有相同左部的规则</p>
+</blockquote>
+<p><strong>文法</strong>：一个四元组 <span class="math inline">\(G =
+&lt;V_n, V_i, P, Z&gt;\)</span></p>
+<p><span class="math inline">\(P\)</span>：产生式或规则的集合，<span
+class="math inline">\(Z\)</span>：文法的识别符号</p>
+<h3 id="推导的形式定义">2.3.2 推导的形式定义</h3>
+<p><strong>直接推导</strong>：<img
+src="D:\Programing\Compilers\Notes\WolfBook\Images\直接推导.png"
+alt="直接推导" /></p>
+<p>间接推导：</p>
+<figure>
+<img src="D:\Programing\Compilers\Notes\WolfBook\Images\间接推导.png"
+alt="简介推导" />
+<figcaption aria-hidden="true">简介推导</figcaption>
+</figure>
+<h3 id="语言的形式定义">2.3.3 语言的形式定义</h3>
+<p>设 $G[Z] $ 是定义在字汇表 <span class="math inline">\(V\)</span>
+上的一个文法，其中 <span class="math inline">\(Z\)</span>
+是识别符号，在此省去了尖括号</p>
+<p><strong>句型</strong>：如果 <span class="math inline">\(Z
+\stackrel{*} \Rightarrow x\)</span>，且 <span class="math inline">\(x
+\in V^*\)</span>，则称 $x $ 是文法 <span
+class="math inline">\(G\)</span> 的一个句型</p>
+<p><strong>句子</strong>：如果 <span class="math inline">\(Z
+\stackrel{+} \Rightarrow x\)</span>，且 <span class="math inline">\(x
+\in V^*_t\)</span>，则称 $x $ 是文法 <span
+class="math inline">\(G\)</span> 的一个句子</p>
+<ul>
+<li>句子是语言的最小单位</li>
+<li>句子是从文法的识别符号推导出来的由终结符号所组成的符号串</li>
+<li>定义式是充要条件</li>
+<li>若用 <span class="math inline">\(Z \stackrel{*} \Rightarrow
+x\)</span>，有可能 <span class="math inline">\(Z = x\)</span>，与 <span
+class="math inline">\(x \in V^*_t\)</span> 矛盾</li>
+</ul>
+<p><strong>语言</strong>：文法 <span class="math inline">\(G[Z]\)</span>
+产生的所有句子的集合，记为 <span
+class="math inline">\(L(G[Z])\)</span>，称为文法 <span
+class="math inline">\(G[Z]\)</span> 所定义的语言，即 <span
+class="math inline">\(L(G[Z]) = \{x | x \in V^*_t，且Z \stackrel{*}
+\Rightarrow x \}\)</span></p>
+<ul>
+<li>语言是所有终结符号串所组成的集合的一个子集，即 <span
+class="math inline">\(L(G[Z]) \subseteq V^*_t\)</span></li>
+</ul>
+<p><strong>规范推导</strong>：最右推导</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428232155349.png"
+alt="image-20230428232155349" />
+<figcaption aria-hidden="true">image-20230428232155349</figcaption>
+</figure>
+<ul>
+<li>每个句子都有一个规范推导，但并非每个句型都有规范推导</li>
+<li>可规范推导出的句型称为“规范句型”</li>
+</ul>
+<p><strong>等价文法</strong>：<span class="math inline">\(G\)</span> 和
+<span class="math inline">\(G \prime\)</span> 是两个不同的文法，如果
+<span class="math inline">\(L(G) = L(G\prime)\)</span>
+，称二者为等价文法。</p>
+<ul>
+<li>定义的语言相同即等价</li>
+<li>为了某种目的改写文法</li>
+</ul>
+<h3 id="递归规则与递归文法">2.3.4 递归规则与递归文法</h3>
+<p><strong>递归规则</strong>：<span
+class="math inline">\(U::=xUy\)</span></p>
+<ul>
+<li>若 <span class="math inline">\(x = \varepsilon\)</span>，则 <span
+class="math inline">\(U::=Uy\)</span> 称为左递归规则</li>
+<li>若 <span class="math inline">\(y = \varepsilon\)</span>，则 <span
+class="math inline">\(U::=xU\)</span> 称为右递归规则</li>
+<li>若 <span class="math inline">\(x, y \neq \varepsilon\)</span>，则
+<span class="math inline">\(U::=xUy\)</span> 称为自嵌入的规则</li>
+</ul>
+<p><strong>文法的递归性质</strong>：</p>
+<ul>
+<li>直接递归：文法中至少包含一条递归规则，则称文法是直接递归的</li>
+<li>间接递归</li>
+<li>对文法中任一非终结符号，若能建立一个推导过程，在推导所得的符号串中又出现了该终结符本身，则文法是递归性的；反之是非递归性的</li>
+</ul>
+<blockquote>
+<p>含义很容易理解，只是用形式语言描述似乎看起来啰嗦些</p>
+</blockquote>
+<ul>
+<li>可以由有穷的规则刻画无穷的语言</li>
+<li>左递归文法无法采用自顶向下的分析算法</li>
+</ul>
+<h3 id="短语简单短语和句柄">2.3.5 短语、简单短语和句柄</h3>
+<p><strong>短语</strong>：设 <span class="math inline">\(G[Z]\)</span>
+是一文法，<span class="math inline">\(w = uxy\)</span> 是一句型，如果有
+<span class="math inline">\(Z \stackrel{*} \Rightarrow xUy\)</span> 且
+<span class="math inline">\(U \stackrel{+} \Rightarrow u\)</span> ，称
+<span class="math inline">\(u\)</span> 是一个相对于非终结符号 <span
+class="math inline">\(U\)</span> 的句型 <span
+class="math inline">\(w\)</span> 的短语</p>
+<ul>
+<li>若有 <span class="math inline">\(Z \stackrel{*} \Rightarrow
+xUy\)</span> 且 <span class="math inline">\(U \Rightarrow u\)</span>
+，称 <span class="math inline">\(u\)</span> 是一个相对于非终结符号 <span
+class="math inline">\(U\)</span> 的句型 <span
+class="math inline">\(w\)</span> 的简单短语</li>
+<li>$ U V_n, u V^+, x, y V$</li>
+<li>短语是针对句型和非终结符号的</li>
+</ul>
+<p><strong>句柄</strong>：任一句型的最左简单短语称为句型的句柄</p>
+<blockquote>
+<p>通过画出句型的语法树可以直观方便地找到句型的短语、简单短语和句柄</p>
+</blockquote>
+<h3 id="练习-2-3">练习 2-3</h3>
+<h2 id="语法树和二义性">2.4 语法树和二义性</h2>
+<h3 id="推导与语法树">2.4.1 推导与语法树</h3>
+<ol type="1">
+<li>推导过程与语法树的生成
+<ul>
+<li>推导过程不同，但是最终生成的语法树是完全相同的</li>
+<li>推导过程仅反应推导顺序</li>
+<li>当然，并非所有文法都具有语法树唯一性</li>
+</ul></li>
+<li>子树与短语
+<ul>
+<li>摆了</li>
+</ul></li>
+<li>由树构造推导
+<ul>
+<li>摆了</li>
+</ul></li>
+</ol>
+<h3 id="文法与二义性">2.4.2 文法与二义性</h3>
+<p><strong>文法的二义性</strong>：</p>
+<ul>
+<li>文法中的某个句子存在不同的语法树</li>
+<li>有两个不同的最右（最左）推导</li>
+<li>有两个不同的最左归约（规范归约），即归约中某些规范句型的句柄不唯一</li>
+</ul>
+<p><strong>消除二义性</strong>：</p>
+<ul>
+<li>根据条件修改编译算法，如定义优先级</li>
+<li>根据条件直接修改文法</li>
+</ul>
+<h3 id="练习-2-4">练习 2-4</h3>
+<h2 id="符号串的分析">2.5 符号串的分析</h2>
+<blockquote>
+<p>前面讨论了用已知文法推导和产生句子，下面讨论确定给定符号串是否是文法的句子</p>
+<p>即已知文法 <span class="math inline">\(G[Z], s \in V^*_t\)</span>
+，判定 <span class="math inline">\(s \in L(G[Z])\)</span>？</p>
+<p>主要分为自顶向下和自底向上分析</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>自顶向下分析</th>
+<th>自底向上分析</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="有关文法的实用限制">2.6 有关文法的实用限制</h2>
+<p>不能有有害规则、多余规则</p>
+<p><strong>压缩文法</strong>：每一个终结符都满足条件一和条件二</p>
+<h2 id="扩充的-bnf-表示和语法图">2.7 扩充的 BNF 表示和语法图</h2>
+<ol type="1">
+<li>扩充的 BNF 表示</li>
+</ol>
+<p>优点：</p>
+<ul>
+<li>表示方便</li>
+<li>消除左递归，便于自顶向下分析</li>
+</ul>
+<p>具体规则：</p>
+<ul>
+<li>花括号 <code>&#123;&#125;</code>：<span class="math inline">\(\{t\} ^m
+_n\)</span>，表示符号串 <span class="math inline">\(t\)</span>
+可以重复连接 <span class="math inline">\(n\)</span> 到 $ m$ 次，若省略
+<span class="math inline">\(n、m\)</span> 表示可连接 <span
+class="math inline">\(0\)</span> 次到任意多次</li>
+<li>方括号 <code>[]</code>：<span
+class="math inline">\(\[t\]\)</span>，表示符号串 <span
+class="math inline">\(t\)</span> 可有可无，<span
+class="math inline">\([t] = \{t\} ^1 _0\)</span></li>
+<li>圆括号 <code>()</code>：在规则中提取因子</li>
+</ul>
+<ol start="2" type="1">
+<li>语法图</li>
+</ol>
+<h2 id="文法和语言分类">2.8 文法和语言分类</h2>
+<ol type="1">
+<li><p>乔姆斯基对文法的定义</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429143851835.png"
+alt="image-20230429143851835" />
+<figcaption aria-hidden="true">image-20230429143851835</figcaption>
+</figure>
+<ol start="2" type="1">
+<li><p>文法和语言分类</p>
+<ol type="1">
+<li><span class="math inline">\(0\)</span> 型文法（短语结构文法）</li>
+<li><span class="math inline">\(1\)</span>
+型文法（上下文敏感文法、上下文有关文法）</li>
+<li><span class="math inline">\(2\)</span> 型文法（上下文无关文法）</li>
+<li><span class="math inline">\(3\)</span> 型文法（正则文法）
+<ul>
+<li>与能为有穷状态自动机接受等价</li>
+</ul></li>
+</ol>
+<p>文法的限制性依次增强</p></li>
+</ol></li>
+</ol>
+<h1 id="第三章-词法分析程序的设计">第三章 词法分析程序的设计</h1>
+<p>词法分析程序又称词法分析器或扫描器</p>
+<p>大多数程序语言的词法规则属于乔姆斯基 <span
+class="math inline">\(3\)</span> 型文法</p>
+<p>通过状态图方便地设计词法分析程序</p>
+<h2 id="词法分析器的功能及实现方案">3.1 词法分析器的功能及实现方案</h2>
+<ol type="1">
+<li>识别输出单词，并检查错误</li>
+<li>转换数字</li>
+<li>删去空格、换行、制表、注释等空白符</li>
+</ol>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429144433494.png"
+alt="image-20230429144433494" />
+<figcaption aria-hidden="true">image-20230429144433494</figcaption>
+</figure>
+<blockquote>
+<p>将字符串表示的源程序转化为以单词表示的源程序</p>
+</blockquote>
+<h2 id="单词的种类及词法分析程序的输出形式">3.2
+单词的种类及词法分析程序的输出形式</h2>
+<ol type="1">
+<li><p>单词的种类：见前</p></li>
+<li><p>词法分析程序的输出形式 一般采用二元式，如</p>
+<table>
+<thead>
+<tr class="header">
+<th>单词类别</th>
+<th>单词值</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>整型</td>
+<td>58</td>
+</tr>
+<tr class="even">
+<td>保留字</td>
+<td>for</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>按单词种类分类或一符一类</p></li>
+</ol>
+<h2 id="正则文法及其状态图">3.3 正则文法及其状态图</h2>
+<blockquote>
+<p>画状态图并以之构造词法分析器</p>
+</blockquote>
+<h3 id="状态图">3.3.1 状态图</h3>
+<p><strong>一个有向图</strong>，其中</p>
+<ul>
+<li><p>圆圈标识的结点表示状态，状态之间用有向弧连接，弧上的标记（字符）代表有向弧的射出结点状态下可能出现的输入字符。</p></li>
+<li><p>包含有限个结点，包含初态和终态，终态用双圈表示</p></li>
+</ul>
+<h3 id="使用状态图分析字符串x">3.3.2 使用状态图分析字符串x</h3>
+<blockquote>
+<p>自底向上</p>
+</blockquote>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428155920181.png"
+alt="image-20230428155920181" />
+<figcaption aria-hidden="true">image-20230428155920181</figcaption>
+</figure>
+<h2 id="词法分析程序的设计与实现">3.4 词法分析程序的设计与实现</h2>
+<h3 id="文法及其状态图">3.4.1 文法及其状态图</h3>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428160047564.png"
+alt="image-20230428160047564" />
+<figcaption aria-hidden="true">image-20230428160047564</figcaption>
+</figure>
+<h3 id="词法分析程序的构造">3.4.2 词法分析程序的构造</h3>
+<p>将语义动作添加到状态图中，并使每一个状态都对应一小段程序</p>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428161120196.png"
+alt="image-20230428161120196" />
+<figcaption aria-hidden="true">image-20230428161120196</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428161251494.png"
+alt="image-20230428161251494" />
+<figcaption aria-hidden="true">image-20230428161251494</figcaption>
+</figure>
+<h3 id="词法分析程序的实现">3.4.3 词法分析程序的实现</h3>
+<p>先确定具体输出形式</p>
+<ol type="1">
+<li><p>输出形式</p>
+<p>采用二元式</p></li>
+</ol>
+<figure>
+<img src="D:\Programing\Compilers\Notes\WolfBook\Images\3.4.png"
+alt="3.4" />
+<figcaption aria-hidden="true">3.4</figcaption>
+</figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getsym</span><span class="params">()</span> &#123; <span class="comment">// 返回类别码</span></span><br><span class="line">    clearToken();</span><br><span class="line">    <span class="keyword">while</span> (isSpace() || isNewline() || isTab()) &#123;</span><br><span class="line">        getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (isLetter()) &#123;</span><br><span class="line">        <span class="keyword">while</span> (isLetter() || isDigit()) &#123;</span><br><span class="line">            catToken();</span><br><span class="line">            getchar();</span><br><span class="line">        &#125;</span><br><span class="line">        retract();</span><br><span class="line">        <span class="type">int</span> result = reserver();</span><br><span class="line">        <span class="keyword">if</span> (result == <span class="number">0</span>) </span><br><span class="line">            symbol = IDSY;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            symbol = result;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isDigit()) &#123;</span><br><span class="line">        <span class="keyword">while</span> (isDigit()) &#123;</span><br><span class="line">            catToken();</span><br><span class="line">            getchar();</span><br><span class="line">        &#125;</span><br><span class="line">        retract();</span><br><span class="line">        num = transNum(token);</span><br><span class="line">        symbol = INTSY;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isColon()) &#123;</span><br><span class="line">        getchar();</span><br><span class="line">        <span class="keyword">if</span> (isEqu()) </span><br><span class="line">            symbol = ASSIGNSY;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            retract();</span><br><span class="line">            symbol = COLONSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isPlus()) &#123;</span><br><span class="line">            symbol = PLUSSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isMinus()) &#123;</span><br><span class="line">            symbol = MINUSSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isStar()) &#123;</span><br><span class="line">            symbol = STARSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isLpar()) &#123;</span><br><span class="line">            symbol = LPARSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isRpar()) &#123;</span><br><span class="line">            symbol = RPARSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isSemi()) &#123;</span><br><span class="line">            symbol = SEMISY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isDivi()) &#123;</span><br><span class="line">            getchar();</span><br><span class="line">            <span class="keyword">if</span> (isStar()) &#123;</span><br><span class="line">                <span class="keyword">do</span> &#123;</span><br><span class="line">                    <span class="keyword">do</span> &#123;</span><br><span class="line">                        getchar();</span><br><span class="line">                    &#125; <span class="keyword">while</span> (!isStar());</span><br><span class="line">                    <span class="keyword">do</span> &#123;</span><br><span class="line">                        getchar();</span><br><span class="line">                        <span class="keyword">if</span> (isDivi())</span><br><span class="line">                            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    &#125; <span class="keyword">while</span> (isStar());</span><br><span class="line">                &#125; <span class="keyword">while</span> (!isStar());</span><br><span class="line">            &#125;</span><br><span class="line">            retract();</span><br><span class="line">            symbol = DIVISY;</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">            erro();</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="第4章-语法分析">第4章 语法分析</h1>
+<blockquote>
+<p>主要介绍自顶向下手工实现递归下降</p>
+</blockquote>
+<h2 id="自顶向下分析方法">4.1 自顶向下分析方法</h2>
+<p>一般方法：带回溯的自顶向下分析方法</p>
+<blockquote>
+<p>本质上是一种试探方法，反复使用不同规则匹配输入串</p>
+</blockquote>
+<p>存在的问题：</p>
+<ul>
+<li><p>左递归问题——用扩充 BNF 文法改写</p>
+<ul>
+<li><p>提因子规则：消除左递归，压缩文法长度</p></li>
+<li><p>替换规则：<span class="math inline">\(U::=x|y|\dots|z|Uv
+\rightarrow U::=(x|y|\dots|z)\{v\}\)</span></p></li>
+<li><p>改写为右递归：<span class="math inline">\(P::=Pa|b \rightarrow
+P::=bP ^{\prime}\)</span> 和 <span class="math inline">\(P \prime
+::=aP^{\prime} | \varepsilon\)</span></p></li>
+<li><p>一般的改写算法：<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429151541958.png"
+alt="image-20230429151541958" /></p>
+<blockquote>
+<p>事实上就是先递归代入，再消除左递归，最后化简</p>
+</blockquote></li>
+</ul></li>
+<li><p>回溯问题</p>
+<ul>
+<li><figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429152458251.png"
+alt="image-20230429152458251" />
+<figcaption aria-hidden="true">image-20230429152458251</figcaption>
+</figure></li>
+</ul></li>
+</ul>
+<h2 id="递归下降分析法">4.2 递归下降分析法</h2>
+<p><strong>主要做法</strong>：对文法中每一个非终结符号 <span
+class="math inline">\(U\)</span>
+都编写一个子程序完成其所对应的语法成分的分析和识别任务。子程序用该非终结符号的规则的右部符号串去匹配输入串</p>
+<h2 id="基于递归下降分析法的语法分析程序构造">4.3
+基于递归下降分析法的语法分析程序构造</h2>
+<p><code>nextsym</code> ：扫描下一个符号并将类别码储存在
+<code>sym</code> 中</p>
+<p><code>error</code>
+：调用出错处理程序打印错误信息，跳过分析过程中有错误的一段源程序</p>
+<h1 id="第五章-符号表管理技术">第五章 符号表管理技术</h1>
+<p>分析阶段：维护符号表</p>
+<p>综合阶段：利用符号表生成目标代码</p>
+<h2 id="概述">5.1 概述</h2>
+<p><strong>符号表</strong>：记录<strong>源程序</strong>中各种标识符的特性信息的表格</p>
+<p><strong>与遍数的关系</strong>：</p>
+<ul>
+<li>多遍扫描中在词法分析阶段填写，其他属性在语义分析和代码生成阶段填入</li>
+<li>一遍：语义分析和代码生成</li>
+</ul>
+<p>标识符在源程序中的每一次出现都要与符号表打一次交道</p>
+<p>若允许隐式声明，必须按首次引用处理</p>
+<h2 id="符号表的组织和内容">5.2 符号表的组织和内容</h2>
+<h3 id="符号表的结构和内容">5.2.1 符号表的结构和内容</h3>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429160114282.png"
+alt="image-20230429160114282" />
+<figcaption aria-hidden="true">image-20230429160114282</figcaption>
+</figure>
+<ul>
+<li><p>标识符的种类：如简单变量、函数、过程、数组、标号、参数等。</p></li>
+<li><p>类型：如整型、实型、字符型、指针等（一般用编码表示）</p></li>
+<li><p>性质：变量形参、值形参等</p></li>
+<li><p>值：标识符所代表的数值。</p></li>
+<li><p>地址：标识符所分配单元的首地址或地址位移。</p></li>
+<li><p>大小：所占的字节数。</p></li>
+<li><p>作用域的嵌套层次：分程序结构语言中，标识符声明所在的分程序的层次。</p></li>
+<li><p>标识符声明的源程序行号</p></li>
+<li><p>标识符引用的源程序行号</p></li>
+<li><p>以字母顺序排列的链域</p>
+<blockquote>
+<p>链域指向按字母排序的下一个标识符在符号表中的位置，便于产生按字母顺序排列的标识符交叉引用表</p>
+<p>故如果不产生交叉引用表可以删去</p>
+</blockquote></li>
+</ul>
+<p>对于一些特殊的名字，还要考虑较多的信息，如:</p>
+<ul>
+<li>对于数组，要考虑维数、上下界值、计算下标变量地址所用的信息以及数组元素类型等</li>
+<li>对于记录（结构、联合），要考虑域的个数,每个域名、地址位移类型等</li>
+<li>对于过程或函数，要考虑形参个数、所在层次、函数返回值类型、局部变量所占空间大小等</li>
+<li>对于指针，要考虑所指对象类型等</li>
+</ul>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429160551515.png"
+alt="image-20230429160551515" />
+<figcaption aria-hidden="true">image-20230429160551515</figcaption>
+</figure>
+<h3 id="符号表的组织方式">5.2.2 符号表的组织方式</h3>
+<ul>
+<li><strong>统一符号表</strong>：按各种信息的并集设计表项
+<ul>
+<li>方便插入、查找</li>
+<li>浪费空间</li>
+</ul></li>
+<li><strong>按标识符建立符号表</strong>：分别设计表项
+<ul>
+<li>节约空间</li>
+<li>插入、查找开销大</li>
+</ul></li>
+<li><strong>折中</strong>：存储大部分共同信息，特殊信息另附表，二者用指针连接
+<ul>
+<li><figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429160924281.png"
+alt="image-20230429160924281" />
+<figcaption aria-hidden="true">image-20230429160924281</figcaption>
+</figure></li>
+</ul></li>
+</ul>
+<blockquote>
+<p>经典的时间和空间的 tradeoff</p>
+</blockquote>
+<p><strong>符号名的存储方法</strong>：</p>
+<ul>
+<li>预设长度
+<ul>
+<li>速度快，空间利用率低</li>
+</ul></li>
+<li>放置描述符
+<ul>
+<li>速度慢，节约空间</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>就是数组实现方式和链表实现方式的区别</p>
+</blockquote>
+<h2 id="非分程序结构语言的符号表组织">5.3
+非分程序结构语言的符号表组织</h2>
+<p>主要介绍了散列技术，摆了</p>
+<h2 id="分程序结构语言的符号表组织">5.4 分程序结构语言的符号表组织</h2>
+<h3 id="标识符的作用域及基本处理方法">5.4.1
+标识符的作用域及基本处理方法</h3>
+<p>作用域局限在所定义的<strong>最小模块</strong>中</p>
+<p>建表和查表的基本处理方法：</p>
+<ul>
+<li>在声明部分读到标识符时
+<ul>
+<li>查询所在程序单元符号表
+<ul>
+<li>已存在同名标识符——报错</li>
+<li>不存在同名标识符——插入</li>
+</ul></li>
+</ul></li>
+<li>在可执行部分读到标识符时
+<ul>
+<li>查询所在程序单元符号表
+<ul>
+<li>已存在同名标识符——已声明</li>
+<li>不存在同名标识符
+<ul>
+<li>逐层查找外层符号表
+<ul>
+<li>已存在同名标识符——已声明，读取信息供使用</li>
+<li>未存在同名标识符——使用了未声明的标识符</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>语言预定义的标识符
+<ul>
+<li>放在最外层符号表</li>
+</ul></li>
+<li>分程序开始
+<ul>
+<li>定位</li>
+</ul></li>
+<li>分程序结束
+<ul>
+<li>重定位</li>
+</ul></li>
+</ul>
+<h3 id="定位和重定位">5.4.2 定位和重定位</h3>
+<blockquote>
+<p>其嵌套方式显然对应着栈结构</p>
+</blockquote>
+<h3 id="符号表的组织方式-1">5.4.3 符号表的组织方式</h3>
+<ol type="1">
+<li>栈式符号表
+<ul>
+<li>遇到标识符声明——压栈</li>
+<li>分程序结尾——仅弹栈而不彻底删除</li>
+<li>性能较差，仅用于符号表较小时</li>
+</ul></li>
+<li>散列符号表的栈式实现</li>
+</ol>
+<h1 id="第六章-运行时的存储组织及管理">第六章
+运行时的存储组织及管理</h1>
+<h2 id="静态存储分配">6.1 静态存储分配</h2>
+<p>对于编译时可以确定其存储空间大小的数据，可以在编译时就给它们分配固定的存储空间</p>
+<p>其余数据则将分配存储过程留待目标程序运行时动态地进行</p>
+<h2 id="动态内存分配">6.2 动态内存分配</h2>
+<h3 id="活动记录">6.2.1 活动记录</h3>
+<p>运行栈上的动作和普通栈上的动作相同。当进入一个模块时，就在运行栈的栈顶创建一个专用数据区，通常称为活动记录(Activation
+Record)。活动记录的开始位置称为基</p>
+<p><strong>注意栈的增长方向</strong></p>
+<h3 id="参数区">6.2.2 参数区</h3>
+<h3 id="display-区">6.2.3 display 区</h3>
+<h3 id="运行时的地址计算">6.2.4 运行时的地址计算</h3>
+<h3 id="递归过程的处理">6.2.5 递归过程的处理</h3>
+<h2 id="内存垃圾回收器">6.3 内存垃圾回收器</h2>
+<p>需要从编译器、操作系统甚至处理器芯片中获得信息</p>
+<p>分析当前程序运行时产生的变量根集（root set）进行可达性分析</p>
+<p>变量根集指在程序运行的某一时刻运行栈上所有变量或对象的集合，再加上当前程序的全局变量、静态变量等变量或对象</p>
+<h3 id="引用计数">6.3.1 引用计数</h3>
+<p>reference counting</p>
+<p>指向该对象的引用被创建——count+1</p>
+<p>已经存在的指向某对象的引用被删除或重写——count-1</p>
+<p>e.g. <span class="math inline">\(P = Q\)</span> ，Q
+指向对象的计数值-1，P 指向对象的计数值+1</p>
+<p>回收一个对象可能会传递性地对其他对象的计数器进行-1操作，最后回收那些计数器变成0的对象</p>
+<p>对于大部分高性能系统，引用计数已经被跟踪型垃圾回收器替代</p>
+<h3 id="标记和清除垃圾回收器">6.3.2 标记和清除垃圾回收器</h3>
+<p>两阶段回收垃圾：</p>
+<ul>
+<li>从对象根集开始遍历整个指针关系图，通过标识位区分死对象和活对象</li>
+<li>垃圾回收，不移动内存堆中的对象。故主要弊端是<strong>内存碎片</strong></li>
+</ul>
+<h3 id="标记紧缩算法">6.3.3 标记紧缩算法</h3>
+<p>在标记清除回收器的基础上引入紧缩技术</p>
+<h3 id="拷贝回收算法">6.3.4 拷贝回收算法</h3>
+<ul>
+<li>空间利用率低</li>
+</ul>
+<h3 id="分代垃圾回收器">6.3.5 分代垃圾回收器</h3>
+<h1 id="第七章-源程序的中间形式">第七章 源程序的中间形式</h1>
+<blockquote>
+<p>也即中间代码</p>
+</blockquote>
+<h2 id="波兰表示">7.1 波兰表示</h2>
+<p>中缀转后缀算法：</p>
+<ul>
+<li>扫描到操作数，直接输出</li>
+<li>遇到操作符，与栈顶元素比较优先级
+<ul>
+<li>栈顶 &gt; 栈外，输出栈顶</li>
+<li>反之，操作符入栈</li>
+</ul></li>
+</ul>
+<p>波兰表示<strong>不便优化</strong></p>
+<h2 id="n-元表示">7.2 N-元表示</h2>
+<p>三元式：<操作符1>,<操作数1>,<操作数2></p>
+<p>一组三元式，前面三元式的计算结果可用该三元式的编号表示</p>
+<p>四元式：<操作符1>,<操作数1>,<操作数2>,<结果></p>
+<h2 id="抽象语法树">7.3 抽象语法树</h2>
+<p>非叶结点：操作符</p>
+<p>叶结点：操作数</p>
+<p><strong>与前两种表示的联系</strong>：后续遍历可以得到后缀表达式，</p>
+<h2 id="抽象机代码">7.4 抽象机代码</h2>
+<p>摆了</p>
+<h1 id="第八章-错误处理">第八章 错误处理</h1>
+<h2 id="概述-1">8.1 概述</h2>
+<p>编译程序的错误处理能力包括：</p>
+<ul>
+<li>检查出各类错误的能力</li>
+<li>准确地指出出错位置及错误性质的能力</li>
+<li>通过一次编译能将源程序中的错误尽可能都找出来的能力</li>
+<li>具有一定的错误改正的能力</li>
+<li>遏止重复错误信息的能力</li>
+</ul>
+<h2 id="错误的分类">8.2 错误的分类</h2>
+<ul>
+<li>语法错误：不符合语法（词法）规则
+<ul>
+<li>如漏掉一半括号等</li>
+</ul></li>
+<li>语义错误：不符合语义或超越具体计算机的限制
+<ul>
+<li>如标识符先声明才能引用，形参实参个数匹配</li>
+<li>溢出错误，如计算结果太大；符号表、数据存储区等溢出</li>
+</ul></li>
+</ul>
+<h2 id="错误的检查与报告">8.3 错误的检查与报告</h2>
+<p>一些语义错误要由目标程序检查出来</p>
+<ul>
+<li>如下标越界</li>
+<li>处理方法一般是编译时生成有关检验指令</li>
+</ul>
+<p>报告错误的两种方式</p>
+<ul>
+<li>分析完再打印，需要单独开辟空间</li>
+<li>边分析边打印，有可能检测不出来</li>
+</ul>
+<h2 id="错误处理技术">8.4 错误处理技术</h2>
+<p>两种错误处理办法</p>
+<ul>
+<li>错误改正
+<ul>
+<li>太难了没有编译器做到</li>
+</ul></li>
+<li>错误局部化处理
+<ul>
+<li>暂停并跳过对出错部分的分析</li>
+<li>实现：在编译程序中设置专用变量存放指定的右界符</li>
+</ul></li>
+</ul>
+<p>遏制重复的错误信息</p>
+<ul>
+<li><p>建立出错名字表，类似如下代码段</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// demo.java</span></span><br><span class="line"><span class="keyword">if</span> (errorMap.containsKey(unDefinedModifier)) &#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    put(unDefinedModifier, errorMessage);</span><br><span class="line">    <span class="comment">// print something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>设置标志位，类似 <code>isVisited</code></p></li>
+</ul>
+<h1 id="第九章-语法制导翻译技术">第九章 语法制导翻译技术</h1>
+<blockquote>
+<p>翻译文法、属性文法、自顶向下语法制导翻译技术</p>
+</blockquote>
+<h2 id="翻译文法">9.1 翻译文法</h2>
+<figure>
+<img
+src="D:\Programing\Compilers\Notes\WolfBook\Images\活动序列动作符号.png"
+alt="活动序列动作符号" />
+<figcaption aria-hidden="true">活动序列动作符号</figcaption>
+</figure>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230430222848882.png"
+alt="image-20230430222848882" />
+<figcaption aria-hidden="true">image-20230430222848882</figcaption>
+</figure>
+<p><strong>翻译文法</strong>：终结符号集由输入符号和动作符号组成的上下文无关文法。</p>
+<p><strong>活动序列</strong>：翻译文法确定的语言中的符号串</p>
+<h2 id="语法制导翻译">9.2 语法制导翻译</h2>
+<blockquote>
+<p>形式上，将翻译看成偶对的集合，第一个元素是输入语言中的符号串，第二个元素是翻译该符号串时的动作序列或执行动作序列所规定的操作后生成的新符号串</p>
+<p>即 符号串 <span class="math inline">\(\rightarrow\)</span>
+动作序列</p>
+<p>或 符号串 <span class="math inline">\(\rightarrow\)</span>
+动作序列生成的新符号串</p>
+<p>在翻译文法是符号串翻译文法的时候可以认为二者同义</p>
+</blockquote>
+<p><strong>语法制导翻译</strong>：给定一输入符号串，根据输入文法获得翻译该符号串的动作序列，并执行该动作序列所规定的动作的过程</p>
+<blockquote>
+<p>翻译文法定义的翻译</p>
+</blockquote>
+<p><strong>输入序列</strong>：表示从活动序列中删掉所有<strong>动作符号</strong>而得到的符号序列
+<strong>动作序列</strong>：表示从活动序列中删掉所有<strong>输入符号</strong>而得到的符号序列</p>
+<blockquote>
+<p>你俩在这玩相爱相杀是吧</p>
+</blockquote>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230430224236885.png"
+alt="image-20230430224236885" />
+<figcaption aria-hidden="true">image-20230430224236885</figcaption>
+</figure>
+<h2 id="属性翻译文法">9.3 属性翻译文法</h2>
+<h3 id="综合属性">9.3.1 综合属性</h3>
+<p>将翻译文法中无值的符号扩充为有值的，值部分称为符号的属性</p>
+<blockquote>
+<p>产生式中左部符号的属性值是通过计算右部符号的属性值得来的</p>
+</blockquote>
+<h3 id="继承属性">9.3.2 继承属性</h3>
+<figure>
+<img
+src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230501102809077.png"
+alt="image-20230501102809077" />
+<figcaption aria-hidden="true">image-20230501102809077</figcaption>
+</figure>
+<h2 id="自顶向下语法制导翻译">9.4 自顶向下语法制导翻译</h2>
+<p>// to be continued</p>
+<blockquote>
+<p>这章好抽象啊，不知道对于实验需要的内容有多大帮助，反正连滚带爬读完了，理论内容先放一放</p>
+</blockquote>
+<h1 id="第十章-语义分析和代码生成">第十章 语义分析和代码生成</h1>
+<h2 id="语义分析的概念">10.1 语义分析的概念</h2>
+<p>处理上下文有关文法的方式：用专门的语义动作来补充上下文无关分析器的动作，即<strong>借助语义分析</strong></p>
+<p>语义分析要处理的问题</p>
+<ul>
+<li>我没读出来作者的意思，所以这条鸽了</li>
+<li>表达式和赋值语句操作数的类型一致性检查</li>
+<li>分析语义并做相应的语义处理</li>
+</ul>
+<h2 id="栈式抽象机及其汇编指令">10.2 栈式抽象机及其汇编指令</h2>
+<p>table</p>
+<h2 id="声明语句的处理">10.3 声明语句的处理</h2>
+<p>编译器分离出每个实体，并填符号表</p>
+<p>声明后，可以使用符号表中信息</p>
+<ul>
+<li>检查对所声明的实体引用是否正确</li>
+<li>利用已声明实体的特性信息，为给定源程序生成特定的目标代码</li>
+</ul>
+<h3 id="常量类型">10.3.1 常量类型</h3>
+<h3 id="简单变量">10.3.2 简单变量</h3>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">staticvardef</span><span class="params">(<span class="type">int</span> t, <span class="type">int</span> i, <span class="type">char</span> *n)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> j = tableinsert(n, t, i);</span><br><span class="line">    <span class="comment">/*给定一简单变量n的类型,所需的数据空间大小i。tableinsert将n和属性i及t一起填入符号表。</span></span><br><span class="line"><span class="comment">    i用作临时变量,记录函数返回值。*/</span></span><br><span class="line">    <span class="keyword">if</span> (j == DUPLICATION) &#123;</span><br><span class="line">        errmsg(duplident, statmtno);<span class="comment">/*输出相关的错误信息*/</span> </span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j == OVERFLOW) &#123;</span><br><span class="line">        errmsg(tableoverflow, staticnumber);</span><br><span class="line">        <span class="built_in">abort</span>();        <span class="comment">/*符号表溢出,编译失败,终止编译程序*/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">allocsv</span><span class="params">(<span class="type">int</span> i)</span> <span class="comment">/*存储分配*/</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*设简单变量所要求的数据空间大小为i,由此可更新指针 codeptr 的内容*/</span></span><br><span class="line">    codeptr = codeptr + i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数组变量">10.3.3 数组变量</h3>
+<p>编译程序在处理数组声明时将建立一个模板，以便在执行期间能够间接引用该数组的元素。</p>
+<ul>
+<li>静态数组——在编译期间建立</li>
+<li>动态数组——在编译时仅为模板的建立分配一个空间，而模板本身将在运行时建立</li>
+</ul>
+<p><strong>数组绝对地址的计算</strong></p>
+<h3 id="记录变量">10.3.4 记录变量</h3>
+<p>用来引用几个不同名字所组成的实体</p>
+<h3 id="过程声明">10.3.5 过程声明</h3>
+<h2 id="表达式语句">10.4 表达式语句</h2>
+<p>将表达式的操作数装载到操作数栈栈顶或寄存器，执行操作后将结果保留在操作数栈栈顶或寄存器</p>
+<h2 id="赋值语句">10.5 赋值语句</h2>
+<p>如果支持对数组的赋值，需要先找到数组的地址，继而使用内部计数器增值的方法产生对所有数组元素的引用</p>
+<h2 id="控制语句">10.6 控制语句</h2>
+<h3 id="if-语句">10.6.1 <code>if</code> 语句</h3>
+<h3 id="case-语句">10.6.2 <code>case</code> 语句</h3>
+<h3 id="while-语句">10.6.3 <code>while</code> 语句</h3>
+<h3 id="for-语句">10.6.4 <code>for</code> 语句</h3>
+<h2 id="过程调用和返回语句">10.7 过程调用和返回语句</h2>
+<p>// to be continued</p>
+<h2 id="输入输出语句">10.8 输入/输出语句</h2>
+<p>// to be continued</p>
+<h2 id="编译程序的辅助功能">10.9 编译程序的辅助功能</h2>
+]]></content>
+      <categories>
+        <category>S5</category>
+        <category>Notes</category>
+        <category>编译</category>
+      </categories>
+      <tags>
+        <tag>Notes</tag>
+        <tag>编译</tag>
       </tags>
   </entry>
   <entry>
@@ -5459,1047 +6500,6 @@ class="math inline">\(P_{D_4}(z_1,z_2,z_3,z_4)=\dfrac{1}{8}(z_1^4+2z_4+3z_2^2+2z
       <tags>
         <tag>Notes</tag>
         <tag>Combinatorics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《编译技术》笔记</title>
-    <url>/compiling-technique-notes/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="总述">总述</h2>
-<blockquote>
-<p>北航张莉《编译技术》笔记，看着玩玩</p>
-</blockquote>
-<span id="more"></span>
-<h1 id="第一章-编译概述">第一章 编译概述</h1>
-<h2 id="什么是程序设计语言">1.1 什么是程序设计语言</h2>
-<p>人与计算机之间的中介，充当通信工具</p>
-<h3 id="程序设计语言的定义方法">1.1.1 程序设计语言的定义方法</h3>
-<p>对语言结构形式的描述：文法(grammar)或语法(syntax)</p>
-<p>语言所表达内容的含义：语义</p>
-<p><strong>本书采用属性文法。</strong>属性文法是一种半形式化的语义描述方法</p>
-<h3 id="程序设计语言的处理系统">1.1.2 程序设计语言的处理系统</h3>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428170824268.png"
-alt="image-20230428170824268" />
-<figcaption aria-hidden="true">image-20230428170824268</figcaption>
-</figure>
-<p>源程序(source program)、源语言(source language)、目标程序(object
-program)或目标代码(object code)、目标语言(object language)</p>
-<h3 id="编译程序和解释程序">1.1.3 编译程序和解释程序</h3>
-<p>编译程序也可以输出介于低级语言和高级语言之间的某种中间语言(intermediate)</p>
-<blockquote>
-<p>中间程序可以理解为某种虚拟计算机的机器语言</p>
-</blockquote>
-<p>解释程序(interpreter)：能对编译得到的中间语言（甚至是源语言）进行解释执行的程序</p>
-<blockquote>
-<p>解释程序可以理解为这种虚拟计算机的模拟软件</p>
-</blockquote>
-<p>编译型语言运行时不需要重新翻译，执行效率高；但是依赖编译器，跨平台性差</p>
-<p>常常用于开发操作系统、大型应用程序、数据库系统等</p>
-<p>常见的编译型语言有 C/C++、Pascal/Object Pascal(Delphi)等</p>
-<p>解释执行程序：需要对中间代码甚至源代码逐行解释，速度较慢，优点为：</p>
-<ol type="1">
-<li>可以运行时动态确定数据</li>
-<li>中间代码的信息可以辅助调试</li>
-<li>可以边修改边解释执行，缩短再次编译运行的时间</li>
-<li>处理系统易开发</li>
-<li>中间代码占用内存少</li>
-<li>易于移植（中间语言的机器无关性）</li>
-</ol>
-<p><strong>T型图</strong></p>
-<h2 id="与编译程序相关的处理系统">1.2 与编译程序相关的处理系统</h2>
-<p><strong>1.各种翻译程序</strong></p>
-<blockquote>
-<p>翻译是广义的翻译，开阔下思路</p>
-</blockquote>
-<p><strong>2.预处理器</strong></p>
-<p>把源程序变换为<strong>其它语言程序</strong>再进行编译。当然，与源程序的不对应性会导致程序调试困难</p>
-<p><strong>3.宏处理器</strong></p>
-<h2 id="编译程序和程序设计环境">1.3 编译程序和程序设计环境</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428171210972.png"
-alt="image-20230428171210972" />
-<figcaption aria-hidden="true">image-20230428171210972</figcaption>
-</figure>
-<h2 id="编译程序的构造">1.4 编译程序的构造</h2>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428171300901.png"
-alt="image-20230428171300901" />
-<figcaption aria-hidden="true">image-20230428171300901</figcaption>
-</figure>
-<p><strong>1.词法分析</strong></p>
-<p>是以识别单词为目标的简单的语法分析程序</p>
-<p><code>token</code> 的种类：</p>
-<ul>
-<li>保留字或关键词，如
-<code>begin</code>、<code>if</code>、<code>for</code></li>
-<li>标识符</li>
-<li>常量，包括浮点数、整数、各进制数、字符常量、字符串常量等</li>
-<li>分界符和运算符</li>
-</ul>
-<p>空格和注释会被过滤</p>
-<blockquote>
-<p>可以用枚举类具体实现</p>
-</blockquote>
-<p><strong>2.语法分析</strong></p>
-<p>根据语法规则将token组合成大的语法类或语法成分，如变量声明、表达式、语句、函数和过程等</p>
-<p>输出：一棵语法分析树（简称语法树）</p>
-<ul>
-<li><p>叶结点：token</p></li>
-<li><p>非叶结点：语法成分</p></li>
-</ul>
-<p><strong>3.语义分析</strong></p>
-<p>确定源程序的意义</p>
-<p>事实上还要同时进行语义检查，比如赋值类型不匹配等</p>
-<p>语义动作还包括生成中间代码</p>
-<p><strong>4.代码生成</strong></p>
-<p>通常是将源程序的中间形式转换为汇编语言或者机器语言，可通过代码优化进一步优化</p>
-<p><strong>5.代码优化</strong></p>
-<p>机器无关的优化</p>
-<ul>
-<li><p>常数表达式的计算、应用操作符的性质（结合性、可交换性、分配性等）</p></li>
-<li><p>多次出现的相同子表达式一次性计算、将循环内不变的语句移到循环外等</p></li>
-</ul>
-<p>机器有关的优化</p>
-<ul>
-<li>寄存器分配等</li>
-</ul>
-<p><strong>6.符号表管理</strong></p>
-<p><strong>7.错误检测与处理</strong></p>
-<p>以上是逻辑结构，实现时常常结合实现</p>
-<p><strong>8.前端和后端(front end and back end)</strong></p>
-<p>前端：与源语言有关而与目标机无关的部分（即分析部分）</p>
-<ul>
-<li>词法分析、语法分析</li>
-<li>符号表建立</li>
-<li>语义分析、中间代码生成</li>
-<li>相应部分的错误处理和符号表操作</li>
-<li>与机器无关的代码优化</li>
-</ul>
-<p>后端：与目标机有关的部分（即综合部分），与源语言无关而仅仅依赖于中间语言</p>
-<ul>
-<li>目标代码生成</li>
-<li>相应部分的错误处理和符号表操作</li>
-<li>与机器有关的代码优化</li>
-</ul>
-<p><strong>9.遍(pass)</strong></p>
-<h2 id="编译技术在软件工程中的应用">1.5 编译技术在软件工程中的应用</h2>
-<p>略，用处不大</p>
-<h2 id="练习-1">练习 1</h2>
-<p>基本是概念复述</p>
-<h1 id="第二章-文法和语言的概念和表示">第二章
-文法和语言的概念和表示</h1>
-<h2 id="文法的非形式讨论">2.1 文法的非形式讨论</h2>
-<p><strong>文法</strong>：形式上描述和规定语言结构的规则，也称语法</p>
-<h3 id="语法树">2.1.1 语法树</h3>
-<table>
-<thead>
-<tr class="header">
-<th>语法树结点</th>
-<th>语法</th>
-<th>形式语言</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>带尖括号的结点</td>
-<td>语法成分</td>
-<td>非终结符号</td>
-</tr>
-<tr class="even">
-<td>不带尖括号的结点</td>
-<td>单词符号</td>
-<td>终结符号</td>
-</tr>
-</tbody>
-</table>
-<h3 id="规则">2.1.2 规则</h3>
-<h3 id="推导">2.1.3 推导</h3>
-<p>通常把规则称为<strong>产生式</strong>，用符号 <code>:==</code> 或
-<span class="math inline">\(\rightarrow\)</span> 表示</p>
-<p>用符号 <span class="math inline">\(\Rightarrow\)</span> 表示推导</p>
-<p>两个以上的语法成分同时存在时可任选其中之一并根据规则重复上述推导，直到推出句子</p>
-<h3 id="练习-2-1">练习 2-1</h3>
-<h2 id="符号符号串及其集合的运算">2.2 符号、符号串及其集合的运算</h2>
-<p>任何一种语言都是由该语言的<strong>基本符号</strong>所组成的<strong>符号串集合</strong></p>
-<h3 id="字母表和符号串">2.2.1 字母表和符号串</h3>
-<p><strong>字母表</strong>：元素的<strong>非空有穷</strong>集合</p>
-<p><strong>符号</strong>：字母表中的元素</p>
-<p><strong>符号串</strong>：由字母表中的符号所组成的任何<strong>有穷</strong>序列</p>
-<p><strong>空符号串 <span
-class="math inline">\(\varepsilon\)</span></strong>
-：不包含任何符号的符号串</p>
-<p><strong>符号串的递归定义</strong>：</p>
-<ul>
-<li>$ $ 是 <span class="math inline">\(\Sigma\)</span> 上的符号串</li>
-<li>若 $ x$ 是 <span class="math inline">\(\Sigma\)</span>
-上的符号串，且 <span class="math inline">\(a \in \Sigma\)</span> ，则 $
-xa $ 或 $ ax $ 是 <span class="math inline">\(\Sigma\)</span>
-上的符号串</li>
-<li>$ y $ 是 <span class="math inline">\(\Sigma\)</span>
-上的符号串，当且仅当 <span class="math inline">\(y\)</span> 可由 ① 和 ②
-产生</li>
-</ul>
-<blockquote>
-<p>前后拼接</p>
-</blockquote>
-<p>通常用 <span class="math inline">\(a、b \dots\)</span> 和 <span
-class="math inline">\(S、T、U \dots\)</span> 表示符号，用 <span
-class="math inline">\(s、t、u\)</span> 表示符号串，用 <span
-class="math inline">\(A、B、C、 \dots 、 R\)</span> 表示符号串集合</p>
-<h3 id="符号串及其集合的运算">2.2.2 符号串及其集合的运算</h3>
-<p><strong>符号串相等</strong>：各个符号依次相等</p>
-<blockquote>
-<p>符号串中符号的顺序很重要</p>
-</blockquote>
-<p><strong>符号串的运算</strong>：</p>
-<ul>
-<li><p>符号串长度：$ |x| $，数值上等于组成该符号串的符号个数</p></li>
-<li><p>符号串连接：若 <span class="math inline">\(x\)</span> 和 $ y $
-是两个符号串，其连接为 $ xy $ ，特殊地，有 $ x = x = x $</p></li>
-<li><p>集合的乘积运算：符号串集合 $ A $ 和 $ B $ 的乘积 <span
-class="math inline">\(AB = \{xy | x \in A, y \in B\}\)</span>
-，特殊地，有 $ {} A = A {} = A $</p></li>
-<li><p>符号串的幂运算：<img src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428181309643.png" alt="image-20230428181309643" style="zoom:50%;" /></p></li>
-<li><p>集合的幂运算：</p>
-<p><img src="D:\Programing\Compilers\Notes\WolfBook\Images\集合幂运算.png" alt="集合幂运算" style="zoom:50%;" /></p></li>
-<li><p>集合 <span class="math inline">\(A\)</span> 的闭包 <span
-class="math inline">\(A^*\)</span> 和 集合 $ A $ 的正闭包 <span
-class="math inline">\(A^+\)</span> ：$ A^+ = A^1 A^2  A^n \ A ^* = A^0
-A^*$，有 <span class="math inline">\(A^+ = AA^* = A^*A\)</span></p></li>
-</ul>
-<h2 id="文法和语言的形式定义">2.3 文法和语言的形式定义</h2>
-<h3 id="文法的形式定义">2.3.1 文法的形式定义</h3>
-<p><strong>产生式或规则</strong>：有序对 $(U, x) $ ，通常写作 <span
-class="math inline">\(U::=x\)</span> 或 <span class="math inline">\(U
-\rightarrow x\)</span>，其中 <span class="math inline">\(U\)</span>
-是符号，是产生式的左部，<span class="math inline">\(x\)</span>
-是有穷符号串，是产生式的右部</p>
-<p><strong>字汇表</strong>：所有的规则左部和右部中的所有符号组成的集合</p>
-<p><strong>非终结符号</strong>：文法 <span
-class="math inline">\(G\)</span>
-中作为规则左部出现的符号，也称语法成分，形成了非终结符号集 <span
-class="math inline">\(V_n\)</span></p>
-<p><strong>终结符号</strong>：规则中不属于 <span
-class="math inline">\(V_n\)</span> 的符号，形成了终结符号集合 <span
-class="math inline">\(V_t\)</span></p>
-<p><strong>识别符号或开始符号</strong>：符号 <span
-class="math inline">\(Z\)</span> 至少是一条规则的左部</p>
-<p><strong>BNF 表示法</strong>：</p>
-<blockquote>
-<p>合并具有相同左部的规则</p>
-</blockquote>
-<p><strong>文法</strong>：一个四元组 <span class="math inline">\(G =
-&lt;V_n, V_i, P, Z&gt;\)</span></p>
-<p><span class="math inline">\(P\)</span>：产生式或规则的集合，<span
-class="math inline">\(Z\)</span>：文法的识别符号</p>
-<h3 id="推导的形式定义">2.3.2 推导的形式定义</h3>
-<p><strong>直接推导</strong>：<img
-src="D:\Programing\Compilers\Notes\WolfBook\Images\直接推导.png"
-alt="直接推导" /></p>
-<p>间接推导：</p>
-<figure>
-<img src="D:\Programing\Compilers\Notes\WolfBook\Images\间接推导.png"
-alt="简介推导" />
-<figcaption aria-hidden="true">简介推导</figcaption>
-</figure>
-<h3 id="语言的形式定义">2.3.3 语言的形式定义</h3>
-<p>设 $G[Z] $ 是定义在字汇表 <span class="math inline">\(V\)</span>
-上的一个文法，其中 <span class="math inline">\(Z\)</span>
-是识别符号，在此省去了尖括号</p>
-<p><strong>句型</strong>：如果 <span class="math inline">\(Z
-\stackrel{*} \Rightarrow x\)</span>，且 <span class="math inline">\(x
-\in V^*\)</span>，则称 $x $ 是文法 <span
-class="math inline">\(G\)</span> 的一个句型</p>
-<p><strong>句子</strong>：如果 <span class="math inline">\(Z
-\stackrel{+} \Rightarrow x\)</span>，且 <span class="math inline">\(x
-\in V^*_t\)</span>，则称 $x $ 是文法 <span
-class="math inline">\(G\)</span> 的一个句子</p>
-<ul>
-<li>句子是语言的最小单位</li>
-<li>句子是从文法的识别符号推导出来的由终结符号所组成的符号串</li>
-<li>定义式是充要条件</li>
-<li>若用 <span class="math inline">\(Z \stackrel{*} \Rightarrow
-x\)</span>，有可能 <span class="math inline">\(Z = x\)</span>，与 <span
-class="math inline">\(x \in V^*_t\)</span> 矛盾</li>
-</ul>
-<p><strong>语言</strong>：文法 <span class="math inline">\(G[Z]\)</span>
-产生的所有句子的集合，记为 <span
-class="math inline">\(L(G[Z])\)</span>，称为文法 <span
-class="math inline">\(G[Z]\)</span> 所定义的语言，即 <span
-class="math inline">\(L(G[Z]) = \{x | x \in V^*_t，且Z \stackrel{*}
-\Rightarrow x \}\)</span></p>
-<ul>
-<li>语言是所有终结符号串所组成的集合的一个子集，即 <span
-class="math inline">\(L(G[Z]) \subseteq V^*_t\)</span></li>
-</ul>
-<p><strong>规范推导</strong>：最右推导</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428232155349.png"
-alt="image-20230428232155349" />
-<figcaption aria-hidden="true">image-20230428232155349</figcaption>
-</figure>
-<ul>
-<li>每个句子都有一个规范推导，但并非每个句型都有规范推导</li>
-<li>可规范推导出的句型称为“规范句型”</li>
-</ul>
-<p><strong>等价文法</strong>：<span class="math inline">\(G\)</span> 和
-<span class="math inline">\(G \prime\)</span> 是两个不同的文法，如果
-<span class="math inline">\(L(G) = L(G\prime)\)</span>
-，称二者为等价文法。</p>
-<ul>
-<li>定义的语言相同即等价</li>
-<li>为了某种目的改写文法</li>
-</ul>
-<h3 id="递归规则与递归文法">2.3.4 递归规则与递归文法</h3>
-<p><strong>递归规则</strong>：<span
-class="math inline">\(U::=xUy\)</span></p>
-<ul>
-<li>若 <span class="math inline">\(x = \varepsilon\)</span>，则 <span
-class="math inline">\(U::=Uy\)</span> 称为左递归规则</li>
-<li>若 <span class="math inline">\(y = \varepsilon\)</span>，则 <span
-class="math inline">\(U::=xU\)</span> 称为右递归规则</li>
-<li>若 <span class="math inline">\(x, y \neq \varepsilon\)</span>，则
-<span class="math inline">\(U::=xUy\)</span> 称为自嵌入的规则</li>
-</ul>
-<p><strong>文法的递归性质</strong>：</p>
-<ul>
-<li>直接递归：文法中至少包含一条递归规则，则称文法是直接递归的</li>
-<li>间接递归</li>
-<li>对文法中任一非终结符号，若能建立一个推导过程，在推导所得的符号串中又出现了该终结符本身，则文法是递归性的；反之是非递归性的</li>
-</ul>
-<blockquote>
-<p>含义很容易理解，只是用形式语言描述似乎看起来啰嗦些</p>
-</blockquote>
-<ul>
-<li>可以由有穷的规则刻画无穷的语言</li>
-<li>左递归文法无法采用自顶向下的分析算法</li>
-</ul>
-<h3 id="短语简单短语和句柄">2.3.5 短语、简单短语和句柄</h3>
-<p><strong>短语</strong>：设 <span class="math inline">\(G[Z]\)</span>
-是一文法，<span class="math inline">\(w = uxy\)</span> 是一句型，如果有
-<span class="math inline">\(Z \stackrel{*} \Rightarrow xUy\)</span> 且
-<span class="math inline">\(U \stackrel{+} \Rightarrow u\)</span> ，称
-<span class="math inline">\(u\)</span> 是一个相对于非终结符号 <span
-class="math inline">\(U\)</span> 的句型 <span
-class="math inline">\(w\)</span> 的短语</p>
-<ul>
-<li>若有 <span class="math inline">\(Z \stackrel{*} \Rightarrow
-xUy\)</span> 且 <span class="math inline">\(U \Rightarrow u\)</span>
-，称 <span class="math inline">\(u\)</span> 是一个相对于非终结符号 <span
-class="math inline">\(U\)</span> 的句型 <span
-class="math inline">\(w\)</span> 的简单短语</li>
-<li>$ U V_n, u V^+, x, y V$</li>
-<li>短语是针对句型和非终结符号的</li>
-</ul>
-<p><strong>句柄</strong>：任一句型的最左简单短语称为句型的句柄</p>
-<blockquote>
-<p>通过画出句型的语法树可以直观方便地找到句型的短语、简单短语和句柄</p>
-</blockquote>
-<h3 id="练习-2-3">练习 2-3</h3>
-<h2 id="语法树和二义性">2.4 语法树和二义性</h2>
-<h3 id="推导与语法树">2.4.1 推导与语法树</h3>
-<ol type="1">
-<li>推导过程与语法树的生成
-<ul>
-<li>推导过程不同，但是最终生成的语法树是完全相同的</li>
-<li>推导过程仅反应推导顺序</li>
-<li>当然，并非所有文法都具有语法树唯一性</li>
-</ul></li>
-<li>子树与短语
-<ul>
-<li>摆了</li>
-</ul></li>
-<li>由树构造推导
-<ul>
-<li>摆了</li>
-</ul></li>
-</ol>
-<h3 id="文法与二义性">2.4.2 文法与二义性</h3>
-<p><strong>文法的二义性</strong>：</p>
-<ul>
-<li>文法中的某个句子存在不同的语法树</li>
-<li>有两个不同的最右（最左）推导</li>
-<li>有两个不同的最左归约（规范归约），即归约中某些规范句型的句柄不唯一</li>
-</ul>
-<p><strong>消除二义性</strong>：</p>
-<ul>
-<li>根据条件修改编译算法，如定义优先级</li>
-<li>根据条件直接修改文法</li>
-</ul>
-<h3 id="练习-2-4">练习 2-4</h3>
-<h2 id="符号串的分析">2.5 符号串的分析</h2>
-<blockquote>
-<p>前面讨论了用已知文法推导和产生句子，下面讨论确定给定符号串是否是文法的句子</p>
-<p>即已知文法 <span class="math inline">\(G[Z], s \in V^*_t\)</span>
-，判定 <span class="math inline">\(s \in L(G[Z])\)</span>？</p>
-<p>主要分为自顶向下和自底向上分析</p>
-</blockquote>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th>自顶向下分析</th>
-<th>自底向上分析</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="有关文法的实用限制">2.6 有关文法的实用限制</h2>
-<p>不能有有害规则、多余规则</p>
-<p><strong>压缩文法</strong>：每一个终结符都满足条件一和条件二</p>
-<h2 id="扩充的-bnf-表示和语法图">2.7 扩充的 BNF 表示和语法图</h2>
-<ol type="1">
-<li>扩充的 BNF 表示</li>
-</ol>
-<p>优点：</p>
-<ul>
-<li>表示方便</li>
-<li>消除左递归，便于自顶向下分析</li>
-</ul>
-<p>具体规则：</p>
-<ul>
-<li>花括号 <code>&#123;&#125;</code>：<span class="math inline">\(\{t\} ^m
-_n\)</span>，表示符号串 <span class="math inline">\(t\)</span>
-可以重复连接 <span class="math inline">\(n\)</span> 到 $ m$ 次，若省略
-<span class="math inline">\(n、m\)</span> 表示可连接 <span
-class="math inline">\(0\)</span> 次到任意多次</li>
-<li>方括号 <code>[]</code>：<span
-class="math inline">\(\[t\]\)</span>，表示符号串 <span
-class="math inline">\(t\)</span> 可有可无，<span
-class="math inline">\([t] = \{t\} ^1 _0\)</span></li>
-<li>圆括号 <code>()</code>：在规则中提取因子</li>
-</ul>
-<ol start="2" type="1">
-<li>语法图</li>
-</ol>
-<h2 id="文法和语言分类">2.8 文法和语言分类</h2>
-<ol type="1">
-<li><p>乔姆斯基对文法的定义</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429143851835.png"
-alt="image-20230429143851835" />
-<figcaption aria-hidden="true">image-20230429143851835</figcaption>
-</figure>
-<ol start="2" type="1">
-<li><p>文法和语言分类</p>
-<ol type="1">
-<li><span class="math inline">\(0\)</span> 型文法（短语结构文法）</li>
-<li><span class="math inline">\(1\)</span>
-型文法（上下文敏感文法、上下文有关文法）</li>
-<li><span class="math inline">\(2\)</span> 型文法（上下文无关文法）</li>
-<li><span class="math inline">\(3\)</span> 型文法（正则文法）
-<ul>
-<li>与能为有穷状态自动机接受等价</li>
-</ul></li>
-</ol>
-<p>文法的限制性依次增强</p></li>
-</ol></li>
-</ol>
-<h1 id="第三章-词法分析程序的设计">第三章 词法分析程序的设计</h1>
-<p>词法分析程序又称词法分析器或扫描器</p>
-<p>大多数程序语言的词法规则属于乔姆斯基 <span
-class="math inline">\(3\)</span> 型文法</p>
-<p>通过状态图方便地设计词法分析程序</p>
-<h2 id="词法分析器的功能及实现方案">3.1 词法分析器的功能及实现方案</h2>
-<ol type="1">
-<li>识别输出单词，并检查错误</li>
-<li>转换数字</li>
-<li>删去空格、换行、制表、注释等空白符</li>
-</ol>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429144433494.png"
-alt="image-20230429144433494" />
-<figcaption aria-hidden="true">image-20230429144433494</figcaption>
-</figure>
-<blockquote>
-<p>将字符串表示的源程序转化为以单词表示的源程序</p>
-</blockquote>
-<h2 id="单词的种类及词法分析程序的输出形式">3.2
-单词的种类及词法分析程序的输出形式</h2>
-<ol type="1">
-<li><p>单词的种类：见前</p></li>
-<li><p>词法分析程序的输出形式 一般采用二元式，如</p>
-<table>
-<thead>
-<tr class="header">
-<th>单词类别</th>
-<th>单词值</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>整型</td>
-<td>58</td>
-</tr>
-<tr class="even">
-<td>保留字</td>
-<td>for</td>
-</tr>
-</tbody>
-</table></li>
-<li><p>按单词种类分类或一符一类</p></li>
-</ol>
-<h2 id="正则文法及其状态图">3.3 正则文法及其状态图</h2>
-<blockquote>
-<p>画状态图并以之构造词法分析器</p>
-</blockquote>
-<h3 id="状态图">3.3.1 状态图</h3>
-<p><strong>一个有向图</strong>，其中</p>
-<ul>
-<li><p>圆圈标识的结点表示状态，状态之间用有向弧连接，弧上的标记（字符）代表有向弧的射出结点状态下可能出现的输入字符。</p></li>
-<li><p>包含有限个结点，包含初态和终态，终态用双圈表示</p></li>
-</ul>
-<h3 id="使用状态图分析字符串x">3.3.2 使用状态图分析字符串x</h3>
-<blockquote>
-<p>自底向上</p>
-</blockquote>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428155920181.png"
-alt="image-20230428155920181" />
-<figcaption aria-hidden="true">image-20230428155920181</figcaption>
-</figure>
-<h2 id="词法分析程序的设计与实现">3.4 词法分析程序的设计与实现</h2>
-<h3 id="文法及其状态图">3.4.1 文法及其状态图</h3>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428160047564.png"
-alt="image-20230428160047564" />
-<figcaption aria-hidden="true">image-20230428160047564</figcaption>
-</figure>
-<h3 id="词法分析程序的构造">3.4.2 词法分析程序的构造</h3>
-<p>将语义动作添加到状态图中，并使每一个状态都对应一小段程序</p>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428161120196.png"
-alt="image-20230428161120196" />
-<figcaption aria-hidden="true">image-20230428161120196</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230428161251494.png"
-alt="image-20230428161251494" />
-<figcaption aria-hidden="true">image-20230428161251494</figcaption>
-</figure>
-<h3 id="词法分析程序的实现">3.4.3 词法分析程序的实现</h3>
-<p>先确定具体输出形式</p>
-<ol type="1">
-<li><p>输出形式</p>
-<p>采用二元式</p></li>
-</ol>
-<figure>
-<img src="D:\Programing\Compilers\Notes\WolfBook\Images\3.4.png"
-alt="3.4" />
-<figcaption aria-hidden="true">3.4</figcaption>
-</figure>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getsym</span><span class="params">()</span> &#123; <span class="comment">// 返回类别码</span></span><br><span class="line">    clearToken();</span><br><span class="line">    <span class="keyword">while</span> (isSpace() || isNewline() || isTab()) &#123;</span><br><span class="line">        getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (isLetter()) &#123;</span><br><span class="line">        <span class="keyword">while</span> (isLetter() || isDigit()) &#123;</span><br><span class="line">            catToken();</span><br><span class="line">            getchar();</span><br><span class="line">        &#125;</span><br><span class="line">        retract();</span><br><span class="line">        <span class="type">int</span> result = reserver();</span><br><span class="line">        <span class="keyword">if</span> (result == <span class="number">0</span>) </span><br><span class="line">            symbol = IDSY;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            symbol = result;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isDigit()) &#123;</span><br><span class="line">        <span class="keyword">while</span> (isDigit()) &#123;</span><br><span class="line">            catToken();</span><br><span class="line">            getchar();</span><br><span class="line">        &#125;</span><br><span class="line">        retract();</span><br><span class="line">        num = transNum(token);</span><br><span class="line">        symbol = INTSY;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isColon()) &#123;</span><br><span class="line">        getchar();</span><br><span class="line">        <span class="keyword">if</span> (isEqu()) </span><br><span class="line">            symbol = ASSIGNSY;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            retract();</span><br><span class="line">            symbol = COLONSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isPlus()) &#123;</span><br><span class="line">            symbol = PLUSSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isMinus()) &#123;</span><br><span class="line">            symbol = MINUSSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isStar()) &#123;</span><br><span class="line">            symbol = STARSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isLpar()) &#123;</span><br><span class="line">            symbol = LPARSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isRpar()) &#123;</span><br><span class="line">            symbol = RPARSY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isSemi()) &#123;</span><br><span class="line">            symbol = SEMISY;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isDivi()) &#123;</span><br><span class="line">            getchar();</span><br><span class="line">            <span class="keyword">if</span> (isStar()) &#123;</span><br><span class="line">                <span class="keyword">do</span> &#123;</span><br><span class="line">                    <span class="keyword">do</span> &#123;</span><br><span class="line">                        getchar();</span><br><span class="line">                    &#125; <span class="keyword">while</span> (!isStar());</span><br><span class="line">                    <span class="keyword">do</span> &#123;</span><br><span class="line">                        getchar();</span><br><span class="line">                        <span class="keyword">if</span> (isDivi())</span><br><span class="line">                            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                    &#125; <span class="keyword">while</span> (isStar());</span><br><span class="line">                &#125; <span class="keyword">while</span> (!isStar());</span><br><span class="line">            &#125;</span><br><span class="line">            retract();</span><br><span class="line">            symbol = DIVISY;</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">            erro();</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="第4章-语法分析">第4章 语法分析</h1>
-<blockquote>
-<p>主要介绍自顶向下手工实现递归下降</p>
-</blockquote>
-<h2 id="自顶向下分析方法">4.1 自顶向下分析方法</h2>
-<p>一般方法：带回溯的自顶向下分析方法</p>
-<blockquote>
-<p>本质上是一种试探方法，反复使用不同规则匹配输入串</p>
-</blockquote>
-<p>存在的问题：</p>
-<ul>
-<li><p>左递归问题——用扩充 BNF 文法改写</p>
-<ul>
-<li><p>提因子规则：消除左递归，压缩文法长度</p></li>
-<li><p>替换规则：<span class="math inline">\(U::=x|y|\dots|z|Uv
-\rightarrow U::=(x|y|\dots|z)\{v\}\)</span></p></li>
-<li><p>改写为右递归：<span class="math inline">\(P::=Pa|b \rightarrow
-P::=bP ^{\prime}\)</span> 和 <span class="math inline">\(P \prime
-::=aP^{\prime} | \varepsilon\)</span></p></li>
-<li><p>一般的改写算法：<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429151541958.png"
-alt="image-20230429151541958" /></p>
-<blockquote>
-<p>事实上就是先递归代入，再消除左递归，最后化简</p>
-</blockquote></li>
-</ul></li>
-<li><p>回溯问题</p>
-<ul>
-<li><figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429152458251.png"
-alt="image-20230429152458251" />
-<figcaption aria-hidden="true">image-20230429152458251</figcaption>
-</figure></li>
-</ul></li>
-</ul>
-<h2 id="递归下降分析法">4.2 递归下降分析法</h2>
-<p><strong>主要做法</strong>：对文法中每一个非终结符号 <span
-class="math inline">\(U\)</span>
-都编写一个子程序完成其所对应的语法成分的分析和识别任务。子程序用该非终结符号的规则的右部符号串去匹配输入串</p>
-<h2 id="基于递归下降分析法的语法分析程序构造">4.3
-基于递归下降分析法的语法分析程序构造</h2>
-<p><code>nextsym</code> ：扫描下一个符号并将类别码储存在
-<code>sym</code> 中</p>
-<p><code>error</code>
-：调用出错处理程序打印错误信息，跳过分析过程中有错误的一段源程序</p>
-<h1 id="第五章-符号表管理技术">第五章 符号表管理技术</h1>
-<p>分析阶段：维护符号表</p>
-<p>综合阶段：利用符号表生成目标代码</p>
-<h2 id="概述">5.1 概述</h2>
-<p><strong>符号表</strong>：记录<strong>源程序</strong>中各种标识符的特性信息的表格</p>
-<p><strong>与遍数的关系</strong>：</p>
-<ul>
-<li>多遍扫描中在词法分析阶段填写，其他属性在语义分析和代码生成阶段填入</li>
-<li>一遍：语义分析和代码生成</li>
-</ul>
-<p>标识符在源程序中的每一次出现都要与符号表打一次交道</p>
-<p>若允许隐式声明，必须按首次引用处理</p>
-<h2 id="符号表的组织和内容">5.2 符号表的组织和内容</h2>
-<h3 id="符号表的结构和内容">5.2.1 符号表的结构和内容</h3>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429160114282.png"
-alt="image-20230429160114282" />
-<figcaption aria-hidden="true">image-20230429160114282</figcaption>
-</figure>
-<ul>
-<li><p>标识符的种类：如简单变量、函数、过程、数组、标号、参数等。</p></li>
-<li><p>类型：如整型、实型、字符型、指针等（一般用编码表示）</p></li>
-<li><p>性质：变量形参、值形参等</p></li>
-<li><p>值：标识符所代表的数值。</p></li>
-<li><p>地址：标识符所分配单元的首地址或地址位移。</p></li>
-<li><p>大小：所占的字节数。</p></li>
-<li><p>作用域的嵌套层次：分程序结构语言中，标识符声明所在的分程序的层次。</p></li>
-<li><p>标识符声明的源程序行号</p></li>
-<li><p>标识符引用的源程序行号</p></li>
-<li><p>以字母顺序排列的链域</p>
-<blockquote>
-<p>链域指向按字母排序的下一个标识符在符号表中的位置，便于产生按字母顺序排列的标识符交叉引用表</p>
-<p>故如果不产生交叉引用表可以删去</p>
-</blockquote></li>
-</ul>
-<p>对于一些特殊的名字，还要考虑较多的信息，如:</p>
-<ul>
-<li>对于数组，要考虑维数、上下界值、计算下标变量地址所用的信息以及数组元素类型等</li>
-<li>对于记录（结构、联合），要考虑域的个数,每个域名、地址位移类型等</li>
-<li>对于过程或函数，要考虑形参个数、所在层次、函数返回值类型、局部变量所占空间大小等</li>
-<li>对于指针，要考虑所指对象类型等</li>
-</ul>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429160551515.png"
-alt="image-20230429160551515" />
-<figcaption aria-hidden="true">image-20230429160551515</figcaption>
-</figure>
-<h3 id="符号表的组织方式">5.2.2 符号表的组织方式</h3>
-<ul>
-<li><strong>统一符号表</strong>：按各种信息的并集设计表项
-<ul>
-<li>方便插入、查找</li>
-<li>浪费空间</li>
-</ul></li>
-<li><strong>按标识符建立符号表</strong>：分别设计表项
-<ul>
-<li>节约空间</li>
-<li>插入、查找开销大</li>
-</ul></li>
-<li><strong>折中</strong>：存储大部分共同信息，特殊信息另附表，二者用指针连接
-<ul>
-<li><figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230429160924281.png"
-alt="image-20230429160924281" />
-<figcaption aria-hidden="true">image-20230429160924281</figcaption>
-</figure></li>
-</ul></li>
-</ul>
-<blockquote>
-<p>经典的时间和空间的 tradeoff</p>
-</blockquote>
-<p><strong>符号名的存储方法</strong>：</p>
-<ul>
-<li>预设长度
-<ul>
-<li>速度快，空间利用率低</li>
-</ul></li>
-<li>放置描述符
-<ul>
-<li>速度慢，节约空间</li>
-</ul></li>
-</ul>
-<blockquote>
-<p>就是数组实现方式和链表实现方式的区别</p>
-</blockquote>
-<h2 id="非分程序结构语言的符号表组织">5.3
-非分程序结构语言的符号表组织</h2>
-<p>主要介绍了散列技术，摆了</p>
-<h2 id="分程序结构语言的符号表组织">5.4 分程序结构语言的符号表组织</h2>
-<h3 id="标识符的作用域及基本处理方法">5.4.1
-标识符的作用域及基本处理方法</h3>
-<p>作用域局限在所定义的<strong>最小模块</strong>中</p>
-<p>建表和查表的基本处理方法：</p>
-<ul>
-<li>在声明部分读到标识符时
-<ul>
-<li>查询所在程序单元符号表
-<ul>
-<li>已存在同名标识符——报错</li>
-<li>不存在同名标识符——插入</li>
-</ul></li>
-</ul></li>
-<li>在可执行部分读到标识符时
-<ul>
-<li>查询所在程序单元符号表
-<ul>
-<li>已存在同名标识符——已声明</li>
-<li>不存在同名标识符
-<ul>
-<li>逐层查找外层符号表
-<ul>
-<li>已存在同名标识符——已声明，读取信息供使用</li>
-<li>未存在同名标识符——使用了未声明的标识符</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>语言预定义的标识符
-<ul>
-<li>放在最外层符号表</li>
-</ul></li>
-<li>分程序开始
-<ul>
-<li>定位</li>
-</ul></li>
-<li>分程序结束
-<ul>
-<li>重定位</li>
-</ul></li>
-</ul>
-<h3 id="定位和重定位">5.4.2 定位和重定位</h3>
-<blockquote>
-<p>其嵌套方式显然对应着栈结构</p>
-</blockquote>
-<h3 id="符号表的组织方式-1">5.4.3 符号表的组织方式</h3>
-<ol type="1">
-<li>栈式符号表
-<ul>
-<li>遇到标识符声明——压栈</li>
-<li>分程序结尾——仅弹栈而不彻底删除</li>
-<li>性能较差，仅用于符号表较小时</li>
-</ul></li>
-<li>散列符号表的栈式实现</li>
-</ol>
-<h1 id="第六章-运行时的存储组织及管理">第六章
-运行时的存储组织及管理</h1>
-<h2 id="静态存储分配">6.1 静态存储分配</h2>
-<p>对于编译时可以确定其存储空间大小的数据，可以在编译时就给它们分配固定的存储空间</p>
-<p>其余数据则将分配存储过程留待目标程序运行时动态地进行</p>
-<h2 id="动态内存分配">6.2 动态内存分配</h2>
-<h3 id="活动记录">6.2.1 活动记录</h3>
-<p>运行栈上的动作和普通栈上的动作相同。当进入一个模块时，就在运行栈的栈顶创建一个专用数据区，通常称为活动记录(Activation
-Record)。活动记录的开始位置称为基</p>
-<p><strong>注意栈的增长方向</strong></p>
-<h3 id="参数区">6.2.2 参数区</h3>
-<h3 id="display-区">6.2.3 display 区</h3>
-<h3 id="运行时的地址计算">6.2.4 运行时的地址计算</h3>
-<h3 id="递归过程的处理">6.2.5 递归过程的处理</h3>
-<h2 id="内存垃圾回收器">6.3 内存垃圾回收器</h2>
-<p>需要从编译器、操作系统甚至处理器芯片中获得信息</p>
-<p>分析当前程序运行时产生的变量根集（root set）进行可达性分析</p>
-<p>变量根集指在程序运行的某一时刻运行栈上所有变量或对象的集合，再加上当前程序的全局变量、静态变量等变量或对象</p>
-<h3 id="引用计数">6.3.1 引用计数</h3>
-<p>reference counting</p>
-<p>指向该对象的引用被创建——count+1</p>
-<p>已经存在的指向某对象的引用被删除或重写——count-1</p>
-<p>e.g. <span class="math inline">\(P = Q\)</span> ，Q
-指向对象的计数值-1，P 指向对象的计数值+1</p>
-<p>回收一个对象可能会传递性地对其他对象的计数器进行-1操作，最后回收那些计数器变成0的对象</p>
-<p>对于大部分高性能系统，引用计数已经被跟踪型垃圾回收器替代</p>
-<h3 id="标记和清除垃圾回收器">6.3.2 标记和清除垃圾回收器</h3>
-<p>两阶段回收垃圾：</p>
-<ul>
-<li>从对象根集开始遍历整个指针关系图，通过标识位区分死对象和活对象</li>
-<li>垃圾回收，不移动内存堆中的对象。故主要弊端是<strong>内存碎片</strong></li>
-</ul>
-<h3 id="标记紧缩算法">6.3.3 标记紧缩算法</h3>
-<p>在标记清除回收器的基础上引入紧缩技术</p>
-<h3 id="拷贝回收算法">6.3.4 拷贝回收算法</h3>
-<ul>
-<li>空间利用率低</li>
-</ul>
-<h3 id="分代垃圾回收器">6.3.5 分代垃圾回收器</h3>
-<h1 id="第七章-源程序的中间形式">第七章 源程序的中间形式</h1>
-<blockquote>
-<p>也即中间代码</p>
-</blockquote>
-<h2 id="波兰表示">7.1 波兰表示</h2>
-<p>中缀转后缀算法：</p>
-<ul>
-<li>扫描到操作数，直接输出</li>
-<li>遇到操作符，与栈顶元素比较优先级
-<ul>
-<li>栈顶 &gt; 栈外，输出栈顶</li>
-<li>反之，操作符入栈</li>
-</ul></li>
-</ul>
-<p>波兰表示<strong>不便优化</strong></p>
-<h2 id="n-元表示">7.2 N-元表示</h2>
-<p>三元式：<操作符1>,<操作数1>,<操作数2></p>
-<p>一组三元式，前面三元式的计算结果可用该三元式的编号表示</p>
-<p>四元式：<操作符1>,<操作数1>,<操作数2>,<结果></p>
-<h2 id="抽象语法树">7.3 抽象语法树</h2>
-<p>非叶结点：操作符</p>
-<p>叶结点：操作数</p>
-<p><strong>与前两种表示的联系</strong>：后续遍历可以得到后缀表达式，</p>
-<h2 id="抽象机代码">7.4 抽象机代码</h2>
-<p>摆了</p>
-<h1 id="第八章-错误处理">第八章 错误处理</h1>
-<h2 id="概述-1">8.1 概述</h2>
-<p>编译程序的错误处理能力包括：</p>
-<ul>
-<li>检查出各类错误的能力</li>
-<li>准确地指出出错位置及错误性质的能力</li>
-<li>通过一次编译能将源程序中的错误尽可能都找出来的能力</li>
-<li>具有一定的错误改正的能力</li>
-<li>遏止重复错误信息的能力</li>
-</ul>
-<h2 id="错误的分类">8.2 错误的分类</h2>
-<ul>
-<li>语法错误：不符合语法（词法）规则
-<ul>
-<li>如漏掉一半括号等</li>
-</ul></li>
-<li>语义错误：不符合语义或超越具体计算机的限制
-<ul>
-<li>如标识符先声明才能引用，形参实参个数匹配</li>
-<li>溢出错误，如计算结果太大；符号表、数据存储区等溢出</li>
-</ul></li>
-</ul>
-<h2 id="错误的检查与报告">8.3 错误的检查与报告</h2>
-<p>一些语义错误要由目标程序检查出来</p>
-<ul>
-<li>如下标越界</li>
-<li>处理方法一般是编译时生成有关检验指令</li>
-</ul>
-<p>报告错误的两种方式</p>
-<ul>
-<li>分析完再打印，需要单独开辟空间</li>
-<li>边分析边打印，有可能检测不出来</li>
-</ul>
-<h2 id="错误处理技术">8.4 错误处理技术</h2>
-<p>两种错误处理办法</p>
-<ul>
-<li>错误改正
-<ul>
-<li>太难了没有编译器做到</li>
-</ul></li>
-<li>错误局部化处理
-<ul>
-<li>暂停并跳过对出错部分的分析</li>
-<li>实现：在编译程序中设置专用变量存放指定的右界符</li>
-</ul></li>
-</ul>
-<p>遏制重复的错误信息</p>
-<ul>
-<li><p>建立出错名字表，类似如下代码段</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// demo.java</span></span><br><span class="line"><span class="keyword">if</span> (errorMap.containsKey(unDefinedModifier)) &#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    put(unDefinedModifier, errorMessage);</span><br><span class="line">    <span class="comment">// print something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>设置标志位，类似 <code>isVisited</code></p></li>
-</ul>
-<h1 id="第九章-语法制导翻译技术">第九章 语法制导翻译技术</h1>
-<blockquote>
-<p>翻译文法、属性文法、自顶向下语法制导翻译技术</p>
-</blockquote>
-<h2 id="翻译文法">9.1 翻译文法</h2>
-<figure>
-<img
-src="D:\Programing\Compilers\Notes\WolfBook\Images\活动序列动作符号.png"
-alt="活动序列动作符号" />
-<figcaption aria-hidden="true">活动序列动作符号</figcaption>
-</figure>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230430222848882.png"
-alt="image-20230430222848882" />
-<figcaption aria-hidden="true">image-20230430222848882</figcaption>
-</figure>
-<p><strong>翻译文法</strong>：终结符号集由输入符号和动作符号组成的上下文无关文法。</p>
-<p><strong>活动序列</strong>：翻译文法确定的语言中的符号串</p>
-<h2 id="语法制导翻译">9.2 语法制导翻译</h2>
-<blockquote>
-<p>形式上，将翻译看成偶对的集合，第一个元素是输入语言中的符号串，第二个元素是翻译该符号串时的动作序列或执行动作序列所规定的操作后生成的新符号串</p>
-<p>即 符号串 <span class="math inline">\(\rightarrow\)</span>
-动作序列</p>
-<p>或 符号串 <span class="math inline">\(\rightarrow\)</span>
-动作序列生成的新符号串</p>
-<p>在翻译文法是符号串翻译文法的时候可以认为二者同义</p>
-</blockquote>
-<p><strong>语法制导翻译</strong>：给定一输入符号串，根据输入文法获得翻译该符号串的动作序列，并执行该动作序列所规定的动作的过程</p>
-<blockquote>
-<p>翻译文法定义的翻译</p>
-</blockquote>
-<p><strong>输入序列</strong>：表示从活动序列中删掉所有<strong>动作符号</strong>而得到的符号序列
-<strong>动作序列</strong>：表示从活动序列中删掉所有<strong>输入符号</strong>而得到的符号序列</p>
-<blockquote>
-<p>你俩在这玩相爱相杀是吧</p>
-</blockquote>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230430224236885.png"
-alt="image-20230430224236885" />
-<figcaption aria-hidden="true">image-20230430224236885</figcaption>
-</figure>
-<h2 id="属性翻译文法">9.3 属性翻译文法</h2>
-<h3 id="综合属性">9.3.1 综合属性</h3>
-<p>将翻译文法中无值的符号扩充为有值的，值部分称为符号的属性</p>
-<blockquote>
-<p>产生式中左部符号的属性值是通过计算右部符号的属性值得来的</p>
-</blockquote>
-<h3 id="继承属性">9.3.2 继承属性</h3>
-<figure>
-<img
-src="C:\Users\Lee\AppData\Roaming\Typora\typora-user-images\image-20230501102809077.png"
-alt="image-20230501102809077" />
-<figcaption aria-hidden="true">image-20230501102809077</figcaption>
-</figure>
-<h2 id="自顶向下语法制导翻译">9.4 自顶向下语法制导翻译</h2>
-<p>// to be continued</p>
-<blockquote>
-<p>这章好抽象啊，不知道对于实验需要的内容有多大帮助，反正连滚带爬读完了，理论内容先放一放</p>
-</blockquote>
-<h1 id="第十章-语义分析和代码生成">第十章 语义分析和代码生成</h1>
-<h2 id="语义分析的概念">10.1 语义分析的概念</h2>
-<p>处理上下文有关文法的方式：用专门的语义动作来补充上下文无关分析器的动作，即<strong>借助语义分析</strong></p>
-<p>语义分析要处理的问题</p>
-<ul>
-<li>我没读出来作者的意思，所以这条鸽了</li>
-<li>表达式和赋值语句操作数的类型一致性检查</li>
-<li>分析语义并做相应的语义处理</li>
-</ul>
-<h2 id="栈式抽象机及其汇编指令">10.2 栈式抽象机及其汇编指令</h2>
-<p>table</p>
-<h2 id="声明语句的处理">10.3 声明语句的处理</h2>
-<p>编译器分离出每个实体，并填符号表</p>
-<p>声明后，可以使用符号表中信息</p>
-<ul>
-<li>检查对所声明的实体引用是否正确</li>
-<li>利用已声明实体的特性信息，为给定源程序生成特定的目标代码</li>
-</ul>
-<h3 id="常量类型">10.3.1 常量类型</h3>
-<h3 id="简单变量">10.3.2 简单变量</h3>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">staticvardef</span><span class="params">(<span class="type">int</span> t, <span class="type">int</span> i, <span class="type">char</span> *n)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> j = tableinsert(n, t, i);</span><br><span class="line">    <span class="comment">/*给定一简单变量n的类型,所需的数据空间大小i。tableinsert将n和属性i及t一起填入符号表。</span></span><br><span class="line"><span class="comment">    i用作临时变量,记录函数返回值。*/</span></span><br><span class="line">    <span class="keyword">if</span> (j == DUPLICATION) &#123;</span><br><span class="line">        errmsg(duplident, statmtno);<span class="comment">/*输出相关的错误信息*/</span> </span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j == OVERFLOW) &#123;</span><br><span class="line">        errmsg(tableoverflow, staticnumber);</span><br><span class="line">        <span class="built_in">abort</span>();        <span class="comment">/*符号表溢出,编译失败,终止编译程序*/</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">allocsv</span><span class="params">(<span class="type">int</span> i)</span> <span class="comment">/*存储分配*/</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*设简单变量所要求的数据空间大小为i,由此可更新指针 codeptr 的内容*/</span></span><br><span class="line">    codeptr = codeptr + i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="数组变量">10.3.3 数组变量</h3>
-<p>编译程序在处理数组声明时将建立一个模板，以便在执行期间能够间接引用该数组的元素。</p>
-<ul>
-<li>静态数组——在编译期间建立</li>
-<li>动态数组——在编译时仅为模板的建立分配一个空间，而模板本身将在运行时建立</li>
-</ul>
-<p><strong>数组绝对地址的计算</strong></p>
-<h3 id="记录变量">10.3.4 记录变量</h3>
-<p>用来引用几个不同名字所组成的实体</p>
-<h3 id="过程声明">10.3.5 过程声明</h3>
-<h2 id="表达式语句">10.4 表达式语句</h2>
-<p>将表达式的操作数装载到操作数栈栈顶或寄存器，执行操作后将结果保留在操作数栈栈顶或寄存器</p>
-<h2 id="赋值语句">10.5 赋值语句</h2>
-<p>如果支持对数组的赋值，需要先找到数组的地址，继而使用内部计数器增值的方法产生对所有数组元素的引用</p>
-<h2 id="控制语句">10.6 控制语句</h2>
-<h3 id="if-语句">10.6.1 <code>if</code> 语句</h3>
-<h3 id="case-语句">10.6.2 <code>case</code> 语句</h3>
-<h3 id="while-语句">10.6.3 <code>while</code> 语句</h3>
-<h3 id="for-语句">10.6.4 <code>for</code> 语句</h3>
-<h2 id="过程调用和返回语句">10.7 过程调用和返回语句</h2>
-<p>// to be continued</p>
-<h2 id="输入输出语句">10.8 输入/输出语句</h2>
-<p>// to be continued</p>
-<h2 id="编译程序的辅助功能">10.9 编译程序的辅助功能</h2>
-]]></content>
-      <categories>
-        <category>S5</category>
-        <category>Notes</category>
-        <category>编译</category>
-      </categories>
-      <tags>
-        <tag>Notes</tag>
-        <tag>编译</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>「Badminton」</title>
-    <url>/badminton/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="羽毛球练习技巧">羽毛球练习技巧</h1>
-<blockquote>
-<p>记录一些一对一课程和网课的内容</p>
-</blockquote>
-<span id="more"></span>
-<p>整体思路：单打练习一致性，双打求快</p>
-<p>平时练习：跳绳是最练协调的，1min一组，练十组，隔天练</p>
-<h2 id="步伐">步伐</h2>
-<h3 id="并步">并步</h3>
-<p>后脚启动</p>
-<h2 id="正手主动后场">正手主动后场</h2>
-<p>高远球、吊球、杀球的击球点依次向下</p>
-<p>杀球需要打球头和球的靠近球头羽毛部分，可以在击球瞬间收腕，但是别提前掉腕</p>
-<p>发力的关键：手腕</p>
-<p>手腕灵活可以用更小的动作打出更大的鞭打效果，方便做出更隐蔽的动作</p>
-<h2 id="正手被动后场">正手被动后场</h2>
-<p>转髋迈步，脚尖向后，举拍</p>
-<p>保持低位重心，做后交叉，脚尖向外</p>
-<p>展肩，做抽打动作</p>
-<ul>
-<li>横向</li>
-<li>纵向</li>
-</ul>
-<h2 id="反手后场动作">反手后场动作</h2>
-<p>相较于正手的高位击球点，反手的发力不能顺利传达，需要降低击球点获得引拍空间</p>
-<p>步伐</p>
-<p>具体的引拍方式为内收，依靠展体的力量</p>
-<p>注意重心起伏波浪式发力</p>
-<h2 id="前场动作">前场动作</h2>
-<p>记得弓步放着，脚的方向和前进方向一致</p>
-<h2 id="接杀">接杀</h2>
-<p>主要反手握拍动作，因为防守范围更大</p>
-<p>球拍横在自己的身体面前，减少引拍时间，处于居中的位置</p>
-<p>弹后场需要更靠前的位置，更快的挥速</p>
-<p>手腕要立腕，抬大臂内收小臂手腕</p>
-<p>重心随着身体顶起的动作做起伏</p>
-<p>腋下反拍正打大概率只能抽到后场</p>
-<p>接杀重要的地方是启动，伸拍是次要的</p>
-<h3 id="启动">启动</h3>
-<p>启动的重要目的有两个，一个是改变脚尖朝向，另一个是把身体推出去</p>
-<h3 id="正手接杀">正手接杀</h3>
-<p>接杀启动步脚尖朝球，先伸拍但是不引拍</p>
-<p>拍头朝上，如果杀得重就上抬拍面</p>
-<p>降点是用腿，不是降低拍面，降低拍面的效果不敢保证</p>
-<h2 id="推挑">推挑</h2>
-<h3 id="正手">正手</h3>
-<p>有个往上翻腕的动作</p>
-]]></content>
-      <categories>
-        <category>S6</category>
-        <category>Play</category>
-        <category>Badminton</category>
-      </categories>
-      <tags>
-        <tag>Physical Training</tag>
-        <tag>Badminton</tag>
       </tags>
   </entry>
   <entry>
